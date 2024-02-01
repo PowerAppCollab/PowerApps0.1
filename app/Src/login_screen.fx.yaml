@@ -83,7 +83,7 @@ login_screen As screen:
                         "admin",
                         Navigate(home_screen),
                         "user",
-                        Navigate(error_screen)
+                        Navigate(user_screen)
                     )
                 );
                 Reset(TextInput2);
