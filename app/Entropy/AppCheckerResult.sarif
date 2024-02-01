@@ -14,6 +14,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "home_screen.Gallery3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "home_screen.Gallery3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "home_screen",
+                "type": "home_screen.Gallery3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "home_screen.Gallery3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "home_screen.Gallery3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "home_screen",
+                "type": "home_screen.Gallery3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "login_screen.Container1.TextInput2.AccessibleLabel"
                 }
               ],
@@ -74,19 +134,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.labeltxt"
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.labeltxt",
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "labeltxt",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "login_screen",
+                "type": "login_screen.Container1.Icon2"
               }
             }
           ],
@@ -96,7 +156,37 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "login_screen",
+                "type": "login_screen.Container1.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
         }
       ],
@@ -123,20 +213,20 @@
               }
             },
             {
-              "id": "app-UnusedVariables",
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
               "messageStrings": {
                 "issue": {
-                  "text": "Ongebruikte variabele"
+                  "text": "Missing tab stop"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Verwijder de ongebruikte variabele."
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
                 ],
                 "level": "Medium",
-                "primaryCategory": "performance",
-                "whyFix": "Deze variabele is gedeclareerd, maar er wordt niet naar verwezen door een besturingselement. De variabele is daarom niet nodig."
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
               }
             }
           ],

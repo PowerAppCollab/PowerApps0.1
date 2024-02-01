@@ -105,7 +105,11 @@ login_screen As screen:
         Icon2 As icon.View:
             Height: =60
             Icon: =Icon.View
-            OnSelect: =Set(labelPasswordView,TextMode.SingleLine)
+            OnSelect: |
+                =Set(
+                    labelPasswordView,
+                    TextMode.SingleLine
+                );
             Width: =24
             X: =445
             Y: =256
