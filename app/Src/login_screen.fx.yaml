@@ -1,6 +1,9 @@
 login_screen As screen:
     BackgroundImage: ='work-at-layer'
     ImagePosition: =ImagePosition.Fill
+    OnVisible: |-
+        =Set(labeltxt,false);
+        Set(labelPasswordView,TextMode.Password)
 
     Container1 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.ExtraBold
@@ -20,6 +23,7 @@ login_screen As screen:
             Default: =""
             Height: =60
             HintText: ="Enter username"
+            OnSelect: =Set(labeltxt, false)
             PaddingLeft: =45
             Width: =450
             X: =25
@@ -30,6 +34,7 @@ login_screen As screen:
             Default: =""
             Height: =60
             HintText: ="Enter password"
+            Mode: =labelPasswordView
             PaddingLeft: =45
             Width: =450
             X: =25
@@ -50,6 +55,7 @@ login_screen As screen:
             Color: =RGBA(168, 0, 0, 1)
             Size: =11
             Text: ="Incorrect username or password."
+            Visible: =labeltxt
             Width: =450
             X: =25
             Y: =346
@@ -65,11 +71,23 @@ login_screen As screen:
                         username = TextInput2.Text And password = TextInput3.Text
                     ).role
                 );
-                
                 If(
                     IsBlankOrError(userrolevalue),
-                    Notify("Error while logging in."),Set(labeltxt,false),Switch(userrolevalue,"admin",Navigate(home_screen),"user",Navigate(error_screen))
+                    Notify("Error while logging in."),
+                    Set(
+                        labeltxt,
+                        true
+                    ),
+                    Switch(
+                        userrolevalue,
+                        "admin",
+                        Navigate(home_screen),
+                        "user",
+                        Navigate(error_screen)
+                    )
                 );
+                Reset(TextInput2);
+                Reset(TextInput3);
             Text: ="Login"
             Width: =200
             X: =150
@@ -87,6 +105,7 @@ login_screen As screen:
         Icon2 As icon.View:
             Height: =60
             Icon: =Icon.View
+            OnSelect: =Set(labelPasswordView,TextMode.SingleLine)
             Width: =24
             X: =445
             Y: =256
