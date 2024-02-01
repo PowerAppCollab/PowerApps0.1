@@ -8,6 +8,9 @@
     "datasets": {
       "https://veynex-my.sharepoint.com/personal/jools_reinartz_sphereit_nl": {
         "dataSources": {
+          "testResultaten": {
+            "tableName": "0879342f-5c1a-4043-a2bf-60f2903fbbd3"
+          },
           "user_logins": {
             "tableName": "ef514a4f-bb0e-4fa0-9195-1bd41b0ff3bb"
           }
@@ -15,7 +18,8 @@
       }
     },
     "dataSources": [
-      "user_logins"
+      "user_logins",
+      "testResultaten"
     ],
     "dependencies": {},
     "dependents": [],
