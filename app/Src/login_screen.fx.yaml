@@ -57,16 +57,19 @@ login_screen As screen:
 
         Button3 As button:
             Height: =50
-            OnSelect: |-
+            OnSelect: |
                 =Set(
                     userrolevalue,
                     LookUp(
                         user_logins,
                         username = TextInput2.Text And password = TextInput3.Text
                     ).role
-                )
+                );
                 
-                If(IsBlankOrError(userrolevalue))
+                If(
+                    IsBlankOrError(userrolevalue),
+                    Notify("Error while logging in."),Set(labeltxt,false),Switch(userrolevalue,"admin",Navigate(home_screen),"user",Navigate(error_screen))
+                );
             Text: ="Login"
             Width: =200
             X: =150
@@ -96,10 +99,4 @@ login_screen As screen:
             X: =33
             Y: =255
             ZIndex: =8
-
-    Label5 As label:
-        Text: ="Dit is een test"
-        X: =625
-        Y: =184
-        ZIndex: =8
 
