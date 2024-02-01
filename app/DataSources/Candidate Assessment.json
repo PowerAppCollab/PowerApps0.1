@@ -8,7 +8,14 @@
     "LogicalName": "cr884_candidateassessment",
     "Name": "Candidate Assessment",
     "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
       "cr884_averagescore": "Average score",
+      "cr884_candidateassessment_AsyncOperations": "Systeemtaken",
+      "cr884_candidateassessment_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_candidateassessment_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_candidateassessment_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_candidateassessment_ProcessSession": "Processessies",
+      "cr884_candidateassessment_SyncErrors": "Synchronisatiefouten",
       "cr884_candidateassessmentid": "Candidate Assessment",
       "cr884_completiondate": "Completion date",
       "cr884_email": "Email",
@@ -27,10 +34,17 @@
       "cr884_status": "Status (cr884_status)",
       "cr884_webcamenabled": "Webcam enabled?",
       "cr884_yourrating": "Your rating",
+      "createdby": "Gemaakt door",
       "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
       "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
       "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
       "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
       "statecode": "Status (statecode)",
       "statuscode": "Reden van status",
       "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
@@ -39,6 +53,20 @@
     },
     "PreferredName": "Candidate Assessment",
     "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Candidate Assessment (Weergaven)",
+    "Name": "_cr884_candidateassessment_views",
+    "RelatedEntityName": "Candidate Assessment",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "193c1162-46d9-4760-aca3-11ff676da23e": "Actieve Candidate Assessment",
+      "25cd8903-7742-4f68-a999-26e203a12598": "Gekoppelde weergave van Candidate Assessment",
+      "62d4558f-e338-4f2d-ac51-38cd7155d7cd": "Inactieve Candidate Assessment",
+      "e6a2a047-a4cf-48dd-91fe-4a585e9ceb21": "Weergave Geavanceerd zoeken van Candidate Assessment",
+      "f910b09c-8c4e-44dd-b1be-847f28c610c7": "Candidate Assessment Opzoekweergave"
+    }
   },
   {
     "DisplayName": "Filled out only once from IP address? (Candidate Assessment)",
@@ -142,7 +170,7 @@
   },
   {
     "DisplayName": "Status (Candidate Assessment)_1",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_16b9c31431_statecode",
+    "Name": "cr884_candidateassessment_statecode",
     "OptionSetInfoNameMapping": {
       "0": "Actief",
       "1": "Inactief"
@@ -162,7 +190,7 @@
   },
   {
     "DisplayName": "Reden van status (Candidate Assessment)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_16b9c31431_statuscode",
+    "Name": "cr884_candidateassessment_statuscode",
     "OptionSetInfoNameMapping": {
       "1": "Actief",
       "2": "Inactief"
