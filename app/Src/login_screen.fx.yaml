@@ -78,10 +78,17 @@ login_screen As screen:
                         labeltxt,
                         true
                     ),
+                    Set(
+                    usernameAdmin,
+                    LookUp(
+                        user_logins,
+                        username = TextInput2.Text And password = TextInput3.Text
+                    ).username
+                );
                     Switch(
                         userrolevalue,
                         "admin",
-                        Navigate(intake_screen),
+                        Navigate(admin_screen),
                         "user",
                         Navigate(user_screen)
                     )
