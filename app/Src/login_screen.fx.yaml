@@ -81,7 +81,7 @@ login_screen As screen:
                     Switch(
                         userrolevalue,
                         "admin",
-                        Navigate(home_screen),
+                        Navigate(intake_screen),
                         "user",
                         Navigate(user_screen)
                     )
