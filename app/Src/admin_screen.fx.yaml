@@ -15,11 +15,32 @@ admin_screen As screen:
         Y: =25
         ZIndex: =2
 
-    Button2 As button:
+    Button2_2 As button:
         BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
-        Text: ="Knop"
-        X: =40
-        Y: =40
-        ZIndex: =3
+        Text: ="Intakes"
+        X: =820
+        Y: =47
+        ZIndex: =5
+
+    Button2_3 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Text: ="Nav2"
+        X: =980
+        Y: =47
+        ZIndex: =6
+
+    Button2_4 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Text: |-
+            ="Nav3
+            "
+        X: =1140
+        Y: =47
+        ZIndex: =7
 
