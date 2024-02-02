@@ -114,6 +114,7 @@ intake_screen As screen:
 
             DataCardKey14 As label:
                 AutoHeight: =true
+                Color: =RGBA(0, 16, 96, 1)
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -164,10 +165,17 @@ intake_screen As screen:
                 ZIndex: =4
 
     Button1 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(214, 223, 238, 1)
         OnSelect: =SubmitForm(FormInspection);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Text: ="Submit"
-        X: =907
-        Y: =644
+        X: =912
+        Y: =540
         ZIndex: =3
 
     ViewForm As formViewer:
@@ -680,4 +688,29 @@ intake_screen As screen:
                 X: =30
                 Y: =DataCardKey28.Y + DataCardKey28.Height + 5
                 ZIndex: =2
+
+    Button4 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(214, 223, 238, 1)
+        OnSelect: |
+            =Office365.SendEmail("jools.l.reinartz@gmail.com","Send email from PowerApps","Item: "&Concat(ComboBox1.SelectedItems,First_x0020_name&" "))
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Knop"
+        X: =752
+        Y: =661
+        ZIndex: =5
+
+    Label2 As label:
+        Color: =RGBA(0, 16, 96, 1)
+        Text: |-
+            ="Invite this user using an email
+            "
+        Width: =354
+        X: =752
+        Y: =621
+        ZIndex: =6
 
