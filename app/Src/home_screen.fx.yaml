@@ -1,17 +1,19 @@
 home_screen As screen:
 
-    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Items: =testResultaten
+        Items: ='TEST Intake Python Training'
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
+        TemplateFill: |
+            =If(ThisItem.IsSelected, ColorFade(RGBA(4, 59, 92, 0),-2%), RGBA(0, 0, 0, 0))
         TemplatePadding: =0
         TemplateSize: =104
         X: =40
         Y: =40
         ZIndex: =1
 
-        Image3 As image:
+        Image1 As image:
             Height: =72
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =8
@@ -23,7 +25,7 @@ home_screen As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
-        Title3 As label:
+        Title1 As label:
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -31,14 +33,14 @@ home_screen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.'First name'
+            Text: =ThisItem.Titel
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 173
             X: =103
-            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
             ZIndex: =2
 
-        Subtitle3 As label:
+        Subtitle1 As label:
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -46,14 +48,14 @@ home_screen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.'First name' & " " & ThisItem.'Last name'
+            Text: =ThisItem.fullName
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title3.Width
-            X: =Title3.X
-            Y: =Title3.Y + Title3.Height
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height
             ZIndex: =3
 
-        NextArrow3 As icon.ChevronRight:
+        NextArrow1 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Color: =RGBA(166, 166, 166, 1)
             Height: =50
@@ -63,29 +65,23 @@ home_screen As screen:
             PaddingLeft: =16
             PaddingRight: =16
             PaddingTop: =16
-            Tooltip: ="View item details"
+            Tooltip: ="Details van item weergeven"
             Width: =50
             X: =Parent.TemplateWidth - Self.Width - 12
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        Separator3 As rectangle:
+        Separator1 As rectangle:
             Height: =8
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =5
 
-        Rectangle3 As rectangle:
-            Height: =Parent.TemplateHeight - Separator3.Height
+        Rectangle1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
             OnSelect: =Select(Parent)
             Visible: =ThisItem.IsSelected
             Width: =4
             ZIndex: =6
-
-    Label1 As label:
-        Text: ="v0.1"
-        X: =1023
-        Y: =126
-        ZIndex: =2
 
