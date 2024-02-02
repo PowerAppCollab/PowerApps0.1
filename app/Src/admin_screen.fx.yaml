@@ -1,5 +1,6 @@
 admin_screen As screen:
     Fill: =RGBA(241, 244, 249, 1)
+    OnVisible: =
 
     navBarAdmin As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -13,7 +14,8 @@ admin_screen As screen:
         Color: =RGBA(51, 51, 51, 1)
         FontWeight: =FontWeight.Semibold
         Size: =15
-        Text: ="Welcome Admin"
+        Text: |
+            ="Welcome " & usernameAdmin
         Width: =250
         X: =73
         Y: =47
