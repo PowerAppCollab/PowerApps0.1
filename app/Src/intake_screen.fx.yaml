@@ -11,7 +11,7 @@ intake_screen As screen:
                 selectedUserEmail,
                 LookUp(
                     'TEST Intake Python Training',
-                    Title = GalleryInspection.Selected.Title
+                    Titel = GalleryInspection.Selected.Titel
                 ).email
             )
         TemplateFill: |+
@@ -710,7 +710,12 @@ intake_screen As screen:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(214, 223, 238, 1)
-        OnSelect: =Office365Outlook.SendEmail(selectedUserEmail,"Send email from PowerApps","Password and other stuff come here.....")
+        OnSelect: |+
+            =Office365Outlook.SendEmail(
+                selectedUserEmail,
+                "Send email from PowerApps",
+                "Your username: XXXX <br> Your password: " & Int(Rand() * 100))
+            
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
