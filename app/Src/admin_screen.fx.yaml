@@ -1,46 +1,54 @@
 admin_screen As screen:
     Fill: =RGBA(241, 244, 249, 1)
 
-    Label1 As label:
-        Text: ="Welcome Admin"
-        X: =255
-        Y: =306
-        ZIndex: =1
-
     navBarAdmin As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
         Height: =84
         Width: =1300
         X: =35
         Y: =25
-        ZIndex: =2
+        ZIndex: =1
 
-    Button2_2 As button:
-        BorderStyle: =BorderStyle.None
+    Label1 As label:
         Color: =RGBA(51, 51, 51, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        Text: ="Intakes"
-        X: =820
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: ="Welcome Admin"
+        Width: =250
+        X: =73
         Y: =47
-        ZIndex: =5
+        ZIndex: =2
 
     Button2_3 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
         Text: ="Nav2"
         X: =980
         Y: =47
-        ZIndex: =6
+        ZIndex: =4
 
     Button2_4 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
         Text: |-
             ="Nav3
             "
         X: =1140
         Y: =47
-        ZIndex: =7
+        ZIndex: =5
+
+    intakeNavButton As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(intake_screen)
+        Text: ="Intakes"
+        X: =820
+        Y: =47
+        ZIndex: =6
 
