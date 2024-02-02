@@ -7,7 +7,13 @@ intake_screen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: |
-            =Set(selectedUserEmail, LookUp('TEST Intake Python Training', true).email)
+            =Set(
+                selectedUserEmail,
+                LookUp(
+                    'TEST Intake Python Training',
+                    Title = GalleryInspection.Selected.Title
+                ).email
+            )
         TemplateFill: |+
             =If(ThisItem.IsSelected, RGBA(214, 223, 238, 1), RGBA(241, 244, 249, 1))
             
