@@ -91,6 +91,24 @@ admin_screen_sendIntakes As screen:
             Color: =RGBA(241, 244, 249, 1)
             Fill: =RGBA(102, 113, 166, 1)
             HoverColor: =
+            OnSelect: |-
+                =Office365Outlook.SendEmail(
+                    email_input_value,
+                    "Your invite link to the intake form",
+                   If(
+                    course_input_value = "Python",
+                    "Intake link for Python course",
+                    If(
+                        course_input_value = "Java",
+                        "Intake link for Java course",
+                        If(
+                            course_input_value = "PowerBI",
+                            "Intake link for PowerBI course",
+                            "Intake link for other courses"
+                        )
+                    )
+                )
+                )
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -106,6 +124,7 @@ admin_screen_sendIntakes As screen:
         Default: =""
         Fill: =RGBA(241, 244, 249, 1)
         HintText: ="jan.janssen@gmail.com"
+        OnChange: =Set(email_input_value, email_address_input.Text)
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -120,6 +139,7 @@ admin_screen_sendIntakes As screen:
         Default: =""
         Fill: =RGBA(241, 244, 249, 1)
         Items: =["Python", "PowerBI", "Java",]
+        OnChange: =Set(course_input_value, choose_course_button.Selected.Value)
         SelectionColor: =RGBA(0, 16, 96, 1)
         SelectionFill: =RGBA(241, 244, 249, 1)
         X: =73
