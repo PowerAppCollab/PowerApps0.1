@@ -1,0 +1,257 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_azltrainingsregistraties",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_azltrainingsregistratie",
+    "Name": "AZL Trainingsregistratie",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "cr884_azltrainingsregistratieid": "AZL Trainingsregistratie",
+      "cr884_completiondate": "Completion date",
+      "cr884_email": "Email",
+      "cr884_ervaringmetprogrammeren": "Ervaring met programmeren?",
+      "cr884_functietitelbinnenazl": "Functietitel binnen AZL",
+      "cr884_gaatjouwvoorkeuruitnaardigitaalof": "Gaat jouw voorkeur uit naar digitaal of hardcopy trainingsmateriaal?",
+      "cr884_geboortedatum": "Geboortedatum",
+      "cr884_geslacht": "Geslacht",
+      "cr884_hoeveeljaarervaringhebjemetdegeno": "Hoeveel jaar ervaring heb je met de genoemde programmeertaal/ talen?",
+      "cr884_hoeveeltijdkunjebestedenaandezetr": "Hoeveel tijd kun je besteden aan deze training (in uren per week)?",
+      "cr884_hoogstgenotenopleiding": "Hoogst genoten opleiding?",
+      "cr884_indicatieniveaudatabases": "Indicatie Niveau Databases",
+      "cr884_indicatieniveauexcel": "Indicatie Niveau Excel",
+      "cr884_kunjekorttoelichtenwatjereedsmetd": "Kun je kort toelichten wat je reeds met Databases en/of Query's gedaan hebt? ",
+      "cr884_kunjekorttoelichtenwatjereedsmete": "Kun je kort toelichten wat je reeds met Excel gedaan hebt? ",
+      "cr884_matchscore": "MatchScore",
+      "cr884_matchscoreintake": "MatchScore Intake",
+      "cr884_matchscoretests": "MatchScore Tests",
+      "cr884_naam": "Naam",
+      "cr884_pythonprogrammerenalgoritmenopins": "Python (programmeren): algoritmen op instapniveau",
+      "cr884_status": "Status (cr884_status)",
+      "cr884_telefoonnummer": "Telefoonnummer",
+      "cr884_watisjegebruikelijkeleermethodeof": "Wat is je gebruikelijke leermethode of -stijl? (Bijvoorbeeld: klassikale training, zelfstudie, praktijkgerichte oefeningen).",
+      "cr884_watverwachtjevandezetraining": "Wat verwacht je van deze training?",
+      "cr884_watzijnjespecifiekedoelstellingen": "Wat zijn je specifieke doelstellingen voor deze Python training?",
+      "cr884_welkeuitdagingenofproblemenbestaa": "Welke uitdagingen of problemen bestaan momenteel in je werk met betrekking tot Python?",
+      "cr884_zijnerspecifiekeonderwerpenbinnen": "Zijn er specifieke onderwerpen binnen Python waar je extra aandacht aan wilt besteden tijdens de training?",
+      "cr884_zojametwelkeprogrammeertaaloftale": "Zo ja, met welke programmeertaal of talen heb je ervaring?",
+      "createdon": "Gemaakt op",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedon": "Gewijzigd op",
+      "overriddencreatedon": "Record is gemaakt op",
+      "statecode": "Status (statecode)",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "AZL Trainingsregistratie",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Ervaring met programmeren? (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_ervaringmetprogrammeren",
+    "OptionSetInfoNameMapping": {
+      "0": "Ja",
+      "1": "Nee"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_ervaringmetprogrammeren",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_ervaringmetprogrammeren",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Gaat jouw voorkeur uit naar digitaal of hardcopy trainingsmateriaal? (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_gaatjouwvoorkeuruitnaardigitaalof",
+    "OptionSetInfoNameMapping": {
+      "0": "Digitaal",
+      "1": "Hardcopy"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_gaatjouwvoorkeuruitnaardigitaalof",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_gaatjouwvoorkeuruitnaardigitaalof",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Geslacht (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_geslacht",
+    "OptionSetInfoNameMapping": {
+      "0": "Man",
+      "1": "Vrouw"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_geslacht",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_geslacht",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Hoogst genoten opleiding? (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_hoogstgenotenopleiding",
+    "OptionSetInfoNameMapping": {
+      "0": "Lbo",
+      "1": "Wo",
+      "2": "Hbo",
+      "3": "PhD"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_hoogstgenotenopleiding",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_hoogstgenotenopleiding",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Indicatie Niveau Databases (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_indicatieniveaudatabases",
+    "OptionSetInfoNameMapping": {
+      "0": "Gemiddelde ervaring",
+      "1": "Geen of beperkte ervaring",
+      "2": "Gevorderde of deskundige ervaring"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_indicatieniveaudatabases",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_indicatieniveaudatabases",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Indicatie Niveau Excel (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_indicatieniveauexcel",
+    "OptionSetInfoNameMapping": {
+      "0": "Gemiddelde ervaring",
+      "1": "Gevorderde of deskundige ervaring",
+      "2": "Geen of beperkte ervaring"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_indicatieniveauexcel",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_indicatieniveauexcel",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Python (programmeren): algoritmen op instapniveau (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_pythonprogrammerenalgoritmenopins",
+    "OptionSetInfoNameMapping": {
+      "0": "100",
+      "1": "83",
+      "2": "0 (2)"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_pythonprogrammerenalgoritmenopins",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_pythonprogrammerenalgoritmenopins",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (AZL Trainingsregistratie)",
+    "Name": "cr884_azltrainingsregistratie_cr884_status",
+    "OptionSetInfoNameMapping": {
+      "0": "Voltooid",
+      "1": "Uitgenodigd"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_status",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_status",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (AZL Trainingsregistratie)_1",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1fe914345d_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (AZL Trainingsregistratie)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1fe914345d_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "AZL Trainingsregistratie"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "AZL Trainingsregistratie",
+    "Type": "OptionSetInfo"
+  }
+]
