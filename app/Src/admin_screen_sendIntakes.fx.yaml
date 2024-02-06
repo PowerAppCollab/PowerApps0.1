@@ -95,18 +95,18 @@ admin_screen_sendIntakes As screen:
                 =Office365Outlook.SendEmail(
                     email_input_value,
                     "Your invite link to the intake form",
-                   If(
-                    course_input_value = "Python",
-                    "Intake link for Python course",
                     If(
-                        course_input_value = "Java",
-                        "Intake link for Java course",
+                        course_input_value = "Python",
+                        "Link to form: https://forms.office.com/e/eWQtPEKwSM",
                         If(
-                            course_input_value = "PowerBI",
-                            "Link to form: https://forms.office.com/Pages/ResponsePage.aspx?id=H5QUx-zY2kOqqB439DgomD_2ifuzNNhEgA8_LNhGXb5UOTJMQVFWNDFJV1gyMTM2Q1YyS0NYVlJCSS4u"
+                            course_input_value = "Java",
+                            "Intake link for Java course",
+                            If(
+                                course_input_value = "PowerBI",
+                                "Link to form: https://forms.office.com/e/LiVXLmiE8e"
+                            )
                         )
                     )
-                )
                 )
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
