@@ -90,21 +90,17 @@ admin_screen_sendIntakes As screen:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(241, 244, 249, 1)
             Fill: =RGBA(102, 113, 166, 1)
-            HoverColor: =
-            OnSelect: |-
-                =Set(
-                    isErrorVisible,
-                    false
-                );
-                Set(
-                    isVisible,
-                    false
-                );
+            HoverBorderColor: =
+            HoverColor: =RGBA(0,0,0, 1)
+            HoverFill: =RGBA(241, 244, 249, 1)
+            OnSelect: |
+                =Set(isErrorVisible, false);
+                Set(isVisible, false);
+                
                 If(
-                    IsMatch(
-                        email_input_value,
-                        "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                    ),
+                    IsMatch(email_input_value, "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"),
+                    Set(isErrorVisible, true);
+                    Set(isVisible, true);
                     If(
                         Office365Outlook.SendEmail(
                             email_input_value,
@@ -122,22 +118,8 @@ admin_screen_sendIntakes As screen:
                                 )
                             )
                         ),
-                        Set(
-                            isErrorVisible,
-                            false
-                        ),
-                        Set(
-                            isVisible,
-                            true
-                        )
-                    ),
-                    Set(
-                        isErrorVisible,
-                        true
-                    ),
-                    Set(
-                        isVisible,
-                        false
+                        Set(isErrorVisible, true),
+                        Set(isVisible, false)
                     )
                 )
             RadiusBottomLeft: =0
