@@ -91,30 +91,63 @@ admin_screen_sendIntakes As screen:
             Color: =RGBA(241, 244, 249, 1)
             Fill: =RGBA(102, 113, 166, 1)
             HoverColor: =
-            OnSelect: |
-                =If(
-                    IsMatch(email_input_value, "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"),
+            OnSelect: |-
+                =Set(isErrorVisible, false);
+                Set(isVisible, false);
+                If(
+                    IsMatch(
+                        email_input_value,
+                        "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    ),
                     Office365Outlook.SendEmail(
                         email_input_value,
                         "Your invite link to the intake form",
                         If(
                             course_input_value = "Python",
                             "Link to form: https://forms.office.com/e/eWQtPEKwSM",
+                            Set(
+                                isErrorVisible,
+                                false
+                            ),
+                            Set(
+                                isVisible,
+                                true
+                            ),
                             If(
                                 course_input_value = "Java",
                                 "Intake link for Java course",
+                                Set(
+                                    isErrorVisible,
+                                    false
+                                ),
+                                Set(
+                                    isVisible,
+                                    true
+                                ),
                                 If(
                                     course_input_value = "PowerBI",
                                     "Link to form: https://forms.office.com/e/LiVXLmiE8e",
-                                    "Error: Course not recognized"
+                                    Set(
+                                        isErrorVisible,
+                                        false
+                                    ),
+                                    Set(
+                                        isVisible,
+                                        true
+                                    )
                                 )
                             )
                         )
                     ),
-                    Set(IsErrorVisible, true)
-                );
-                
-                Set(isVisible, true)
+                    Set(
+                        isErrorVisible,
+                        true
+                    ),
+                    Set(
+                        isVisible,
+                        false
+                    )
+                )
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -137,6 +170,7 @@ admin_screen_sendIntakes As screen:
             ZIndex: =4
 
         Label5_1 As label:
+            Color: =RGBA(184, 0, 0, 1)
             Height: =46
             Text: ="Please provide a correct email address."
             Visible: =isErrorVisible
