@@ -1,8 +1,8 @@
-admin_screen As screen:
+admin_screen_sendIntakes As screen:
     Fill: =RGBA(241, 244, 249, 1)
     OnVisible: =
 
-    navBarAdmin As rectangle:
+    navBarAdmin_1 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
         Height: =84
         Width: =1300
@@ -10,29 +10,28 @@ admin_screen As screen:
         Y: =25
         ZIndex: =1
 
-    Label1 As label:
+    Label1_1 As label:
         Color: =RGBA(51, 51, 51, 1)
         FontWeight: =FontWeight.Semibold
         Size: =15
         Text: |
-            ="Welcome " & usernameAdmin
+            ="Send Intakes"
         Width: =250
         X: =73
         Y: =47
         ZIndex: =2
 
-    Button2_3 As button:
+    Button2_5 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
         HoverFill: =
-        OnSelect: =Navigate(admin_screen_sendIntakes)
-        Text: ="Send Intakes"
+        Text: ="Nav2"
         X: =980
         Y: =47
         ZIndex: =4
 
-    Button2_4 As button:
+    Button2_6 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
@@ -44,7 +43,7 @@ admin_screen As screen:
         Y: =47
         ZIndex: =5
 
-    intakeNavButton As button:
+    intakeNavButton_1 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(0, 0, 0, 0)
@@ -57,4 +56,24 @@ admin_screen As screen:
         X: =820
         Y: =47
         ZIndex: =6
+
+    Container2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =578
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =1300
+        X: =35
+        Y: =154
+        ZIndex: =7
+
+        Label3 As label:
+            Height: =46
+            Text: ="What course is the person interested in?"
+            Width: =368
+            X: =40
+            Y: =40
+            ZIndex: =1
 
