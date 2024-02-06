@@ -1,13 +1,6 @@
 {
   "DatasetName": "default.cds",
   "EntityName": "AZL Trainingsregistratie",
-  "environmentVariableName": "",
-  "InstanceUrl": "https://orgd57aa604.crm4.dynamics.com",
-  "LocalReferenceDSJson": {
-    "entitySetName": "cr884_azltrainingsregistraties",
-    "logicalName": "cr884_azltrainingsregistratie"
-  },
-  "state": "Configured",
   "TableDefinition": {
     "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://orgd57aa604.crm4.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('cr884_azltrainingsregistratie')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
     "DefaultPublicView": "{\"@odata.context\":\"https://orgd57aa604.crm4.dynamics.com/api/data/v9.0/$metadata#savedqueries(layoutxml)\",\"value\":[]}",
@@ -21,7 +14,5 @@
     "StatusOptionSetAttribute": "{\"@odata.context\":\"https://orgd57aa604.crm4.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('cr884_azltrainingsregistratie')/Attributes/Microsoft.Dynamics.CRM.StatusAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[{\"MetadataId\":\"5520a517-83c4-42f7-abb8-22528c6137da\",\"LogicalName\":\"statuscode\",\"SchemaName\":\"statuscode\",\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Reden van status\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"29b20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Reden van status\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"29b20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}},\"OptionSet\":{\"MetadataId\":\"2eb20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null,\"IsCustomOptionSet\":true,\"IsGlobal\":false,\"IsManaged\":false,\"Name\":\"new_reserveentity_rp53fd1p1ekxpa_t7_1fe914345d_statuscode\",\"ExternalTypeName\":null,\"OptionSetType\":\"Status\",\"IntroducedVersion\":\"1.0\",\"ParentOptionSetName\":null,\"Description\":{\"LocalizedLabels\":[{\"Label\":\"De reden van de status van de Reserve entity 1fe914345d\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"30b20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"De reden van de status van de Reserve entity 1fe914345d\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"30b20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Reden van status\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2fb20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Reden van status\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2fb20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}},\"IsCustomizable\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"Options\":[{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StatusOptionMetadata\",\"Value\":1,\"Color\":null,\"IsManaged\":false,\"ExternalValue\":null,\"ParentValues\":[],\"Tag\":null,\"IsHidden\":false,\"MetadataId\":null,\"HasChanged\":null,\"State\":0,\"TransitionData\":null,\"Label\":{\"LocalizedLabels\":[{\"Label\":\"Actief\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2bb20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Actief\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2bb20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}},\"Description\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StatusOptionMetadata\",\"Value\":2,\"Color\":null,\"IsManaged\":false,\"ExternalValue\":null,\"ParentValues\":[],\"Tag\":null,\"IsHidden\":false,\"MetadataId\":null,\"HasChanged\":null,\"State\":1,\"TransitionData\":null,\"Label\":{\"LocalizedLabels\":[{\"Label\":\"Inactief\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2db20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Inactief\",\"LanguageCode\":1043,\"IsManaged\":false,\"MetadataId\":\"2db20e8d-b485-ee11-8179-0022489bee1d\",\"HasChanged\":null}},\"Description\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null}}]}}]}",
     "TableName": "cr884_azltrainingsregistratie",
     "Views": "{\"@odata.context\":\"https://orgd57aa604.crm4.dynamics.com/api/data/v9.0/$metadata#savedqueries(savedqueryid,name,querytype)\",\"value\":[]}"
-  },
-  "UnusedDataSources": {},
-  "webApiVersion": "v9.0"
+  }
 }
