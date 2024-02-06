@@ -161,7 +161,7 @@ admin_screen_sendIntakes As screen:
         Label5 As label:
             Height: =46
             Text: |
-                ="U have sent an email to: " & email_input_value & ". The recipient will receive the link for the intake form."
+                ="U have sent an email to: " & email_input_value & ". The recipient will receive the link for the " & course_input_value & "intake form."
             Visible: =isVisible
             Width: =722
             X: =538
