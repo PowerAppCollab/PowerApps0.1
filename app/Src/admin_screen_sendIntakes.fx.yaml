@@ -73,7 +73,31 @@ admin_screen_sendIntakes As screen:
             Height: =46
             Text: ="What course is the person interested in?"
             Width: =368
-            X: =40
-            Y: =40
+            X: =39
+            Y: =27
             ZIndex: =1
+
+    TextInput1 As text:
+        BorderStyle: =BorderStyle.None
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        HintText: ="da"
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        X: =73
+        Y: =390
+        ZIndex: =8
+
+    Dropdown1 As dropdown:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(102, 113, 166, 1)
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        Items: =["Python", "PowerBI", "Java",]
+        SelectionFill: =RGBA(241, 244, 249, 1)
+        X: =73
+        Y: =229
+        ZIndex: =9
 
