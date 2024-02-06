@@ -398,6 +398,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.OnVisible",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "intake_screen",
+                "type": "intake_screen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 2
         }
       ],
       "tool": {
@@ -437,6 +467,23 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "app-CollectDelegatableDataSource",
+              "messageStrings": {
+                "issue": {
+                  "text": "De rijen die zijn opgehaald uit de gegevensbron, zijn mogelijk niet volledig."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Beperk de gegevens die worden verzameld van de gegevensbron door de formule ClearCollect(colMerged; 'TEST Intake Python Training') bij te werken zodat deze een filterfunctie bevat, zoals Filter of Search."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Als u de functie Collect gebruikt om rechtstreeks een verzameling te maken op basis van een verbonden gegevensbron, worden mogelijk niet alle rijen geladen als de gegevensbron te groot is."
               }
             }
           ],
