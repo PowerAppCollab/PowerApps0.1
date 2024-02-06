@@ -91,12 +91,20 @@ admin_screen_sendIntakes As screen:
             Color: =RGBA(241, 244, 249, 1)
             Fill: =RGBA(102, 113, 166, 1)
             HoverColor: =
-            OnSelect: |
-                =Set(isErrorVisible, false),
-                Set(isVisible, false),
-                
+            OnSelect: |-
+                =Set(
+                    isErrorVisible,
+                    false
+                );
+                Set(
+                    isVisible,
+                    false
+                );
                 If(
-                    IsMatch(email_input_value, "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"),
+                    IsMatch(
+                        email_input_value,
+                        "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    ),
                     If(
                         Office365Outlook.SendEmail(
                             email_input_value,
@@ -113,12 +121,24 @@ admin_screen_sendIntakes As screen:
                                     )
                                 )
                             )
+                        ),
+                        Set(
+                            isErrorVisible,
+                            false
+                        ),
+                        Set(
+                            isVisible,
+                            true
                         )
-                         Set(isErrorVisible, false),
-                        Set(isVisible, true)
+                    ),
+                    Set(
+                        isErrorVisible,
+                        true
+                    ),
+                    Set(
+                        isVisible,
+                        false
                     )
-                     Set(isErrorVisible, true),
-                        Set(isVisible, false)
                 )
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
