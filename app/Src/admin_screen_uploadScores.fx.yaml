@@ -1,0 +1,198 @@
+admin_screen_uploadScores As screen:
+    Fill: =RGBA(241, 244, 249, 1)
+    OnVisible: =Set(isVisible, false)
+
+    navBarAdmin_2 As rectangle:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =84
+        Width: =1300
+        X: =35
+        Y: =25
+        ZIndex: =1
+
+    Label1_2 As label:
+        Color: =RGBA(51, 51, 51, 1)
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: |
+            ="Send Intakes"
+        Width: =250
+        X: =73
+        Y: =47
+        ZIndex: =2
+
+    Button2_7 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(admin_screen_uploadScores);
+        Text: ="Send Intakes"
+        X: =980
+        Y: =47
+        ZIndex: =3
+
+    Button2_8 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        Text: |-
+            ="Nav3
+            "
+        X: =1140
+        Y: =47
+        ZIndex: =4
+
+    intakeNavButton_2 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(intake_screen)
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        Text: ="Intakes"
+        X: =820
+        Y: =47
+        ZIndex: =5
+
+    Container2_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =578
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =1300
+        X: =35
+        Y: =154
+        ZIndex: =6
+
+        Label3_2 As label:
+            Height: =46
+            Text: ="What course is the person interested in?"
+            Width: =368
+            X: =39
+            Y: =37
+            ZIndex: =1
+
+        Label3_3 As label:
+            Height: =46
+            Text: |-
+                ="Email:"
+            Width: =368
+            X: =39
+            Y: =130
+            ZIndex: =2
+
+        submit_sendEmail_1 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(241, 244, 249, 1)
+            Fill: =RGBA(102, 113, 166, 1)
+            HoverBorderColor: =
+            HoverColor: =RGBA(0,0,0, 1)
+            HoverFill: =RGBA(241, 244, 249, 1)
+            OnSelect: |
+                =Set(
+                    isErrorVisible,
+                    false
+                );
+                Set(
+                    isVisible,
+                    false
+                );
+                If(
+                    IsMatch(
+                        email_input_value,
+                        "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    ),
+                    If(
+                        Office365Outlook.SendEmail(
+                            email_input_value,
+                            "Your invite link to the intake form",
+                            If(
+                                course_input_value = "Python",
+                                "Link to form: https://forms.office.com/e/eWQtPEKwSM",
+                                If(
+                                    course_input_value = "Java",
+                                    "Intake link for Java course",
+                                    If(
+                                        course_input_value = "PowerBI",
+                                        "Link to form: https://forms.office.com/e/LiVXLmiE8e"
+                                    )
+                                )
+                            )
+                        ),
+                        Set(
+                            isVisible,
+                            true
+                        )
+                    ),
+                    Set(
+                        isErrorVisible,
+                        true
+                    ),
+                    Set(
+                        isVisible,
+                        false
+                    )
+                );
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Knop"
+            Width: =320
+            X: =39
+            Y: =250
+            ZIndex: =3
+
+        Label5_2 As label:
+            Height: =46
+            Text: |
+                ="U have sent an email to: " & Text(email_input_value, "Bold") & ". The recipient will receive the link for the " & Text(course_input_value, "Bold") & " intake form."
+            Visible: =isVisible
+            Width: =722
+            X: =538
+            Y: =37
+            ZIndex: =4
+
+        Label5_3 As label:
+            Color: =RGBA(184, 0, 0, 1)
+            Height: =46
+            Text: ="Please provide a correct email address."
+            Visible: =isErrorVisible
+            Width: =336
+            X: =39
+            Y: =204
+            ZIndex: =5
+
+    email_address_input_1 As text:
+        BorderStyle: =BorderStyle.None
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        HintText: ="jan.janssen@gmail.com"
+        OnChange: =Set(email_input_value, email_address_input_1.Text)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        X: =73
+        Y: =324
+        ZIndex: =7
+
+    choose_course_button_1 As dropdown:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(102, 113, 166, 1)
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        Items: =["Python", "PowerBI", "Java",]
+        OnChange: =Set(course_input_value, choose_course_button_1.Selected.Value)
+        SelectionColor: =RGBA(0, 16, 96, 1)
+        SelectionFill: =RGBA(241, 244, 249, 1)
+        X: =73
+        Y: =229
+        ZIndex: =8
+
