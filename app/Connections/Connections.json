@@ -27,7 +27,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b"
+      "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b",
+      "5db72587-84a6-40b6-a86d-ac67cb29d8aa"
     ],
     "id": "00106cf0-ef67-4cd9-818e-824fd17124f7"
   },
@@ -37,6 +38,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "00106cf0-ef67-4cd9-818e-824fd17124f7": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "PowerAppV2 -> Item maken"
         },
@@ -46,6 +50,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+        },
         "workflowDisplayName": {
           "value": "PowerAppV2 -> Item maken"
         },
@@ -65,6 +72,41 @@
     "dependents": [],
     "id": "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b"
   },
+  "5db72587-84a6-40b6-a86d-ac67cb29d8aa": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "Upload Excel File"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c1f6dc2b-8156-4857-86d5-15ac7da978ca"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "Upload Excel File"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c1f6dc2b-8156-4857-86d5-15ac7da978ca"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "UploadExcelFile"
+    ],
+    "dependencies": {
+      "shared_office365": "c1990989-d1b3-409a-8532-7a50671b4cd9",
+      "shared_sharepointonline": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+    },
+    "dependents": [],
+    "id": "5db72587-84a6-40b6-a86d-ac67cb29d8aa"
+  },
   "c1990989-d1b3-409a-8532-7a50671b4cd9": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
@@ -76,7 +118,9 @@
       "Office365Outlook"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "5db72587-84a6-40b6-a86d-ac67cb29d8aa"
+    ],
     "id": "c1990989-d1b3-409a-8532-7a50671b4cd9"
   }
 }

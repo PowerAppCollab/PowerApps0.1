@@ -78,7 +78,7 @@ admin_screen_uploadScores As screen:
             HoverColor: =RGBA(0,0,0, 1)
             HoverFill: =RGBA(241, 244, 249, 1)
             OnSelect: |
-                =
+                =UploadExcelFile.Run(AddMediaButton1.FileName, JSON(AddMediaButton1.Media, JSONFormat.IncludeBinaryData));
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -89,7 +89,7 @@ admin_screen_uploadScores As screen:
             Y: =250
             ZIndex: =3
 
-        AddMediaWithImage1 As group:
+        AddMediaButton As group:
             Height: =5
             Width: =5
             X: =40
