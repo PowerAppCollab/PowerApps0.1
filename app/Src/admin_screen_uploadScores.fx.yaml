@@ -78,7 +78,7 @@ admin_screen_uploadScores As screen:
             HoverColor: =RGBA(0,0,0, 1)
             HoverFill: =RGBA(241, 244, 249, 1)
             OnSelect: |
-                =Upload(FileDialog1.FileName, FileDialog1.SelectedItems)
+                =
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
