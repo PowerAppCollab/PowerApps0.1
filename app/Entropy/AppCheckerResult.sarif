@@ -14,29 +14,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 55,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Upload(FileDialog1.FileName; FileDialog1.SelectedItems)"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "admin_screen_sendIntakes",
-                "type": "admin_screen_sendIntakes.choose_course_button"
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.upload_excelFile"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "Upload"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrUnknownFunction",
           "ruleIndex": 0
         },
         {
@@ -44,19 +54,66 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 7,
+                  "snippet": {
+                    "text": "FileDialog1"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "admin_screen_sendIntakes",
-                "type": "admin_screen_sendIntakes.email_address_input"
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.upload_excelFile"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "FileDialog1"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18,
+                  "snippet": {
+                    "text": ".FileName"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.upload_excelFile"
               }
             }
           ],
@@ -64,10 +121,281 @@
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 29,
+                  "snippet": {
+                    "text": "FileDialog1"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.upload_excelFile"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "FileDialog1"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.upload_excelFile.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 40,
+                  "snippet": {
+                    "text": ".SelectedItems"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.upload_excelFile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 47,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Upload(AddPicture1.FileName; AddPicture1.Image)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Upload"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrUnknownFunction",
           "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 7,
+                  "snippet": {
+                    "text": "AddPicture1"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "AddPicture1"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18,
+                  "snippet": {
+                    "text": ".FileName"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 29,
+                  "snippet": {
+                    "text": "AddPicture1"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "AddPicture1"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 6,
+                  "charOffset": 40,
+                  "snippet": {
+                    "text": ".Image"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -97,7 +425,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -127,7 +455,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -157,7 +485,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -187,7 +515,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -217,7 +545,67 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "admin_screen_sendIntakes",
+                "type": "admin_screen_sendIntakes.choose_course_button"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "admin_screen_sendIntakes",
+                "type": "admin_screen_sendIntakes.email_address_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -247,7 +635,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -277,7 +665,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -307,7 +695,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -337,7 +725,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_uploadScores.Container2_1.AddMediaButton1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "admin_screen_uploadScores",
+                "type": "admin_screen_uploadScores.Container2_1.AddMediaButton1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -367,7 +785,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 2
+          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -375,6 +793,51 @@
           "fullName": "PowerApps app checker",
           "name": "PowerApps app checker",
           "rules": [
+            {
+              "id": "app-ErrUnknownFunction",
+              "messageStrings": {
+                "issue": {
+                  "text": "'{0}' is an unknown or unsupported function."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidDot",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid use of '.'"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
             {
               "id": "acc-AccessibleLabelNeeded",
               "messageStrings": {

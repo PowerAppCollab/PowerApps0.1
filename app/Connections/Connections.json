@@ -26,8 +26,45 @@
       "testResultaten_powerBI"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "08cccd78-e6f6-490e-a119-4553b7245dfe"
+    ],
     "id": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+  },
+  "08cccd78-e6f6-490e-a119-4553b7245dfe": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "Een item aan SharePoint toevoegen en een e-mail verzenden"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c0e24193-9e20-4de0-99aa-3a8ee3a8d571"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "Een item aan SharePoint toevoegen en een e-mail verzenden"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c0e24193-9e20-4de0-99aa-3a8ee3a8d571"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "EenitemaanSharePointtoevoegeneneene-mailverzenden"
+    ],
+    "dependencies": {
+      "shared_office365": "c1990989-d1b3-409a-8532-7a50671b4cd9",
+      "shared_sharepointonline": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+    },
+    "dependents": [],
+    "id": "08cccd78-e6f6-490e-a119-4553b7245dfe"
   },
   "c1990989-d1b3-409a-8532-7a50671b4cd9": {
     "connectionRef": {
@@ -40,7 +77,9 @@
       "Office365Outlook"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "08cccd78-e6f6-490e-a119-4553b7245dfe"
+    ],
     "id": "c1990989-d1b3-409a-8532-7a50671b4cd9"
   }
 }
