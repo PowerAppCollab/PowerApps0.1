@@ -4,6 +4,7 @@ intake_screen As screen:
 
     "GalleryInspection As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
+        Height: =485
         Items: |
             ='intakeResults'
         Layout: =Layout.Vertical
@@ -22,7 +23,7 @@ intake_screen As screen:
         TemplatePadding: =0
         TemplateSize: =104
         X: =40
-        Y: =40
+        Y: =129
         ZIndex: =1
 
         Image1 As image:
@@ -218,48 +219,12 @@ intake_screen As screen:
 
     FormViewer1 As formViewer:
         DataSource: =intakeResults
-        Height: =434
+        Height: =388
+        Item: =GalleryInspection.Selected
         Width: =604
         X: =720
-        Y: =44
+        Y: =90
         ZIndex: =8
-
-        Titel_DataCard1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Title"
-            Default: =ThisItem.Titel
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"Title")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =201
-            X: =0
-            Y: =0
-            ZIndex: =9
-
-            DataCardKey1 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue1 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
-                ZIndex: =2
 
         fullname_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
@@ -271,7 +236,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =1
+            X: =0
             Y: =0
             ZIndex: =9
 
@@ -299,7 +264,7 @@ intake_screen As screen:
                 ZIndex: =2
 
         gender_DataCard1 As typedDataCard.comboBoxViewCard:
-            BorderStyle: =BorderStyle.Solid
+            BorderStyle: =BorderStyle.Dotted
             DataField: ="gender"
             Default: =ThisItem.gender
             DisplayMode: =DisplayMode.View
@@ -309,7 +274,7 @@ intake_screen As screen:
             Required: =false
             Update: =DataCardValue3.Selected
             Width: =201
-            X: =2
+            X: =1
             Y: =0
             ZIndex: =9
 
@@ -328,6 +293,7 @@ intake_screen As screen:
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(241, 244, 249, 1)
                 Items: =Choices([@intakeResults].gender)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
@@ -373,8 +339,8 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =0
-            Y: =1
+            X: =2
+            Y: =0
             ZIndex: =9
 
             DataCardKey4 As label:
@@ -410,7 +376,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =1
+            X: =0
             Y: =1
             ZIndex: =9
 
@@ -447,7 +413,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =2
+            X: =1
             Y: =1
             ZIndex: =9
 
@@ -474,43 +440,6 @@ intake_screen As screen:
                 Y: =DataCardKey6.Y + DataCardKey6.Height + 5
                 ZIndex: =2
 
-        education_DataCard1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="education"
-            Default: =ThisItem.education
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"education")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =201
-            X: =0
-            Y: =2
-            ZIndex: =9
-
-            DataCardKey7 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue7 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
-                ZIndex: =2
-
         currentFunction_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="currentFunction"
@@ -521,7 +450,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =1
+            X: =0
             Y: =2
             ZIndex: =9
 
@@ -558,7 +487,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =2
+            X: =1
             Y: =2
             ZIndex: =9
 
@@ -585,43 +514,6 @@ intake_screen As screen:
                 Y: =DataCardKey9.Y + DataCardKey9.Height + 5
                 ZIndex: =2
 
-        yearsExperience_DataCard1 As typedDataCard.textualViewCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="yearsExperience"
-            Default: =ThisItem.yearsExperience
-            DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"yearsExperience")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Width: =201
-            X: =0
-            Y: =3
-            ZIndex: =9
-
-            DataCardKey10 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue10 As label:
-                AutoHeight: =true
-                DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey10.Y + DataCardKey10.Height + 5
-                ZIndex: =2
-
         programmingLanguages_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="programmingLanguages"
@@ -632,7 +524,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =1
+            X: =0
             Y: =3
             ZIndex: =9
 
@@ -669,7 +561,7 @@ intake_screen As screen:
             Height: =40
             Required: =false
             Width: =201
-            X: =2
+            X: =1
             Y: =3
             ZIndex: =9
 
@@ -696,6 +588,80 @@ intake_screen As screen:
                 Y: =DataCardKey12.Y + DataCardKey12.Height + 5
                 ZIndex: =2
 
+        education_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="education"
+            Default: =ThisItem.education
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"education")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =201
+            X: =2
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                ZIndex: =2
+
+        yearsExperience_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="yearsExperience"
+            Default: =ThisItem.yearsExperience
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"yearsExperience")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =201
+            X: =2
+            Y: =2
+            ZIndex: =9
+
+            DataCardKey10 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10.Y + DataCardKey10.Height + 5
+                ZIndex: =2
+
         programmingExperience_DataCard1 As typedDataCard.comboBoxViewCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="programmingExperience"
@@ -707,8 +673,8 @@ intake_screen As screen:
             Required: =false
             Update: =DataCardValue13.Selected
             Width: =201
-            X: =0
-            Y: =4
+            X: =2
+            Y: =3
             ZIndex: =9
 
             DataCardKey13 As label:
@@ -726,6 +692,7 @@ intake_screen As screen:
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(241, 244, 249, 1)
                 Items: =Choices([@intakeResults].programmingExperience)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
