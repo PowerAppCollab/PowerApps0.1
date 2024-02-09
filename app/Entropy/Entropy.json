@@ -2,8 +2,8 @@
   "ComponentIndexes": {},
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
-    "AddMediaButton2": 107,
-    "AddMediaWithImage2": 108,
+    "AddMediaButton2": 101,
+    "AddMediaWithImage2": 104,
     "admin_screen": 77,
     "admin_screen_sendIntakes": 63,
     "admin_screen_uploadScores": 94,
@@ -100,20 +100,20 @@
     "TextInput3": 89,
     "Title1": 10,
     "trainingGoal_DataCard2": 51,
-    "upload_excelFile": 101,
-    "UploadedImage2": 106,
+    "upload_excelFile": 103,
+    "UploadedImage2": 102,
     "user_screen": 93,
     "ViewForm": 13,
     "yearsExperienceProgramming_DataCard2": 48
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/08/2024 09:46:59",
+  "HeaderLastSavedDateTimeUTC": "02/09/2024 09:57:50",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "00106cf0-ef67-4cd9-818e-824fd17124f7": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/18ed636a42a64d74a4351771b0a35296\"",
-    "5118a93f-8916-4282-be37-2ca78e8d2877": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/C1F6DC2B8156485786D515AC7DA978CA-E4F895229D9D1DD7\"",
-    "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/E109796B8D2A4A6CBC4CD3A4DEE5A8A8-E4F895229D9D1DD7\"",
+    "5118a93f-8916-4282-be37-2ca78e8d2877": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/c1f6dc2b8156485786d515ac7da978ca-e4f895229d9d1dd7\"",
+    "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/e109796b8d2a4a6cbc4cd3a4dee5a8a8-e4f895229d9d1dd7\"",
     "bae15d8f-31d3-45a0-952a-de0fb179e4da": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/shared-excelonlinebu-3f36aba5-bba6-4298-8ceb-e48a57022323\"",
     "c1990989-d1b3-409a-8532-7a50671b4cd9": "\"/providers/microsoft.powerapps/apis/shared_office365/connections/5830176a1b044b108e62069c66ef21ed\""
   },
@@ -122,7 +122,7 @@
     "work-at-layer": "0001.jpg"
   },
   "LocalResourceRootPaths": {
-    "work-at-layer": "https://docserverpwaprodneu.blob.core.windows.net/cb07c614-21af-4395-a38f-94e03ae9f4d0-1/resource/Assets0Images00001.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-02-08T07%3A55%3A16Z&ske=2024-02-09T08%3A10%3A16Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-02-09T08%3A10%3A16Z&sr=b&sp=r&sig=sS9rKdDiJ6AdhLR0zIw1wPUbgtboqAf4oN3c2dCe13s%3D"
+    "work-at-layer": "https://docserverpwaprodneu.blob.core.windows.net/4336339b-3c35-4222-b8b0-21466d94a227-1/resource/Assets0Images00001.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-02-09T09%3A49%3A28Z&ske=2024-02-10T10%3A04%3A28Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-02-10T10%3A04%3A28Z&sr=b&sp=r&sig=GfBEcHQr5NgMGIM1c9Y%2FEiDjGgukeUM9wHXpoKcKu3M%3D"
   },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
@@ -392,8 +392,9 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.533501,
+    "AnalysisLoadTime": 0.5358291,
     "ControlCount": {
+      "addMedia": 1,
       "button": 14,
       "combobox": 3,
       "dropdown": 1,
@@ -401,16 +402,17 @@
       "formViewer": 1,
       "gallery": 1,
       "galleryTemplate": 1,
+      "group": 1,
       "groupContainer": 3,
       "icon": 4,
-      "image": 1,
+      "image": 2,
       "label": 41,
       "rectangle": 5,
       "screen": 6,
       "text": 3,
       "typedDataCard": 13
     },
-    "DeserializationLoadTime": 2.3589588
+    "DeserializationLoadTime": 2.7751715
   },
   "WasLocalDatabaseReferencesEmpty": true
 }
