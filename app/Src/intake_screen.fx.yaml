@@ -759,8 +759,10 @@ intake_screen As screen:
 
     Form2 As form:
         DataSource: ='intakeResults'
-        X: =60
-        Y: =60
+        Height: =126
+        Width: =276
+        X: =118
+        Y: =446
         ZIndex: =14
 
         status_DataCard1 As typedDataCard.comboBoxEditCard:
@@ -773,7 +775,7 @@ intake_screen As screen:
             Height: =50
             Required: =true
             Update: =DataCardValue15.Selected
-            Width: =266
+            Width: =276
             X: =0
             Y: =0
             ZIndex: =1
