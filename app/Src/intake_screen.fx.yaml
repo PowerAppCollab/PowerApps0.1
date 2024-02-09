@@ -22,6 +22,7 @@ intake_screen As screen:
             
         TemplatePadding: =0
         TemplateSize: =104
+        Width: =622
         X: =40
         Y: =129
         ZIndex: =1
@@ -100,7 +101,7 @@ intake_screen As screen:
             ZIndex: =6
 
     FormInspection As form:
-        DataSource: ='TEST Intake Python Training'
+        DataSource: ='intakeResults'
         Height: =194
         Item: =GalleryInspection.Selected
         Width: =630
@@ -139,10 +140,11 @@ intake_screen As screen:
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
                 Items: =Choices([@'TEST Intake Python Training'].Status)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices('TEST Intake Python Training'.Status,DataCardValue14.SearchText)
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -189,41 +191,13 @@ intake_screen As screen:
         Y: =540
         ZIndex: =3
 
-    Label2 As label:
-        Color: =RGBA(0, 16, 96, 1)
-        Text: |-
-            ="Invite this user using an email to: " & selectedUserEmail
-        Width: =500
-        X: =752
-        Y: =621
-        ZIndex: =6
-
-    Button1_1 As button:
-        BorderStyle: =BorderStyle.None
-        Color: =RGBA(51, 51, 51, 1)
-        Fill: =RGBA(214, 223, 238, 1)
-        OnSelect: |+
-            =Office365Outlook.SendEmail(
-                selectedUserEmail,
-                "Send email from PowerApps",
-                "Your username: XXXX <br> Your password: " & Int(Rand() * 100))
-            
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Text: ="Submit"
-        X: =752
-        Y: =661
-        ZIndex: =7
-
     FormViewer1 As formViewer:
         DataSource: =intakeResults
-        Height: =388
+        Height: =349
         Item: =GalleryInspection.Selected
-        Width: =604
-        X: =720
-        Y: =90
+        Width: =673
+        X: =662
+        Y: =129
         ZIndex: =8
 
         fullname_DataCard1 As typedDataCard.textualViewCard:
@@ -235,7 +209,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =0
             Y: =0
             ZIndex: =9
@@ -273,7 +247,7 @@ intake_screen As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue3.Selected
-            Width: =201
+            Width: =224
             X: =1
             Y: =0
             ZIndex: =9
@@ -338,7 +312,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =2
             Y: =0
             ZIndex: =9
@@ -375,7 +349,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =0
             Y: =1
             ZIndex: =9
@@ -412,7 +386,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =1
             Y: =1
             ZIndex: =9
@@ -449,7 +423,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =0
             Y: =2
             ZIndex: =9
@@ -486,7 +460,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =1
             Y: =2
             ZIndex: =9
@@ -523,7 +497,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =0
             Y: =3
             ZIndex: =9
@@ -560,7 +534,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =1
             Y: =3
             ZIndex: =9
@@ -597,7 +571,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =2
             Y: =1
             ZIndex: =9
@@ -634,7 +608,7 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Width: =201
+            Width: =224
             X: =2
             Y: =2
             ZIndex: =9
@@ -672,7 +646,7 @@ intake_screen As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue13.Selected
-            Width: =201
+            Width: =224
             X: =2
             Y: =3
             ZIndex: =9
@@ -727,4 +701,59 @@ intake_screen As screen:
                 Wrap: =false
                 Y: =DataCardKey13.Y
                 ZIndex: =4
+
+    navBarAdmin_4 As rectangle:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =84
+        Width: =1300
+        X: =35
+        Y: =25
+        ZIndex: =9
+
+    Label1_4 As label:
+        Color: =RGBA(51, 51, 51, 1)
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: ="Admin Dashboard"
+        Width: =250
+        X: =73
+        Y: =47
+        ZIndex: =10
+
+    Button2_11 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(admin_screen_uploadScores);
+        Text: ="Send Intakes"
+        X: =980
+        Y: =47
+        ZIndex: =11
+
+    Button2_12 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        Text: |-
+            ="Students
+            "
+        X: =1140
+        Y: =47
+        ZIndex: =12
+
+    intakeNavButton_4 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(intake_screen)
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        Text: ="Intakes"
+        X: =820
+        Y: =47
+        ZIndex: =13
 

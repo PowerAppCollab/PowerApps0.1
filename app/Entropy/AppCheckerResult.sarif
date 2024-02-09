@@ -14,86 +14,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormInspection.DataSource"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.DataSource",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 29,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "'TEST Intake Python Training'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DataSource",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "TEST Intake Python Training"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.Default"
                 }
               ],
@@ -118,13 +38,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "Status"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 1
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -204,7 +127,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -321,244 +244,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 29,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": "'TEST Intake Python Training'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "TEST Intake Python Training"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 37,
-                  "snippet": {
-                    "text": ".Status"
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.SearchItems",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 72,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Choices('TEST Intake Python Training'.Status;DataCardValue14.SearchText)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "SearchItems",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Choices"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.Label2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.Label2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 41,
-                  "snippet": {
-                    "text": "selectedUserEmail"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "intake_screen",
-                "type": "intake_screen.Label2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "selectedUserEmail"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.Button1_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.Button1_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 32,
-                  "snippet": {
-                    "text": "selectedUserEmail"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "intake_screen",
-                "type": "intake_screen.Button1_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "selectedUserEmail"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.Button1_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.Button1_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 151,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Office365Outlook.SendEmail(\n    selectedUserEmail;\n    \"Send email from PowerApps\";\n    \"Your username: XXXX <br> Your password: \" & Int(Rand() * 100))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "intake_screen",
-                "type": "intake_screen.Button1_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SendEmail"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -588,7 +274,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -618,7 +304,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 4
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -648,7 +334,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -678,7 +364,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -708,7 +394,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -738,7 +424,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -768,7 +454,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -798,7 +484,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -828,7 +514,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -858,7 +544,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -888,7 +574,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 4
+          "ruleIndex": 3
         }
       ],
       "tool": {
@@ -908,20 +594,6 @@
                 "howToFix": [
                   "Remove or correct the reference to the name that isn't valid."
                 ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidDot",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid use of '.'"
-                }
-              },
-              "properties": {
-                "componentType": "app",
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
