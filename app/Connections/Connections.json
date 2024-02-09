@@ -6,24 +6,20 @@
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
     },
     "datasets": {
-      "https://veynex-my.sharepoint.com/personal/jools_reinartz_sphereit_nl": {
+      "https://veynex.sharepoint.com/sites/TESTGradematchPowerApps": {
         "dataSources": {
-          "TEST Intake Python Training": {
-            "tableName": "1918cb9d-5963-4380-b040-c86b1d958808"
+          "intakeResults": {
+            "tableName": "bab7e329-5dbb-4466-b66a-ecc857046329"
           },
-          "testResultaten_powerBI": {
-            "tableName": "9116adec-391a-4b57-9f0c-e198ce60ad3b"
-          },
-          "user_logins": {
-            "tableName": "ef514a4f-bb0e-4fa0-9195-1bd41b0ff3bb"
+          "students": {
+            "tableName": "40b97ae3-a7ac-42b5-9219-3a504780bec6"
           }
         }
       }
     },
     "dataSources": [
-      "user_logins",
-      "TEST Intake Python Training",
-      "testResultaten_powerBI"
+      "intakeResults",
+      "students"
     ],
     "dependencies": {},
     "dependents": [
@@ -132,18 +128,8 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
     },
-    "datasets": {
-      "https%253A%252F%252Fveynex-my.sharepoint.com%252Fpersonal%252Fjools_reinartz_sphereit_nl%252F,b%2521D8i5qi8bl0Otbb6MHchLziHvGmIu_JtDve-2XocZDzO9ShyFpVlGSbSj7cPjjmha,01JPDGPUQCIAA6VZMJFJHYWJJBF2WUC4W7": {
-        "dataSources": {
-          "Tabel2": {
-            "tableName": "{0387CEE5-7FC9-AC4E-9A01-E2476E8687E2}"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Tabel2"
-    ],
+    "datasets": {},
+    "dataSources": [],
     "dependencies": {},
     "dependents": [
       "5118a93f-8916-4282-be37-2ca78e8d2877"
@@ -165,5 +151,27 @@
       "5118a93f-8916-4282-be37-2ca78e8d2877"
     ],
     "id": "c1990989-d1b3-409a-8532-7a50671b4cd9"
+  },
+  "def9a81b-3d0b-42b9-a029-81fdd1d48503": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1674/1.0.1674.3602/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://veynex.sharepoint.com/sites/TESTGradematchPowerApps": {
+        "dataSources": {
+          "accountList": {
+            "tableName": "a19f0d65-b5d0-46c3-bf20-e9b7bb6d9971"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "accountList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "def9a81b-3d0b-42b9-a029-81fdd1d48503"
   }
 }

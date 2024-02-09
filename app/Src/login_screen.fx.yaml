@@ -67,7 +67,7 @@ login_screen As screen:
                 =Set(
                     userrolevalue,
                     LookUp(
-                        user_logins,
+                        accountList,
                         username = TextInput2.Text And password = TextInput3.Text
                     ).role
                 );
@@ -81,7 +81,7 @@ login_screen As screen:
                     Set(
                     usernameAdmin,
                     LookUp(
-                        user_logins,
+                        accountList,
                         username = TextInput2.Text And password = TextInput3.Text
                     ).username
                 );
