@@ -14,237 +14,30 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.Default"
+                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.Default",
+                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel",
                   "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Status"
-                  }
                 }
               },
               "properties": {
-                "member": "Default",
+                "member": "AccessibleLabel",
                 "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1"
+                "type": "intake_screen.FormInspection.status_DataCard1.DataCardValue15"
               }
             }
           ],
           "message": {
-            "arguments": [
-              "Status"
-            ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrInvalidName",
+          "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 29,
-                  "charOffset": 17,
-                  "snippet": {
-                    "text": "'TEST Intake Python Training'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "TEST Intake Python Training"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 84,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@'TEST Intake Python Training'];DataSourceInfo.DisplayName;\"Status\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 29,
-                  "charOffset": 10,
-                  "snippet": {
-                    "text": "'TEST Intake Python Training'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "TEST Intake Python Training"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 40,
-                  "snippet": {
-                    "text": ".Status"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 48,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Choices([@'TEST Intake Python Training'].Status)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Choices"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 1
         },
         {
           "locations": [
@@ -274,7 +67,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -304,37 +97,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -364,26 +127,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.AccessibleLabel"
+                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14.AccessibleLabel",
+                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "intake_screen",
-                "type": "intake_screen.FormInspection.Status_DataCard1.DataCardValue14"
+                "type": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13"
               }
             }
           ],
@@ -394,7 +157,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -424,7 +187,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -454,7 +217,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -484,7 +247,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -514,7 +277,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -544,7 +307,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -574,37 +337,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "intake_screen.Form2.status_DataCard1.DataCardValue15.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intake_screen.Form2.status_DataCard1.DataCardValue15.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.Form2.status_DataCard1.DataCardValue15"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 1
         }
       ],
       "tool": {
@@ -612,37 +345,6 @@
           "fullName": "PowerApps app checker",
           "name": "PowerApps app checker",
           "rules": [
-            {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidArgs-Func",
-              "messageStrings": {
-                "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
             {
               "id": "acc-AccessibleLabelNeeded",
               "messageStrings": {

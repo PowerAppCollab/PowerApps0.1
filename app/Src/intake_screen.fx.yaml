@@ -6,7 +6,7 @@ intake_screen As screen:
         DelayItemLoading: =true
         Height: =485
         Items: |
-            ='intakeResults'
+            =intakeResults
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: |
@@ -100,100 +100,9 @@ intake_screen As screen:
             Width: =4
             ZIndex: =6
 
-    FormInspection As form:
-        DataSource: ='intakeResults'
-        Height: =194
-        Item: =GalleryInspection.Selected
-        Width: =630
-        X: =720
-        Y: =490
-        ZIndex: =2
-
-        Status_DataCard1 As typedDataCard.comboBoxEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Status"
-            Default: =ThisItem.Status
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@'TEST Intake Python Training'],DataSourceInfo.DisplayName,"Status")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue14.Selected
-            Width: =210
-            X: =0
-            Y: =0
-            ZIndex: =3
-
-            DataCardKey14 As label:
-                AutoHeight: =true
-                Color: =RGBA(0, 16, 96, 1)
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue14 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["Value"]
-                DisplayMode: =Parent.DisplayMode
-                IsSearchable: =false
-                Items: =Choices([@'TEST Intake Python Training'].Status)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["Value"]
-                SearchItems: =[]
-                SelectMultiple: =false
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey14.Y + DataCardKey14.Height + 5
-                ZIndex: =2
-
-            ErrorMessage14 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue14.Y + DataCardValue14.Height
-                ZIndex: =3
-
-            StarVisible14 As label:
-                Align: =Align.Center
-                Height: =DataCardKey14.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey14.Y
-                ZIndex: =4
-
-    Button1 As button:
-        BorderStyle: =BorderStyle.None
-        Color: =RGBA(51, 51, 51, 1)
-        Fill: =RGBA(214, 223, 238, 1)
-        OnSelect: =SubmitForm(FormInspection);
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Text: ="Submit"
-        X: =912
-        Y: =540
-        ZIndex: =3
-
     FormViewer1 As formViewer:
         DataSource: =intakeResults
-        Height: =349
+        Height: =383
         Item: =GalleryInspection.Selected
         Width: =673
         X: =662
@@ -757,12 +666,13 @@ intake_screen As screen:
         Y: =47
         ZIndex: =13
 
-    Form2 As form:
-        DataSource: ='intakeResults'
+    FormInspection As form:
+        DataSource: =intakeResults
         Height: =126
+        Item: =GalleryInspection.Selected
         Width: =276
-        X: =118
-        Y: =446
+        X: =683
+        Y: =500
         ZIndex: =14
 
         status_DataCard1 As typedDataCard.comboBoxEditCard:
@@ -830,4 +740,18 @@ intake_screen As screen:
                 Wrap: =false
                 Y: =DataCardKey15.Y
                 ZIndex: =4
+
+    Button1_1 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(214, 223, 238, 1)
+        OnSelect: =SubmitForm(FormInspection);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Submit"
+        X: =944
+        Y: =548
+        ZIndex: =15
 
