@@ -771,33 +771,34 @@ intake_screen As screen:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(214, 223, 238, 1)
-        OnSelect: =
+        OnSelect: =CreateUserForIntake.Run()
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
         Text: ="Create User"
-        X: =191
-        Y: =644
+        X: =944
+        Y: =667
         ZIndex: =16
 
     Label7 As label:
         Text: ="Create a user for this intake"
         Width: =250
-        X: =282
+        X: =392
         Y: =684
         ZIndex: =17
 
-    Form1 As form:
+    FormInspection_1 As form:
         DataSource: =intakeResults
-        Height: =136
-        Width: =263
-        X: =697
-        Y: =620
+        Height: =126
+        Item: =GalleryInspection.Selected
+        Width: =276
+        X: =679
+        Y: =617
         ZIndex: =18
 
-        studentID_DataCard1 As typedDataCard.comboBoxEditCard:
+        studentID_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="studentID"
             Default: =ThisItem.studentID
@@ -806,13 +807,13 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue41.Selected
-            Width: =261
+            Update: =DataCardValue42.Selected
+            Width: =276
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey41 As label:
+            DataCardKey42 As label:
                 AutoHeight: =true
                 Height: =34
                 Text: =Parent.DisplayName
@@ -822,7 +823,7 @@ intake_screen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue41 As combobox:
+            DataCardValue42 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
@@ -830,15 +831,15 @@ intake_screen As screen:
                 Items: =Choices([@intakeResults].studentID)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.studentID,DataCardValue41.SearchText)
+                SearchItems: =Choices(intakeResults.studentID,DataCardValue42.SearchText)
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey41.Y + DataCardKey41.Height + 5
+                Y: =DataCardKey42.Y + DataCardKey42.Height + 5
                 ZIndex: =2
 
-            ErrorMessage21 As label:
+            ErrorMessage22 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -850,16 +851,16 @@ intake_screen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue41.Y + DataCardValue41.Height
+                Y: =DataCardValue42.Y + DataCardValue42.Height
                 ZIndex: =3
 
-            StarVisible21 As label:
+            StarVisible22 As label:
                 Align: =Align.Center
-                Height: =DataCardKey41.Height
+                Height: =DataCardKey42.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey41.Y
+                Y: =DataCardKey42.Y
                 ZIndex: =4
 
