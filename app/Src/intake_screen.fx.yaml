@@ -102,7 +102,7 @@ intake_screen As screen:
 
         Button1 As button:
             Height: =31
-            OnSelect: =Navigate(admin_screen_users)
+            OnSelect: =Navigate(admin_screen_viewUser)
             Text: ="View User"
             Width: =133
             X: =419
