@@ -104,6 +104,8 @@ intake_screen As screen:
             Height: =36
             Icon: =Icon.Information
             OnSelect: =Navigate(admin_screen_viewUser)
+            Visible: |
+                =!IsBlank(ThisItem.studentID)
             Width: =36
             X: =516
             Y: =34
@@ -763,4 +765,24 @@ intake_screen As screen:
         X: =944
         Y: =548
         ZIndex: =15
+
+    Button1_2 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(214, 223, 238, 1)
+        OnSelect: =SubmitForm(FormInspection);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Submit"
+        X: =1072
+        Y: =684
+        ZIndex: =16
+
+    Label7 As label:
+        Text: ="Tekst"
+        X: =60
+        Y: =60
+        ZIndex: =17
 

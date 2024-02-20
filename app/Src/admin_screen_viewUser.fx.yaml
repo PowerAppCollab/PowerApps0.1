@@ -1,7 +1,7 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
     OnVisible: |
-        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Title));
+        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Titel));
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
