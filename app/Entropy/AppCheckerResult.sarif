@@ -656,6 +656,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.Label1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.Label1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".firstName"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "admin_screen_viewUser",
+                "type": "admin_screen_viewUser.Container2_4.Gallery3.Label1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "firstName"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "admin_screen_users.Container2_3.Gallery1.AccessibleLabel"
                 }
               ],
