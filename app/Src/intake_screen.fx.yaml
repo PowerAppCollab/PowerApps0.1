@@ -778,89 +778,16 @@ intake_screen As screen:
         RadiusTopRight: =0
         Size: =12
         Text: ="Create User"
+        Visible: =IsBlank(GalleryInspection.Selected.studentID)
         X: =944
         Y: =667
         ZIndex: =16
 
     Label7 As label:
         Text: ="Create a user for this intake"
+        Visible: =IsBlank(GalleryInspection.Selected.studentID)
         Width: =250
-        X: =392
-        Y: =684
+        X: =678
+        Y: =667
         ZIndex: =17
-
-    FormInspection_1 As form:
-        DataSource: =intakeResults
-        Height: =126
-        Item: =GalleryInspection.Selected
-        Width: =276
-        X: =679
-        Y: =617
-        ZIndex: =18
-
-        studentID_DataCard2 As typedDataCard.comboBoxEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="studentID"
-            Default: =ThisItem.studentID
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"studentID")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue42.Selected
-            Width: =276
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-            DataCardKey42 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue42 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["Value"]
-                DisplayMode: =Parent.DisplayMode
-                Items: =Choices([@intakeResults].studentID)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.studentID,DataCardValue42.SearchText)
-                SelectMultiple: =false
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey42.Y + DataCardKey42.Height + 5
-                ZIndex: =2
-
-            ErrorMessage22 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue42.Y + DataCardValue42.Height
-                ZIndex: =3
-
-            StarVisible22 As label:
-                Align: =Align.Center
-                Height: =DataCardKey42.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey42.Y
-                ZIndex: =4
 
