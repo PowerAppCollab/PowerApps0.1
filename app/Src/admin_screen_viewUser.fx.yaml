@@ -1,6 +1,8 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
-    OnVisible: =ClearCollect(userData, Filter(students, 'intakeFormID'.Value = GalleryInspection.Selected.Title))
+    OnVisible: |-
+        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Title));
+        ClearCollect(userDataLookUp, Filter(studentInfo, Title = GalleryInspection.Selected.Title));
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -71,11 +73,18 @@ admin_screen_viewUser As screen:
 
         Gallery3 As gallery.galleryVertical:
             DelayItemLoading: =true
-            Items: =userData
+            Items: =userDataLookUp
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplateSize: =570
             Width: =1300
             Y: =3
             ZIndex: =1
+
+            Label1 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.firstName
+                X: =560
+                Y: =24
+                ZIndex: =1
 

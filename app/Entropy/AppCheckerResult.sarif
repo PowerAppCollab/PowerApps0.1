@@ -14,36 +14,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_viewUser.OnVisible"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.Gallery1.Title2.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_viewUser.OnVisible",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.Gallery1.Title2.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 6,
-                  "charOffset": 54,
+                  "charLength": 10,
+                  "charOffset": 8,
                   "snippet": {
-                    "text": ".Value"
+                    "text": ".firstName"
                   }
                 }
               },
               "properties": {
-                "member": "OnVisible",
-                "module": "admin_screen_viewUser",
-                "type": "admin_screen_viewUser"
+                "member": "Text",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.Gallery1.Title2"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "firstName"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
+          "ruleId": "app-ErrInvalidName",
           "ruleIndex": 0
         },
         {
@@ -51,40 +54,40 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_viewUser.OnVisible"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.DisplayName"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_viewUser.OnVisible",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.DisplayName",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 1,
-                  "charOffset": 61,
+                  "charLength": 14,
+                  "charOffset": 54,
                   "snippet": {
-                    "text": "="
+                    "text": "\"intakeFormID\""
                   }
                 }
               },
               "properties": {
-                "member": "OnVisible",
-                "module": "admin_screen_viewUser",
-                "type": "admin_screen_viewUser"
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Error",
-              "Text"
+              "intakeFormID",
+              "intakeFormID2"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
           "ruleIndex": 1
         },
         {
@@ -92,29 +95,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.GalleryInspection.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.DisplayName"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.GalleryInspection.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.DisplayName",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 69,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"intakeFormID\")"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.GalleryInspection"
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -122,29 +135,40 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.GalleryInspection.TabIndex"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.GalleryInspection.TabIndex",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.Default",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".intakeFormID"
+                  }
                 }
               },
               "properties": {
-                "member": "TabIndex",
-                "module": "intake_screen",
-                "type": "intake_screen.GalleryInspection"
+                "member": "Default",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "Text",
+              "Record"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
           "ruleIndex": 3
         },
         {
@@ -152,29 +176,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 54,
+                  "snippet": {
+                    "text": "\"firstName\""
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3"
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "firstName"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 66,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"firstName\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -182,29 +256,119 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.Default",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".firstName"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13"
+                "member": "Default",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "firstName"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 54,
+                  "snippet": {
+                    "text": "\"lastName\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "lastName"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 65,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"lastName\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -212,29 +376,119 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.Default",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".lastName"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "intake_screen",
-                "type": "intake_screen.FormInspection.status_DataCard1.DataCardValue15"
+                "member": "Default",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "lastName"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 54,
+                  "snippet": {
+                    "text": "\"email\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "email"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 62,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"email\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -242,29 +496,119 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.Default",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 6,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".email"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "admin_screen_sendIntakes",
-                "type": "admin_screen_sendIntakes.choose_course_button"
+                "member": "Default",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "email"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 54,
+                  "snippet": {
+                    "text": "\"phoneNumber\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "phoneNumber"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 68,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"phoneNumber\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
         },
         {
@@ -272,150 +616,40 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel"
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.Default"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel",
+                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.Default",
                   "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".phoneNumber"
+                  }
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "admin_screen_sendIntakes",
-                "type": "admin_screen_sendIntakes.email_address_input"
+                "member": "Default",
+                "module": "admin_screen_users",
+                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
               }
             }
           ],
           "message": {
+            "arguments": [
+              "phoneNumber"
+            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "login_screen.Container1.TextInput2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "login_screen.Container1.TextInput2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "login_screen",
-                "type": "login_screen.Container1.TextInput2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "login_screen.Container1.TextInput3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "login_screen.Container1.TextInput3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "login_screen",
-                "type": "login_screen.Container1.TextInput3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "login_screen",
-                "type": "login_screen.Container1.Icon2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "login_screen",
-                "type": "login_screen.Container1.Icon2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -445,7 +679,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -475,26 +709,56 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
+          "ruleIndex": 6
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.TabIndex"
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.TabIndex",
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intake_screen",
+                "type": "intake_screen.GalleryInspection"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "admin_screen_viewUser",
-                "type": "admin_screen_viewUser.Container2_4.Gallery3"
+                "module": "intake_screen",
+                "type": "intake_screen.GalleryInspection"
               }
             }
           ],
@@ -505,7 +769,97 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intake_screen",
+                "type": "intake_screen.FormViewer1.gender_DataCard1.DataCardValue3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intake_screen",
+                "type": "intake_screen.FormViewer1.programmingExperience_DataCard1.DataCardValue13"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.FormInspection.status_DataCard1.DataCardValue15.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intake_screen",
+                "type": "intake_screen.FormInspection.status_DataCard1.DataCardValue15"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -535,7 +889,217 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "admin_screen_viewUser",
+                "type": "admin_screen_viewUser.Container2_4.Gallery3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.choose_course_button.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "admin_screen_sendIntakes",
+                "type": "admin_screen_sendIntakes.choose_course_button"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "admin_screen_sendIntakes.email_address_input.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "admin_screen_sendIntakes",
+                "type": "admin_screen_sendIntakes.email_address_input"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "login_screen.Container1.TextInput2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "login_screen.Container1.TextInput2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "login_screen",
+                "type": "login_screen.Container1.TextInput2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "login_screen.Container1.TextInput3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "login_screen.Container1.TextInput3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "login_screen",
+                "type": "login_screen.Container1.TextInput3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "login_screen",
+                "type": "login_screen.Container1.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "login_screen.Container1.Icon2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "login_screen",
+                "type": "login_screen.Container1.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 6
         }
       ],
       "tool": {
@@ -544,10 +1108,27 @@
           "name": "PowerApps app checker",
           "rules": [
             {
-              "id": "app-ErrInvalidDot",
+              "id": "app-ErrInvalidName",
               "messageStrings": {
                 "issue": {
-                  "text": "Invalid use of '.'"
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrColumnDoesNotExist-Name-Similar",
+              "messageStrings": {
+                "issue": {
+                  "text": "The specified column '{0}' does not exist. The column with the most similar name is '{1}'."
                 }
               },
               "properties": {
@@ -558,18 +1139,45 @@
               }
             },
             {
-              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
+              "id": "app-ErrInvalidArgs-Func",
               "messageStrings": {
                 "issue": {
-                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
+                  "text": "The function '{0}' has some invalid arguments."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+              "messageStrings": {
+                "issue": {
+                  "text": "Expected {0} value."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
-                  "If you’re comparing records or tables, the field or column types must match exactly."
+                  "Change the rule to produce a {0} value."
                 ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrColDNE-Name",
+              "messageStrings": {
+                "issue": {
+                  "text": "The specified column '{0}' does not exist."
+                }
+              },
+              "properties": {
+                "componentType": "app",
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
