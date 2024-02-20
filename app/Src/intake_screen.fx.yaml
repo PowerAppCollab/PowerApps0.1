@@ -695,13 +695,13 @@ intake_screen As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =true
-            Update: =DataCardValue15.Selected
+            Update: =DataCardValue44.Selected
             Width: =276
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey15 As label:
+            DataCardKey44 As label:
                 AutoHeight: =true
                 Height: =34
                 Text: =Parent.DisplayName
@@ -711,7 +711,7 @@ intake_screen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue15 As combobox:
+            DataCardValue44 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
@@ -719,15 +719,15 @@ intake_screen As screen:
                 Items: =Choices([@intakeResults].status)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.status,DataCardValue15.SearchText)
+                SearchItems: =Choices(intakeResults.status,DataCardValue44.SearchText)
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                Y: =DataCardKey44.Y + DataCardKey44.Height + 5
                 ZIndex: =2
 
-            ErrorMessage3 As label:
+            ErrorMessage24 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -739,17 +739,17 @@ intake_screen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue15.Y + DataCardValue15.Height
+                Y: =DataCardValue44.Y + DataCardValue44.Height
                 ZIndex: =3
 
-            StarVisible3 As label:
+            StarVisible24 As label:
                 Align: =Align.Center
-                Height: =DataCardKey15.Height
+                Height: =DataCardKey44.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey15.Y
+                Y: =DataCardKey44.Y
                 ZIndex: =4
 
     Button1_1 As button:
