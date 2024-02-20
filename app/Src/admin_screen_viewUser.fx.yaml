@@ -75,15 +75,81 @@ admin_screen_viewUser As screen:
             Items: =userData
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =570
+            TemplateSize: =557
             Width: =1300
             Y: =3
             ZIndex: =1
 
             Label1 As label:
+                Color: =RGBA(51, 51, 51, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =35
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.firstName
-                X: =560
-                Y: =24
+                Size: =18
+                Text: |
+                    ="User Information of " & ThisItem.firstName & " " & ThisItem.lastName
+                Width: =625
+                X: =32
+                Y: =25
                 ZIndex: =1
+
+            Label2 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.email
+                Width: =365
+                X: =112
+                Y: =105
+                ZIndex: =2
+
+            Label2_1 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.phoneNumber
+                Width: =365
+                X: =112
+                Y: =150
+                ZIndex: =3
+
+            Label2_2 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="Email:"
+                Width: =80
+                X: =32
+                Y: =105
+                ZIndex: =4
+
+            Label2_3 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="Phone:"
+                Width: =80
+                X: =32
+                Y: =150
+                ZIndex: =5
+
+            Label2_4 As label:
+                OnSelect: =Select(Parent)
+                Text: ="More info here..."
+                Width: =365
+                X: =112
+                Y: =190
+                ZIndex: =6
+
+            Label2_5 As label:
+                OnSelect: =Select(Parent)
+                Text: ="More..."
+                Width: =80
+                X: =32
+                Y: =190
+                ZIndex: =7
+
+            Button2 As button:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(51, 51, 51, 1)
+                Fill: =RGBA(136, 160, 209, 1)
+                OnSelect: =Back()
+                Text: ="Back"
+                X: =1103
+                Y: =20
+                ZIndex: =8
 

@@ -14,46 +14,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.Gallery1.Title2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.Gallery1.Title2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".firstName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.Gallery1.Title2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "firstName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.intakeFormID_DataCard1.DisplayName"
                 }
               ],
@@ -88,7 +48,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
-          "ruleIndex": 1
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -128,7 +88,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -169,527 +129,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 11,
-                  "charOffset": 54,
-                  "snippet": {
-                    "text": "\"firstName\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "firstName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 66,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"firstName\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".firstName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.firstName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "firstName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 54,
-                  "snippet": {
-                    "text": "\"lastName\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "lastName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 65,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"lastName\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".lastName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.lastName_DataCard1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "lastName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 54,
-                  "snippet": {
-                    "text": "\"email\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "email"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 62,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"email\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".email"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.email_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "email"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 54,
-                  "snippet": {
-                    "text": "\"phoneNumber\""
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "phoneNumber"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.DisplayName",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 68,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "DataSourceInfo([@students];DataSourceInfo.DisplayName;\"phoneNumber\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayName",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "DataSourceInfo"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.Default"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3.Default",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".phoneNumber"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Default",
-                "module": "admin_screen_users",
-                "type": "admin_screen_users.Container2_3.FormViewer3.phoneNumber_DataCard3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "phoneNumber"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.Label1.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "admin_screen_viewUser.Container2_4.Gallery3.Label1.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".firstName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "admin_screen_viewUser",
-                "type": "admin_screen_viewUser.Container2_4.Gallery3.Label1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "firstName"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
         },
         {
           "locations": [
@@ -719,7 +159,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -749,7 +189,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -779,7 +219,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -809,7 +249,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -839,7 +279,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -869,7 +309,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -899,7 +339,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -929,7 +369,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -959,7 +399,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -989,7 +429,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1019,7 +459,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1049,7 +489,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1079,7 +519,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1109,7 +549,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -1139,7 +579,67 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.Icon4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.Icon4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intake_screen",
+                "type": "intake_screen.GalleryInspection.Icon4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.Icon4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intake_screen.GalleryInspection.Icon4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intake_screen",
+                "type": "intake_screen.GalleryInspection.Icon4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 4
         }
       ],
       "tool": {
@@ -1147,23 +647,6 @@
           "fullName": "PowerApps app checker",
           "name": "PowerApps app checker",
           "rules": [
-            {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
             {
               "id": "app-ErrColumnDoesNotExist-Name-Similar",
               "messageStrings": {
@@ -1204,20 +687,6 @@
                 "howToFix": [
                   "Change the rule to produce a {0} value."
                 ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrColDNE-Name",
-              "messageStrings": {
-                "issue": {
-                  "text": "The specified column '{0}' does not exist."
-                }
-              },
-              "properties": {
-                "componentType": "app",
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
