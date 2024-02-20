@@ -100,6 +100,15 @@ intake_screen As screen:
             Width: =4
             ZIndex: =6
 
+        Button1 As button:
+            Height: =31
+            OnSelect: =Navigate(admin_screen_users)
+            Text: ="View User"
+            Width: =133
+            X: =419
+            Y: =36
+            ZIndex: =7
+
     FormViewer1 As formViewer:
         DataSource: =intakeResults
         Height: =383
