@@ -92,7 +92,7 @@ admin_screen_searchUsers As screen:
                 X: =399
                 ZIndex: =8
 
-            TextInput1 As text:
+            txtSearch As text:
                 Default: =""
                 Height: =42
                 OnSelect: =Select(Parent)
@@ -107,7 +107,93 @@ admin_screen_searchUsers As screen:
                 Icon: =Icon.Search
                 OnSelect: =Select(Parent)
                 Width: =33
-                X: =432
+                X: =441
                 Y: =15
                 ZIndex: =10
+
+        "Gallery6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =477
+            Items: |
+                =Filter(students, StartsWith(firstName, txtSearch.Text))
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =1300
+            Y: =101
+            ZIndex: =2
+
+            Image5 As image:
+                Height: =72
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =72
+                X: =16
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            Title5 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |
+                    =ThisItem.firstName & " " & ThisItem.lastName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 173
+                X: =103
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle5.Size * 1.8)) / 2
+                ZIndex: =2
+
+            Subtitle5 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.email
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title5.Width
+                X: =Title5.X
+                Y: =Title5.Y + Title5.Height
+                ZIndex: =3
+
+            NextArrow4 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="Details van item weergeven"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =4
+
+            Separator4 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =5
+
+            Rectangle4 As rectangle:
+                Height: =Parent.TemplateHeight - Separator4.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
 
