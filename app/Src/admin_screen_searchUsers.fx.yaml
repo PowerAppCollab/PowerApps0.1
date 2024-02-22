@@ -1,0 +1,113 @@
+admin_screen_searchUsers As screen:
+    Fill: =RGBA(241, 244, 249, 1)
+    OnVisible: |
+        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Titel));
+
+    navBarAdmin_7 As rectangle:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =84
+        Width: =1300
+        X: =35
+        Y: =25
+        ZIndex: =1
+
+    Label1_7 As label:
+        Color: =RGBA(51, 51, 51, 1)
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: ="Admin Dashboard"
+        Width: =250
+        X: =73
+        Y: =47
+        ZIndex: =2
+
+    Button2_17 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(admin_screen_uploadScores);
+        Text: ="Send Intakes"
+        X: =980
+        Y: =47
+        ZIndex: =3
+
+    Button2_18 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        Text: |-
+            ="Students
+            "
+        X: =1140
+        Y: =47
+        ZIndex: =4
+
+    intakeNavButton_7 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(intake_screen)
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        Text: ="Intakes"
+        X: =820
+        Y: =47
+        ZIndex: =5
+
+    Container2_5 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =578
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =1300
+        X: =35
+        Y: =154
+        ZIndex: =6
+
+        Gallery3_1 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Items: =userData
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =557
+            Width: =1300
+            Y: =3
+            ZIndex: =1
+
+            Button2_1 As button:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(136, 160, 209, 1)
+                Height: =70
+                OnSelect: =Back()
+                Text: =""
+                Width: =508
+                X: =399
+                ZIndex: =8
+
+            TextInput1 As text:
+                Default: =""
+                Height: =42
+                OnSelect: =Select(Parent)
+                PaddingLeft: =45
+                Width: =442
+                X: =432
+                Y: =14
+                ZIndex: =9
+
+            Icon5 As icon.Search:
+                Height: =39
+                Icon: =Icon.Search
+                OnSelect: =Select(Parent)
+                Width: =33
+                X: =432
+                Y: =15
+                ZIndex: =10
+
