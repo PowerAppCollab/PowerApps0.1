@@ -531,3 +531,11 @@ admin_screen_users As screen:
                     Y: =DataCardKey38.Y + DataCardKey38.Height + 5
                     ZIndex: =2
 
+    Button1 As button:
+        Fill: =RGBA(136, 160, 209, 1)
+        OnSelect: =Navigate(admin_screen_searchUsers)
+        Text: ="Search Users"
+        X: =605
+        Y: =114
+        ZIndex: =7
+
