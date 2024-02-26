@@ -47,7 +47,7 @@ intake_screen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.Title
+            Text: =ThisItem.Titel
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 173
             X: =103
@@ -99,17 +99,6 @@ intake_screen As screen:
             Visible: =ThisItem.IsSelected
             Width: =4
             ZIndex: =6
-
-        Icon4 As icon.Information:
-            Height: =36
-            Icon: =Icon.Information
-            OnSelect: =Navigate(admin_screen_viewUser)
-            Visible: |
-                =!IsBlank(ThisItem.studentID)
-            Width: =36
-            X: =516
-            Y: =34
-            ZIndex: =8
 
     FormViewer1 As formViewer:
         DataSource: =intakeResults
@@ -773,7 +762,13 @@ intake_screen As screen:
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(214, 223, 238, 1)
         OnSelect: |
-            =CreateUserForIntake.Run()
+            =CreateUserForIntake.Run(GalleryInspection.Selected.Titel);
+            
+            //Patch(
+            //  students;
+            //LookUp(students; Titel = uniqueid.uniqueid);
+            //{ fullName: "test" }
+            //)
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -786,7 +781,7 @@ intake_screen As screen:
         ZIndex: =16
 
     Label7 As label:
-        Text: ="Create a user for this intake"
+        Text: =GalleryInspection.Selected.Titel
         Visible: =IsBlank(GalleryInspection.Selected.studentID)
         Width: =250
         X: =678
