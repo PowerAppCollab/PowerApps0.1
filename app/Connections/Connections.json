@@ -187,31 +187,5 @@
       "5118a93f-8916-4282-be37-2ca78e8d2877"
     ],
     "id": "c1990989-d1b3-409a-8532-7a50671b4cd9"
-  },
-  "def9a81b-3d0b-42b9-a029-81fdd1d48503": {
-    "connectionRef": {
-      "displayName": "SharePoint",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1674/1.0.1674.3602/sharepointonline/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
-    },
-    "datasets": {
-      "https://veynex.sharepoint.com/sites/TESTGradematchPowerApps": {
-        "dataSources": {
-          "accountList": {
-            "tableName": "a19f0d65-b5d0-46c3-bf20-e9b7bb6d9971"
-          },
-          "studentInfo": {
-            "tableName": "b27c516f-4015-41b9-b10d-c4741994cba3"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "accountList",
-      "studentInfo"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "def9a81b-3d0b-42b9-a029-81fdd1d48503"
   }
 }
