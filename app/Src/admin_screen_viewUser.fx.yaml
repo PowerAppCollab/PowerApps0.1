@@ -1,7 +1,7 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
     OnVisible: |
-        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Titel));
+        =ClearCollect(userData, Filter(students, intakeFormID.Value = GalleryInspection.Selected.Title));
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -160,7 +160,7 @@ admin_screen_viewUser As screen:
                 HoverFill: =
                 OnSelect: |-
                     =Remove( students,
-                    LookUp( students, Titel=ThisItem.Titel ))
+                    LookUp( students, Title=ThisItem.Title ))
                 Text: ="Delete user"
                 X: =32
                 Y: =270
