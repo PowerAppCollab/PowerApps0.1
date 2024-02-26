@@ -58,14 +58,6 @@ admin_screen_sendIntakes As screen:
         Y: =154
         ZIndex: =6
 
-        Label3 As label:
-            Height: =46
-            Text: ="What course is the person interested in?"
-            Width: =368
-            X: =39
-            Y: =37
-            ZIndex: =1
-
         Label3_1 As label:
             Height: =46
             Text: |-
@@ -82,51 +74,13 @@ admin_screen_sendIntakes As screen:
             HoverBorderColor: =
             HoverColor: =RGBA(0,0,0, 1)
             HoverFill: =RGBA(241, 244, 249, 1)
-            OnSelect: |
-                =Set(
-                    isErrorVisible,
-                    false
+            OnSelect: |-
+                =Office365Outlook.SendEmail(
+                    email_address_input.Text,
+                    "Intake Link",
+                    "Here is the link to access the intake form: https://forms.office.com/e/eWQtPEKwSM"
                 );
-                Set(
-                    isVisible,
-                    false
-                );
-                If(
-                    IsMatch(
-                        email_input_value,
-                        "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                    ),
-                    If(
-                        Office365Outlook.SendEmail(
-                            email_input_value,
-                            "Your invite link to the intake form",
-                            If(
-                                course_input_value = "Python",
-                                "Link to form: https://forms.office.com/e/eWQtPEKwSM",
-                                If(
-                                    course_input_value = "Java",
-                                    "Intake link for Java course",
-                                    If(
-                                        course_input_value = "PowerBI",
-                                        "Link to form: https://forms.office.com/e/LiVXLmiE8e"
-                                    )
-                                )
-                            )
-                        ),
-                        Set(
-                            isVisible,
-                            true
-                        )
-                    ),
-                    Set(
-                        isErrorVisible,
-                        true
-                    ),
-                    Set(
-                        isVisible,
-                        false
-                    )
-                );
+                Set(isVisible, true);
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -140,22 +94,12 @@ admin_screen_sendIntakes As screen:
         Label5 As label:
             Height: =46
             Text: |
-                ="U have sent an email to: " & Text(email_input_value, "Bold") & ". The recipient will receive the link for the " & Text(course_input_value, "Bold") & " intake form."
+                ="U have sent an email to: " & Text(email_input_value, "Bold") & ". The recipient will receive the link for the Python intake form."
             Visible: =isVisible
             Width: =722
             X: =538
             Y: =37
             ZIndex: =4
-
-        Label5_1 As label:
-            Color: =RGBA(184, 0, 0, 1)
-            Height: =46
-            Text: ="Please provide a correct email address."
-            Visible: =isErrorVisible
-            Width: =336
-            X: =39
-            Y: =204
-            ZIndex: =5
 
     email_address_input As text:
         BorderStyle: =BorderStyle.None
@@ -170,19 +114,6 @@ admin_screen_sendIntakes As screen:
         X: =73
         Y: =324
         ZIndex: =7
-
-    choose_course_button As dropdown:
-        BorderStyle: =BorderStyle.None
-        ChevronBackground: =RGBA(102, 113, 166, 1)
-        Default: =""
-        Fill: =RGBA(241, 244, 249, 1)
-        Items: =["Python", "PowerBI", "Java",]
-        OnChange: =Set(course_input_value, choose_course_button.Selected.Value)
-        SelectionColor: =RGBA(0, 16, 96, 1)
-        SelectionFill: =RGBA(241, 244, 249, 1)
-        X: =73
-        Y: =229
-        ZIndex: =8
 
     Button2_19 As button:
         BorderStyle: =BorderStyle.None

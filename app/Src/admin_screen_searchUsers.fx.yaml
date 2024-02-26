@@ -115,7 +115,7 @@ admin_screen_searchUsers As screen:
             DelayItemLoading: =true
             Height: =477
             Items: |
-                =Filter(students, StartsWith(firstName, txtSearch.Text))
+                =Filter(students, StartsWith(fullName, txtSearch.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -145,7 +145,7 @@ admin_screen_searchUsers As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: |
-                    =ThisItem.firstName & " " & ThisItem.lastName
+                    =ThisItem.fullName & " " & ThisItem.lastName
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =103

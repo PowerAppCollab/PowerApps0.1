@@ -87,7 +87,7 @@ admin_screen_viewUser As screen:
                 OnSelect: =Select(Parent)
                 Size: =18
                 Text: |
-                    ="User Information of " & ThisItem.firstName & " " & ThisItem.lastName
+                    ="User Information of " & ThisItem.fullName & " " & ThisItem.lastName
                 Width: =625
                 X: =32
                 Y: =25
