@@ -279,3 +279,16 @@ admin_screen_users As screen:
         Y: =114
         ZIndex: =7
 
+    Button3_1 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(184, 0, 0, 1)
+        HoverColor: =
+        HoverFill: =
+        OnSelect: |-
+            =Remove( students,
+            LookUp( students, Titel=Gallery1.Selected.Titel ))
+        Text: ="Delete user"
+        X: =747
+        Y: =375
+        ZIndex: =8
+

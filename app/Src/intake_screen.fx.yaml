@@ -100,17 +100,6 @@ intake_screen As screen:
             Width: =4
             ZIndex: =6
 
-        Icon4 As icon.Information:
-            Height: =36
-            Icon: =Icon.Information
-            OnSelect: =Navigate(admin_screen_viewUser)
-            Visible: |
-                =!IsBlank(ThisItem.studentID)
-            Width: =36
-            X: =516
-            Y: =34
-            ZIndex: =8
-
     FormViewer1 As formViewer:
         DataSource: =intakeResults
         Height: =383
