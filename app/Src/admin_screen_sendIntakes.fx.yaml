@@ -32,18 +32,6 @@ admin_screen_sendIntakes As screen:
         Y: =47
         ZIndex: =3
 
-    Button2_6 As button:
-        BorderStyle: =BorderStyle.None
-        Color: =RGBA(51, 51, 51, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        HoverFill: =
-        Text: |-
-            ="Nav3
-            "
-        X: =1140
-        Y: =47
-        ZIndex: =4
-
     intakeNavButton_1 As button:
         BorderStyle: =BorderStyle.None
         Color: =RGBA(51, 51, 51, 1)
@@ -195,4 +183,16 @@ admin_screen_sendIntakes As screen:
         X: =73
         Y: =229
         ZIndex: =8
+
+    Button2_19 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        Text: |-
+            ="Students
+            "
+        X: =1140
+        Y: =47
+        ZIndex: =9
 
