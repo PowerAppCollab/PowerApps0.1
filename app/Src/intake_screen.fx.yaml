@@ -763,7 +763,11 @@ intake_screen As screen:
         Fill: =RGBA(214, 223, 238, 1)
         OnSelect: |-
             =Set(uniqueID, CreateUserForIntake.Run());
-            LookUp(students, Titel = uniqueID.uniqueid);
+            Patch(
+                students,
+                LookUp(students, Titel = uniqueID.uniqueid),
+                { fullName: "test" }
+            )
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
