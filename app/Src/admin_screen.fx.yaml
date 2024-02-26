@@ -70,3 +70,21 @@ admin_screen As screen:
         Y: =154
         ZIndex: =6
 
+        Label4_1 As label:
+            Height: =54
+            Text: |-
+                ="Number of current students: " & CountRows(students)
+            Width: =264
+            X: =40
+            Y: =104
+            ZIndex: =2
+
+        Label4_2 As label:
+            Height: =54
+            Text: |-
+                ="Number of current intakes: " & CountRows(intakeResults)
+            Width: =264
+            X: =40
+            Y: =158
+            ZIndex: =3
+

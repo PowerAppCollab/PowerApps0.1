@@ -272,43 +272,6 @@ admin_screen_users As screen:
                     Y: =DataCardKey31.Y + DataCardKey31.Height + 5
                     ZIndex: =2
 
-            intakeFormID_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="intakeFormID"
-                Default: =ThisItem.intakeFormID
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"intakeFormID")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =201
-                X: =0
-                Y: =1
-                ZIndex: =3
-
-                DataCardKey32 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue32 As label:
-                    AutoHeight: =true
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey32.Y + DataCardKey32.Height + 5
-                    ZIndex: =2
-
             firstName_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="firstName"
@@ -319,7 +282,7 @@ admin_screen_users As screen:
                 Height: =40
                 Required: =false
                 Width: =201
-                X: =1
+                X: =0
                 Y: =1
                 ZIndex: =3
 
@@ -356,7 +319,7 @@ admin_screen_users As screen:
                 Height: =40
                 Required: =false
                 Width: =201
-                X: =2
+                X: =1
                 Y: =1
                 ZIndex: =3
 
@@ -383,43 +346,6 @@ admin_screen_users As screen:
                     Y: =DataCardKey34.Y + DataCardKey34.Height + 5
                     ZIndex: =2
 
-            contactPersonID_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="contactPersonID"
-                Default: =ThisItem.contactPersonID
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"contactPersonID")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =201
-                X: =0
-                Y: =2
-                ZIndex: =3
-
-                DataCardKey35 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue35 As label:
-                    AutoHeight: =true
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey35.Y + DataCardKey35.Height + 5
-                    ZIndex: =2
-
             email_DataCard3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="email"
@@ -430,7 +356,7 @@ admin_screen_users As screen:
                 Height: =40
                 Required: =false
                 Width: =201
-                X: =1
+                X: =0
                 Y: =2
                 ZIndex: =3
 
@@ -467,7 +393,7 @@ admin_screen_users As screen:
                 Height: =40
                 Required: =false
                 Width: =201
-                X: =2
+                X: =1
                 Y: =2
                 ZIndex: =3
 
@@ -494,6 +420,43 @@ admin_screen_users As screen:
                     Y: =DataCardKey37.Y + DataCardKey37.Height + 5
                     ZIndex: =2
 
+            contactPersonID_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="contactPersonID"
+                Default: =ThisItem.contactPersonID
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"contactPersonID")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =201
+                X: =2
+                Y: =1
+                ZIndex: =3
+
+                DataCardKey35 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue35 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey35.Y + DataCardKey35.Height + 5
+                    ZIndex: =2
+
             scoreID_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="scores"
@@ -504,8 +467,8 @@ admin_screen_users As screen:
                 Height: =40
                 Required: =false
                 Width: =201
-                X: =0
-                Y: =3
+                X: =2
+                Y: =2
                 ZIndex: =3
 
                 DataCardKey38 As label:
