@@ -6,7 +6,7 @@ intake_screen As screen:
         DelayItemLoading: =true
         Height: =485
         Items: |
-            =intakeResults
+            ='Nieuwe tabellen'
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: |
@@ -101,7 +101,7 @@ intake_screen As screen:
             ZIndex: =6
 
     FormViewer1 As formViewer:
-        DataSource: =intakeResults
+        DataSource: ='Nieuwe tabellen'
         Height: =425
         Item: =GalleryInspection.Selected
         Width: =673
@@ -109,15 +109,15 @@ intake_screen As screen:
         Y: =129
         ZIndex: =8
 
-        fullname_DataCard1 As typedDataCard.textualViewCard:
+        ID_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="fullname"
-            Default: =ThisItem.fullname
+            DataField: ="cr884_id"
+            Default: =ThisItem.ID
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"fullname")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_id")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
-            Required: =false
+            Required: =true
             Width: =224
             X: =0
             Y: =0
@@ -146,12 +146,12 @@ intake_screen As screen:
                 Y: =DataCardKey2.Y + DataCardKey2.Height + 5
                 ZIndex: =2
 
-        gender_DataCard1 As typedDataCard.comboBoxViewCard:
-            BorderStyle: =BorderStyle.Dotted
-            DataField: ="gender"
-            Default: =ThisItem.gender
+        programmingExperience_DataCard1 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr884_programmingexperience"
+            Default: =ThisItem.programmingExperience
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"gender")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_programmingexperience")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -173,14 +173,14 @@ intake_screen As screen:
 
             DataCardValue3 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
+                DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
-                Fill: =RGBA(241, 244, 249, 1)
-                Items: =Choices([@intakeResults].gender)
+                IsSearchable: =false
+                Items: =Choices('programmingExperience (Nieuwe tabellen)')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.gender,DataCardValue3.SearchText)
+                SearchItems: =[]
                 SelectMultiple: =false
                 Width: =Parent.Width - 60
                 X: =30
@@ -212,15 +212,16 @@ intake_screen As screen:
                 Y: =DataCardKey3.Y
                 ZIndex: =4
 
-        dateOfBirth_DataCard1 As typedDataCard.textualViewCard:
+        status_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="dateOfBirth"
-            Default: =ThisItem.dateOfBirth
+            DataField: ="cr884_status"
+            Default: =ThisItem.status
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"dateOfBirth")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_status")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =50
             Required: =false
+            Update: =DataCardValue4.Selected
             Width: =224
             X: =2
             Y: =0
@@ -236,25 +237,53 @@ intake_screen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue4 As label:
-                AutoHeight: =true
+            DataCardValue4 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
-                Height: =27
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Default
+                IsSearchable: =false
+                Items: =Choices('status (Nieuwe tabellen)')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                 ZIndex: =2
 
-        email_DataCard1 As typedDataCard.textualViewCard:
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4.Y + DataCardValue4.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
+        fullname_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="email"
-            Default: =ThisItem.email
+            DataField: ="cr884_fullname"
+            Default: =ThisItem.fullname
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"email")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_fullname")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -286,12 +315,12 @@ intake_screen As screen:
                 Y: =DataCardKey5.Y + DataCardKey5.Height + 5
                 ZIndex: =2
 
-        phoneNumber_DataCard1 As typedDataCard.textualViewCard:
+        gender_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="phoneNumber"
-            Default: =ThisItem.phoneNumber
+            DataField: ="cr884_gender"
+            Default: =ThisItem.gender
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"phoneNumber")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_gender")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -323,12 +352,12 @@ intake_screen As screen:
                 Y: =DataCardKey6.Y + DataCardKey6.Height + 5
                 ZIndex: =2
 
-        education_DataCard1 As typedDataCard.textualViewCard:
+        dateOfBirth_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="education"
-            Default: =ThisItem.education
+            DataField: ="cr884_dateofbirth"
+            Default: =ThisItem.dateOfBirth
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"education")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_dateofbirth")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -360,12 +389,12 @@ intake_screen As screen:
                 Y: =DataCardKey7.Y + DataCardKey7.Height + 5
                 ZIndex: =2
 
-        currentFunction_DataCard1 As typedDataCard.textualViewCard:
+        email_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="currentFunction"
-            Default: =ThisItem.currentFunction
+            DataField: ="cr884_email"
+            Default: =ThisItem.email
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"currentFunction")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_email")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -397,12 +426,12 @@ intake_screen As screen:
                 Y: =DataCardKey8.Y + DataCardKey8.Height + 5
                 ZIndex: =2
 
-        functionExplained_DataCard1 As typedDataCard.textualViewCard:
+        phoneNumber_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="functionExplained"
-            Default: =ThisItem.functionExplained
+            DataField: ="cr884_phonenumber"
+            Default: =ThisItem.phoneNumber
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"functionExplained")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_phonenumber")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -434,12 +463,12 @@ intake_screen As screen:
                 Y: =DataCardKey9.Y + DataCardKey9.Height + 5
                 ZIndex: =2
 
-        yearsExperience_DataCard1 As typedDataCard.textualViewCard:
+        education_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="yearsExperience"
-            Default: =ThisItem.yearsExperience
+            DataField: ="cr884_education"
+            Default: =ThisItem.education
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"yearsExperience")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_education")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -471,12 +500,12 @@ intake_screen As screen:
                 Y: =DataCardKey10.Y + DataCardKey10.Height + 5
                 ZIndex: =2
 
-        programmingLanguages_DataCard1 As typedDataCard.textualViewCard:
+        currentFunction_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="programmingLanguages"
-            Default: =ThisItem.programmingLanguages
+            DataField: ="cr884_currentfunction"
+            Default: =ThisItem.currentFunction
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"programmingLanguages")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_currentfunction")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -508,12 +537,12 @@ intake_screen As screen:
                 Y: =DataCardKey11.Y + DataCardKey11.Height + 5
                 ZIndex: =2
 
-        courseGoal_DataCard1 As typedDataCard.textualViewCard:
+        functionExplained_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="courseGoal"
-            Default: =ThisItem.courseGoal
+            DataField: ="cr884_functionexplained"
+            Default: =ThisItem.functionExplained
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"courseGoal")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_functionexplained")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -545,16 +574,15 @@ intake_screen As screen:
                 Y: =DataCardKey12.Y + DataCardKey12.Height + 5
                 ZIndex: =2
 
-        programmingExperience_DataCard1 As typedDataCard.comboBoxViewCard:
+        yearsExperience_DataCard1 As typedDataCard.textualViewCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="programmingExperience"
-            Default: =ThisItem.programmingExperience
+            DataField: ="cr884_yearsexperience"
+            Default: =ThisItem.yearsExperience
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"programmingExperience")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_yearsexperience")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =40
             Required: =false
-            Update: =DataCardValue13.Selected
             Width: =224
             X: =2
             Y: =3
@@ -570,46 +598,92 @@ intake_screen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue13 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["Value"]
+            DataCardValue13 As label:
+                AutoHeight: =true
                 DisplayMode: =Parent.DisplayMode
-                Fill: =RGBA(241, 244, 249, 1)
-                Items: =Choices([@intakeResults].programmingExperience)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.programmingExperience,DataCardValue13.SearchText)
-                SelectMultiple: =false
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey13.Y + DataCardKey13.Height + 5
                 ZIndex: =2
 
-            ErrorMessage2 As label:
+        programmingLanguage_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr884_programminglanguage"
+            Default: =ThisItem.programmingLanguage
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_programminglanguage")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =224
+            X: =0
+            Y: =4
+            ZIndex: =9
+
+            DataCardKey16 As label:
                 AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue16 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue13.Y + DataCardValue13.Height
-                ZIndex: =3
+                Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                ZIndex: =2
 
-            StarVisible2 As label:
-                Align: =Align.Center
-                Height: =DataCardKey13.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+        courseGoal_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr884_coursegoal"
+            Default: =ThisItem.courseGoal
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_coursegoal")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =224
+            X: =1
+            Y: =4
+            ZIndex: =9
+
+            DataCardKey17 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
                 Wrap: =false
-                Y: =DataCardKey13.Y
-                ZIndex: =4
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue17 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                ZIndex: =2
 
     navBarAdmin_4 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -668,7 +742,7 @@ intake_screen As screen:
         ZIndex: =13
 
     FormInspection As form:
-        DataSource: =intakeResults
+        DataSource: ='Nieuwe tabellen'
         Height: =126
         Item: =GalleryInspection.Selected
         Width: =276
