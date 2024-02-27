@@ -115,7 +115,7 @@ admin_screen_users As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.Titel
+                Text: =ThisItem.email
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title2.Width
                 X: =Title2.X
@@ -169,7 +169,7 @@ admin_screen_users As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
-                Width: =204
+                Width: =300
                 X: =0
                 Y: =0
                 ZIndex: =1
@@ -206,7 +206,7 @@ admin_screen_users As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
-                Width: =204
+                Width: =150
                 X: =1
                 Y: =0
                 ZIndex: =1
@@ -291,4 +291,16 @@ admin_screen_users As screen:
         X: =747
         Y: =375
         ZIndex: =8
+
+    Button4 As button:
+        Text: ="New Course"
+        X: =943
+        Y: =375
+        ZIndex: =9
+
+    Button4_1 As button:
+        Text: ="More"
+        X: =1140
+        Y: =375
+        ZIndex: =10
 
