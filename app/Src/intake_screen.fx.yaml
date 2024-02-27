@@ -775,10 +775,12 @@ intake_screen As screen:
         RadiusTopRight: =0
         Size: =12
         Text: ="Create User"
-        Visible: |-
-            =IsBlank(GalleryInspection.Selected.studentID);
-            
-            If(GalleryInspection.Selected.status = "Completed"),
+        Visible: |
+            =If(
+                IsBlank(GalleryInspection.Selected.studentID) && GalleryInspection.Selected.status.Value = "Completed",
+                true,
+                false
+            )
         X: =944
         Y: =667
         ZIndex: =16
