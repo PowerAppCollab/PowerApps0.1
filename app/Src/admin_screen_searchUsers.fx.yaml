@@ -145,7 +145,7 @@ admin_screen_searchUsers As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: |
-                    =ThisItem.fullName & " " & ThisItem.lastName
+                    =ThisItem.fullName
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =103
