@@ -25,9 +25,43 @@
     "dependencies": {},
     "dependents": [
       "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b",
-      "785ce4b3-2338-4b49-ac2f-ed73562b5c21"
+      "2465da9a-867f-4f65-82ac-cb2d268f4384"
     ],
     "id": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+  },
+  "2465da9a-867f-4f65-82ac-cb2d268f4384": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "CreateUserForIntake"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "e5c3ba22-281b-44ca-9d91-ef3ccd6adf24"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "CreateUserForIntake"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "e5c3ba22-281b-44ca-9d91-ef3ccd6adf24"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CreateUserForIntake"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "00106cf0-ef67-4cd9-818e-824fd17124f7"
+    },
+    "dependents": [],
+    "id": "2465da9a-867f-4f65-82ac-cb2d268f4384"
   },
   "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b": {
     "connectionRef": {
@@ -68,46 +102,6 @@
     },
     "dependents": [],
     "id": "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b"
-  },
-  "785ce4b3-2338-4b49-ac2f-ed73562b5c21": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "00106cf0-ef67-4cd9-818e-824fd17124f7": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "CreateUserForIntake"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "e5c3ba22-281b-44ca-9d91-ef3ccd6adf24"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "00106cf0-ef67-4cd9-818e-824fd17124f7"
-        },
-        "workflowDisplayName": {
-          "value": "CreateUserForIntake"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "e5c3ba22-281b-44ca-9d91-ef3ccd6adf24"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "CreateUserForIntake"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "00106cf0-ef67-4cd9-818e-824fd17124f7"
-    },
-    "dependents": [],
-    "id": "785ce4b3-2338-4b49-ac2f-ed73562b5c21"
   },
   "c1990989-d1b3-409a-8532-7a50671b4cd9": {
     "connectionRef": {

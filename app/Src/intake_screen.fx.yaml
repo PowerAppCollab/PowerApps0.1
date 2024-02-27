@@ -874,17 +874,20 @@ intake_screen As screen:
         Color: =RGBA(51, 51, 51, 1)
         Fill: =RGBA(214, 223, 238, 1)
         OnSelect: |+
-            =Patch(
+            =Set(uniqueID, Text(Now(), "yyyyhhmmss"));
+            
+            Patch(
                 'Nieuwe tabellen',
                 LookUp('Nieuwe tabellen',ID = GalleryInspection.Selected.ID),
-                { studentID: Text(Now(), "yyyyhhmmss") }
+                { studentID: uniqueID }
             );
             
-             //   CreateUserForIntake.Run(
-             //       GalleryInspection.Selected.fullname;
-             //       GalleryInspection.Selected.email;
-             //       GalleryInspection.Selected.phoneNumber
-             //   );;
+               CreateUserForIntake.Run(
+                   GalleryInspection.Selected.fullname,
+                   GalleryInspection.Selected.email,
+                   GalleryInspection.Selected.phoneNumber,
+                   uniqueID
+               );
             
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
