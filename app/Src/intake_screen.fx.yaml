@@ -750,22 +750,22 @@ intake_screen As screen:
         Y: =554
         ZIndex: =14
 
-        status_DataCard1 As typedDataCard.comboBoxEditCard:
+        status_DataCard7 As typedDataCard.comboBoxOptionSetSingleEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="status"
+            DataField: ="cr884_status"
             Default: =ThisItem.status
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@intakeResults],DataSourceInfo.DisplayName,"status")
+            DisplayName: =DataSourceInfo([@'Nieuwe tabellen'],DataSourceInfo.DisplayName,"cr884_status")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            Required: =true
-            Update: =DataCardValue44.Selected
+            Required: =false
+            Update: =DataCardValue35.Selected.Value
             Width: =276
             X: =0
             Y: =0
             ZIndex: =1
 
-            DataCardKey44 As label:
+            DataCardKey36 As label:
                 AutoHeight: =true
                 Height: =34
                 Text: =Parent.DisplayName
@@ -775,23 +775,24 @@ intake_screen As screen:
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue44 As combobox:
+            DataCardValue35 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DefaultSelectedItems: =Parent.Default
+                DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
-                Items: =Choices([@intakeResults].status)
+                IsSearchable: =false
+                Items: =Choices('status (Nieuwe tabellen)')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(intakeResults.status,DataCardValue44.SearchText)
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey44.Y + DataCardKey44.Height + 5
+                Y: =DataCardKey36.Y + DataCardKey36.Height + 5
                 ZIndex: =2
 
-            ErrorMessage24 As label:
+            ErrorMessage21 As label:
                 AutoHeight: =true
                 Height: =10
                 Live: =Live.Assertive
@@ -803,17 +804,17 @@ intake_screen As screen:
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue44.Y + DataCardValue44.Height
+                Y: =DataCardValue35.Y + DataCardValue35.Height
                 ZIndex: =3
 
-            StarVisible24 As label:
+            StarVisible21 As label:
                 Align: =Align.Center
-                Height: =DataCardKey44.Height
+                Height: =DataCardKey36.Height
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey44.Y
+                Y: =DataCardKey36.Y
                 ZIndex: =4
 
     Button1_1 As button:
