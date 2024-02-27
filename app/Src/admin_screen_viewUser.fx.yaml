@@ -1,6 +1,6 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
-    OnVisible: =Set(viewUser, LookUp(students, ID = currentUser, email + fullName + phoneNumber));
+    OnVisible: =Set(viewCurrUser, LookUp(students, ID = 2024153859636, email + fullName + phoneNumber));
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -90,7 +90,8 @@ admin_screen_viewUser As screen:
 
         Label2 As label:
             OnSelect: =
-            Text: =viewUser
+            Text: |
+                =viewCurrUser
             Width: =365
             X: =104
             Y: =101
