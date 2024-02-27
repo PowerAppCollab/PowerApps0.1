@@ -850,12 +850,18 @@ intake_screen As screen:
         RadiusTopRight: =0
         Size: =12
         Text: ="Create User"
-        Visible: |
-            =If(
-                IsBlank(GalleryInspection.Selected.studentID) && Text(GalleryInspection.Selected.Status) = "Completed",
-                true,
-                false
-            )
+        Visible: |-
+            =Patch(
+                'Nieuwe tabellen',
+                LookUp('Nieuwe tabellen',ID = GalleryInspection.Selected.ID),
+                { studentID: 10 }
+            );
+            
+            //If(
+            //    IsBlank(GalleryInspection.Selected.studentID);
+            //    true;
+            //    false
+            //)
         X: =944
         Y: =667
         ZIndex: =16
