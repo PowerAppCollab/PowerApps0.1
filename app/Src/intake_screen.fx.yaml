@@ -851,7 +851,7 @@ intake_screen As screen:
         Text: ="Create User"
         Visible: |
             =If(
-                IsBlank(GalleryInspection.Selected.studentID) && GalleryInspection.Selected.status.Value = "Completed",
+                IsBlank(GalleryInspection.Selected.studentID) && Text(GalleryInspection.Selected.Status) = "Completed",
                 true,
                 false
             )
