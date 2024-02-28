@@ -1,6 +1,6 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
-    OnVisible: |
+    OnVisible: |+
         =Set(
             viewCurrUser,
             LookUp('Nieuwe tabellen_1', ID = currentUser, email) &
@@ -8,7 +8,10 @@ admin_screen_viewUser As screen:
             LookUp('Nieuwe tabellen_1', ID = currentUser, fullName) &
             " " &
             LookUp('Nieuwe tabellen_1', ID = currentUser, phoneNumber)
-        )
+        );
+        
+        
+        
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
