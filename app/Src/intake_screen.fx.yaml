@@ -925,13 +925,20 @@ intake_screen As screen:
         Fill: =RGBA(167, 182, 203, 1)
         OnSelect: |-
             =Set(currentUser, GalleryInspection.Selected.studentID);
-            Navigate(admin_screen_viewUser)
+            
+            Navigate(admin_screen_viewUser);
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
         Text: ="View User"
+        Visible: |-
+            =If(
+                !IsBlank(GalleryInspection.Selected.studentID),
+                true,
+                false
+            )
         X: =1175
         Y: =602
         ZIndex: =17
