@@ -1,23 +1,19 @@
 admin_screen_viewUser As screen:
     Fill: =RGBA(241, 244, 249, 1)
-    OnVisible: |+
+    OnVisible: |
         =Set(
-            viewCurrUser,
+            tempUser,
             LookUp('Nieuwe tabellen_1', ID = currentUser)
         );
         
         Set(
             viewCurrUser,
             {
-                email: If(!IsBlank(viewCurrUser.email), "", viewCurrUser.email),
-                fullName: If(!IsBlank(viewCurrUser.fullName), "", viewCurrUser.fullName),
-                phoneNumber: If(!IsBlank(viewCurrUser.phoneNumber), "", viewCurrUser.phoneNumber)
+                email: If(IsBlank(tempUser.email), "", tempUser.email),
+                fullName: If(IsBlank(tempUser.fullName), "", tempUser.fullName),
+                phoneNumber: If(IsBlank(tempUser.phoneNumber), "", tempUser.phoneNumber)
             }
         );
-        
-        
-        
-        
 
     navBarAdmin_6 As rectangle:
         Fill: =RGBA(214, 223, 238, 1)
@@ -108,7 +104,7 @@ admin_screen_viewUser As screen:
         Label2 As label:
             OnSelect: =
             Text: |
-                =viewCurrUser
+                =viewCurrUser.email
             Width: =365
             X: =104
             Y: =101
@@ -116,7 +112,7 @@ admin_screen_viewUser As screen:
 
         Label2_1 As label:
             OnSelect: =
-            Text: =ThisItem.phoneNumber
+            Text: =viewCurrUser.phoneNumber
             Width: =365
             X: =104
             Y: =146
@@ -161,9 +157,15 @@ admin_screen_viewUser As screen:
             Fill: =RGBA(184, 0, 0, 1)
             HoverColor: =
             HoverFill: =
-            OnSelect: |-
-                =Remove( students,
-                LookUp( students, Titel=ThisItem.Titel ))
+            OnSelect: |
+                =Remove( 'Nieuwe tabellen_1',
+                LookUp( 'Nieuwe tabellen_1', ID=GalleryInspection.Selected.ID ));
+                
+                Patch(
+                    'Nieuwe tabellen',
+                    LookUp('Nieuwe tabellen', studentID = GalleryInspection.Selected.ID),
+                    { studentID: Blank() }
+                )
             Text: ="Delete user"
             X: =24
             Y: =266
