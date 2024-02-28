@@ -3,12 +3,18 @@ admin_screen_viewUser As screen:
     OnVisible: |+
         =Set(
             viewCurrUser,
-            LookUp('Nieuwe tabellen_1', ID = currentUser, email) &
-            " " &
-            LookUp('Nieuwe tabellen_1', ID = currentUser, fullName) &
-            " " &
-            LookUp('Nieuwe tabellen_1', ID = currentUser, phoneNumber)
+            LookUp('Nieuwe tabellen_1', ID = currentUser)
         );
+        
+        Set(
+            viewCurrUser,
+            {
+                email: If(!IsBlank(viewCurrUser.email), "", viewCurrUser.email),
+                fullName: If(!IsBlank(viewCurrUser.fullName), "", viewCurrUser.fullName),
+                phoneNumber: If(!IsBlank(viewCurrUser.phoneNumber), "", viewCurrUser.phoneNumber)
+            }
+        );
+        
         
         
         
@@ -83,7 +89,7 @@ admin_screen_viewUser As screen:
         Label6 As label:
             Height: =56
             Size: =24
-            Text: ="User information of " & viewCurrUser
+            Text: ="User information of " & viewCurrUser.fullName
             Width: =656
             X: =24
             Y: =24
