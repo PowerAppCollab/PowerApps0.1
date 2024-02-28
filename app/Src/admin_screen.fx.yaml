@@ -73,7 +73,7 @@ admin_screen As screen:
         Label4_1 As label:
             Height: =54
             Text: |-
-                ="Number of current students: " & CountRows(students)
+                ="Number of current students: " & CountRows('Nieuwe tabellen_1')
             Width: =264
             X: =40
             Y: =104
@@ -82,7 +82,7 @@ admin_screen As screen:
         Label4_2 As label:
             Height: =54
             Text: |-
-                ="Number of current intakes: " & CountRows(intakeResults)
+                ="Number of current intakes: " & CountRows('Nieuwe tabellen')
             Width: =264
             X: =40
             Y: =158
