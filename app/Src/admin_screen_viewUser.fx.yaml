@@ -159,11 +159,11 @@ admin_screen_viewUser As screen:
             HoverFill: =
             OnSelect: |
                 =Remove( 'Nieuwe tabellen_1',
-                LookUp( 'Nieuwe tabellen_1', ID=GalleryInspection.Selected.ID ));
+                LookUp( 'Nieuwe tabellen_1', ID=currentUser));
                 
                 Patch(
                     'Nieuwe tabellen',
-                    LookUp('Nieuwe tabellen', studentID = GalleryInspection.Selected.ID),
+                    LookUp('Nieuwe tabellen', studentID = currentUser),
                     { studentID: Blank() }
                 )
             Text: ="Delete user"
