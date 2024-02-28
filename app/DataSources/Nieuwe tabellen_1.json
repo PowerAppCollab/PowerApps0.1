@@ -1,39 +1,26 @@
 [
   {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
-    "EntitySetName": "cr884_nieuwetabel1s",
+    "EntitySetName": "cr884_nieuwetabel2s",
     "IsHidden": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "LogicalName": "cr884_nieuwetabel1",
-    "MaxGetRowsCount": 500,
+    "LogicalName": "cr884_nieuwetabel2",
     "Name": "Nieuwe tabellen_1",
     "NativeCDSDataSourceInfoNameMapping": {
-      "_ownerid_value": "Eigenaar",
+      "cr884_courseid": "courseID",
       "cr884_email": "email",
-      "cr884_fullname": "fullname",
+      "cr884_fullname": "fullName",
+      "cr884_groupid": "groupID",
       "cr884_id": "ID",
-      "cr884_intakeformid": "intakeformID",
-      "cr884_nieuwetabel1_AsyncOperations": "Systeemtaken",
-      "cr884_nieuwetabel1_BulkDeleteFailures": "Fouten bij bulkverwijdering",
-      "cr884_nieuwetabel1_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
-      "cr884_nieuwetabel1_PrincipalObjectAttributeAccesses": "Velden delen",
-      "cr884_nieuwetabel1_ProcessSession": "Processessies",
-      "cr884_nieuwetabel1_SyncErrors": "Synchronisatiefouten",
-      "cr884_nieuwetabel1id": "Nieuwe tabel",
+      "cr884_intakeformid": "intakeFormID",
+      "cr884_nieuwetabel2id": "Nieuwe tabel",
       "cr884_phonenumber": "phoneNumber",
       "cr884_scoreid": "scoreID",
-      "createdby": "Gemaakt door",
       "createdon": "Gemaakt op",
-      "createdonbehalfby": "Gemaakt door (gemachtigde)",
       "importsequencenumber": "Volgnummer van de importbewerking",
-      "modifiedby": "Gewijzigd door",
       "modifiedon": "Gewijzigd op",
-      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
       "overriddencreatedon": "Record is gemaakt op",
-      "owningbusinessunit": "Business unit die eigenaar is",
-      "owningteam": "Team dat eigenaar is",
-      "owninguser": "Gebruiker die eigenaar is",
       "statecode": "Status",
       "statuscode": "Reden van status",
       "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
@@ -44,62 +31,8 @@
     "Type": "NativeCDSDataSourceInfo"
   },
   {
-    "DisplayName": "Nieuwe tabellen_1 (Weergaven)",
-    "Name": "_cr884_nieuwetabel1_views",
-    "RelatedEntityName": "Nieuwe tabellen_1",
-    "TrimmedViewName": true,
-    "Type": "ViewInfo",
-    "ViewInfoNameMapping": {
-      "2c4949c0-3a14-428e-b9f8-6f456d6df6bd": "Actieve Nieuwe tabellen",
-      "81260b52-0b2d-4cb8-bc8d-910f188a28ba": "Gekoppelde weergave van Nieuwe tabel",
-      "8ed1e5a4-90bf-4626-a0f8-1f7939ed377f": "Weergave Geavanceerd zoeken van Nieuwe tabel",
-      "8fe2b3dd-2576-4f24-a381-eaf8bc40b41d": "Nieuwe tabel Opzoekweergave",
-      "c5d3478e-3d5c-44d5-baa7-8adc281a1659": "Inactieve Nieuwe tabellen"
-    }
-  },
-  {
-    "DisplayName": "Status (Nieuwe tabellen_1)_1",
-    "Name": "cr884_nieuwetabel1_statecode",
-    "OptionSetInfoNameMapping": {
-      "0": "Actief",
-      "1": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statecode",
-        "OptionSetReferenceEntityName": "Nieuwe tabellen_1"
-      }
-    },
-    "OptionSetTypeKey": "StateType",
-    "RelatedColumnInvariantName": "statecode",
-    "RelatedEntityName": "Nieuwe tabellen_1",
-    "Type": "OptionSetInfo"
-  },
-  {
-    "DisplayName": "Reden van status (Nieuwe tabellen_1)_1",
-    "Name": "cr884_nieuwetabel1_statuscode",
-    "OptionSetInfoNameMapping": {
-      "1": "Actief",
-      "2": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statuscode",
-        "OptionSetReferenceEntityName": "Nieuwe tabellen_1"
-      }
-    },
-    "OptionSetTypeKey": "StatusType",
-    "RelatedColumnInvariantName": "statuscode",
-    "RelatedEntityName": "Nieuwe tabellen_1",
-    "Type": "OptionSetInfo"
-  },
-  {
     "DisplayName": "Status (Nieuwe tabellen_1)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_95b729b540_statecode",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_a073bdabcc_statecode",
     "OptionSetInfoNameMapping": {
       "0": "Actief",
       "1": "Inactief"
@@ -119,7 +52,7 @@
   },
   {
     "DisplayName": "Reden van status (Nieuwe tabellen_1)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_95b729b540_statuscode",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_a073bdabcc_statuscode",
     "OptionSetInfoNameMapping": {
       "1": "Actief",
       "2": "Inactief"

@@ -882,12 +882,25 @@ intake_screen As screen:
                 { studentID: uniqueID }
             );
             
-               CreateUserForIntake.Run(
-                   GalleryInspection.Selected.fullname,
-                   GalleryInspection.Selected.email,
-                   GalleryInspection.Selected.phoneNumber,
-                   uniqueID
-               );
+            Patch(
+                'Nieuwe tabellen_1',
+                Defaults('Nieuwe tabellen_1'),
+                {
+                    ID: uniqueID,
+                    email: "test@test.com",
+                    fullName: "test"
+                }
+            )
+            
+            
+            
+            
+             //  CreateUserForIntake.Run(
+             //      GalleryInspection.Selected.fullname;
+             //      GalleryInspection.Selected.email;
+             //      GalleryInspection.Selected.phoneNumber;
+             //      uniqueID
+             //  );;
             
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
