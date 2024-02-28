@@ -165,7 +165,9 @@ admin_screen_viewUser As screen:
                     'Nieuwe tabellen',
                     LookUp('Nieuwe tabellen', studentID = currentUser),
                     { studentID: Blank() }
-                )
+                );
+                
+                Navigate(intake_screen);
             Text: ="Delete user"
             X: =24
             Y: =266
