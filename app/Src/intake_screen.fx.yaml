@@ -887,8 +887,9 @@ intake_screen As screen:
                 Defaults('Nieuwe tabellen_1'),
                 {
                     ID: uniqueID,
-                    email: "test@test.com",
-                    fullName: "test"
+                    email: GalleryInspection.Selected.email,
+                    fullName: GalleryInspection.Selected.fullname,
+                    phoneNumber: GalleryInspection.Selected.phoneNumber
                 }
             )
             
