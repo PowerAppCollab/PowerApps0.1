@@ -163,6 +163,43 @@ admin_screen_users As screen:
             X: =680
             ZIndex: =2
 
+            phoneNumber_DataCard2 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_phonenumber"
+                Default: =ThisItem.phoneNumber
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'Nieuwe tabellen_1'],DataSourceInfo.DisplayName,"cr884_phonenumber")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =204
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey15 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue15 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                    ZIndex: =2
+
             email_DataCard2 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="email"
@@ -235,43 +272,6 @@ admin_screen_users As screen:
                     Width: =Parent.Width - 60
                     X: =30
                     Y: =DataCardKey14.Y + DataCardKey14.Height + 5
-                    ZIndex: =2
-
-            phoneNumber_DataCard2 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="phoneNumber"
-                Default: =ThisItem.phoneNumber
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"phoneNumber")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =204
-                X: =2
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey15 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue15 As label:
-                    AutoHeight: =true
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey15.Y + DataCardKey15.Height + 5
                     ZIndex: =2
 
         txtSearch_1 As text:
