@@ -168,8 +168,7 @@ admin_screen_viewUser As screen:
                     { studentID: Blank() }
                 );
                 
-                Remove( 'scores',
-                LookUp( 'scores', userID=currentUser));
+                RemoveIf(scores, userID = currentUser);
                 
                 Navigate(intake_screen);
             Text: ="Delete user"
@@ -224,8 +223,8 @@ admin_screen_viewUser As screen:
                 Fill: =RGBA(167, 182, 203, 1)
                 OnSelect: |
                     =Patch(
-                        'scores',
-                        Defaults('scores'),
+                        scores,
+                        Defaults(scores),
                         {
                             userID: currentUser,
                             score: TextInput1.Text
@@ -241,7 +240,7 @@ admin_screen_viewUser As screen:
         "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =378
-            Items: =Filter('scores', userID = currentUser)
+            Items: =Filter(scores, userID = currentUser)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
