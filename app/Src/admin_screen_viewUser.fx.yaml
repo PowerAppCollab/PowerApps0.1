@@ -218,27 +218,12 @@ admin_screen_viewUser As screen:
 
             Button2 As button:
                 Fill: =RGBA(167, 182, 203, 1)
-                OnSelect: |-
-                    =Set(uniqueID, Text(Now(), "yyyyhhmmssfff"));
-                    
-                    Patch(
-                        'Nieuwe tabellen_1',
-                        LookUp('Nieuwe tabellen_1', ID = currentUser),
-                        { 
-                            scoreID: If(
-                                IsBlank('Nieuwe tabellen_1'.scoreID),
-                                uniqueID,
-                                'Nieuwe tabellen_1'.scoreID & ";" & uniqueID
-                            )
-                        }
-                    )
-                    
-                    
-                    Patch(
+                OnSelect: |
+                    =Patch(
                         'scores',
                         Defaults('scores'),
                         {
-                            scoreID: uniqueID,
+                            userID: currentUser,
                             score: TextInput1.Text
                         }
                     );
