@@ -71,13 +71,16 @@ admin_screen_users As screen:
 
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Items: ='Nieuwe tabellen_1'
+            Height: =517
+            Items: |-
+                =
+                Filter('Nieuwe tabellen_1', StartsWith(fullName, txtSearch_1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =104
             X: =40
-            Y: =3
+            Y: =60
             ZIndex: =1
 
             Image2 As image:
@@ -271,13 +274,41 @@ admin_screen_users As screen:
                     Y: =DataCardKey15.Y + DataCardKey15.Height + 5
                     ZIndex: =2
 
-    Button1 As button:
-        Fill: =RGBA(136, 160, 209, 1)
-        OnSelect: =Navigate(admin_screen_searchUsers)
-        Text: ="Search Users"
-        X: =605
-        Y: =114
-        ZIndex: =7
+        Button2_4 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: =RGBA(51, 51, 51, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(136, 160, 209, 1)
+            Height: =60
+            OnSelect: =Back()
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Width: =520
+            X: =84
+            ZIndex: =3
+
+        txtSearch_1 As text:
+            Default: =""
+            Height: =36
+            OnSelect: =
+            PaddingLeft: =45
+            Width: =451
+            X: =117
+            Y: =14
+            ZIndex: =4
+
+        Icon5_1 As icon.Search:
+            Height: =33
+            Icon: =Icon.Search
+            OnSelect: =
+            Width: =33
+            X: =126
+            Y: =15
+            ZIndex: =5
 
     Button3_1 As button:
         BorderStyle: =BorderStyle.None
