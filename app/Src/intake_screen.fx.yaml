@@ -66,7 +66,7 @@ intake_screen As screen:
                         1
                     ),
                     If(
-                        Text(ThisItem.status) = "In review",
+                        Text(ThisItem.status) = "In Review",
                         RGBA(
                             249,
                             180,
