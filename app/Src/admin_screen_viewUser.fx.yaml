@@ -238,7 +238,7 @@ admin_screen_viewUser As screen:
         "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =378
-            Items: ='scores'
+            Items: =Filter('scores', userID = currentUser)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
