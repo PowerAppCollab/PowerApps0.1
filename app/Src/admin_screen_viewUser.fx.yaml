@@ -168,6 +168,9 @@ admin_screen_viewUser As screen:
                     { studentID: Blank() }
                 );
                 
+                Remove( 'scores',
+                LookUp( 'scores', userID=currentUser));
+                
                 Navigate(intake_screen);
             Text: ="Delete user"
             X: =24
