@@ -231,12 +231,21 @@ admin_screen_viewUser As screen:
                             score: TextInput1.Text
                         }
                     );
-                    
+                    Reset(TextInput1);
                     Set(addScore, false);
                 Text: ="Submit score"
                 X: =231
                 Y: =39
                 ZIndex: =2
+
+            Icon1 As icon.Cancel:
+                Height: =25
+                Icon: =Icon.Cancel
+                OnSelect: =Set(addScore, false)
+                Width: =27
+                X: =13
+                Y: =14
+                ZIndex: =3
 
         "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -246,8 +255,8 @@ admin_screen_viewUser As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =84
-            Width: =600
-            X: =700
+            Width: =304
+            X: =996
             Y: =200
             ZIndex: =15
 
@@ -266,22 +275,6 @@ admin_screen_viewUser As screen:
                 Y: =29
                 ZIndex: =2
 
-            NextArrow3 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="Details van item weergeven"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
-
             Separator3 As rectangle:
                 Height: =8
                 OnSelect: =Select(Parent)
@@ -297,11 +290,11 @@ admin_screen_viewUser As screen:
                 ZIndex: =6
 
         Label6_1 As label:
-            Height: =44
+            Height: =58
             Size: =24
             Text: ="Recent scores"
-            Width: =548
-            X: =700
-            Y: =142
+            Width: =226
+            X: =996
+            Y: =141
             ZIndex: =16
 
