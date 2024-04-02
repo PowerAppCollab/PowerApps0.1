@@ -168,3 +168,22 @@ students_screen As screen:
         Y: =40
         ZIndex: =16
 
+        TextInput1 As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            HintText: ="Zoek student..."
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =406
+            X: =15
+            Y: =17
+            ZIndex: =1
+
