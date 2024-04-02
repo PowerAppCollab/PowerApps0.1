@@ -4,82 +4,76 @@
   "ControlUniqueIds": {
     "App": 1,
     "Host": 3,
-    "intake_screen": 4
+    "Image2": 7,
+    "template_screen": 4
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "04/02/2024 08:16:21",
+  "HeaderLastSavedDateTimeUTC": "04/02/2024 08:28:46",
   "IsLegacyComponentAllowGlobalScopeCase": false,
-  "LocalConnectionIDReferences": {
-    "00106cf0-ef67-4cd9-818e-824fd17124f7": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/18ed636a42a64d74a4351771b0a35296\"",
-    "2465da9a-867f-4f65-82ac-cb2d268f4384": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/e5c3ba22281b44ca9d91ef3ccd6adf24-e4f895229d9d1dd7\"",
-    "5950dfa2-140f-4c8e-a6b5-d0ac3f9b439b": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/e109796b8d2a4a6cbc4cd3a4dee5a8a8-e4f895229d9d1dd7\"",
-    "c1990989-d1b3-409a-8532-7a50671b4cd9": "\"/providers/microsoft.powerapps/apis/shared_office365/connections/5830176a1b044b108e62069c66ef21ed\""
-  },
-  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalConnectionIDReferences": {},
+  "LocalDatabaseReferencesAsEmpty": true,
   "LocalResourceFileNames": {
     "2021-logo-tech_power-apps-nobg": "03f79e29-24ee-487d-9fb5-824d90ff6343.png",
+    "arrow_right_up_line": "625aaaa4-5a24-434d-9d4d-8f278d78e501.svg",
+    "invite_line": "95824ffa-9699-41b0-954e-5b8868d90451.svg",
+    "invite_line (1)": "dae222cd-3d45-4749-8462-2828a0c61a88.svg",
+    "Logo-Wit RGB (1)": "6fd462e3-cb29-4c11-bbad-93a38bed5222.png",
     "work-at-layer": "0001.jpg"
   },
   "LocalResourceRootPaths": {
-    "2021-logo-tech_power-apps-nobg": "https://docserverpwaprodweu.blob.core.windows.net/ab43735e-e8f9-41dd-babd-4173a24c7890-1/resource/Assets0Images003f79e29-24ee-487d-9fb5-824d90ff6343.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A15%3A36Z&ske=2024-04-03T08%3A30%3A36Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A30%3A36Z&sr=b&sp=r&sig=2QaLgDn7vnf8P6FdfSmBwwFUlteQgw%2BACaE4OtwfVM0%3D",
-    "work-at-layer": "https://docserverpwaprodweu.blob.core.windows.net/ab43735e-e8f9-41dd-babd-4173a24c7890-1/resource/Assets0Images00001.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A15%3A36Z&ske=2024-04-03T08%3A30%3A36Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A30%3A36Z&sr=b&sp=r&sig=t4OHATVvcVw60%2FeAfHPiuw8xAlBl3387u%2Bhru2EovSw%3D"
+    "2021-logo-tech_power-apps-nobg": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/Assets0Images003f79e29-24ee-487d-9fb5-824d90ff6343.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A16%3A56Z&ske=2024-04-03T08%3A31%3A56Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A31%3A56Z&sr=b&sp=r&sig=l%2FhIvK%2FzhIiCEJkseOaEaJfyZj6qFVM7WT7nn%2BIj6ko%3D",
+    "arrow_right_up_line": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/bcbdae77-6ee7-4256-b4db-1a12c1796851.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A22%3A51Z&ske=2024-04-03T08%3A37%3A51Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A37%3A51Z&sr=b&sp=r&sig=huOESGjJ8qV8jw4pAuCiLT33jfZtbgBCXXqmWgb88tY%3D",
+    "invite_line": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/7a67ad77-39e5-4e9e-8e22-496725b65e16.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A26%3A40Z&ske=2024-04-03T08%3A41%3A40Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A41%3A40Z&sr=b&sp=r&sig=2jeLhlU%2BF3bJdyGcF%2BI2%2BOC2QV4rHgTesjdaZCkyAQA%3D",
+    "invite_line (1)": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/619a7513-edce-4aaa-8274-adf887e47eac.svg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A27%3A14Z&ske=2024-04-03T08%3A42%3A14Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A42%3A14Z&sr=b&sp=r&sig=e5kSho35VyUE2jF%2BJuagOpaRgQC81xXy8%2FDKQ430uiE%3D",
+    "Logo-Wit RGB (1)": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/9546b582-7243-40db-8326-07c6280552c1.png?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A23%3A11Z&ske=2024-04-03T08%3A38%3A11Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A38%3A11Z&sr=b&sp=r&sig=VNX6z3wf5IS5t2m8jN5ai9taFzwGJvaJ1sexrom4y%2BM%3D",
+    "work-at-layer": "https://docserverpwaprodweu.blob.core.windows.net/fd82500e-5d40-4637-9a80-04633781609b-1/resource/Assets0Images00001.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2024-04-02T08%3A16%3A56Z&ske=2024-04-03T08%3A31%3A56Z&sks=b&skv=2022-11-02&sv=2022-11-02&spr=https&se=2024-04-03T08%3A31%3A56Z&sr=b&sp=r&sig=MHgA39pJTrF8XyDYS4t2LBMK7%2BewF1PcUyFIzI%2B1hjk%3D"
   },
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
-    "ComboBoxSample": 14,
-    "CreateUserForIntake": 0,
-    "CustomGallerySample": 15,
-    "DropDownSample": 16,
-    "intakeResults": 17,
-    "Nieuwe tabellen": 19,
-    "Nieuwe tabellen\\cr884_nieuwetabel_cr884_programmingexperience": 3,
-    "Nieuwe tabellen\\cr884_nieuwetabel_cr884_status": 4,
-    "Nieuwe tabellen\\cr884_nieuwetabel_statecode": 5,
-    "Nieuwe tabellen\\cr884_nieuwetabel_statuscode": 6,
-    "Nieuwe tabellen\\default.cds_cr884_nieuwetabel_views": 11,
-    "Nieuwe tabellen_1": 20,
-    "Nieuwe tabellen_1\\cr884_nieuwetabel2_statecode": 7,
-    "Nieuwe tabellen_1\\cr884_nieuwetabel2_statuscode": 8,
-    "Nieuwe tabellen_1\\default.cds_cr884_nieuwetabel2_views": 12,
-    "Office365Outlook": 1,
-    "PowerAppV2->Itemmaken": 2,
-    "scores": 21,
-    "scores\\cr884_scores_statecode": 9,
-    "scores\\cr884_scores_statuscode": 10,
-    "scores\\default.cds_cr884_scores_views": 13,
-    "students": 18
+    "ComboBoxSample": 0,
+    "CustomGallerySample": 1,
+    "DropDownSample": 2
   },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
-  "OrderXMLTemplate": {},
+  "OrderXMLTemplate": {
+    "image": 0
+  },
   "OverridablePropertiesEntry": {
     "App": {},
     "Host": {},
-    "intake_screen": {}
+    "Image2": {},
+    "template_screen": {}
   },
   "PCFDynamicSchemaForIRRetrievalEntry": {},
   "PCFTemplateEntry": {},
   "PublishOrderIndices": {
     "App": 0,
     "Host": 0,
-    "intake_screen": 95
+    "Image2": 0,
+    "template_screen": 95
   },
   "ResourcesJsonIndices": {
     "Image-2021-logo-tech_power-apps-nobg": 2,
+    "Image-arrow_right_up_line": 6,
+    "Image-invite_line": 4,
+    "Image-invite_line (1)": 3,
+    "Image-Logo-Wit RGB (1)": 5,
     "Image-SampleImage": 0,
     "Image-work-at-layer": 1
   },
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.0433246,
+    "AnalysisLoadTime": 0.0434742,
     "ControlCount": {
+      "image": 1,
       "screen": 1
     },
-    "DeserializationLoadTime": 1.3040696
+    "DeserializationLoadTime": 1.562113
   },
-  "WasLocalDatabaseReferencesEmpty": false
+  "WasLocalDatabaseReferencesEmpty": true
 }
