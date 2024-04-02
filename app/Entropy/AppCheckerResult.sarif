@@ -188,6 +188,36 @@
           },
           "ruleId": "app-UnusedMediaResources",
           "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.group_2_line (1)"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.group_2_line (1)",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "group_2_line (1)",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 0
         }
       ],
       "tool": {
