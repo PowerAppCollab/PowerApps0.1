@@ -118,9 +118,25 @@ students_screen As screen:
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
             TemplatePadding: =0
-            TemplateSize: =104
+            TemplateSize: =90
             Width: =500
             ZIndex: =1
+
+            Title2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.name
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+                ZIndex: =1
 
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -141,7 +157,7 @@ students_screen As screen:
             Size: =16
             Text: ="Scores"
             Width: =600
-            Y: =7
+            Y: =10
             ZIndex: =1
 
         Label3_1 As label:
@@ -188,9 +204,10 @@ students_screen As screen:
 
         FormViewer1 As formViewer:
             DataSource: =students
-            Height: =300
+            Height: =242
             Item: =gallery_students.Selected
             Width: =600
+            Y: =58
             ZIndex: =1
 
             name_DataCard1 As typedDataCard.textualViewCard:
@@ -313,6 +330,16 @@ students_screen As screen:
                     Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                     ZIndex: =2
 
+        Label3_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =16
+            Text: ="Student Informatie"
+            Width: =600
+            Y: =10
+            ZIndex: =2
+
     Image2_1 As image:
         Height: =135
         Image: ='Logo-Wit RGB (1) kopie'
@@ -373,4 +400,58 @@ students_screen As screen:
         X: =725
         Y: =600
         ZIndex: =17
+
+        intake_icon_3 As image:
+            Height: =60
+            Image: ='invite_line (1)'
+            Width: =60
+            X: =94
+            Y: =25
+            ZIndex: =1
+
+        label_intake_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Text: ="Intake Weergeven"
+            Width: =138
+            X: =55
+            Y: =73
+            ZIndex: =2
+
+        intake_icon_4 As image:
+            Height: =60
+            Image: =presentation_2_line
+            Width: =60
+            X: =269
+            Y: =25
+            ZIndex: =3
+
+        label_intake_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Text: ="Presenteer"
+            Width: =138
+            X: =230
+            Y: =73
+            ZIndex: =4
+
+        intake_icon_5 As image:
+            Height: =60
+            Image: =user_x_line
+            Width: =60
+            X: =444
+            Y: =25
+            ZIndex: =5
+
+        label_intake_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Text: ="Verwijder"
+            Width: =138
+            X: =405
+            Y: =73
+            ZIndex: =6
 
