@@ -110,7 +110,7 @@ students_screen_1 As screen:
         Y: =140
         ZIndex: =11
 
-        "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
             Items: =students
@@ -193,15 +193,206 @@ students_screen_1 As screen:
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =275
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Width: =575
         X: =725
-        Y: =300
+        Y: =295
         ZIndex: =14
+
+        FormViewer1 As formViewer:
+            DataSource: =gallery_students.Selected
+            Height: =275
+            Width: =575
+            ZIndex: =1
+
+            studentID_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_studentid"
+                Default: =ThisItem.studentID
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_studentid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =true
+                Width: =191
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                    ZIndex: =2
+
+            name_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_name"
+                Default: =ThisItem.name
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =191
+                X: =1
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =2
+
+            email_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_email"
+                Default: =ThisItem.email
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_email")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =191
+                X: =2
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey3 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                    ZIndex: =2
+
+            phone_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_phone"
+                Default: =ThisItem.phone
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_phone")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =191
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey4 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                    ZIndex: =2
+
+            intakeID_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_intakeid"
+                Default: =ThisItem.intakeID
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_intakeid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =191
+                X: =1
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey5 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                    ZIndex: =2
 
     Image2_1 As image:
         Height: =135
@@ -251,14 +442,14 @@ students_screen_1 As screen:
 
     container_10 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
-        Fill: =RGBA(175, 191, 224, 1)
-        Height: =300
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =125
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Width: =575
         X: =725
-        Y: =400
+        Y: =600
         ZIndex: =17
 

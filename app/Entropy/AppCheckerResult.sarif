@@ -14,6 +14,35 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen1",
+                "type": "Screen1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "students_screen_1.container_9.TextInput1.AccessibleLabel"
                 }
               ],
@@ -37,26 +66,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 1
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "students_screen_1.container_5.Gallery2.AccessibleLabel"
+                  "fullyQualifiedName": "students_screen_1.container_5.gallery_students.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "students_screen_1.container_5.Gallery2.AccessibleLabel",
+                  "fullyQualifiedName": "students_screen_1.container_5.gallery_students.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "students_screen_1",
-                "type": "students_screen_1.container_5.Gallery2"
+                "type": "students_screen_1.container_5.gallery_students"
               }
             }
           ],
@@ -67,26 +96,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 1
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "students_screen_1.container_5.Gallery2.TabIndex"
+                  "fullyQualifiedName": "students_screen_1.container_5.gallery_students.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "students_screen_1.container_5.Gallery2.TabIndex",
+                  "fullyQualifiedName": "students_screen_1.container_5.gallery_students.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "students_screen_1",
-                "type": "students_screen_1.container_5.Gallery2"
+                "type": "students_screen_1.container_5.gallery_students"
               }
             }
           ],
@@ -97,35 +126,6 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen1"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen1",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "module": "Screen1",
-                "type": "Screen1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Low"
-          },
-          "ruleId": "acc-ReadableScreenNameNeeded",
           "ruleIndex": 2
         },
         {
@@ -133,17 +133,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.work-at-layer"
+                  "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.work-at-layer",
+                  "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "work-at-layer",
+                "member": "2021-logo-tech_power-apps-nobg",
                 "module": "App",
                 "type": "App"
               }
@@ -163,17 +163,47 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg"
+                  "fullyQualifiedName": "App.arrow_right_up_line"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg",
+                  "fullyQualifiedName": "App.arrow_right_up_line",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "2021-logo-tech_power-apps-nobg",
+                "member": "arrow_right_up_line",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.group_2_line (1)"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.group_2_line (1)",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "group_2_line (1)",
                 "module": "App",
                 "type": "App"
               }
@@ -283,47 +313,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.arrow_right_up_line"
+                  "fullyQualifiedName": "App.work-at-layer"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.arrow_right_up_line",
+                  "fullyQualifiedName": "App.work-at-layer",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "arrow_right_up_line",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.group_2_line (1)"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.group_2_line (1)",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "group_2_line (1)",
+                "member": "work-at-layer",
                 "module": "App",
                 "type": "App"
               }
@@ -344,6 +344,23 @@
           "fullName": "PowerApps app checker",
           "name": "PowerApps app checker",
           "rules": [
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
+              }
+            },
             {
               "id": "acc-AccessibleLabelNeeded",
               "messageStrings": {
@@ -379,37 +396,20 @@
               }
             },
             {
-              "id": "acc-ReadableScreenNameNeeded",
-              "messageStrings": {
-                "issue": {
-                  "text": "Revise screen name"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Give the screen  a title that describes what's on the screen or what it's used for."
-                ],
-                "level": "Low",
-                "primaryCategory": "accessibility",
-                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
-              }
-            },
-            {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused media files"
+                  "text": "Ongebruikte mediabestanden"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused media file in the Media pane."
+                  "Verwijder het ongebruikte mediabestand in het deelvenster Media."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+                "whyFix": "Er wordt niet naar dit mediabestand verwezen door besturingselementformules, dus het is niet nodig. Als u dit verwijdert, worden de prestaties verbeterd."
               }
             }
           ],
