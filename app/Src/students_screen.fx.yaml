@@ -131,7 +131,7 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.studentID
+                Text: =ThisItem.name
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =23
@@ -147,7 +147,7 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.name
+                Text: =ThisItem.email
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title1.Width
                 X: =23
