@@ -113,7 +113,7 @@ students_screen As screen:
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: =CustomGallerySample
+            Items: =students
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -121,19 +121,8 @@ students_screen As screen:
             Width: =500
             ZIndex: =1
 
-            Image1 As image:
-                Height: =72
-                OnSelect: =Select(Parent)
-                RadiusBottomLeft: =8
-                RadiusBottomRight: =8
-                RadiusTopLeft: =8
-                RadiusTopRight: =8
-                Width: =72
-                X: =16
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =1
-
             Title1 As label:
+                Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                 Height: =Self.Size * 1.8
                 OnSelect: =Select(Parent)
@@ -141,7 +130,7 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleHeading
+                Text: =ThisItem.studentID
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =103
@@ -149,6 +138,7 @@ students_screen As screen:
                 ZIndex: =2
 
             Subtitle1 As label:
+                Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                 Height: =Self.Size * 1.8
                 OnSelect: =Select(Parent)
@@ -156,42 +146,23 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.SampleText
+                Text: =ThisItem.name
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title1.Width
                 X: =Title1.X
                 Y: =Title1.Y + Title1.Height
                 ZIndex: =3
 
-            NextArrow1 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="Details van item weergeven"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            Container1 As groupContainer.manualLayoutContainer:
+                BorderStyle: =BorderStyle.None
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(192, 5, 230, 0.1)
+                Height: =90
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
                 ZIndex: =4
-
-            Separator1 As rectangle:
-                Height: =8
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =5
-
-            Rectangle2 As rectangle:
-                Height: =Parent.TemplateHeight - Separator1.Height
-                OnSelect: =Select(Parent)
-                Visible: =ThisItem.IsSelected
-                Width: =4
-                ZIndex: =6
 
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
