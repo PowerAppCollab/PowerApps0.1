@@ -116,6 +116,7 @@ students_screen As screen:
             Items: =students
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =104
             Width: =500
@@ -133,8 +134,8 @@ students_screen As screen:
                 Text: =ThisItem.studentID
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
-                X: =103
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+                X: =23
+                Y: =22
                 ZIndex: =2
 
             Subtitle1 As label:
@@ -149,8 +150,8 @@ students_screen As screen:
                 Text: =ThisItem.name
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title1.Width
-                X: =Title1.X
-                Y: =Title1.Y + Title1.Height
+                X: =23
+                Y: =47
                 ZIndex: =3
 
             Container1 As groupContainer.manualLayoutContainer:
@@ -240,4 +241,13 @@ students_screen As screen:
             X: =15
             Y: =17
             ZIndex: =1
+
+        Icon1 As icon.Search:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =35
+            Icon: =Icon.Search
+            Width: =35
+            X: =445
+            Y: =19
+            ZIndex: =2
 
