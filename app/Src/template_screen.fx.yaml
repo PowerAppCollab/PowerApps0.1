@@ -3,14 +3,42 @@ template_screen As screen:
     OnVisible: =
 
     intake_icon As image:
+        Height: =45
         Image: ='invite_line (1)'
+        Width: =45
         X: =63
         Y: =168
         ZIndex: =1
 
     student_icon As image:
+        Height: =45
         Image: =group_line
+        Width: =45
         X: =63
-        Y: =314
+        Y: =264
         ZIndex: =2
+
+    group_icon As image:
+        Height: =45
+        Image: =grid_line
+        Width: =45
+        X: =63
+        Y: =364
+        ZIndex: =3
+
+    presentation_icon As image:
+        Height: =45
+        Image: =presentation_2_line
+        Width: =45
+        X: =63
+        Y: =452
+        ZIndex: =4
+
+    courses_icon As image:
+        Height: =45
+        Image: =map_line
+        Width: =45
+        X: =63
+        Y: =544
+        ZIndex: =5
 
