@@ -290,3 +290,39 @@ students_screen As screen:
         Y: =600
         ZIndex: =17
 
+        intake_icon_2 As image:
+            Height: =55
+            Image: ='invite_line (1)'
+            Width: =55
+            X: =72
+            Y: =27
+            ZIndex: =1
+
+        label_intake_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Intakes"
+            Width: =97
+            X: =51
+            Y: =69
+            ZIndex: =2
+
+        presentation_icon_2 As image:
+            Height: =55
+            Image: =presentation_2_line
+            Width: =55
+            X: =289
+            Y: =27
+            ZIndex: =3
+
+        label_presentation_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Text: |-
+                ="Presentatie
+                "
+            Width: =109
+            X: =262
+            Y: =69
+            ZIndex: =4
+
