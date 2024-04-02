@@ -3,20 +3,33 @@
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
     "App": 1,
+    "container_1": 19,
+    "container_1_inner": 20,
+    "container_2": 24,
+    "container_2_inner": 25,
+    "container_3": 26,
+    "container_3_inner": 27,
+    "container_4": 28,
+    "container_4_inner": 29,
     "courses_icon": 9,
     "group_icon": 7,
     "Host": 3,
     "intake_icon": 5,
+    "label_courses": 14,
+    "label_groups": 12,
+    "label_intake": 10,
+    "label_presentation": 13,
+    "label_students": 11,
     "presentation_icon": 8,
     "student_icon": 6,
     "template_screen": 4
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "04/02/2024 08:44:11",
+  "HeaderLastSavedDateTimeUTC": "04/02/2024 09:29:33",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
-  "LocalDatabaseReferencesAsEmpty": true,
+  "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
     "2021-logo-tech_power-apps-nobg": "03f79e29-24ee-487d-9fb5-824d90ff6343.png",
     "arrow_right_up_line": "625aaaa4-5a24-434d-9d4d-8f278d78e501.svg",
@@ -56,14 +69,30 @@
   "OrderPcfTemplate": {},
   "OrderTemplate": {},
   "OrderXMLTemplate": {
-    "image": 0
+    "groupContainer": 0,
+    "image": 2,
+    "label": 3,
+    "rectangle": 1
   },
   "OverridablePropertiesEntry": {
     "App": {},
+    "container_1": {},
+    "container_1_inner": {},
+    "container_2": {},
+    "container_2_inner": {},
+    "container_3": {},
+    "container_3_inner": {},
+    "container_4": {},
+    "container_4_inner": {},
     "courses_icon": {},
     "group_icon": {},
     "Host": {},
     "intake_icon": {},
+    "label_courses": {},
+    "label_groups": {},
+    "label_intake": {},
+    "label_presentation": {},
+    "label_students": {},
     "presentation_icon": {},
     "student_icon": {},
     "template_screen": {}
@@ -72,12 +101,25 @@
   "PCFTemplateEntry": {},
   "PublishOrderIndices": {
     "App": 0,
-    "courses_icon": 0,
-    "group_icon": 0,
+    "container_1": 0,
+    "container_1_inner": 1,
+    "container_2": 2,
+    "container_2_inner": 3,
+    "container_3": 0,
+    "container_3_inner": 1,
+    "container_4": 2,
+    "container_4_inner": 3,
+    "courses_icon": 12,
+    "group_icon": 8,
     "Host": 0,
-    "intake_icon": 0,
-    "presentation_icon": 0,
-    "student_icon": 0,
+    "intake_icon": 4,
+    "label_courses": 13,
+    "label_groups": 9,
+    "label_intake": 5,
+    "label_presentation": 11,
+    "label_students": 7,
+    "presentation_icon": 10,
+    "student_icon": 6,
     "template_screen": 95
   },
   "ResourcesJsonIndices": {
@@ -100,10 +142,13 @@
   "VolatileProperties": {
     "AnalysisLoadTime": 0.0524194,
     "ControlCount": {
+      "groupContainer": 4,
       "image": 5,
+      "label": 4,
+      "rectangle": 6,
       "screen": 1
     },
     "DeserializationLoadTime": 0.9822851
   },
-  "WasLocalDatabaseReferencesEmpty": true
+  "WasLocalDatabaseReferencesEmpty": false
 }
