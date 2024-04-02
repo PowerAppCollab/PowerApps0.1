@@ -54,46 +54,6 @@
     "Type": "OptionSetInfo"
   },
   {
-    "DisplayName": "Status (students)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1663dee402_statecode",
-    "OptionSetInfoNameMapping": {
-      "0": "Actief",
-      "1": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statecode",
-        "OptionSetReferenceEntityName": "students"
-      }
-    },
-    "OptionSetTypeKey": "StateType",
-    "RelatedColumnInvariantName": "statecode",
-    "RelatedEntityName": "students",
-    "Type": "OptionSetInfo"
-  },
-  {
-    "DisplayName": "Reden van status (students)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1663dee402_statuscode",
-    "OptionSetInfoNameMapping": {
-      "1": "Actief",
-      "2": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statuscode",
-        "OptionSetReferenceEntityName": "students"
-      }
-    },
-    "OptionSetTypeKey": "StatusType",
-    "RelatedColumnInvariantName": "statuscode",
-    "RelatedEntityName": "students",
-    "Type": "OptionSetInfo"
-  },
-  {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
     "EntitySetName": "cr884_studentses",
     "IsHidden": false,
