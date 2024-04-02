@@ -2,9 +2,15 @@ template_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: =
 
-    Image2 As image:
+    intake_icon As image:
         Image: ='invite_line (1)'
         X: =63
         Y: =168
         ZIndex: =1
+
+    Image4 As image:
+        Image: ='group_2_line (1)'
+        X: =63
+        Y: =314
+        ZIndex: =2
 
