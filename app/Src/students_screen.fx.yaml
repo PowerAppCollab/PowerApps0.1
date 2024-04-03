@@ -96,12 +96,27 @@ students_screen As screen:
             DelayItemLoading: =true
             Height: =250
             Items: |
-                =Filter(students, StartsWith(name, SearchInput1.Text))
+                =
+                Filter(students, StartsWith(name, SearchInput1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            students,
+                            StartsWith(
+                                name,
+                                SearchInput1.Text
+                            )
+                        )
+                    ),
+                    false,
+                    true
+                )
             Width: =500
             ZIndex: =1
 
@@ -166,7 +181,7 @@ students_screen As screen:
         Y: =40
         ZIndex: =12
 
-        Label3 As label:
+        label_scoreTitle As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
@@ -184,6 +199,17 @@ students_screen As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =40
+            Visible: |-
+                =If(
+                    IsBlank(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    true
+                )
             Width: =600
             Y: =50
             ZIndex: =2
@@ -203,6 +229,27 @@ students_screen As screen:
                 Text: =ThisItem.score
                 X: =15
                 ZIndex: =4
+
+        label_scoreTitle_error As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er zijn nog geen scores beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =600
+            Y: =63
+            ZIndex: =3
 
     container_7 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -262,55 +309,19 @@ students_screen As screen:
         Y: =270
         ZIndex: =14
 
-        FormViewer1 As formViewer:
+        form_studentInformation As formViewer:
             DataSource: =students
             Height: =242
             Item: =gallery_students.Selected
-            Visible: =If(gallery_students.Selected.email = "", false)
+            Visible: |-
+                =If(
+                    IsBlank(gallery_students.Selected.email),
+                    false,
+                    true
+                )
             Width: =600
             Y: =58
             ZIndex: =1
-
-            name_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_name"
-                Default: =ThisItem.name
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =0
-                Y: =0
-                ZIndex: =2
-
-                DataCardKey2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Semibold
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
-                    ZIndex: =2
 
             email_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
@@ -394,7 +405,48 @@ students_screen As screen:
                     Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                     ZIndex: =2
 
-        Label3_2 As label:
+            name_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_name"
+                Default: =ThisItem.name
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =2
+
+        label_studentInformation As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
@@ -403,6 +455,23 @@ students_screen As screen:
             Width: =600
             Y: =10
             ZIndex: =2
+
+        Label2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =66
+            Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
+            Visible: |-
+                =If(
+                    IsBlank(gallery_students.Selected.email),
+                    true,
+                    false
+                )
+            Width: =558
+            X: =21
+            Y: =117
+            ZIndex: =3
 
     Image2_1 As image:
         Height: =135
