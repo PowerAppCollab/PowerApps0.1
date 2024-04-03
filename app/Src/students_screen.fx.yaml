@@ -621,7 +621,7 @@ students_screen As screen:
             groep_verwijder_icon As image:
                 Height: =60
                 Image: =user_x_line
-                OnSelect: =
+                OnSelect: =Set(varShowPopup, true);
                 Width: =60
                 X: =444
                 Y: =25
@@ -630,7 +630,7 @@ students_screen As screen:
             groep_verwijder_text As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =
+                OnSelect: =Set(varShowPopup, true);
                 Size: =11
                 Text: ="Verwijder"
                 Width: =138
@@ -646,6 +646,7 @@ students_screen As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =94
                 HoverFill: =
+                OnSelect: =Set(varShowPopup, true);
                 PressedFill: =
                 Text: =""
                 Width: =138
