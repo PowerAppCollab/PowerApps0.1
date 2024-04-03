@@ -1,8 +1,8 @@
-intakes_screen As screen:
+intakesVersturen_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: =
 
-    intake_icon_6 As image:
+    intake_icon_7 As image:
         Height: =45
         Image: ='invite_line (2)'
         OnSelect: =Navigate(students_screen);
@@ -11,7 +11,7 @@ intakes_screen As screen:
         Y: =150
         ZIndex: =1
 
-    student_icon_3 As image:
+    student_icon_4 As image:
         Height: =45
         Image: =group_line
         Width: =45
@@ -19,7 +19,7 @@ intakes_screen As screen:
         Y: =250
         ZIndex: =2
 
-    group_icon_3 As image:
+    group_icon_4 As image:
         Height: =45
         Image: =grid_line
         Width: =45
@@ -27,7 +27,7 @@ intakes_screen As screen:
         Y: =350
         ZIndex: =3
 
-    presentation_icon_3 As image:
+    presentation_icon_4 As image:
         Height: =45
         Image: =presentation_2_line
         Width: =45
@@ -35,7 +35,7 @@ intakes_screen As screen:
         Y: =450
         ZIndex: =4
 
-    courses_icon_3 As image:
+    courses_icon_4 As image:
         Height: =45
         Image: =map_line
         Width: =45
@@ -43,7 +43,7 @@ intakes_screen As screen:
         Y: =550
         ZIndex: =5
 
-    label_intake_6 As label:
+    label_intake_7 As label:
         Align: =Align.Center
         Color: =RGBA(192, 5, 230, 1)
         Size: =10
@@ -53,7 +53,7 @@ intakes_screen As screen:
         Y: =180
         ZIndex: =6
 
-    label_students_3 As label:
+    label_students_4 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Size: =10
@@ -63,7 +63,7 @@ intakes_screen As screen:
         Y: =280
         ZIndex: =7
 
-    label_groups_3 As label:
+    label_groups_4 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Size: =10
@@ -75,7 +75,7 @@ intakes_screen As screen:
         Y: =380
         ZIndex: =8
 
-    label_presentation_3 As label:
+    label_presentation_4 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Size: =11
@@ -87,7 +87,7 @@ intakes_screen As screen:
         Y: =480
         ZIndex: =9
 
-    label_courses_3 As label:
+    label_courses_4 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Size: =10
@@ -99,7 +99,7 @@ intakes_screen As screen:
         Y: =580
         ZIndex: =10
 
-    Image2_3 As image:
+    Image2_4 As image:
         Height: =135
         Image: ='Logo-Wit RGB (1) kopie'
         Width: =161
@@ -107,7 +107,7 @@ intakes_screen As screen:
         Y: =20
         ZIndex: =11
 
-    container_20 As groupContainer.manualLayoutContainer:
+    container_21 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =325
@@ -120,7 +120,7 @@ intakes_screen As screen:
         Y: =400
         ZIndex: =12
 
-        Label2_1 As label:
+        Label2_2 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
@@ -130,13 +130,13 @@ intakes_screen As screen:
             Width: =1150
             ZIndex: =1
 
-        form_intakeResultaten As formViewer:
+        form_intakeResultaten_1 As formViewer:
             DataSource: =students
             Height: =269
-            Item: =gallery_intakes.Selected
+            Item: =gallery_intakes_1.Selected
             Visible: |
                 =If(
-                    IsBlank(gallery_intakes.Selected.email),
+                    IsBlank(gallery_intakes_1.Selected.email),
                     false,
                     true
                 )
@@ -144,7 +144,7 @@ intakes_screen As screen:
             Y: =56
             ZIndex: =2
 
-            name_DataCard1_2 As typedDataCard.textualViewCard:
+            name_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_name"
                 Default: =ThisItem.name
@@ -158,7 +158,7 @@ intakes_screen As screen:
                 Y: =0
                 ZIndex: =2
 
-                DataCardKey2_2 As label:
+                DataCardKey2_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Semibold
@@ -170,7 +170,7 @@ intakes_screen As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue2_2 As label:
+                DataCardValue2_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
@@ -182,10 +182,10 @@ intakes_screen As screen:
                     Text: =Parent.Default
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey2_2.Y + DataCardKey2_2.Height + 5
+                    Y: =DataCardKey2_3.Y + DataCardKey2_3.Height + 5
                     ZIndex: =2
 
-            email_DataCard1_2 As typedDataCard.textualViewCard:
+            email_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_email"
                 Default: =ThisItem.email
@@ -199,7 +199,7 @@ intakes_screen As screen:
                 Y: =0
                 ZIndex: =2
 
-                DataCardKey3_2 As label:
+                DataCardKey3_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Semibold
@@ -211,7 +211,7 @@ intakes_screen As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue3_2 As label:
+                DataCardValue3_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
@@ -223,10 +223,10 @@ intakes_screen As screen:
                     Text: =Parent.Default
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey3_2.Y + DataCardKey3_2.Height + 5
+                    Y: =DataCardKey3_3.Y + DataCardKey3_3.Height + 5
                     ZIndex: =2
 
-            phone_DataCard1_2 As typedDataCard.textualViewCard:
+            phone_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_phone"
                 Default: =ThisItem.phone
@@ -240,7 +240,7 @@ intakes_screen As screen:
                 Y: =0
                 ZIndex: =2
 
-                DataCardKey4_2 As label:
+                DataCardKey4_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Semibold
@@ -252,7 +252,7 @@ intakes_screen As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue4_2 As label:
+                DataCardValue4_3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
@@ -264,10 +264,10 @@ intakes_screen As screen:
                     Text: =Parent.Default
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey4_2.Y + DataCardKey4_2.Height + 5
+                    Y: =DataCardKey4_3.Y + DataCardKey4_3.Height + 5
                     ZIndex: =2
 
-        label_intakeResultaten_error As label:
+        label_intakeResultaten_error_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
@@ -275,7 +275,7 @@ intakes_screen As screen:
             Text: ="Geen intake geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_intakes.Selected.name),
+                    IsBlank(gallery_intakes_1.Selected.name),
                     true,
                     false
                 )
@@ -283,7 +283,7 @@ intakes_screen As screen:
             Y: =130
             ZIndex: =3
 
-    container_16 As groupContainer.manualLayoutContainer:
+    container_17 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =75
@@ -295,7 +295,7 @@ intakes_screen As screen:
         Y: =40
         ZIndex: =13
 
-        input_searchIntakes As text:
+        input_searchIntakes_1 As text:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
             Default: =""
@@ -314,7 +314,7 @@ intakes_screen As screen:
             Y: =17
             ZIndex: =1
 
-        Icon1_1 As icon.Search:
+        Icon1_2 As icon.Search:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Search
@@ -323,7 +323,7 @@ intakes_screen As screen:
             Y: =19
             ZIndex: =2
 
-    container_11 As groupContainer.manualLayoutContainer:
+    container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =225
@@ -335,12 +335,12 @@ intakes_screen As screen:
         Y: =140
         ZIndex: =14
 
-        "gallery_intakes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        "gallery_intakes_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =225
             Items: |
                 =
-                Filter(students, StartsWith(name, input_searchIntakes.Text))
+                Filter(students, StartsWith(name, input_searchIntakes_1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -363,7 +363,7 @@ intakes_screen As screen:
             Width: =500
             ZIndex: =1
 
-            gallery_students_backgroundButton_1 As button:
+            gallery_students_backgroundButton_2 As button:
                 BorderStyle: =BorderStyle.None
                 DisabledFill: =RGBA(0, 0, 0, 0)
                 Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
@@ -375,7 +375,7 @@ intakes_screen As screen:
                 Width: =500
                 ZIndex: =1
 
-            gallery_students_titleText_1 As label:
+            gallery_students_titleText_2 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =Self.Size * 1.8
                 OnSelect: =Select(Parent)
@@ -390,7 +390,7 @@ intakes_screen As screen:
                 Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText.Size * 1.8)) / 2
                 ZIndex: =2
 
-            gallery_students_emailText_1 As label:
+            gallery_students_emailText_2 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
@@ -400,7 +400,7 @@ intakes_screen As screen:
                 Y: =37
                 ZIndex: =3
 
-            gallery_students_clickableButton_1 As button:
+            gallery_students_clickableButton_2 As button:
                 BorderStyle: =BorderStyle.None
                 DisabledFill: =RGBA(0, 0, 0, 0)
                 Fill: =RGBA(0,0,0,0)
@@ -412,7 +412,7 @@ intakes_screen As screen:
                 Width: =500
                 ZIndex: =4
 
-        label_gallery_students_error_1 As label:
+        label_gallery_students_error_2 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
@@ -425,7 +425,7 @@ intakes_screen As screen:
                             students,
                             StartsWith(
                                 name,
-                                input_searchIntakes.Text
+                                input_searchIntakes_1.Text
                             )
                         )
                     ),
@@ -436,7 +436,7 @@ intakes_screen As screen:
             Y: =82
             ZIndex: =2
 
-        Button1 As button:
+        Button1_1 As button:
             BorderStyle: =BorderStyle.None
             DisabledColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(192, 5, 230, 1)
@@ -451,7 +451,7 @@ intakes_screen As screen:
             Y: =171
             ZIndex: =3
 
-    container_12 As groupContainer.manualLayoutContainer:
+    container_13 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =325
@@ -464,7 +464,7 @@ intakes_screen As screen:
         Y: =40
         ZIndex: =15
 
-        label_intakeOpties As label:
+        label_intakeOpties_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
@@ -474,7 +474,7 @@ intakes_screen As screen:
             Y: =10
             ZIndex: =2
 
-        label_intakeOpties_error As label:
+        label_intakeOpties_error_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
@@ -482,7 +482,7 @@ intakes_screen As screen:
             Text: ="Geen intake geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_intakes.Selected.name),
+                    IsBlank(gallery_intakes_1.Selected.name),
                     true,
                     false
                 )
