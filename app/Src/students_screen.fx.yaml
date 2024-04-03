@@ -193,13 +193,40 @@ students_screen As screen:
         Y: =425
         ZIndex: =13
 
-        Label2 As label:
-            Height: =66
-            Text: ="Extra Or Graph Here...."
-            Width: =188
-            X: =152
-            Y: =100
+        testchart1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
             ZIndex: =1
+
+            Title3 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                Size: =16
+                Text: ="Scores van " & gallery_students.Selected.name
+                Width: =500
+                Y: =10
+                ZIndex: =2
+
+            LineChart1 As lineChart:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =300
+                Items: =scores
+                Width: =500
+                ZIndex: =3
+
+            Legend1 As legend:
+                Height: =80
+                ItemColorSet: =LineChart1.ItemColorSet
+                Items: =LineChart1.SeriesLabels
+                Width: =422
+                X: =53
+                Y: =220
+                ZIndex: =4
 
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
