@@ -117,7 +117,7 @@ intakes_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             Height: =56
-            Size: =20
+            Size: =16
             Text: ="Resultaten"
             Width: =1150
             ZIndex: =1
@@ -126,9 +126,9 @@ intakes_screen As screen:
             DataSource: =students
             Height: =269
             Item: =gallery_intakes.Selected
-            Visible: |-
+            Visible: |
                 =If(
-                    IsBlank(gallery_students.Selected.email),
+                    IsBlank(gallery_intakes.Selected.email),
                     false,
                     true
                 )
@@ -417,7 +417,7 @@ intakes_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =61
-            Text: ="Geen studenten gevonden."
+            Text: ="Geen intake gevonden."
             Visible: |-
                 =If(
                     IsEmpty(
@@ -425,7 +425,7 @@ intakes_screen As screen:
                             students,
                             StartsWith(
                                 name,
-                                SearchInput1.Text
+                                input_searchIntakes.Text
                             )
                         )
                     ),
@@ -433,7 +433,7 @@ intakes_screen As screen:
                     false
                 )
             Width: =500
-            Y: =95
+            Y: =82
             ZIndex: =2
 
     container_12 As groupContainer.manualLayoutContainer:
