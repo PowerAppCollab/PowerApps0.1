@@ -614,29 +614,44 @@ students_screen As screen:
         groep_verwijder As group:
             Height: =5
             Width: =5
-            X: =40
-            Y: =40
-            ZIndex: =7
+            X: =60
+            Y: =60
+            ZIndex: =8
 
-            intake_icon_5 As image:
+            groep_verwijder_icon As image:
                 Height: =60
                 Image: =user_x_line
-                OnSelect: =Set(varShowPopup, true);
+                OnSelect: =
                 Width: =60
                 X: =444
                 Y: =25
                 ZIndex: =5
 
-            label_intake_5 As label:
+            groep_verwijder_text As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =Set(varShowPopup, true);
+                OnSelect: =
                 Size: =11
                 Text: ="Verwijder"
                 Width: =138
                 X: =405
                 Y: =79
                 ZIndex: =6
+
+            groep_verwijder_knop As button:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(0, 0, 0, 0)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =94
+                HoverFill: =
+                PressedFill: =
+                Text: =""
+                Width: =138
+                X: =405
+                Y: =25
+                ZIndex: =7
 
     groep_popup As group:
         Height: =5
