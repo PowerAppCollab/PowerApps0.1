@@ -169,6 +169,30 @@ students_screen As screen:
                 Width: =500
                 ZIndex: =4
 
+        label_gallery_students_error As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =61
+            Text: ="Geen studenten gevonden."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            students,
+                            StartsWith(
+                                name,
+                                SearchInput1.Text
+                            )
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            Y: =95
+            ZIndex: =2
+
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -456,7 +480,24 @@ students_screen As screen:
             Y: =10
             ZIndex: =2
 
-        Label2 As label:
+        label_studentInformation_error_notSelected As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =66
+            Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
+            Visible: |-
+                =If(
+                    IsBlank(gallery_students.Selected.email) && IsBlank(gallery_students.Selected.name),
+                    true,
+                    false
+                )
+            Width: =558
+            X: =21
+            Y: =117
+            ZIndex: =3
+
+        label_studentInformation_error_deleted As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
@@ -465,13 +506,12 @@ students_screen As screen:
             Visible: |-
                 =If(
                     IsBlank(gallery_students.Selected.email),
-                    true,
                     false
                 )
             Width: =558
             X: =21
             Y: =117
-            ZIndex: =3
+            ZIndex: =4
 
     Image2_1 As image:
         Height: =135
