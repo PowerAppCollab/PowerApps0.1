@@ -505,7 +505,7 @@ students_screen As screen:
             Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students.Selected.email),
+                    IsBlank(gallery_students.Selected.email) && !IsBlank(gallery_students.Selected.name),
                     true,
                     false
                 )
