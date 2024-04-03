@@ -2,14 +2,6 @@ students_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: =
 
-    intake_icon_1 As image:
-        Height: =45
-        Image: ='invite_line (1)'
-        Width: =45
-        X: =63
-        Y: =150
-        ZIndex: =1
-
     student_icon_1 As image:
         Height: =45
         Image: ='group_line (1)'
@@ -41,16 +33,6 @@ students_screen As screen:
         X: =63
         Y: =550
         ZIndex: =5
-
-    label_intake_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: ="Intakes"
-        Width: =97
-        X: =37
-        Y: =180
-        ZIndex: =6
 
     label_students_1 As label:
         Align: =Align.Center
@@ -233,7 +215,7 @@ students_screen As screen:
         ZIndex: =14
 
         FormViewer1 As formViewer:
-            DataSource: =students
+            DataSource: =If(gallery_students.Selected.email = "", students)
             Height: =242
             Item: =gallery_students.Selected
             Width: =600
@@ -555,8 +537,8 @@ students_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
-                =Remove(students, gallery_students.Selected);
-                Set(varShowPopup, false)
+                =Patch(students, gallery_students.Selected, {name: gallery_students.Selected.studentID, email: "", phone: ""});
+                Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
@@ -586,4 +568,31 @@ students_screen As screen:
             X: =726
             Y: =455
             ZIndex: =23
+
+    nav_intake As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =24
+
+        intake_icon_1 As image:
+            Height: =45
+            Image: ='invite_line (1)'
+            OnSelect: =Navigate(intakeVersturen_screen);
+            Width: =45
+            X: =63
+            Y: =150
+            ZIndex: =1
+
+        label_intake_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            OnSelect: =Navigate(intakeVersturen_screen);
+            Size: =10
+            Text: ="Intakes"
+            Width: =97
+            X: =37
+            Y: =180
+            ZIndex: =6
 
