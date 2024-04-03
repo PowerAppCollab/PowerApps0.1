@@ -436,6 +436,21 @@ intakes_screen As screen:
             Y: =82
             ZIndex: =2
 
+        Button1 As button:
+            BorderStyle: =BorderStyle.None
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =54
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            PressedFill: =
+            Size: =13
+            Text: ="Intake versturen"
+            Width: =176
+            X: =324
+            Y: =171
+            ZIndex: =3
+
     container_12 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
