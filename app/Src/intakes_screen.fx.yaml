@@ -443,6 +443,7 @@ intakes_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =54
             HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: =Navigate(intakesVersturen_screen)
             PressedFill: =
             Size: =13
             Text: ="Intake versturen"
