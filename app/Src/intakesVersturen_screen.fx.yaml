@@ -190,7 +190,7 @@ intakesVersturen_screen As screen:
                 FontWeight: =FontWeight.Normal
                 Height: =35
                 HoverFill: =RGBA(192, 5, 230, 0.8)
-                OnSelect: |-
+                OnSelect: |
                     =If(
                         !IsMatch(
                             intakeInput_email.Text,
@@ -205,11 +205,11 @@ intakesVersturen_screen As screen:
                             "Subject",
                             "Body"
                         ),
+                        Reset(intakeInput_email);
                         Set(
                             varError,
                             false
-                        ),
-                        Reset(intakeInput_email)
+                        )
                     );
                 PressedFill: =
                 RadiusBottomLeft: =0
