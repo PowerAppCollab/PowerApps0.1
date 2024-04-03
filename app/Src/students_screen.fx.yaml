@@ -485,7 +485,7 @@ students_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =66
-            Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
+            Text: ="Geen student geselecteerd."
             Visible: |-
                 =If(
                     IsBlank(gallery_students.Selected.email) && IsBlank(gallery_students.Selected.name),
@@ -506,6 +506,7 @@ students_screen As screen:
             Visible: |-
                 =If(
                     IsBlank(gallery_students.Selected.email),
+                    true,
                     false
                 )
             Width: =558
