@@ -4,7 +4,7 @@ students_screen As screen:
 
     intake_icon_1 As image:
         Height: =45
-        Image: ='invite_line (2)'
+        Image: ='invite_line (1)'
         Width: =45
         X: =63
         Y: =150
@@ -12,7 +12,7 @@ students_screen As screen:
 
     student_icon_1 As image:
         Height: =45
-        Image: =group_line
+        Image: ='group_line (1)'
         Width: =45
         X: =63
         Y: =250
@@ -44,7 +44,7 @@ students_screen As screen:
 
     label_intake_1 As label:
         Align: =Align.Center
-        Color: =RGBA(192, 5, 230, 1)
+        Color: =RGBA(255, 255, 255, 1)
         Size: =10
         Text: ="Intakes"
         Width: =97
@@ -54,7 +54,7 @@ students_screen As screen:
 
     label_students_1 As label:
         Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(192, 5, 255, 1)
         Size: =10
         Text: ="Studenten"
         Width: =97
@@ -554,6 +554,9 @@ students_screen As screen:
             Fill: =RGBA(184, 0, 0, 1)
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
+            OnSelect: |-
+                =Remove(students, gallery_students.Selected);
+                Set(varShowPopup, false)
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
