@@ -347,6 +347,47 @@ students_screen As screen:
             Y: =58
             ZIndex: =1
 
+            name_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_name"
+                Default: =ThisItem.name
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =2
+
             email_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_email"
@@ -427,47 +468,6 @@ students_screen As screen:
                     Width: =Parent.Width - 60
                     X: =30
                     Y: =DataCardKey4.Y + DataCardKey4.Height + 5
-                    ZIndex: =2
-
-            name_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_name"
-                Default: =ThisItem.name
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =0
-                Y: =0
-                ZIndex: =2
-
-                DataCardKey2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Semibold
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
                     ZIndex: =2
 
         label_studentInformation As label:

@@ -5,6 +5,7 @@ intakes_screen As screen:
     intake_icon_6 As image:
         Height: =45
         Image: ='invite_line (2)'
+        OnSelect: =Navigate(students_screen);
         Width: =45
         X: =63
         Y: =150
