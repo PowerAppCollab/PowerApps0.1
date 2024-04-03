@@ -113,7 +113,8 @@ students_screen As screen:
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: =students
+            Items: |
+                =Filter(students, StartsWith(name, SearchInput1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -174,7 +175,7 @@ students_screen As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Size: =16
-            Text: ="Scores Come Here..."
+            Text: =LookUp(scores, gallery_students.Selected.studentID = scores.)
             Width: =600
             Y: =92
             ZIndex: =2
@@ -370,7 +371,7 @@ students_screen As screen:
         Y: =40
         ZIndex: =16
 
-        TextInput1 As text:
+        SearchInput1 As text:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
             Default: =""
