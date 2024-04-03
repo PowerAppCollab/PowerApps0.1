@@ -138,6 +138,16 @@ students_screen As screen:
                 Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
                 ZIndex: =1
 
+            Subtitle1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.email
+                Width: =270
+                X: =16
+                Y: =37
+                ZIndex: =2
+
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
