@@ -266,6 +266,7 @@ students_screen As screen:
             DataSource: =students
             Height: =242
             Item: =gallery_students.Selected
+            Visible: =If(gallery_students.Selected.email = "", false)
             Width: =600
             Y: =58
             ZIndex: =1
@@ -535,7 +536,7 @@ students_screen As screen:
         ZIndex: =24
 
         popup_background As rectangle:
-            Fill: =RGBA(45, 45, 45, 0.5)
+            Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
             Visible: =varShowPopup
             Width: =1366
@@ -560,13 +561,13 @@ students_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =87
             Text: |-
-                ="U staat op het punt om deze student te verwijderen. Dit is niet omkeerbaar.
+                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar.
                 
-                 Weet u het zeker?"
+                Weet u het zeker?"
             Visible: =varShowPopup
             Width: =454
             X: =456
-            Y: =341
+            Y: =332
             ZIndex: =20
 
         popup_header As label:
