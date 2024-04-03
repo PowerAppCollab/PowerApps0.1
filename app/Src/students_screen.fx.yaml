@@ -287,38 +287,45 @@ students_screen As screen:
         Y: =425
         ZIndex: =13
 
-        testchart1 As group:
-            Height: =5
-            Width: =5
-            X: =40
-            Y: =40
-            ZIndex: =1
-
-            Title3 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =25
-                Size: =16
-                Text: ="Scores van " & gallery_students.Selected.name
-                Width: =500
-                Y: =10
-                ZIndex: =2
+        Container1 As groupContainer.manualLayoutContainer:
+            Height: =300
+            Visible: |-
+                =If(
+                    IsBlank(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    true
+                )
+            ZIndex: =4
 
             LineChart1 As lineChart:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                Height: =265
+                Height: =300
                 Items: |
                     =Filter(scores, studentID = gallery_students.Selected.studentID)
                 NumberOfSeries: =0
+                Visible: |-
+                    =If(
+                        IsEmpty(
+                            Filter(
+                                scores,
+                                studentID = gallery_students.Selected.studentID
+                            )
+                        ),
+                        true,
+                        false
+                    )
                 Width: =500
                 XLabelAngle: =0
-                Y: =35
                 YAxisMax: =100
                 YAxisMin: =0
-                ZIndex: =3
+                ZIndex: =1
 
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
