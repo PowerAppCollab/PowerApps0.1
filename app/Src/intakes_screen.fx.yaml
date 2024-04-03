@@ -5,19 +5,11 @@ intakes_screen As screen:
     intake_icon_6 As image:
         Height: =45
         Image: ='invite_line (2)'
-        OnSelect: =Navigate(students_screen);
+        OnSelect: =
         Width: =45
         X: =63
         Y: =150
         ZIndex: =1
-
-    student_icon_3 As image:
-        Height: =45
-        Image: =group_line
-        Width: =45
-        X: =63
-        Y: =250
-        ZIndex: =2
 
     group_icon_3 As image:
         Height: =45
@@ -52,16 +44,6 @@ intakes_screen As screen:
         X: =37
         Y: =180
         ZIndex: =6
-
-    label_students_3 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: ="Studenten"
-        Width: =97
-        X: =37
-        Y: =280
-        ZIndex: =7
 
     label_groups_3 As label:
         Align: =Align.Center
@@ -490,4 +472,31 @@ intakes_screen As screen:
             Width: =625
             Y: =130
             ZIndex: =3
+
+    groep_studenten_nav As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        student_icon_3 As image:
+            Height: =45
+            Image: =group_line
+            OnSelect: =Navigate(students_screen);
+            Width: =45
+            X: =63
+            Y: =250
+            ZIndex: =2
+
+        label_students_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            OnSelect: =Navigate(students_screen);
+            Size: =10
+            Text: ="Studenten"
+            Width: =97
+            X: =37
+            Y: =280
+            ZIndex: =7
 
