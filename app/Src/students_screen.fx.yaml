@@ -662,8 +662,8 @@ students_screen As screen:
                 OnSelect: =Set(varShowPopup, true);
                 PressedFill: =
                 Text: =""
-                Width: =138
-                X: =405
+                Width: =86
+                X: =431
                 Y: =25
                 ZIndex: =7
 
@@ -770,7 +770,7 @@ students_screen As screen:
         intake_icon_1 As image:
             Height: =45
             Image: ='invite_line (1)'
-            OnSelect: =Navigate(intakeVersturen_screen);
+            OnSelect: =Navigate(intakes_screen);
             Width: =45
             X: =63
             Y: =150
@@ -779,7 +779,7 @@ students_screen As screen:
         label_intake_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(intakeVersturen_screen);
+            OnSelect: =Navigate(intakes_screen);
             Size: =10
             Text: ="Intakes"
             Width: =97
