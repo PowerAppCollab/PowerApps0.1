@@ -217,7 +217,7 @@ students_screen As screen:
                 DisplayMode: =DisplayMode.View
                 Height: =265
                 Items: |
-                    =Set(varNomatch, IsEmpty(Filter(scores, studentID = gallery_students.Selected.studentID)))
+                    =Filter(scores, studentID = gallery_students.Selected.studentID)
                 NumberOfSeries: =0
                 Width: =500
                 XLabelAngle: =0
@@ -225,14 +225,6 @@ students_screen As screen:
                 YAxisMax: =100
                 YAxisMin: =0
                 ZIndex: =3
-
-            Legend1 As legend:
-                Height: =35
-                ItemColorSet: =LineChart1.ItemColorSet
-                Items: =LineChart1.SeriesLabels
-                Width: =422
-                Y: =265
-                ZIndex: =4
 
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
