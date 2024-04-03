@@ -160,7 +160,7 @@ students_screen As screen:
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =63
+            TemplateSize: =40
             Width: =600
             Y: =50
             ZIndex: =2
@@ -171,8 +171,7 @@ students_screen As screen:
                 OnSelect: =Select(Parent)
                 Text: |
                     =Text(ThisItem.datum, "dd-mm-yyyy")
-                X: =15
-                Y: =24
+                X: =95
                 ZIndex: =3
 
             gallery_score_scores As label:
@@ -265,7 +264,7 @@ students_screen As screen:
                 DataCardKey2 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Bold
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -278,6 +277,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
                     Height: =27
                     PaddingLeft: =0
                     PaddingRight: =0
@@ -305,7 +305,7 @@ students_screen As screen:
                 DataCardKey3 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Bold
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -318,6 +318,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
                     Height: =27
                     PaddingLeft: =0
                     PaddingRight: =0
@@ -345,7 +346,7 @@ students_screen As screen:
                 DataCardKey4 As label:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Bold
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -358,6 +359,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
                     Height: =27
                     PaddingLeft: =0
                     PaddingRight: =0
