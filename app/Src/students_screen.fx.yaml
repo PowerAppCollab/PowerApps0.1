@@ -214,18 +214,24 @@ students_screen As screen:
             LineChart1 As lineChart:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(255, 255, 255, 1)
-                Height: =300
-                Items: =scores
+                DisplayMode: =DisplayMode.View
+                Height: =265
+                Items: |
+                    =Set(varNomatch, IsEmpty(Filter(scores, studentID = gallery_students.Selected.studentID)))
+                NumberOfSeries: =0
                 Width: =500
+                XLabelAngle: =0
+                Y: =35
+                YAxisMax: =100
+                YAxisMin: =0
                 ZIndex: =3
 
             Legend1 As legend:
-                Height: =80
+                Height: =35
                 ItemColorSet: =LineChart1.ItemColorSet
                 Items: =LineChart1.SeriesLabels
                 Width: =422
-                X: =53
-                Y: =220
+                Y: =265
                 ZIndex: =4
 
     container_8 As groupContainer.manualLayoutContainer:
