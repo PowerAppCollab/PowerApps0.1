@@ -259,7 +259,7 @@ students_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =75
-            Text: ="Er zijn nog geen scores beschikbaar."
+            Text: ="Er zijn geen scores beschikbaar."
             Visible: |-
                 =If(
                     IsEmpty(
@@ -287,11 +287,17 @@ students_screen As screen:
         Y: =425
         ZIndex: =13
 
-        Container1 As groupContainer.manualLayoutContainer:
+        LineChart1 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
             Height: =300
+            Items: |
+                =Filter(scores, studentID = gallery_students.Selected.studentID)
+            NumberOfSeries: =0
             Visible: |-
                 =If(
-                    IsBlank(
+                    IsEmpty(
                         Filter(
                             scores,
                             studentID = gallery_students.Selected.studentID
@@ -300,32 +306,32 @@ students_screen As screen:
                     false,
                     true
                 )
-            ZIndex: =4
+            Width: =500
+            XLabelAngle: =0
+            YAxisMax: =100
+            YAxisMin: =0
+            ZIndex: =5
 
-            LineChart1 As lineChart:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Height: =300
-                Items: |
-                    =Filter(scores, studentID = gallery_students.Selected.studentID)
-                NumberOfSeries: =0
-                Visible: |-
-                    =If(
-                        IsEmpty(
-                            Filter(
-                                scores,
-                                studentID = gallery_students.Selected.studentID
-                            )
-                        ),
-                        true,
-                        false
-                    )
-                Width: =500
-                XLabelAngle: =0
-                YAxisMax: =100
-                YAxisMin: =0
-                ZIndex: =1
+        label_chart_error As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er is geen grafiek beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            Y: =113
+            ZIndex: =6
 
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
