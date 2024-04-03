@@ -113,16 +113,16 @@ intakes_screen As screen:
         ZIndex: =13
 
         Label2_1 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
-            Height: =66
+            Height: =56
             Size: =20
             Text: ="Resultaten"
-            Width: =163
-            X: =483
+            Width: =1150
             ZIndex: =1
 
-        form_studentInformation_2 As formViewer:
+        form_intakeResultaten As formViewer:
             DataSource: =students
             Height: =269
             Item: =gallery_intakes.Selected
@@ -258,6 +258,22 @@ intakes_screen As screen:
                     X: =30
                     Y: =DataCardKey4_2.Y + DataCardKey4_2.Height + 5
                     ZIndex: =2
+
+        label_intakeResultaten_error As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =66
+            Text: ="Geen intake geselecteerd."
+            Visible: |-
+                =If(
+                    IsBlank(gallery_intakes.Selected.name),
+                    true,
+                    false
+                )
+            Width: =1150
+            Y: =130
+            ZIndex: =3
 
     Image2_3 As image:
         Height: =135
@@ -448,7 +464,7 @@ intakes_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =66
-            Text: ="Geen student geselecteerd."
+            Text: ="Geen intake geselecteerd."
             Visible: |-
                 =If(
                     IsBlank(gallery_intakes.Selected.name),
