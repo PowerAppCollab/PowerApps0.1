@@ -215,7 +215,7 @@ students_screen As screen:
         ZIndex: =14
 
         FormViewer1 As formViewer:
-            DataSource: =If(gallery_students.Selected.email = "", students)
+            DataSource: =students
             Height: =242
             Item: =gallery_students.Selected
             Width: =600
