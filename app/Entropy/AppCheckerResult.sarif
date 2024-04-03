@@ -44,19 +44,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "students_screen.container_6.Gallery1.AccessibleLabel"
+                  "fullyQualifiedName": "students_screen.container_6.gallery_score.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "students_screen.container_6.Gallery1.AccessibleLabel",
+                  "fullyQualifiedName": "students_screen.container_6.gallery_score.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "students_screen",
-                "type": "students_screen.container_6.Gallery1"
+                "type": "students_screen.container_6.gallery_score"
               }
             }
           ],
@@ -74,19 +74,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "students_screen.container_6.Gallery1.TabIndex"
+                  "fullyQualifiedName": "students_screen.container_6.gallery_score.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "students_screen.container_6.Gallery1.TabIndex",
+                  "fullyQualifiedName": "students_screen.container_6.gallery_score.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "students_screen",
-                "type": "students_screen.container_6.Gallery1"
+                "type": "students_screen.container_6.gallery_score"
               }
             }
           ],
@@ -760,17 +760,17 @@
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Unused media files"
+                  "text": "Ongebruikte mediabestanden"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove the unused media file in the Media pane."
+                  "Verwijder het ongebruikte mediabestand in het deelvenster Media."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+                "whyFix": "Er wordt niet naar dit mediabestand verwezen door besturingselementformules, dus het is niet nodig. Als u dit verwijdert, worden de prestaties verbeterd."
               }
             }
           ],
