@@ -338,6 +338,7 @@ intakesVersturen_screen As screen:
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
             PaddingTop: =5
+            Reset: =var_reset
             Tooltip: =
             Width: =313
             X: =24
@@ -345,7 +346,7 @@ intakesVersturen_screen As screen:
             ZIndex: =2
 
         Button3 As button:
-            OnSelect: |-
+            OnSelect: |
                 =Clear(TestCol);
                 
                 ForAll(
@@ -353,11 +354,16 @@ intakesVersturen_screen As screen:
                     Collect(
                         TestCol,
                         {
-                            Naam: Title1,
-                            Email: Subtitle1
+                            Title: Title1.Text,
+                            Datastream: Image1.Image
                         }
                     )
-                )
+                );
+                
+                UploadExcel.Run(JSON(TestCol, JSONFormat.IncludeBinaryData));
+                
+                Set(var_reset, true);
+                Set(var_reset, false);
             Text: ="Knop"
             X: =394
             Y: =258

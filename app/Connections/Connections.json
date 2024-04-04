@@ -88,5 +88,37 @@
     "dependencies": {},
     "dependents": [],
     "id": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
+  },
+  "fafd6e07-5b30-48ba-b431-8ec50670bc93": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "Upload Excel"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "45f3446e-09af-4d80-8b37-8406ab3f39fe"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "Upload Excel"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "45f3446e-09af-4d80-8b37-8406ab3f39fe"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "UploadExcel"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fafd6e07-5b30-48ba-b431-8ec50670bc93"
   }
 }
