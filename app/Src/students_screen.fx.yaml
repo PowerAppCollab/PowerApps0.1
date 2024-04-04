@@ -522,7 +522,7 @@ students_screen As screen:
             Text: ="Geen student geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students.Selected.email) && IsBlank(gallery_students.Selected.name),
+                    IsBlank(gallery_students.Selected.email) && IsBlank(gallery_students.Selected.firstName),
                     true,
                     false
                 )
