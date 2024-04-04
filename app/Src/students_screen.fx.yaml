@@ -259,7 +259,7 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =18
                 Icon: =Icon.Send
-                OnSelect: =MailScore.Run(gallery_students.Selected.name, gallery_score.Selected.score, gallery_students.Selected.email)
+                OnSelect: =Set(SendMailBoxOpen, true);
                 Width: =29
                 X: =554
                 Y: =11
@@ -290,7 +290,7 @@ students_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Add
-            OnSelect: =Set(SendMailBoxOpen, true);
+            OnSelect: =
             Width: =35
             X: =548
             Y: =10
