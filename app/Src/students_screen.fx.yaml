@@ -257,10 +257,13 @@ students_screen As screen:
             Icon2 As icon.Send:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(255, 255, 255, 1)
-                Height: =40
+                Height: =18
                 Icon: =Icon.Send
-                OnSelect: =Select(Parent)
-                X: =281
+                OnSelect: |-
+                    =MailScore.Run(Naam: "test" )
+                Width: =29
+                X: =554
+                Y: =11
                 ZIndex: =5
 
         label_scoreTitle_error As label:
