@@ -532,7 +532,7 @@ groepn_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
-                =Patch(students, gallery_groups.Selected, {name: gallery_groups.Selected.studentID, email: "", phone: ""});
+                =Patch(students, gallery_groups.Selected, {firstName: gallery_groups.Selected.studentID, email: "", phone: ""});
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -703,7 +703,7 @@ groepn_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.name
+                Text: =ThisItem.firstName
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -714,7 +714,7 @@ groepn_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.name
+                Text: =ThisItem.firstName
                 Width: =270
                 X: =16
                 Y: =37
