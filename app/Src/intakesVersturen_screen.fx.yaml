@@ -329,24 +329,6 @@ intakesVersturen_screen As screen:
             Y: =10
             ZIndex: =1
 
-        DataCardValue6 As attachments:
-            BorderColor: =
-            DisplayMode: =Parent.DisplayMode
-            Height: =166
-            IsInDataCard: =true
-            Items: =
-            OnAddFile: =
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            Reset: =var_reset
-            Tooltip: =
-            Width: =313
-            X: =24
-            Y: =132
-            ZIndex: =2
-
         Button3 As button:
             OnSelect: |
                 =Clear(TestCol);
