@@ -81,6 +81,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f": {
+          "value": "shared_office365"
+        },
         "workflowDisplayName": {
           "value": "MailScore"
         },
@@ -90,6 +93,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
+        },
         "workflowDisplayName": {
           "value": "MailScore"
         },

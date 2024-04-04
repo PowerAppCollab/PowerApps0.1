@@ -1,21 +1,21 @@
 [
   {
-    "DisplayName": "students (Weergaven)",
-    "Name": "_cr884_students_views",
-    "RelatedEntityName": "students",
+    "DisplayName": "groepen (Views)",
+    "Name": "_cr884_newtable1_views",
+    "RelatedEntityName": "groepen",
     "TrimmedViewName": true,
     "Type": "ViewInfo",
     "ViewInfoNameMapping": {
-      "0d18a1e7-d019-4c8d-9204-206207a57488": "Inactieve students",
-      "5f528b43-c602-45d1-9642-613e31f9245f": "students Opzoekweergave",
-      "a4d3495f-fead-47b3-9478-81d79afaf167": "Weergave Geavanceerd zoeken van students",
-      "f8774a4e-f20c-48e4-8ce1-96b2d2138f53": "Gekoppelde weergave van students",
-      "fe8e67d7-7930-47e5-a3cf-7adf08b7d06b": "Actieve students"
+      "0da3b2cf-0266-4ad7-8937-a58988f891b7": "Gekoppelde weergave van New table",
+      "38c6f916-f577-49de-af2a-c8e870fef4c7": "Weergave Geavanceerd zoeken van New table",
+      "5839bf5d-d82b-482e-b11e-d18178e6bde8": "New table Opzoekweergave",
+      "8ca8ab2c-a8d2-49c6-ab45-55a2402d52e3": "Actieve New tables",
+      "903a2332-55e7-4141-b172-ab910ad2bd9d": "Inactieve New tables"
     }
   },
   {
-    "DisplayName": "Status (students)",
-    "Name": "cr884_students_statecode",
+    "DisplayName": "Status (groepen)",
+    "Name": "cr884_newtable1_statecode",
     "OptionSetInfoNameMapping": {
       "0": "Actief",
       "1": "Inactief"
@@ -25,17 +25,17 @@
     "OptionSetReference": {
       "OptionSetReferenceItem0": {
         "OptionSetReferenceColumnName": "statecode",
-        "OptionSetReferenceEntityName": "students"
+        "OptionSetReferenceEntityName": "groepen"
       }
     },
     "OptionSetTypeKey": "StateType",
     "RelatedColumnInvariantName": "statecode",
-    "RelatedEntityName": "students",
+    "RelatedEntityName": "groepen",
     "Type": "OptionSetInfo"
   },
   {
-    "DisplayName": "Reden van status (students)",
-    "Name": "cr884_students_statuscode",
+    "DisplayName": "Reden van status (groepen)",
+    "Name": "cr884_newtable1_statuscode",
     "OptionSetInfoNameMapping": {
       "1": "Actief",
       "2": "Inactief"
@@ -45,39 +45,37 @@
     "OptionSetReference": {
       "OptionSetReferenceItem0": {
         "OptionSetReferenceColumnName": "statuscode",
-        "OptionSetReferenceEntityName": "students"
+        "OptionSetReferenceEntityName": "groepen"
       }
     },
     "OptionSetTypeKey": "StatusType",
     "RelatedColumnInvariantName": "statuscode",
-    "RelatedEntityName": "students",
+    "RelatedEntityName": "groepen",
     "Type": "OptionSetInfo"
   },
   {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
-    "EntitySetName": "cr884_studentses",
+    "EntitySetName": "cr884_newtable1s",
     "IsHidden": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "LogicalName": "cr884_students",
+    "LogicalName": "cr884_newtable1",
     "MaxGetRowsCount": 500,
-    "Name": "students",
+    "Name": "groepen",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Eigenaar",
-      "cr884_email": "email",
+      "cr884_courseid": "courseID",
       "cr884_groupid": "groupID",
-      "cr884_intakeid": "intakeID",
-      "cr884_name": "firstName",
-      "cr884_phone": "phone",
-      "cr884_studentid": "studentID",
-      "cr884_students_AsyncOperations": "Systeemtaken",
-      "cr884_students_BulkDeleteFailures": "Fouten bij bulkverwijdering",
-      "cr884_students_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
-      "cr884_students_PrincipalObjectAttributeAccesses": "Velden delen",
-      "cr884_students_ProcessSession": "Processessies",
-      "cr884_students_SyncErrors": "Synchronisatiefouten",
-      "cr884_studentsid": "students",
-      "cr884_surname": "surName",
+      "cr884_name": "name",
+      "cr884_newtable1_AsyncOperations": "Systeemtaken",
+      "cr884_newtable1_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_newtable1_DuplicateBaseRecord": "Dubbele records (cr884_newtable1_DuplicateBaseRecord)",
+      "cr884_newtable1_DuplicateMatchingRecord": "Dubbele records (cr884_newtable1_DuplicateMatchingRecord)",
+      "cr884_newtable1_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_newtable1_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_newtable1_ProcessSession": "Processessies",
+      "cr884_newtable1_SyncErrors": "Synchronisatiefouten",
+      "cr884_newtable1id": "New table",
       "createdby": "Gemaakt door",
       "createdon": "Gemaakt op",
       "createdonbehalfby": "Gemaakt door (gemachtigde)",
@@ -95,7 +93,7 @@
       "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
       "versionnumber": "Versienummer"
     },
-    "PreferredName": "students",
+    "PreferredName": "groepen",
     "Type": "NativeCDSDataSourceInfo"
   }
 ]
