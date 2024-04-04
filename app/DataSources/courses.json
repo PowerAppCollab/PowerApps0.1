@@ -1,0 +1,136 @@
+[
+  {
+    "DisplayName": "courses (Views)",
+    "Name": "_cr884_courses_views",
+    "RelatedEntityName": "courses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "146899b1-2a0f-457f-8daf-47a4cb07f9c2": "Gekoppelde weergave van courses",
+      "2581208a-df3c-4831-95ba-a6fc32de6c73": "Weergave Geavanceerd zoeken van courses",
+      "5028966a-be58-43b0-92b2-9f357cd5d23d": "courses Opzoekweergave",
+      "c32ae980-9165-4bef-82fb-1aeb744c70a1": "Actieve courses",
+      "e2ef011f-6483-412a-8e04-d0065d15ac0d": "Inactieve courses"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_courseses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_courses",
+    "MaxGetRowsCount": 500,
+    "Name": "courses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
+      "cr884_courseid": "courseID",
+      "cr884_courses_AsyncOperations": "Systeemtaken",
+      "cr884_courses_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_courses_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_courses_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_courses_ProcessSession": "Processessies",
+      "cr884_courses_SyncErrors": "Synchronisatiefouten",
+      "cr884_coursesid": "courses",
+      "cr884_name": "name",
+      "createdby": "Gemaakt door",
+      "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
+      "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
+      "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
+      "statecode": "Status",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "courses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (courses)_1",
+    "Name": "cr884_courses_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "courses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "courses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (courses)_1",
+    "Name": "cr884_courses_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "courses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "courses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (courses)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_e230a3b4a6_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "courses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "courses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (courses)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_e230a3b4a6_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "courses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "courses",
+    "Type": "OptionSetInfo"
+  }
+]
