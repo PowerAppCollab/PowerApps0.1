@@ -300,15 +300,16 @@ intakes_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(192, 5, 230, 1)
             FontWeight: =FontWeight.Normal
-            Height: =54
+            Height: =27
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: =Navigate(intakesVersturen_screen)
             PressedFill: =
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =13
             Text: ="Intake versturen"
-            Width: =176
-            X: =324
-            Y: =171
+            Width: =500
+            Y: =197
             ZIndex: =3
 
     container_12 As groupContainer.manualLayoutContainer:
@@ -635,6 +636,38 @@ intakes_screen As screen:
             X: =21
             Y: =255
             ZIndex: =5
+
+        Button1_1 As button:
+            BorderStyle: =BorderStyle.None
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =54
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |+
+                =Set(newStudentID, GUID());
+                
+                Patch(
+                    students,
+                    Defaults(students),
+                    {
+                        'firstName': gallery_intakes.Selected.firstName,
+                        studentID: newStudentID
+                    }
+                );
+                
+                Set(currentStudent, newStudentID);
+                
+                Navigate(students_screen, newStudentID);
+                
+            PressedFill: =
+            Size: =13
+            Text: ="Student Aanmaken"
+            Visible: =intakeStatus_dropdown.Selected.status = "Completed"
+            Width: =176
+            X: =449
+            Y: =271
+            ZIndex: =6
 
     groep_studenten_nav As group:
         Height: =5
