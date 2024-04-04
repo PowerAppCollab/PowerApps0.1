@@ -36,7 +36,7 @@ groups_screen As screen:
 
     label_students_2 As label:
         Align: =Align.Center
-        Color: =RGBA(192, 5, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
         Size: =10
         Text: ="Studenten"
         Width: =97
@@ -46,7 +46,7 @@ groups_screen As screen:
 
     label_groups_2 As label:
         Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(192, 5, 255, 1)
         Size: =10
         Text: |-
             ="Groepen
@@ -92,12 +92,12 @@ groups_screen As screen:
         Y: =140
         ZIndex: =11
 
-        "gallery_students_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        "gallery_groups As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
             Items: |
                 =
-                Filter(students, StartsWith(firstName, SearchInput1_1.Text))
+                Filter(groepens, StartsWith(name, SearchInput1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -140,7 +140,7 @@ groups_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.firstName
+                Text: =ThisItem.name
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -151,7 +151,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.email
+                Text: =ThisItem.cr884_course.name
                 Width: =270
                 X: =16
                 Y: =37
@@ -196,6 +196,7 @@ groups_screen As screen:
     container_18 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
+        Height: =140
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
@@ -218,7 +219,7 @@ groups_screen As screen:
         "gallery_score_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =150
-            Items: =Filter(scores, studentID = gallery_students_1.Selected.studentID)
+            Items: =Filter(scores, studentID = gallery_groups.Selected.studentID)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -228,7 +229,7 @@ groups_screen As screen:
                     IsBlank(
                         Filter(
                             scores,
-                            studentID = gallery_students_1.Selected.studentID
+                            st = gallery_groups.Selected.groupID
                         )
                     ),
                     false,
@@ -276,7 +277,7 @@ groups_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students_1.Selected.studentID
+                            groupID = gallery_groups.Selected.groupID
                         )
                     ),
                     true,
@@ -285,16 +286,6 @@ groups_screen As screen:
             Width: =600
             Y: =63
             ZIndex: =3
-
-        Icon3_1 As icon.Add:
-            Color: =RGBA(192, 5, 230, 1)
-            Height: =35
-            Icon: =Icon.Add
-            OnSelect: =
-            Width: =35
-            X: =548
-            Y: =10
-            ZIndex: =4
 
     container_23 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -314,14 +305,14 @@ groups_screen As screen:
             DisplayMode: =DisplayMode.View
             Height: =300
             Items: |
-                =Filter(scores, studentID = gallery_students_1.Selected.studentID)
+                =Filter(scores, studentID = gallery_groups.Selected.studentID)
             NumberOfSeries: =0
             Visible: |-
                 =If(
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students_1.Selected.studentID
+                            studentID = gallery_groups.Selected.studentID
                         )
                     ),
                     false,
@@ -344,7 +335,7 @@ groups_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students_1.Selected.studentID
+                            studentID = gallery_groups.Selected.studentID
                         )
                     ),
                     true,
@@ -357,23 +348,23 @@ groups_screen As screen:
     container_22 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =202
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Width: =600
         X: =725
-        Y: =270
+        Y: =380
         ZIndex: =14
 
         form_studentInformation_1 As formViewer:
             DataSource: =students
             Height: =242
-            Item: =gallery_students_1.Selected
+            Item: =gallery_groups.Selected
             Visible: |-
                 =If(
-                    IsBlank(gallery_students_1.Selected.email),
+                    IsBlank(gallery_groups.Selected.email),
                     false,
                     true
                 )
@@ -504,16 +495,6 @@ groups_screen As screen:
                     Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
                     ZIndex: =2
 
-        label_studentInformation_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =16
-            Text: ="Student Informatie"
-            Width: =600
-            Y: =10
-            ZIndex: =2
-
         label_studentInformation_error_notSelected_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -522,7 +503,7 @@ groups_screen As screen:
             Text: ="Geen student geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students_1.Selected.email) && IsBlank(gallery_students_1.Selected.firstName),
+                    IsBlank(gallery_groups.Selected.email) && IsBlank(gallery_groups.Selected.firstName),
                     true,
                     false
                 )
@@ -539,7 +520,7 @@ groups_screen As screen:
             Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students_1.Selected.email) && !IsBlank(gallery_students_1.Selected.firstName),
+                    IsBlank(gallery_groups.Selected.email) && !IsBlank(gallery_groups.Selected.firstName),
                     true,
                     false
                 )
@@ -547,6 +528,85 @@ groups_screen As screen:
             X: =21
             Y: =117
             ZIndex: =4
+
+        "gallery_groups_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =175
+            Items: |-
+                =Filter(
+                    students,
+                    groupID = gallery_groups.Selected.groupID
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =90
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            students,
+                            StartsWith(
+                                firstName,
+                                SearchInput1_1.Text
+                            )
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =600
+            ZIndex: =5
+
+            gallery_students_backgroundButton_2 As button:
+                BorderStyle: =BorderStyle.None
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
+                Height: =90
+                HoverFill: =
+                OnSelect: =Select(Parent)
+                PressedFill: =
+                Text: =""
+                Width: =600
+                ZIndex: =1
+
+            gallery_students_titleText_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.firstName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText_2.Size * 1.8)) / 2
+                ZIndex: =2
+
+            gallery_students_emailText_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.email
+                Width: =270
+                X: =16
+                Y: =37
+                ZIndex: =3
+
+            gallery_students_clickableButton_2 As button:
+                BorderStyle: =BorderStyle.None
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0,0,0,0)
+                Height: =90
+                HoverFill: =
+                OnSelect: =Select(Parent)
+                PressedFill: =
+                Text: =""
+                Width: =600
+                ZIndex: =4
 
     Image2_2 As image:
         Height: =135
@@ -749,7 +809,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
-                =Patch(students, gallery_students_1.Selected, {firstName: gallery_students_1.Selected.studentID, email: "", phone: ""});
+                =Patch(students, gallery_groups.Selected, {firstName: gallery_groups.Selected.studentID, email: "", phone: ""});
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -808,6 +868,143 @@ groups_screen As screen:
             Y: =180
             ZIndex: =6
 
+    container_25 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =139
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =600
+        X: =725
+        Y: =210
+        ZIndex: =30
+
+        label_scoreTitle_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =16
+            Text: =gallery_groups.Selected.name
+            Width: =59
+            X: =270
+            ZIndex: =1
+
+        "gallery_score_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =150
+            Items: =Filter(scores, studentID = gallery_groups.Selected.studentID)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =40
+            Visible: |-
+                =If(
+                    IsBlank(
+                        Filter(
+                            scores,
+                            st = gallery_groups.Selected.groupID
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =600
+            Y: =50
+            ZIndex: =2
+
+            gallery_score_date_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                OnSelect: =Select(Parent)
+                Text: |
+                    =Text(ThisItem.datum, "dd-mm-yyyy")
+                X: =95
+                ZIndex: =3
+
+            gallery_score_scores_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.score
+                X: =15
+                ZIndex: =4
+
+            Icon2_2 As icon.Send:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =18
+                Icon: =Icon.Send
+                OnSelect: =Set(SendMailBoxOpen, true);
+                Width: =29
+                X: =554
+                Y: =11
+                ZIndex: =5
+
+        label_scoreTitle_error_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er zijn geen scores beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            groupID = gallery_groups.Selected.groupID
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =600
+            Y: =63
+            ZIndex: =3
+
+        Label2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: =gallery_groups.Selected.course.name
+            Width: =78
+            X: =39
+            Y: =80
+            ZIndex: =4
+
+        Label2_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: |
+                =CountRows(
+                    Filter(
+                        students,
+                        groupID = gallery_groups.Selected.groupID
+                    )
+                )
+            Width: =78
+            X: =401
+            Y: =80
+            ZIndex: =5
+
+        Label2_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Text: |-
+                ="cursus:"
+            Width: =78
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label2_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Text: |-
+                ="Aantal kanididaten:"
+            Width: =187
+            X: =401
+            Y: =50
+            ZIndex: =7
+
     groep_popup_sendscore_1 As group:
         Height: =5
         Width: =5
@@ -841,7 +1038,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =87
             Text: |-
-                ="U staat op het punt om " & gallery_students_1.Selected.firstName & " een mail te sturen met zijn of haar score. Wilt u hiermee doorgaan?
+                ="U staat op het punt om " & gallery_groups.Selected.firstName & " een mail te sturen met zijn of haar score. Wilt u hiermee doorgaan?
                 
                 Weet u het zeker?"
             Visible: =SendMailBoxOpen
@@ -869,7 +1066,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |-
-                =MailScore.Run(gallery_students_1.Selected.firstName, gallery_score_1.Selected.score, gallery_students_1.Selected.email);
+                =MailScore.Run(gallery_groups.Selected.firstName, gallery_score_1.Selected.score, gallery_groups.Selected.email);
                 Set(SendMailBoxOpen, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
