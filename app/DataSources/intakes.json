@@ -1,0 +1,146 @@
+[
+  {
+    "DisplayName": "intakes (Views)",
+    "Name": "_cr884_intakes_views",
+    "RelatedEntityName": "intakes",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "399c5bc7-f247-426a-b1ee-4dfc782799d8": "Inactieve intakes",
+      "51701623-408c-4b2e-970c-26d931d4a1fb": "Weergave Geavanceerd zoeken van intakes",
+      "5aed7fc2-d9c4-4031-8bfd-730314e68bce": "intakes Opzoekweergave",
+      "8921c30e-38fe-4128-b33e-eabae95f255d": "Actieve intakes",
+      "8e9f41cb-a5b1-4fd6-9f88-d67d69714927": "Gekoppelde weergave van intakes"
+    }
+  },
+  {
+    "DisplayName": "Status (intakes)_1",
+    "Name": "cr884_intakes_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "intakes"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "intakes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (intakes)_1",
+    "Name": "cr884_intakes_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "intakes"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "intakes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_intakeses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_intakes",
+    "MaxGetRowsCount": 500,
+    "Name": "intakes",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
+      "cr884_contactpersonid": "contactPersonID",
+      "cr884_couseid": "couseID",
+      "cr884_email": "email",
+      "cr884_firstname": "firstName",
+      "cr884_intakeformid": "intakeFormID",
+      "cr884_intakeid": "intakeID",
+      "cr884_intakes_AsyncOperations": "Systeemtaken",
+      "cr884_intakes_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_intakes_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_intakes_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_intakes_ProcessSession": "Processessies",
+      "cr884_intakes_SyncErrors": "Synchronisatiefouten",
+      "cr884_intakesid": "intakes",
+      "cr884_intakestatus": "intakeStatus",
+      "cr884_phonenumber": "phoneNumber",
+      "cr884_scoreid": "scoreID",
+      "cr884_surname": "surName",
+      "cr884_testid": "testID",
+      "cr884_werkzaambij": "Werkzaam bij",
+      "createdby": "Gemaakt door",
+      "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
+      "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
+      "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
+      "statecode": "Status",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "intakes",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (intakes)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_50078054fc_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "intakes"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "intakes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (intakes)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_50078054fc_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "intakes"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "intakes",
+    "Type": "OptionSetInfo"
+  }
+]

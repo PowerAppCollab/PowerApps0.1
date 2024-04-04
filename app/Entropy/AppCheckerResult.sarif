@@ -224,6 +224,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "intakes_screen.container_12.intakeStatus_dropdown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_12.intakeStatus_dropdown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_12.intakeStatus_dropdown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "intakesVersturen_screen.container_14.intakeInput_email.AccessibleLabel"
                 }
               ],
@@ -944,19 +974,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakes_screen.container_11.gallery_intakes.gallery_students_titleText_1.Y"
+                  "fullyQualifiedName": "intakes_screen.container_11.gallery_intakes.gallery_intakes_titleText_1.Y"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakes_screen.container_11.gallery_intakes.gallery_students_titleText_1.Y",
+                  "fullyQualifiedName": "intakes_screen.container_11.gallery_intakes.gallery_intakes_titleText_1.Y",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "Y",
                 "module": "intakes_screen",
-                "type": "intakes_screen.container_11.gallery_intakes.gallery_students_titleText_1"
+                "type": "intakes_screen.container_11.gallery_intakes.gallery_intakes_titleText_1"
               }
             }
           ],
@@ -1030,34 +1060,34 @@
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Ongebruikte mediabestanden"
+                  "text": "Unused media files"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Verwijder het ongebruikte mediabestand in het deelvenster Media."
+                  "Remove the unused media file in the Media pane."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Er wordt niet naar dit mediabestand verwezen door besturingselementformules, dus het is niet nodig. Als u dit verwijdert, worden de prestaties verbeterd."
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficiënte vertraging bij het laden"
+                  "text": "Inefficient delay loading"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Gebruik in plaats hiervan variabelen, verzamelingen en navigatiecontext om de status met andere schermen te delen."
+                  "Use variables, collections, and navigation context to share state across screens instead."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Besturingselementen die verwijzen naar besturingselementen op andere schermen, kunnen het laden en navigeren door apps vertragen. Hierdoor wordt de app mogelijk gedwongen de andere schermen onmiddellijk te laden in plaats van te wachten totdat de gebruiker naar dat scherm navigeert."
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             }
           ],
