@@ -123,7 +123,7 @@ intakesVersturen_screen As screen:
         "gallery_excel As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =325
-            Items: =col_attachment_flow
+            Items: =col_attachments
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -133,6 +133,7 @@ intakesVersturen_screen As screen:
 
             Image1 As image:
                 Height: =72
+                Image: =ThisItem.Datastream
                 OnSelect: =Select(Parent)
                 RadiusBottomLeft: =8
                 RadiusBottomRight: =8
@@ -151,7 +152,7 @@ intakesVersturen_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.EmailAddress
+                Text: =ThisItem.Title
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 173
                 X: =103
@@ -166,7 +167,7 @@ intakesVersturen_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.FullName
+                Text: =ThisItem.Title
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title1.Width
                 X: =Title1.X
@@ -334,6 +335,7 @@ intakesVersturen_screen As screen:
             Height: =166
             IsInDataCard: =true
             Items: =
+            OnAddFile: =
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5

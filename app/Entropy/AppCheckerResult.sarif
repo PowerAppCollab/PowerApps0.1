@@ -23,10 +23,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 19,
+                  "charLength": 15,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "col_attachment_flow"
+                    "text": "col_attachments"
                   }
                 }
               },
@@ -39,7 +39,7 @@
           ],
           "message": {
             "arguments": [
-              "col_attachment_flow"
+              "col_attachments"
             ],
             "id": "issue"
           },
@@ -131,6 +131,83 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.gallery_excel.Image1.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.gallery_excel.Image1.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_21.gallery_excel.Image1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.gallery_excel.Image1.Image"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.gallery_excel.Image1.Image",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 11,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".Datastream"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Image",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_21.gallery_excel.Image1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "intakesVersturen_screen.container_21.gallery_excel.Title1.Text"
                 }
               ],
@@ -180,10 +257,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 13,
+                  "charLength": 6,
                   "charOffset": 8,
                   "snippet": {
-                    "text": ".EmailAddress"
+                    "text": ".Title"
                   }
                 }
               },
@@ -374,10 +451,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 9,
+                  "charLength": 6,
                   "charOffset": 8,
                   "snippet": {
-                    "text": ".FullName"
+                    "text": ".Title"
                   }
                 }
               },
