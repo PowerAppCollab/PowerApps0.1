@@ -34,7 +34,7 @@
     "Type": "OptionSetInfo"
   },
   {
-    "DisplayName": "Status (intakeForms)_1",
+    "DisplayName": "Status (intakeForms)",
     "Name": "cr884_intakeforms_statecode",
     "OptionSetInfoNameMapping": {
       "0": "Actief",
@@ -54,7 +54,7 @@
     "Type": "OptionSetInfo"
   },
   {
-    "DisplayName": "Reden van status (intakeForms)_1",
+    "DisplayName": "Reden van status (intakeForms)",
     "Name": "cr884_intakeforms_statuscode",
     "OptionSetInfoNameMapping": {
       "1": "Actief",
@@ -125,45 +125,5 @@
     },
     "PreferredName": "intakeForms",
     "Type": "NativeCDSDataSourceInfo"
-  },
-  {
-    "DisplayName": "Status (intakeForms)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_f0aed2b206_statecode",
-    "OptionSetInfoNameMapping": {
-      "0": "Actief",
-      "1": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statecode",
-        "OptionSetReferenceEntityName": "intakeForms"
-      }
-    },
-    "OptionSetTypeKey": "StateType",
-    "RelatedColumnInvariantName": "statecode",
-    "RelatedEntityName": "intakeForms",
-    "Type": "OptionSetInfo"
-  },
-  {
-    "DisplayName": "Reden van status (intakeForms)",
-    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_f0aed2b206_statuscode",
-    "OptionSetInfoNameMapping": {
-      "1": "Actief",
-      "2": "Inactief"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "statuscode",
-        "OptionSetReferenceEntityName": "intakeForms"
-      }
-    },
-    "OptionSetTypeKey": "StatusType",
-    "RelatedColumnInvariantName": "statuscode",
-    "RelatedEntityName": "intakeForms",
-    "Type": "OptionSetInfo"
   }
 ]

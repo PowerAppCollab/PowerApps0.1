@@ -823,14 +823,17 @@ intakes_screen As screen:
                     students,
                     Defaults(students),
                     {
-                        firstName: gallery_intakes.Selected.Voornaam,
-                        studentID: newStudentID
+                        Voornaam: gallery_intakes.Selected.Voornaam,
+                        Achternaam: gallery_intakes.Selected.Achternaam,
+                        studentID: newStudentID,
+                        Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
+                        Email: gallery_intakes.Selected.Email
                     }
                 );
                 
-                Set(currentStudent, newStudentID);
+                Set(currentStudent, gallery_intakes.Selected.Voornaam + gallery_intakes.Selected.Achternaam);
                 
-                Navigate(students_screen, newStudentID);
+                Navigate(students_screen, currentStudent);
                 
             PressedFill: =
             Size: =13

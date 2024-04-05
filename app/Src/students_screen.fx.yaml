@@ -97,7 +97,7 @@ students_screen As screen:
             Height: =250
             Items: |
                 =
-                Filter(students, StartsWith(firstName, SearchInput1.Text))
+                Filter(students, StartsWith(Voornaam, SearchInput1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -140,7 +140,7 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.firstName
+                Text: =ThisItem.Voornaam
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -151,7 +151,7 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.email
+                Text: =ThisItem.Email
                 Width: =270
                 X: =16
                 Y: =37
@@ -384,7 +384,7 @@ students_screen As screen:
             name_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_name"
-                Default: =ThisItem.firstName
+                Default: =ThisItem.Voornaam
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -425,7 +425,7 @@ students_screen As screen:
             email_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_email"
-                Default: =ThisItem.email
+                Default: =ThisItem.Email
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_email")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -466,7 +466,7 @@ students_screen As screen:
             phone_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_phone"
-                Default: =ThisItem.phone
+                Default: =ThisItem.Telefoonnummer
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_phone")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -749,7 +749,7 @@ students_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
-                =Patch(students, gallery_students.Selected, {firstName: gallery_students.Selected.studentID, email: "", phone: ""});
+                =Patch(students, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Email: "", Telefoonnummer: ""});
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -869,7 +869,7 @@ students_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |-
-                =MailScore.Run(gallery_students.Selected.firstName, gallery_score.Selected.score, gallery_students.Selected.email);
+                =MailScore.Run(gallery_students.Selected.Voornaam, gallery_score.Selected.score, gallery_students.Selected.Email);
                 Set(SendMailBoxOpen, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
