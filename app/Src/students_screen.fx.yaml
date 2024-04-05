@@ -109,7 +109,7 @@ students_screen As screen:
                         Filter(
                             students,
                             StartsWith(
-                                firstName,
+                                Voornaam,
                                 SearchInput1.Text
                             )
                         )
@@ -181,7 +181,7 @@ students_screen As screen:
                         Filter(
                             students,
                             StartsWith(
-                                firstName,
+                                Voornaam,
                                 SearchInput1.Text
                             )
                         )
@@ -373,7 +373,7 @@ students_screen As screen:
             Item: =gallery_students.Selected
             Visible: |-
                 =If(
-                    IsBlank(gallery_students.Selected.email),
+                    IsBlank(gallery_students.Selected.Email),
                     false,
                     true
                 )
@@ -522,7 +522,7 @@ students_screen As screen:
             Text: ="Geen student geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students.Selected.email) && IsBlank(gallery_students.Selected.firstName),
+                    IsBlank(gallery_students.Selected.Email) && IsBlank(gallery_students.Selected.Voornaam),
                     true,
                     false
                 )
@@ -539,7 +539,7 @@ students_screen As screen:
             Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
             Visible: |-
                 =If(
-                    IsBlank(gallery_students.Selected.email) && !IsBlank(gallery_students.Selected.firstName),
+                    IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
                     true,
                     false
                 )
@@ -571,7 +571,12 @@ students_screen As screen:
         SearchInput1 As text:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
-            Default: =""
+            Default: |-
+                =If(
+                    IsBlank(currentStudent),
+                    "",
+                    currentStudent
+                )
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(45, 45, 45, 1)
             Fill: =RGBA(45, 45, 45, 1)
@@ -841,7 +846,7 @@ students_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =87
             Text: |-
-                ="U staat op het punt om " & gallery_students.Selected.firstName & " een mail te sturen met zijn of haar score. Wilt u hiermee doorgaan?
+                ="U staat op het punt om " & gallery_students.Selected.Voornaam & " een mail te sturen met zijn of haar score. Wilt u hiermee doorgaan?
                 
                 Weet u het zeker?"
             Visible: =SendMailBoxOpen

@@ -286,8 +286,8 @@ intakesVersturen_screen As screen:
                         ),
                         Office365Outlook.SendEmailV2(
                             intakeInput_email.Text,
-                            "Subject",
-                            "Body"
+                            "Intake Formulier GradeMatch",
+                            "https://forms.office.com/e/eWQtPEKwSM"
                         ),
                         Reset(intakeInput_email);
                         Set(

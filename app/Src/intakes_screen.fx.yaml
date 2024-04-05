@@ -374,7 +374,7 @@ intakes_screen As screen:
                         Filter(
                             students,
                             StartsWith(
-                                firstName,
+                                Voornaam,
                                 SearchInput1.Text
                             )
                         )
@@ -446,7 +446,7 @@ intakes_screen As screen:
                         Filter(
                             students,
                             StartsWith(
-                                firstName,
+                                Voornaam,
                                 input_searchIntakes.Text
                             )
                         )
