@@ -753,9 +753,7 @@ students_screen As screen:
                 
                 Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
                 
-                
-                
-                Patch(intakes,)
+                Remove(intakes, intakeID)
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
