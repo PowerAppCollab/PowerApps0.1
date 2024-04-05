@@ -417,11 +417,15 @@ students_screen As screen:
             DataSource: =studenten_tabel
             Height: =250
             Item: =gallery_students.Selected
-            Visible: |-
+            Visible: |
                 =If(
                     IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
                     false,
+                    If(
+                    IsBlank(gallery_students.Selected.Email) && IsBlank(gallery_students.Selected.Voornaam),
+                    false,
                     true
+                )
                 )
             Width: =600
             Y: =50
