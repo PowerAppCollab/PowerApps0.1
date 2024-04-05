@@ -361,8 +361,7 @@ intakes_screen As screen:
             DelayItemLoading: =true
             Height: =225
             Items: |
-                =
-                Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
+                =Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -379,8 +378,8 @@ intakes_screen As screen:
                             )
                         )
                     ),
-                    true,
-                    false
+                    false,
+                    true
                 )
             Width: =500
             ZIndex: =1
@@ -451,8 +450,8 @@ intakes_screen As screen:
                             )
                         )
                     ),
-                    false,
-                    true
+                    true,
+                    false
                 )
             Width: =500
             Y: =82

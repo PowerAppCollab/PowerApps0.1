@@ -96,8 +96,7 @@ students_screen As screen:
             DelayItemLoading: =true
             Height: =250
             Items: |
-                =
-                Filter(students, StartsWith(Voornaam, SearchInput1.Text))
+                =Filter(students, StartsWith(Voornaam, SearchInput1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -753,7 +752,10 @@ students_screen As screen:
                 
                 Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
                 
-                Remove(intakes, intakeID)
+                RemoveIf(intakes, intakeID = gallery_students.Selected.intakeID);
+                RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
+                
+                Set(intakeFormIDTemp, "");
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
