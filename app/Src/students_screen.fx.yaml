@@ -1,84 +1,6 @@
 students_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =Refresh(studenten_tabel)
-
-    student_icon_1 As image:
-        Height: =45
-        Image: ='group_line (1)'
-        Width: =45
-        X: =63
-        Y: =250
-        ZIndex: =2
-
-    group_icon_1 As image:
-        Height: =45
-        Image: =grid_line
-        Width: =45
-        X: =63
-        Y: =350
-        ZIndex: =3
-
-    presentation_icon_1 As image:
-        Height: =45
-        Image: =presentation_2_line
-        Width: =45
-        X: =63
-        Y: =450
-        ZIndex: =4
-
-    courses_icon_1 As image:
-        Height: =45
-        Image: =map_line
-        Width: =45
-        X: =63
-        Y: =550
-        ZIndex: =5
-
-    label_students_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(192, 5, 255, 1)
-        Size: =10
-        Text: ="Studenten"
-        Width: =97
-        X: =37
-        Y: =280
-        ZIndex: =7
-
-    label_groups_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: |-
-            ="Groepen
-            "
-        Width: =97
-        X: =37
-        Y: =380
-        ZIndex: =8
-
-    label_presentation_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =11
-        Text: |-
-            ="Presentatie
-            "
-        Width: =97
-        X: =37
-        Y: =480
-        ZIndex: =9
-
-    label_courses_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: |-
-            ="Cursussen
-            "
-        Width: =97
-        X: =37
-        Y: =580
-        ZIndex: =10
+    OnVisible: =Refresh(studenten_tabel);
 
     container_5 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -592,14 +514,6 @@ students_screen As screen:
                     Y: =DataCardKey15.Y + DataCardKey15.Height + 5
                     ZIndex: =2
 
-    Image2_1 As image:
-        Height: =135
-        Image: ='Logo-Wit RGB (1) kopie'
-        Width: =161
-        X: =5
-        Y: =20
-        ZIndex: =15
-
     container_9 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -852,33 +766,6 @@ students_screen As screen:
             Y: =455
             ZIndex: =23
 
-    nav_intake As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =24
-
-        intake_icon_1 As image:
-            Height: =45
-            Image: ='invite_line (1)'
-            OnSelect: =Navigate(intakes_screen);
-            Width: =45
-            X: =63
-            Y: =150
-            ZIndex: =1
-
-        label_intake_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(intakes_screen);
-            Size: =10
-            Text: ="Intakes"
-            Width: =97
-            X: =37
-            Y: =180
-            ZIndex: =6
-
     groep_popup_sendscore As group:
         Height: =5
         Width: =5
@@ -971,4 +858,223 @@ students_screen As screen:
             X: =486
             Y: =455
             ZIndex: =29
+
+    groep_navigatie_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =46
+
+        student_icon_5 As image:
+            Height: =45
+            Image: ='group_line (1)'
+            OnSelect: =Navigate(students_screen);
+            Width: =45
+            X: =63
+            Y: =250
+            ZIndex: =30
+
+        group_icon_5 As image:
+            Height: =45
+            Image: =grid_line
+            Width: =45
+            X: =63
+            Y: =350
+            ZIndex: =31
+
+        presentation_icon_5 As image:
+            Height: =45
+            Image: =presentation_2_line
+            Width: =45
+            X: =63
+            Y: =450
+            ZIndex: =32
+
+        courses_icon_5 As image:
+            Height: =45
+            Image: =map_line
+            Width: =45
+            X: =63
+            Y: =550
+            ZIndex: =33
+
+        label_students_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(192, 5, 255, 1)
+            OnSelect: =Navigate(students_screen);
+            Size: =10
+            Text: ="Studenten"
+            Width: =97
+            X: =37
+            Y: =280
+            ZIndex: =34
+
+        label_groups_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =10
+            Text: |-
+                ="Groepen
+                "
+            Width: =97
+            X: =37
+            Y: =380
+            ZIndex: =35
+
+        label_presentation_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Text: |-
+                ="Presentatie
+                "
+            Width: =97
+            X: =37
+            Y: =480
+            ZIndex: =36
+
+        label_courses_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =10
+            Text: |-
+                ="Cursussen
+                "
+            Width: =97
+            X: =37
+            Y: =580
+            ZIndex: =37
+
+        Image2_5 As image:
+            Height: =135
+            Image: ='Logo-Wit RGB (1) kopie'
+            Width: =161
+            X: =5
+            Y: =20
+            ZIndex: =38
+
+        intake_icon_9 As image:
+            Height: =45
+            Image: ='invite_line (1)'
+            OnSelect: =
+            Width: =45
+            X: =63
+            Y: =150
+            ZIndex: =39
+
+        label_intake_9 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =10
+            Text: ="Intakes"
+            Width: =80
+            X: =45
+            Y: =180
+            ZIndex: =40
+
+        knop_nav_intake_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(intakes_screen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =80
+            X: =45
+            Y: =140
+            ZIndex: =41
+
+        knop_nav_studenten_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(students_screen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =80
+            X: =45
+            Y: =237
+            ZIndex: =42
+
+        knop_nav_groepen_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =//Navigate(XXX)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =80
+            X: =45
+            Y: =340
+            ZIndex: =43
+
+        knop_nav_presentatie_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =//Navigate(XXX)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =80
+            X: =45
+            Y: =440
+            ZIndex: =44
+
+        knop_nav_cursussen_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =//Navigate(XXX)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =80
+            X: =45
+            Y: =540
+            ZIndex: =45
 

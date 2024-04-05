@@ -1,8 +1,8 @@
-template_screen As screen:
+studentenHighlight_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: =
 
-    container_1 As groupContainer.manualLayoutContainer:
+    container_26 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =350
@@ -15,7 +15,7 @@ template_screen As screen:
         Y: =40
         ZIndex: =11
 
-    container_2 As groupContainer.manualLayoutContainer:
+    container_27 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =350
@@ -28,7 +28,7 @@ template_screen As screen:
         Y: =40
         ZIndex: =12
 
-    container_3 As groupContainer.manualLayoutContainer:
+    container_28 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =300
@@ -41,7 +41,7 @@ template_screen As screen:
         Y: =425
         ZIndex: =13
 
-    container_4 As groupContainer.manualLayoutContainer:
+    container_29 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
         Height: =300
@@ -54,14 +54,14 @@ template_screen As screen:
         Y: =425
         ZIndex: =14
 
-    groep_navigatie_2 As group:
+    groep_navigatie_3 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =31
 
-        student_icon_6 As image:
+        student_icon_7 As image:
             Height: =45
             Image: =group_line
             OnSelect: =Navigate(students_screen);
@@ -70,7 +70,7 @@ template_screen As screen:
             Y: =250
             ZIndex: =15
 
-        group_icon_6 As image:
+        group_icon_7 As image:
             Height: =45
             Image: =grid_line
             Width: =45
@@ -78,7 +78,7 @@ template_screen As screen:
             Y: =350
             ZIndex: =16
 
-        presentation_icon_6 As image:
+        presentation_icon_7 As image:
             Height: =45
             Image: =presentation_2_line
             Width: =45
@@ -86,7 +86,7 @@ template_screen As screen:
             Y: =450
             ZIndex: =17
 
-        courses_icon_6 As image:
+        courses_icon_7 As image:
             Height: =45
             Image: =map_line
             Width: =45
@@ -94,7 +94,7 @@ template_screen As screen:
             Y: =550
             ZIndex: =18
 
-        label_students_6 As label:
+        label_students_7 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             OnSelect: =Navigate(students_screen);
@@ -105,7 +105,7 @@ template_screen As screen:
             Y: =280
             ZIndex: =19
 
-        label_groups_6 As label:
+        label_groups_7 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Size: =10
@@ -117,7 +117,7 @@ template_screen As screen:
             Y: =380
             ZIndex: =20
 
-        label_presentation_6 As label:
+        label_presentation_7 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Size: =11
@@ -129,7 +129,7 @@ template_screen As screen:
             Y: =480
             ZIndex: =21
 
-        label_courses_6 As label:
+        label_courses_7 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Size: =10
@@ -141,7 +141,7 @@ template_screen As screen:
             Y: =580
             ZIndex: =22
 
-        Image2_6 As image:
+        Image2_7 As image:
             Height: =135
             Image: ='Logo-Wit RGB (1) kopie'
             Width: =161
@@ -149,7 +149,7 @@ template_screen As screen:
             Y: =20
             ZIndex: =23
 
-        intake_icon_10 As image:
+        intake_icon_11 As image:
             Height: =45
             Image: ='invite_line (2)'
             OnSelect: =
@@ -158,7 +158,7 @@ template_screen As screen:
             Y: =150
             ZIndex: =24
 
-        label_intake_10 As label:
+        label_intake_11 As label:
             Align: =Align.Center
             Color: =RGBA(192, 5, 230, 1)
             Size: =10
@@ -168,7 +168,7 @@ template_screen As screen:
             Y: =180
             ZIndex: =25
 
-        knop_nav_intake_2 As button:
+        knop_nav_intake_3 As button:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
@@ -189,7 +189,7 @@ template_screen As screen:
             Y: =140
             ZIndex: =26
 
-        knop_nav_studenten_2 As button:
+        knop_nav_studenten_3 As button:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
@@ -210,7 +210,7 @@ template_screen As screen:
             Y: =237
             ZIndex: =27
 
-        knop_nav_groepen_2 As button:
+        knop_nav_groepen_3 As button:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
@@ -231,7 +231,7 @@ template_screen As screen:
             Y: =340
             ZIndex: =28
 
-        knop_nav_presentatie_2 As button:
+        knop_nav_presentatie_3 As button:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
@@ -252,7 +252,7 @@ template_screen As screen:
             Y: =440
             ZIndex: =29
 
-        knop_nav_cursussen_2 As button:
+        knop_nav_cursussen_3 As button:
             BorderColor: =
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
