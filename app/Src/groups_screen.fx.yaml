@@ -151,7 +151,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.cr884_course.name
+                Text: =ThisItem.course.name
                 Width: =270
                 X: =16
                 Y: =37
