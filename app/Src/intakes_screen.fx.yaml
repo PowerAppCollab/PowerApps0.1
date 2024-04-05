@@ -651,7 +651,7 @@ intakes_screen As screen:
                     students,
                     Defaults(students),
                     {
-                        'firstName': gallery_intakes.Selected.firstName,
+                        firstName: gallery_intakes.Selected.firstName,
                         studentID: newStudentID
                     }
                 );
