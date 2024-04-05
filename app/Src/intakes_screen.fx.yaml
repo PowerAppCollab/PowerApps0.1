@@ -361,8 +361,7 @@ intakes_screen As screen:
             DelayItemLoading: =true
             Height: =225
             Items: |
-                =
-                Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
+                =Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -375,7 +374,7 @@ intakes_screen As screen:
                             students,
                             StartsWith(
                                 Voornaam,
-                                SearchInput1.Text
+                                input_searchIntakes.Text
                             )
                         )
                     ),
@@ -824,13 +823,16 @@ intakes_screen As screen:
                     Defaults(students),
                     {
                         Voornaam: gallery_intakes.Selected.Voornaam,
-                        studentID: newStudentID
+                        Achternaam: gallery_intakes.Selected.Achternaam,
+                        studentID: newStudentID,
+                        Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
+                        Email: gallery_intakes.Selected.Email
                     }
                 );
                 
-                Set(currentStudent, newStudentID);
+                Refresh(students);
                 
-                Navigate(students_screen, newStudentID);
+                Navigate(students_screen);
                 
             PressedFill: =
             Size: =13
