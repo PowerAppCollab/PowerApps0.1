@@ -1,5 +1,19 @@
 [
   {
+    "DisplayName": "intakeForms (Weergaven)",
+    "Name": "_cr884_intakeforms_views",
+    "RelatedEntityName": "intakeForms",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "41c836e5-ab56-4e60-aca6-b29227d89ffd": "Gekoppelde weergave van intakeForms",
+      "753dc87e-673d-466e-b2ab-f05f3842d163": "Inactieve intakeForms",
+      "90317e9d-bbc8-4bcf-af72-3709d6f7d472": "Actieve intakeForms",
+      "cd16641a-a223-49b0-af7d-be4cc746a538": "Weergave Geavanceerd zoeken van intakeForms",
+      "f4e74e16-3be2-4c7f-9931-da8e09b0cd17": "intakeForms Opzoekweergave"
+    }
+  },
+  {
     "DisplayName": "Geslacht (intakeForms)",
     "Name": "cr884_intakeforms_cr884_geslacht",
     "OptionSetInfoNameMapping": {
@@ -20,14 +34,56 @@
     "Type": "OptionSetInfo"
   },
   {
+    "DisplayName": "Status (intakeForms)_1",
+    "Name": "cr884_intakeforms_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "intakeForms"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "intakeForms",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (intakeForms)_1",
+    "Name": "cr884_intakeforms_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "intakeForms"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "intakeForms",
+    "Type": "OptionSetInfo"
+  },
+  {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
     "EntitySetName": "cr884_intakeformses",
     "IsHidden": false,
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr884_intakeforms",
+    "MaxGetRowsCount": 500,
     "Name": "intakeForms",
     "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
       "cr884_doelcursus": "Doel Cursus",
       "cr884_email": "Email",
       "cr884_firstname": "First Name",
@@ -35,6 +91,14 @@
       "cr884_geslacht": "Geslacht",
       "cr884_huidigefunctie": "Huidige Functie",
       "cr884_intakeformid": "intakeFormID",
+      "cr884_intakeforms_AsyncOperations": "Systeemtaken",
+      "cr884_intakeforms_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_intakeforms_DuplicateBaseRecord": "Dubbele records (cr884_intakeforms_DuplicateBaseRecord)",
+      "cr884_intakeforms_DuplicateMatchingRecord": "Dubbele records (cr884_intakeforms_DuplicateMatchingRecord)",
+      "cr884_intakeforms_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_intakeforms_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_intakeforms_ProcessSession": "Processessies",
+      "cr884_intakeforms_SyncErrors": "Synchronisatiefouten",
       "cr884_intakeformsid": "intakeForms",
       "cr884_jarenervaring": "Jaren Ervaring",
       "cr884_lastname": "Last Name",
@@ -42,10 +106,17 @@
       "cr884_programmeertalen": "Programmeertalen",
       "cr884_telefoonnummer": "Telefoonnummer",
       "cr884_werkzaambij": "Werkzaam Bij",
+      "createdby": "Gemaakt door",
       "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
       "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
       "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
       "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
       "statecode": "Status",
       "statuscode": "Reden van status",
       "timezoneruleversionnumber": "Versienummer van tijdzoneregel",

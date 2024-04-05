@@ -118,7 +118,8 @@ intakes_screen As screen:
             Item: =gallery_intakes.Selected
             Visible: |
                 =If(
-                    IsBlank(gallery_intakes.Selected.email),
+                    IsBlank(gallery_intakes.Selected.Email
+                    ),
                     false,
                     true
                 )
@@ -134,7 +135,7 @@ intakes_screen As screen:
             Text: ="Geen intake geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_intakes.Selected.firstName),
+                    IsBlank(gallery_intakes.Selected.Voornaam),
                     true,
                     false
                 )
@@ -199,7 +200,7 @@ intakes_screen As screen:
             Height: =225
             Items: |
                 =
-                Filter(intakes, StartsWith(firstName, input_searchIntakes.Text))
+                Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -242,7 +243,7 @@ intakes_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.firstName & " " & ThisItem.surName
+                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -253,7 +254,7 @@ intakes_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.email
+                Text: =ThisItem.Email
                 Width: =270
                 X: =16
                 Y: =37
@@ -343,7 +344,7 @@ intakes_screen As screen:
             Text: ="Geen intake geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_intakes.Selected.firstName),
+                    IsBlank(gallery_intakes.Selected.Voornaam),
                     true,
                     false
                 )
@@ -357,7 +358,7 @@ intakes_screen As screen:
             Item: =gallery_intakes.Selected
             Visible: |
                 =If(
-                    IsBlank(gallery_intakes.Selected.email),
+                    IsBlank(gallery_intakes.Selected.Email),
                     false,
                     true
                 )
@@ -368,7 +369,7 @@ intakes_screen As screen:
             couseID_DataCard1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_couseid"
-                Default: =ThisItem.couseID
+                Default: =ThisItem.courseID
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_couseid")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -485,7 +486,7 @@ intakes_screen As screen:
             name_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_name"
-                Default: =ThisItem.firstName
+                Default: =ThisItem.Voornaam
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -517,7 +518,7 @@ intakes_screen As screen:
                     PaddingLeft: =0
                     PaddingRight: =0
                     PaddingTop: =0
-                    Text: =ThisItem.firstName & " " & ThisItem.surName
+                    Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
                     Width: =Parent.Width - 60
                     X: =30
                     Y: =DataCardKey2_3.Y + DataCardKey2_3.Height + 5
@@ -526,7 +527,7 @@ intakes_screen As screen:
             email_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_email"
-                Default: =ThisItem.email
+                Default: =ThisItem.Email
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_email")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -567,7 +568,7 @@ intakes_screen As screen:
             phone_DataCard1_3 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_phone"
-                Default: =ThisItem.phoneNumber
+                Default: =ThisItem.Telefoonnummer
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_phone")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -599,7 +600,7 @@ intakes_screen As screen:
                     PaddingLeft: =0
                     PaddingRight: =0
                     PaddingTop: =0
-                    Text: =ThisItem.phoneNumber
+                    Text: =ThisItem.Telefoonnummer
                     Width: =Parent.Width - 60
                     X: =30
                     Y: =DataCardKey4_3.Y + DataCardKey4_3.Height + 5
@@ -612,7 +613,7 @@ intakes_screen As screen:
             ChevronHoverBackground: =ColorFade(RGBA(45, 45, 45, 1), -20%)
             Color: =RGBA(255, 255, 255, 1)
             Default: |
-                =LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).intakeStatus
+                =LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).'Intake Status'
             Fill: =RGBA(45, 45, 45, 1)
             HoverBorderColor: =ColorFade(RGBA(45, 45, 45, 1), -20%)
             HoverColor: =RGBA(255, 255, 255, 1)
@@ -622,7 +623,7 @@ intakes_screen As screen:
                 =Patch(
                     intakes, // Data source to update
                     LookUp(intakes,intakeID = gallery_intakes.Selected.intakeID), // Specifies the record to update based on its ID
-                    {intakeStatus: intakeStatus_dropdown.Selected.status} // Field to update and its new value
+                    {'Intake Status': intakeStatus_dropdown.Selected.status} // Field to update and its new value
                 )
                 
                 
@@ -632,6 +633,12 @@ intakes_screen As screen:
             PressedFill: =RGBA(0, 0, 0, 1)
             SelectionColor: =RGBA(45, 45, 45, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: |
+                =If(
+                    IsBlank(gallery_intakes.Selected.Email),
+                    false,
+                    true
+                )
             Width: =148
             X: =21
             Y: =255
@@ -651,7 +658,7 @@ intakes_screen As screen:
                     students,
                     Defaults(students),
                     {
-                        firstName: gallery_intakes.Selected.firstName,
+                        firstName: gallery_intakes.Selected.Voornaam,
                         studentID: newStudentID
                     }
                 );
