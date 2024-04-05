@@ -741,7 +741,8 @@ intakes_screen As screen:
                         studentID: newStudentID,
                         Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
                         Email: gallery_intakes.Selected.Email,
-                        intakeID: gallery_intakes.Selected.intakeID
+                        intakeID: gallery_intakes.Selected.intakeID,
+                        'Werkzaam Bij': gallery_intakes.Selected.'Werkzaam bij'
                     }
                 ),
                 Set(error_newStudent, true)

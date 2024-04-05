@@ -590,7 +590,7 @@ students_screen As screen:
             Height: =60
             Image: ='invite_line (1)'
             Width: =60
-            X: =94
+            X: =70
             Y: =25
             ZIndex: =1
 
@@ -600,7 +600,7 @@ students_screen As screen:
             Size: =11
             Text: ="Intake Weergeven"
             Width: =138
-            X: =55
+            X: =31
             Y: =79
             ZIndex: =2
 
@@ -608,7 +608,7 @@ students_screen As screen:
             Height: =60
             Image: =presentation_2_line
             Width: =60
-            X: =269
+            X: =227
             Y: =25
             ZIndex: =3
 
@@ -618,9 +618,17 @@ students_screen As screen:
             Size: =11
             Text: ="Presenteer"
             Width: =138
-            X: =230
+            X: =188
             Y: =79
             ZIndex: =4
+
+        intake_icon_5 As image:
+            Height: =60
+            Image: =information_line
+            Width: =60
+            X: =488
+            Y: =25
+            ZIndex: =8
 
         groep_verwijder As group:
             Height: =5
@@ -634,7 +642,7 @@ students_screen As screen:
                 Image: =user_x_line
                 OnSelect: =Set(varShowPopup, true);
                 Width: =60
-                X: =444
+                X: =366
                 Y: =25
                 ZIndex: =5
 
@@ -645,7 +653,7 @@ students_screen As screen:
                 Size: =11
                 Text: ="Verwijder"
                 Width: =138
-                X: =405
+                X: =327
                 Y: =79
                 ZIndex: =6
 
@@ -661,9 +669,37 @@ students_screen As screen:
                 PressedFill: =
                 Text: =""
                 Width: =86
-                X: =431
+                X: =347
                 Y: =25
                 ZIndex: =7
+
+        label_intake_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Text: ="Informatie"
+            Width: =138
+            X: =449
+            Y: =79
+            ZIndex: =9
+
+        groep_verwijder_knop_3 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =94
+            HoverFill: =
+            OnSelect: |-
+                =Set(currSelectedStudent, gallery_students.Selected.studentID);
+                Navigate(studentenHighlight_screen);
+            PressedFill: =
+            Text: =""
+            Width: =86
+            X: =475
+            Y: =25
+            ZIndex: =10
 
     groep_popup As group:
         Height: =5
