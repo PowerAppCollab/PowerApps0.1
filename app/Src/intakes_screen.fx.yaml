@@ -386,7 +386,7 @@ intakes_screen As screen:
             Size: =13
             Text: ="Intake versturen"
             Width: =500
-            Y: =197
+            Y: =198
             ZIndex: =3
 
     container_12 As groupContainer.manualLayoutContainer:
@@ -430,7 +430,7 @@ intakes_screen As screen:
 
         form_intakeOpties As formViewer:
             DataSource: =intakes
-            Height: =269
+            Height: =160
             Item: =gallery_intakes.Selected
             Visible: |
                 =If(
@@ -682,44 +682,6 @@ intakes_screen As screen:
                     Y: =DataCardKey11.Y + DataCardKey11.Height + 5
                     ZIndex: =2
 
-        intakeStatus_dropdown As dropdown:
-            BorderColor: =RGBA(45, 45, 45, 1)
-            BorderThickness: =0
-            ChevronBackground: =RGBA(45, 45, 45, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(45, 45, 45, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: |
-                =LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).'Intake Status'
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =ColorFade(RGBA(45, 45, 45, 1), -20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(45, 45, 45, 1)
-            Items: ='New tables'
-            OnChange: |+
-                =Patch(
-                    intakes, // Data source to update
-                    LookUp(intakes,intakeID = gallery_intakes.Selected.intakeID), // Specifies the record to update based on its ID
-                    {'Intake Status': intakeStatus_dropdown.Selected.status} // Field to update and its new value
-                )
-                
-                
-                
-                
-            PressedBorderColor: =ColorFade(RGBA(45, 45, 45, 1), -20%)
-            PressedFill: =RGBA(0, 0, 0, 1)
-            SelectionColor: =RGBA(45, 45, 45, 1)
-            SelectionFill: =RGBA(192, 5, 230, 1)
-            Visible: |
-                =If(
-                    IsBlank(gallery_intakes.Selected.Email),
-                    false,
-                    true
-                )
-            Width: =148
-            X: =21
-            Y: =255
-            ZIndex: =5
-
         Button1_1 As button:
             BorderStyle: =BorderStyle.None
             DisabledColor: =RGBA(255, 255, 255, 1)
@@ -761,14 +723,83 @@ intakes_screen As screen:
             Text: ="Student Aanmaken"
             Visible: |-
                 =If(
-                    intakeStatus_dropdown.Selected.status = "Completed" && !IsBlank(gallery_intakes.Selected),
+                    Text(intake_dropdownStatus.Selected.Value) = "Compleet" && !IsBlank(gallery_intakes.Selected),
                     true,
                     false
                 )
             Width: =171
-            X: =196
-            Y: =255
+            X: =227
+            Y: =262
             ZIndex: =6
+
+        Form1 As form:
+            DataSource: =intakes
+            Height: =113
+            Item: =gallery_intakes.Selected
+            Width: =258
+            Y: =212
+            ZIndex: =7
+
+            "'Status (cr884_status)_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_status"
+                Default: =ThisItem.'Status (cr884_status)'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_status")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =99
+                Required: =false
+                Update: =intake_dropdownStatus.Selected.Value
+                Width: =258
+                X: =0
+                Y: =0
+                ZIndex: =8
+
+                intake_dropdownStatus As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(192, 5, 230, 0.8)
+                    ChevronHoverBackground: =
+                    Color: =RGBA(255, 255, 255, 1)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayMode: =Parent.DisplayMode
+                    Fill: =RGBA(192, 5, 230, 1)
+                    HoverBorderColor: =
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(192, 5, 230, 0.8)
+                    IsSearchable: =false
+                    Items: =Choices(Status)
+                    OnChange: |
+                        =Patch(
+                            intakes,
+                            LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID),
+                            {'Status (cr884_status)': intake_dropdownStatus.Selected.Value}
+                        )
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedColor: =RGBA(0, 0, 0, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    SelectionFill: =RGBA(192, 5, 230, 0.8)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =25
+                    Y: =50
+                    ZIndex: =2
+
+                ErrorMessage14 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =intake_dropdownStatus.Y + intake_dropdownStatus.Height
+                    ZIndex: =3
 
     groep_popup_2 As group:
         Height: =5

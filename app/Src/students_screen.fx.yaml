@@ -767,9 +767,10 @@ students_screen As screen:
                 Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", Archived: "true"});
                 
                 Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
+                Set(deleteIntakeID, LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).intakeID);
                 
                 RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
-                RemoveIf(intakes, intakeID = gallery_students.Selected.intakeID);
+                RemoveIf(intakes, intakeID = deleteIntakeID);
                 
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6

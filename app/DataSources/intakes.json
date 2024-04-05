@@ -54,6 +54,27 @@
     "Type": "OptionSetInfo"
   },
   {
+    "DisplayName": "Status",
+    "Name": "cr884_status",
+    "OptionSetInfoNameMapping": {
+      "842620000": "Nieuw",
+      "842620001": "In Behandeling",
+      "842620002": "Compleet"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr884_status",
+        "OptionSetReferenceEntityName": "intakes"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr884_status",
+    "RelatedEntityName": "intakes",
+    "Type": "OptionSetInfo"
+  },
+  {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
     "EntitySetName": "cr884_intakeses",
     "IsHidden": false,
@@ -81,6 +102,7 @@
       "cr884_intakestatus": "Intake Status",
       "cr884_phonenumber": "Telefoonnummer",
       "cr884_scoreid": "scoreID",
+      "cr884_status": "Status (cr884_status)",
       "cr884_surname": "Achternaam",
       "cr884_testid": "testID",
       "cr884_werkzaambij": "Werkzaam bij",
@@ -95,7 +117,7 @@
       "owningbusinessunit": "Business unit die eigenaar is",
       "owningteam": "Team dat eigenaar is",
       "owninguser": "Gebruiker die eigenaar is",
-      "statecode": "Status",
+      "statecode": "Status (statecode)",
       "statuscode": "Reden van status",
       "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
       "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
