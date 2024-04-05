@@ -5,15 +5,100 @@ studentenHighlight_screen As screen:
     container_26 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =350
+        Height: =250
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
-        Width: =625
+        Width: =515
         X: =180
-        Y: =40
+        Y: =140
         ZIndex: =11
+
+        Label6_1 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Telefoonnummer"
+            Width: =170
+            X: =12
+            Y: =55
+            ZIndex: =2
+
+        Label6_2 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Werkzaam bij"
+            Width: =170
+            X: =12
+            Y: =95
+            ZIndex: =3
+
+        Label6_3 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Cursus"
+            Width: =170
+            X: =12
+            Y: =135
+            ZIndex: =4
+
+        Label6_4 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Extra"
+            Width: =170
+            X: =12
+            Y: =175
+            ZIndex: =5
+
+        Label6_5 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Naam"
+            Width: =170
+            X: =12
+            Y: =15
+            ZIndex: =6
+
+        Label7 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Tekst"
+            X: =193
+            Y: =15
+            ZIndex: =7
+
+        Label7_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Tekst"
+            X: =193
+            Y: =55
+            ZIndex: =8
+
+        Label7_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Tekst"
+            X: =193
+            Y: =95
+            ZIndex: =9
+
+        Label7_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Tekst"
+            X: =193
+            Y: =135
+            ZIndex: =10
+
+        Label7_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: ="Tekst"
+            X: =193
+            Y: =175
+            ZIndex: =11
 
     container_27 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -23,36 +108,65 @@ studentenHighlight_screen As screen:
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
-        Width: =450
-        X: =850
+        Width: =620
+        X: =715
         Y: =40
         ZIndex: =12
 
     container_28 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =325
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
-        Width: =625
+        Width: =515
         X: =180
-        Y: =425
+        Y: =415
         ZIndex: =13
+
+        Label8 As label:
+            Text: ="GRAFIEK met opties"
+            X: =40
+            Y: =40
+            ZIndex: =1
 
     container_29 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =325
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
-        Width: =450
-        X: =850
-        Y: =425
+        Width: =620
+        X: =715
+        Y: =415
         ZIndex: =14
+
+    container_30 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(192, 5, 230, 0.8)
+        Height: =75
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =420
+        X: =180
+        Y: =40
+        ZIndex: =31
+
+        Label4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =16
+            Text: ="Jacks Sparrow"
+            Width: =311
+            X: =18
+            Y: =18
+            ZIndex: =1
 
     groep_navigatie_3 As group:
         Height: =5
@@ -151,7 +265,7 @@ studentenHighlight_screen As screen:
 
         intake_icon_11 As image:
             Height: =45
-            Image: ='invite_line (2)'
+            Image: ='invite_line (1)'
             OnSelect: =
             Width: =45
             X: =63
@@ -160,7 +274,7 @@ studentenHighlight_screen As screen:
 
         label_intake_11 As label:
             Align: =Align.Center
-            Color: =RGBA(192, 5, 230, 1)
+            Color: =RGBA(255, 255, 255, 1)
             Size: =10
             Text: ="Intakes"
             Width: =80
@@ -272,4 +386,28 @@ studentenHighlight_screen As screen:
             X: =45
             Y: =540
             ZIndex: =30
+
+    container_31 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =75
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =75
+        X: =620
+        Y: =40
+        ZIndex: =32
+
+        Icon4 As icon.Edit:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =35
+            HoverColor: =RGBA(192, 5, 230, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Edit
+            Width: =35
+            X: =20
+            Y: =20
+            ZIndex: =1
 
