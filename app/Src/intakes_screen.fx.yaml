@@ -375,12 +375,12 @@ intakes_screen As screen:
                             students,
                             StartsWith(
                                 Voornaam,
-                                SearchInput1.Text
+                                input_searchIntakes.Text
                             )
                         )
                     ),
-                    false,
-                    true
+                    true,
+                    false
                 )
             Width: =500
             ZIndex: =1
@@ -451,8 +451,8 @@ intakes_screen As screen:
                             )
                         )
                     ),
-                    true,
-                    false
+                    false,
+                    true
                 )
             Width: =500
             Y: =82
@@ -831,9 +831,9 @@ intakes_screen As screen:
                     }
                 );
                 
-                Set(currentStudent, Text(gallery_intakes.Selected.Voornaam + " " + gallery_intakes.Selected.Achternaam));
+                Refresh(students);
                 
-                Navigate(students_screen, currentStudent);
+                Navigate(students_screen);
                 
             PressedFill: =
             Size: =13
