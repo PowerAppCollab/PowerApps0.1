@@ -96,9 +96,10 @@ students_screen As screen:
             DelayItemLoading: =true
             Height: =250
             Items: |
-                =If(dropdown_archived_students.Selected.Value = "Actief",
-                Filter(studenten_tabel, Archived = ""),
-                Filter(studenten_tabel, Archived = "true")
+                =If(
+                    dropdown_archived_students.Selected.Value = "Actief",
+                    Filter(studenten_tabel, Archived <> "true"),
+                    Filter(studenten_tabel, Archived = "true")
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -781,15 +782,15 @@ students_screen As screen:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
-            Height: =87
+            Height: =111
             Text: |-
-                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar.
+                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar. Echter zullen zijn/haar gegevens gearchiveerd worden.
                 
                 Weet u het zeker?"
             Visible: =varShowPopup
             Width: =454
             X: =456
-            Y: =332
+            Y: =318
             ZIndex: =20
 
         popup_header As label:
