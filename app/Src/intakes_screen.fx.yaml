@@ -823,7 +823,7 @@ intakes_screen As screen:
                     students,
                     Defaults(students),
                     {
-                        firstName: gallery_intakes.Selected.Voornaam,
+                        Voornaam: gallery_intakes.Selected.Voornaam,
                         studentID: newStudentID
                     }
                 );

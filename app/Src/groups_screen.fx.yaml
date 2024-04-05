@@ -151,7 +151,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.cr884_course.name
+                Text: =ThisItem.course.name
                 Width: =270
                 X: =16
                 Y: =37
@@ -375,7 +375,7 @@ groups_screen As screen:
             name_DataCard1_1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_name"
-                Default: =ThisItem.firstName
+                Default: =ThisItem.Voornaam
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_name")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -416,7 +416,7 @@ groups_screen As screen:
             email_DataCard1_1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_email"
-                Default: =ThisItem.email
+                Default: =ThisItem.Email
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_email")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -457,7 +457,7 @@ groups_screen As screen:
             phone_DataCard1_1 As typedDataCard.textualViewCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_phone"
-                Default: =ThisItem.phone
+                Default: =ThisItem.Telefoonnummer
                 DisplayMode: =DisplayMode.View
                 DisplayName: =DataSourceInfo([@students],DataSourceInfo.DisplayName,"cr884_phone")
                 Fill: =RGBA(0, 0, 0, 0)
@@ -579,7 +579,7 @@ groups_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.firstName
+                Text: =ThisItem.Voornaam
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -590,7 +590,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.email
+                Text: =ThisItem.Email
                 Width: =270
                 X: =16
                 Y: =37
@@ -835,7 +835,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
-                =Patch(students, gallery_groups.Selected, {firstName: gallery_groups.Selected.studentID, email: "", phone: ""});
+                =Patch(students, gallery_groups.Selected, {Voornaam: gallery_groups.Selected.studentID, Email: "", Telefoonnummer: ""});
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -1186,7 +1186,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(151, 0, 181, 1)
             OnSelect: |-
-                =Patch(students, gallery_groups.Selected, {firstName: gallery_groups.Selected.studentID, email: "", phone: ""});
+                =Patch(students, gallery_groups.Selected, {Voornaam: gallery_groups.Selected.studentID, Email: "", Telefoonnummer: ""});
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
