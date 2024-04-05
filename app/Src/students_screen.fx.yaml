@@ -95,8 +95,10 @@ students_screen As screen:
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: |
+            Items: |+
                 =Filter(students, StartsWith(Voornaam, SearchInput1.Text))
+                
+                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -139,7 +141,7 @@ students_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.Voornaam
+                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -750,9 +752,11 @@ students_screen As screen:
             OnSelect: |-
                 =Patch(students, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Email: "", Telefoonnummer: ""});
                 
-                Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
-                
                 RemoveIf(intakes, intakeID = gallery_students.Selected.intakeID);
+                Remove(students, gallery_students.Selected);
+                
+                //Set(intakeFormIDTemp; LookUp(intakes; intakeID = gallery_students.Selected.intakeID).intakeFormID);;
+                
                 RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
                 
                 Set(intakeFormIDTemp, "");

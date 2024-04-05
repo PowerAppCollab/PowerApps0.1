@@ -3,6 +3,10 @@
   "EntityName": "Automatisch bijgehouden postvakmappen",
   "environmentVariableName": "",
   "InstanceUrl": "https://orgd57aa604.crm4.dynamics.com/",
+  "LocalReferenceDSJson": {
+    "entitySetName": "mailboxtrackingfolders",
+    "logicalName": "mailboxtrackingfolder"
+  },
   "state": "Configured",
   "TableDefinition": {
     "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://orgd57aa604.crm4.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('mailboxtrackingfolder')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",

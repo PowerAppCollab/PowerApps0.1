@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "mailboxtrackingfolder",
+    "MaxGetRowsCount": 500,
     "Name": "Automatisch bijgehouden postvakmappen",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Eigenaar",
@@ -28,5 +29,13 @@
     },
     "PreferredName": "Automatisch bijgehouden postvakmappen",
     "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Automatisch bijgehouden postvakmappen (Weergaven)",
+    "Name": "_mailboxtrackingfolder_views",
+    "RelatedEntityName": "Automatisch bijgehouden postvakmappen",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {}
   }
 ]
