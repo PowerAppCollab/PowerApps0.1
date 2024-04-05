@@ -1,0 +1,142 @@
+[
+  {
+    "DisplayName": "studenten_tabel (Weergaven)",
+    "Name": "_cr884_studenten_tabel_views",
+    "RelatedEntityName": "studenten_tabel",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "05e44d18-60af-416e-a8f9-c03cfe9bc731": "Actieve studenten_tabel",
+      "09368233-77ee-4bc6-8af2-5100f2b50e13": "studenten_tabel Opzoekweergave",
+      "dc86c07d-64d3-4d02-bb4e-d42093581f93": "Weergave Geavanceerd zoeken van studenten_tabel",
+      "df4091d2-fd0e-4028-8d6f-007984f3369a": "Inactieve studenten_tabel",
+      "ffd22d8f-6927-4c9d-b93d-91452d66e312": "Gekoppelde weergave van studenten_tabel"
+    }
+  },
+  {
+    "DisplayName": "Status (studenten_tabel)_1",
+    "Name": "cr884_studenten_tabel_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "studenten_tabel"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "studenten_tabel",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (studenten_tabel)_1",
+    "Name": "cr884_studenten_tabel_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "studenten_tabel"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "studenten_tabel",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (studenten_tabel)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_f699eb162f_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "studenten_tabel"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "studenten_tabel",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (studenten_tabel)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_f699eb162f_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "studenten_tabel"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "studenten_tabel",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_studenten_tabels",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_studenten_tabel",
+    "MaxGetRowsCount": 500,
+    "Name": "studenten_tabel",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
+      "cr884_achternaam": "Achternaam",
+      "cr884_archived": "Archived",
+      "cr884_email": "Email",
+      "cr884_intakeid": "intakeID",
+      "cr884_scoreid": "scoreID",
+      "cr884_studenten_tabel_AsyncOperations": "Systeemtaken",
+      "cr884_studenten_tabel_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_studenten_tabel_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_studenten_tabel_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_studenten_tabel_ProcessSession": "Processessies",
+      "cr884_studenten_tabel_SyncErrors": "Synchronisatiefouten",
+      "cr884_studenten_tabelid": "studenten_tabel",
+      "cr884_studentid": "studentID",
+      "cr884_telefoonnummer": "Telefoonnummer",
+      "cr884_voornaam": "Voornaam",
+      "createdby": "Gemaakt door",
+      "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
+      "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
+      "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
+      "statecode": "Status",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "studenten_tabel",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]
