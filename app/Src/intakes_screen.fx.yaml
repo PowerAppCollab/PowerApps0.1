@@ -113,9 +113,10 @@ intakes_screen As screen:
             ZIndex: =1
 
         form_intakeResultaten As formViewer:
-            DataSource: =intakes
+            AcceptsFocus: =false
+            DataSource: =intakeForms
             Height: =269
-            Item: =gallery_intakes.Selected
+            Item: =LookUp(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID)
             Visible: |
                 =If(
                     IsBlank(gallery_intakes.Selected.Email
@@ -123,9 +124,170 @@ intakes_screen As screen:
                     false,
                     true
                 )
-            Width: =1148
+            Width: =904
+            X: =244
             Y: =56
             ZIndex: =2
+
+            "'Huidige Functie_DataCard1' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_huidigefunctie"
+                Default: =ThisItem.'Huidige Functie'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_huidigefunctie")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =301
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey7 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue7 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                    ZIndex: =2
+
+            "'Jaren Ervaring_DataCard1' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_jarenervaring"
+                Default: =ThisItem.'Jaren Ervaring'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_jarenervaring")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =301
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey8 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue8 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                    ZIndex: =2
+
+            Opleiding_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_opleiding"
+                Default: =ThisItem.Opleiding
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_opleiding")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =301
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey9 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue9 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                    ZIndex: =2
+
+            Programmeertalen_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_programmeertalen"
+                Default: =ThisItem.Programmeertalen
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_programmeertalen")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =301
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey10 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue10 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey10.Y + DataCardKey10.Height + 5
+                    ZIndex: =2
 
         label_intakeResultaten_error As label:
             Align: =Align.Center
@@ -366,84 +528,6 @@ intakes_screen As screen:
             Y: =40
             ZIndex: =4
 
-            couseID_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_couseid"
-                Default: =ThisItem.courseID
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_couseid")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey1 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue1 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
-                    ZIndex: =2
-
-            contactPersonID_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_contactpersonid"
-                Default: =ThisItem.contactPersonID
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_contactpersonid")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =1
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey5 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue5 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
-                    ZIndex: =2
-
             "'Werkzaam bij_DataCard1' As typedDataCard.textualViewCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="cr884_werkzaambij"
@@ -454,7 +538,7 @@ intakes_screen As screen:
                 Height: =40
                 Required: =false
                 Width: =208
-                X: =2
+                X: =0
                 Y: =1
                 ZIndex: =1
 
@@ -473,6 +557,7 @@ intakes_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
                     Height: =27
                     PaddingLeft: =0
                     PaddingRight: =0
@@ -481,6 +566,86 @@ intakes_screen As screen:
                     Width: =Parent.Width - 60
                     X: =30
                     Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    ZIndex: =2
+
+            Geboortedatum_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_geboortedatum"
+                Default: =ThisItem.Geboortedatum
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_geboortedatum")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =208
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                    ZIndex: =2
+
+            Telefoonnummer_DataCard1 As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr884_phonenumber"
+                Default: =ThisItem.Telefoonnummer
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_phonenumber")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =208
+                X: =2
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey5 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
                     ZIndex: =2
 
             name_DataCard1_3 As typedDataCard.textualViewCard:
