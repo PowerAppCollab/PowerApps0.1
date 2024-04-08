@@ -1,8 +1,12 @@
 intakes_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |-
+    OnVisible: |+
         =Refresh(intakes);
         Refresh(intakeForms);
+        
+        
+        
+        
 
     container_20 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -430,7 +434,7 @@ intakes_screen As screen:
 
         form_intakeOpties As formViewer:
             DataSource: =intakes
-            Height: =160
+            Height: =207
             Item: =gallery_intakes.Selected
             Visible: |
                 =If(
@@ -688,32 +692,45 @@ intakes_screen As screen:
             Fill: =RGBA(192, 5, 230, 1)
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: |+
-                =Set(newStudentID, GUID());
-                
+            OnSelect: |
+                =Set(
+                    newStudentID,
+                    GUID()
+                );
+                Set(
+                    error_newStudent,
+                    false
+                );
                 If(
                     IsBlank(
-                        LookUp(studenten_tabel, Email = gallery_intakes.Selected.Email)), 
-                Patch(
-                    studenten_tabel,
-                    Defaults(studenten_tabel),
-                    {
-                        Voornaam: gallery_intakes.Selected.Voornaam,
-                        Achternaam: gallery_intakes.Selected.Achternaam,
-                        studentID: newStudentID,
-                        Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
-                        Email: gallery_intakes.Selected.Email,
-                        intakeID: gallery_intakes.Selected.intakeID,
-                        'Werkzaam Bij': gallery_intakes.Selected.'Werkzaam bij'
-                    }
-                ),
-                Set(error_newStudent, true)
+                        LookUp(
+                            studenten_tabel,
+                            Email = gallery_intakes.Selected.Email
+                        )
+                    ),
+                    Patch(
+                        studenten_tabel,
+                        Defaults(studenten_tabel),
+                        {
+                            Voornaam: gallery_intakes.Selected.Voornaam,
+                            Achternaam: gallery_intakes.Selected.Achternaam,
+                            studentID: newStudentID,
+                            Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
+                            Email: gallery_intakes.Selected.Email,
+                            intakeID: gallery_intakes.Selected.intakeID,
+                            'Werkzaam Bij': gallery_intakes.Selected.'Werkzaam bij'
+                        }
+                    );
+                    Set(
+                        succes_student,
+                        true
+                    ),
+                    Set(
+                        error_newStudent,
+                        true
+                    )
                 );
-                
-                
                 Refresh(studenten_tabel);
-                
-                
             PressedFill: =
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1078,4 +1095,62 @@ intakes_screen As screen:
             X: =45
             Y: =540
             ZIndex: =29
+
+    groep_succes_createStudent As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =34
+
+        popup_background_6 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =succes_student
+            Width: =1366
+            ZIndex: =30
+
+        popup_box_6 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =182
+            Text: =""
+            Visible: =succes_student
+            Width: =505
+            X: =430
+            Y: =293
+            ZIndex: =31
+
+        popup_text_6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =87
+            Text: ="Nieuwe student succesvol aangemaakt."
+            Visible: =succes_student
+            Width: =454
+            X: =456
+            Y: =313
+            ZIndex: =32
+
+        knop_OK As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(succes_student, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="OK"
+            Visible: =succes_student
+            X: =603
+            Y: =420
+            ZIndex: =33
 
