@@ -153,8 +153,8 @@ students_screen As screen:
                             studentID = gallery_students.Selected.studentID
                         )
                     ) && scoresToevoegen ,
-                    false,
-                    true
+                    true,
+                    false
                 )
             Width: =600
             Y: =50
@@ -212,7 +212,10 @@ students_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Add
-            OnSelect: =Set(scoresToevoegen, !scoresToevoegen)
+            OnSelect: |-
+                =Set(scoresToevoegen, !scoresToevoegen);
+                Reset(input_naam_examen);
+                Reset(input_score_examen);
             Rotation: =If(scoresToevoegen, 45, 0)
             Width: =35
             X: =548
@@ -279,7 +282,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{ Examen: input_naam_examen} ); Refresh(scores)
+                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.studentID, score: input_score_examen.Text, Examen: input_naam_examen.Text} );
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0

@@ -4997,7 +4997,14 @@
         "Width",
         "Height",
         "ZIndex",
-        "Visible"
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(\n    IsBlank(\n        Filter(\n            scores,\n            studentID = gallery_students.Selected.studentID\n        )\n    ) && scoresToevoegen ,\n    false,\n    true\n)",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        }
       ],
       "GalleryTemplateChildName": "galleryTemplate2",
       "HasDynamicProperties": false,
