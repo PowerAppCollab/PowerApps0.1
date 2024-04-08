@@ -5,6 +5,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f": {
+          "value": "shared_office365"
+        },
         "workflowDisplayName": {
           "value": "pdfmail"
         },
@@ -14,6 +17,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
+        },
         "workflowDisplayName": {
           "value": "pdfmail"
         },
@@ -161,7 +167,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74"
+      "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74",
+      "42ceb50e-66eb-45c5-8803-9145a48f50e6"
     ],
     "id": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
   },
