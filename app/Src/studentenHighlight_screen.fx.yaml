@@ -19,7 +19,7 @@ studentenHighlight_screen As screen:
         Width: =515
         X: =180
         Y: =140
-        ZIndex: =2
+        ZIndex: =1
 
         Label6_1 As label:
             Align: =Align.Right
@@ -196,7 +196,7 @@ studentenHighlight_screen As screen:
         Width: =620
         X: =715
         Y: =40
-        ZIndex: =3
+        ZIndex: =2
 
         "gallery_score_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -283,7 +283,7 @@ studentenHighlight_screen As screen:
         Width: =515
         X: =180
         Y: =415
-        ZIndex: =4
+        ZIndex: =3
 
         Label8 As label:
             Text: ="GRAFIEK met opties"
@@ -302,7 +302,7 @@ studentenHighlight_screen As screen:
         Width: =620
         X: =715
         Y: =415
-        ZIndex: =5
+        ZIndex: =4
 
         Label3 As label:
             Align: =Align.Center
@@ -336,7 +336,7 @@ studentenHighlight_screen As screen:
         Width: =420
         X: =180
         Y: =40
-        ZIndex: =22
+        ZIndex: =21
 
         Label4 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -359,7 +359,7 @@ studentenHighlight_screen As screen:
         Width: =75
         X: =620
         Y: =40
-        ZIndex: =23
+        ZIndex: =22
 
         Icon4 As icon.Edit:
             Color: =If(editStudent, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
@@ -375,6 +375,36 @@ studentenHighlight_screen As screen:
             Y: =20
             ZIndex: =1
 
+    Container2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =95
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =rapportEmailSucces
+        Width: =1366
+        ZIndex: =24
+
+        Label5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Size: =16
+            Text: ="Het rapport is met succes verzonden naar " & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & " " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam & "."
+            Width: =1298
+            X: =34
+            Y: =23
+            ZIndex: =1
+
+    Timer2 As timer:
+        Duration: =4000
+        OnTimerEnd: =Set(rapportEmailSucces, false);
+        Start: =rapportEmailSucces
+        Visible: =false
+        X: =60
+        Y: =60
+        ZIndex: =25
+
     groep_navigatie_3 As group:
         Height: =5
         Width: =5
@@ -389,7 +419,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =6
+            ZIndex: =5
 
         group_icon_7 As image:
             Height: =45
@@ -397,7 +427,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =7
+            ZIndex: =6
 
         presentation_icon_7 As image:
             Height: =45
@@ -405,7 +435,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =8
+            ZIndex: =7
 
         courses_icon_7 As image:
             Height: =45
@@ -413,7 +443,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =9
+            ZIndex: =8
 
         label_students_7 As label:
             Align: =Align.Center
@@ -424,7 +454,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =10
+            ZIndex: =9
 
         label_groups_7 As label:
             Align: =Align.Center
@@ -436,7 +466,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =11
+            ZIndex: =10
 
         label_presentation_7 As label:
             Align: =Align.Center
@@ -448,7 +478,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =12
+            ZIndex: =11
 
         label_courses_7 As label:
             Align: =Align.Center
@@ -460,7 +490,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =13
+            ZIndex: =12
 
         Image2_7 As image:
             Height: =135
@@ -468,7 +498,7 @@ studentenHighlight_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =14
+            ZIndex: =13
 
         intake_icon_11 As image:
             Height: =45
@@ -477,7 +507,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =15
+            ZIndex: =14
 
         label_intake_11 As label:
             Align: =Align.Center
@@ -487,7 +517,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =16
+            ZIndex: =15
 
         knop_nav_intake_3 As button:
             BorderColor: =
@@ -508,7 +538,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =17
+            ZIndex: =16
 
         knop_nav_studenten_3 As button:
             BorderColor: =
@@ -529,7 +559,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =18
+            ZIndex: =17
 
         knop_nav_groepen_3 As button:
             BorderColor: =
@@ -550,7 +580,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =19
+            ZIndex: =18
 
         knop_nav_presentatie_3 As button:
             BorderColor: =
@@ -571,7 +601,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =20
+            ZIndex: =19
 
         knop_nav_cursussen_3 As button:
             BorderColor: =
@@ -592,44 +622,34 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =21
+            ZIndex: =20
 
-    Container2 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(192, 5, 230, 1)
-        Height: =95
-        RadiusBottomLeft: =10
-        RadiusBottomRight: =10
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Visible: =rapportEmailSucces
-        Width: =1366
-        ZIndex: =33
-
-        Label5 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =50
-            Size: =16
-            Text: ="Het rapport is met succes verzonden naar " & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & " " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam & "."
-            Width: =1298
-            X: =34
-            Y: =23
-            ZIndex: =1
-
-    Timer2 As timer:
-        Duration: =4000
-        OnTimerEnd: =Set(rapportEmailSucces, false);
-        Start: =rapportEmailSucces
-        Visible: =false
-        X: =60
-        Y: =60
-        ZIndex: =34
-
-    Group1 As group:
+    groep_rapportPDF As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =37
+
+        popup_background_9 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =PDF_Screen_active
+            Width: =1366
+            ZIndex: =23
+
+        popup_box_9 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =694
+            Text: =""
+            Visible: =PDF_Screen_active
+            Width: =1287
+            X: =40
+            Y: =37
+            ZIndex: =26
 
         Icon6 As icon.Cancel:
             Color: =RGBA(255, 255, 255, 1)
@@ -640,7 +660,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =65
             Y: =68
-            ZIndex: =25
+            ZIndex: =27
 
         PdfViewer1 As pdfViewer:
             BorderColor: =RGBA(0, 0, 0, 1)
@@ -648,32 +668,11 @@ studentenHighlight_screen As screen:
                 =Test
                 
             Fill: =RGBA(0, 0, 0, 0.5)
-            Height: =700
-            Visible: =PDF_Screen_active && !IsBlank(Test)
+            Height: =691
+            Visible: =PDF_Screen_active
             Width: =519
             X: =813
-            Y: =34
-            ZIndex: =26
-
-        Label14 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =35
-            Size: =22
-            Text: ="Rapport versturen"
-            Visible: =PDF_Screen_active
-            Width: =305
-            X: =146
-            Y: =73
-            ZIndex: =27
-
-        Label14_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =34
-            Text: ="Wilt u er een persoonlijk bericht aan toevoegen?"
-            Visible: =PDF_Screen_active
-            Width: =403
-            X: =66
-            Y: =161
+            Y: =40
             ZIndex: =28
 
         Checkbox1 As checkbox:
@@ -688,6 +687,27 @@ studentenHighlight_screen As screen:
             X: =469
             Y: =161
             ZIndex: =29
+
+        Label14 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =35
+            Size: =22
+            Text: ="Rapport versturen"
+            Visible: =PDF_Screen_active
+            Width: =305
+            X: =146
+            Y: =73
+            ZIndex: =30
+
+        Label14_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="Wilt u er een persoonlijk bericht aan toevoegen?"
+            Visible: =PDF_Screen_active
+            Width: =403
+            X: =66
+            Y: =161
+            ZIndex: =31
 
         TextInput2 As text:
             BorderStyle: =BorderStyle.None
@@ -706,7 +726,7 @@ studentenHighlight_screen As screen:
             Width: =649
             X: =66
             Y: =211
-            ZIndex: =30
+            ZIndex: =32
 
         knop_verwijder_4 As button:
             BorderStyle: =BorderStyle.None
@@ -724,7 +744,7 @@ studentenHighlight_screen As screen:
             Visible: =PDF_Screen_active && !IsBlank(Test)
             X: =237
             Y: =350
-            ZIndex: =31
+            ZIndex: =33
 
         knop_verwijder_5 As button:
             BorderStyle: =BorderStyle.None
@@ -741,25 +761,5 @@ studentenHighlight_screen As screen:
             Visible: =PDF_Screen_active
             X: =66
             Y: =350
-            ZIndex: =32
-
-        popup_background_9 As rectangle:
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Visible: =error_newStudent
-            Width: =1366
-            ZIndex: =35
-
-        popup_box_9 As button:
-            AutoDisableOnSelect: =false
-            BorderStyle: =BorderStyle.None
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(60, 60, 60, 1)
-            Height: =182
-            Text: =""
-            Visible: =error_newStudent
-            Width: =505
-            X: =430
-            Y: =293
-            ZIndex: =36
+            ZIndex: =34
 
