@@ -372,7 +372,7 @@ studentenHighlight_screen As screen:
             Icon: =Icon.Edit
             OnSelect: |-
                 =If(editStudent,
-                    Patch(Lstudenten_tabel, studentID = currSelectedStudent {Naam: "Test"}))
+                    Patch(studenten_tabel, LookUp(studentID = currSelectedStudent), {Naam: "test"};
                 
                 Set(editStudent, !editStudent)
             Width: =35
@@ -409,66 +409,6 @@ studentenHighlight_screen As screen:
         X: =60
         Y: =60
         ZIndex: =24
-
-    Group2 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =31
-
-        popup_background_4 As rectangle:
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Visible: =PDF_Screen_active
-            Width: =1366
-            ZIndex: =25
-
-        popup_box_4 As button:
-            AutoDisableOnSelect: =false
-            BorderStyle: =BorderStyle.None
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(60, 60, 60, 1)
-            Height: =694
-            Text: =""
-            Visible: =PDF_Screen_active
-            Width: =1300
-            X: =33
-            Y: =37
-            ZIndex: =26
-
-        knop_generatePDF As button:
-            BorderStyle: =BorderStyle.None
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(192, 5, 230, 1)
-            FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: =Navigate(PDFTEMPLATE)
-            PressedFill: =
-            Size: =13
-            Text: ="Genereer PDF"
-            Visible: =PDF_Screen_active
-            Width: =171
-            X: =63
-            Y: =195
-            ZIndex: =27
-
-        knop_generatePDF_1 As button:
-            BorderStyle: =BorderStyle.None
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(192, 5, 230, 1)
-            FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: |-
-                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & ".pdf", ContentBytes:Test })})
-            PressedFill: =
-            Size: =13
-            Text: ="Mail PDF"
-            Visible: =PDF_Screen_active
-            Width: =171
-            X: =249
-            Y: =196
-            ZIndex: =28
 
     groep_navigatie_3 As group:
         Height: =5
@@ -688,4 +628,64 @@ studentenHighlight_screen As screen:
             X: =45
             Y: =540
             ZIndex: =20
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =31
+
+        popup_background_4 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =PDF_Screen_active
+            Width: =1366
+            ZIndex: =25
+
+        popup_box_4 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =694
+            Text: =""
+            Visible: =PDF_Screen_active
+            Width: =1300
+            X: =33
+            Y: =37
+            ZIndex: =26
+
+        knop_generatePDF As button:
+            BorderStyle: =BorderStyle.None
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: =Navigate(PDFTEMPLATE)
+            PressedFill: =
+            Size: =13
+            Text: ="Genereer PDF"
+            Visible: =PDF_Screen_active
+            Width: =171
+            X: =63
+            Y: =195
+            ZIndex: =27
+
+        knop_generatePDF_1 As button:
+            BorderStyle: =BorderStyle.None
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |-
+                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & ".pdf", ContentBytes:Test })})
+            PressedFill: =
+            Size: =13
+            Text: ="Mail PDF"
+            Visible: =PDF_Screen_active
+            Width: =171
+            X: =249
+            Y: =196
+            ZIndex: =28
 
