@@ -131,21 +131,6 @@ courses_screen_1 As screen:
                 Width: =500
                 ZIndex: =1
 
-            gallery_students_titleText_3 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.name
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 86
-                X: =16
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText_3.Size * 1.8)) / 2
-                ZIndex: =2
-
             gallery_students_emailText_3 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
@@ -243,10 +228,10 @@ courses_screen_1 As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =66
-            Text: ="Geen student geselecteerd."
+            Text: ="Geen cursus geselecteerd."
             Visible: |-
                 =If(
-                    IsBlank(gallery_courses_2.Selected.groupID) && IsBlank(gallery_courses_2.Selected.name),
+                    IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name),
                     true,
                     false
                 )
@@ -593,7 +578,7 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Bold
             Height: =30
             Text: |-
-                ="Aantal kanididaten:"
+                ="Aantal groepen:"
             Width: =187
             X: =401
             Y: =50
@@ -752,7 +737,7 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(161, 0, 194, 1)
             OnSelect: |-
-                =Patch(studenten_tabel, addStudentDropDown_1.Selected, {groupID: gallery_courses_2.Selected.groupID});
+                =Patch(groepens, addStudentDropDown_1.Selected, {course: gallery_courses_2.Selected.courseID});
                 Set(varShowAddPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
