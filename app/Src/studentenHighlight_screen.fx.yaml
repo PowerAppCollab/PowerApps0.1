@@ -2,6 +2,7 @@ studentenHighlight_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: |
         =Set(editStudent, false);
+        Set(PDF_Screen_active, false);
         Set(persoonlijk_bericht_input, "");
         Set(persoonlijk_bericht, false);
         Set(rapportEmailSucces, false);
