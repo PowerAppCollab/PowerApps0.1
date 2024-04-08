@@ -669,7 +669,7 @@ studentenHighlight_screen As screen:
                 
             Fill: =RGBA(0, 0, 0, 0.5)
             Height: =691
-            Visible: =PDF_Screen_active
+            Visible: =PDF_Screen_active && !IsBlank(Test)
             Width: =519
             X: =813
             Y: =40
