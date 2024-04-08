@@ -440,12 +440,54 @@ studentenHighlight_screen As screen:
     PdfViewer1 As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
         Document: =Test
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =691
-        Width: =455
-        X: =872
-        Y: =40
+        Fill: =
+        Height: =694
+        Width: =517
+        X: =809
+        Y: =37
         ZIndex: =28
+
+    knop_generatePDF As button:
+        BorderStyle: =BorderStyle.None
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(192, 5, 230, 1)
+        FontWeight: =FontWeight.Normal
+        HoverFill: =RGBA(192, 5, 230, 0.8)
+        OnSelect: =Navigate(PDFTEMPLATE)
+        PressedFill: =
+        Size: =13
+        Text: ="Genereer PDF"
+        Visible: |-
+            =If(
+                Text(intake_dropdownStatus.Selected.Value) = "Compleet" && !IsBlank(gallery_intakes.Selected),
+                true,
+                false
+            )
+        Width: =171
+        X: =63
+        Y: =195
+        ZIndex: =29
+
+    knop_generatePDF_1 As button:
+        BorderStyle: =BorderStyle.None
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(192, 5, 230, 1)
+        FontWeight: =FontWeight.Normal
+        HoverFill: =RGBA(192, 5, 230, 0.8)
+        OnSelect: =Office365Outlook.SendEmailV2
+        PressedFill: =
+        Size: =13
+        Text: ="Genereer PDF"
+        Visible: |-
+            =If(
+                Text(intake_dropdownStatus.Selected.Value) = "Compleet" && !IsBlank(gallery_intakes.Selected),
+                true,
+                false
+            )
+        Width: =171
+        X: =249
+        Y: =196
+        ZIndex: =30
 
     groep_navigatie_3 As group:
         Height: =5
