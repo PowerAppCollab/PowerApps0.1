@@ -151,7 +151,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.course.name
+                Text: =ThisItem.course
                 Width: =270
                 X: =16
                 Y: =37
@@ -392,27 +392,15 @@ groups_screen As screen:
             Items: |
                 =Filter(
                     studenten_tabel,
-                    groupID.groupID = gallery_groups.Selected.groupID
+                    groupID = gallery_groups.Selected.groupID
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            groepens,
-                            StartsWith(
-                                name,
-                                SearchInput1_1.Text
-                            )
-                        )
-                    ),
-                    false,
-                    true
-                )
+            Visible: |
+                =
             Width: =600
             ZIndex: =5
 
@@ -684,7 +672,7 @@ groups_screen As screen:
         Label2 As label:
             Color: =RGBA(255, 255, 255, 1)
             Text: |
-                =gallery_groups.Selected.course.name
+                =gallery_groups.Selected.course
             Width: =78
             X: =39
             Y: =80
@@ -696,7 +684,7 @@ groups_screen As screen:
                 =CountRows(
                     Filter(
                         studenten_tabel,
-                        groupID.groupID = gallery_groups.Selected.groupID
+                        groupID = gallery_groups.Selected.groupID
                     )
                 )
             Width: =78
@@ -898,8 +886,13 @@ groups_screen As screen:
             Fill: =RGBA(45, 45, 45, 1)
             Height: =57
             HoverFill: =RGBA(192, 5, 230, 1)
-            Items: |
-                =Filter(studenten_tabel, !IsBlank(groupID) && gallery_groups.Selected.course.courseID = courseID.courseID)
+            Items: |-
+                =Filter(
+                    studenten_tabel,
+                    !IsBlank(groupID)
+                    && course.courseID = gallery_groups.Selected.course
+                
+                )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
@@ -1000,7 +993,12 @@ groups_screen As screen:
             Height: =57
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: |
-                =Filter(studenten_tabel, IsBlank(groupID) && gallery_groups.Selected.course.courseID = courseID.courseID)
+                =Filter(
+                    studenten_tabel,
+                    IsBlank(groupID)
+                    && course.courseID = gallery_groups.Selected.course
+                
+                )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
