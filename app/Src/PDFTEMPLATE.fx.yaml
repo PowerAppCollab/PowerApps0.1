@@ -1,0 +1,107 @@
+"PDFTEMPLATE As screen.'printableLayout_A4Portrait_ver1.0'":
+    Fill: =RGBA(255, 255, 255, 1)
+    Height: =1123
+    OnVisible: |-
+        =Set(tempTimer, false);
+        Set(tempTimer, true)
+    Width: =794
+
+    Label12 As label:
+        Align: =Align.Center
+        Height: =43
+        Size: =22
+        Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & "  " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+        Width: =794
+        Y: =273
+        ZIndex: =1
+
+    Label12_1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =43
+        Size: =26
+        Text: ="Rapport"
+        Width: =794
+        Y: =224
+        ZIndex: =2
+
+    Rectangle4 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =247
+        Y: =272
+        ZIndex: =3
+
+    Label13 As label:
+        Size: =18
+        Text: ="Uw behaalde scores"
+        Width: =304
+        X: =50
+        Y: =566
+        ZIndex: =4
+
+    Label13_1 As label:
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 1           67"
+        Width: =304
+        X: =50
+        Y: =606
+        ZIndex: =5
+
+    Label13_2 As label:
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 2           73"
+        Width: =304
+        X: =50
+        Y: =646
+        ZIndex: =6
+
+    Label13_3 As label:
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 3           70"
+        Width: =304
+        X: =50
+        Y: =686
+        ZIndex: =7
+
+    Rectangle4_1 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =54
+        Y: =605
+        ZIndex: =8
+
+    Image5 As image:
+        Height: =262
+        Image: ='Logo-Wit RGB (1) kopie'
+        Width: =336
+        X: =229
+        Y: =19
+        ZIndex: =9
+
+    Timer1 As timer:
+        Duration: =100
+        OnTimerEnd: |-
+            =Set(Test, PDF(PDFTEMPLATE));
+            
+            Navigate(studentenHighlight_screen)
+        Start: =tempTimer
+        Visible: =false
+        Y: =84
+        ZIndex: =10
+
+    Label13_4 As label:
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: =persoonlijk_bericht_input
+        Visible: =!IsBlank(persoonlijk_bericht_input)
+        Width: =304
+        X: =54
+        Y: =817
+        ZIndex: =11
+
