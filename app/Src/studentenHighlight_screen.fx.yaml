@@ -520,6 +520,12 @@ studentenHighlight_screen As screen:
             Y: =540
             ZIndex: =21
 
+    pdftest As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 191, 0, 1)
+        X: =60
+        Y: =60
+        ZIndex: =33
+
     groep_rapport As group:
         Height: =5
         Width: =5
@@ -623,7 +629,7 @@ studentenHighlight_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |-
-                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Uw rapport", "Bij deze ontvangt u uw rapport", {Attachments: Table({Name: test123.PDF, ContentBytes: PDF(PDFTEMPLATE)}) })
+                =Office365Outlook.SendEmailV2("jools.l.reinartz@gmail.com", "PDF Subject", "PDF Body", {Attachments:Table({Name: "testing.pdf", ContentBytes: PDF(pdftest)})})
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
