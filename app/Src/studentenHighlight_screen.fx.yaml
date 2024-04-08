@@ -129,10 +129,11 @@ studentenHighlight_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Default: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
             Height: =29
             HoverColor: =Self.Color
             HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =0
+            PaddingLeft: =5
             PressedFill: =
             Visible: =editStudent
             Width: =254
@@ -145,10 +146,11 @@ studentenHighlight_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Default: =LookUp(studenten_tabel, studentID = currSelectedStudent).Telefoonnummer
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
             Height: =29
             HoverColor: =Self.Color
             HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =0
+            PaddingLeft: =5
             PressedFill: =
             Visible: =editStudent
             Width: =254
@@ -161,10 +163,11 @@ studentenHighlight_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Default: =LookUp(studenten_tabel, studentID = currSelectedStudent).Email
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
             Height: =29
             HoverColor: =Self.Color
             HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =0
+            PaddingLeft: =5
             PressedFill: =
             Visible: =editStudent
             Width: =254
@@ -177,10 +180,11 @@ studentenHighlight_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Default: =LookUp(studenten_tabel, studentID = currSelectedStudent).'Werkzaam Bij'
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
             Height: =29
             HoverColor: =Self.Color
             HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =0
+            PaddingLeft: =5
             PressedFill: =
             Visible: =editStudent
             Width: =254
