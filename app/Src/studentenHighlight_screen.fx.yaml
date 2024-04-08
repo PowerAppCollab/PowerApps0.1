@@ -370,7 +370,11 @@ studentenHighlight_screen As screen:
                 
             HoverFill: =RGBA(0, 0, 0, 0)
             Icon: =Icon.Edit
-            OnSelect: =Set(editStudent, !editStudent)
+            OnSelect: |-
+                =If(editStudent,
+                    Patch(LookUp(studenten_tabel, studentID = currSelectedStudent)))
+                
+                Set(editStudent, !editStudent)
             Width: =35
             X: =20
             Y: =20
