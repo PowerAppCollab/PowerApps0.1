@@ -451,7 +451,8 @@ studentenHighlight_screen As screen:
         Fill: =RGBA(192, 5, 230, 1)
         FontWeight: =FontWeight.Normal
         HoverFill: =RGBA(192, 5, 230, 0.8)
-        OnSelect: =Office365Outlook.SendEmailV2
+        OnSelect: |-
+            =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & ".pdf", ContentBytes:Test })})
         PressedFill: =
         Size: =13
         Text: ="Genereer PDF"
