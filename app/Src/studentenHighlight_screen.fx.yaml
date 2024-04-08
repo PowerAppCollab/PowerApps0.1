@@ -246,7 +246,9 @@ studentenHighlight_screen As screen:
         Icon5 As icon.Add:
             Color: =RGBA(255, 255, 255, 1)
             Icon: =Icon.Add
-            OnSelect: =Set(PDF_Screen_active, true);
+            OnSelect: |-
+                =Set(Test, "");
+                Set(PDF_Screen_active, true);
             X: =278
             Y: =131
             ZIndex: =2
@@ -520,12 +522,6 @@ studentenHighlight_screen As screen:
             Y: =540
             ZIndex: =21
 
-    pdftest As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 191, 0, 1)
-        X: =60
-        Y: =60
-        ZIndex: =33
-
     groep_rapport As group:
         Height: =5
         Width: =5
@@ -564,7 +560,7 @@ studentenHighlight_screen As screen:
                 
             Fill: =RGBA(0, 0, 0, 0.5)
             Height: =700
-            Visible: =PDF_Screen_active
+            Visible: =PDF_Screen_active && !IsBlank(Test)
             Width: =519
             X: =813
             Y: =34
@@ -629,14 +625,14 @@ studentenHighlight_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |-
-                =Office365Outlook.SendEmailV2("jools.l.reinartz@gmail.com", "PDF Subject", "PDF Body", {Attachments:Table({Name: "testing.pdf", ContentBytes: PDF(pdftest)})})
+                =Office365Outlook.SendEmailV2("jools.l.reinartz@gmail.com", "PDF Subject", "PDF Body", {Attachments:Table({Name: "testing.pdf", ContentBytes: Test})})
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
             Text: ="Verstuur"
-            Visible: =PDF_Screen_active
+            Visible: =PDF_Screen_active && !IsBlank(Test)
             X: =600
             Y: =643
             ZIndex: =31
