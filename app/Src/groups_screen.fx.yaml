@@ -391,7 +391,7 @@ groups_screen As screen:
             Height: =202
             Items: |
                 =Filter(
-                    students,
+                    studenten_tabel,
                     groupID = gallery_groups.Selected.groupID
                 )
             Layout: =Layout.Vertical
@@ -447,7 +447,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.Voornaam
+                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
                 Width: =270
                 X: =16
                 Y: =37
@@ -631,99 +631,6 @@ groups_screen As screen:
                 Y: =21
                 ZIndex: =9
 
-    groep_popup_1 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =24
-
-        popup_background_1 As rectangle:
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Visible: =varShowDeletePopup
-            Width: =1366
-            ZIndex: =18
-
-        popup_box_1 As button:
-            AutoDisableOnSelect: =false
-            BorderStyle: =BorderStyle.None
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(60, 60, 60, 1)
-            Height: =260
-            Text: =""
-            Visible: =varShowDeletePopup
-            Width: =505
-            X: =430
-            Y: =254
-            ZIndex: =19
-
-        popup_text_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =87
-            Text: |-
-                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar.
-                
-                Weet u het zeker?"
-            Visible: =varShowDeletePopup
-            Width: =454
-            X: =456
-            Y: =332
-            ZIndex: =20
-
-        popup_header_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Semibold
-            Height: =54
-            Size: =18
-            Text: ="Verwijder Student"
-            Visible: =varShowDeletePopup
-            Width: =505
-            X: =430
-            Y: =266
-            ZIndex: =21
-
-        knop_verwijder_1 As button:
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(184, 0, 0, 1)
-            FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(184, 0, 0, 0.8)
-            OnSelect: |-
-                =Patch(students, gallery_groups.Selected, {Voornaam: gallery_groups.Selected.studentID, Email: "", Telefoonnummer: ""});
-                Set(varShowPopup, false);
-            RadiusBottomLeft: =6
-            RadiusBottomRight: =6
-            RadiusTopLeft: =6
-            RadiusTopRight: =6
-            Size: =13
-            Text: ="Verwijder"
-            Visible: =varShowDeletePopup
-            X: =486
-            Y: =455
-            ZIndex: =22
-
-        knop_annuleer_1 As button:
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 0, 0, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Normal
-            HoverColor: =RGBA(0, 0, 0, 1)
-            HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowDeletePopup, false);
-            RadiusBottomLeft: =6
-            RadiusBottomRight: =6
-            RadiusTopLeft: =6
-            RadiusTopRight: =6
-            Size: =13
-            Text: ="Annuleer"
-            Visible: =varShowDeletePopup
-            X: =726
-            Y: =455
-            ZIndex: =23
-
     nav_intake_1 As group:
         Height: =5
         Width: =5
@@ -859,7 +766,7 @@ groups_screen As screen:
             Text: |
                 =CountRows(
                     Filter(
-                        students,
+                        studenten_tabel,
                         groupID = gallery_groups.Selected.groupID
                     )
                 )
@@ -988,97 +895,135 @@ groups_screen As screen:
             Y: =455
             ZIndex: =29
 
-    add_kandidate_popup As group:
+    deleteStudentsPopUp As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
-        ZIndex: =37
+        ZIndex: =45
 
-        popup_background_4 As rectangle:
+        popup_background_7 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =varShowAddPopup
+            Visible: =varShowDeletePopup
             Width: =1366
-            ZIndex: =31
+            ZIndex: =38
 
-        popup_box_4 As button:
+        popup_box_7 As button:
             AutoDisableOnSelect: =false
             BorderStyle: =BorderStyle.None
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(60, 60, 60, 1)
             Height: =260
             Text: =""
-            Visible: =varShowAddPopup
+            Visible: =varShowDeletePopup
             Width: =505
             X: =430
-            Y: =254
-            ZIndex: =32
+            Y: =270
+            ZIndex: =39
 
-        popup_text_4 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =87
-            Text: |-
-                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar.
-                
-                Weet u het zeker?"
-            Visible: =varShowAddPopup
-            Width: =454
-            X: =456
-            Y: =332
-            ZIndex: =33
-
-        popup_header_4 As label:
+        popup_header_5 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="Verwijder Student"
-            Visible: =varShowAddPopup
+            Text: ="student verwijderen"
+            Visible: =varShowDeletePopup
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =34
+            ZIndex: =40
 
-        knop_toevoegen As button:
+        knop_toevoegen_1 As button:
             BorderStyle: =BorderStyle.None
             BorderThickness: =0
-            Fill: =RGBA(192, 5, 230, 1)
+            Fill: =RGBA(255, 0, 0, 1)
             FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(151, 0, 181, 1)
+            HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |-
-                =Patch(students, gallery_groups.Selected, {Voornaam: gallery_groups.Selected.studentID, Email: "", Telefoonnummer: ""});
-                Set(varShowPopup, false);
+                =Patch(studenten_tabel, Dropdown2_1.Selected, {groupID: ""});
+                Set(varShowAddPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
-            Text: ="toevoegen"
-            Visible: =varShowAddPopup
+            Text: ="verwijderen"
+            Visible: =varShowDeletePopup
             X: =486
             Y: =455
-            ZIndex: =35
+            ZIndex: =41
 
-        knop_annuleer_4 As button:
+        knop_annuleer_6 As button:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 1)
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Normal
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowAddPopup, false);
+            OnSelect: =Set(varShowDeletePopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
             Text: ="Annuleer"
-            Visible: =varShowAddPopup
+            Visible: =varShowDeletePopup
             X: =726
             Y: =455
-            ZIndex: =36
+            ZIndex: =42
+
+        dropdown_archived_students_1 As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="Actief"
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =57
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: |+
+                =Filter(studenten_tabel, !IsBlank(groupID))
+                
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: =varShowDeletePopup
+            Width: =400
+            X: =482
+            Y: =332
+            ZIndex: =44
+
+    addStudentsPopUp As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =46
+
+        dropdown_archived_students_2 As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="Actief"
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =57
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: |+
+                =Filter(studenten_tabel, IsBlank(groupID))
+                
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: =varShowAddPopup
+            Width: =400
+            X: =486
+            Y: =346
+            ZIndex: =45
 
