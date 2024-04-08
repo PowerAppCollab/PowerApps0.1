@@ -697,10 +697,12 @@ intakes_screen As screen:
                     newStudentID,
                     GUID()
                 );
+                
                 Set(
                     error_newStudent,
                     false
                 );
+                
                 If(
                     IsBlank(
                         LookUp(

@@ -46,7 +46,7 @@
     Label13_1 As label:
         FontWeight: =FontWeight.Lighter
         Size: =16
-        Text: ="Examen 1           67"
+        Text: =LookUp(scores, studentID = currSelectedStudent)
         Width: =304
         X: =50
         Y: =606
@@ -55,7 +55,7 @@
     Label13_2 As label:
         FontWeight: =FontWeight.Lighter
         Size: =16
-        Text: ="Examen 2           73"
+        Text: =currSelectedStudent
         Width: =304
         X: =50
         Y: =646
