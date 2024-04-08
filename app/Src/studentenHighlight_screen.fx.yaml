@@ -372,7 +372,7 @@ studentenHighlight_screen As screen:
             Icon: =Icon.Edit
             OnSelect: |-
                 =If(editStudent,
-                    Patch(LookUp(studenten_tabel, studentID = currSelectedStudent)))
+                    Patch(Lstudenten_tabel, studentID = currSelectedStudent {Naam: "Test"}))
                 
                 Set(editStudent, !editStudent)
             Width: =35
