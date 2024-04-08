@@ -1,9 +1,11 @@
 "PDFTEMPLATE As screen.'printableLayout_A4Portrait_ver1.0'":
     Fill: =RGBA(255, 255, 255, 1)
     Height: =1123
-    OnVisible: |-
+    OnVisible: |+
         =Set(tempTimer, false);
-        Set(tempTimer, true)
+        Set(tempTimer, true);
+        Set(Test, PDF(PDFTEMPLATE));
+        
     Width: =794
 
     Label12 As label:
@@ -85,11 +87,8 @@
         ZIndex: =9
 
     Timer1 As timer:
-        Duration: =100
-        OnTimerEnd: |-
-            =Set(Test, PDF(PDFTEMPLATE));
-            
-            Navigate(studentenHighlight_screen)
+        Duration: =250
+        OnTimerEnd: =Navigate(studentenHighlight_screen)
         Start: =tempTimer
         Visible: =false
         Y: =84

@@ -1,9 +1,11 @@
 studentenHighlight_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |-
+    OnVisible: |
         =Set(editStudent, false);
         Set(persoonlijk_bericht_input, "");
-        Set(persoonlijk_bericht, false)
+        Set(persoonlijk_bericht, false);
+        Reset(Checkbox1);
+        Reset(TextInput2)
 
     container_26 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -328,7 +330,9 @@ studentenHighlight_screen As screen:
 
     PdfViewer1 As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =Test
+        Document: |+
+            =Test
+            
         Fill: =RGBA(0, 0, 0, 0.5)
         Height: =700
         Visible: |
@@ -620,8 +624,7 @@ studentenHighlight_screen As screen:
         FontWeight: =FontWeight.Normal
         HoverFill: =RGBA(192, 5, 230, 0.8)
         OnSelect: |-
-            =MailScore.Run(gallery_students.Selected.Voornaam, gallery_score.Selected.score, gallery_students.Selected.Email);
-            Set(SendMailBoxOpen, false);
+            =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Uw rapport", "Bij deze ontvangt u uw rapport", {Attachments: Table({Name: test123.PDF, ContentBytes: PDF(PDFTEMPLATE)}) })
         RadiusBottomLeft: =6
         RadiusBottomRight: =6
         RadiusTopLeft: =6
