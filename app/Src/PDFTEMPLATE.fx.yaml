@@ -1,0 +1,89 @@
+"PDFTEMPLATE As screen.'printableLayout_A4Portrait_ver1.0'":
+    Fill: =RGBA(45, 45, 45, 1)
+    Height: =1123
+    Width: =794
+
+    Label12 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =43
+        Size: =22
+        Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & "  " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+        Width: =794
+        Y: =273
+        ZIndex: =1
+
+    Label12_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =43
+        Size: =26
+        Text: ="Rapport"
+        Width: =794
+        Y: =224
+        ZIndex: =2
+
+    Rectangle4 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =247
+        Y: =272
+        ZIndex: =3
+
+    Label13 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =18
+        Text: ="Uw behaalde scores"
+        Width: =304
+        X: =50
+        Y: =654
+        ZIndex: =4
+
+    Label13_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 1           67"
+        Width: =304
+        X: =50
+        Y: =694
+        ZIndex: =5
+
+    Label13_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 2           73"
+        Width: =304
+        X: =50
+        Y: =734
+        ZIndex: =6
+
+    Label13_3 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Size: =16
+        Text: ="Examen 3           70"
+        Width: =304
+        X: =50
+        Y: =774
+        ZIndex: =7
+
+    Rectangle4_1 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =54
+        Y: =693
+        ZIndex: =8
+
+    Image5 As image:
+        Height: =262
+        Image: ='Logo-Wit RGB (1) kopie'
+        Width: =336
+        X: =229
+        Y: =19
+        ZIndex: =9
+
