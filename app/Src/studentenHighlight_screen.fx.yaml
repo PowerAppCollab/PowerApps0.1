@@ -364,13 +364,15 @@ studentenHighlight_screen As screen:
     Checkbox1 As checkbox:
         CheckboxBorderColor: =RGBA(0, 0, 0, 1)
         CheckmarkFill: =RGBA(77, 77, 77, 1)
+        Height: =34
         OnCheck: =Set(persoonlijk_bericht, true)
         OnUncheck: =Set(persoonlijk_bericht, false)
         Text: =
         Visible: |
             =PDF_Screen_active
-        X: =470
-        Y: =154
+        Width: =41
+        X: =469
+        Y: =161
         ZIndex: =31
 
     groep_navigatie_3 As group:
