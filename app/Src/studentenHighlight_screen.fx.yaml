@@ -2,7 +2,7 @@ studentenHighlight_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: |
         =Set(editStudent, false);
-        Set(PDF_Screen_active, false);
+        //Set(PDF_Screen_active; false);;
         Set(persoonlijk_bericht_input, "");
         Set(persoonlijk_bericht, false);
         Set(rapportEmailSucces, false);
@@ -405,6 +405,16 @@ studentenHighlight_screen As screen:
         X: =60
         Y: =60
         ZIndex: =24
+
+    PdfViewer1 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =Test
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =694
+        Width: =551
+        X: =782
+        Y: =37
+        ZIndex: =30
 
     Group1 As group:
         Height: =5
