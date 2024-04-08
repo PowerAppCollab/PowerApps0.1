@@ -7,6 +7,13 @@ studentenHighlight_screen As screen:
         Reset(Checkbox1);
         Reset(TextInput2)
 
+    popup_background_4 As rectangle:
+        Fill: =RGBA(45, 45, 45, 0.8)
+        Height: =768
+        Visible: =PDF_Screen_active
+        Width: =1366
+        ZIndex: =1
+
     container_26 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -18,7 +25,7 @@ studentenHighlight_screen As screen:
         Width: =515
         X: =180
         Y: =140
-        ZIndex: =1
+        ZIndex: =2
 
         Label6_1 As label:
             Align: =Align.Right
@@ -191,7 +198,7 @@ studentenHighlight_screen As screen:
         Width: =620
         X: =715
         Y: =40
-        ZIndex: =2
+        ZIndex: =3
 
     container_28 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -204,7 +211,7 @@ studentenHighlight_screen As screen:
         Width: =515
         X: =180
         Y: =415
-        ZIndex: =3
+        ZIndex: =4
 
         Label8 As label:
             Text: ="GRAFIEK met opties"
@@ -223,7 +230,7 @@ studentenHighlight_screen As screen:
         Width: =620
         X: =715
         Y: =415
-        ZIndex: =4
+        ZIndex: =5
 
         Label3 As label:
             Align: =Align.Center
@@ -255,7 +262,7 @@ studentenHighlight_screen As screen:
         Width: =420
         X: =180
         Y: =40
-        ZIndex: =21
+        ZIndex: =22
 
         Label4 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -278,7 +285,7 @@ studentenHighlight_screen As screen:
         Width: =75
         X: =620
         Y: =40
-        ZIndex: =22
+        ZIndex: =23
 
         Icon4 As icon.Edit:
             Color: =If(editStudent, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
@@ -294,69 +301,6 @@ studentenHighlight_screen As screen:
             Y: =20
             ZIndex: =1
 
-    Icon6 As icon.Cancel:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =45
-        Icon: =Icon.Cancel
-        OnSelect: =Set(PDF_Screen_active, false);
-        Visible: |
-            =PDF_Screen_active
-        Width: =45
-        X: =65
-        Y: =68
-        ZIndex: =25
-
-    PdfViewer1 As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Document: |+
-            =Test
-            
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =700
-        Visible: |
-            =PDF_Screen_active
-        Width: =519
-        X: =813
-        Y: =34
-        ZIndex: =28
-
-    Label14 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =35
-        Size: =22
-        Text: ="Rapport versturen"
-        Visible: |
-            =PDF_Screen_active
-        Width: =305
-        X: =146
-        Y: =73
-        ZIndex: =29
-
-    Label14_1 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =34
-        Text: ="Wilt u er een persoonlijk bericht aan toevoegen?"
-        Visible: |
-            =PDF_Screen_active
-        Width: =403
-        X: =66
-        Y: =161
-        ZIndex: =30
-
-    Checkbox1 As checkbox:
-        CheckboxBorderColor: =RGBA(0, 0, 0, 1)
-        CheckmarkFill: =RGBA(77, 77, 77, 1)
-        Height: =34
-        OnCheck: =Set(persoonlijk_bericht, true)
-        OnUncheck: =Set(persoonlijk_bericht, false)
-        Text: =
-        Visible: |
-            =PDF_Screen_active
-        Width: =41
-        X: =469
-        Y: =161
-        ZIndex: =31
-
     groep_navigatie_3 As group:
         Height: =5
         Width: =5
@@ -371,7 +315,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =5
+            ZIndex: =6
 
         group_icon_7 As image:
             Height: =45
@@ -379,7 +323,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =6
+            ZIndex: =7
 
         presentation_icon_7 As image:
             Height: =45
@@ -387,7 +331,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =7
+            ZIndex: =8
 
         courses_icon_7 As image:
             Height: =45
@@ -395,7 +339,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =8
+            ZIndex: =9
 
         label_students_7 As label:
             Align: =Align.Center
@@ -406,7 +350,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =9
+            ZIndex: =10
 
         label_groups_7 As label:
             Align: =Align.Center
@@ -418,7 +362,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =10
+            ZIndex: =11
 
         label_presentation_7 As label:
             Align: =Align.Center
@@ -430,7 +374,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =11
+            ZIndex: =12
 
         label_courses_7 As label:
             Align: =Align.Center
@@ -442,7 +386,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =12
+            ZIndex: =13
 
         Image2_7 As image:
             Height: =135
@@ -450,7 +394,7 @@ studentenHighlight_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =13
+            ZIndex: =14
 
         intake_icon_11 As image:
             Height: =45
@@ -459,7 +403,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =14
+            ZIndex: =15
 
         label_intake_11 As label:
             Align: =Align.Center
@@ -469,7 +413,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =15
+            ZIndex: =16
 
         knop_nav_intake_3 As button:
             BorderColor: =
@@ -490,7 +434,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =16
+            ZIndex: =17
 
         knop_nav_studenten_3 As button:
             BorderColor: =
@@ -511,7 +455,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =17
+            ZIndex: =18
 
         knop_nav_groepen_3 As button:
             BorderColor: =
@@ -532,7 +476,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =18
+            ZIndex: =19
 
         knop_nav_presentatie_3 As button:
             BorderColor: =
@@ -553,7 +497,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =19
+            ZIndex: =20
 
         knop_nav_cursussen_3 As button:
             BorderColor: =
@@ -574,62 +518,137 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =20
+            ZIndex: =21
 
-    TextInput2 As text:
-        BorderStyle: =BorderStyle.None
-        Color: =RGBA(255, 255, 255, 1)
-        Default: =""
-        DisabledColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(45, 45, 45, 1)
-        Height: =129
-        HintText: ="Uw persoonlijke bericht..."
-        HoverColor: =RGBA(255, 255, 255, 1)
-        HoverFill: =RGBA(45, 45, 45, 1)
-        MaxLength: =250
-        Mode: =TextMode.MultiLine
-        OnChange: =Set(persoonlijk_bericht_input, TextInput2.Text)
-        Visible: |
-            =PDF_Screen_active && persoonlijk_bericht
-        Width: =649
-        X: =66
-        Y: =211
-        ZIndex: =32
-
-    knop_verwijder_4 As button:
-        BorderStyle: =BorderStyle.None
-        Fill: =RGBA(192, 5, 230, 1)
-        FontWeight: =FontWeight.Normal
-        HoverFill: =RGBA(192, 5, 230, 0.8)
-        OnSelect: |-
-            =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Uw rapport", "Bij deze ontvangt u uw rapport", {Attachments: Table({Name: test123.PDF, ContentBytes: PDF(PDFTEMPLATE)}) })
-        RadiusBottomLeft: =6
-        RadiusBottomRight: =6
-        RadiusTopLeft: =6
-        RadiusTopRight: =6
-        Size: =13
-        Text: ="Verstuur"
-        Visible: |
-            =PDF_Screen_active
-        X: =600
-        Y: =643
+    groep_rapport As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
         ZIndex: =33
 
-    knop_verwijder_5 As button:
-        BorderStyle: =BorderStyle.None
-        Fill: =RGBA(192, 5, 230, 1)
-        FontWeight: =FontWeight.Normal
-        HoverFill: =RGBA(192, 5, 230, 0.8)
-        OnSelect: =Navigate(PDFTEMPLATE)
-        RadiusBottomLeft: =6
-        RadiusBottomRight: =6
-        RadiusTopLeft: =6
-        RadiusTopRight: =6
-        Size: =13
-        Text: ="Genereer PDF"
-        Visible: |
-            =PDF_Screen_active
-        X: =66
-        Y: =350
-        ZIndex: =34
+        popup_box_8 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =720
+            Text: =""
+            Visible: =PDF_Screen_active
+            Width: =1313
+            X: =27
+            Y: =24
+            ZIndex: =24
+
+        Icon6 As icon.Cancel:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Icon: =Icon.Cancel
+            OnSelect: =Set(PDF_Screen_active, false);
+            Visible: =PDF_Screen_active
+            Width: =45
+            X: =65
+            Y: =68
+            ZIndex: =25
+
+        PdfViewer1 As pdfViewer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Document: |+
+                =Test
+                
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =700
+            Visible: =PDF_Screen_active
+            Width: =519
+            X: =813
+            Y: =34
+            ZIndex: =26
+
+        Label14 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =35
+            Size: =22
+            Text: ="Rapport versturen"
+            Visible: =PDF_Screen_active
+            Width: =305
+            X: =146
+            Y: =73
+            ZIndex: =27
+
+        Label14_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="Wilt u er een persoonlijk bericht aan toevoegen?"
+            Visible: =PDF_Screen_active
+            Width: =403
+            X: =66
+            Y: =161
+            ZIndex: =28
+
+        Checkbox1 As checkbox:
+            CheckboxBorderColor: =RGBA(0, 0, 0, 1)
+            CheckmarkFill: =RGBA(77, 77, 77, 1)
+            Height: =34
+            OnCheck: =Set(persoonlijk_bericht, true)
+            OnUncheck: =Set(persoonlijk_bericht, false)
+            Text: =
+            Visible: =PDF_Screen_active
+            Width: =41
+            X: =469
+            Y: =161
+            ZIndex: =29
+
+        TextInput2 As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =129
+            HintText: ="Uw persoonlijke bericht..."
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
+            MaxLength: =250
+            Mode: =TextMode.MultiLine
+            OnChange: =Set(persoonlijk_bericht_input, TextInput2.Text)
+            Visible: =PDF_Screen_active && persoonlijk_bericht
+            Width: =649
+            X: =66
+            Y: =211
+            ZIndex: =30
+
+        knop_verwijder_4 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |-
+                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Uw rapport", "Bij deze ontvangt u uw rapport", {Attachments: Table({Name: test123.PDF, ContentBytes: PDF(PDFTEMPLATE)}) })
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Verstuur"
+            Visible: =PDF_Screen_active
+            X: =600
+            Y: =643
+            ZIndex: =31
+
+        knop_verwijder_5 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: =Navigate(PDFTEMPLATE)
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Genereer PDF"
+            Visible: =PDF_Screen_active
+            X: =66
+            Y: =350
+            ZIndex: =32
 
