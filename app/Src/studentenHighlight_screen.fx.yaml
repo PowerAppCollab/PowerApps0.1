@@ -406,22 +406,12 @@ studentenHighlight_screen As screen:
         Y: =60
         ZIndex: =24
 
-    PdfViewer1 As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =Test
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =694
-        Width: =551
-        X: =782
-        Y: =37
-        ZIndex: =30
-
-    Group1 As group:
+    Group2 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
-        ZIndex: =30
+        ZIndex: =31
 
         popup_background_4 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
@@ -486,6 +476,17 @@ studentenHighlight_screen As screen:
             X: =45
             Y: =45
             ZIndex: =29
+
+        PdfViewer1 As pdfViewer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Document: =Test
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =694
+            Visible: =PDF_Screen_active
+            Width: =508
+            X: =824
+            Y: =37
+            ZIndex: =30
 
     groep_navigatie_3 As group:
         Height: =5
