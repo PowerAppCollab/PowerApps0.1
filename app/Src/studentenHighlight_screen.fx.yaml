@@ -615,12 +615,21 @@ studentenHighlight_screen As screen:
             Y: =23
             ZIndex: =1
 
-    groep_rapport As group:
-        Height: =5
-        Width: =5
+    Timer2 As timer:
+        Duration: =4000
+        OnTimerEnd: =Set(rapportEmailSucces, false);
+        Start: =rapportEmailSucces
+        Visible: =false
         X: =60
         Y: =60
-        ZIndex: =33
+        ZIndex: =34
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =37
 
         Icon6 As icon.Cancel:
             Color: =RGBA(255, 255, 255, 1)
@@ -734,12 +743,23 @@ studentenHighlight_screen As screen:
             Y: =350
             ZIndex: =32
 
-    Timer2 As timer:
-        Duration: =4000
-        OnTimerEnd: =Set(rapportEmailSucces, false);
-        Start: =rapportEmailSucces
-        Visible: =false
-        X: =60
-        Y: =60
-        ZIndex: =34
+        popup_background_9 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =error_newStudent
+            Width: =1366
+            ZIndex: =35
+
+        popup_box_9 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =182
+            Text: =""
+            Visible: =error_newStudent
+            Width: =505
+            X: =430
+            Y: =293
+            ZIndex: =36
 
