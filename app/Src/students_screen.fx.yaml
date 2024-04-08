@@ -17,12 +17,7 @@ students_screen As screen:
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: |
-                =If(
-                    dropdown_archived_students.Selected.Value = "Actief",
-                    Filter(studenten_tabel, Archived <> "true"),
-                    Filter(studenten_tabel, Archived = "true")
-                )
+            Items: =studenten_tabel
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false

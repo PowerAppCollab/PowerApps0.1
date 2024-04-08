@@ -1,4 +1,38 @@
 {
+  "42ceb50e-66eb-45c5-8803-9145a48f50e6": {
+    "connectionRef": {
+      "displayName": "Logicastroom",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "pdfmail"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "f3868784-18fd-485f-97d4-b42d2adcf9ef"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "pdfmail"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "f3868784-18fd-485f-97d4-b42d2adcf9ef"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "pdfmail"
+    ],
+    "dependencies": {
+      "shared_office365": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
+    },
+    "dependents": [],
+    "id": "42ceb50e-66eb-45c5-8803-9145a48f50e6"
+  },
   "590fece5-6674-4088-b75f-dcf38b6e9042": {
     "connectionRef": {
       "displayName": "Excel Online (Zakelijk)",
