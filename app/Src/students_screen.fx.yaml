@@ -150,7 +150,7 @@ students_screen As screen:
                             scores,
                             studentID = gallery_students.Selected.studentID
                         )
-                    ),
+                    ) && scoresToevoegen ,
                     false,
                     true
                 )
@@ -198,7 +198,7 @@ students_screen As screen:
                             scores,
                             studentID = gallery_students.Selected.studentID
                         )
-                    ),
+                    ) && !scoresToevoegen,
                     true,
                     false
                 )
@@ -210,11 +210,71 @@ students_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Add
-            OnSelect: =
+            OnSelect: =Set(scoresToevoegen, true)
             Width: =35
             X: =548
             Y: =10
             ZIndex: =4
+
+        input_naam_examen As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =33
+            HintText: ="Naam examen"
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(45, 45, 45, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =225
+            X: =42
+            Y: =105
+            ZIndex: =5
+
+        input_score_examen As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =33
+            HintText: ="Cijfer"
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(45, 45, 45, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =225
+            X: =323
+            Y: =105
+            ZIndex: =6
+
+        Button2 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =33
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="Toevoegen"
+            Width: =506
+            X: =42
+            Y: =150
+            ZIndex: =7
 
     container_7 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None

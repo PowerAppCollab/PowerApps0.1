@@ -243,7 +243,7 @@ studentenHighlight_screen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =37
             Size: =16
-            Text: ="Certificaten"
+            Text: ="Scores en Rapport Mailen"
             Width: =620
             Y: =7
             ZIndex: =1
@@ -651,7 +651,7 @@ studentenHighlight_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |-
-                =If(Office365Outlook.SendEmailV2("jools.l.reinartz@gmail.com", "PDF Subject", "PDF Body", {Attachments:Table({Name: "testing.pdf", ContentBytes: Test})}), Set(rapportEmailSucces, true); Set(PDF_Screen_active, false), Set(rapportEmailError, true) );
+                =If(Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "PDF Subject", "PDF Body", {Attachments:Table({Name: "testing.pdf", ContentBytes: Test})}), Set(rapportEmailSucces, true); Set(PDF_Screen_active, false), Set(rapportEmailError, true) );
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
