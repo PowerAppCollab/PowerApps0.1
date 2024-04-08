@@ -8,13 +8,6 @@ studentenHighlight_screen As screen:
         Reset(Checkbox1);
         Reset(TextInput2)
 
-    popup_background_4 As rectangle:
-        Fill: =RGBA(45, 45, 45, 0.8)
-        Height: =768
-        Visible: =PDF_Screen_active
-        Width: =1366
-        ZIndex: =1
-
     container_26 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -554,19 +547,6 @@ studentenHighlight_screen As screen:
         X: =60
         Y: =60
         ZIndex: =33
-
-        popup_box_8 As button:
-            AutoDisableOnSelect: =false
-            BorderStyle: =BorderStyle.None
-            DisplayMode: =DisplayMode.View
-            Fill: =RGBA(60, 60, 60, 1)
-            Height: =720
-            Text: =""
-            Visible: =PDF_Screen_active
-            Width: =1313
-            X: =27
-            Y: =24
-            ZIndex: =24
 
         Icon6 As icon.Cancel:
             Color: =RGBA(255, 255, 255, 1)
