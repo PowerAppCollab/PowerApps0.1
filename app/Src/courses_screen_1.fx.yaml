@@ -96,8 +96,7 @@ courses_screen_1 As screen:
             DelayItemLoading: =true
             Height: =250
             Items: |
-                =
-                Filter(courses, StartsWith(name, SearchInput1_2.Text))
+                =Filter(courses, StartsWith(name, SearchInput1_2.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -107,7 +106,7 @@ courses_screen_1 As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                            groepens,
+                            courses,
                             StartsWith(
                                 name,
                                 SearchInput1_2.Text
@@ -136,7 +135,7 @@ courses_screen_1 As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.name
+                Text: =ThisItem.courseID
                 Width: =270
                 X: =16
                 Y: =37
@@ -595,7 +594,7 @@ courses_screen_1 As screen:
         popup_background_11 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =varShowDeletePopup
+            Visible: =false
             Width: =1366
             ZIndex: =38
 
@@ -606,7 +605,7 @@ courses_screen_1 As screen:
             Fill: =RGBA(60, 60, 60, 1)
             Height: =260
             Text: =""
-            Visible: =varShowDeletePopup
+            Visible: =false
             Width: =505
             X: =430
             Y: =270
@@ -619,7 +618,7 @@ courses_screen_1 As screen:
             Height: =54
             Size: =18
             Text: ="student verwijderen"
-            Visible: =varShowDeletePopup
+            Visible: =false
             Width: =505
             X: =430
             Y: =266
@@ -640,7 +639,7 @@ courses_screen_1 As screen:
             RadiusTopRight: =6
             Size: =13
             Text: ="verwijderen"
-            Visible: =varShowDeletePopup
+            Visible: =false
             X: =486
             Y: =455
             ZIndex: =41
@@ -659,7 +658,7 @@ courses_screen_1 As screen:
             RadiusTopRight: =6
             Size: =13
             Text: ="Annuleer"
-            Visible: =varShowDeletePopup
+            Visible: =false
             X: =726
             Y: =455
             ZIndex: =42
@@ -685,7 +684,7 @@ courses_screen_1 As screen:
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
-            Visible: =varShowDeletePopup
+            Visible: =false
             Width: =400
             X: =482
             Y: =332
