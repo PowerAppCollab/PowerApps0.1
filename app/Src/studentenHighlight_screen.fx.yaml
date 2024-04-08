@@ -188,89 +188,6 @@ studentenHighlight_screen As screen:
         Y: =40
         ZIndex: =12
 
-        "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-            DelayItemLoading: =true
-            Height: =350
-            Items: =studenten_tabel
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =0
-            TemplateSize: =104
-            Width: =620
-            ZIndex: =1
-
-            Image2 As image:
-                Height: =72
-                OnSelect: =Select(Parent)
-                RadiusBottomLeft: =8
-                RadiusBottomRight: =8
-                RadiusTopLeft: =8
-                RadiusTopRight: =8
-                Width: =72
-                X: =16
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            Title2 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.studentID
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 173
-                X: =103
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2.Size * 1.8)) / 2
-                ZIndex: =2
-
-            Subtitle2 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Archived
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title2.Width
-                X: =Title2.X
-                Y: =Title2.Y + Title2.Height
-                ZIndex: =3
-
-            NextArrow2 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="Details van item weergeven"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =4
-
-            Separator2 As rectangle:
-                Height: =8
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =5
-
-            Rectangle2 As rectangle:
-                Height: =Parent.TemplateHeight - Separator2.Height
-                OnSelect: =Select(Parent)
-                Visible: =ThisItem.IsSelected
-                Width: =4
-                ZIndex: =6
-
     container_28 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -591,6 +508,78 @@ studentenHighlight_screen As screen:
             Y: =20
             ZIndex: =1
 
+    PDFTEMPLATE As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =765
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Visible: =false
+        Width: =541
+        ZIndex: =38
+
+        Label10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Size: =20
+            Text: ="Rapport"
+            Width: =541
+            Y: =135
+            ZIndex: =1
+
+        Label10_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Size: =14
+            Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & " " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+            Width: =541
+            Y: =168
+            ZIndex: =2
+
+        Label11 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Size: =16
+            Text: ="Uw scores"
+            X: =45
+            Y: =390
+            ZIndex: =3
+
+        Label11_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Examen 1           68"
+            Width: =193
+            X: =45
+            Y: =430
+            ZIndex: =4
+
+        Label11_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Examen 2           74"
+            Width: =193
+            X: =45
+            Y: =470
+            ZIndex: =5
+
+        Label11_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Examen 3           78"
+            Width: =193
+            X: =45
+            Y: =510
+            ZIndex: =6
+
+        Image4 As image:
+            Height: =158
+            Image: ='Logo-Wit RGB (1) kopie'
+            Width: =198
+            X: =171
+            Y: =31
+            ZIndex: =7
+
     groep_PDF_screen As group:
         Height: =5
         Width: =5
@@ -634,7 +623,7 @@ studentenHighlight_screen As screen:
             OnSelect: |-
                 =Set(
                     Test,
-                    PDF(Gallery2)
+                    PDF(PDFTEMPLATE)
                 )
             Visible: =PDF_Screen_active
             X: =90
