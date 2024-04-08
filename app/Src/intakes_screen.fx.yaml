@@ -695,7 +695,7 @@ intakes_screen As screen:
             OnSelect: |
                 =Set(
                     newStudentID,
-                    GUID()
+                    Text(GUID())
                 );
                 
                 Set(

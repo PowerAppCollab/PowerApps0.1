@@ -6,6 +6,8 @@
         Set(tempTimer, true);
         Set(Test, PDF(PDFTEMPLATE));
         
+        Set(var, Text(currSelectedStudent))
+        
     Width: =794
 
     Label12 As label:
@@ -39,43 +41,16 @@
         Size: =18
         Text: ="Uw behaalde scores"
         Width: =304
-        X: =50
-        Y: =566
+        X: =48
+        Y: =375
         ZIndex: =4
-
-    Label13_1 As label:
-        FontWeight: =FontWeight.Lighter
-        Size: =16
-        Text: =LookUp(scores, studentID = currSelectedStudent)
-        Width: =304
-        X: =50
-        Y: =606
-        ZIndex: =5
-
-    Label13_2 As label:
-        FontWeight: =FontWeight.Lighter
-        Size: =16
-        Text: =currSelectedStudent
-        Width: =304
-        X: =50
-        Y: =646
-        ZIndex: =6
-
-    Label13_3 As label:
-        FontWeight: =FontWeight.Lighter
-        Size: =16
-        Text: ="Examen 3           70"
-        Width: =304
-        X: =50
-        Y: =686
-        ZIndex: =7
 
     Rectangle4_1 As rectangle:
         Fill: =RGBA(192, 5, 230, 1)
         Height: =1
         Width: =300
-        X: =54
-        Y: =605
+        X: =52
+        Y: =414
         ZIndex: =8
 
     Image5 As image:
@@ -87,7 +62,7 @@
         ZIndex: =9
 
     Timer1 As timer:
-        Duration: =250
+        Duration: =1000
         OnTimerEnd: =Navigate(studentenHighlight_screen)
         Start: =tempTimer
         Visible: =false
@@ -96,11 +71,60 @@
 
     Label13_4 As label:
         FontWeight: =FontWeight.Lighter
+        Height: =215
         Size: =16
         Text: =persoonlijk_bericht_input
         Visible: =!IsBlank(persoonlijk_bericht_input)
-        Width: =304
-        X: =54
-        Y: =817
+        Width: =699
+        X: =47
+        Y: =781
         ZIndex: =11
+
+    Label6 As label:
+        Height: =123
+        Text: =
+        Width: =320
+        X: =119
+        Y: =409
+        ZIndex: =12
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =501
+        Items: =Filter(scores, studentID = currSelectedStudent)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =47
+        X: =48
+        Y: =430
+        ZIndex: =13
+
+        Title3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.score
+            VerticalAlign: =VerticalAlign.Top
+            Width: =85
+            Y: =15
+            ZIndex: =2
+
+        Subtitle3 As label:
+            FontWeight: =FontWeight.Lighter
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Examen
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =85
+            Y: =17
+            ZIndex: =3
 
