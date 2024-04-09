@@ -249,7 +249,9 @@ intakesVersturen_screen As screen:
             OnSelect: |-
                 =Set(testimage, UploadedImage2.Image);
                 
-                UploadExcel.Run(testimage)
+                Set(excelFile, JSON(testimage, JSONFormat.IncludeBinaryData));
+                
+                uploadExcelFile.Run(excelFile)
             Text: ="Knop"
             X: =394
             Y: =258
