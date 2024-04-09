@@ -1,4 +1,38 @@
 {
+  "173b1c45-66b2-4729-af8f-9b9b24476236": {
+    "connectionRef": {
+      "displayName": "Logicastroom",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "uploadExcelFile"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "39e8a61a-e266-494c-9bc4-06c5a2312081"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "uploadExcelFile"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "39e8a61a-e266-494c-9bc4-06c5a2312081"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "uploadExcelFile"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+    },
+    "dependents": [],
+    "id": "173b1c45-66b2-4729-af8f-9b9b24476236"
+  },
   "42ceb50e-66eb-45c5-8803-9145a48f50e6": {
     "connectionRef": {
       "displayName": "Logicastroom",
@@ -115,7 +149,7 @@
     "dependencies": {},
     "dependents": [
       "c72f50bf-22fc-440e-87e3-fc1305ee3a5d",
-      "ddd4235f-4da3-4447-abd8-d962a591a10c"
+      "173b1c45-66b2-4729-af8f-9b9b24476236"
     ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
@@ -222,46 +256,6 @@
     },
     "dependents": [],
     "id": "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
-  },
-  "ddd4235f-4da3-4447-abd8-d962a591a10c": {
-    "connectionRef": {
-      "displayName": "Logicastroom",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "uploadExcelFile"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "39e8a61a-e266-494c-9bc4-06c5a2312081"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
-        },
-        "workflowDisplayName": {
-          "value": "uploadExcelFile"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "39e8a61a-e266-494c-9bc4-06c5a2312081"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "uploadExcelFile"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
-    },
-    "dependents": [],
-    "id": "ddd4235f-4da3-4447-abd8-d962a591a10c"
   },
   "fafd6e07-5b30-48ba-b431-8ec50670bc93": {
     "connectionRef": {
