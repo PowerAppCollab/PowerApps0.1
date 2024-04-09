@@ -334,7 +334,7 @@ intakesVersturen_screen As screen:
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
-                =uploadExcelFile.Run({file:{contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}})
+                =uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name})
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -343,6 +343,14 @@ intakesVersturen_screen As screen:
             Width: =161
             Y: =171
             ZIndex: =3
+
+        Icon6 As icon.Download:
+            Icon: =Icon.Download
+            OnSelect: |-
+                =Launch("https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/tempEmails.xlsx")
+            X: =40
+            Y: =40
+            ZIndex: =4
 
     container_15 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
