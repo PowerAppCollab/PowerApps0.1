@@ -120,6 +120,13 @@ intakesVersturen_screen As screen:
         Y: =400
         ZIndex: =12
 
+        Label10 As label:
+            Text: |
+                =dataTest
+            X: =40
+            Y: =40
+            ZIndex: =1
+
     container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
