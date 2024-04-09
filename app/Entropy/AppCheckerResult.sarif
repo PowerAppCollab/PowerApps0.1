@@ -14,39 +14,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text"
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text",
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 8,
-                  "charOffset": 0,
+                  "charLength": 123,
+                  "charOffset": 117,
                   "snippet": {
-                    "text": "dataTest"
+                    "text": "Patch(\n    studenten_tabel;\n    Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID);\n    { groupID:\"\"} \n)"
                   }
                 }
               },
               "properties": {
-                "member": "Text",
-                "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.container_21.Label10"
+                "member": "OnSelect",
+                "module": "groups_screen",
+                "type": "groups_screen.knop_toevoegen_8"
               }
             }
           ],
           "message": {
             "arguments": [
-              "dataTest"
+              "Patch"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidName",
+          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 0
         },
         {
@@ -54,40 +54,81 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charOffset": 132,
+                  "charLength": 69,
+                  "charOffset": 149,
                   "snippet": {
-                    "text": ""
+                    "text": "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
                   }
                 }
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "studentenHighlight_screen",
-                "type": "studentenHighlight_screen.container_31.Icon4"
+                "module": "groups_screen",
+                "type": "groups_screen.knop_toevoegen_8"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Eof",
-              "ParenClose"
+              "Record",
+              "Table"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 69,
+                  "charOffset": 149,
+                  "snippet": {
+                    "text": "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "groups_screen",
+                "type": "groups_screen.knop_toevoegen_8"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrNeedRecord-Arg",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -127,7 +168,47 @@
             "level": "High"
           },
           "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 1
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charOffset": 132,
+                  "snippet": {
+                    "text": ""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "studentenHighlight_screen",
+                "type": "studentenHighlight_screen.container_31.Icon4"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Eof",
+              "ParenClose"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -167,7 +248,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -208,7 +289,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 2
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -250,7 +331,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadArityRange",
-          "ruleIndex": 3
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -290,7 +371,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -331,7 +412,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
-          "ruleIndex": 5
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -371,7 +452,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrNeedRecord-Arg",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -411,7 +492,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -4078,36 +4159,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varShowRemoveGroupPopup"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varShowRemoveGroupPopup",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varShowRemoveGroupPopup",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.persoonlijk_bericht"
                 }
               ],
@@ -4530,72 +4581,6 @@
           "name": "PowerApps app checker",
           "rules": [
             {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrExpectedFound-Ex-Fnd",
-              "messageStrings": {
-                "issue": {
-                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or replace the unexpected characters with an expected character."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
-              "messageStrings": {
-                "issue": {
-                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
-                  "If you’re comparing records or tables, the field or column types must match exactly."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrBadArityRange",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid number of arguments: received {0}, expected {1}-{2}."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
               "id": "app-ErrInvalidArgs-Func",
               "messageStrings": {
                 "issue": {
@@ -4628,6 +4613,72 @@
               "messageStrings": {
                 "issue": {
                   "text": "Cannot use a non-record value in this context: '{0}'."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrExpectedFound-Ex-Fnd",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or replace the unexpected characters with an expected character."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
+              "messageStrings": {
+                "issue": {
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBadArityRange",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid number of arguments: received {0}, expected {1}-{2}."
                 }
               },
               "properties": {
