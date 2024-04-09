@@ -1,38 +1,4 @@
 {
-  "015850a6-1a72-4fc9-afd8-feb9f8454911": {
-    "connectionRef": {
-      "displayName": "Logicastroom",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowDisplayName": {
-          "value": "PowerAppV2 -> Tabellen ophalen"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "a5d9316c-6ad1-419b-9ec7-32065bf1d565"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowDisplayName": {
-          "value": "PowerAppV2 -> Tabellen ophalen"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "a5d9316c-6ad1-419b-9ec7-32065bf1d565"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "PowerAppV2->Tabellenophalen"
-    ],
-    "dependencies": {
-      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042"
-    },
-    "dependents": [],
-    "id": "015850a6-1a72-4fc9-afd8-feb9f8454911"
-  },
   "42ceb50e-66eb-45c5-8803-9145a48f50e6": {
     "connectionRef": {
       "displayName": "Logicastroom",
@@ -83,7 +49,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "62bcbad6-605d-4dec-9d08-21c24d6fe34b"
+      "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
+      "015850a6-1a72-4fc9-afd8-feb9f8454911"
     ],
     "id": "590fece5-6674-4088-b75f-dcf38b6e9042"
   },
