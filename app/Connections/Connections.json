@@ -1,13 +1,42 @@
 {
+  "03be359a-448e-4601-95c0-775a607d33f4": {
+    "connectionRef": {
+      "displayName": "Logicastroom",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "testFlow"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2b657f72-d819-4b5f-a32f-b55e36823be1"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "testFlow"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2b657f72-d819-4b5f-a32f-b55e36823be1"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "testFlow"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "03be359a-448e-4601-95c0-775a607d33f4"
+  },
   "173b1c45-66b2-4729-af8f-9b9b24476236": {
     "connectionRef": {
       "displayName": "Logicastroom",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
-          "value": "shared_sharepointonline"
-        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -17,9 +46,6 @@
         }
       },
       "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
-        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -89,8 +115,7 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
-      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
+      "62bcbad6-605d-4dec-9d08-21c24d6fe34b"
     ],
     "id": "590fece5-6674-4088-b75f-dcf38b6e9042"
   },
@@ -153,10 +178,7 @@
       "tempEmails"
     ],
     "dependencies": {},
-    "dependents": [
-      "173b1c45-66b2-4729-af8f-9b9b24476236",
-      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
-    ],
+    "dependents": [],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
   "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74": {
