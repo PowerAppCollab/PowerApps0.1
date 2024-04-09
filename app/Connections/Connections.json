@@ -5,6 +5,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -14,6 +17,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -79,8 +85,18 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/excelonlinebusiness/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness"
     },
-    "datasets": {},
-    "dataSources": [],
+    "datasets": {
+      "groups%252F01652279-87db-49b6-a988-aed1eac08a25,b%2521JfDmV-zevkCe2KxymG47oQjo4Ixzo4FMu4F1hdzjsHliMqS1-hMeQrATrTGx0TCG,01SKDHJXTG65QR2X44D5G2V54UGBQXRX6S": {
+        "dataSources": {
+          "Tabel1": {
+            "tableName": "{8ABB3108-A784-C14A-AE99-96227B128518}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tabel1"
+    ],
     "dependencies": {},
     "dependents": [
       "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
