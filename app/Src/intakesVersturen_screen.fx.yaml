@@ -328,13 +328,13 @@ intakesVersturen_screen As screen:
             Y: =10
             ZIndex: =1
 
-        AttachControl As attachments:
+        AttachControl_1 As attachments:
             BorderColor: =Color.Black
             Height: =154
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
-                =uploadExcelFile.Run({file:{contentBytes:Last(Self.Attachments).Value, name:Last(Self.Attachments).Name}});
+                =uploadExcelFile.Run({file:{contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}})
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -342,7 +342,7 @@ intakesVersturen_screen As screen:
             Tooltip: =
             Width: =161
             Y: =171
-            ZIndex: =2
+            ZIndex: =3
 
     container_15 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None

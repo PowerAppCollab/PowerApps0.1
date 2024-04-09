@@ -172,40 +172,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.OnAddFile"
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.OnAddFile",
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 84,
-                  "charOffset": 20,
+                  "charOffset": 132,
                   "snippet": {
-                    "text": "{file:{contentBytes:Last(Self.Attachments).Value; name:Last(Self.Attachments).Name}}"
+                    "text": ""
                   }
                 }
               },
               "properties": {
-                "member": "OnAddFile",
-                "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.container_13.AttachControl"
+                "member": "OnSelect",
+                "module": "studentenHighlight_screen",
+                "type": "studentenHighlight_screen.container_31.Icon4"
               }
             }
           ],
           "message": {
             "arguments": [
-              "contentBytes",
-              "Blob"
+              "Eof",
+              "ParenClose"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
+          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
           "ruleIndex": 3
         },
         {
@@ -213,46 +212,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.OnAddFile"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.OnAddFile",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 105,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "uploadExcelFile.Run({file:{contentBytes:Last(Self.Attachments).Value; name:Last(Self.Attachments).Name}})"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnAddFile",
-                "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.container_13.AttachControl"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Run"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
                 }
               ],
@@ -286,47 +245,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charOffset": 132,
-                  "snippet": {
-                    "text": ""
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "studentenHighlight_screen",
-                "type": "studentenHighlight_screen.container_31.Icon4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Eof",
-              "ParenClose"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 5
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -449,7 +368,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadArityRange",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -489,7 +408,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -530,7 +449,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
-          "ruleIndex": 7
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -570,7 +489,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrNeedRecord-Arg",
-          "ruleIndex": 8
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -610,7 +529,88 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.OnAddFile"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.OnAddFile",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 86,
+                  "charOffset": 20,
+                  "snippet": {
+                    "text": "{file:{contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}}"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnAddFile",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_13.AttachControl_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "contentBytes",
+              "Blob"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.OnAddFile"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.OnAddFile",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 107,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "uploadExcelFile.Run({file:{contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}})"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnAddFile",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_13.AttachControl_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Run"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -2387,19 +2387,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.AccessibleLabel"
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl.AccessibleLabel",
+                  "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.container_13.AttachControl"
+                "type": "intakesVersturen_screen.container_13.AttachControl_1"
               }
             }
           ],
@@ -4598,37 +4598,6 @@
               }
             },
             {
-              "id": "app-ErrColumnMissing-ColName-ExpectedType",
-              "messageStrings": {
-                "issue": {
-                  "text": "Missing column. Your formula is missing a column '{0}' with a type of '{1}'."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Add a column to your formula."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidArgs-Func",
-              "messageStrings": {
-                "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
               "id": "app-ErrExpectedFound-Ex-Fnd",
               "messageStrings": {
                 "issue": {
@@ -4650,6 +4619,20 @@
               "messageStrings": {
                 "issue": {
                   "text": "Invalid number of arguments: received {0}, expected {1}-{2}."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidArgs-Func",
+              "messageStrings": {
+                "issue": {
+                  "text": "The function '{0}' has some invalid arguments."
                 }
               },
               "properties": {
@@ -4682,6 +4665,23 @@
               },
               "properties": {
                 "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrColumnMissing-ColName-ExpectedType",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing column. Your formula is missing a column '{0}' with a type of '{1}'."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Add a column to your formula."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
