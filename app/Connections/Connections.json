@@ -37,6 +37,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -46,6 +49,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -178,7 +184,9 @@
       "tempEmails"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "173b1c45-66b2-4729-af8f-9b9b24476236"
+    ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
   "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74": {
