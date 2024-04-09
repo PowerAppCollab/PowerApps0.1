@@ -42,18 +42,6 @@ courses_screen_1 As screen:
             Width: =500
             ZIndex: =1
 
-            gallery_students_backgroundButton_3 As button:
-                BorderStyle: =BorderStyle.None
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
-                Height: =90
-                HoverFill: =
-                OnSelect: =Select(Parent)
-                PressedFill: =
-                Text: =""
-                Width: =500
-                ZIndex: =1
-
             gallery_students_titleText_3 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =Self.Size * 1.8
@@ -68,28 +56,6 @@ courses_screen_1 As screen:
                 X: =16
                 Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText_3.Size * 1.8)) / 2
                 ZIndex: =2
-
-            gallery_students_emailText_3 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =FontWeight.Lighter
-                OnSelect: =Select(Parent)
-                Text: =ThisItem.course
-                Width: =270
-                X: =16
-                Y: =37
-                ZIndex: =3
-
-            gallery_students_clickableButton_3 As button:
-                BorderStyle: =BorderStyle.None
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0,0,0,0)
-                Height: =90
-                HoverFill: =
-                OnSelect: =Select(Parent)
-                PressedFill: =
-                Text: =""
-                Width: =500
-                ZIndex: =4
 
         label_gallery_students_error_3 As label:
             Align: =Align.Center
@@ -136,27 +102,6 @@ courses_screen_1 As screen:
         X: =180
         Y: =467
         ZIndex: =2
-
-        label_chart_error_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =75
-            Text: ="Er is geen grafiek beschikbaar."
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_courses_2.Selected.studentID
-                        )
-                    ),
-                    true,
-                    false
-                )
-            Width: =500
-            Y: =113
-            ZIndex: =6
 
     student_icon_8 As image:
         Height: =45
