@@ -122,7 +122,7 @@
     "dependencies": {},
     "dependents": [
       "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
-      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
+      "7d541661-94f7-44e1-84ed-e54adc31bfc6"
     ],
     "id": "590fece5-6674-4088-b75f-dcf38b6e9042"
   },
@@ -186,8 +186,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d",
-      "173b1c45-66b2-4729-af8f-9b9b24476236"
+      "173b1c45-66b2-4729-af8f-9b9b24476236",
+      "7d541661-94f7-44e1-84ed-e54adc31bfc6"
     ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
@@ -230,6 +230,41 @@
     },
     "dependents": [],
     "id": "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74"
+  },
+  "7d541661-94f7-44e1-84ed-e54adc31bfc6": {
+    "connectionRef": {
+      "displayName": "Logicastroom",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "createFileSharepoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "93cdf3bf-21d1-4e8f-81e3-aa57a7bd487d"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "createFileSharepoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "93cdf3bf-21d1-4e8f-81e3-aa57a7bd487d"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "createFileSharepoint"
+    ],
+    "dependencies": {
+      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
+      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+    },
+    "dependents": [],
+    "id": "7d541661-94f7-44e1-84ed-e54adc31bfc6"
   },
   "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f": {
     "connectionRef": {

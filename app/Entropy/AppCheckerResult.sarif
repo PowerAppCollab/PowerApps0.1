@@ -14,39 +14,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 123,
-                  "charOffset": 117,
+                  "charLength": 8,
+                  "charOffset": 0,
                   "snippet": {
-                    "text": "Patch(\n    studenten_tabel;\n    Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID);\n    { groupID:\"\"} \n)"
+                    "text": "dataTest"
                   }
                 }
               },
               "properties": {
-                "member": "OnSelect",
-                "module": "groups_screen",
-                "type": "groups_screen.knop_toevoegen_8"
+                "member": "Text",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_21.Label10"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Patch"
+              "dataTest"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleId": "app-ErrInvalidName",
           "ruleIndex": 0
         },
         {
@@ -54,40 +54,39 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
+                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 69,
-                  "charOffset": 149,
+                  "charOffset": 132,
                   "snippet": {
-                    "text": "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
+                    "text": ""
                   }
                 }
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "groups_screen",
-                "type": "groups_screen.knop_toevoegen_8"
+                "module": "studentenHighlight_screen",
+                "type": "studentenHighlight_screen.container_31.Icon4"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Record",
-              "Table"
+              "Eof",
+              "ParenClose"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
           "ruleIndex": 1
         },
         {
@@ -95,46 +94,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "groups_screen.knop_toevoegen_8.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 69,
-                  "charOffset": 149,
-                  "snippet": {
-                    "text": "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "groups_screen",
-                "type": "groups_screen.knop_toevoegen_8"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter(studenten_tabel; groupID = gallery_courses_3.Selected.groupID)"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrNeedRecord-Arg",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
                 }
               ],
@@ -168,47 +127,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "studentenHighlight_screen.container_31.Icon4.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charOffset": 132,
-                  "snippet": {
-                    "text": ""
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "studentenHighlight_screen",
-                "type": "studentenHighlight_screen.container_31.Icon4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Eof",
-              "ParenClose"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 3
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -248,7 +167,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 4
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -289,7 +208,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 5
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -331,7 +250,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadArityRange",
-          "ruleIndex": 6
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -371,7 +290,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 0
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -412,7 +331,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
-          "ruleIndex": 1
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -452,7 +371,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrNeedRecord-Arg",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -492,7 +411,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 0
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -709,19 +628,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "courses_screen_1.intake_icon_12.AccessibleLabel"
+                  "fullyQualifiedName": "courses_screen_1.student_icon_8.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "courses_screen_1.intake_icon_12.AccessibleLabel",
+                  "fullyQualifiedName": "courses_screen_1.student_icon_8.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "courses_screen_1",
-                "type": "courses_screen_1.intake_icon_12"
+                "type": "courses_screen_1.student_icon_8"
               }
             }
           ],
@@ -739,19 +658,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "courses_screen_1.intake_icon_12.TabIndex"
+                  "fullyQualifiedName": "courses_screen_1.student_icon_8.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "courses_screen_1.intake_icon_12.TabIndex",
+                  "fullyQualifiedName": "courses_screen_1.student_icon_8.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "courses_screen_1",
-                "type": "courses_screen_1.intake_icon_12"
+                "type": "courses_screen_1.student_icon_8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "courses_screen_1.label_students_8.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "courses_screen_1.label_students_8.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "courses_screen_1",
+                "type": "courses_screen_1.label_students_8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "courses_screen_1.label_students_8.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "courses_screen_1.label_students_8.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "courses_screen_1",
+                "type": "courses_screen_1.label_students_8"
               }
             }
           ],
@@ -872,66 +851,6 @@
                 "member": "TabIndex",
                 "module": "courses_screen_1",
                 "type": "courses_screen_1.container_33.gallery_courses_2.Icon6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.label_intake_12.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.label_intake_12.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.label_intake_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.label_intake_12.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.label_intake_12.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.label_intake_12"
               }
             }
           ],
@@ -1123,126 +1042,6 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.group_icon_8.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.group_icon_8.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.group_icon_8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.group_icon_8.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.group_icon_8.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.group_icon_8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.label_groups_8.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.label_groups_8.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.label_groups_8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "courses_screen_1.label_groups_8.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "courses_screen_1.label_groups_8.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "courses_screen_1",
-                "type": "courses_screen_1.label_groups_8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 8
         },
         {
           "locations": [
@@ -1639,6 +1438,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "groups_screen.label_intake_14.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.label_intake_14.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "groups_screen",
+                "type": "groups_screen.label_intake_14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "groups_screen.label_intake_14.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.label_intake_14.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "groups_screen",
+                "type": "groups_screen.label_intake_14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "groups_screen.container_37.gallery_courses_3.AccessibleLabel"
                 }
               ],
@@ -1759,19 +1618,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.intake_icon_2.AccessibleLabel"
+                  "fullyQualifiedName": "groups_screen.student_icon_9.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.intake_icon_2.AccessibleLabel",
+                  "fullyQualifiedName": "groups_screen.student_icon_9.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "groups_screen",
-                "type": "groups_screen.intake_icon_2"
+                "type": "groups_screen.student_icon_9"
               }
             }
           ],
@@ -1789,19 +1648,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.intake_icon_2.TabIndex"
+                  "fullyQualifiedName": "groups_screen.student_icon_9.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.intake_icon_2.TabIndex",
+                  "fullyQualifiedName": "groups_screen.student_icon_9.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "groups_screen",
-                "type": "groups_screen.intake_icon_2"
+                "type": "groups_screen.student_icon_9"
               }
             }
           ],
@@ -1819,19 +1678,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.label_intake_2.FocusedBorderThickness"
+                  "fullyQualifiedName": "groups_screen.label_students_9.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.label_intake_2.FocusedBorderThickness",
+                  "fullyQualifiedName": "groups_screen.label_students_9.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "groups_screen",
-                "type": "groups_screen.label_intake_2"
+                "type": "groups_screen.label_students_9"
               }
             }
           ],
@@ -1849,19 +1708,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.label_intake_2.TabIndex"
+                  "fullyQualifiedName": "groups_screen.label_students_9.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "groups_screen.label_intake_2.TabIndex",
+                  "fullyQualifiedName": "groups_screen.label_students_9.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "groups_screen",
-                "type": "groups_screen.label_intake_2"
+                "type": "groups_screen.label_students_9"
               }
             }
           ],
@@ -2299,126 +2158,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "groups_screen.courses_icon_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "groups_screen.courses_icon_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "groups_screen",
-                "type": "groups_screen.courses_icon_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "groups_screen.courses_icon_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "groups_screen.courses_icon_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "groups_screen",
-                "type": "groups_screen.courses_icon_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "groups_screen.label_courses_2.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "groups_screen.label_courses_2.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "groups_screen",
-                "type": "groups_screen.label_courses_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "groups_screen.label_courses_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "groups_screen.label_courses_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "groups_screen",
-                "type": "groups_screen.label_courses_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "intakesVersturen_screen.container_13.AttachControl_1.AccessibleLabel"
                 }
               ],
@@ -2479,19 +2218,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.intake_icon_7.AccessibleLabel"
+                  "fullyQualifiedName": "intakesVersturen_screen.label_intake_7.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.intake_icon_7.AccessibleLabel",
+                  "fullyQualifiedName": "intakesVersturen_screen.label_intake_7.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.label_intake_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_intake_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_intake_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.label_intake_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.student_icon_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.student_icon_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.intake_icon_7"
+                "type": "intakesVersturen_screen.student_icon_4"
               }
             }
           ],
@@ -2509,19 +2308,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakesVersturen_screen.intake_icon_7.TabIndex"
+                  "fullyQualifiedName": "intakesVersturen_screen.student_icon_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakesVersturen_screen.intake_icon_7.TabIndex",
+                  "fullyQualifiedName": "intakesVersturen_screen.student_icon_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "intakesVersturen_screen",
-                "type": "intakesVersturen_screen.intake_icon_7"
+                "type": "intakesVersturen_screen.student_icon_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_students_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_students_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.label_students_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_students_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.label_students_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.label_students_4"
               }
             }
           ],
@@ -4159,6 +4018,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.varShowRemoveGroupPopup"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varShowRemoveGroupPopup",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varShowRemoveGroupPopup",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.persoonlijk_bericht"
                 }
               ],
@@ -4581,6 +4470,72 @@
           "name": "PowerApps app checker",
           "rules": [
             {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrExpectedFound-Ex-Fnd",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or replace the unexpected characters with an expected character."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
+              "messageStrings": {
+                "issue": {
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBadArityRange",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid number of arguments: received {0}, expected {1}-{2}."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
               "id": "app-ErrInvalidArgs-Func",
               "messageStrings": {
                 "issue": {
@@ -4613,72 +4568,6 @@
               "messageStrings": {
                 "issue": {
                   "text": "Cannot use a non-record value in this context: '{0}'."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrExpectedFound-Ex-Fnd",
-              "messageStrings": {
-                "issue": {
-                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or replace the unexpected characters with an expected character."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
-              "messageStrings": {
-                "issue": {
-                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
-                  "If you’re comparing records or tables, the field or column types must match exactly."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrBadArityRange",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid number of arguments: received {0}, expected {1}-{2}."
                 }
               },
               "properties": {
