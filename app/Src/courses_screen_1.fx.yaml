@@ -809,14 +809,6 @@ courses_screen_1 As screen:
             Y: =250
             ZIndex: =44
 
-        group_icon_8 As image:
-            Height: =45
-            Image: =grid_line
-            Width: =45
-            X: =63
-            Y: =350
-            ZIndex: =45
-
         presentation_icon_8 As image:
             Height: =45
             Image: =presentation_2_line
@@ -843,18 +835,6 @@ courses_screen_1 As screen:
             X: =37
             Y: =280
             ZIndex: =48
-
-        label_groups_8 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Size: =10
-            Text: |-
-                ="Groepen
-                "
-            Width: =97
-            X: =37
-            Y: =380
-            ZIndex: =49
 
         label_presentation_8 As label:
             Align: =Align.Center
@@ -887,25 +867,6 @@ courses_screen_1 As screen:
             X: =5
             Y: =20
             ZIndex: =52
-
-        intake_icon_12 As image:
-            Height: =45
-            Image: ='invite_line (2)'
-            OnSelect: =
-            Width: =45
-            X: =63
-            Y: =150
-            ZIndex: =53
-
-        label_intake_12 As label:
-            Align: =Align.Center
-            Color: =RGBA(192, 5, 230, 1)
-            Size: =10
-            Text: ="Intakes"
-            Width: =80
-            X: =45
-            Y: =180
-            ZIndex: =54
 
         knop_nav_intake_5 As button:
             BorderColor: =
