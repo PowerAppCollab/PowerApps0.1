@@ -23,8 +23,8 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
-              <doc title="myFile" />
+            <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def" required="true">
+              <doc title="Bestandsinhoud" />
             </param>
           </representation>
         </request>
