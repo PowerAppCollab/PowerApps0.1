@@ -73,7 +73,7 @@ courses_screen_1 As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =61
-            Text: ="Geen studenten gevonden."
+            Text: ="Geen cursussen gevonden."
             Visible: |-
                 =If(
                     IsEmpty(
@@ -699,7 +699,7 @@ courses_screen_1 As screen:
         popup_background_13 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             Width: =1366
             ZIndex: =38
 
@@ -710,7 +710,7 @@ courses_screen_1 As screen:
             Fill: =RGBA(60, 60, 60, 1)
             Height: =235
             Text: =""
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             Width: =505
             X: =431
             Y: =255
@@ -723,7 +723,7 @@ courses_screen_1 As screen:
             Height: =54
             Size: =18
             Text: ="weet je het zeker?"
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             Width: =505
             X: =430
             Y: =261
@@ -736,20 +736,43 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
-                =Patch(
+                =/*Patch(
                     groepens,
                     gallery_groups_3.Selected,
                     { course: "" }
+                );*/
+                
+                Remove(
+                    courses, // The name of the entity
+                    gallery_courses_2.Selected // The record you want to delete
+                );
+                    Patch(
+                        groepens,
+                        LookUp(groepens, course = gallery_courses_2.Selected.name),
+                        { course: "" }
+                    );
+                Set(varShowDeleteCoursePopup, false);
+                /*
+                Remove(
+                    groepens, // The name of the entity
+                    gallery_courses_3.Selected // The record you want to delete
                 );
                 
-                Set(varShowRemoveGroupPopup, false);
+                    Patch(
+                        studenten_tabel,
+                        LookUp(studenten_tabel, course.name = gallery_courses_3.Selected.course),
+                        { groupID: "" }
+                    );
+                
+                Set(varShowRemoveGroupPopup, false); // Hides the popup after the operations
+                */
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
             Text: ="verwijderen"
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             X: =487
             Y: =415
             ZIndex: =41
@@ -761,14 +784,14 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowRemoveGroupPopup, false)
+            OnSelect: =Set(varShowDeleteCoursePopup, false)
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
             Text: ="Annuleer"
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             X: =727
             Y: =415
             ZIndex: =42
@@ -777,7 +800,7 @@ courses_screen_1 As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =57
             Text: ="weet je het zeker om deze groep te verwijderen van de cursus?"
-            Visible: =varShowRemoveGroupPopup
+            Visible: =varShowDeleteCoursePopup
             Width: =285
             X: =559
             Y: =324
