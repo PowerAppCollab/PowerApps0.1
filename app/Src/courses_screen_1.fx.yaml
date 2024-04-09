@@ -2,101 +2,24 @@ courses_screen_1 As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: =
 
-    student_icon_8 As image:
-        Height: =45
-        Image: ='group_line (1)'
-        Width: =45
-        X: =63
-        Y: =250
-        ZIndex: =2
-
-    group_icon_8 As image:
-        Height: =45
-        Image: =grid_line
-        Width: =45
-        X: =63
-        Y: =350
-        ZIndex: =3
-
-    presentation_icon_8 As image:
-        Height: =45
-        Image: =presentation_2_line
-        Width: =45
-        X: =63
-        Y: =450
-        ZIndex: =4
-
-    courses_icon_8 As image:
-        Height: =45
-        Image: =map_line
-        Width: =45
-        X: =63
-        Y: =550
-        ZIndex: =5
-
-    label_students_8 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: ="Studenten"
-        Width: =97
-        X: =37
-        Y: =280
-        ZIndex: =7
-
-    label_groups_8 As label:
-        Align: =Align.Center
-        Color: =RGBA(192, 5, 255, 1)
-        Size: =10
-        Text: |-
-            ="Groepen
-            "
-        Width: =97
-        X: =37
-        Y: =380
-        ZIndex: =8
-
-    label_presentation_8 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =11
-        Text: |-
-            ="Presentatie
-            "
-        Width: =97
-        X: =37
-        Y: =480
-        ZIndex: =9
-
-    label_courses_8 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: |-
-            ="Cursussen
-            "
-        Width: =97
-        X: =37
-        Y: =580
-        ZIndex: =10
-
-    container_34 As groupContainer.manualLayoutContainer:
+    container_33 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =250
+        Height: =305
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         X: =180
-        Y: =140
-        ZIndex: =11
+        Y: =150
+        ZIndex: =1
 
         "gallery_courses_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
             Items: |
-                =Filter(courses, StartsWith(name, SearchInput1_2.Text))
+                =
+                Filter(courses, StartsWith(name, SearchInput1_2.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -106,10 +29,10 @@ courses_screen_1 As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                            courses,
+                            groepens,
                             StartsWith(
                                 name,
-                                SearchInput1_2.Text
+                                SearchInput1_1.Text
                             )
                         )
                     ),
@@ -131,11 +54,26 @@ courses_screen_1 As screen:
                 Width: =500
                 ZIndex: =1
 
+            gallery_students_titleText_3 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.name
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText_3.Size * 1.8)) / 2
+                ZIndex: =2
+
             gallery_students_emailText_3 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.courseID
+                Text: =ThisItem.course
                 Width: =270
                 X: =16
                 Y: =37
@@ -166,7 +104,7 @@ courses_screen_1 As screen:
                             groepens,
                             StartsWith(
                                 name,
-                                SearchInput1_2.Text
+                                SearchInput1_1.Text
                             )
                         )
                     ),
@@ -177,17 +115,27 @@ courses_screen_1 As screen:
             Y: =95
             ZIndex: =2
 
-    container_37 As groupContainer.manualLayoutContainer:
+        Button4_1 As button:
+            Fill: =RGBA(192, 5, 230, 1)
+            Height: =37
+            HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            OnSelect: =Set(varShowCreateCoursePopup, true);
+            Text: ="Cursus aanmaken"
+            Width: =500
+            Y: =265
+            ZIndex: =3
+
+    container_34 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =258
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         X: =180
-        Y: =425
-        ZIndex: =13
+        Y: =467
+        ZIndex: =2
 
         label_chart_error_2 As label:
             Align: =Align.Center
@@ -210,6 +158,64 @@ courses_screen_1 As screen:
             Y: =113
             ZIndex: =6
 
+    student_icon_8 As image:
+        Height: =45
+        Image: ='group_line (1)'
+        Width: =45
+        X: =63
+        Y: =250
+        ZIndex: =4
+
+    presentation_icon_8 As image:
+        Height: =45
+        Image: =presentation_2_line
+        Width: =45
+        X: =63
+        Y: =450
+        ZIndex: =6
+
+    courses_icon_8 As image:
+        Height: =45
+        Image: =map_line
+        Width: =45
+        X: =63
+        Y: =550
+        ZIndex: =7
+
+    label_students_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =10
+        Text: ="Studenten"
+        Width: =97
+        X: =37
+        Y: =280
+        ZIndex: =9
+
+    label_presentation_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =11
+        Text: |-
+            ="Presentatie
+            "
+        Width: =97
+        X: =37
+        Y: =480
+        ZIndex: =11
+
+    label_courses_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =10
+        Text: |-
+            ="Cursussen
+            "
+        Width: =97
+        X: =37
+        Y: =580
+        ZIndex: =12
+
     container_36 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -221,7 +227,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =195
-        ZIndex: =14
+        ZIndex: =13
 
         label_studentInformation_error_notSelected_2 As label:
             Align: =Align.Center
@@ -262,8 +268,8 @@ courses_screen_1 As screen:
             Height: =202
             Items: |
                 =Filter(
-                    studenten_tabel,
-                    course.courseID = gallery_courses_2.Selected.name
+                    groepens,
+                    course = gallery_courses_2.Selected.name
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -271,7 +277,7 @@ courses_screen_1 As screen:
             TemplatePadding: =0
             TemplateSize: =90
             Visible: |
-                =
+                =true
             Width: =600
             ZIndex: =5
 
@@ -295,22 +301,12 @@ courses_screen_1 As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.Email
+                Text: =ThisItem.name
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + gallery_students_emailText_4.Size * 1.8)) / 2
+                Y: =
                 ZIndex: =2
-
-            gallery_students_emailText_4 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =FontWeight.Lighter
-                OnSelect: =Select(Parent)
-                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
-                Width: =270
-                X: =16
-                Y: =37
-                ZIndex: =3
 
             gallery_students_clickableButton_4 As button:
                 BorderStyle: =BorderStyle.None
@@ -330,7 +326,7 @@ courses_screen_1 As screen:
         Width: =161
         X: =5
         Y: =20
-        ZIndex: =15
+        ZIndex: =14
 
     container_32 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -342,7 +338,7 @@ courses_screen_1 As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =16
+        ZIndex: =15
 
         SearchInput1_2 As text:
             BorderStyle: =BorderStyle.None
@@ -383,7 +379,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =17
+        ZIndex: =16
 
         intake_icon_13 As image:
             Height: =60
@@ -490,33 +486,6 @@ courses_screen_1 As screen:
                 Y: =21
                 ZIndex: =9
 
-    nav_intake_2 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =24
-
-        intake_icon_12 As image:
-            Height: =45
-            Image: ='invite_line (1)'
-            OnSelect: =Navigate(intakes_screen);
-            Width: =45
-            X: =63
-            Y: =150
-            ZIndex: =1
-
-        label_intake_12 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(intakes_screen);
-            Size: =10
-            Text: ="Intakes"
-            Width: =97
-            X: =37
-            Y: =180
-            ZIndex: =6
-
     container_35 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -528,7 +497,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =40
-        ZIndex: =30
+        ZIndex: =17
 
         label_scoreTitle_4 As label:
             Align: =Align.Center
@@ -536,8 +505,7 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Bold
             Size: =16
             Text: =gallery_courses_2.Selected.name
-            Width: =59
-            X: =270
+            Width: =600
             ZIndex: =1
 
         Label2_7 As label:
@@ -584,6 +552,157 @@ courses_screen_1 As screen:
             Y: =50
             ZIndex: =7
 
+    nav_intake_2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =24
+
+        intake_icon_12 As image:
+            Height: =45
+            Image: ='invite_line (1)'
+            OnSelect: =Navigate(intakes_screen);
+            Width: =45
+            X: =63
+            Y: =150
+            ZIndex: =3
+
+        label_intake_12 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            OnSelect: =Navigate(intakes_screen);
+            Size: =10
+            Text: ="Intakes"
+            Width: =97
+            X: =37
+            Y: =180
+            ZIndex: =8
+
+    CreateCoursePopup_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =37
+
+        popup_background_12 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =varShowCreateCoursePopup
+            Width: =1366
+            ZIndex: =30
+
+        popup_box_12 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =346
+            Text: =""
+            Visible: =varShowCreateCoursePopup
+            Width: =576
+            X: =461
+            Y: =220
+            ZIndex: =31
+
+        popup_header_10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =47
+            Size: =18
+            Text: ="Groep aanmaken"
+            Visible: =varShowCreateCoursePopup
+            Width: =577
+            X: =460
+            Y: =220
+            ZIndex: =32
+
+        knop_toevoegen_6 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =46
+            HoverFill: =RGBA(161, 0, 194, 1)
+            OnSelect: |-
+                =Patch(courses, {courseID: TextInput2_1.Text, name:TextInput2_1.Text});
+                Set(varShowCreateCoursePopup, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Aanmaken"
+            Visible: =varShowCreateCoursePopup
+            Width: =183
+            X: =537
+            Y: =467
+            ZIndex: =33
+
+        knop_annuleer_11 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =47
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(varShowCreateGroupPopup, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            Visible: =varShowCreateCoursePopup
+            Width: =183
+            X: =777
+            Y: =467
+            ZIndex: =34
+
+        TextInput2_1 As text:
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =52
+            HintText: ="course name"
+            Visible: =varShowCreateCoursePopup
+            Width: =419
+            X: =541
+            Y: =332
+            ZIndex: =36
+
+    GroupNav As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =37
+
+        group_icon_8 As image:
+            Height: =45
+            Image: =grid_line
+            OnSelect: =Navigate(groups_screen)
+            Width: =45
+            X: =63
+            Y: =350
+            ZIndex: =5
+
+        label_groups_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(192, 5, 255, 1)
+            OnSelect: =Navigate(groups_screen)
+            Size: =10
+            Text: |-
+                ="Groepen
+                "
+            Width: =97
+            X: =37
+            Y: =380
+            ZIndex: =10
+
     deleteStudentsPopUp_1 As group:
         Height: =5
         Width: =5
@@ -596,7 +715,7 @@ courses_screen_1 As screen:
             Height: =768
             Visible: =false
             Width: =1366
-            ZIndex: =38
+            ZIndex: =18
 
         popup_box_10 As button:
             AutoDisableOnSelect: =false
@@ -605,11 +724,11 @@ courses_screen_1 As screen:
             Fill: =RGBA(60, 60, 60, 1)
             Height: =260
             Text: =""
-            Visible: =false
+            Visible: =varShowCreateCoursePopup
             Width: =505
             X: =430
             Y: =270
-            ZIndex: =39
+            ZIndex: =19
 
         popup_header_8 As label:
             Align: =Align.Center
@@ -622,7 +741,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =40
+            ZIndex: =20
 
         knop_toevoegen_4 As button:
             BorderStyle: =BorderStyle.None
@@ -631,7 +750,7 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |-
-                =Patch(studenten_tabel, deleteStudentDropDown_1.Selected, {groupID: ""});
+                =Patch(groepens, deleteStudentDropDown_1.Selected, {groupID: ""});
                 Set(varShowDeletePopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -642,7 +761,7 @@ courses_screen_1 As screen:
             Visible: =false
             X: =486
             Y: =455
-            ZIndex: =41
+            ZIndex: =21
 
         knop_annuleer_9 As button:
             BorderStyle: =BorderStyle.None
@@ -661,7 +780,7 @@ courses_screen_1 As screen:
             Visible: =false
             X: =726
             Y: =455
-            ZIndex: =42
+            ZIndex: =22
 
         deleteStudentDropDown_1 As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -676,10 +795,8 @@ courses_screen_1 As screen:
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: |-
                 =Filter(
-                    studenten_tabel,
-                    !IsBlank(course.courseID)
-                    && course.courseID = gallery_courses_2.Selected.courseID
-                
+                    groepens,
+                    !IsBlank(course)
                 )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
@@ -688,7 +805,7 @@ courses_screen_1 As screen:
             Width: =400
             X: =482
             Y: =332
-            ZIndex: =44
+            ZIndex: =23
 
     addStudentsPopUp_1 As group:
         Height: =5
@@ -702,7 +819,7 @@ courses_screen_1 As screen:
             Height: =768
             Visible: =varShowAddPopup
             Width: =1366
-            ZIndex: =45
+            ZIndex: =24
 
         popup_box_11 As button:
             AutoDisableOnSelect: =false
@@ -715,7 +832,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =430
             Y: =270
-            ZIndex: =46
+            ZIndex: =25
 
         popup_header_7 As label:
             Align: =Align.Center
@@ -723,12 +840,12 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="student toevoegen"
+            Text: ="groep toevoegen"
             Visible: =varShowAddPopup
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =47
+            ZIndex: =26
 
         knop_toevoegen_3 As button:
             BorderStyle: =BorderStyle.None
@@ -737,7 +854,7 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(161, 0, 194, 1)
             OnSelect: |-
-                =Patch(groepens, addStudentDropDown_1.Selected, {course: gallery_courses_2.Selected.courseID});
+                =Patch(groepens,{course: gallery_courses_2.Selected.courseID});
                 Set(varShowAddPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -748,7 +865,7 @@ courses_screen_1 As screen:
             Visible: =varShowAddPopup
             X: =486
             Y: =455
-            ZIndex: =48
+            ZIndex: =27
 
         knop_annuleer_8 As button:
             BorderStyle: =BorderStyle.None
@@ -767,7 +884,7 @@ courses_screen_1 As screen:
             Visible: =varShowAddPopup
             X: =726
             Y: =455
-            ZIndex: =49
+            ZIndex: =28
 
         addStudentDropDown_1 As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -782,10 +899,8 @@ courses_screen_1 As screen:
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: |
                 =Filter(
-                    studenten_tabel,
-                    IsBlank(groupID)
-                    && course.courseID = gallery_courses_2.Selected.name
-                
+                    groepens,
+                    IsBlank(course)
                 )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
@@ -794,5 +909,5 @@ courses_screen_1 As screen:
             Width: =400
             X: =482
             Y: =332
-            ZIndex: =50
+            ZIndex: =29
 

@@ -26,14 +26,6 @@ groups_screen As screen:
         Y: =450
         ZIndex: =4
 
-    courses_icon_2 As image:
-        Height: =45
-        Image: =map_line
-        Width: =45
-        X: =63
-        Y: =550
-        ZIndex: =5
-
     label_students_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
@@ -67,18 +59,6 @@ groups_screen As screen:
         X: =37
         Y: =480
         ZIndex: =9
-
-    label_courses_2 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: |-
-            ="Cursussen
-            "
-        Width: =97
-        X: =37
-        Y: =580
-        ZIndex: =10
 
     container_19 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -1108,4 +1088,33 @@ groups_screen As screen:
             X: =541
             Y: =291
             ZIndex: =57
+
+    courseNav As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =58
+
+        courses_icon_2 As image:
+            Height: =45
+            Image: =map_line
+            OnSelect: =Navigate(courses_screen_1)
+            Width: =45
+            X: =63
+            Y: =550
+            ZIndex: =5
+
+        label_courses_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            OnSelect: =Navigate(courses_screen_1)
+            Size: =10
+            Text: |-
+                ="Cursussen
+                "
+            Width: =97
+            X: =37
+            Y: =580
+            ZIndex: =10
 
