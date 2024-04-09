@@ -5,8 +5,14 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "590fece5-6674-4088-b75f-dcf38b6e9042": {
+          "value": "shared_excelonlinebusiness"
+        },
+        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
-          "value": "PowerAppV2 -> Tabellen ophalen"
+          "value": "uploadEmailsIntake"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -14,8 +20,14 @@
         }
       },
       "parameterHintsV2": {
+        "shared_excelonlinebusiness": {
+          "value": "590fece5-6674-4088-b75f-dcf38b6e9042"
+        },
+        "shared_sharepointonline": {
+          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+        },
         "workflowDisplayName": {
-          "value": "PowerAppV2 -> Tabellen ophalen"
+          "value": "uploadEmailsIntake"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -25,10 +37,11 @@
     },
     "datasets": {},
     "dataSources": [
-      "PowerAppV2->Tabellenophalen"
+      "uploadEmailsIntake"
     ],
     "dependencies": {
-      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042"
+      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
+      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
     },
     "dependents": [],
     "id": "015850a6-1a72-4fc9-afd8-feb9f8454911"
@@ -147,7 +160,9 @@
       "tempEmails"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "015850a6-1a72-4fc9-afd8-feb9f8454911"
+    ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
   "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74": {
