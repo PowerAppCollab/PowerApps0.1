@@ -5,6 +5,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -14,6 +17,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+        },
         "workflowDisplayName": {
           "value": "uploadExcelFile"
         },
@@ -83,7 +89,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "62bcbad6-605d-4dec-9d08-21c24d6fe34b"
+      "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
+      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
     ],
     "id": "590fece5-6674-4088-b75f-dcf38b6e9042"
   },
@@ -146,7 +153,10 @@
       "tempEmails"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "173b1c45-66b2-4729-af8f-9b9b24476236",
+      "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
+    ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
   "6f5f7325-45ce-4d10-a5e3-1fa8cf7b1f74": {
@@ -205,53 +215,6 @@
       "42ceb50e-66eb-45c5-8803-9145a48f50e6"
     ],
     "id": "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f"
-  },
-  "c72f50bf-22fc-440e-87e3-fc1305ee3a5d": {
-    "connectionRef": {
-      "displayName": "Logicastroom",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "590fece5-6674-4088-b75f-dcf38b6e9042": {
-          "value": "shared_excelonlinebusiness"
-        },
-        "6ac54a13-0694-4bb3-9bce-dd6bc0da915e": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "uploadEmailsIntake"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "a5d9316c-6ad1-419b-9ec7-32065bf1d565"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_excelonlinebusiness": {
-          "value": "590fece5-6674-4088-b75f-dcf38b6e9042"
-        },
-        "shared_sharepointonline": {
-          "value": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
-        },
-        "workflowDisplayName": {
-          "value": "uploadEmailsIntake"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "a5d9316c-6ad1-419b-9ec7-32065bf1d565"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "uploadEmailsIntake"
-    ],
-    "dependencies": {
-      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
-      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
-    },
-    "dependents": [],
-    "id": "c72f50bf-22fc-440e-87e3-fc1305ee3a5d"
   },
   "fafd6e07-5b30-48ba-b431-8ec50670bc93": {
     "connectionRef": {

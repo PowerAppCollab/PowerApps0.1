@@ -827,8 +827,7 @@ groups_screen As screen:
                 =Filter(
                     studenten_tabel,
                     !IsBlank(groupID)
-                    && course.courseID = gallery_courses_3.Selected.course
-                
+                    && course.name = gallery_courses_3.Selected.course
                 )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
@@ -1144,13 +1143,13 @@ groups_screen As screen:
                     gallery_courses_3.Selected // The record you want to delete
                 );
                 
-                Patch(
-                    studenten_tabel,
-                    Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID),
-                    { groupID:""} 
-                );
+                    Patch(
+                        studenten_tabel,
+                        LookUp(studenten_tabel, course.name = gallery_courses_3.Selected.course),
+                        { groupID: "" }
+                    );
                 
-                Set(varShowAddPopup, false); // Hides the popup after the operations
+                Set(varShowDeleteGroupPopup, false); // Hides the popup after the operations
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
