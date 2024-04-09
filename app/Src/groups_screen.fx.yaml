@@ -83,13 +83,13 @@ groups_screen As screen:
     container_19 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =250
+        Height: =305
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         X: =180
-        Y: =140
+        Y: =150
         ZIndex: =11
 
         "gallery_groups As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -193,6 +193,16 @@ groups_screen As screen:
             Y: =95
             ZIndex: =2
 
+        Button4 As button:
+            Fill: =RGBA(192, 5, 230, 1)
+            Height: =37
+            HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            OnSelect: =Set(varShowCreateGroupPopup, true);
+            Text: ="groep aanmaken"
+            Width: =500
+            Y: =265
+            ZIndex: =3
+
     container_18 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -284,13 +294,13 @@ groups_screen As screen:
     container_23 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
+        Height: =258
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
         X: =180
-        Y: =425
+        Y: =467
         ZIndex: =13
 
         label_chart_error_1 As label:
@@ -375,7 +385,7 @@ groups_screen As screen:
             TemplatePadding: =0
             TemplateSize: =90
             Visible: |
-                =
+                =true
             Width: =600
             ZIndex: =5
 
@@ -982,4 +992,120 @@ groups_screen As screen:
             X: =482
             Y: =332
             ZIndex: =50
+
+    CreateGroupPopup As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =58
+
+        popup_background_9 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =varShowCreateGroupPopup
+            Width: =1366
+            ZIndex: =51
+
+        popup_box_9 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =346
+            Text: =""
+            Visible: =varShowCreateGroupPopup
+            Width: =576
+            X: =461
+            Y: =220
+            ZIndex: =52
+
+        popup_header_9 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =47
+            Size: =18
+            Text: ="Groep aanmaken"
+            Visible: =varShowCreateGroupPopup
+            Width: =577
+            X: =460
+            Y: =220
+            ZIndex: =53
+
+        knop_toevoegen_5 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =46
+            HoverFill: =RGBA(161, 0, 194, 1)
+            OnSelect: |-
+                =Patch(groepens, {groupID: TextInput2.Text,course:addStudentDropDown_2.Selected.name, name:TextInput2.Text});
+                Set(varShowCreateGroupPopup, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Aanmaken"
+            Visible: =varShowCreateGroupPopup
+            Width: =183
+            X: =537
+            Y: =467
+            ZIndex: =54
+
+        knop_annuleer_10 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =47
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(varShowCreateGroupPopup, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            Visible: =varShowCreateGroupPopup
+            Width: =183
+            X: =777
+            Y: =467
+            ZIndex: =55
+
+        addStudentDropDown_2 As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="Actief"
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =58
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: =courses
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: =varShowCreateGroupPopup
+            Width: =423
+            X: =537
+            Y: =374
+            ZIndex: =56
+
+        TextInput2 As text:
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =52
+            HintText: ="group name"
+            Visible: =varShowCreateGroupPopup
+            Width: =419
+            X: =541
+            Y: =291
+            ZIndex: =57
 
