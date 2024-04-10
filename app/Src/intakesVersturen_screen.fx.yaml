@@ -69,6 +69,7 @@ intakesVersturen_screen As screen:
             Text: |-
                 =If(IsBlank(tempEmails), "","U heeft " & CountRows(tempEmails) & " emails geupload.
                 Wilt u allen een intake sturen?")
+            Visible: =!IsEmpty(tempEmails)
             Width: =277
             X: =532
             Y: =32
@@ -95,6 +96,7 @@ intakesVersturen_screen As screen:
             PressedFill: =
             Size: =13
             Text: ="Stuur"
+            Visible: =!IsEmpty(tempEmails)
             Width: =165
             X: =532
             Y: =88
