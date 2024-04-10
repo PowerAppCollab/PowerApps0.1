@@ -19,10 +19,16 @@ students_screen As screen:
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: |-
-                =Filter(
+            Items: |
+                =If(dropdown_archived_students.SelectedText.Value = "Gearchiveerd",
+                Filter(
                     studenten_tabel,
-                    SearchInput1.Text in Voornaam
+                    SearchInput1.Text in Voornaam && Archived = "True"
+                ),
+                Filter(
+                    studenten_tabel,
+                    SearchInput1.Text in Voornaam 
+                )
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
