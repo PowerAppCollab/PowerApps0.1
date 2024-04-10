@@ -19,7 +19,11 @@ students_screen As screen:
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =250
-            Items: =studenten_tabel
+            Items: |-
+                =Filter(
+                    studenten_tabel,
+                    SearchInput1.Text in Voornaam
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
