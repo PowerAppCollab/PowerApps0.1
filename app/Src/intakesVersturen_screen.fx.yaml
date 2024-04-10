@@ -15,76 +15,6 @@ intakesVersturen_screen As screen:
         Y: =400
         ZIndex: =12
 
-        "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-            DelayItemLoading: =true
-            Height: =325
-            Items: =tempEmails
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =0
-            TemplateSize: =90
-            ZIndex: =1
-
-            Title4 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 86
-                X: =16
-                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle4.Size * 1.8)) / 2
-                ZIndex: =1
-
-            Subtitle4 As label:
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Email
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title4.Width
-                X: =Title4.X
-                Y: =Title4.Y + Title4.Height
-                ZIndex: =2
-
-            NextArrow3 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(166, 166, 166, 1)
-                Height: =50
-                Icon: =Icon.ChevronRight
-                OnSelect: =Select(Parent)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Tooltip: ="Details van item weergeven"
-                Width: =50
-                X: =Parent.TemplateWidth - Self.Width - 12
-                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                ZIndex: =3
-
-            Separator3 As rectangle:
-                Height: =8
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =4
-
-            Rectangle3 As rectangle:
-                Height: =Parent.TemplateHeight - Separator3.Height
-                OnSelect: =Select(Parent)
-                Visible: =ThisItem.IsSelected
-                Width: =4
-                ZIndex: =5
-
     container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -216,8 +146,10 @@ intakesVersturen_screen As screen:
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
-                =uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
+                =Set(isLoading, true);
+                uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
                 Refresh(tempEmails);
+                Set(isLoading, false);
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -256,6 +188,45 @@ intakesVersturen_screen As screen:
             Width: =500
             Y: =18
             ZIndex: =1
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =325
+        Items: =tempEmails
+        Width: =1145
+        X: =180
+        Y: =400
+        ZIndex: =33
+
+        Titel_Kolom1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Titel"
+            FieldName: ="Title"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.Titel
+            Width: =100
+            X: =342
+            Y: =0
+            ZIndex: =5
+
+        Email_Kolom1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Email"
+            FieldName: ="Email"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.Email
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
 
     groep_navigatie_4 As group:
         Height: =5
@@ -475,4 +446,28 @@ intakesVersturen_screen As screen:
             X: =45
             Y: =540
             ZIndex: =32
+
+    loadingOn As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =36
+
+        background_loading As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =isLoading
+            Width: =1366
+            ZIndex: =34
+
+        spinner_loading As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =isLoading
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =35
 
