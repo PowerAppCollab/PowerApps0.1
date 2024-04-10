@@ -15,6 +15,76 @@ intakesVersturen_screen As screen:
         Y: =400
         ZIndex: =12
 
+        "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =325
+            Items: =tempEmails
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =90
+            ZIndex: =1
+
+            Title4 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Titel
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle4.Size * 1.8)) / 2
+                ZIndex: =1
+
+            Subtitle4 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Email
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title4.Width
+                X: =Title4.X
+                Y: =Title4.Y + Title4.Height
+                ZIndex: =2
+
+            NextArrow3 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="Details van item weergeven"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+            Separator3 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =4
+
+            Rectangle3 As rectangle:
+                Height: =Parent.TemplateHeight - Separator3.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =5
+
     container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -146,7 +216,8 @@ intakesVersturen_screen As screen:
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
-                =uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name})
+                =uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
+                Refresh(tempEmails);
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -155,6 +226,14 @@ intakesVersturen_screen As screen:
             Width: =161
             Y: =171
             ZIndex: =3
+
+        Icon9 As icon.Download:
+            Icon: =Icon.Download
+            OnSelect: |-
+                =Launch("https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/TemplateEmails.xlsx")
+            X: =40
+            Y: =40
+            ZIndex: =4
 
     container_15 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
