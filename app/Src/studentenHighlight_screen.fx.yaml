@@ -337,7 +337,7 @@ studentenHighlight_screen As screen:
         Width: =420
         X: =180
         Y: =40
-        ZIndex: =21
+        ZIndex: =5
 
         Label4 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -360,7 +360,7 @@ studentenHighlight_screen As screen:
         Width: =75
         X: =620
         Y: =40
-        ZIndex: =22
+        ZIndex: =6
 
         Icon4 As icon.Edit:
             Color: =If(editStudent, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
@@ -389,7 +389,7 @@ studentenHighlight_screen As screen:
         RadiusTopRight: =0
         Visible: =rapportEmailSucces
         Width: =1366
-        ZIndex: =23
+        ZIndex: =7
 
         Label5 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -408,7 +408,25 @@ studentenHighlight_screen As screen:
         Visible: =false
         X: =60
         Y: =60
-        ZIndex: =24
+        ZIndex: =8
+
+    Icon11 As icon.Cancel:
+        Icon: =Icon.Cancel
+        OnSelect: =Set(PDF_Screen_active, false)
+        Visible: =PDF_Screen_active
+        X: =80
+        Y: =80
+        ZIndex: =29
+
+    PdfViewer1 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =PDF_Scores
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =691
+        Width: =504
+        X: =827
+        Y: =40
+        ZIndex: =30
 
     Group2 As group:
         Height: =5
@@ -420,9 +438,8 @@ studentenHighlight_screen As screen:
         popup_background_4 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: |-
-                =//PDF_Screen_active
-                false
+            Visible: |
+                =PDF_Screen_active
             Width: =1366
             ZIndex: =25
 
@@ -433,9 +450,8 @@ studentenHighlight_screen As screen:
             Fill: =RGBA(60, 60, 60, 1)
             Height: =694
             Text: =""
-            Visible: |-
-                =//PDF_Screen_active
-                false
+            Visible: |
+                =PDF_Screen_active
             Width: =1300
             X: =33
             Y: =37
@@ -451,9 +467,8 @@ studentenHighlight_screen As screen:
             PressedFill: =
             Size: =13
             Text: ="Genereer PDF"
-            Visible: |-
-                =//PDF_Screen_active
-                false
+            Visible: |
+                =PDF_Screen_active
             Width: =171
             X: =63
             Y: =195
@@ -470,9 +485,8 @@ studentenHighlight_screen As screen:
             PressedFill: =
             Size: =13
             Text: ="Mail PDF"
-            Visible: |-
-                =//PDF_Screen_active
-                false
+            Visible: |
+                =PDF_Screen_active
             Width: =171
             X: =249
             Y: =196
@@ -492,7 +506,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =29
+            ZIndex: =9
 
         group_icon_7 As image:
             Height: =45
@@ -500,7 +514,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =30
+            ZIndex: =10
 
         presentation_icon_7 As image:
             Height: =45
@@ -508,7 +522,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =31
+            ZIndex: =11
 
         courses_icon_7 As image:
             Height: =45
@@ -516,7 +530,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =32
+            ZIndex: =12
 
         label_students_7 As label:
             Align: =Align.Center
@@ -527,7 +541,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =33
+            ZIndex: =13
 
         label_groups_7 As label:
             Align: =Align.Center
@@ -539,7 +553,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =34
+            ZIndex: =14
 
         label_presentation_7 As label:
             Align: =Align.Center
@@ -551,7 +565,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =35
+            ZIndex: =15
 
         label_courses_7 As label:
             Align: =Align.Center
@@ -563,7 +577,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =36
+            ZIndex: =16
 
         Image2_7 As image:
             Height: =135
@@ -571,7 +585,7 @@ studentenHighlight_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =37
+            ZIndex: =17
 
         intake_icon_11 As image:
             Height: =45
@@ -580,7 +594,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =38
+            ZIndex: =18
 
         label_intake_11 As label:
             Align: =Align.Center
@@ -590,7 +604,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =39
+            ZIndex: =19
 
         knop_nav_intake_3 As button:
             BorderColor: =
@@ -611,7 +625,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =40
+            ZIndex: =20
 
         knop_nav_studenten_3 As button:
             BorderColor: =
@@ -632,7 +646,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =41
+            ZIndex: =21
 
         knop_nav_groepen_3 As button:
             BorderColor: =
@@ -653,7 +667,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =42
+            ZIndex: =22
 
         knop_nav_presentatie_3 As button:
             BorderColor: =
@@ -674,7 +688,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =43
+            ZIndex: =23
 
         knop_nav_cursussen_3 As button:
             BorderColor: =
@@ -695,5 +709,5 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =44
+            ZIndex: =24
 

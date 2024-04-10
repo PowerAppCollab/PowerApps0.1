@@ -4,7 +4,7 @@
     OnVisible: |+
         =Set(tempTimer, false);
         Set(tempTimer, true);
-        Set(Test, PDF(PDFTEMPLATE));
+        Set(PDF_Scores, PDF(PDFTEMPLATE));
         
     Width: =794
 
