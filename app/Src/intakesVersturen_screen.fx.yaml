@@ -1,5 +1,8 @@
 intakesVersturen_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
+    OnHidden: |-
+        =RemoveIf(tempEmails, true);
+        Refresh(tempEmails)
     OnVisible: |-
         =RemoveIf(tempEmails, true);
         Refresh(tempEmails)
@@ -26,6 +29,7 @@ intakesVersturen_screen As screen:
             TemplatePadding: =0
             TemplateSize: =57
             Visible: =!IsBlank(tempEmails)
+            Width: =495
             Y: =8
             ZIndex: =1
 
@@ -59,6 +63,42 @@ intakesVersturen_screen As screen:
                 X: =Title6.X
                 Y: =Title6.Y + Title6.Height
                 ZIndex: =2
+
+        Label10 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Text: |-
+                =If(IsBlank(tempEmails), "","U heeft " & CountRows(tempEmails) & " emails geupload.
+                Wilt u allen een intake sturen?")
+            Width: =277
+            X: =532
+            Y: =32
+            ZIndex: =2
+
+        knop_intakeVerzenden_1 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(192, 5, 230, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |-
+                =ForAll(
+                    tempEmails_gallery.AllItems,
+                    Office365Outlook.SendEmailV2(
+                        Email,
+                        "Onderwerp",
+                        "https://forms.office.com/e/eWQtPEKwSM"
+                    )
+                )
+            PressedFill: =
+            Size: =13
+            Text: ="Stuur"
+            Width: =165
+            X: =532
+            Y: =88
+            ZIndex: =3
 
     container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
