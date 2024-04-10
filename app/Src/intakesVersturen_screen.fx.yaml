@@ -147,9 +147,11 @@ intakesVersturen_screen As screen:
             Items: =
             OnAddFile: |-
                 =Set(isLoading, true);
-                uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
+                RemoveIf(tempEmails, true);
+                Set(flowdone, uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}));
+                Set(isLoading, !flowdone);
                 Refresh(tempEmails);
-                Set(isLoading, false);
+                Reset(Self)
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
