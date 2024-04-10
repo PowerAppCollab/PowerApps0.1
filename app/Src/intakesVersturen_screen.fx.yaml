@@ -142,7 +142,9 @@ intakesVersturen_screen As screen:
 
         AttachControl_1 As attachments:
             BorderColor: =Color.Black
-            Height: =154
+            BorderStyle: =BorderStyle.None
+            DropTargetBorderStyle: =BorderStyle.None
+            Height: =148
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
@@ -157,17 +159,10 @@ intakesVersturen_screen As screen:
             PaddingRight: =5
             PaddingTop: =5
             Tooltip: =
-            Width: =161
-            Y: =171
+            Width: =134
+            X: =12
+            Y: =177
             ZIndex: =3
-
-        Icon9 As icon.Download:
-            Icon: =Icon.Download
-            OnSelect: |-
-                =Launch("https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/TemplateEmails.xlsx")
-            X: =40
-            Y: =40
-            ZIndex: =4
 
     container_15 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
