@@ -4138,6 +4138,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.PDF_Screen_active"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.PDF_Screen_active",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "PDF_Screen_active",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg"
                 }
               ],
