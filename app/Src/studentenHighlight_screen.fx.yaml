@@ -429,7 +429,7 @@ studentenHighlight_screen As screen:
         Height: =691
         Visible: =PDF_Screen_active
         Width: =504
-        X: =827
+        X: =831
         Y: =40
         ZIndex: =30
 
@@ -486,7 +486,7 @@ studentenHighlight_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |+
-                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & ".pdf", ContentBytes:Test })})
+                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = currSelectedStudent).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & ".pdf", ContentBytes:PDF_Scores })})
                 
             PressedFill: =
             Size: =13

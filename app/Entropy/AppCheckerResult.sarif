@@ -4198,6 +4198,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.Test"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Test",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Test",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg"
                 }
               ],

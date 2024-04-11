@@ -60,7 +60,7 @@
         ZIndex: =9
 
     Timer1 As timer:
-        Duration: =100
+        Duration: =1000
         OnTimerEnd: =Navigate(studentenHighlight_screen)
         Start: =tempTimer
         Visible: =false
@@ -113,7 +113,7 @@
 
         Subtitle3 As label:
             FontWeight: =FontWeight.Lighter
-            Height: =Self.Size * 1.8
+            Height: =23
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -121,7 +121,7 @@
             PaddingTop: =0
             Text: =ThisItem.Examen
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title3.Width
+            Width: =331
             X: =85
             Y: =17
             ZIndex: =3
