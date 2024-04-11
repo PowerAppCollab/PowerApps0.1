@@ -32,6 +32,8 @@ students_screen As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: |-
+                =Collect(tempScores, {score1: Filter(scores, studentID = gallery_students.Selected.studentID) })
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
@@ -347,11 +349,7 @@ students_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Height: =300
-            Items: |-
-                =ClearCollect( IceCream, { Flavor: "Chocolate", Quantity: 100 }, { Flavor: "Vanilla", Quantity: 200 } );
-                
-                
-                Filter(scores, studentID = gallery_students.Selected.studentID)
+            Items: =Filter(scores, studentID = gallery_students.Selected.studentID)
             NumberOfSeries: =0
             Visible: |-
                 =If(
