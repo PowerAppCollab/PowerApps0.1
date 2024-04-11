@@ -201,7 +201,7 @@ students_screen As screen:
                 Color: =RGBA(192, 5, 230, 1)
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.score
-                Width: =36
+                Width: =50
                 X: =15
                 ZIndex: =4
 
@@ -232,7 +232,7 @@ students_screen As screen:
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Examen
                 Width: =368
-                X: =51
+                X: =61
                 ZIndex: =7
 
         label_scoreTitle_error As label:
