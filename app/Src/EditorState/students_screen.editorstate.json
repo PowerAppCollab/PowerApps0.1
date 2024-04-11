@@ -19451,6 +19451,14 @@
           "InvariantPropertyName": "Visible",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "ShowValues",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -19469,7 +19477,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Labels\":\"cr884_examen\",\"Series1\":\"importsequencenumber\",\"Series2\":\"timezoneruleversionnumber\",\"Series3\":\"utcconversiontimezonecode\",\"Series4\":\"versionnumber\",\"Series5\":\"versionnumber\",\"Series6\":\"versionnumber\",\"Series7\":\"versionnumber\",\"Series8\":\"versionnumber\",\"Series9\":\"versionnumber\"}",
+          "NameMap": "{\"Labels\":\"score\",\"Series1\":\"score\",\"Series2\":\"score\",\"Series3\":\"score\",\"Series4\":\"score\",\"Series5\":\"score\",\"Series6\":\"score\",\"Series7\":\"score\",\"Series8\":\"score\",\"Series9\":\"score\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -19481,7 +19489,7 @@
         {
           "Category": "Design",
           "PropertyName": "GridStyle",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -19561,7 +19569,7 @@
         {
           "Category": "Design",
           "PropertyName": "NumberOfSeries",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -19591,6 +19599,11 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ShowValues",
           "RuleProviderType": "User"
         }
       ],

@@ -32,8 +32,20 @@ students_screen As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            OnSelect: |-
-                =Collect(tempScores, {score1: Filter(scores, studentID = gallery_students.Selected.studentID) })
+            OnSelect: |
+                =ClearCollect(
+                    tempScores,
+                    ForAll(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        ),
+                        {
+                            score: score,
+                            Examen: Examen
+                        }
+                    )
+                )
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
@@ -349,8 +361,11 @@ students_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Height: =300
-            Items: =Filter(scores, studentID = gallery_students.Selected.studentID)
+            Items: |-
+                =//Filter(scores; studentID = gallery_students.Selected.studentID)
+                tempScores
             NumberOfSeries: =0
+            ShowValues: =
             Visible: |-
                 =If(
                     IsEmpty(
