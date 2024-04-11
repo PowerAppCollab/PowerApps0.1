@@ -755,6 +755,12 @@ intakes_screen As screen:
             DataSource: =intakes
             Height: =113
             Item: =gallery_intakes.Selected
+            Visible: |-
+                =If(
+                    IsBlank(gallery_intakes.Selected.Voornaam),
+                    false,
+                    true
+                )
             Width: =258
             Y: =212
             ZIndex: =7
@@ -769,6 +775,7 @@ intakes_screen As screen:
                 Height: =99
                 Required: =false
                 Update: =intake_dropdownStatus.Selected.Value
+                Visible: =true
                 Width: =258
                 X: =0
                 Y: =0

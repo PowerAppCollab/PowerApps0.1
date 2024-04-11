@@ -985,9 +985,9 @@ groups_screen As screen:
             Y: =250
             ZIndex: =49
 
-        group_icon_9 As image:
+        group_icon_8 As image:
             Height: =45
-            Image: =grid_line
+            Image: ='grid_line (1)'
             Width: =45
             X: =63
             Y: =350
@@ -1020,9 +1020,9 @@ groups_screen As screen:
             Y: =280
             ZIndex: =53
 
-        label_groups_9 As label:
+        label_groups_8 As label:
             Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(192, 5, 230, 1)
             Size: =10
             Text: |-
                 ="Groepen
@@ -1064,18 +1064,18 @@ groups_screen As screen:
             Y: =20
             ZIndex: =57
 
-        intake_icon_14 As image:
+        intake_icon_12 As image:
             Height: =45
-            Image: ='invite_line (2)'
+            Image: ='invite_line (1)'
             OnSelect: =
             Width: =45
             X: =63
             Y: =150
             ZIndex: =58
 
-        label_intake_14 As label:
+        label_intake_12 As label:
             Align: =Align.Center
-            Color: =RGBA(192, 5, 230, 1)
+            Color: =RGBA(255, 255, 255, 1)
             Size: =10
             Text: ="Intakes"
             Width: =80

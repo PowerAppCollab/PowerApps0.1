@@ -371,9 +371,14 @@ studentenHighlight_screen As screen:
             HoverFill: =RGBA(0, 0, 0, 0)
             Icon: =Icon.Edit
             OnSelect: |-
-                =Set(editStudent,false);
-                If(editStudent,
-                    Patch(studenten_tabel, LookUp(studentID = currSelectedStudent), {Naam: "test"};
+                =If(
+                    editStudent,
+                    Patch(
+                        studenten_tabel,
+                        LookUp(studentID = currSelectedStudent),
+                        { Naam: "test" }
+                    )
+                );
                 
                 Set(editStudent, !editStudent)
             Width: =35
@@ -503,7 +508,7 @@ studentenHighlight_screen As screen:
         Width: =5
         X: =60
         Y: =60
-        ZIndex: =45
+        ZIndex: =47
 
         student_icon_7 As image:
             Height: =45
@@ -512,7 +517,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =9
+            ZIndex: =31
 
         group_icon_7 As image:
             Height: =45
@@ -520,7 +525,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =10
+            ZIndex: =32
 
         presentation_icon_7 As image:
             Height: =45
@@ -528,7 +533,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =11
+            ZIndex: =33
 
         courses_icon_7 As image:
             Height: =45
@@ -536,7 +541,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =12
+            ZIndex: =34
 
         label_students_7 As label:
             Align: =Align.Center
@@ -547,7 +552,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =13
+            ZIndex: =35
 
         label_groups_7 As label:
             Align: =Align.Center
@@ -559,7 +564,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =14
+            ZIndex: =36
 
         label_presentation_7 As label:
             Align: =Align.Center
@@ -571,7 +576,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =15
+            ZIndex: =37
 
         label_courses_7 As label:
             Align: =Align.Center
@@ -583,7 +588,7 @@ studentenHighlight_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =16
+            ZIndex: =38
 
         Image2_7 As image:
             Height: =135
@@ -591,7 +596,7 @@ studentenHighlight_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =17
+            ZIndex: =39
 
         intake_icon_11 As image:
             Height: =45
@@ -600,7 +605,7 @@ studentenHighlight_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =18
+            ZIndex: =40
 
         label_intake_11 As label:
             Align: =Align.Center
@@ -610,7 +615,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =19
+            ZIndex: =41
 
         knop_nav_intake_3 As button:
             BorderColor: =
@@ -631,7 +636,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =20
+            ZIndex: =42
 
         knop_nav_studenten_3 As button:
             BorderColor: =
@@ -652,7 +657,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =21
+            ZIndex: =43
 
         knop_nav_groepen_3 As button:
             BorderColor: =
@@ -673,7 +678,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =22
+            ZIndex: =44
 
         knop_nav_presentatie_3 As button:
             BorderColor: =
@@ -694,7 +699,7 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =23
+            ZIndex: =45
 
         knop_nav_cursussen_3 As button:
             BorderColor: =
@@ -715,5 +720,5 @@ studentenHighlight_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =24
+            ZIndex: =46
 
