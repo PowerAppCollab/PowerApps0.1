@@ -1,0 +1,102 @@
+"PDFTEMPLATE_PARTICIPATION As screen.'printableLayout_A4Portrait_ver1.0'":
+    Fill: =RGBA(255, 255, 255, 1)
+    Height: =1123
+    OnVisible: |+
+        =Set(tempTimer, false);
+        Set(tempTimer, true);
+        Set(PDF_Scores, PDF(PDFTEMPLATE_PARTICIPATION));
+        
+    Width: =794
+
+    Label12_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =43
+        Size: =26
+        Text: ="Bewijs van Deelname"
+        Width: =794
+        Y: =224
+        ZIndex: =2
+
+    Rectangle4_2 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =247
+        Y: =272
+        ZIndex: =3
+
+    Label13_1 As label:
+        Size: =16
+        Text: ="GradeMatch verklaart dat " 
+        Width: =304
+        X: =72
+        Y: =411
+        ZIndex: =4
+
+    Rectangle4_3 As rectangle:
+        Fill: =RGBA(192, 5, 230, 1)
+        Height: =1
+        Width: =300
+        X: =414
+        Y: =927
+        ZIndex: =8
+
+    Image5_1 As image:
+        Height: =262
+        Image: ='Logo-Wit RGB (1) kopie'
+        Width: =336
+        X: =229
+        Y: =19
+        ZIndex: =9
+
+    Timer1_1 As timer:
+        Duration: =10
+        OnTimerEnd: =Navigate(studentenHighlight_screen)
+        Start: =tempTimer
+        Visible: =false
+        Y: =84
+        ZIndex: =10
+
+    Label13_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =22
+        Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & " " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+        Width: =304
+        X: =72
+        Y: =451
+        ZIndex: =11
+
+    Label13_5 As label:
+        Size: =16
+        Text: ="heeft deelgenomen aan" 
+        Width: =304
+        X: =72
+        Y: =543
+        ZIndex: =12
+
+    Label13_7 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =22
+        Text: ="COURSE"
+        Width: =304
+        X: =72
+        Y: =583
+        ZIndex: =13
+
+    Label13_8 As label:
+        Size: =16
+        Text: ="Bedankt voor uw deelname." 
+        Width: =304
+        X: =414
+        Y: =887
+        ZIndex: =14
+
+    Label13_9 As label:
+        Size: =16
+        Text: ="HANDTEKENING / NAAM GRADEMATCH"
+        Width: =304
+        X: =410
+        Y: =943
+        ZIndex: =15
+
