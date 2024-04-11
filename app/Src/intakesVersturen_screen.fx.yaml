@@ -227,11 +227,21 @@ intakesVersturen_screen As screen:
             Y: =10
             ZIndex: =1
 
+        Icon9 As icon.Download:
+            Icon: =Icon.Download
+            X: =40
+            Y: =243
+            ZIndex: =2
+
         AttachControl_1 As attachments:
             BorderColor: =Color.Black
             BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
             DropTargetBorderStyle: =BorderStyle.None
-            Height: =148
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
             IsInDataCard: =true
             Items: =
             OnAddFile: |-
@@ -246,9 +256,9 @@ intakesVersturen_screen As screen:
             PaddingRight: =5
             PaddingTop: =5
             Tooltip: =
-            Width: =134
-            X: =12
-            Y: =177
+            Width: =90
+            X: =27
+            Y: =225
             ZIndex: =3
 
     container_15 As groupContainer.manualLayoutContainer:
