@@ -125,7 +125,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =195
-        ZIndex: =13
+        ZIndex: =3
 
         label_studentInformation_error_notSelected_2 As label:
             Align: =Align.Center
@@ -239,7 +239,7 @@ courses_screen_1 As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =15
+        ZIndex: =4
 
         SearchInput1_2 As text:
             BorderStyle: =BorderStyle.None
@@ -280,7 +280,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =16
+        ZIndex: =5
 
         intake_icon_13 As image:
             Height: =60
@@ -398,7 +398,7 @@ courses_screen_1 As screen:
         Width: =600
         X: =725
         Y: =40
-        ZIndex: =17
+        ZIndex: =6
 
         label_scoreTitle_4 As label:
             Align: =Align.Center
@@ -465,7 +465,7 @@ courses_screen_1 As screen:
             Height: =768
             Visible: =varShowCreateCoursePopup
             Width: =1366
-            ZIndex: =30
+            ZIndex: =36
 
         popup_box_12 As button:
             AutoDisableOnSelect: =false
@@ -476,9 +476,9 @@ courses_screen_1 As screen:
             Text: =""
             Visible: =varShowCreateCoursePopup
             Width: =576
-            X: =461
+            X: =396
             Y: =220
-            ZIndex: =31
+            ZIndex: =37
 
         popup_header_10 As label:
             Align: =Align.Center
@@ -486,12 +486,12 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =47
             Size: =18
-            Text: ="Groep aanmaken"
+            Text: ="Cursus aanmaken"
             Visible: =varShowCreateCoursePopup
             Width: =577
-            X: =460
+            X: =395
             Y: =220
-            ZIndex: =32
+            ZIndex: =38
 
         knop_toevoegen_6 As button:
             BorderStyle: =BorderStyle.None
@@ -511,9 +511,9 @@ courses_screen_1 As screen:
             Text: ="Aanmaken"
             Visible: =varShowCreateCoursePopup
             Width: =183
-            X: =537
+            X: =712
             Y: =467
-            ZIndex: =33
+            ZIndex: =39
 
         knop_annuleer_11 As button:
             BorderStyle: =BorderStyle.None
@@ -532,23 +532,27 @@ courses_screen_1 As screen:
             Text: ="Annuleer"
             Visible: =varShowCreateCoursePopup
             Width: =183
-            X: =777
+            X: =476
             Y: =467
-            ZIndex: =34
+            ZIndex: =40
 
         TextInput2_1 As text:
             BorderColor: =RGBA(45, 45, 45, 1)
+            BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
             Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(45, 45, 45, 1)
             Height: =52
-            HintText: ="course name"
+            HintText: ="Naam cursus"
             HoverBorderColor: =RGBA(45, 45, 45, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
             Visible: =varShowCreateCoursePopup
             Width: =419
-            X: =541
+            X: =476
             Y: =332
-            ZIndex: =36
+            ZIndex: =41
 
     deleteCoursePopup As group:
         Height: =5
@@ -565,7 +569,7 @@ courses_screen_1 As screen:
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =37
+            ZIndex: =13
 
     RemoveGroupPopup As group:
         Height: =5
@@ -579,7 +583,7 @@ courses_screen_1 As screen:
             Height: =768
             Visible: =varShowDeleteCoursePopup
             Width: =1366
-            ZIndex: =38
+            ZIndex: =14
 
         popup_box_13 As button:
             AutoDisableOnSelect: =false
@@ -592,7 +596,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =431
             Y: =255
-            ZIndex: =39
+            ZIndex: =15
 
         popup_header_11 As label:
             Align: =Align.Center
@@ -605,7 +609,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =430
             Y: =261
-            ZIndex: =40
+            ZIndex: =16
 
         knop_toevoegen_7 As button:
             BorderStyle: =BorderStyle.None
@@ -653,7 +657,7 @@ courses_screen_1 As screen:
             Visible: =varShowDeleteCoursePopup
             X: =487
             Y: =415
-            ZIndex: =41
+            ZIndex: =17
 
         knop_annuleer_12 As button:
             BorderStyle: =BorderStyle.None
@@ -672,7 +676,7 @@ courses_screen_1 As screen:
             Visible: =varShowDeleteCoursePopup
             X: =727
             Y: =415
-            ZIndex: =42
+            ZIndex: =18
 
         Label9_1 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -682,7 +686,7 @@ courses_screen_1 As screen:
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =43
+            ZIndex: =19
 
     addStudentsPopUp_1 As group:
         Height: =5
@@ -696,7 +700,7 @@ courses_screen_1 As screen:
             Height: =768
             Visible: =varShowAddPopup
             Width: =1366
-            ZIndex: =24
+            ZIndex: =7
 
         popup_box_11 As button:
             AutoDisableOnSelect: =false
@@ -709,7 +713,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =430
             Y: =270
-            ZIndex: =25
+            ZIndex: =8
 
         popup_header_7 As label:
             Align: =Align.Center
@@ -722,7 +726,7 @@ courses_screen_1 As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =26
+            ZIndex: =9
 
         knop_toevoegen_3 As button:
             BorderStyle: =BorderStyle.None
@@ -747,7 +751,7 @@ courses_screen_1 As screen:
             Visible: =varShowAddPopup
             X: =486
             Y: =455
-            ZIndex: =27
+            ZIndex: =10
 
         knop_annuleer_8 As button:
             BorderStyle: =BorderStyle.None
@@ -766,7 +770,7 @@ courses_screen_1 As screen:
             Visible: =varShowAddPopup
             X: =726
             Y: =455
-            ZIndex: =28
+            ZIndex: =11
 
         addStudentDropDown_1 As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -791,7 +795,7 @@ courses_screen_1 As screen:
             Width: =400
             X: =482
             Y: =332
-            ZIndex: =29
+            ZIndex: =12
 
     groep_navigatie_5 As group:
         Height: =5
@@ -807,7 +811,7 @@ courses_screen_1 As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =44
+            ZIndex: =20
 
         group_icon_9 As image:
             Height: =45
@@ -815,7 +819,7 @@ courses_screen_1 As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =45
+            ZIndex: =21
 
         presentation_icon_8 As image:
             Height: =45
@@ -823,7 +827,7 @@ courses_screen_1 As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =46
+            ZIndex: =22
 
         courses_icon_8 As image:
             Height: =45
@@ -831,7 +835,7 @@ courses_screen_1 As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =47
+            ZIndex: =23
 
         label_students_8 As label:
             Align: =Align.Center
@@ -842,7 +846,7 @@ courses_screen_1 As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =48
+            ZIndex: =24
 
         label_groups_9 As label:
             Align: =Align.Center
@@ -854,7 +858,7 @@ courses_screen_1 As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =49
+            ZIndex: =25
 
         label_presentation_8 As label:
             Align: =Align.Center
@@ -866,7 +870,7 @@ courses_screen_1 As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =50
+            ZIndex: =26
 
         label_courses_8 As label:
             Align: =Align.Center
@@ -878,7 +882,7 @@ courses_screen_1 As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =51
+            ZIndex: =27
 
         Image2_8 As image:
             Height: =135
@@ -886,7 +890,7 @@ courses_screen_1 As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =52
+            ZIndex: =28
 
         intake_icon_14 As image:
             Height: =45
@@ -895,7 +899,7 @@ courses_screen_1 As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =53
+            ZIndex: =29
 
         label_intake_14 As label:
             Align: =Align.Center
@@ -905,7 +909,7 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =54
+            ZIndex: =30
 
         knop_nav_intake_5 As button:
             BorderColor: =
@@ -926,7 +930,7 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =55
+            ZIndex: =31
 
         knop_nav_studenten_5 As button:
             BorderColor: =
@@ -947,7 +951,7 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =56
+            ZIndex: =32
 
         knop_nav_groepen_5 As button:
             BorderColor: =
@@ -968,7 +972,7 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =57
+            ZIndex: =33
 
         knop_nav_presentatie_5 As button:
             BorderColor: =
@@ -989,7 +993,7 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =58
+            ZIndex: =34
 
         knop_nav_cursussen_5 As button:
             BorderColor: =
@@ -1010,5 +1014,5 @@ courses_screen_1 As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =59
+            ZIndex: =35
 
