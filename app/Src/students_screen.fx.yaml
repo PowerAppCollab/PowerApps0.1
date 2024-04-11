@@ -27,7 +27,7 @@ students_screen As screen:
                 ),
                 Filter(
                     studenten_tabel,
-                    SearchInput1.Text in Voornaam 
+                    SearchInput1.Text in Voornaam && Archived <> "True"
                 )
                 )
             Layout: =Layout.Vertical
