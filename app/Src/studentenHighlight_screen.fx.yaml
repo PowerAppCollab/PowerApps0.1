@@ -286,11 +286,62 @@ studentenHighlight_screen As screen:
         Y: =415
         ZIndex: =3
 
-        Label8 As label:
-            Text: ="GRAFIEK met opties"
-            X: =40
-            Y: =40
+        LineChart1_1 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =325
+            Items: |-
+                =ForAll(
+                        Filter(
+                            scores,
+                            studentID = currSelectedStudent
+                        ),
+                        {
+                            score: score,
+                            Examen: Examen
+                        }
+                    )
+            NumberOfSeries: =0
+            ShowValues: =
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =515
+            XLabelAngle: =55
+            YAxisMax: =100
+            YAxisMin: =0
             ZIndex: =1
+
+        label_chart_error_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er is geen grafiek beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = currSelectedStudent
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            X: =7
+            Y: =125
+            ZIndex: =2
 
     container_29 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
