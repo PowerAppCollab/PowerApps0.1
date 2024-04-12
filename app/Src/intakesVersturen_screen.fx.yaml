@@ -228,9 +228,12 @@ intakesVersturen_screen As screen:
             ZIndex: =1
 
         Icon9 As icon.Download:
+            Color: =RGBA(255, 255, 255, 1)
             Icon: =Icon.Download
+            OnSelect: |
+                =Download("https://https://veynex.sharepoint.com/_layouts/download.aspx?SourceUrl=/sites/TESTGradematchPowerApps/Documents/IntakeEmails.xlsx")
             X: =40
-            Y: =243
+            Y: =83
             ZIndex: =2
 
         AttachControl_1 As attachments:

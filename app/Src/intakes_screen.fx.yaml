@@ -788,6 +788,7 @@ intakes_screen As screen:
                     ChevronHoverBackground: =
                     Color: =RGBA(255, 255, 255, 1)
                     DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
                     DisplayMode: =Parent.DisplayMode
                     Fill: =RGBA(192, 5, 230, 1)
                     HoverBorderColor: =
@@ -804,6 +805,8 @@ intakes_screen As screen:
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     PressedColor: =RGBA(0, 0, 0, 1)
                     PressedFill: =RGBA(255, 255, 255, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
                     SelectionFill: =RGBA(192, 5, 230, 0.8)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
