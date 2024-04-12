@@ -4,7 +4,8 @@ intakesVersturen_screen As screen:
         =RemoveIf(tempEmails, true);
         Refresh(tempEmails)
     OnVisible: |-
-        =RemoveIf(tempEmails, true);
+        =Set(intakeMailsSend, false);
+        RemoveIf(tempEmails, true);
         Refresh(tempEmails)
 
     container_21 As groupContainer.manualLayoutContainer:
@@ -18,7 +19,7 @@ intakesVersturen_screen As screen:
         Width: =1150
         X: =180
         Y: =400
-        ZIndex: =12
+        ZIndex: =1
 
         "tempEmails_gallery As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
             DelayItemLoading: =true
@@ -66,6 +67,7 @@ intakesVersturen_screen As screen:
 
         Label10 As label:
             Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
             Text: |-
                 =If(IsBlank(tempEmails), "","U heeft " & CountRows(tempEmails) & " emails geupload.
                 Wilt u allen een intake sturen?")
@@ -84,7 +86,7 @@ intakesVersturen_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =35
             HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: |-
+            OnSelect: |
                 =ForAll(
                     tempEmails_gallery.AllItems,
                     Office365Outlook.SendEmailV2(
@@ -92,7 +94,10 @@ intakesVersturen_screen As screen:
                         "Onderwerp",
                         "https://forms.office.com/e/eWQtPEKwSM"
                     )
-                )
+                );
+                RemoveIf(tempEmails, true);
+                Refresh(tempEmails);
+                Set(intakeMailsSend, true)
             PressedFill: =
             Size: =13
             Text: ="Stuur"
@@ -101,6 +106,18 @@ intakesVersturen_screen As screen:
             X: =532
             Y: =88
             ZIndex: =3
+
+        Label11_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =34
+            Text: ="De mails zijn succesvol verzonden!"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =intakeMailsSend
+            Width: =282
+            X: =434
+            Y: =146
+            ZIndex: =4
 
     container_14 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -112,7 +129,7 @@ intakesVersturen_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =14
+        ZIndex: =2
 
         Label1 As label:
             Align: =Align.Center
@@ -214,7 +231,7 @@ intakesVersturen_screen As screen:
         Width: =625
         X: =700
         Y: =40
-        ZIndex: =15
+        ZIndex: =3
 
         Label1_2 As label:
             Align: =Align.Center
@@ -227,22 +244,64 @@ intakesVersturen_screen As screen:
             Y: =10
             ZIndex: =1
 
-        Icon9 As icon.Download:
+        Label11 As label:
             Color: =RGBA(255, 255, 255, 1)
-            Icon: =Icon.Download
-            OnSelect: |
-                =Download("https://https://veynex.sharepoint.com/_layouts/download.aspx?SourceUrl=/sites/TESTGradematchPowerApps/Documents/IntakeEmails.xlsx")
-            X: =40
-            Y: =83
+            FontWeight: =FontWeight.Lighter
+            Height: =64
+            Text: ="Als u meerdere intakes wilt versturen moet u deze tabel downloaden, invullen en uploaden"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =590
+            X: =18
+            Y: =60
             ZIndex: =2
+
+        downloadTemplate_text As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =34
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =
+            OnSelect: |
+                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+            Text: ="Download template"
+            Underline: =true
+            VerticalAlign: =VerticalAlign.Top
+            Width: =177
+            X: =18
+            Y: =139
+            ZIndex: =3
+
+        downloadTemplate_button As button:
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =25
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: |
+                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+            PressedColor: =
+            PressedFill: =
+            Text: ="Knop"
+            X: =18
+            Y: =143
+            ZIndex: =4
+
+        Icon9 As icon.Publish:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Publish
+            X: =33
+            Y: =236
+            ZIndex: =5
 
         AttachControl_1 As attachments:
             BorderColor: =Color.Black
             BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
+            Height: =215
             HoverColor: =RGBA(0, 0, 0, 0)
             HoverFill: =RGBA(0, 0, 0, 0)
             IsInDataCard: =true
@@ -258,11 +317,12 @@ intakesVersturen_screen As screen:
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
             PaddingTop: =5
+            Size: =30
             Tooltip: =
-            Width: =90
+            Width: =80
             X: =27
-            Y: =225
-            ZIndex: =3
+            Y: =110
+            ZIndex: =6
 
     container_15 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -274,7 +334,7 @@ intakesVersturen_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =16
+        ZIndex: =4
 
         Label1_1 As label:
             Align: =Align.Center
@@ -299,7 +359,7 @@ intakesVersturen_screen As screen:
             Height: =768
             Visible: =isLoading
             Width: =1366
-            ZIndex: =34
+            ZIndex: =21
 
         spinner_loading As image:
             Height: =175
@@ -308,7 +368,7 @@ intakesVersturen_screen As screen:
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =35
+            ZIndex: =22
 
     groep_navigatie_4 As group:
         Height: =5
@@ -324,7 +384,7 @@ intakesVersturen_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =36
+            ZIndex: =5
 
         group_icon_4 As image:
             Height: =45
@@ -332,7 +392,7 @@ intakesVersturen_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =37
+            ZIndex: =6
 
         presentation_icon_4 As image:
             Height: =45
@@ -340,7 +400,7 @@ intakesVersturen_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =38
+            ZIndex: =7
 
         courses_icon_4 As image:
             Height: =45
@@ -348,7 +408,7 @@ intakesVersturen_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =39
+            ZIndex: =8
 
         label_students_4 As label:
             Align: =Align.Center
@@ -359,7 +419,7 @@ intakesVersturen_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =40
+            ZIndex: =9
 
         label_groups_4 As label:
             Align: =Align.Center
@@ -371,7 +431,7 @@ intakesVersturen_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =41
+            ZIndex: =10
 
         label_presentation_4 As label:
             Align: =Align.Center
@@ -383,7 +443,7 @@ intakesVersturen_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =42
+            ZIndex: =11
 
         label_courses_4 As label:
             Align: =Align.Center
@@ -395,7 +455,7 @@ intakesVersturen_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =43
+            ZIndex: =12
 
         Image2_4 As image:
             Height: =135
@@ -403,7 +463,7 @@ intakesVersturen_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =44
+            ZIndex: =13
 
         intake_icon_7 As image:
             Height: =45
@@ -412,7 +472,7 @@ intakesVersturen_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =45
+            ZIndex: =14
 
         label_intake_7 As label:
             Align: =Align.Center
@@ -422,7 +482,7 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =46
+            ZIndex: =15
 
         knop_nav_intake_4 As button:
             BorderColor: =
@@ -443,7 +503,7 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =47
+            ZIndex: =16
 
         knop_nav_studenten_4 As button:
             BorderColor: =
@@ -464,7 +524,7 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =48
+            ZIndex: =17
 
         knop_nav_groepen_4 As button:
             BorderColor: =
@@ -485,7 +545,7 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =49
+            ZIndex: =18
 
         knop_nav_presentatie_4 As button:
             BorderColor: =
@@ -506,7 +566,7 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =50
+            ZIndex: =19
 
         knop_nav_cursussen_4 As button:
             BorderColor: =
@@ -527,5 +587,5 @@ intakesVersturen_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =51
+            ZIndex: =20
 
