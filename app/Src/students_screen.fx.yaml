@@ -4,6 +4,53 @@ students_screen As screen:
         =Refresh(studenten_tabel);
         Set(scoresToevoegen, false);
 
+    Icon10 As icon.Import:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =35
+        Icon: =Icon.Import
+        Rotation: |
+            =90
+        Width: =35
+        X: =65
+        Y: =690
+        ZIndex: =1
+
+    AttachControl_2 As attachments:
+        BorderColor: =Color.Black
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 0, 0, 0)
+        DropTargetBorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =210
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        IsInDataCard: =true
+        Items: =
+        OnAddFile: |
+            =Set(isLoading, true);
+            Set(scoreUploadFlowDone, uploadScoreFiles.Run(
+                {
+                    contentBytes: Last(Self.Attachments).Value,
+                    name: Last(Self.Attachments).Name
+                }
+            ));
+            Reset(Self);
+            Set(isLoading, false);
+            Refresh(scores);
+            
+            //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
+            //Set(isLoading; !scoreUploadFlowDone);;
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =30
+        Tooltip: =
+        Width: =84
+        X: =41
+        Y: =540
+        ZIndex: =2
+
     container_5 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -14,7 +61,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =11
+        ZIndex: =3
 
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -82,9 +129,10 @@ students_screen As screen:
             gallery_students_emailText As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
+                Height: =33
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Email
-                Width: =270
+                Width: =470
                 X: =16
                 Y: =37
                 ZIndex: =3
@@ -135,7 +183,7 @@ students_screen As screen:
         Width: =600
         X: =726
         Y: =40
-        ZIndex: =12
+        ZIndex: =4
 
         label_scoreTitle As label:
             Align: =Align.Center
@@ -150,7 +198,7 @@ students_screen As screen:
         "gallery_score As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =150
-            Items: =Filter(scores, studentID = gallery_students.Selected.studentID)
+            Items: =Filter(scores, studentID = gallery_students.Selected.Email)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -232,7 +280,7 @@ students_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ) && !scoresToevoegen,
                     true,
@@ -255,41 +303,6 @@ students_screen As screen:
             X: =548
             Y: =10
             ZIndex: =4
-
-        AttachControl_2 As attachments:
-            BorderColor: =Color.Black
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 13, 75, 1)
-            DropTargetBorderStyle: =BorderStyle.None
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =200
-            HoverColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            IsInDataCard: =true
-            Items: =
-            OnAddFile: |
-                =Set(isLoading, true);
-                Set(scoreUploadFlowDone, uploadScoreFiles.Run(
-                    {
-                        contentBytes: Last(Self.Attachments).Value,
-                        name: Last(Self.Attachments).Name
-                    }
-                ));
-                Reset(Self);
-                Set(isLoading, false);
-                Refresh(scores);
-                
-                //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
-                //Set(isLoading; !scoreUploadFlowDone);;
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            Size: =30
-            Tooltip: =
-            Width: =84
-            X: =40
-            ZIndex: =8
 
         groep_score_toevoegen As group:
             Height: =5
@@ -351,7 +364,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.studentID, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -375,7 +388,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =425
-        ZIndex: =13
+        ZIndex: =5
 
         LineChart1 As lineChart:
             BorderStyle: =BorderStyle.None
@@ -386,7 +399,7 @@ students_screen As screen:
                 =ForAll(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         ),
                         {
                             score: score,
@@ -423,7 +436,7 @@ students_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ),
                     true,
@@ -444,7 +457,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =270
-        ZIndex: =14
+        ZIndex: =6
 
         label_studentInformation As label:
             Align: =Align.Center
@@ -526,6 +539,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =34
+                    PaddingLeft: =0
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -566,6 +580,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =34
+                    PaddingLeft: =0
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -606,6 +621,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =34
+                    PaddingLeft: =0
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -646,6 +662,7 @@ students_screen As screen:
                     AutoHeight: =true
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =34
+                    PaddingLeft: =0
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -678,7 +695,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =16
+        ZIndex: =7
 
         SearchInput1 As text:
             BorderStyle: =BorderStyle.None
@@ -738,7 +755,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =17
+        ZIndex: =8
 
         intake_icon_3 As image:
             Height: =60
@@ -867,7 +884,7 @@ students_screen As screen:
             Height: =768
             Visible: =varShowPopup
             Width: =1366
-            ZIndex: =18
+            ZIndex: =9
 
         popup_box As button:
             AutoDisableOnSelect: =false
@@ -880,7 +897,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =19
+            ZIndex: =10
 
         popup_text As label:
             Align: =Align.Center
@@ -895,7 +912,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =318
-            ZIndex: =20
+            ZIndex: =11
 
         popup_header As label:
             Align: =Align.Center
@@ -908,7 +925,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =21
+            ZIndex: =12
 
         knop_verwijder As button:
             BorderStyle: =BorderStyle.None
@@ -936,7 +953,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =486
             Y: =455
-            ZIndex: =22
+            ZIndex: =13
 
         knop_annuleer As button:
             BorderStyle: =BorderStyle.None
@@ -955,7 +972,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =726
             Y: =455
-            ZIndex: =23
+            ZIndex: =14
 
     groep_popup_sendscore As group:
         Height: =5
@@ -969,7 +986,7 @@ students_screen As screen:
             Height: =768
             Visible: =SendMailBoxOpen
             Width: =1366
-            ZIndex: =24
+            ZIndex: =15
 
         popup_box_2 As button:
             AutoDisableOnSelect: =false
@@ -982,7 +999,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =25
+            ZIndex: =16
 
         popup_text_2 As label:
             Align: =Align.Center
@@ -997,7 +1014,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =332
-            ZIndex: =26
+            ZIndex: =17
 
         popup_header_2 As label:
             Align: =Align.Center
@@ -1010,7 +1027,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =27
+            ZIndex: =18
 
         knop_verwijder_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1029,7 +1046,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =726
             Y: =455
-            ZIndex: =28
+            ZIndex: =19
 
         knop_annuleer_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1048,7 +1065,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =486
             Y: =455
-            ZIndex: =29
+            ZIndex: =20
 
     groep_navigatie_1 As group:
         Height: =5
@@ -1065,7 +1082,7 @@ students_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =30
+            ZIndex: =21
 
         group_icon_5 As image:
             Height: =45
@@ -1073,7 +1090,7 @@ students_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =31
+            ZIndex: =22
 
         presentation_icon_5 As image:
             Height: =45
@@ -1081,7 +1098,7 @@ students_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =32
+            ZIndex: =23
 
         courses_icon_5 As image:
             Height: =45
@@ -1089,7 +1106,7 @@ students_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =33
+            ZIndex: =24
 
         label_students_5 As label:
             Align: =Align.Center
@@ -1100,7 +1117,7 @@ students_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =34
+            ZIndex: =25
 
         label_groups_5 As label:
             Align: =Align.Center
@@ -1112,7 +1129,7 @@ students_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =35
+            ZIndex: =26
 
         label_presentation_5 As label:
             Align: =Align.Center
@@ -1124,7 +1141,7 @@ students_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =36
+            ZIndex: =27
 
         label_courses_5 As label:
             Align: =Align.Center
@@ -1136,7 +1153,7 @@ students_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =37
+            ZIndex: =28
 
         Image2_5 As image:
             Height: =135
@@ -1144,7 +1161,7 @@ students_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =38
+            ZIndex: =29
 
         intake_icon_9 As image:
             Height: =45
@@ -1153,7 +1170,7 @@ students_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =39
+            ZIndex: =30
 
         label_intake_9 As label:
             Align: =Align.Center
@@ -1163,7 +1180,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =40
+            ZIndex: =31
 
         knop_nav_intake_1 As button:
             BorderColor: =
@@ -1184,7 +1201,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =41
+            ZIndex: =32
 
         knop_nav_studenten_1 As button:
             BorderColor: =
@@ -1205,7 +1222,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =42
+            ZIndex: =33
 
         knop_nav_groepen_1 As button:
             BorderColor: =
@@ -1226,7 +1243,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =43
+            ZIndex: =34
 
         knop_nav_presentatie_1 As button:
             BorderColor: =
@@ -1247,7 +1264,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =44
+            ZIndex: =35
 
         knop_nav_cursussen_1 As button:
             BorderColor: =
@@ -1268,7 +1285,7 @@ students_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =45
+            ZIndex: =36
 
     loadingOn_1 As group:
         Height: =5
@@ -1281,16 +1298,16 @@ students_screen As screen:
             BorderStyle: =BorderStyle.None
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =//isLoading
+            Visible: =isLoading
             Width: =1366
-            ZIndex: =46
+            ZIndex: =37
 
         spinner_loading_1 As image:
             Height: =175
             Image: ='Double Ring@2x-1.5s-200px-200px'
-            Visible: =//isLoading
+            Visible: =isLoading
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =47
+            ZIndex: =38
 
