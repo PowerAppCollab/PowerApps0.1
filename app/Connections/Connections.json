@@ -31,6 +31,56 @@
     "dependents": [],
     "id": "03be359a-448e-4601-95c0-775a607d33f4"
   },
+  "15b0fa75-e68a-452d-bbba-5d79d97032bb": {
+    "connectionRef": {
+      "displayName": "Logicastroom",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "uploadScoreFiles"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "205385fc-4264-45ae-afb8-29211ff0fc76"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "uploadScoreFiles"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "205385fc-4264-45ae-afb8-29211ff0fc76"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "uploadScoreFiles"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "16794970-e111-456c-837d-4a2face05203",
+      "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
+      "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
+    },
+    "dependents": [],
+    "id": "15b0fa75-e68a-452d-bbba-5d79d97032bb"
+  },
+  "16794970-e111-456c-837d-4a2face05203": {
+    "connectionRef": {
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1679/1.0.1679.3643/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "15b0fa75-e68a-452d-bbba-5d79d97032bb"
+    ],
+    "id": "16794970-e111-456c-837d-4a2face05203"
+  },
   "42ceb50e-66eb-45c5-8803-9145a48f50e6": {
     "connectionRef": {
       "displayName": "Logicastroom",
@@ -83,7 +133,8 @@
     "dependents": [
       "62bcbad6-605d-4dec-9d08-21c24d6fe34b",
       "7d541661-94f7-44e1-84ed-e54adc31bfc6",
-      "e07e705f-8dc3-46ac-8571-6d49625356da"
+      "e07e705f-8dc3-46ac-8571-6d49625356da",
+      "15b0fa75-e68a-452d-bbba-5d79d97032bb"
     ],
     "id": "590fece5-6674-4088-b75f-dcf38b6e9042"
   },
@@ -148,7 +199,8 @@
     "dependencies": {},
     "dependents": [
       "7d541661-94f7-44e1-84ed-e54adc31bfc6",
-      "e07e705f-8dc3-46ac-8571-6d49625356da"
+      "e07e705f-8dc3-46ac-8571-6d49625356da",
+      "15b0fa75-e68a-452d-bbba-5d79d97032bb"
     ],
     "id": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
   },
