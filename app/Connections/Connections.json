@@ -60,26 +60,12 @@
       "uploadScoreFiles"
     ],
     "dependencies": {
-      "shared_commondataserviceforapps": "16794970-e111-456c-837d-4a2face05203",
+      "shared_commondataserviceforapps": "99e083f4-f8a7-4365-9b04-426be7fae22b",
       "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
       "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
     },
     "dependents": [],
     "id": "15b0fa75-e68a-452d-bbba-5d79d97032bb"
-  },
-  "16794970-e111-456c-837d-4a2face05203": {
-    "connectionRef": {
-      "displayName": "Microsoft Dataverse",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1679/1.0.1679.3643/commondataserviceforapps/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "15b0fa75-e68a-452d-bbba-5d79d97032bb"
-    ],
-    "id": "16794970-e111-456c-837d-4a2face05203"
   },
   "42ceb50e-66eb-45c5-8803-9145a48f50e6": {
     "connectionRef": {
@@ -290,6 +276,20 @@
     },
     "dependents": [],
     "id": "7d541661-94f7-44e1-84ed-e54adc31bfc6"
+  },
+  "99e083f4-f8a7-4365-9b04-426be7fae22b": {
+    "connectionRef": {
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1679/1.0.1679.3643/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "15b0fa75-e68a-452d-bbba-5d79d97032bb"
+    ],
+    "id": "99e083f4-f8a7-4365-9b04-426be7fae22b"
   },
   "9bd9d730-6bfb-4dd3-aa82-e01c067cec2f": {
     "connectionRef": {

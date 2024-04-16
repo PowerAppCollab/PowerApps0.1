@@ -2,7 +2,7 @@ students_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: |-
         =Refresh(studenten_tabel);
-        Set(scoresToevoegen, false)
+        Set(scoresToevoegen, false);
 
     container_5 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -267,20 +267,20 @@ students_screen As screen:
             HoverFill: =RGBA(0, 0, 0, 0)
             IsInDataCard: =true
             Items: =
-            OnAddFile: |-
-                =Set(flowdone, uploadScoreFiles.Run(
+            OnAddFile: |
+                =Set(isLoading, true);
+                Set(scoreUploadFlowDone, uploadScoreFiles.Run(
                     {
                         contentBytes: Last(Self.Attachments).Value,
                         name: Last(Self.Attachments).Name
                     }
                 ));
                 Reset(Self);
-                
-                Set(isLoading, true);
-                Set(flowdone, uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}));
-                Set(isLoading, !flowdone);
+                Set(isLoading, false);
                 Refresh(scores);
-                Reset(Self)
+                
+                //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
+                //Set(isLoading; !scoreUploadFlowDone);;
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -1269,4 +1269,28 @@ students_screen As screen:
             X: =45
             Y: =540
             ZIndex: =45
+
+    loadingOn_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =48
+
+        background_loading_1 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =//isLoading
+            Width: =1366
+            ZIndex: =46
+
+        spinner_loading_1 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =//isLoading
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =47
 
