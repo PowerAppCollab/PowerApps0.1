@@ -5,7 +5,7 @@ groups_screen As screen:
     container_37 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =305
+        Height: =257
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
@@ -110,25 +110,13 @@ groups_screen As screen:
 
         Button4_2 As button:
             Fill: =RGBA(192, 5, 230, 1)
-            Height: =37
+            Height: =30
             HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
             OnSelect: =Set(varShowCreateGroupPopup, true);
             Text: ="Groep aanmaken"
             Width: =500
-            Y: =265
+            Y: =227
             ZIndex: =3
-
-    container_39 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.None
-        Fill: =RGBA(60, 60, 60, 1)
-        Height: =258
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        X: =180
-        Y: =464
-        ZIndex: =2
 
     container_18 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -968,6 +956,64 @@ groups_screen As screen:
             X: =541
             Y: =291
             ZIndex: =42
+
+    container_19 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =300
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        X: =180
+        Y: =415
+        ZIndex: =65
+
+        LineChart1_2 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =300
+            NumberOfSeries: =0
+            OnSelect: =Set()
+            ShowValues: =
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =500
+            XLabelAngle: =55
+            YAxisMax: =100
+            YAxisMin: =0
+            ZIndex: =5
+
+        label_chart_error_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er is geen grafiek beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            Y: =113
+            ZIndex: =6
 
     groep_navigatie_6 As group:
         Height: =5
