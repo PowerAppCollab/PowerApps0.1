@@ -256,6 +256,37 @@ students_screen As screen:
             Y: =10
             ZIndex: =4
 
+        AttachControl_2 As attachments:
+            BorderColor: =Color.Black
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 13, 75, 1)
+            DropTargetBorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =200
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            IsInDataCard: =true
+            Items: =
+            OnAddFile: |-
+                =uploadScoreFiles.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
+                Reset(Self)
+                
+                //Set(isLoading; true);;
+                //RemoveIf(tempEmails; true);;
+                //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
+                //Set(isLoading; !flowdone);;
+                //Refresh(tempEmails);;
+                //Reset(Self)
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            Size: =30
+            Tooltip: =
+            Width: =84
+            X: =40
+            ZIndex: =8
+
         groep_score_toevoegen As group:
             Height: =5
             Width: =5
