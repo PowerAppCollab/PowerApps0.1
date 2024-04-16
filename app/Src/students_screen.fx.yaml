@@ -503,187 +503,101 @@ students_screen As screen:
             Y: =117
             ZIndex: =4
 
-        FormViewer1 As formViewer:
-            DataSource: =studenten_tabel
-            Height: =250
-            Item: =gallery_students.Selected
-            Visible: |
-                =If(
-                    IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
-                    false,
-                    If(
-                    IsBlank(gallery_students.Selected.Email) && IsBlank(gallery_students.Selected.Voornaam),
-                    false,
-                    true
-                )
-                )
-            Width: =600
-            Y: =50
+        Label6_6 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Telefoonnummer"
+            Width: =170
+            X: =21
+            Y: =103
             ZIndex: =5
 
-            Achternaam_DataCard2 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_achternaam"
-                Default: =ThisItem.Achternaam
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@studenten_tabel],DataSourceInfo.DisplayName,"cr884_achternaam")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =0
-                Y: =0
-                ZIndex: =1
+        Label6_8 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Email"
+            Width: =170
+            X: =21
+            Y: =143
+            ZIndex: =6
 
-                DataCardKey12 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    PaddingLeft: =0
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
+        Label6_9 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Werkzaam bij"
+            Width: =170
+            X: =21
+            Y: =183
+            ZIndex: =7
 
-                DataCardValue12 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey12.Y + DataCardKey12.Height + 5
-                    ZIndex: =2
+        Label6_10 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Cursus"
+            Visible: =!editStudent
+            Width: =170
+            X: =21
+            Y: =223
+            ZIndex: =8
 
-            Email_DataCard2 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_email"
-                Default: =ThisItem.Email
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@studenten_tabel],DataSourceInfo.DisplayName,"cr884_email")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =1
-                Y: =0
-                ZIndex: =1
+        Label6_11 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            Text: ="Naam"
+            Width: =170
+            X: =21
+            Y: =63
+            ZIndex: =9
 
-                DataCardKey13 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    PaddingLeft: =0
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
+        Label7_5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: =gallery_students.Selected.Voornaam
+            Visible: =!editStudent
+            Width: =315
+            X: =202
+            Y: =63
+            ZIndex: =10
 
-                DataCardValue13 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey13.Y + DataCardKey13.Height + 5
-                    ZIndex: =2
+        Label7_6 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: =gallery_students.Selected.Achternaam
+            Visible: =!editStudent
+            Width: =315
+            X: =202
+            Y: =103
+            ZIndex: =11
 
-            Telefoonnummer_DataCard2 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_telefoonnummer"
-                Default: =ThisItem.Telefoonnummer
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@studenten_tabel],DataSourceInfo.DisplayName,"cr884_telefoonnummer")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =2
-                Y: =0
-                ZIndex: =1
+        Label7_7 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: =gallery_students.Selected.Email
+            Visible: =!editStudent
+            Width: =315
+            X: =202
+            Y: =143
+            ZIndex: =12
 
-                DataCardKey14 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    PaddingLeft: =0
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
+        Label7_8 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: =gallery_students.Selected.'Werkzaam Bij'
+            Visible: =!editStudent
+            Width: =315
+            X: =202
+            Y: =183
+            ZIndex: =13
 
-                DataCardValue14 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey14.Y + DataCardKey14.Height + 5
-                    ZIndex: =2
-
-            Voornaam_DataCard2 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_voornaam"
-                Default: =ThisItem.Voornaam
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@studenten_tabel],DataSourceInfo.DisplayName,"cr884_voornaam")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =200
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey15 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    PaddingLeft: =0
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue15 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey15.Y + DataCardKey15.Height + 5
-                    ZIndex: =2
+        Label7_9 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: =
+            Visible: =!editStudent
+            Width: =315
+            X: =202
+            Y: =223
+            ZIndex: =14
 
     container_9 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
