@@ -42,7 +42,7 @@ intakesVersturen_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.Title
+                Text: =ThisItem.Titel
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -310,7 +310,7 @@ intakesVersturen_screen As screen:
                 =Set(isLoading, true);
                 RemoveIf(tempEmails, true);
                 Set(flowdone, uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}));
-                Set(isLoading, !flowdone);
+                Set(isLoading, false);
                 Refresh(tempEmails);
                 Reset(Self)
             PaddingBottom: =5
