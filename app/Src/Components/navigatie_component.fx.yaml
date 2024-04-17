@@ -43,122 +43,137 @@ navigatie_component As CanvasComponent:
         ZIndex: =4
 
     Image3 As image:
-        Height: =35
+        Height: =40
         Image: ='invite_line (1)'
-        Width: =35
-        X: =8
-        Y: =225
+        Width: =40
+        X: =63
+        Y: =168
         ZIndex: =5
 
-    Image3_1 As image:
-        Height: =35
-        Image: =group_line
-        Width: =35
-        X: =8
-        Y: =276
-        ZIndex: =6
-
-    Image3_2 As image:
-        Height: =35
-        Image: =grid_line
-        Width: =35
-        X: =8
-        Y: =327
-        ZIndex: =7
-
-    Image3_3 As image:
-        Height: =35
-        Image: =presentation_2_line
-        Width: =35
-        X: =8
-        Y: =378
-        ZIndex: =8
-
-    Image3_4 As image:
-        Height: =35
-        Image: =map_line
-        Width: =35
-        X: =8
-        Y: =429
-        ZIndex: =9
-
     Button3 As button:
-        Align: =Align.Left
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverFill: =
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =13
+        Size: =11
         Text: ="Intakes"
-        Width: =123
-        X: =43
-        Y: =225
+        Width: =166
+        Y: =200
         ZIndex: =10
 
-    Button3_1 As button:
-        Align: =Align.Left
-        Fill: =RGBA(0, 0, 0, 0)
-        FontWeight: =FontWeight.Normal
-        Height: =35
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Size: =13
-        Text: ="Studenten"
-        Width: =123
-        X: =43
-        Y: =276
+    Image3_1 As image:
+        Height: =40
+        Image: =group_line
+        Width: =40
+        X: =63
+        Y: =251
         ZIndex: =11
 
-    Button3_2 As button:
-        Align: =Align.Left
+    Button3_1 As button:
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverFill: =
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =13
-        Text: ="Groepen"
-        Width: =123
-        X: =43
-        Y: =327
+        Size: =11
+        Text: ="Studenten"
+        Width: =166
+        Y: =283
         ZIndex: =12
 
+    Image3_3 As image:
+        Height: =40
+        Image: =presentation_2_line
+        Width: =40
+        X: =63
+        Y: =500
+        ZIndex: =15
+
     Button3_3 As button:
-        Align: =Align.Left
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverFill: =
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =13
+        Size: =11
         Text: ="Presenteren"
-        Width: =123
-        X: =43
-        Y: =378
-        ZIndex: =13
+        Width: =166
+        Y: =532
+        ZIndex: =16
+
+    Image3_4 As image:
+        Height: =40
+        Image: =map_line
+        Width: =40
+        X: =63
+        Y: =417
+        ZIndex: =17
 
     Button3_4 As button:
-        Align: =Align.Left
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverFill: =
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =13
+        Size: =11
         Text: ="Cursussen"
-        Width: =123
-        X: =43
-        Y: =429
-        ZIndex: =14
+        Width: =166
+        Y: =449
+        ZIndex: =18
+
+    Image3_2 As image:
+        Height: =40
+        Image: =grid_line
+        Width: =40
+        X: =63
+        Y: =334
+        ZIndex: =19
+
+    Button3_2 As button:
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        HoverFill: =
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =11
+        Text: ="Groepen"
+        Width: =166
+        Y: =366
+        ZIndex: =20
 
