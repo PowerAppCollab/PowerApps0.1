@@ -539,7 +539,14 @@
           "HoverBorderColor",
           "BorderStyle",
           "FocusedBorderColor",
-          "Color",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "Color",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           {
             "AFDDataSourceName": "",
             "AutoRuleBindingEnabled": false,
@@ -729,7 +736,7 @@
             "Category": "Design",
             "InvariantScript": "RGBA(255, 255, 255, 1)",
             "Property": "Color",
-            "RuleProviderType": "User"
+            "RuleProviderType": "Unknown"
           },
           {
             "Category": "Design",
@@ -4542,7 +4549,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638489633550533252",
+    "LastModifiedTimestamp": "638489636434441171",
     "Name": "navigatie_component",
     "Rules": [
       {
@@ -4601,7 +4608,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638489633550533252",
+  "LastModifiedTimestamp": "638489636434441171",
   "Name": "850d768d1c704b2c847c856370fc4b50",
   "OverridableProperties": {},
   "Version": "1.0"

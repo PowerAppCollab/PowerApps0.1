@@ -4,6 +4,9 @@ intakes_screen As screen:
         =Refresh(intakes);
         Refresh(intakeForms);
         
+        //NAVIGATION SET COLOR
+        Set(CurrentScreen, "intakes_screen")
+        
         
         
         
