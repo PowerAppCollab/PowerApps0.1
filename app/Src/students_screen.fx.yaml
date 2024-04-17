@@ -762,6 +762,9 @@ students_screen As screen:
         label_intake_4 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            OnSelect: |-
+                =Set(currentPresentationStudent, gallery_students.Selected.studentID);
+                Navigate(presentatie_screen);
             Size: =11
             Text: ="Presenteer"
             Width: =138

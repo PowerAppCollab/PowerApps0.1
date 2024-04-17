@@ -10,6 +10,7 @@ navigatie_component As CanvasComponent:
         Height: =152
         Image: ='Logo-Wit RGB (1) kopie'
         Width: =180
+        Y: =16
         ZIndex: =1
 
     Image2 As image:
@@ -56,6 +57,7 @@ navigatie_component As CanvasComponent:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverColor: =RGBA(192, 5, 230, 1)
         HoverFill: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
@@ -83,6 +85,7 @@ navigatie_component As CanvasComponent:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverColor: =RGBA(192, 5, 230, 1)
         HoverFill: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
@@ -110,6 +113,7 @@ navigatie_component As CanvasComponent:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverColor: =RGBA(192, 5, 230, 1)
         HoverFill: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
@@ -137,6 +141,7 @@ navigatie_component As CanvasComponent:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverColor: =RGBA(192, 5, 230, 1)
         HoverFill: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
@@ -164,7 +169,9 @@ navigatie_component As CanvasComponent:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         Height: =35
+        HoverColor: =RGBA(192, 5, 230, 1)
         HoverFill: =
+        OnSelect: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
         RadiusBottomLeft: =0

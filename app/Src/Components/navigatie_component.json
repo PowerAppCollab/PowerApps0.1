@@ -66,7 +66,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 499,
+        "PublishOrderIndex": 473,
         "Rules": [
           {
             "Category": "Data",
@@ -94,7 +94,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "0",
+            "InvariantScript": "16",
             "Property": "Y",
             "RuleProviderType": "Unknown"
           },
@@ -328,7 +328,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 500,
+        "PublishOrderIndex": 474,
         "Rules": [
           {
             "Category": "Data",
@@ -563,7 +563,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "HoverColor",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "RGBA(255, 255, 255, 1)",
+            "InvariantPropertyName": "HoverColor",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "DisplayMode",
           {
             "AFDDataSourceName": "",
@@ -688,7 +695,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 501,
+        "PublishOrderIndex": 475,
         "Rules": [
           {
             "Category": "Data",
@@ -752,9 +759,9 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "RGBA(255, 255, 255, 1)",
+            "InvariantScript": "RGBA(192, 5, 230, 1)",
             "Property": "HoverColor",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           {
             "Category": "Design",
@@ -992,7 +999,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 502,
+        "PublishOrderIndex": 476,
         "Rules": [
           {
             "Category": "Data",
@@ -1220,7 +1227,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "HoverColor",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "RGBA(255, 255, 255, 1)",
+            "InvariantPropertyName": "HoverColor",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "DisplayMode",
           {
             "AFDDataSourceName": "",
@@ -1345,7 +1359,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 503,
+        "PublishOrderIndex": 477,
         "Rules": [
           {
             "Category": "Data",
@@ -1409,9 +1423,9 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "RGBA(255, 255, 255, 1)",
+            "InvariantScript": "RGBA(192, 5, 230, 1)",
             "Property": "HoverColor",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           {
             "Category": "Design",
@@ -1649,7 +1663,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 504,
+        "PublishOrderIndex": 478,
         "Rules": [
           {
             "Category": "Data",
@@ -1877,7 +1891,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "HoverColor",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "RGBA(255, 255, 255, 1)",
+            "InvariantPropertyName": "HoverColor",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "DisplayMode",
           {
             "AFDDataSourceName": "",
@@ -1986,6 +2007,14 @@
             "InvariantPropertyName": "PaddingLeft",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "false",
+            "InvariantPropertyName": "OnSelect",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
           }
         ],
         "ControlUniqueId": "11",
@@ -2002,7 +2031,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 505,
+        "PublishOrderIndex": 479,
         "Rules": [
           {
             "Category": "Data",
@@ -2066,9 +2095,9 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "RGBA(255, 255, 255, 1)",
+            "InvariantScript": "RGBA(192, 5, 230, 1)",
             "Property": "HoverColor",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           {
             "Category": "Design",
@@ -2219,6 +2248,12 @@
             "InvariantScript": "5",
             "Property": "PaddingLeft",
             "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Behavior",
+            "InvariantScript": "",
+            "Property": "OnSelect",
+            "RuleProviderType": "User"
           }
         ],
         "StyleName": "defaultButtonStyle",
@@ -2306,7 +2341,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 506,
+        "PublishOrderIndex": 480,
         "Rules": [
           {
             "Category": "Data",
@@ -2534,7 +2569,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "HoverColor",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "RGBA(255, 255, 255, 1)",
+            "InvariantPropertyName": "HoverColor",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "DisplayMode",
           {
             "AFDDataSourceName": "",
@@ -2659,7 +2701,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 507,
+        "PublishOrderIndex": 481,
         "Rules": [
           {
             "Category": "Data",
@@ -2723,9 +2765,9 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "RGBA(255, 255, 255, 1)",
+            "InvariantScript": "RGBA(192, 5, 230, 1)",
             "Property": "HoverColor",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           {
             "Category": "Design",
@@ -2963,7 +3005,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 508,
+        "PublishOrderIndex": 482,
         "Rules": [
           {
             "Category": "Data",
@@ -3191,7 +3233,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "HoverColor",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "RGBA(255, 255, 255, 1)",
+            "InvariantPropertyName": "HoverColor",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "DisplayMode",
           {
             "AFDDataSourceName": "",
@@ -3316,7 +3365,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 509,
+        "PublishOrderIndex": 483,
         "Rules": [
           {
             "Category": "Data",
@@ -3380,9 +3429,9 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "RGBA(255, 255, 255, 1)",
+            "InvariantScript": "RGBA(192, 5, 230, 1)",
             "Property": "HoverColor",
-            "RuleProviderType": "Unknown"
+            "RuleProviderType": "User"
           },
           {
             "Category": "Design",
@@ -3634,7 +3683,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 510,
+        "PublishOrderIndex": 484,
         "Rules": [
           {
             "Category": "Data",
@@ -3920,7 +3969,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 511,
+        "PublishOrderIndex": 485,
         "Rules": [
           {
             "Category": "Data",
@@ -4266,7 +4315,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "navigatie_component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 512,
+        "PublishOrderIndex": 486,
         "Rules": [
           {
             "Category": "Data",
@@ -4549,7 +4598,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638489636434441171",
+    "LastModifiedTimestamp": "638489657375887466",
     "Name": "navigatie_component",
     "Rules": [
       {
@@ -4574,7 +4623,7 @@
         "Category": "Design",
         "InvariantScript": "180",
         "Property": "Width",
-        "RuleProviderType": "System"
+        "RuleProviderType": "Unknown"
       },
       {
         "Category": "Design",
@@ -4608,7 +4657,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638489636434441171",
+  "LastModifiedTimestamp": "638489657375887466",
   "Name": "850d768d1c704b2c847c856370fc4b50",
   "OverridableProperties": {},
   "Version": "1.0"
