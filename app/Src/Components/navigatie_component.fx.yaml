@@ -1,0 +1,164 @@
+navigatie_component As CanvasComponent:
+    Fill: =RGBA(56, 96, 178, 0)
+    Height: =768
+    Width: =166
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image1 As image:
+        Height: =152
+        Image: ='Logo-Wit RGB (1) kopie'
+        Width: =166
+        ZIndex: =1
+
+    Image2 As image:
+        Height: =51
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =51
+        X: =57
+        Y: =647
+        ZIndex: =2
+
+    Label8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =12
+        Text: =User().FullName
+        Width: =166
+        Y: =693
+        ZIndex: =3
+
+    Label8_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =8
+        Text: =User().Email
+        Width: =166
+        Y: =709
+        ZIndex: =4
+
+    Image3 As image:
+        Height: =35
+        Image: ='invite_line (1)'
+        Width: =35
+        X: =8
+        Y: =225
+        ZIndex: =5
+
+    Image3_1 As image:
+        Height: =35
+        Image: =group_line
+        Width: =35
+        X: =8
+        Y: =276
+        ZIndex: =6
+
+    Image3_2 As image:
+        Height: =35
+        Image: =grid_line
+        Width: =35
+        X: =8
+        Y: =327
+        ZIndex: =7
+
+    Image3_3 As image:
+        Height: =35
+        Image: =presentation_2_line
+        Width: =35
+        X: =8
+        Y: =378
+        ZIndex: =8
+
+    Image3_4 As image:
+        Height: =35
+        Image: =map_line
+        Width: =35
+        X: =8
+        Y: =429
+        ZIndex: =9
+
+    Button3 As button:
+        Align: =Align.Left
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Intakes"
+        Width: =123
+        X: =43
+        Y: =225
+        ZIndex: =10
+
+    Button3_1 As button:
+        Align: =Align.Left
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Studenten"
+        Width: =123
+        X: =43
+        Y: =276
+        ZIndex: =11
+
+    Button3_2 As button:
+        Align: =Align.Left
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Groepen"
+        Width: =123
+        X: =43
+        Y: =327
+        ZIndex: =12
+
+    Button3_3 As button:
+        Align: =Align.Left
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Presenteren"
+        Width: =123
+        X: =43
+        Y: =378
+        ZIndex: =13
+
+    Button3_4 As button:
+        Align: =Align.Left
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Cursussen"
+        Width: =123
+        X: =43
+        Y: =429
+        ZIndex: =14
+

@@ -202,7 +202,10 @@ studentenHighlight_screen As screen:
         "gallery_score_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =150
-            Items: =Filter(scores, studentID = currSelectedStudent)
+            Items: |
+                =Filter(
+                    scores, studentID = gallery_students.Selected.Email
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -212,7 +215,7 @@ studentenHighlight_screen As screen:
                     IsBlank(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ),
                     false,
@@ -295,7 +298,7 @@ studentenHighlight_screen As screen:
                 =ForAll(
                         Filter(
                             scores,
-                            studentID = currSelectedStudent
+                            studentID = gallery_students.Selected.Email
                         ),
                         {
                             score: score,
@@ -309,7 +312,7 @@ studentenHighlight_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ),
                     false,
@@ -332,7 +335,7 @@ studentenHighlight_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = currSelectedStudent
+                            studentID = gallery_students.Selected.Email
                         )
                     ),
                     true,

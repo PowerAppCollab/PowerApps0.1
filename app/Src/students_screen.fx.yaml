@@ -414,7 +414,7 @@ students_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ),
                     false,
