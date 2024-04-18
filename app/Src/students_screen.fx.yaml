@@ -1,8 +1,9 @@
 students_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |-
+    OnVisible: |
         =Refresh(studenten_tabel);
         Set(scoresToevoegen, false);
+        Set(varShowArchived, true);
 
     Icon10 As icon.Import:
         Color: =RGBA(255, 255, 255, 1)
@@ -65,18 +66,26 @@ students_screen As screen:
 
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Height: =250
-            Items: |
-                =If(dropdown_archived_students.SelectedText.Value = "Gearchiveerd",
-                Filter(
-                    studenten_tabel,
-                    SearchInput1.Text in Voornaam && Archived = "True"
-                ),
-                Filter(
-                    studenten_tabel,
-                    SearchInput1.Text in Voornaam && Archived <> "True"
+            Height: =220
+            Items: |+
+                =If(
+                    varShowActive,
+                    Filter(
+                        Filter(
+                            studenten_tabel,
+                            course.name = dropdown_courses.Selected.name
+                        ),
+                        SearchInput1.Text in Voornaam && Archived = "True"
+                    ),
+                    Filter(
+                        Filter(
+                            studenten_tabel,
+                            course.name = dropdown_courses.Selected.name
+                        ),
+                        SearchInput1.Text in Voornaam && Archived <> "True"
+                    )
                 )
-                )
+                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -173,6 +182,30 @@ students_screen As screen:
             Width: =500
             Y: =95
             ZIndex: =2
+
+        Button4 As button:
+            Fill: =RGBA(192, 5, 230, 1)
+            Height: =30
+            OnSelect: |-
+                =Set(varShowArchived, false);
+                Set(varShowActive, true)
+            Text: ="Toon gearchiveerde kanidaten"
+            Visible: =varShowArchived
+            Width: =500
+            Y: =220
+            ZIndex: =3
+
+        Button4_3 As button:
+            Fill: =RGBA(192, 5, 230, 1)
+            Height: =30
+            OnSelect: |-
+                =Set(varShowArchived, true);
+                Set(varShowActive, false)
+            Text: ="Toon actieve kanidaten"
+            Visible: =varShowActive
+            Width: =500
+            Y: =220
+            ZIndex: =4
 
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -701,7 +734,7 @@ students_screen As screen:
             Y: =19
             ZIndex: =2
 
-        dropdown_archived_students As dropdown:
+        dropdown_courses As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderStyle: =BorderStyle.None
             ChevronBackground: =RGBA(192, 5, 230, 1)
@@ -711,7 +744,7 @@ students_screen As screen:
             Default: ="Actief"
             Fill: =RGBA(45, 45, 45, 1)
             HoverFill: =RGBA(192, 5, 230, 1)
-            Items: =["Actief", "Gearchiveerd"]
+            Items: =courses
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)

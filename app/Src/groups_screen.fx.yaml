@@ -1,6 +1,7 @@
 groups_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =
+    OnVisible: |
+        =
 
     container_37 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -16,12 +17,20 @@ groups_screen As screen:
 
         "gallery_courses_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Height: =302
+            Height: =227
             Items: |
                 =
                 Filter(groepens, StartsWith(name, SearchInput1_2.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: |-
+                =ClearCollect(
+                    averageScore2;
+                    Filter(
+                        studenten_tabel;
+                        groupID = gallery_courses_3.Selected.name
+                    )
+                );;
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
@@ -975,7 +984,7 @@ groups_screen As screen:
             DisplayMode: =DisplayMode.View
             Height: =300
             NumberOfSeries: =0
-            OnSelect: =Set()
+            OnSelect: =
             ShowValues: =
             Visible: |-
                 =If(
@@ -1014,6 +1023,13 @@ groups_screen As screen:
             Width: =500
             Y: =113
             ZIndex: =6
+
+        Label15 As label:
+            Text: =averageScoreValue
+            Visible: =
+            X: =40
+            Y: =40
+            ZIndex: =7
 
     groep_navigatie_6 As group:
         Height: =5
