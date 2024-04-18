@@ -178,50 +178,6 @@ presentatie_screen As screen:
                 YAxisMin: =0
                 ZIndex: =4
 
-        Group2 As group:
-            Height: =5
-            Width: =5
-            X: =40
-            Y: =40
-            ZIndex: =10
-
-            Container1 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.None
-                Fill: =RGBA(45, 45, 45, 1)
-                Height: =350
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Width: =50
-                X: =885
-                Y: =269
-                ZIndex: =6
-
-            Label17 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =36
-                PaddingLeft: =0
-                PaddingRight: =0
-                Text: =averageScoreValue
-                Width: =50
-                X: =885
-                Y: =583
-                ZIndex: =7
-
-            Label17_1 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =36
-                PaddingLeft: =0
-                PaddingRight: =0
-                Text: ="Gemiddelde score"
-                Width: =132
-                X: =844
-                Y: =635
-                ZIndex: =8
-
         Group5 As group:
             Height: =5
             Width: =5
@@ -236,7 +192,7 @@ presentatie_screen As screen:
                 Text: ="Hoogst behaalde score"
                 Width: =152
                 X: =936
-                Y: =182
+                Y: =162
                 ZIndex: =10
 
             PieChart2 As pieChart:
@@ -250,7 +206,7 @@ presentatie_screen As screen:
                 ShowLabels: =false
                 Width: =158
                 X: =933
-                Y: =36
+                Y: =16
                 ZIndex: =13
 
             Circle1 As circle:
@@ -258,7 +214,7 @@ presentatie_screen As screen:
                 Height: =72
                 Width: =72
                 X: =976
-                Y: =88
+                Y: =68
                 ZIndex: =14
 
             Label18 As label:
@@ -268,7 +224,7 @@ presentatie_screen As screen:
                 Text: =(First(highestScore).score)
                 Width: =49
                 X: =987
-                Y: =100
+                Y: =80
                 ZIndex: =15
 
         Group5_1 As group:
@@ -285,7 +241,7 @@ presentatie_screen As screen:
                 Text: ="Laagst behaalde score"
                 Width: =152
                 X: =933
-                Y: =404
+                Y: =374
                 ZIndex: =16
 
             PieChart2_1 As pieChart:
@@ -299,7 +255,7 @@ presentatie_screen As screen:
                 ShowLabels: =false
                 Width: =158
                 X: =930
-                Y: =258
+                Y: =228
                 ZIndex: =17
 
             Circle1_1 As circle:
@@ -307,7 +263,7 @@ presentatie_screen As screen:
                 Height: =72
                 Width: =72
                 X: =973
-                Y: =310
+                Y: =280
                 ZIndex: =18
 
             Label18_1 As label:
@@ -317,7 +273,7 @@ presentatie_screen As screen:
                 Text: =(First(lowestScore).score)
                 Width: =49
                 X: =984
-                Y: =322
+                Y: =292
                 ZIndex: =19
 
         Group5_2 As group:
@@ -334,7 +290,7 @@ presentatie_screen As screen:
                 Text: ="Gemiddelde score"
                 Width: =152
                 X: =939
-                Y: =608
+                Y: =598
                 ZIndex: =20
 
             PieChart2_2 As pieChart:
@@ -348,7 +304,7 @@ presentatie_screen As screen:
                 ShowLabels: =false
                 Width: =158
                 X: =936
-                Y: =462
+                Y: =452
                 ZIndex: =21
 
             Circle1_2 As circle:
@@ -356,7 +312,7 @@ presentatie_screen As screen:
                 Height: =72
                 Width: =72
                 X: =979
-                Y: =514
+                Y: =504
                 ZIndex: =22
 
             Label18_2 As label:
@@ -366,6 +322,6 @@ presentatie_screen As screen:
                 Text: =(First(averageScoreCircle).score)
                 Width: =49
                 X: =990
-                Y: =526
+                Y: =516
                 ZIndex: =23
 
