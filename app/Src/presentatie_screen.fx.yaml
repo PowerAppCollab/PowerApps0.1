@@ -1,6 +1,6 @@
 presentatie_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |-
+    OnVisible: |
         =ClearCollect(
             averageScore,
             Filter(
@@ -15,6 +15,19 @@ presentatie_screen As screen:
                 CountRows(averageScore) > 0,
                 Average(averageScore, score),
                 0
+            )
+        );
+        
+        ClearCollect(highestScore,
+        ForAll(
+                Filter(
+                    scores,
+                    studentID = gallery_students.Selected.Email
+                ),
+                {
+                    score: score,
+                    Examen: Examen
+                }
             )
         )
 
@@ -181,17 +194,7 @@ presentatie_screen As screen:
                 ZIndex: =12
 
             PieChart2 As pieChart:
-                Items: |-
-                    =ForAll(
-                            Filter(
-                                scores,
-                                studentID = gallery_students.Selected.Email
-                            ),
-                            {
-                                score: score,
-                                Examen: Examen
-                            }
-                        )
+                Items: =highestScore
                 X: =746
                 Y: =30
                 ZIndex: =13
