@@ -314,7 +314,7 @@ students_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            studentID = gallery_students.Selected.studentID
                         )
                     ) && !scoresToevoegen,
                     true,
@@ -682,7 +682,7 @@ students_screen As screen:
             Label7_9 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =
+                Text: =gallery_students.Selected.course.name
                 Visible: |-
                     =If(
                         IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
