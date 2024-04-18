@@ -61,53 +61,148 @@ presentatie_screen As screen:
             Y: =36
             ZIndex: =4
 
-        Container1 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Fill: =RGBA(45, 45, 45, 1)
-            Height: =350
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =50
-            X: =63
-            Y: =266
-            ZIndex: =6
+        Container3 As groupContainer.manualLayoutContainer:
+            Height: =559
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =854
+            X: =21
+            Y: =112
+            ZIndex: =9
 
-            Rectangle1 As rectangle:
+            Rectangle5 As rectangle:
                 Fill: =RGBA(45, 45, 45, 1)
-                Height: =350
-                Width: =50
+                Height: =559
+                Width: =854
                 ZIndex: =1
 
-            Rectangle2 As rectangle:
-                Fill: =RGBA(192, 5, 230, 1)
-                Height: =Rectangle1.Height * (averageScoreValue / 100)
+            LineChart2 As lineChart:
+                BorderStyle: =BorderStyle.Dotted
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Height: =559
+                Items: |-
+                    =ForAll(
+                            Filter(
+                                scores,
+                                studentID = gallery_students.Selected.Email
+                            ),
+                            {
+                                score: score,
+                                Examen: Examen
+                            }
+                        )
+                Width: =854
+                YAxisMax: =100
+                YAxisMin: =0
+                ZIndex: =4
+
+        Label16 As label:
+            Align: =Align.Center
+            Height: =58
+            Text: ="Hoogst behaalde score"
+            Width: =152
+            X: =988
+            Y: =28
+            ZIndex: =10
+
+        Group2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =10
+
+            Container1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =350
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =50
-                Y: =Rectangle1.Height - (Rectangle1.Height * (averageScoreValue / 100))
-                ZIndex: =2
+                X: =916
+                Y: =269
+                ZIndex: =6
 
-        Label17 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            PaddingLeft: =0
-            PaddingRight: =0
-            Text: =averageScoreValue
-            Width: =50
-            X: =63
-            Y: =580
-            ZIndex: =7
+                Rectangle1 As rectangle:
+                    Fill: =RGBA(45, 45, 45, 1)
+                    Height: =350
+                    Width: =50
+                    ZIndex: =1
 
-        Label17_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            PaddingLeft: =0
-            PaddingRight: =0
-            Text: ="Gemiddelde score"
-            Width: =132
-            X: =22
-            Y: =632
-            ZIndex: =8
+                Rectangle2 As rectangle:
+                    Fill: =RGBA(192, 5, 230, 1)
+                    Height: =Rectangle1.Height * (averageScoreValue / 100)
+                    Width: =50
+                    Y: =Rectangle1.Height - (Rectangle1.Height * (averageScoreValue / 100))
+                    ZIndex: =2
+
+            Label17 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                PaddingLeft: =0
+                PaddingRight: =0
+                Text: =averageScoreValue
+                Width: =50
+                X: =916
+                Y: =583
+                ZIndex: =7
+
+            Label17_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                PaddingLeft: =0
+                PaddingRight: =0
+                Text: ="Gemiddelde score"
+                Width: =132
+                X: =875
+                Y: =635
+                ZIndex: =8
+
+        CompositePieChart2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =11
+
+            Title4 As label:
+                Align: =Align.Center
+                Height: =25
+                Text: ="Titel van grafiek"
+                Width: =400
+                X: =739
+                ZIndex: =12
+
+            PieChart2 As pieChart:
+                Items: |-
+                    =ForAll(
+                            Filter(
+                                scores,
+                                studentID = gallery_students.Selected.Email
+                            ),
+                            {
+                                score: score,
+                                Examen: Examen
+                            }
+                        )
+                X: =746
+                Y: =30
+                ZIndex: =13
+
+            Legend3 As legend:
+                Height: =200
+                ItemColorSet: =PieChart2.ItemColorSet
+                Items: =PieChart2.SeriesLabels
+                Size: =16
+                Width: =400
+                X: =739
+                Y: =430
+                ZIndex: =14
 
