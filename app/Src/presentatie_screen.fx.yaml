@@ -1,6 +1,6 @@
 presentatie_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |
+    OnVisible: |+
         =ClearCollect(
             averageScore,
             Filter(
@@ -18,7 +18,7 @@ presentatie_screen As screen:
             )
         );
         
-        ClearCollect(highestScore1,
+        ClearCollect(allScores,
             ForAll(
                 Filter(
                     scores,
@@ -31,7 +31,22 @@ presentatie_screen As screen:
             )
         );
         
-        ClearCollect(highestScore, SortByColumns(highestScore1, "score", SortOrder.Ascending))
+        ClearCollect(highestScore, FirstN(SortByColumns(allScores, "score", SortOrder.Descending),1));
+        
+        Set(
+            diffHighestScore,
+            100 - Value(First(highestScore).score)
+        );
+        
+        Collect(highestScore,
+                {
+                    score: Text(diffHighestScore),
+                    Examen: "fullCircle"
+                }
+        );
+        
+        ClearCollect(lowestScore, FirstN(SortByColumns(allScores, "score", SortOrder.Ascending),1))
+        
 
     navigatie_component_4 As navigatie_component:
         ZIndex: =39
@@ -114,15 +129,6 @@ presentatie_screen As screen:
                 YAxisMin: =0
                 ZIndex: =4
 
-        Label16 As label:
-            Align: =Align.Center
-            Height: =58
-            Text: ="Hoogst behaalde score"
-            Width: =152
-            X: =988
-            Y: =28
-            ZIndex: =10
-
         Group2 As group:
             Height: =5
             Width: =5
@@ -180,34 +186,48 @@ presentatie_screen As screen:
                 Y: =635
                 ZIndex: =8
 
-        CompositePieChart2 As group:
+        Label18 As label:
+            Text: =Text(highestScore)
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+        Group3 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =11
+            ZIndex: =15
 
-            Title4 As label:
+            Label16 As label:
                 Align: =Align.Center
-                Height: =25
-                Text: ="Titel van grafiek"
-                Width: =400
-                X: =739
-                ZIndex: =12
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =58
+                Text: ="Hoogst behaalde score"
+                Width: =152
+                X: =936
+                Y: =182
+                ZIndex: =10
 
             PieChart2 As pieChart:
+                DisplayMode: =DisplayMode.View
+                Height: =176
+                HoverBorderColor: =
+                ItemBorderColor: =
+                ItemBorderThickness: =0
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(60, 60, 60, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: =highestScore
-                X: =746
-                Y: =30
+                ShowLabels: =false
+                Width: =158
+                X: =933
+                Y: =36
                 ZIndex: =13
 
-            Legend3 As legend:
-                Height: =200
-                ItemColorSet: =PieChart2.ItemColorSet
-                Items: =PieChart2.SeriesLabels
-                Size: =16
-                Width: =400
-                X: =739
-                Y: =430
+            Circle1 As circle:
+                Fill: =RGBA(60, 60, 60, 1)
+                Height: =72
+                Width: =72
+                X: =976
+                Y: =88
                 ZIndex: =14
 
