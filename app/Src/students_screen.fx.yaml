@@ -947,7 +947,7 @@ students_screen As screen:
             OnSelect: |-
                 =Set(intakeFormIDTemp, "");
                 
-                Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", Archived: "true"});
+                Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", Archived: "true"});
                 
                 Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = gallery_students.Selected.intakeID).intakeID);
                 RemoveIf(intakes, intakeID = deleteIntakeID);
