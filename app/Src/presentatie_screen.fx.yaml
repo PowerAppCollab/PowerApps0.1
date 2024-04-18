@@ -198,19 +198,6 @@ presentatie_screen As screen:
                 Y: =269
                 ZIndex: =6
 
-                Rectangle1 As rectangle:
-                    Fill: =RGBA(45, 45, 45, 1)
-                    Height: =350
-                    Width: =50
-                    ZIndex: =1
-
-                Rectangle2 As rectangle:
-                    Fill: =RGBA(192, 5, 230, 1)
-                    Height: =Rectangle1.Height * (averageScoreValue / 100)
-                    Width: =50
-                    Y: =Rectangle1.Height - (Rectangle1.Height * (averageScoreValue / 100))
-                    ZIndex: =2
-
             Label17 As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
