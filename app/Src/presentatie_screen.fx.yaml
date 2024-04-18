@@ -70,20 +70,44 @@ presentatie_screen As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Width: =50
-            X: =22
-            Y: =316
+            X: =63
+            Y: =266
             ZIndex: =6
+
+            Rectangle1 As rectangle:
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =350
+                Width: =50
+                ZIndex: =1
 
             Rectangle2 As rectangle:
                 Fill: =RGBA(192, 5, 230, 1)
-                Height: =80
+                Height: =Rectangle1.Height * (averageScoreValue / 100)
                 Width: =50
-                Y: =270
-                ZIndex: =1
+                Y: =Rectangle1.Height - (Rectangle1.Height * (averageScoreValue / 100))
+                ZIndex: =2
 
         Label17 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            PaddingLeft: =0
+            PaddingRight: =0
             Text: =averageScoreValue
-            X: =93
-            Y: =147
+            Width: =50
+            X: =63
+            Y: =580
             ZIndex: =7
+
+        Label17_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            PaddingLeft: =0
+            PaddingRight: =0
+            Text: ="Gemiddelde score"
+            Width: =132
+            X: =22
+            Y: =632
+            ZIndex: =8
 
