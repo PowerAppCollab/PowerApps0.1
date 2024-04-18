@@ -18,8 +18,8 @@ presentatie_screen As screen:
             )
         );
         
-        ClearCollect(highestScore,
-        ForAll(
+        ClearCollect(highestScore1,
+            ForAll(
                 Filter(
                     scores,
                     studentID = gallery_students.Selected.Email
@@ -29,7 +29,9 @@ presentatie_screen As screen:
                     Examen: Examen
                 }
             )
-        )
+        );
+        
+        ClearCollect(highestScore, SortByColumns(highestScore1, "score", SortOrder.Ascending))
 
     navigatie_component_4 As navigatie_component:
         ZIndex: =39
