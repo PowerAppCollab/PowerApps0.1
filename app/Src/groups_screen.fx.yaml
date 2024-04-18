@@ -3,6 +3,71 @@ groups_screen As screen:
     OnVisible: |
         =
 
+    container_19 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =300
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        X: =180
+        Y: =415
+        ZIndex: =1
+
+        LineChart1_2 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =300
+            NumberOfSeries: =0
+            OnSelect: =
+            ShowValues: =
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =500
+            XLabelAngle: =55
+            YAxisMax: =100
+            YAxisMin: =0
+            ZIndex: =5
+
+        label_chart_error_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er is geen grafiek beschikbaar."
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            Y: =113
+            ZIndex: =6
+
+        Label15 As label:
+            Text: =averageScoreValue
+            Visible: =
+            X: =40
+            Y: =40
+            ZIndex: =7
+
     container_37 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -13,7 +78,7 @@ groups_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =138
-        ZIndex: =1
+        ZIndex: =2
 
         "gallery_courses_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -150,7 +215,7 @@ groups_screen As screen:
         Width: =600
         X: =726
         Y: =40
-        ZIndex: =13
+        ZIndex: =3
 
         label_scoreTitle_1 As label:
             Align: =Align.Center
@@ -238,7 +303,7 @@ groups_screen As screen:
         Width: =600
         X: =725
         Y: =380
-        ZIndex: =14
+        ZIndex: =4
 
         label_studentInformation_error_notSelected_1 As label:
             Align: =Align.Center
@@ -351,7 +416,7 @@ groups_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =16
+        ZIndex: =5
 
         SearchInput1_1 As text:
             BorderStyle: =BorderStyle.None
@@ -392,7 +457,7 @@ groups_screen As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =17
+        ZIndex: =6
 
         intake_icon_8 As image:
             Height: =60
@@ -510,7 +575,7 @@ groups_screen As screen:
         Width: =600
         X: =725
         Y: =210
-        ZIndex: =23
+        ZIndex: =12
 
         label_scoreTitle_2 As label:
             Align: =Align.Center
@@ -579,7 +644,7 @@ groups_screen As screen:
             Tooltip: =
             Visible: =SendMailBoxOpen
             Width: =1366
-            ZIndex: =18
+            ZIndex: =7
 
         popup_box_3 As button:
             AutoDisableOnSelect: =false
@@ -593,7 +658,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =19
+            ZIndex: =8
 
         popup_header_3 As label:
             Align: =Align.Center
@@ -607,7 +672,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =20
+            ZIndex: =9
 
         knop_verwijder_3 As button:
             BorderStyle: =BorderStyle.None
@@ -627,7 +692,7 @@ groups_screen As screen:
             Visible: =SendMailBoxOpen
             X: =726
             Y: =455
-            ZIndex: =21
+            ZIndex: =10
 
         knop_annuleer_3 As button:
             BorderStyle: =BorderStyle.None
@@ -647,7 +712,7 @@ groups_screen As screen:
             Visible: =SendMailBoxOpen
             X: =486
             Y: =455
-            ZIndex: =22
+            ZIndex: =11
 
     deleteStudentsPopUp As group:
         Height: =5
@@ -661,7 +726,7 @@ groups_screen As screen:
             Height: =768
             Visible: =varShowDeletePopup
             Width: =1366
-            ZIndex: =24
+            ZIndex: =13
 
         popup_box_7 As button:
             AutoDisableOnSelect: =false
@@ -674,7 +739,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =270
-            ZIndex: =25
+            ZIndex: =14
 
         popup_header_5 As label:
             Align: =Align.Center
@@ -687,7 +752,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =26
+            ZIndex: =15
 
         knop_toevoegen_1 As button:
             BorderStyle: =BorderStyle.None
@@ -707,7 +772,7 @@ groups_screen As screen:
             Visible: =varShowDeletePopup
             X: =486
             Y: =455
-            ZIndex: =27
+            ZIndex: =16
 
         knop_annuleer_6 As button:
             BorderStyle: =BorderStyle.None
@@ -726,7 +791,7 @@ groups_screen As screen:
             Visible: =varShowDeletePopup
             X: =726
             Y: =455
-            ZIndex: =28
+            ZIndex: =17
 
         deleteStudentDropDown As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -752,7 +817,7 @@ groups_screen As screen:
             Width: =400
             X: =482
             Y: =332
-            ZIndex: =29
+            ZIndex: =18
 
     addStudentsPopUp As group:
         Height: =5
@@ -766,7 +831,7 @@ groups_screen As screen:
             Height: =768
             Visible: =varShowAddPopup
             Width: =1366
-            ZIndex: =30
+            ZIndex: =19
 
         popup_box_8 As button:
             AutoDisableOnSelect: =false
@@ -779,7 +844,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =270
-            ZIndex: =31
+            ZIndex: =20
 
         popup_header_6 As label:
             Align: =Align.Center
@@ -792,7 +857,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =32
+            ZIndex: =21
 
         knop_toevoegen_2 As button:
             BorderStyle: =BorderStyle.None
@@ -812,7 +877,7 @@ groups_screen As screen:
             Visible: =varShowAddPopup
             X: =486
             Y: =455
-            ZIndex: =33
+            ZIndex: =22
 
         knop_annuleer_7 As button:
             BorderStyle: =BorderStyle.None
@@ -831,7 +896,7 @@ groups_screen As screen:
             Visible: =varShowAddPopup
             X: =726
             Y: =455
-            ZIndex: =34
+            ZIndex: =23
 
         addStudentDropDown As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -858,7 +923,7 @@ groups_screen As screen:
             Width: =400
             X: =482
             Y: =332
-            ZIndex: =35
+            ZIndex: =24
 
     CreateGroupPopup As group:
         Height: =5
@@ -872,7 +937,7 @@ groups_screen As screen:
             Height: =768
             Visible: =varShowCreateGroupPopup
             Width: =1366
-            ZIndex: =36
+            ZIndex: =25
 
         popup_box_9 As button:
             AutoDisableOnSelect: =false
@@ -885,7 +950,7 @@ groups_screen As screen:
             Width: =576
             X: =461
             Y: =220
-            ZIndex: =37
+            ZIndex: =26
 
         popup_header_9 As label:
             Align: =Align.Center
@@ -898,7 +963,7 @@ groups_screen As screen:
             Width: =577
             X: =460
             Y: =220
-            ZIndex: =38
+            ZIndex: =27
 
         knop_toevoegen_5 As button:
             BorderStyle: =BorderStyle.None
@@ -920,7 +985,7 @@ groups_screen As screen:
             Width: =183
             X: =537
             Y: =467
-            ZIndex: =39
+            ZIndex: =28
 
         knop_annuleer_10 As button:
             BorderStyle: =BorderStyle.None
@@ -941,7 +1006,7 @@ groups_screen As screen:
             Width: =183
             X: =777
             Y: =467
-            ZIndex: =40
+            ZIndex: =29
 
         addStudentDropDown_2 As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -962,7 +1027,7 @@ groups_screen As screen:
             Width: =423
             X: =537
             Y: =374
-            ZIndex: =41
+            ZIndex: =30
 
         TextInput2 As text:
             BorderColor: =RGBA(45, 45, 45, 1)
@@ -976,72 +1041,7 @@ groups_screen As screen:
             Width: =419
             X: =541
             Y: =291
-            ZIndex: =42
-
-    container_19 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.None
-        Fill: =RGBA(60, 60, 60, 1)
-        Height: =300
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        X: =180
-        Y: =415
-        ZIndex: =65
-
-        LineChart1_2 As lineChart:
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
-            DisplayMode: =DisplayMode.View
-            Height: =300
-            NumberOfSeries: =0
-            OnSelect: =
-            ShowValues: =
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_students.Selected.studentID
-                        )
-                    ),
-                    false,
-                    true
-                )
-            Width: =500
-            XLabelAngle: =55
-            YAxisMax: =100
-            YAxisMin: =0
-            ZIndex: =5
-
-        label_chart_error_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =75
-            Text: ="Er is geen grafiek beschikbaar."
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_students.Selected.Email
-                        )
-                    ),
-                    true,
-                    false
-                )
-            Width: =500
-            Y: =113
-            ZIndex: =6
-
-        Label15 As label:
-            Text: =averageScoreValue
-            Visible: =
-            X: =40
-            Y: =40
-            ZIndex: =7
+            ZIndex: =31
 
     groep_navigatie_6 As group:
         Height: =5
@@ -1057,7 +1057,7 @@ groups_screen As screen:
             Width: =45
             X: =63
             Y: =250
-            ZIndex: =49
+            ZIndex: =38
 
         group_icon_8 As image:
             Height: =45
@@ -1065,7 +1065,7 @@ groups_screen As screen:
             Width: =45
             X: =63
             Y: =350
-            ZIndex: =50
+            ZIndex: =39
 
         presentation_icon_9 As image:
             Height: =45
@@ -1073,7 +1073,7 @@ groups_screen As screen:
             Width: =45
             X: =63
             Y: =450
-            ZIndex: =51
+            ZIndex: =40
 
         courses_icon_9 As image:
             Height: =45
@@ -1081,7 +1081,7 @@ groups_screen As screen:
             Width: =45
             X: =63
             Y: =550
-            ZIndex: =52
+            ZIndex: =41
 
         label_students_9 As label:
             Align: =Align.Center
@@ -1092,7 +1092,7 @@ groups_screen As screen:
             Width: =97
             X: =37
             Y: =280
-            ZIndex: =53
+            ZIndex: =42
 
         label_groups_8 As label:
             Align: =Align.Center
@@ -1104,7 +1104,7 @@ groups_screen As screen:
             Width: =97
             X: =37
             Y: =380
-            ZIndex: =54
+            ZIndex: =43
 
         label_presentation_9 As label:
             Align: =Align.Center
@@ -1116,7 +1116,7 @@ groups_screen As screen:
             Width: =97
             X: =37
             Y: =480
-            ZIndex: =55
+            ZIndex: =44
 
         label_courses_9 As label:
             Align: =Align.Center
@@ -1128,7 +1128,7 @@ groups_screen As screen:
             Width: =97
             X: =37
             Y: =580
-            ZIndex: =56
+            ZIndex: =45
 
         Image2_9 As image:
             Height: =135
@@ -1136,7 +1136,7 @@ groups_screen As screen:
             Width: =161
             X: =5
             Y: =20
-            ZIndex: =57
+            ZIndex: =46
 
         intake_icon_12 As image:
             Height: =45
@@ -1145,7 +1145,7 @@ groups_screen As screen:
             Width: =45
             X: =63
             Y: =150
-            ZIndex: =58
+            ZIndex: =47
 
         label_intake_12 As label:
             Align: =Align.Center
@@ -1155,7 +1155,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =180
-            ZIndex: =59
+            ZIndex: =48
 
         knop_nav_intake_6 As button:
             BorderColor: =
@@ -1176,7 +1176,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =140
-            ZIndex: =60
+            ZIndex: =49
 
         knop_nav_studenten_6 As button:
             BorderColor: =
@@ -1197,7 +1197,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =237
-            ZIndex: =61
+            ZIndex: =50
 
         knop_nav_groepen_6 As button:
             BorderColor: =
@@ -1218,7 +1218,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =340
-            ZIndex: =62
+            ZIndex: =51
 
         knop_nav_presentatie_6 As button:
             BorderColor: =
@@ -1239,7 +1239,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =440
-            ZIndex: =63
+            ZIndex: =52
 
         knop_nav_cursussen_6 As button:
             BorderColor: =
@@ -1260,7 +1260,7 @@ groups_screen As screen:
             Width: =80
             X: =45
             Y: =540
-            ZIndex: =64
+            ZIndex: =53
 
     RemoveGroupPopup_1 As group:
         Height: =5
@@ -1274,7 +1274,7 @@ groups_screen As screen:
             Height: =768
             Visible: =varShowDeleteGroupPopup
             Width: =1366
-            ZIndex: =43
+            ZIndex: =32
 
         popup_box_14 As button:
             AutoDisableOnSelect: =false
@@ -1287,7 +1287,7 @@ groups_screen As screen:
             Width: =505
             X: =431
             Y: =255
-            ZIndex: =44
+            ZIndex: =33
 
         popup_header_12 As label:
             Align: =Align.Center
@@ -1300,7 +1300,7 @@ groups_screen As screen:
             Width: =505
             X: =430
             Y: =261
-            ZIndex: =45
+            ZIndex: =34
 
         knop_toevoegen_8 As button:
             BorderStyle: =BorderStyle.None
@@ -1330,7 +1330,7 @@ groups_screen As screen:
             Visible: =varShowDeleteGroupPopup
             X: =487
             Y: =415
-            ZIndex: =46
+            ZIndex: =35
 
         knop_annuleer_13 As button:
             BorderStyle: =BorderStyle.None
@@ -1349,7 +1349,7 @@ groups_screen As screen:
             Visible: =varShowDeleteGroupPopup
             X: =727
             Y: =415
-            ZIndex: =47
+            ZIndex: =36
 
         Label9_2 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1359,5 +1359,5 @@ groups_screen As screen:
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =48
+            ZIndex: =37
 
