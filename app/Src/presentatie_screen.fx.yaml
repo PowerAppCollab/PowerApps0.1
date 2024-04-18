@@ -1,6 +1,6 @@
 presentatie_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |-
+    OnVisible: |
         =ClearCollect(
             averageScore,
             Filter(
@@ -8,15 +8,94 @@ presentatie_screen As screen:
                 studentID = currPresStudent.Email
             )
         );
-        
         Set(
             averageScoreValue,
             If(
                 CountRows(averageScore) > 0,
-                Average(averageScore, score),
+                Average(
+                    averageScore,
+                    score
+                ),
                 0
             )
-        )
+        );
+        ClearCollect(
+            averageScoreCircle,
+            {
+                score: Text(averageScoreValue),
+                Examen: "averageScore"
+            }
+        );
+        Set(
+            diffAverageScore,
+            100 - averageScoreValue
+        );
+        
+        Collect(
+            averageScoreCircle,
+            {
+                score: Text(diffAverageScore),
+                Examen: "fullCircle"
+            }
+        );
+        
+        ClearCollect(
+            allScores,
+            ForAll(
+                Filter(
+                    scores,
+                    studentID = gallery_students.Selected.Email
+                ),
+                {
+                    score: score,
+                    Examen: Examen
+                }
+            )
+        );
+        ClearCollect(
+            highestScore,
+            FirstN(
+                SortByColumns(
+                    allScores,
+                    "score",
+                    SortOrder.Descending
+                ),
+                1
+            )
+        );
+        Set(
+            diffHighestScore,
+            100 - Value(First(highestScore).score)
+        );
+        Collect(
+            highestScore,
+            {
+                score: Text(diffHighestScore),
+                Examen: "fullCircle"
+            }
+        );
+        ClearCollect(
+            lowestScore,
+            FirstN(
+                SortByColumns(
+                    allScores,
+                    "score",
+                    SortOrder.Ascending
+                ),
+                1
+            )
+        );
+        Set(
+            diffLowestScore,
+            100 - Value(First(lowestScore).score)
+        );
+        Collect(
+            lowestScore,
+            {
+                score: Text(diffLowestScore),
+                Examen: "fullCircle"
+            }
+        );
 
     navigatie_component_4 As navigatie_component:
         ZIndex: =39
@@ -61,53 +140,232 @@ presentatie_screen As screen:
             Y: =36
             ZIndex: =4
 
-        Container1 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Fill: =RGBA(45, 45, 45, 1)
-            Height: =350
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Width: =50
-            X: =63
-            Y: =266
-            ZIndex: =6
+        Container3 As groupContainer.manualLayoutContainer:
+            Height: =559
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =854
+            X: =21
+            Y: =112
+            ZIndex: =9
 
-            Rectangle1 As rectangle:
+            Rectangle5 As rectangle:
                 Fill: =RGBA(45, 45, 45, 1)
-                Height: =350
-                Width: =50
+                Height: =559
+                Width: =854
                 ZIndex: =1
 
-            Rectangle2 As rectangle:
-                Fill: =RGBA(192, 5, 230, 1)
-                Height: =Rectangle1.Height * (averageScoreValue / 100)
+            LineChart2 As lineChart:
+                BorderStyle: =BorderStyle.Dotted
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Height: =559
+                Items: |-
+                    =ForAll(
+                            Filter(
+                                scores,
+                                studentID = gallery_students.Selected.Email
+                            ),
+                            {
+                                score: score,
+                                Examen: Examen
+                            }
+                        )
+                Width: =854
+                YAxisMax: =100
+                YAxisMin: =0
+                ZIndex: =4
+
+        Group2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =10
+
+            Container1 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =350
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Width: =50
-                Y: =Rectangle1.Height - (Rectangle1.Height * (averageScoreValue / 100))
-                ZIndex: =2
+                X: =885
+                Y: =269
+                ZIndex: =6
 
-        Label17 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            PaddingLeft: =0
-            PaddingRight: =0
-            Text: =averageScoreValue
-            Width: =50
-            X: =63
-            Y: =580
-            ZIndex: =7
+            Label17 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                PaddingLeft: =0
+                PaddingRight: =0
+                Text: =averageScoreValue
+                Width: =50
+                X: =885
+                Y: =583
+                ZIndex: =7
 
-        Label17_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            PaddingLeft: =0
-            PaddingRight: =0
-            Text: ="Gemiddelde score"
-            Width: =132
-            X: =22
-            Y: =632
-            ZIndex: =8
+            Label17_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                PaddingLeft: =0
+                PaddingRight: =0
+                Text: ="Gemiddelde score"
+                Width: =132
+                X: =844
+                Y: =635
+                ZIndex: =8
+
+        Group5 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =16
+
+            Label16 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =58
+                Text: ="Hoogst behaalde score"
+                Width: =152
+                X: =936
+                Y: =182
+                ZIndex: =10
+
+            PieChart2 As pieChart:
+                DisplayMode: =DisplayMode.View
+                Height: =176
+                HoverBorderColor: =
+                ItemBorderColor: =
+                ItemBorderThickness: =0
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(60, 60, 60, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =highestScore
+                ShowLabels: =false
+                Width: =158
+                X: =933
+                Y: =36
+                ZIndex: =13
+
+            Circle1 As circle:
+                Fill: =RGBA(60, 60, 60, 1)
+                Height: =72
+                Width: =72
+                X: =976
+                Y: =88
+                ZIndex: =14
+
+            Label18 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =48
+                Text: =(First(highestScore).score)
+                Width: =49
+                X: =987
+                Y: =100
+                ZIndex: =15
+
+        Group5_1 As group:
+            Height: =5
+            Width: =5
+            X: =-893
+            Y: =4
+            ZIndex: =20
+
+            Label16_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =58
+                Text: ="Laagst behaalde score"
+                Width: =152
+                X: =933
+                Y: =404
+                ZIndex: =16
+
+            PieChart2_1 As pieChart:
+                DisplayMode: =DisplayMode.View
+                Height: =176
+                HoverBorderColor: =
+                ItemBorderColor: =
+                ItemBorderThickness: =0
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(60, 60, 60, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =lowestScore
+                ShowLabels: =false
+                Width: =158
+                X: =930
+                Y: =258
+                ZIndex: =17
+
+            Circle1_1 As circle:
+                Fill: =RGBA(60, 60, 60, 1)
+                Height: =72
+                Width: =72
+                X: =973
+                Y: =310
+                ZIndex: =18
+
+            Label18_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =48
+                Text: =(First(lowestScore).score)
+                Width: =49
+                X: =984
+                Y: =322
+                ZIndex: =19
+
+        Group5_2 As group:
+            Height: =5
+            Width: =5
+            X: =-890
+            Y: =-218
+            ZIndex: =24
+
+            Label16_2 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =58
+                Text: ="Gemiddelde score"
+                Width: =152
+                X: =939
+                Y: =608
+                ZIndex: =20
+
+            PieChart2_2 As pieChart:
+                DisplayMode: =DisplayMode.View
+                Height: =176
+                HoverBorderColor: =
+                ItemBorderColor: =
+                ItemBorderThickness: =0
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(60, 60, 60, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =averageScoreCircle
+                ShowLabels: =false
+                Width: =158
+                X: =936
+                Y: =462
+                ZIndex: =21
+
+            Circle1_2 As circle:
+                Fill: =RGBA(60, 60, 60, 1)
+                Height: =72
+                Width: =72
+                X: =979
+                Y: =514
+                ZIndex: =22
+
+            Label18_2 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =48
+                Text: =(First(averageScoreCircle).score)
+                Width: =49
+                X: =990
+                Y: =526
+                ZIndex: =23
 
