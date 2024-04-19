@@ -61,7 +61,7 @@ students_screen As screen:
         RadiusTopLeft: =15
         RadiusTopRight: =15
         X: =180
-        Y: =140
+        Y: =160
         ZIndex: =3
 
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -182,30 +182,6 @@ students_screen As screen:
             Width: =500
             Y: =95
             ZIndex: =2
-
-        Button4 As button:
-            Fill: =RGBA(192, 5, 230, 1)
-            Height: =30
-            OnSelect: |-
-                =Set(varShowArchived, false);
-                Set(varShowActive, true)
-            Text: ="Toon gearchiveerde kanidaten"
-            Visible: =varShowArchived
-            Width: =500
-            Y: =220
-            ZIndex: =3
-
-        Button4_3 As button:
-            Fill: =RGBA(192, 5, 230, 1)
-            Height: =30
-            OnSelect: |-
-                =Set(varShowArchived, true);
-                Set(varShowActive, false)
-            Text: ="Toon actieve kanidaten"
-            Visible: =varShowActive
-            Width: =500
-            Y: =220
-            ZIndex: =4
 
     container_6 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -1086,6 +1062,20 @@ students_screen As screen:
         nav_presenterenScreen: =presentatie_screen
         nav_studentenScreen: =students_screen
         ZIndex: =39
+
+    Toggle1 As toggleSwitch:
+        FalseFill: =RGBA(60, 60, 60, 1)
+        FalseText: =
+        Height: =25
+        OnChange: |-
+            =Set(varShowArchived, !varShowArchived);
+            Set(varShowActive, !varShowActive)
+        TrueFill: =RGBA(192, 5, 230, 1)
+        TrueText: =
+        Width: =75
+        X: =635
+        Y: =127
+        ZIndex: =40
 
     loadingOn_1 As group:
         Height: =5
