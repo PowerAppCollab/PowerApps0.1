@@ -191,6 +191,7 @@ presentatie_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =58
+                Size: =11
                 Text: ="Hoogst behaalde score"
                 Width: =152
                 X: =936
@@ -240,6 +241,7 @@ presentatie_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =58
+                Size: =11
                 Text: ="Laagst behaalde score"
                 Width: =152
                 X: =933
@@ -287,7 +289,7 @@ presentatie_screen As screen:
             OnSelect: =Set(presDefault, 1)
             RadiusBottomRight: =0
             RadiusTopRight: =0
-            Size: =13
+            Size: =11
             Text: ="Lijndiagram"
             Width: =285
             X: =21
@@ -305,6 +307,7 @@ presentatie_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =58
+                Size: =11
                 Text: ="Gemiddelde score"
                 Width: =152
                 X: =939
@@ -354,7 +357,7 @@ presentatie_screen As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Size: =13
+            Size: =11
             Text: ="Vooruitgang"
             Width: =285
             X: =306
@@ -370,7 +373,7 @@ presentatie_screen As screen:
             OnSelect: =Set(presDefault, 3)
             RadiusBottomLeft: =0
             RadiusTopLeft: =0
-            Size: =13
+            Size: =11
             Text: ="Vergelijken"
             Width: =285
             X: =591
