@@ -1064,9 +1064,11 @@ students_screen As screen:
         ZIndex: =39
 
     Toggle1 As toggleSwitch:
+        BorderStyle: =BorderStyle.None
         FalseFill: =RGBA(60, 60, 60, 1)
         FalseText: =
         Height: =25
+        HoverBorderColor: =
         OnChange: |-
             =Set(varShowArchived, !varShowArchived);
             Set(varShowActive, !varShowActive)
@@ -1076,6 +1078,16 @@ students_screen As screen:
         X: =635
         Y: =127
         ZIndex: =40
+
+    Label17 As label:
+        Align: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =29
+        Text: ="Toon gearchiveerde studenten"
+        Width: =433
+        X: =202
+        Y: =123
+        ZIndex: =41
 
     loadingOn_1 As group:
         Height: =5
