@@ -184,7 +184,7 @@ presentatie_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
                 GridStyle: =GridStyle.YOnly
-                Height: =531
+                Height: =517
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: =LinegraphDataPresentationRAW
                 Visible: =If(presDefault = 1, true,false)
@@ -192,7 +192,7 @@ presentatie_screen As screen:
                 X: =14
                 XLabelAngle: =40
                 YAxisMax: =100
-                YAxisMin: =0
+                YAxisMin: =-5
                 ZIndex: =4
 
             Container1 As groupContainer.manualLayoutContainer:
