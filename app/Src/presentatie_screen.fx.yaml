@@ -138,19 +138,19 @@ presentatie_screen As screen:
             ZIndex: =4
 
         Container3 As groupContainer.manualLayoutContainer:
-            Height: =559
+            Height: =531
             RadiusBottomLeft: =15
             RadiusBottomRight: =15
             RadiusTopLeft: =15
             RadiusTopRight: =15
             Width: =854
             X: =21
-            Y: =112
+            Y: =140
             ZIndex: =9
 
             Rectangle5 As rectangle:
                 Fill: =RGBA(45, 45, 45, 1)
-                Height: =559
+                Height: =531
                 Width: =854
                 ZIndex: =1
 
@@ -158,7 +158,8 @@ presentatie_screen As screen:
                 BorderStyle: =BorderStyle.Dotted
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                Height: =559
+                Height: =531
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: |-
                     =ForAll(
                             Filter(
