@@ -176,9 +176,47 @@ presentatie_screen As screen:
                 Visible: =If(presDefault = 1, true,false)
                 Width: =841
                 X: =14
+                XLabelAngle: =40
                 YAxisMax: =100
                 YAxisMin: =0
                 ZIndex: =4
+
+            Label19 As label:
+                Align: =Align.Right
+                Color: =RGBA(255, 255, 255, 1)
+                Text: |-
+                    ="Instap score:"
+                Width: =118
+                X: =112
+                Y: =36
+                ZIndex: =5
+
+            Label19_1 As label:
+                Align: =Align.Right
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =38
+                Text: |-
+                    ="Laatst behaalde score:"
+                Width: =206
+                X: =24
+                Y: =76
+                ZIndex: =6
+
+            Label19_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Text: ="XXX"
+                Width: =118
+                X: =230
+                Y: =36
+                ZIndex: =7
+
+            Label19_4 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Text: ="XXX"
+                Width: =118
+                X: =230
+                Y: =74
+                ZIndex: =9
 
         Group5 As group:
             Height: =5
