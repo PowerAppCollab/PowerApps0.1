@@ -173,7 +173,9 @@ presentatie_screen As screen:
                                 Examen: Examen
                             }
                         )
-                Width: =855
+                Visible: =If(presDefault = 1, true,false)
+                Width: =841
+                X: =14
                 YAxisMax: =100
                 YAxisMin: =0
                 ZIndex: =4
@@ -282,6 +284,7 @@ presentatie_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =30
             HoverFill: =If(presDefault = 1,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
+            OnSelect: =Set(presDefault, 1)
             RadiusBottomRight: =0
             RadiusTopRight: =0
             Size: =13
@@ -346,12 +349,13 @@ presentatie_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =30
             HoverFill: =If(presDefault = 2,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
+            OnSelect: =Set(presDefault, 2)
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =13
-            Text: ="Lijndiagram"
+            Text: ="Vooruitgang"
             Width: =285
             X: =306
             Y: =99
@@ -363,10 +367,11 @@ presentatie_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =30
             HoverFill: =If(presDefault =3,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
+            OnSelect: =Set(presDefault, 3)
             RadiusBottomLeft: =0
             RadiusTopLeft: =0
             Size: =13
-            Text: ="Lijndiagram"
+            Text: ="Vergelijken"
             Width: =285
             X: =591
             Y: =99
