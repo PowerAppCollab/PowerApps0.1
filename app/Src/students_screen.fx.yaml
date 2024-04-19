@@ -290,7 +290,7 @@ students_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
                     ) && !scoresToevoegen,
                     true,
@@ -524,9 +524,9 @@ students_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 Text: ="Telefoonnummer"
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -539,9 +539,9 @@ students_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 Text: ="Email"
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -554,9 +554,9 @@ students_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 Text: ="Werkzaam bij"
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -569,9 +569,9 @@ students_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 Text: ="Cursus"
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -584,9 +584,9 @@ students_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 Text: ="Naam"
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -599,9 +599,9 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 Text: =gallery_students.Selected.Voornaam
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -614,9 +614,9 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 Text: =gallery_students.Selected.Achternaam
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -629,9 +629,9 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 Text: =gallery_students.Selected.Email
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -644,9 +644,9 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 Text: =gallery_students.Selected.'Werkzaam Bij'
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
@@ -659,9 +659,9 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 Text: =gallery_students.Selected.course.name
-                Visible: |-
+                Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
+                        IsBlank(gallery_students.Selected.Email),
                         false,
                         true
                     )
