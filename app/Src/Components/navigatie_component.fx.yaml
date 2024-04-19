@@ -1,5 +1,5 @@
 navigatie_component As CanvasComponent:
-    Fill: =RGBA(128, 128, 128, 1)
+    Fill: =RGBA(0, 0, 0, 0)
     Height: =768
     nav_cursussenScreen: =App.ActiveScreen
     nav_groepenScreen: =App.ActiveScreen
@@ -17,212 +17,6 @@ navigatie_component As CanvasComponent:
         Width: =180
         Y: =16
         ZIndex: =1
-
-    Group2 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        Image3 As image:
-            Height: =40
-            Image: ='invite_line (1)'
-            Width: =40
-            X: =70
-            Y: =173
-            ZIndex: =5
-
-        Button3 As button:
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Text: ="Intakes"
-            Width: =180
-            Y: =200
-            ZIndex: =10
-
-        Container1 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =72
-            X: =40
-            Y: =168
-            ZIndex: =21
-
-    Group3 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        Image3_1 As image:
-            Height: =40
-            Image: =group_line
-            Width: =40
-            X: =70
-            Y: =256
-            ZIndex: =11
-
-        Button3_1 As button:
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Text: ="Studenten"
-            Width: =180
-            Y: =283
-            ZIndex: =12
-
-        Container1_1 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =72
-            X: =40
-            Y: =248
-            ZIndex: =22
-
-    Group6 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        Image3_3 As image:
-            Height: =40
-            Image: =presentation_2_line
-            Width: =40
-            X: =70
-            Y: =505
-            ZIndex: =15
-
-        Button3_3 As button:
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Text: ="Presenteren"
-            Width: =180
-            Y: =532
-            ZIndex: =16
-
-        Container1_4 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =72
-            X: =40
-            Y: =496
-            ZIndex: =25
-
-    Group7 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        Image3_4 As image:
-            Height: =40
-            Image: =map_line
-            Width: =40
-            X: =70
-            Y: =422
-            ZIndex: =17
-
-        Button3_4 As button:
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Text: ="Cursussen"
-            Width: =180
-            Y: =449
-            ZIndex: =18
-
-        Container1_3 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =72
-            X: =40
-            Y: =416
-            ZIndex: =24
-
-    Group8 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        Image3_2 As image:
-            Height: =40
-            Image: =grid_line
-            Width: =40
-            X: =70
-            Y: =339
-            ZIndex: =19
-
-        Button3_2 As button:
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =
-            OnSelect: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Text: ="Groepen"
-            Width: =180
-            Y: =366
-            ZIndex: =20
-
-        Container1_2 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =72
-            X: =40
-            Y: =330
-            ZIndex: =23
 
     Group9 As group:
         Height: =5
@@ -260,4 +54,285 @@ navigatie_component As CanvasComponent:
             Width: =180
             Y: =709
             ZIndex: =4
+
+    Group10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image3 As image:
+            Height: =40
+            Image: ='invite_line (1)'
+            OnSelect: =Navigate(navigatie_component.nav_intakesScreen)
+            Width: =40
+            X: =70
+            Y: =173
+            ZIndex: =5
+
+        Button3 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_intakesScreen)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Text: ="Intakes"
+            Width: =180
+            Y: =200
+            ZIndex: =10
+
+        Button5 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_intakesScreen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =180
+            Y: =168
+            ZIndex: =25
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image3_1 As image:
+            Height: =40
+            Image: =group_line
+            OnSelect: =Navigate(navigatie_component.nav_studentenScreen)
+            Width: =40
+            X: =70
+            Y: =256
+            ZIndex: =11
+
+        Button3_1 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_studentenScreen)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Text: ="Studenten"
+            Width: =180
+            Y: =283
+            ZIndex: =12
+
+        Button5_1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_studentenScreen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =180
+            Y: =253
+            ZIndex: =26
+
+    Group15 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image3_2 As image:
+            Height: =40
+            Image: =grid_line
+            OnSelect: =Navigate(navigatie_component.nav_groepenScreen)
+            Width: =40
+            X: =70
+            Y: =339
+            ZIndex: =19
+
+        Button3_2 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_groepenScreen)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Text: ="Groepen"
+            Width: =180
+            Y: =366
+            ZIndex: =20
+
+        Button5_2 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_groepenScreen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =180
+            Y: =336
+            ZIndex: =27
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image3_4 As image:
+            Height: =40
+            Image: =map_line
+            Width: =40
+            X: =70
+            Y: =422
+            ZIndex: =17
+
+        Button3_4 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Text: ="Cursussen"
+            Width: =180
+            Y: =449
+            ZIndex: =18
+
+        Button5_3 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_cursussenScreen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =180
+            Y: =420
+            ZIndex: =28
+
+    Group13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image3_3 As image:
+            Height: =40
+            Image: =presentation_2_line
+            Width: =40
+            X: =70
+            Y: =505
+            ZIndex: =15
+
+        Button3_3 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Text: ="Presenteren"
+            Width: =180
+            Y: =532
+            ZIndex: =16
+
+        Button5_4 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(navigatie_component.nav_presenterenScreen)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =180
+            Y: =505
+            ZIndex: =29
 
