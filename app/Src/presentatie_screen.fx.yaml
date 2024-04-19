@@ -97,9 +97,6 @@ presentatie_screen As screen:
             }
         );
 
-    navigatie_component_4 As navigatie_component:
-        ZIndex: =39
-
     container_23 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -324,4 +321,12 @@ presentatie_screen As screen:
                 X: =990
                 Y: =516
                 ZIndex: =23
+
+    navigatie_component_4 As navigatie_component:
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+        ZIndex: =41
 

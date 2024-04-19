@@ -347,6 +347,11 @@ intakesVersturen_screen As screen:
             ZIndex: =1
 
     navigatie_component_2 As navigatie_component:
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
         ZIndex: =23
 
     loadingOn As group:
