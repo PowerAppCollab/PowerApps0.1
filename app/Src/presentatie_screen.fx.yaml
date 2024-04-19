@@ -97,6 +97,28 @@ presentatie_screen As screen:
             }
         );
         
+        //Set Linegraph Data RAW
+        
+        ClearCollect(LinegraphDataPresentationRAW, ForAll(
+                Filter(
+                    scores,
+                    studentID = gallery_students.Selected.Email
+                ),
+                {
+                    score: score,
+                    Examen: Examen
+                }
+            ));
+        
+        ClearCollect(
+            LinegraphDataPresentationRAW,
+                SortByColumns(
+                    LinegraphDataPresentationRAW,
+                    "Gemaakt op",
+                    SortOrder.Ascending
+                ),
+        );
+        
         Set(presDefault, 1)
 
     container_23 As groupContainer.manualLayoutContainer:
@@ -162,17 +184,6 @@ presentatie_screen As screen:
                 DisplayMode: =DisplayMode.View
                 Height: =531
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: |-
-                    =ForAll(
-                            Filter(
-                                scores,
-                                studentID = gallery_students.Selected.Email
-                            ),
-                            {
-                                score: score,
-                                Examen: Examen
-                            }
-                        )
                 Visible: =If(presDefault = 1, true,false)
                 Width: =841
                 X: =14
@@ -181,42 +192,57 @@ presentatie_screen As screen:
                 YAxisMin: =0
                 ZIndex: =4
 
-            Label19 As label:
-                Align: =Align.Right
-                Color: =RGBA(255, 255, 255, 1)
-                Text: |-
-                    ="Instap score:"
-                Width: =118
-                X: =112
-                Y: =36
-                ZIndex: =5
+            Container1 As groupContainer.manualLayoutContainer:
+                Height: =531
+                Visible: =If(presDefault = 2, true,false)
+                Width: =855
+                ZIndex: =10
 
-            Label19_1 As label:
-                Align: =Align.Right
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =38
-                Text: |-
-                    ="Laatst behaalde score:"
-                Width: =206
-                X: =24
-                Y: =76
-                ZIndex: =6
+                Label19 As label:
+                    Align: =Align.Right
+                    Color: =RGBA(255, 255, 255, 1)
+                    Text: |-
+                        ="Eerst behaalde score:"
+                    Width: =226
+                    X: =96
+                    Y: =408
+                    ZIndex: =1
 
-            Label19_2 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Text: ="XXX"
-                Width: =118
-                X: =230
-                Y: =36
-                ZIndex: =7
+                Label19_1 As label:
+                    Align: =Align.Right
+                    Color: =RGBA(255, 255, 255, 1)
+                    Text: |-
+                        ="Laatst behaalde score:"
+                    Width: =226
+                    X: =96
+                    Y: =448
+                    ZIndex: =2
 
-            Label19_4 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Text: ="XXX"
-                Width: =118
-                X: =230
-                Y: =74
-                ZIndex: =9
+                Label19_2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Text: ="XXX"
+                    Width: =226
+                    X: =322
+                    Y: =408
+                    ZIndex: =3
+
+                Label19_3 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Text: ="XXX"
+                    Width: =226
+                    X: =322
+                    Y: =448
+                    ZIndex: =4
+
+                ColumnChart1 As barChart:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =393
+                    ItemColorSet: =[RGBA(192,5, 230, 1)]
+                    Items: =allScores
+                    SeriesAxisMax: =100
+                    SeriesAxisMin: =0
+                    Width: =855
+                    ZIndex: =7
 
         Group5 As group:
             Height: =5
