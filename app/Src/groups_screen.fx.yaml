@@ -131,15 +131,15 @@ groups_screen As screen:
                     GroupBy(
                         raw,
                         Examen,
-                        CategoryGroup
+                        ExamGroup
                     )
                 );
                 
                 ForAll(
                     AveragePrices,
                     {
-                        Category: ThisRecord.cr884_examen,
-                        AveragePrice: Average(LookUp(raw, Examen = ThisRecord.Examen, CategoryGroup).Value(score))
+                        Examen: ThisRecord.cr884_examen,
+                        averageScore: Average(LookUp(raw, Examen = ThisRecord.Examen, ExamGroup).scores)
                     }
                 )
             ShowScrollbar: =false
@@ -304,8 +304,7 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: |
-                    =Text(ThisItem.datum, "dd-mm-yyyy")
+                Text: =ThisItem.Examen
                 X: =95
                 ZIndex: =3
 
