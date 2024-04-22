@@ -120,7 +120,9 @@ presentatie_screen As screen:
                 )
         );
         
-        Set(presDefault, 1)
+        Set(presDefault, 1);
+        
+        Set(hidePrivateInfo, true);
 
     container_23 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None

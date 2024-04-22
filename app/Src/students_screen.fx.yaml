@@ -375,7 +375,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, groupID:gallery_students.Selected.groupID, ID: GUID()} );
                     Set(scoresToevoegen, false);
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -523,8 +523,8 @@ students_screen As screen:
             ZIndex: =15
 
             Label6_6 As label:
-                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
                 Text: ="Telefoonnummer"
                 Visible: |
                     =If(
@@ -533,13 +533,13 @@ students_screen As screen:
                         true
                     )
                 Width: =170
-                X: =21
-                Y: =103
+                X: =52
+                Y: =101
                 ZIndex: =5
 
             Label6_8 As label:
-                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
                 Text: ="Email"
                 Visible: |
                     =If(
@@ -548,13 +548,13 @@ students_screen As screen:
                         true
                     )
                 Width: =170
-                X: =21
-                Y: =143
+                X: =52
+                Y: =141
                 ZIndex: =6
 
             Label6_9 As label:
-                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
                 Text: ="Werkzaam bij"
                 Visible: |
                     =If(
@@ -563,13 +563,13 @@ students_screen As screen:
                         true
                     )
                 Width: =170
-                X: =21
-                Y: =183
+                X: =52
+                Y: =181
                 ZIndex: =7
 
             Label6_10 As label:
-                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
                 Text: ="Cursus"
                 Visible: |
                     =If(
@@ -578,13 +578,13 @@ students_screen As screen:
                         true
                     )
                 Width: =170
-                X: =21
-                Y: =223
+                X: =52
+                Y: =221
                 ZIndex: =8
 
             Label6_11 As label:
-                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
                 Text: ="Naam"
                 Visible: |
                     =If(
@@ -593,8 +593,8 @@ students_screen As screen:
                         true
                     )
                 Width: =170
-                X: =21
-                Y: =63
+                X: =52
+                Y: =61
                 ZIndex: =9
 
             Label7_5 As label:
@@ -608,8 +608,8 @@ students_screen As screen:
                         true
                     )
                 Width: =315
-                X: =202
-                Y: =63
+                X: =233
+                Y: =61
                 ZIndex: =10
 
             Label7_6 As label:
@@ -623,8 +623,8 @@ students_screen As screen:
                         true
                     )
                 Width: =315
-                X: =202
-                Y: =103
+                X: =233
+                Y: =101
                 ZIndex: =11
 
             Label7_7 As label:
@@ -638,8 +638,8 @@ students_screen As screen:
                         true
                     )
                 Width: =315
-                X: =202
-                Y: =143
+                X: =233
+                Y: =141
                 ZIndex: =12
 
             Label7_8 As label:
@@ -653,8 +653,8 @@ students_screen As screen:
                         true
                     )
                 Width: =315
-                X: =202
-                Y: =183
+                X: =233
+                Y: =181
                 ZIndex: =13
 
             Label7_9 As label:
@@ -668,8 +668,8 @@ students_screen As screen:
                         true
                     )
                 Width: =315
-                X: =202
-                Y: =223
+                X: =233
+                Y: =221
                 ZIndex: =14
 
     container_9 As groupContainer.manualLayoutContainer:

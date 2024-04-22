@@ -56,7 +56,7 @@ intakes_screen As screen:
                 DataField: ="cr884_huidigefunctie"
                 Default: =ThisItem.'Huidige Functie'
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_huidigefunctie")
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_huidigefunctie)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -96,7 +96,7 @@ intakes_screen As screen:
                 DataField: ="cr884_jarenervaring"
                 Default: =ThisItem.'Jaren Ervaring'
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_jarenervaring")
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_jarenervaring)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -136,7 +136,7 @@ intakes_screen As screen:
                 DataField: ="cr884_opleiding"
                 Default: =ThisItem.Opleiding
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_opleiding")
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_opleiding)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -176,7 +176,7 @@ intakes_screen As screen:
                 DataField: ="cr884_programmeertalen"
                 Default: =ThisItem.Programmeertalen
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,"cr884_programmeertalen")
+                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_programmeertalen)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -337,6 +337,8 @@ intakes_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
+                PaddingLeft: =0
+                PaddingRight: =0
                 Text: =ThisItem.Email
                 Width: =270
                 X: =16
@@ -454,7 +456,7 @@ intakes_screen As screen:
                 DataField: ="cr884_werkzaambij"
                 Default: =ThisItem.'Werkzaam bij'
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_werkzaambij")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_werkzaambij)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -494,7 +496,7 @@ intakes_screen As screen:
                 DataField: ="cr884_geboortedatum"
                 Default: =ThisItem.Geboortedatum
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_geboortedatum")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_geboortedatum)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -534,7 +536,7 @@ intakes_screen As screen:
                 DataField: ="cr884_phonenumber"
                 Default: =ThisItem.Telefoonnummer
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_phonenumber")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_phonenumber)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -574,7 +576,7 @@ intakes_screen As screen:
                 DataField: ="cr884_firstname"
                 Default: =ThisItem.Voornaam
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_firstname")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_firstname)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -614,7 +616,7 @@ intakes_screen As screen:
                 DataField: ="cr884_email"
                 Default: =ThisItem.Email
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_email")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_email)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -654,7 +656,7 @@ intakes_screen As screen:
                 DataField: ="cr884_surname"
                 Default: =ThisItem.Achternaam
                 DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_surname")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_surname)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =40
                 Required: =false
@@ -773,7 +775,7 @@ intakes_screen As screen:
                 DataField: ="cr884_status"
                 Default: =ThisItem.'Status (cr884_status)'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,"cr884_status")
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_status)
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =99
                 Required: =false

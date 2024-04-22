@@ -201,7 +201,7 @@ studentenHighlight_screen As screen:
 
         "gallery_score_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Height: =150
+            Height: =350
             Items: |
                 =Filter(
                     scores, studentID = gallery_students.Selected.Email
@@ -226,7 +226,6 @@ studentenHighlight_screen As screen:
                     )
                 )
             Width: =620
-            Y: =200
             ZIndex: =1
 
             gallery_score_date_2 As label:
@@ -429,8 +428,14 @@ studentenHighlight_screen As screen:
                     editStudent,
                     Patch(
                         studenten_tabel,
-                        LookUp(studentID = currSelectedStudent),
-                        { Naam: "test" }
+                        LookUp(studenten_tabel, studentID = currSelectedStudent),
+                        { 
+                            Voornaam: currSelectedStudent,
+                            Achternaam: currSelectedStudent,
+                            Email:currSelectedStudent,
+                            Telefoonnummer:currSelectedStudent,
+                            'Werkzaam Bij':currSelectedStudent
+                        }
                     )
                 );
                 

@@ -1,7 +1,6 @@
 groups_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: |
-        =
+    OnVisible: =
 
     container_19 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -20,6 +19,18 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Height: =300
+            Items: |-
+                =ForAll(
+                        Filter(
+                            scores,
+                            groupID = gallery_courses_3.Selected.groupID
+                        ),
+                
+                        {
+                            score: Average(scores, score),
+                            Examen: Examen
+                        }
+                    )
             NumberOfSeries: =0
             OnSelect: =
             ShowValues: =
