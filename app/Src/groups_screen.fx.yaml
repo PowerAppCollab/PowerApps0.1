@@ -1,6 +1,24 @@
 groups_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =
+    OnVisible: |-
+        =ClearCollect(
+            groupScores,
+            Filter(
+                scores,
+                groupID = gallery_courses_3.Selected.groupID
+            )
+        );
+        Set(
+            averageScoreValue,
+            If(
+                CountRows(averageScore) > 0,
+                Average(
+                    averageScore,
+                    score
+                ),
+                0
+            )
+        );
 
     container_19 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -101,12 +119,24 @@ groups_screen As screen:
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: |-
                 =ClearCollect(
-                    averageScore2;
+                    averageScore2,
                     Filter(
-                        studenten_tabel;
-                        groupID = gallery_courses_3.Selected.name
+                        scores,
+                        groupID = gallery_courses_3.Selected.groupID
                     )
-                );;
+                );
+                
+                Set(
+                    averageScoreValue2,
+                    If(
+                        CountRows(averageScore2) > 0,
+                        Average(
+                            averageScore2,
+                            score
+                        ),
+                        0
+                    )
+                );
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
