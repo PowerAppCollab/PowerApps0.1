@@ -97,6 +97,32 @@ groups_screen As screen:
             Y: =40
             ZIndex: =7
 
+        LineChart1_3 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =300
+            ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+            Items: =testtin
+            NumberOfSeries: =0
+            ShowValues: =
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =500
+            XLabelAngle: =55
+            YAxisMax: =100
+            YAxisMin: =0
+            ZIndex: =8
+
     container_37 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -122,10 +148,10 @@ groups_screen As screen:
                     raw,
                     Filter(
                         scores,
-                        groupID = gallery_courses_3.Selected.groupID
+                        groupID = gallery_courses_3.Selected.groupID && score <> ""
                     )
                 );
-                
+                 
                 ClearCollect(
                     AveragePrices,
                     GroupBy(
@@ -134,14 +160,14 @@ groups_screen As screen:
                         ExamGroup
                     )
                 );
-                
+                ClearCollect(testtin,
                 ForAll(
                     AveragePrices,
                     {
                         Examen: ThisRecord.cr884_examen,
-                        averageScore: Average(LookUp(raw, Examen = ThisRecord.Examen, ExamGroup).scores)
+                        averageScore: Average(ExamGroup, score)
                     }
-                )
+                ))
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
