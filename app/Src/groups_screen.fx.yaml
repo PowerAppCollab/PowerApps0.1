@@ -119,24 +119,29 @@ groups_screen As screen:
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: |-
                 =ClearCollect(
-                    averageScore2,
+                    raw,
                     Filter(
                         scores,
                         groupID = gallery_courses_3.Selected.groupID
                     )
                 );
                 
-                Set(
-                    averageScoreValue2,
-                    If(
-                        CountRows(averageScore2) > 0,
-                        Average(
-                            averageScore2,
-                            score
-                        ),
-                        0
+                ClearCollect(
+                    AveragePrices,
+                    GroupBy(
+                        raw,
+                        Examen,
+                        CategoryGroup
                     )
                 );
+                
+                ForAll(
+                    AveragePrices,
+                    {
+                        Category: ThisRecord.cr884_examen,
+                        AveragePrice: Average(LookUp(raw, Examen = ThisRecord.Examen, CategoryGroup).Value(score))
+                    }
+                )
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
