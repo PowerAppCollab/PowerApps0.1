@@ -521,24 +521,6 @@ groups_screen As screen:
         Y: =600
         ZIndex: =7
 
-        intake_icon_8 As image:
-            Height: =60
-            Image: =presentation_2_line
-            Width: =60
-            X: =269
-            Y: =25
-            ZIndex: =2
-
-        label_intake_8 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Size: =11
-            Text: ="Presenteer"
-            Width: =138
-            X: =230
-            Y: =79
-            ZIndex: =3
-
         groep_verwijder_1 As group:
             Height: =5
             Width: =5
@@ -625,6 +607,49 @@ groups_screen As screen:
                 X: =92
                 Y: =21
                 ZIndex: =9
+
+        Group3_1 As group:
+            Height: =5
+            Width: =5
+            X: =-148
+            Y: =6
+            ZIndex: =13
+
+            intake_icon_6 As image:
+                Height: =60
+                Image: =presentation_2_line
+                Width: =60
+                X: =268
+                Y: =27
+                ZIndex: =10
+
+            label_intake_6 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Size: =11
+                Text: ="Presenteer"
+                Width: =138
+                X: =229
+                Y: =81
+                ZIndex: =11
+
+            presenteerNav_knop_1 As button:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(0, 0, 0, 0)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =94
+                HoverFill: =
+                OnSelect: |-
+                    =Set(currPresStudent, gallery_students.Selected);
+                    Navigate(presentatie_screen);
+                PressedFill: =
+                Text: =""
+                Width: =86
+                X: =255
+                Y: =22
+                ZIndex: =12
 
     container_25 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
