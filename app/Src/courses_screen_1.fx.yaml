@@ -15,6 +15,7 @@ courses_screen_1 As screen:
         ZIndex: =1
 
         "gallery_courses_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =250
             Items: |
@@ -162,6 +163,7 @@ courses_screen_1 As screen:
             ZIndex: =4
 
         "gallery_groups_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =202
             Items: |
@@ -217,17 +219,6 @@ courses_screen_1 As screen:
                 Text: =""
                 Width: =600
                 ZIndex: =4
-
-            Icon6_1 As icon.Cancel:
-                Color: =RGBA(192, 5, 230, 1)
-                Height: =26
-                HoverBorderColor: =ColorFade(Self.Color, 20%)
-                Icon: =Icon.Cancel
-                OnSelect: =Set(varShowRemoveGroupPopup, true)
-                Width: =68
-                X: =516
-                Y: =32
-                ZIndex: =5
 
     container_32 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -299,93 +290,6 @@ courses_screen_1 As screen:
             X: =230
             Y: =79
             ZIndex: =3
-
-        groep_verwijder_2 As group:
-            Height: =5
-            Width: =5
-            X: =60
-            Y: =60
-            ZIndex: =8
-
-            groep_verwijder_icon_2 As image:
-                Height: =60
-                Image: =user_x_line
-                OnSelect: =Set(varShowRemoveGroupPopup, true);
-                Width: =60
-                X: =444
-                Y: =25
-                ZIndex: =4
-
-            groep_verwijder_text_4 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =Set(varShowRemoveGroupPopup, true);
-                Size: =11
-                Text: ="Verwijder"
-                Width: =138
-                X: =405
-                Y: =79
-                ZIndex: =5
-
-            groep_verwijder_knop_5 As button:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(0, 0, 0, 0)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =94
-                HoverFill: =
-                OnSelect: =Set(varShowRemoveGroupPopup, true);
-                PressedFill: =
-                Text: =""
-                Width: =86
-                X: =431
-                Y: =25
-                ZIndex: =6
-
-        "'kandidaat toevoegen_1' As group":
-            Height: =5
-            Width: =5
-            X: =80
-            Y: =80
-            ZIndex: =10
-
-            groep_verwijder_text_3 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =Set(varShowAddPopup, true);
-                Size: =11
-                Text: ="kandidaat toevoegen"
-                Width: =169
-                X: =38
-                Y: =72
-                ZIndex: =7
-
-            groep_verwijder_knop_4 As button:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(0, 0, 0, 0)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =94
-                HoverFill: =
-                OnSelect: =Set(varShowAddPopup, true);
-                PressedFill: =
-                Text: =""
-                Width: =86
-                X: =38
-                Y: =10
-                ZIndex: =8
-
-            Icon7_1 As icon.Add:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =60
-                Icon: =Icon.Add
-                OnSelect: =Set(varShowAddPopup, true);
-                Width: =60
-                X: =92
-                Y: =21
-                ZIndex: =9
 
     container_35 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -554,23 +458,6 @@ courses_screen_1 As screen:
             Y: =332
             ZIndex: =41
 
-    deleteCoursePopup As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =38
-
-        Label9 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =57
-            Text: ="weet je het zeker om deze cursus te verwijderen?"
-            Visible: =varShowDeleteCoursePopup
-            Width: =285
-            X: =559
-            Y: =324
-            ZIndex: =13
-
     navigatie_component_6 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
         nav_groepenScreen: =groups_screen
@@ -589,7 +476,7 @@ courses_screen_1 As screen:
         popup_background_13 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =varShowDeleteCoursePopup
+            Visible: =varShowDeleteGroupsPopup
             Width: =1366
             ZIndex: =14
 
@@ -600,7 +487,7 @@ courses_screen_1 As screen:
             Fill: =RGBA(60, 60, 60, 1)
             Height: =235
             Text: =""
-            Visible: =varShowDeleteCoursePopup
+            Visible: =varShowDeleteGroupsPopup
             Width: =505
             X: =431
             Y: =255
@@ -613,7 +500,7 @@ courses_screen_1 As screen:
             Height: =54
             Size: =18
             Text: ="weet je het zeker?"
-            Visible: =varShowDeleteCoursePopup
+            Visible: =varShowDeleteGroupsPopup
             Width: =505
             X: =430
             Y: =261
@@ -632,16 +519,13 @@ courses_screen_1 As screen:
                     { course: "" }
                 );*/
                 
-                Remove(
-                    courses, // The name of the entity
-                    gallery_courses_2.Selected // The record you want to delete
-                );
                     Patch(
                         groepens,
                         LookUp(groepens, course = gallery_courses_2.Selected.name),
                         { course: "" }
                     );
-                Set(varShowDeleteCoursePopup, false);
+                    
+                Set(varShowDeleteGroupsPopup, false);
                 /*
                 Remove(
                     groepens, // The name of the entity
@@ -662,12 +546,111 @@ courses_screen_1 As screen:
             RadiusTopRight: =6
             Size: =13
             Text: ="verwijderen"
-            Visible: =varShowDeleteCoursePopup
+            Visible: =varShowDeleteGroupsPopup
             X: =487
             Y: =415
             ZIndex: =17
 
         knop_annuleer_12 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(varShowDeleteGroupsPopup, false)
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            Visible: =varShowDeleteGroupsPopup
+            X: =727
+            Y: =415
+            ZIndex: =18
+
+        Label9_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =57
+            Text: ="weet je het zeker om deze groep te verwijderen van de cursus"
+            Visible: =varShowDeleteGroupsPopup
+            Width: =285
+            X: =559
+            Y: =324
+            ZIndex: =19
+
+    RemoveGroupPopup_2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =49
+
+        popup_background_15 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =varShowDeleteCoursePopup
+            Width: =1366
+            ZIndex: =43
+
+        popup_box_15 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =235
+            Text: =""
+            Visible: =varShowDeleteCoursePopup
+            Width: =505
+            X: =431
+            Y: =255
+            ZIndex: =44
+
+        popup_header_13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Size: =18
+            Text: ="weet je het zeker?"
+            Visible: =varShowDeleteCoursePopup
+            Width: =505
+            X: =430
+            Y: =261
+            ZIndex: =45
+
+        knop_toevoegen_9 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =RGBA(255, 0, 0, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(184, 0, 0, 1)
+            OnSelect: |
+                =Remove(
+                    groepens, // The name of the entity
+                    gallery_courses_3.Selected // The record you want to delete
+                );
+                
+                    Patch(
+                        studenten_tabel,
+                        LookUp(studenten_tabel, course.name = gallery_courses_3.Selected.course),
+                        { groupID: "" }
+                    );
+                
+                Set(varShowDeleteCoursePopup, false); // Hides the popup after the operations
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="verwijderen"
+            Visible: =varShowDeleteCoursePopup
+            X: =487
+            Y: =415
+            ZIndex: =46
+
+        knop_annuleer_14 As button:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 1)
             Fill: =RGBA(255, 255, 255, 1)
@@ -684,17 +667,17 @@ courses_screen_1 As screen:
             Visible: =varShowDeleteCoursePopup
             X: =727
             Y: =415
-            ZIndex: =18
+            ZIndex: =47
 
-        Label9_1 As label:
+        Label9_3 As label:
             Color: =RGBA(255, 255, 255, 1)
             Height: =57
-            Text: ="weet je het zeker om deze groep te verwijderen van de cursus?"
+            Text: ="weet je het zeker om deze cursus te verwijderen?"
             Visible: =varShowDeleteCoursePopup
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =19
+            ZIndex: =48
 
     addStudentsPopUp_1 As group:
         Height: =5

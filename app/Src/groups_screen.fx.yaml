@@ -76,7 +76,7 @@ groups_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            groupID = gallery_courses_3.Selected.groupID
                         )
                     ),
                     true,
@@ -107,7 +107,7 @@ groups_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            groupID = gallery_courses_3.Selected.groupID
                         )
                     ),
                     false,
@@ -132,6 +132,7 @@ groups_screen As screen:
         ZIndex: =3
 
         "gallery_courses_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =227
             Items: |
@@ -295,6 +296,7 @@ groups_screen As screen:
             ZIndex: =1
 
         "gallery_score_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =88
             Items: =averageGroupScores
@@ -402,6 +404,7 @@ groups_screen As screen:
             ZIndex: =4
 
         "gallery_groups_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =202
             Items: |
@@ -759,12 +762,13 @@ groups_screen As screen:
             ZIndex: =17
 
         "addStudentToGroup_gallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =250
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course.courseID = gallery_courses_3.Selected.course && !IsBlank(Email)
+                    course.courseID = gallery_courses_3.Selected.course && IsBlank(groupID)
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -889,110 +893,177 @@ groups_screen As screen:
             Y: =171
             ZIndex: =36
 
-    deleteStudentsPopUp As group:
+    Group11_1 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
-        ZIndex: =45
+        ZIndex: =43
 
-        popup_background_7 As rectangle:
+        popup_background_11 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
             Visible: =varShowDeletePopup
             Width: =1366
-            ZIndex: =9
+            ZIndex: =37
 
-        popup_box_7 As button:
+        popup_box_10 As button:
             AutoDisableOnSelect: =false
             BorderStyle: =BorderStyle.None
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(60, 60, 60, 1)
-            Height: =260
+            Height: =468
             Text: =""
             Visible: =varShowDeletePopup
-            Width: =505
-            X: =430
-            Y: =270
-            ZIndex: =10
+            Width: =741
+            X: =313
+            Y: =150
+            ZIndex: =38
 
-        popup_header_5 As label:
+        popup_header_8 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="student verwijderen"
+            Text: ="Studenten toevoegen"
             Visible: =varShowDeletePopup
             Width: =505
-            X: =430
-            Y: =266
-            ZIndex: =11
+            X: =429
+            Y: =150
+            ZIndex: =39
 
-        knop_toevoegen_1 As button:
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =0
-            Fill: =RGBA(255, 0, 0, 1)
-            FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(184, 0, 0, 1)
-            OnSelect: |-
-                =Patch(studenten_tabel, deleteStudentDropDown.Selected, {groupID: ""});
-                Set(varShowDeletePopup, false);
-            RadiusBottomLeft: =6
-            RadiusBottomRight: =6
-            RadiusTopLeft: =6
-            RadiusTopRight: =6
-            Size: =13
-            Text: ="verwijderen"
-            Visible: =varShowDeletePopup
-            X: =486
-            Y: =455
-            ZIndex: =12
-
-        knop_annuleer_6 As button:
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 0, 0, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Normal
-            HoverColor: =RGBA(0, 0, 0, 1)
-            HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowDeletePopup, false);
-            RadiusBottomLeft: =6
-            RadiusBottomRight: =6
-            RadiusTopLeft: =6
-            RadiusTopRight: =6
-            Size: =13
-            Text: ="Annuleer"
-            Visible: =varShowDeletePopup
-            X: =726
-            Y: =455
-            ZIndex: =13
-
-        deleteStudentDropDown As dropdown:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronFill: =RGBA(0, 0, 0, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="Actief"
-            Fill: =RGBA(45, 45, 45, 1)
-            Height: =57
-            HoverFill: =RGBA(192, 5, 230, 1)
+        "addStudentToGroup_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
+            DelayItemLoading: =true
+            Height: =250
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    !IsBlank(groupID)
-                    && course.name = gallery_courses_3.Selected.course
+                    course.courseID = gallery_courses_3.Selected.course && !IsBlank(groupID)
                 )
-            PressedColor: =RGBA(0, 0, 0, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            SelectionFill: =RGBA(192, 5, 230, 1)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =80
             Visible: =varShowDeletePopup
-            Width: =400
-            X: =482
-            Y: =332
-            ZIndex: =14
+            Width: =706
+            X: =330
+            Y: =292
+            ZIndex: =40
+
+            Title1_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 173
+                X: =58
+                Y: =15
+                ZIndex: =2
+
+            Subtitle1_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Email
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title1_1.Width
+                X: =58
+                Y: =40
+                ZIndex: =3
+
+            Checkbox1_1 As checkbox:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                CheckboxBorderColor: =RGBA(0, 0, 0, 0)
+                CheckboxSize: =35
+                CheckmarkFill: =RGBA(192, 5, 230, 1)
+                Color: =RGBA(192, 5, 230, 1)
+                Default: =If(ThisItem.groupID = gallery_courses_3.Selected.groupID, true,false)
+                DisabledColor: =RGBA(192, 5, 230, 1)
+                Fill: =RGBA(45, 45, 45, 0)
+                Height: =70
+                HoverColor: =RGBA(192, 5, 230, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnCheck: |-
+                    =Patch(studenten_tabel, addStudentToGroup_gallery_1.Selected, {groupID: gallery_courses_3.Selected.groupID});
+                OnSelect: =Select(Parent)
+                OnUncheck: |-
+                    =Patch(studenten_tabel, addStudentToGroup_gallery_1.Selected, {groupID: ""});
+                PressedColor: =RGBA(192, 5, 230, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Text: =""
+                Width: =38
+                X: =7
+                Y: =5
+                ZIndex: =4
+
+        container_40 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =75
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Visible: =varShowDeletePopup
+            Width: =483
+            X: =442
+            Y: =204
+            ZIndex: =41
+
+            SearchInput1_4 As text:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =""
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HintText: ="Zoek student..."
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =400
+                X: =15
+                Y: =17
+                ZIndex: =1
+
+            Icon1_5 As icon.Search:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =35
+                Icon: =Icon.Search
+                Width: =35
+                X: =432
+                Y: =17
+                ZIndex: =2
+
+        Icon13_1 As icon.Cancel:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =35
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =Refresh(groepens);
+                Refresh(studenten_tabel);
+                Set(varShowDeletePopup, false);
+            Visible: =varShowDeletePopup
+            Width: =35
+            X: =337
+            Y: =171
+            ZIndex: =42
 
     CreateGroupPopup As group:
         Height: =5
