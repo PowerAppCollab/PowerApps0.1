@@ -818,7 +818,7 @@ groups_screen As screen:
                 CheckboxSize: =35
                 CheckmarkFill: =RGBA(192, 5, 230, 1)
                 Color: =RGBA(192, 5, 230, 1)
-                Default: =If(ThisItem.groupID = gallery_courses_3.Selected.groupID, true,false)
+                Default: =
                 DisabledColor: =RGBA(192, 5, 230, 1)
                 Fill: =RGBA(45, 45, 45, 0)
                 Height: =70
@@ -940,7 +940,7 @@ groups_screen As screen:
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course.courseID = gallery_courses_3.Selected.course && !IsBlank(groupID)
+                    course.courseID = gallery_courses_3.Selected.course && !IsBlank(groupID) && groupID = gallery_courses_3.Selected.groupID
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -990,7 +990,7 @@ groups_screen As screen:
                 CheckboxSize: =35
                 CheckmarkFill: =RGBA(192, 5, 230, 1)
                 Color: =RGBA(192, 5, 230, 1)
-                Default: =If(ThisItem.groupID = gallery_courses_3.Selected.groupID, true,false)
+                Default: =
                 DisabledColor: =RGBA(192, 5, 230, 1)
                 Fill: =RGBA(45, 45, 45, 0)
                 Height: =70
