@@ -696,9 +696,8 @@ intakes_screen As screen:
             BorderStyle: =BorderStyle.None
             DisabledColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(192, 5, 230, 1)
-            FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: |
+            OnSelect: |+
                 =Set(
                     newStudentID,
                     Text(GUID())
@@ -727,7 +726,8 @@ intakes_screen As screen:
                             Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
                             Email: gallery_intakes.Selected.Email,
                             intakeID: gallery_intakes.Selected.intakeID,
-                            'Werkzaam Bij': gallery_intakes.Selected.'Werkzaam bij'
+                            'Werkzaam Bij': gallery_intakes.Selected.'Werkzaam bij',
+                            geboorteDatum: gallery_intakes.Selected.Geboortedatum
                         }
                     );
                     Set(
@@ -740,11 +740,13 @@ intakes_screen As screen:
                     )
                 );
                 Refresh(studenten_tabel);
+                If(succes_student = true, 
+                    Remove(
+                        intakes, 
+                        gallery_intakes.Selected
+                    )
+                )
                 
-                Remove(
-                    intakes, // The name of the entity
-                    gallery_intakes.Selected // The record you want to delete
-                );
             PressedFill: =
             RadiusBottomLeft: =0
             RadiusBottomRight: =0

@@ -5,7 +5,7 @@ courses_screen_1 As screen:
     container_33 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =305
+        Height: =575
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
@@ -17,7 +17,7 @@ courses_screen_1 As screen:
         "gallery_courses_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
-            Height: =250
+            Height: =512
             Items: |
                 =
                 Filter(courses, StartsWith(name, SearchInput1_2.Text))
@@ -100,25 +100,13 @@ courses_screen_1 As screen:
             OnSelect: =Set(varShowCreateCoursePopup, true);
             Text: ="Cursus aanmaken"
             Width: =500
-            Y: =265
+            Y: =538
             ZIndex: =3
-
-    container_34 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.None
-        Fill: =RGBA(60, 60, 60, 1)
-        Height: =258
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        X: =180
-        Y: =467
-        ZIndex: =2
 
     container_36 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
-        Height: =387
+        Height: =530
         RadiusBottomLeft: =15
         RadiusBottomRight: =15
         RadiusTopLeft: =15
@@ -259,37 +247,6 @@ courses_screen_1 As screen:
             X: =438
             Y: =19
             ZIndex: =2
-
-    container_38 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.None
-        Fill: =RGBA(60, 60, 60, 1)
-        Height: =125
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        Width: =600
-        X: =725
-        Y: =600
-        ZIndex: =5
-
-        intake_icon_13 As image:
-            Height: =60
-            Image: =presentation_2_line
-            Width: =60
-            X: =269
-            Y: =25
-            ZIndex: =2
-
-        label_intake_13 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Size: =11
-            Text: ="Presenteer"
-            Width: =138
-            X: =230
-            Y: =79
-            ZIndex: =3
 
     container_35 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
