@@ -740,6 +740,11 @@ intakes_screen As screen:
                     )
                 );
                 Refresh(studenten_tabel);
+                
+                Remove(
+                    intakes, // The name of the entity
+                    gallery_intakes.Selected // The record you want to delete
+                );
             PressedFill: =
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
