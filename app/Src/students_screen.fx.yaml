@@ -35,14 +35,14 @@ students_screen As screen:
                     Filter(
                         Filter(
                             studenten_tabel,
-                            course.name = dropdown_courses.Selected.name
+                            course = dropdown_courses.Selected.name
                         ),
                         SearchInput1.Text in Voornaam && Archived = "True"
                     ),
                     Filter(
                         Filter(
                             studenten_tabel,
-                            course.name = dropdown_courses.Selected.name
+                            course = dropdown_courses.Selected.name
                         ),
                         SearchInput1.Text in Voornaam && Archived <> "True"
                     )
@@ -623,7 +623,7 @@ students_screen As screen:
             Label7_9 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.course.name
+                Text: =gallery_students.Selected.course
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),

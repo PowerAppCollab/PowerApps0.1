@@ -30,7 +30,7 @@ courses_screen_1 As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                            groepens,
+                            courses,
                             StartsWith(
                                 name,
                                 SearchInput1_1.Text
@@ -79,7 +79,7 @@ courses_screen_1 As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                            groepens,
+                            courses,
                             StartsWith(
                                 name,
                                 SearchInput1_1.Text
@@ -632,9 +632,14 @@ courses_screen_1 As screen:
                     gallery_courses_3.Selected // The record you want to delete
                 );
                 
+                Remove(
+                    courses, // The name of the entity
+                    gallery_courses_2.Selected // The record you want to delete
+                );
+                
                     Patch(
                         studenten_tabel,
-                        LookUp(studenten_tabel, course.name = gallery_courses_3.Selected.course),
+                        LookUp(studenten_tabel, course = gallery_courses_3.Selected.course),
                         { groupID: "" }
                     );
                 
