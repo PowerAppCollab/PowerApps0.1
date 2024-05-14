@@ -768,7 +768,7 @@ groups_screen As screen:
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course.courseID = gallery_courses_3.Selected.course && IsBlank(groupID)
+                    course = gallery_courses_3.Selected.course && IsBlank(groupID)
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -940,7 +940,7 @@ groups_screen As screen:
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course.courseID = gallery_courses_3.Selected.course && !IsBlank(groupID) && groupID = gallery_courses_3.Selected.groupID
+                    course = gallery_courses_3.Selected.course && !IsBlank(groupID) && groupID = gallery_courses_3.Selected.groupID
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -1237,7 +1237,7 @@ groups_screen As screen:
                 
                     Patch(
                         studenten_tabel,
-                        LookUp(studenten_tabel, course.name = gallery_courses_3.Selected.course),
+                        LookUp(studenten_tabel, course = gallery_courses_3.Selected.course),
                         { groupID: "" }
                     );
                 
