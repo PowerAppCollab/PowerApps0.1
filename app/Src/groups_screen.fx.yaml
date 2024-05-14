@@ -768,7 +768,7 @@ groups_screen As screen:
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course = gallery_courses_3.Selected.course && IsBlank(groupID)
+                    course = gallery_courses_3.Selected.course && IsBlank(groupID) && !IsBlank(Email)
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
