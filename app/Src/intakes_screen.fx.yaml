@@ -723,6 +723,7 @@ intakes_screen As screen:
                             Voornaam: gallery_intakes.Selected.Voornaam,
                             Achternaam: gallery_intakes.Selected.Achternaam,
                             studentID: newStudentID,
+                            course:gallery_intakes.Selected.courseID,
                             Telefoonnummer: gallery_intakes.Selected.Telefoonnummer,
                             Email: gallery_intakes.Selected.Email,
                             intakeID: gallery_intakes.Selected.intakeID,
