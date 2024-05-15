@@ -20,7 +20,7 @@ courses_screen_1 As screen:
             Height: =512
             Items: |
                 =
-                Filter(courses, StartsWith(name, SearchInput1_2.Text))
+                Filter(courses, StartsWith(name, SearchInput1_2.Text) && name <> "All")
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false

@@ -32,12 +32,14 @@ students_screen As screen:
                 =Filter(
                     studenten_tabel,
                     If(
-                        varShowActive,
+                        varShowArchived,
                         Archived = "true",
-                        true
-                    ) && (
+                Archived <> "true"
+                    ) &&
+                    (
                         dropdown_courses.Selected.name = "All" || course = dropdown_courses.Selected.name
-                    ) && (
+                    ) &&
+                    (
                         IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
                     )
                 )
@@ -675,7 +677,7 @@ students_screen As screen:
             ChevronFill: =RGBA(0, 0, 0, 1)
             ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
             Color: =RGBA(255, 255, 255, 1)
-            Default: ="Actief"
+            Default: ="All"
             Fill: =RGBA(45, 45, 45, 1)
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: =courses
