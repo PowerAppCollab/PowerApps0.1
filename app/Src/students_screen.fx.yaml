@@ -3,7 +3,6 @@ students_screen As screen:
     OnVisible: |+
         =Refresh(studenten_tabel);
         Set(scoresToevoegen, false);
-        Set(varShowArchived, true);
         
 
     navigatie_component_3 As navigatie_component:
@@ -34,8 +33,8 @@ students_screen As screen:
                     studenten_tabel,
                     If(
                         varShowActive,
-                        Archived <> "true",
-                        false
+                        Archived = "true",
+                        true
                     ) && (
                         dropdown_courses.Selected.name = "All" || course = dropdown_courses.Selected.name
                     ) && (
