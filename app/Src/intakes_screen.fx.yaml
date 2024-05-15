@@ -34,183 +34,6 @@ intakes_screen As screen:
             Width: =1150
             ZIndex: =1
 
-        form_intakeResultaten As formViewer:
-            AcceptsFocus: =false
-            DataSource: =intakeForms
-            Height: =269
-            Item: =LookUp(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID)
-            Visible: |
-                =If(
-                    IsBlank(gallery_intakes.Selected.Email
-                    ),
-                    false,
-                    true
-                )
-            Width: =904
-            X: =244
-            Y: =56
-            ZIndex: =2
-
-            "'Huidige Functie_DataCard1' As typedDataCard.textualViewCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_huidigefunctie"
-                Default: =ThisItem.'Huidige Functie'
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_huidigefunctie)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =301
-                X: =0
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey7 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue7 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey7.Y + DataCardKey7.Height + 5
-                    ZIndex: =2
-
-            "'Jaren Ervaring_DataCard1' As typedDataCard.textualViewCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_jarenervaring"
-                Default: =ThisItem.'Jaren Ervaring'
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_jarenervaring)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =301
-                X: =1
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey8 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue8 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey8.Y + DataCardKey8.Height + 5
-                    ZIndex: =2
-
-            Opleiding_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_opleiding"
-                Default: =ThisItem.Opleiding
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_opleiding)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =301
-                X: =2
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey9 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue9 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey9.Y + DataCardKey9.Height + 5
-                    ZIndex: =2
-
-            Programmeertalen_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_programmeertalen"
-                Default: =ThisItem.Programmeertalen
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_programmeertalen)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =301
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey10 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue10 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey10.Y + DataCardKey10.Height + 5
-                    ZIndex: =2
-
         label_intakeResultaten_error As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -226,6 +49,121 @@ intakes_screen As screen:
             Width: =1150
             Y: =130
             ZIndex: =3
+
+        "gallery_score_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
+            DelayItemLoading: =true
+            Height: =269
+            Items: =Filter(scores, studentID = gallery_intakes.Selected.Email)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =40
+            Visible: |
+                =If(
+                    IsBlank(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.studentID
+                        )
+                    ),
+                    false,
+                    If(
+                        scoresToevoegen,
+                        false,
+                        true
+                    )
+                )
+            Width: =600
+            X: =517
+            Y: =56
+            ZIndex: =4
+
+            gallery_score_date_3 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                OnSelect: =Select(Parent)
+                Text: |
+                    =Text(ThisItem.datum, "dd-mm-yyyy")
+                X: =95
+                ZIndex: =3
+
+            gallery_score_scores_5 As label:
+                Color: =RGBA(192, 5, 230, 1)
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.score
+                Width: =50
+                X: =15
+                ZIndex: =4
+
+            Icon2_3 As icon.Send:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =20
+                Icon: =Icon.Send
+                OnSelect: =Set(SendMailBoxOpen, true);
+                Width: =20
+                X: =521
+                Y: =11
+                ZIndex: =5
+
+            Icon8_2 As icon.Trash:
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                Height: =20
+                Icon: =Icon.Trash
+                OnSelect: =RemoveIf(scores, ID = gallery_score_3.Selected.ID);
+                Width: =20
+                X: =555
+                Y: =11
+                ZIndex: =6
+
+            gallery_score_scores_6 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Examen
+                Width: =368
+                X: =61
+                ZIndex: =7
+
+        LineChart1_4 As lineChart:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =300
+            ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+            Items: |-
+                =ForAll(
+                        Filter(
+                            scores,
+                            studentID = gallery_intakes.Selected.Email
+                        ),
+                
+                        {
+                            score: score,
+                            Examen: Examen
+                        }
+                    )
+            NumberOfSeries: =0
+            ShowValues: =
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =500
+            X: =17
+            XLabelAngle: =55
+            Y: =25
+            YAxisMax: =100
+            YAxisMin: =0
+            ZIndex: =5
 
     container_16 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -246,6 +184,7 @@ intakes_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(45, 45, 45, 1)
             Fill: =RGBA(45, 45, 45, 1)
+            Height: =38
             HintText: ="Zoek student..."
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(45, 45, 45, 1)
@@ -253,9 +192,9 @@ intakes_screen As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Width: =406
+            Width: =228
             X: =15
-            Y: =17
+            Y: =19
             ZIndex: =1
 
         Icon1_1 As icon.Search:
@@ -263,9 +202,28 @@ intakes_screen As screen:
             Height: =35
             Icon: =Icon.Search
             Width: =35
-            X: =438
-            Y: =19
+            X: =259
+            Y: =20
             ZIndex: =2
+
+        dropdown_courses_1 As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="All"
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: =courses
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Width: =156
+            X: =315
+            Y: =19
+            ZIndex: =3
 
     container_11 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -284,7 +242,14 @@ intakes_screen As screen:
             DelayItemLoading: =true
             Height: =225
             Items: |
-                =Filter(intakes, StartsWith(Voornaam, input_searchIntakes.Text))
+                =Filter(
+                    intakes,
+                        dropdown_courses.Selected.name = "All" || courseID = dropdown_courses.Selected.name
+                    &&
+                    (
+                        IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
+                    )
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -968,4 +933,75 @@ intakes_screen As screen:
             X: =603
             Y: =420
             ZIndex: =33
+
+    Group8_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =38
+
+        Icon10_1 As icon.Import:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.Import
+            Rotation: |
+                =90
+            Width: =25
+            X: =234
+            Y: =405
+            ZIndex: =35
+
+        AttachControl_3 As attachments:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =152
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            IsInDataCard: =true
+            Items: =
+            OnAddFile: |
+                =Set(isLoading, true);
+                Set(scoreUploadFlowDone, uploadScoreFiles.Run(
+                    {
+                        contentBytes: Last(Self.Attachments).Value,
+                        name: Last(Self.Attachments).Name
+                    }
+                ));
+                Reset(Self);
+                Set(isLoading, false);
+                Refresh(scores);
+                
+                //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
+                //Set(isLoading; !scoreUploadFlowDone);;
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Size: =20
+            Tooltip: =
+            Width: =86
+            X: =229
+            Y: =308
+            ZIndex: =36
+
+        Label17_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =29
+            Text: ="Scores uploaden"
+            X: =256
+            Y: =403
+            ZIndex: =37
 
