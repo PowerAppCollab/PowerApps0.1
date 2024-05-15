@@ -29,25 +29,19 @@ students_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =250
-            Items: |+
-                =If(
-                    varShowActive,
-                    Filter(
-                        Filter(
-                            studenten_tabel,
-                            course = dropdown_courses.Selected.name
-                        ),
-                        SearchInput1.Text in Voornaam && Archived = "True"
-                    ),
-                    Filter(
-                        Filter(
-                            studenten_tabel,
-                            course = dropdown_courses.Selected.name
-                        ),
-                        SearchInput1.Text in Voornaam && Archived <> "True"
+            Items: |
+                =Filter(
+                    studenten_tabel,
+                    If(
+                        varShowActive,
+                        Archived <> "true",
+                        false
+                    ) && (
+                        dropdown_courses.Selected.name = "All" || course = dropdown_courses.Selected.name
+                    ) && (
+                        IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
                     )
                 )
-                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
