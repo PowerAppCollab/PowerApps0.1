@@ -1674,6 +1674,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.TextInput4.AccessibleLabel"
                 }
               ],
@@ -3697,6 +3727,96 @@
                 "member": "AccessibleLabel",
                 "module": "intakes_screen",
                 "type": "intakes_screen.container_20.intakeFormNotesContainer.Icon14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_20.intakeFormNotesContainer.Icon14_2"
               }
             }
           ],
