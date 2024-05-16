@@ -144,7 +144,47 @@
                 },
                 "region": {
                   "charLength": 21,
-                  "charOffset": 40,
+                  "charOffset": 31,
+                  "snippet": {
+                    "text": "CountRows(tempEmails)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "intakesVersturen_screen",
+                "type": "intakesVersturen_screen.container_21.Label10"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 131,
                   "snippet": {
                     "text": "CountRows(tempEmails)"
                   }
@@ -1464,19 +1504,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "intakes_screen.container_16.dropdown_courses_1.AccessibleLabel"
+                  "fullyQualifiedName": "intakes_screen.container_16.Icon1_6.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "intakes_screen.container_16.dropdown_courses_1.AccessibleLabel",
+                  "fullyQualifiedName": "intakes_screen.container_16.Icon1_6.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "intakes_screen",
-                "type": "intakes_screen.container_16.dropdown_courses_1"
+                "type": "intakes_screen.container_16.Icon1_6"
               }
             }
           ],
@@ -3828,6 +3868,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "intakes_screen.container_16.Icon1_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "intakes_screen.container_16.Icon1_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "intakes_screen",
+                "type": "intakes_screen.container_16.Icon1_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [

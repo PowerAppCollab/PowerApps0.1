@@ -8,6 +8,13 @@ intakesVersturen_screen As screen:
         RemoveIf(tempEmails, true);
         Refresh(tempEmails)
 
+    navigatie_component_2 As navigatie_component:
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+
     container_21 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -19,7 +26,7 @@ intakesVersturen_screen As screen:
         Width: =1150
         X: =180
         Y: =400
-        ZIndex: =1
+        ZIndex: =2
 
         "tempEmails_gallery As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -70,8 +77,9 @@ intakesVersturen_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Text: |-
-                =If(IsBlank(tempEmails), "","U heeft " & CountRows(tempEmails) & " emails geupload.
-                Wilt u allen een intake sturen?")
+                =If(IsBlank(tempEmails), "", If(CountRows(tempEmails) = 1, "U heeft 1 email geupload.
+                Wilt u deze een intake sturen?", "U heeft " & CountRows(tempEmails) & " emails geupload.
+                Wilt u allen een intake sturen?"))
             Visible: =!IsEmpty(tempEmails)
             Width: =277
             X: =532
@@ -109,14 +117,15 @@ intakesVersturen_screen As screen:
             ZIndex: =3
 
         Label11_1 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =34
-            Text: ="De mails zijn succesvol verzonden!"
+            Text: ="Succesvol verzonden!"
             VerticalAlign: =VerticalAlign.Top
             Visible: =intakeMailsSend
-            Width: =282
-            X: =434
+            Width: =316
+            X: =417
             Y: =146
             ZIndex: =4
 
@@ -130,16 +139,14 @@ intakesVersturen_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =2
+        ZIndex: =3
 
         Label1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
             Size: =16
             Text: ="Intake handmatig versturen"
             Width: =500
-            Y: =10
             ZIndex: =1
 
         label_email_error As label:
@@ -232,17 +239,15 @@ intakesVersturen_screen As screen:
         Width: =625
         X: =700
         Y: =40
-        ZIndex: =3
+        ZIndex: =4
 
         Label1_2 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
             Height: =38
             Size: =16
             Text: ="Meerdere intakes versturen"
             Width: =625
-            Y: =10
             ZIndex: =1
 
         Label11 As label:
@@ -300,6 +305,8 @@ intakesVersturen_screen As screen:
             BorderColor: =Color.Black
             BorderStyle: =BorderStyle.None
             Color: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
             DropTargetBorderStyle: =BorderStyle.None
             Fill: =RGBA(0, 0, 0, 0)
             Height: =215
@@ -318,6 +325,8 @@ intakesVersturen_screen As screen:
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
             PaddingTop: =5
+            PressedColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
             Size: =30
             Tooltip: =
             Width: =80
@@ -335,7 +344,7 @@ intakesVersturen_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =4
+        ZIndex: =5
 
         Label1_1 As label:
             Align: =Align.Center
@@ -346,14 +355,6 @@ intakesVersturen_screen As screen:
             Width: =500
             Y: =18
             ZIndex: =1
-
-    navigatie_component_2 As navigatie_component:
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-        ZIndex: =23
 
     loadingOn As group:
         Height: =5
@@ -368,7 +369,7 @@ intakesVersturen_screen As screen:
             Height: =768
             Visible: =isLoading
             Width: =1366
-            ZIndex: =21
+            ZIndex: =6
 
         spinner_loading As image:
             Height: =175
@@ -377,5 +378,5 @@ intakesVersturen_screen As screen:
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =22
+            ZIndex: =7
 

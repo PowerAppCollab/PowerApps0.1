@@ -528,7 +528,7 @@ intakes_screen As screen:
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
                 PressedBorderColor: =
-                PressedColor: =
+                PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =
                 Visible: =editNote
                 Width: =865
@@ -683,7 +683,6 @@ intakes_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(45, 45, 45, 1)
             Fill: =RGBA(45, 45, 45, 1)
-            Height: =38
             HintText: ="Zoek student..."
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(45, 45, 45, 1)
@@ -691,7 +690,7 @@ intakes_screen As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Width: =228
+            Width: =365
             X: =15
             Y: =19
             ZIndex: =1
@@ -701,27 +700,18 @@ intakes_screen As screen:
             Height: =35
             Icon: =Icon.Search
             Width: =35
-            X: =259
-            Y: =20
+            X: =393
+            Y: =21
             ZIndex: =2
 
-        dropdown_courses_1 As dropdown:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronFill: =RGBA(0, 0, 0, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="All"
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverFill: =RGBA(192, 5, 230, 1)
-            Items: =courses
-            PressedColor: =RGBA(0, 0, 0, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            SelectionFill: =RGBA(192, 5, 230, 1)
-            Width: =156
-            X: =315
-            Y: =19
+        Icon1_6 As icon.Search:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =35
+            Icon: =Icon.Add
+            OnSelect: =Navigate(intakesVersturen_screen)
+            Width: =35
+            X: =448
+            Y: =21
             ZIndex: =3
 
     container_11 As groupContainer.manualLayoutContainer:
@@ -845,23 +835,6 @@ intakes_screen As screen:
             Width: =500
             Y: =82
             ZIndex: =2
-
-        Button1 As button:
-            BorderStyle: =BorderStyle.None
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(192, 5, 230, 1)
-            FontWeight: =FontWeight.Normal
-            Height: =27
-            HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: =Navigate(intakesVersturen_screen)
-            PressedFill: =
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =13
-            Text: ="Intake versturen"
-            Width: =500
-            Y: =198
-            ZIndex: =3
 
     container_12 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
