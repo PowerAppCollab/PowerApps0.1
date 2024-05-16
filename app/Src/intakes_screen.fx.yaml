@@ -560,7 +560,9 @@ intakes_screen As screen:
                     Color: =RGBA(192, 5, 230, 1)
                     Height: =28
                     Icon: =Icon.Edit
-                    OnSelect: =If(editNote = true, Set(editNote, false), Set(editNote, true))
+                    OnSelect: |-
+                        =If(editNote = true, Set(editNote, false), Set(editNote, true));
+                        Refresh(intakeNotes)
                     Visible: =!editNote
                     Width: =34
                     X: =40
@@ -585,14 +587,40 @@ intakes_screen As screen:
                     Height: =28
                     Icon: =Icon.Check
                     OnSelect: |-
-                        =Patch(
+                        =If(
+                            IsBlank(
+                                LookUp(
+                                    intakeNotes,
+                                    intakeFormID = gallery_intakes.Selected.intakeFormID
+                                )
+                            ),
+                            Patch(
                             intakeNotes,
-                            LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID),
-                            {
-                                'intakeNotes (cr884_intakenotes)': TextInput4.Text
-                            }
+                            Defaults(intakeNotes),
+                            {'intakeNotes (cr884_intakenotes)': TextInput4.Text,
+                            intakeFormID: gallery_intakes.Selected.intakeFormID}
                         );
-                        If(editNote = true, Set(editNote, false), Set(editNote, true));
+                            Patch(
+                            intakeNotes,
+                            LookUp(
+                                intakeNotes,
+                                intakeFormID = gallery_intakes.Selected.intakeFormID
+                            ),
+                            {'intakeNotes (cr884_intakenotes)': TextInput4.Text}
+                        );
+                        );
+                        
+                        If(
+                            editNote = true,
+                            Set(
+                                editNote,
+                                false
+                            ),
+                            Set(
+                                editNote,
+                                true
+                            )
+                        );
                         Reset(TextInput4)
                     Visible: =editNote
                     Width: =34
