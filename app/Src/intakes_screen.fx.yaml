@@ -477,7 +477,7 @@ intakes_screen As screen:
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
                     =If(
-                        IsBlank(input_naam_intake.Text) || Len(input_naam_intake.Text) > 24,
+                        intakeAddScoresErrorText.Visible = true,
                         Set(
                             errorNameTooShort,
                             true
