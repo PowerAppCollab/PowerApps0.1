@@ -357,7 +357,7 @@ intakes_screen As screen:
                     RadiusTopRight: =0
                     Width: =225
                     X: =36
-                    Y: =58
+                    Y: =37
                     ZIndex: =2
 
                 input_score_intake As text:
@@ -379,7 +379,7 @@ intakes_screen As screen:
                     RadiusTopRight: =0
                     Width: =225
                     X: =36
-                    Y: =118
+                    Y: =97
                     ZIndex: =3
 
                 AddScoreIntake_button As button:
@@ -422,7 +422,7 @@ intakes_screen As screen:
                     Text: ="Toevoegen"
                     Width: =225
                     X: =36
-                    Y: =178
+                    Y: =157
                     ZIndex: =4
 
                 intakeAddScoresErrorText As label:
@@ -442,7 +442,7 @@ intakes_screen As screen:
                         )
                     Width: =225
                     X: =36
-                    Y: =91
+                    Y: =70
                     ZIndex: =5
 
                 intakeAddScoresErrorTextName_1 As label:
@@ -458,7 +458,7 @@ intakes_screen As screen:
                         )
                     Width: =225
                     X: =36
-                    Y: =30
+                    Y: =9
                     ZIndex: =7
 
                 intakeAddScoresErrorTextName_2 As label:
@@ -469,7 +469,7 @@ intakes_screen As screen:
                     Visible: =errorInputTestScores
                     Width: =225
                     X: =36
-                    Y: =211
+                    Y: =190
                     ZIndex: =8
 
             label_scoreTitle_error_2 As label:
