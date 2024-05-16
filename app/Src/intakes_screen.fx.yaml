@@ -1042,8 +1042,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =170
                 X: =65
@@ -1058,8 +1058,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =170
                 X: =65
@@ -1074,8 +1074,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =170
                 X: =65
@@ -1089,8 +1089,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =315
                 X: =246
@@ -1104,8 +1104,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =315
                 X: =246
@@ -1119,8 +1119,8 @@ intakes_screen As screen:
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
+                        true,
+                        false
                     )
                 Width: =315
                 X: =246
