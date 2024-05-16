@@ -359,16 +359,12 @@ intakes_screen As screen:
                     =If(
                         IsBlank(
                             Filter(
-                                scores,
-                                studentID = gallery_students.Selected.studentID
+                                intakeTestScores,
+                                intakeFormID = gallery_intakes.Selected.intakeFormID
                             )
                         ),
                         false,
-                        If(
-                            scoresToevoegen,
-                            false,
-                            true
-                        )
+                        true
                     )
                 Width: =600
                 X: =358
@@ -387,7 +383,7 @@ intakes_screen As screen:
                     DisabledColor: =RGBA(255, 255, 255, 1)
                     Height: =20
                     Icon: =Icon.Trash
-                    OnSelect: =RemoveIf(intakeTestScores, intakeFormID = gallery_intakes.Selected.intakeFormID);
+                    OnSelect: =RemoveIf(intakeTestScores, UID = gallery_score_3.Selected.UID);
                     Width: =20
                     X: =555
                     Y: =11
@@ -477,7 +473,8 @@ intakes_screen As screen:
                                 {
                                     intakeFormID: gallery_intakes.Selected.intakeFormID,
                                     scoreName: input_naam_intake.Text,
-                                    scoreValue: input_score_intake.Text
+                                    scoreValue: input_score_intake.Text,
+                                    UID: GUID()
                                 }
                             );
                             Reset(input_score_intake),
@@ -540,6 +537,28 @@ intakes_screen As screen:
                     X: =36
                     Y: =211
                     ZIndex: =8
+
+            label_scoreTitle_error_2 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =75
+                Text: ="Er zijn geen scores beschikbaar."
+                Visible: |-
+                    =If(
+                        IsEmpty(
+                            Filter(
+                                intakeTestScores,
+                                intakeFormID = gallery_intakes.Selected.intakeFormID
+                            )
+                        ),
+                        true,
+                        false
+                    )
+                Width: =600
+                X: =358
+                Y: =97
+                ZIndex: =10
 
         intakeFormNotesContainer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
