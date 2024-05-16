@@ -507,7 +507,7 @@ intakes_screen As screen:
                 Color: =RGBA(184, 0, 0, 1)
                 Height: =28
                 PaddingBottom: =0
-                Text: ="Naam te lang /"
+                Text: ="Voer een getal in 0-100"
                 Visible: |-
                     =If(
                         !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
@@ -518,6 +518,38 @@ intakes_screen As screen:
                 X: =36
                 Y: =73
                 ZIndex: =5
+
+            intakeAddScoresErrorTextName As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =28
+                PaddingBottom: =0
+                Text: ="Naam is te kort"
+                Visible: |
+                    =If(
+                        Len(input_naam_intake.Text) = 0,
+                        true,
+                        false
+                    )
+                Width: =225
+                X: =36
+                Y: =12
+                ZIndex: =6
+
+            intakeAddScoresErrorTextName_1 As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =28
+                PaddingBottom: =0
+                Text: ="Naam is te lang"
+                Visible: |
+                    =If(
+                        Len(input_naam_intake.Text) > 24,
+                        true,
+                        false
+                    )
+                Width: =225
+                X: =36
+                Y: =12
+                ZIndex: =7
 
         intakeFormNotesContainer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
