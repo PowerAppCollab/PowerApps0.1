@@ -702,24 +702,6 @@ students_screen As screen:
         Y: =600
         ZIndex: =11
 
-        intake_icon_3 As image:
-            Height: =60
-            Image: ='invite_line (1)'
-            Width: =60
-            X: =70
-            Y: =25
-            ZIndex: =1
-
-        label_intake_3 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Size: =11
-            Text: ="Intake Weergeven"
-            Width: =138
-            X: =31
-            Y: =79
-            ZIndex: =2
-
         groep_verwijder As group:
             Height: =5
             Width: =5
@@ -732,8 +714,8 @@ students_screen As screen:
                 Image: =user_x_line
                 OnSelect: =Set(varShowPopup, true);
                 Width: =60
-                X: =366
-                Y: =25
+                X: =291
+                Y: =20
                 ZIndex: =5
 
             groep_verwijder_text As label:
@@ -743,8 +725,8 @@ students_screen As screen:
                 Size: =11
                 Text: ="Verwijder"
                 Width: =138
-                X: =327
-                Y: =79
+                X: =252
+                Y: =74
                 ZIndex: =6
 
             groep_verwijder_knop As button:
@@ -759,9 +741,21 @@ students_screen As screen:
                 PressedFill: =
                 Text: =""
                 Width: =86
-                X: =347
-                Y: =25
+                X: =272
+                Y: =20
                 ZIndex: =7
+
+        Rectangle2 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.6)
+            Height: =125
+            Visible: |
+                =If(
+                    !IsBlank(gallery_students.Selected.Email),
+                    false,
+                    true
+                )
+            Width: =600
+            ZIndex: =12
 
         Group3 As group:
             Height: =5
@@ -774,8 +768,8 @@ students_screen As screen:
                 Height: =60
                 Image: =presentation_2_line
                 Width: =60
-                X: =227
-                Y: =25
+                X: =69
+                Y: =20
                 ZIndex: =3
 
             label_intake_4 As label:
@@ -784,8 +778,8 @@ students_screen As screen:
                 Size: =11
                 Text: ="Presenteer"
                 Width: =138
-                X: =188
-                Y: =79
+                X: =30
+                Y: =74
                 ZIndex: =4
 
             presenteerNav_knop As button:
@@ -802,8 +796,8 @@ students_screen As screen:
                 PressedFill: =
                 Text: =""
                 Width: =86
-                X: =214
-                Y: =20
+                X: =56
+                Y: =15
                 ZIndex: =11
 
         Group2 As group:
@@ -815,7 +809,7 @@ students_screen As screen:
 
             intake_icon_5 As image:
                 Height: =60
-                Image: =information_line
+                Image: =file_line
                 Width: =60
                 X: =488
                 Y: =25
@@ -825,7 +819,7 @@ students_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
-                Text: ="Informatie"
+                Text: ="PDF genereren"
                 Width: =138
                 X: =449
                 Y: =79

@@ -4234,6 +4234,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.information_line"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.information_line",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "information_line",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.invite_line (2)"
                 }
               ],
@@ -4395,6 +4425,36 @@
               },
               "properties": {
                 "member": "work-at-layer",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.pdf_line"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.pdf_line",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "pdf_line",
                 "module": "App",
                 "type": "App"
               }

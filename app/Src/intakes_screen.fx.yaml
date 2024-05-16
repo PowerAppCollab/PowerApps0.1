@@ -47,593 +47,228 @@ intakes_screen As screen:
             Y: =130
             ZIndex: =3
 
-        intakeFormAnswersContainer As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =269
-            Visible: =If(intakeContainerVisible = 1, true,false)
-            Width: =958
-            X: =192
-            Y: =56
-            ZIndex: =6
-
-            FormViewer2 As formViewer:
-                DataSource: =intakeForms
-                Height: =269
-                Item: =LookUp(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID)
-                Width: =972
-                ZIndex: =1
-
-                "'Huidige Functie_DataCard2' As typedDataCard.textualViewCard":
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="cr884_huidigefunctie"
-                    Default: =ThisItem.'Huidige Functie'
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_huidigefunctie)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Width: =324
-                    X: =0
-                    Y: =0
-                    ZIndex: =1
-
-                    DataCardKey20 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue20 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FontWeight: =FontWeight.Lighter
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey20.Y + DataCardKey20.Height + 5
-                        ZIndex: =2
-
-                "'Jaren Ervaring_DataCard2' As typedDataCard.textualViewCard":
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="cr884_jarenervaring"
-                    Default: =ThisItem.'Jaren Ervaring'
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_jarenervaring)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Width: =324
-                    X: =1
-                    Y: =0
-                    ZIndex: =1
-
-                    DataCardKey21 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue21 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FontWeight: =FontWeight.Lighter
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey21.Y + DataCardKey21.Height + 5
-                        ZIndex: =2
-
-                Opleiding_DataCard2 As typedDataCard.textualViewCard:
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="cr884_opleiding"
-                    Default: =ThisItem.Opleiding
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_opleiding)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Width: =324
-                    X: =2
-                    Y: =0
-                    ZIndex: =1
-
-                    DataCardKey22 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue22 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FontWeight: =FontWeight.Lighter
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey22.Y + DataCardKey22.Height + 5
-                        ZIndex: =2
-
-                Programmeertalen_DataCard2 As typedDataCard.textualViewCard:
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="cr884_programmeertalen"
-                    Default: =ThisItem.Programmeertalen
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_programmeertalen)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Width: =324
-                    X: =0
-                    Y: =1
-                    ZIndex: =1
-
-                    DataCardKey23 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue23 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FontWeight: =FontWeight.Lighter
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey23.Y + DataCardKey23.Height + 5
-                        ZIndex: =2
-
-                "'Werkzaam Bij_DataCard2' As typedDataCard.textualViewCard":
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="cr884_werkzaambij"
-                    Default: =ThisItem.'Werkzaam Bij'
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_werkzaambij)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Width: =324
-                    X: =1
-                    Y: =1
-                    ZIndex: =1
-
-                    DataCardKey24 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue24 As label:
-                        AutoHeight: =true
-                        Color: =RGBA(255, 255, 255, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FontWeight: =FontWeight.Lighter
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey24.Y + DataCardKey24.Height + 5
-                        ZIndex: =2
-
-        Rectangle1 As rectangle:
-            Fill: =RGBA(192, 5, 230, 1)
-            Height: =269
-            Width: =2
-            X: =190
-            Y: =28
-            ZIndex: =10
-
-        intakeFormScoresContainer As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =269
-            Visible: =If(intakeContainerVisible = 2, true,false)
-            Width: =958
-            X: =192
-            Y: =56
-            ZIndex: =11
-
-            "gallery_score_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-                '#CopilotOverlayLabel': ="Filtered"
-                DelayItemLoading: =true
-                Height: =269
-                Items: =Filter(intakeTestScores, intakeFormID = gallery_intakes.Selected.intakeFormID)
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                TemplatePadding: =0
-                TemplateSize: =40
-                Visible: |
-                    =If(
-                        IsBlank(
-                            Filter(
-                                intakeTestScores,
-                                intakeFormID = gallery_intakes.Selected.intakeFormID
-                            )
-                        ),
-                        false,
-                        true
-                    )
-                Width: =600
-                X: =358
-                ZIndex: =9
-
-                gallery_score_scores_5 As label:
-                    Color: =RGBA(192, 5, 230, 1)
-                    OnSelect: =Select(Parent)
-                    Text: =ThisItem.scoreValue
-                    Width: =50
-                    X: =15
-                    ZIndex: =4
-
-                Icon8_2 As icon.Trash:
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisabledColor: =RGBA(255, 255, 255, 1)
-                    Height: =20
-                    Icon: =Icon.Trash
-                    OnSelect: =RemoveIf(intakeTestScores, UID = gallery_score_3.Selected.UID);
-                    Width: =20
-                    X: =555
-                    Y: =11
-                    ZIndex: =6
-
-                gallery_score_scores_6 As label:
-                    Color: =RGBA(255, 255, 255, 1)
-                    OnSelect: =Select(Parent)
-                    Text: =ThisItem.scoreName
-                    Width: =368
-                    X: =61
-                    ZIndex: =7
-
-            Group7 As group:
-                Height: =5
-                Width: =5
-                X: =60
-                Y: =60
-                ZIndex: =9
-
-                input_naam_intake As text:
-                    BorderStyle: =BorderStyle.None
-                    Color: =RGBA(255, 255, 255, 1)
-                    Default: =""
-                    DisabledColor: =RGBA(255, 255, 255, 1)
-                    DisabledFill: =RGBA(45, 45, 45, 1)
-                    Fill: =RGBA(45, 45, 45, 1)
-                    Height: =33
-                    HintText: ="Naam test"
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =RGBA(45, 45, 45, 1)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(45, 45, 45, 1)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Width: =225
-                    X: =36
-                    Y: =37
-                    ZIndex: =2
-
-                input_score_intake As text:
-                    BorderStyle: =BorderStyle.None
-                    Color: =RGBA(255, 255, 255, 1)
-                    Default: =""
-                    DisabledColor: =RGBA(255, 255, 255, 1)
-                    DisabledFill: =RGBA(45, 45, 45, 1)
-                    Fill: =RGBA(45, 45, 45, 1)
-                    Height: =33
-                    HintText: ="Cijfer"
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =RGBA(45, 45, 45, 1)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(45, 45, 45, 1)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Width: =225
-                    X: =36
-                    Y: =97
-                    ZIndex: =3
-
-                AddScoreIntake_button As button:
-                    BorderStyle: =BorderStyle.None
-                    Fill: =RGBA(192, 5, 230, 1)
-                    FontWeight: =FontWeight.Normal
-                    Height: =33
-                    HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
-                    OnSelect: |-
-                        =If(
-                            intakeAddScoresErrorText.Visible = true ||
-                            intakeAddScoresErrorTextName_1.Visible = true ||
-                            input_naam_intake.Text = "",
-                            Set(
-                                errorInputTestScores,
-                                true
-                            ),
-                            Set(
-                                errorInputTestScores,
-                                false
-                            );
-                            Patch(
-                                intakeTestScores,
-                                Defaults(intakeTestScores),
-                                {
-                                    intakeFormID: gallery_intakes.Selected.intakeFormID,
-                                    scoreName: input_naam_intake.Text,
-                                    scoreValue: input_score_intake.Text,
-                                    UID: GUID()
-                                }
-                            );
-                            Reset(input_score_intake),
-                            Reset(input_naam_intake)
-                        )
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =13
-                    Text: ="Toevoegen"
-                    Width: =225
-                    X: =36
-                    Y: =157
-                    ZIndex: =4
-
-                intakeAddScoresErrorText As label:
-                    Color: =RGBA(184, 0, 0, 1)
-                    Height: =28
-                    PaddingBottom: =0
-                    Text: ="Voer een getal in 0-100"
-                    Visible: |-
-                        =If(
-                            input_score_intake.Text = "",
-                            false,
-                            If(
-                                !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
-                                true,
-                                false
-                            )
-                        )
-                    Width: =225
-                    X: =36
-                    Y: =70
-                    ZIndex: =5
-
-                intakeAddScoresErrorTextName_1 As label:
-                    Color: =RGBA(184, 0, 0, 1)
-                    Height: =28
-                    PaddingBottom: =0
-                    Text: ="Naam is te lang"
-                    Visible: |
-                        =If(
-                            Len(input_naam_intake.Text) > 24,
-                            true,
-                            false
-                        )
-                    Width: =225
-                    X: =36
-                    Y: =9
-                    ZIndex: =7
-
-                intakeAddScoresErrorTextName_2 As label:
-                    Color: =RGBA(184, 0, 0, 1)
-                    Height: =28
-                    PaddingBottom: =0
-                    Text: ="Controleer de invoer"
-                    Visible: =errorInputTestScores
-                    Width: =225
-                    X: =36
-                    Y: =190
-                    ZIndex: =8
-
-            label_scoreTitle_error_2 As label:
-                Align: =Align.Center
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =FontWeight.Lighter
-                Height: =75
-                Text: ="Er zijn geen scores beschikbaar."
-                Visible: |-
-                    =If(
-                        IsEmpty(
-                            Filter(
-                                intakeTestScores,
-                                intakeFormID = gallery_intakes.Selected.intakeFormID
-                            )
-                        ),
-                        true,
-                        false
-                    )
-                Width: =600
-                X: =358
-                Y: =97
-                ZIndex: =10
-
-        intakeFormNotesContainer As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =325
-            Visible: =If(intakeContainerVisible = 3, true,false)
-            Width: =958
-            X: =192
-            ZIndex: =12
-
-            Label21 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =205
-                Text: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
-                VerticalAlign: =VerticalAlign.Top
-                Visible: =!editNote
-                Width: =865
-                X: =27
-                Y: =60
-                ZIndex: =2
-
-            TextInput4 As text:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(255, 255, 255, 1)
-                Default: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =205
-                HoverBorderColor: =RGBA(0, 0, 0, 0)
-                HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                Mode: =TextMode.MultiLine
-                PaddingLeft: =5
-                PressedBorderColor: =
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =
-                Visible: =editNote
-                Width: =865
-                X: =27
-                Y: =60
-                ZIndex: =4
-
-            Group17 As group:
-                Height: =5
-                Width: =5
-                X: =40
-                Y: =40
-                ZIndex: =7
-
-                Container5 As groupContainer.manualLayoutContainer:
-                    DropShadow: =DropShadow.None
-                    Fill: =RGBA(45, 45, 45, 1)
-                    Height: =40
-                    RadiusBottomLeft: =10
-                    RadiusBottomRight: =10
-                    RadiusTopLeft: =10
-                    RadiusTopRight: =10
-                    Width: =If(editNote = true, 80, 43)
-                    X: =35
-                    Y: =11
-                    ZIndex: =1
-
-                Icon14 As icon.Edit:
-                    Color: =RGBA(192, 5, 230, 1)
-                    Height: =28
-                    Icon: =Icon.Edit
-                    OnSelect: |-
-                        =If(editNote = true, Set(editNote, false), Set(editNote, true));
-                        Refresh(intakeNotes)
-                    Visible: =!editNote
-                    Width: =34
-                    X: =40
-                    Y: =16
-                    ZIndex: =3
-
-                Icon14_1 As icon.Edit:
-                    Color: =RGBA(184, 0, 0, 1)
-                    Height: =28
-                    Icon: =Icon.Cancel
-                    OnSelect: |-
-                        =If(editNote = true, Set(editNote, false), Set(editNote, true));
-                        Reset(TextInput4)
-                    Visible: =editNote
-                    Width: =34
-                    X: =40
-                    Y: =16
-                    ZIndex: =5
-
-                Icon14_2 As icon.Edit:
-                    Color: =RGBA(192, 5, 230, 1)
-                    Height: =28
-                    Icon: =Icon.Check
-                    OnSelect: |-
-                        =If(
-                            IsBlank(
-                                LookUp(
-                                    intakeNotes,
-                                    intakeFormID = gallery_intakes.Selected.intakeFormID
-                                )
-                            ),
-                            Patch(
-                            intakeNotes,
-                            Defaults(intakeNotes),
-                            {'intakeNotes (cr884_intakenotes)': TextInput4.Text,
-                            intakeFormID: gallery_intakes.Selected.intakeFormID}
-                        ),
-                            Patch(
-                            intakeNotes,
-                            LookUp(
-                                intakeNotes,
-                                intakeFormID = gallery_intakes.Selected.intakeFormID
-                            ),
-                            {'intakeNotes (cr884_intakenotes)': TextInput4.Text}
-                        )
-                        );
-                        
-                        If(
-                            editNote = true,
-                            Set(
-                                editNote,
-                                false
-                            ),
-                            Set(
-                                editNote,
-                                true
-                            )
-                        );
-                        Reset(TextInput4)
-                    Visible: =editNote
-                    Width: =34
-                    X: =74
-                    Y: =16
-                    ZIndex: =6
-
-        Group16 As group:
+        Group18 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
             ZIndex: =13
+
+            intakeFormAnswersContainer As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =269
+                Visible: =If(intakeContainerVisible = 1, true, false)
+                Width: =958
+                X: =192
+                Y: =56
+                ZIndex: =6
+
+                FormViewer2 As formViewer:
+                    DataSource: =intakeForms
+                    Height: =269
+                    Item: =LookUp(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID)
+                    Width: =972
+                    ZIndex: =1
+
+                    "'Huidige Functie_DataCard2' As typedDataCard.textualViewCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr884_huidigefunctie"
+                        Default: =ThisItem.'Huidige Functie'
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_huidigefunctie)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Width: =324
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        DataCardKey20 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue20 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FontWeight: =FontWeight.Lighter
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                            ZIndex: =2
+
+                    "'Jaren Ervaring_DataCard2' As typedDataCard.textualViewCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr884_jarenervaring"
+                        Default: =ThisItem.'Jaren Ervaring'
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_jarenervaring)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Width: =324
+                        X: =1
+                        Y: =0
+                        ZIndex: =1
+
+                        DataCardKey21 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue21 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FontWeight: =FontWeight.Lighter
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                            ZIndex: =2
+
+                    Opleiding_DataCard2 As typedDataCard.textualViewCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr884_opleiding"
+                        Default: =ThisItem.Opleiding
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_opleiding)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Width: =324
+                        X: =2
+                        Y: =0
+                        ZIndex: =1
+
+                        DataCardKey22 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue22 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FontWeight: =FontWeight.Lighter
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                            ZIndex: =2
+
+                    Programmeertalen_DataCard2 As typedDataCard.textualViewCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr884_programmeertalen"
+                        Default: =ThisItem.Programmeertalen
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_programmeertalen)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Width: =324
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        DataCardKey23 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue23 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FontWeight: =FontWeight.Lighter
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                            ZIndex: =2
+
+                    "'Werkzaam Bij_DataCard2' As typedDataCard.textualViewCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="cr884_werkzaambij"
+                        Default: =ThisItem.'Werkzaam Bij'
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_werkzaambij)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Width: =324
+                        X: =1
+                        Y: =1
+                        ZIndex: =1
+
+                        DataCardKey24 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue24 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FontWeight: =FontWeight.Lighter
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                            ZIndex: =2
 
             Button4 As button:
                 Align: =Align.Left
@@ -650,6 +285,12 @@ intakes_screen As screen:
                 PressedFill: =
                 Size: =13
                 Text: ="Intake Antwoorden"
+                Visible: |-
+                    =If(
+                        !IsBlank(gallery_intakes.Selected.Voornaam),
+                        true,
+                        false
+                    )
                 Width: =178
                 Y: =105
                 ZIndex: =7
@@ -669,6 +310,12 @@ intakes_screen As screen:
                 PressedFill: =
                 Size: =13
                 Text: ="Test Scores"
+                Visible: |-
+                    =If(
+                        !IsBlank(gallery_intakes.Selected.Voornaam),
+                        true,
+                        false
+                    )
                 Width: =178
                 Y: =150
                 ZIndex: =8
@@ -688,9 +335,380 @@ intakes_screen As screen:
                 PressedFill: =
                 Size: =13
                 Text: ="Notities"
+                Visible: |-
+                    =If(
+                        !IsBlank(gallery_intakes.Selected.Voornaam),
+                        true,
+                        false
+                    )
                 Width: =178
                 Y: =195
                 ZIndex: =9
+
+            Rectangle1 As rectangle:
+                Fill: =RGBA(192, 5, 230, 1)
+                Height: =269
+                Width: =2
+                X: =190
+                Y: =28
+                ZIndex: =10
+
+            intakeFormScoresContainer As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =269
+                Visible: =If(intakeContainerVisible = 2, true, false)
+                Width: =958
+                X: =192
+                Y: =56
+                ZIndex: =11
+
+                "gallery_score_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    '#CopilotOverlayLabel': ="Filtered"
+                    DelayItemLoading: =true
+                    Height: =269
+                    Items: =Filter(intakeTestScores, intakeFormID = gallery_intakes.Selected.intakeFormID)
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =40
+                    Visible: |
+                        =If(
+                            IsBlank(
+                                Filter(
+                                    intakeTestScores,
+                                    intakeFormID = gallery_intakes.Selected.intakeFormID
+                                )
+                            ),
+                            false,
+                            true
+                        )
+                    Width: =600
+                    X: =358
+                    ZIndex: =9
+
+                    gallery_score_scores_5 As label:
+                        Color: =RGBA(192, 5, 230, 1)
+                        OnSelect: =Select(Parent)
+                        Text: =ThisItem.scoreValue
+                        Width: =50
+                        X: =15
+                        ZIndex: =4
+
+                    Icon8_2 As icon.Trash:
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        Height: =20
+                        Icon: =Icon.Trash
+                        OnSelect: =RemoveIf(intakeTestScores, UID = gallery_score_3.Selected.UID);
+                        Width: =20
+                        X: =555
+                        Y: =11
+                        ZIndex: =6
+
+                    gallery_score_scores_6 As label:
+                        Color: =RGBA(255, 255, 255, 1)
+                        OnSelect: =Select(Parent)
+                        Text: =ThisItem.scoreName
+                        Width: =368
+                        X: =61
+                        ZIndex: =7
+
+                Group7 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =9
+
+                    input_naam_intake As text:
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(45, 45, 45, 1)
+                        Fill: =RGBA(45, 45, 45, 1)
+                        Height: =33
+                        HintText: ="Naam test"
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(45, 45, 45, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(45, 45, 45, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =225
+                        X: =36
+                        Y: =37
+                        ZIndex: =2
+
+                    input_score_intake As text:
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(45, 45, 45, 1)
+                        Fill: =RGBA(45, 45, 45, 1)
+                        Height: =33
+                        HintText: ="Cijfer"
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(45, 45, 45, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(45, 45, 45, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =225
+                        X: =36
+                        Y: =97
+                        ZIndex: =3
+
+                    AddScoreIntake_button As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(192, 5, 230, 1)
+                        FontWeight: =FontWeight.Normal
+                        Height: =33
+                        HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
+                        OnSelect: |-
+                            =If(
+                                intakeAddScoresErrorText.Visible = true ||
+                                intakeAddScoresErrorTextName_1.Visible = true ||
+                                input_naam_intake.Text = "",
+                                Set(
+                                    errorInputTestScores,
+                                    true
+                                ),
+                                Set(
+                                    errorInputTestScores,
+                                    false
+                                );
+                                Patch(
+                                    intakeTestScores,
+                                    Defaults(intakeTestScores),
+                                    {
+                                        intakeFormID: gallery_intakes.Selected.intakeFormID,
+                                        scoreName: input_naam_intake.Text,
+                                        scoreValue: input_score_intake.Text,
+                                        UID: GUID()
+                                    }
+                                );
+                                Reset(input_score_intake),
+                                Reset(input_naam_intake)
+                            )
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =13
+                        Text: ="Toevoegen"
+                        Width: =225
+                        X: =36
+                        Y: =157
+                        ZIndex: =4
+
+                    intakeAddScoresErrorText As label:
+                        Color: =RGBA(184, 0, 0, 1)
+                        Height: =28
+                        PaddingBottom: =0
+                        Text: ="Voer een getal in 0-100"
+                        Visible: |-
+                            =If(
+                                input_score_intake.Text = "",
+                                false,
+                                If(
+                                    !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
+                                    true,
+                                    false
+                                )
+                            )
+                        Width: =225
+                        X: =36
+                        Y: =70
+                        ZIndex: =5
+
+                    intakeAddScoresErrorTextName_1 As label:
+                        Color: =RGBA(184, 0, 0, 1)
+                        Height: =28
+                        PaddingBottom: =0
+                        Text: ="Naam is te lang"
+                        Visible: |
+                            =If(
+                                Len(input_naam_intake.Text) > 24,
+                                true,
+                                false
+                            )
+                        Width: =225
+                        X: =36
+                        Y: =9
+                        ZIndex: =7
+
+                    intakeAddScoresErrorTextName_2 As label:
+                        Color: =RGBA(184, 0, 0, 1)
+                        Height: =28
+                        PaddingBottom: =0
+                        Text: ="Controleer de invoer"
+                        Visible: =errorInputTestScores
+                        Width: =225
+                        X: =36
+                        Y: =190
+                        ZIndex: =8
+
+                label_scoreTitle_error_2 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Lighter
+                    Height: =75
+                    Text: ="Er zijn geen scores beschikbaar."
+                    Visible: |-
+                        =If(
+                            IsEmpty(
+                                Filter(
+                                    intakeTestScores,
+                                    intakeFormID = gallery_intakes.Selected.intakeFormID
+                                )
+                            ),
+                            true,
+                            false
+                        )
+                    Width: =600
+                    X: =358
+                    Y: =97
+                    ZIndex: =10
+
+            intakeFormNotesContainer As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =325
+                Visible: =If(intakeContainerVisible = 3, true, false)
+                Width: =958
+                X: =192
+                ZIndex: =12
+
+                Label21 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =205
+                    Text: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
+                    VerticalAlign: =VerticalAlign.Top
+                    Visible: =!editNote
+                    Width: =865
+                    X: =27
+                    Y: =60
+                    ZIndex: =2
+
+                TextInput4 As text:
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =205
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Mode: =TextMode.MultiLine
+                    PaddingLeft: =5
+                    PressedBorderColor: =
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =
+                    Visible: =editNote
+                    Width: =865
+                    X: =27
+                    Y: =60
+                    ZIndex: =4
+
+                Group17 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =7
+
+                    Container5 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(45, 45, 45, 1)
+                        Height: =40
+                        RadiusBottomLeft: =10
+                        RadiusBottomRight: =10
+                        RadiusTopLeft: =10
+                        RadiusTopRight: =10
+                        Width: =If(editNote = true, 80, 43)
+                        X: =35
+                        Y: =11
+                        ZIndex: =1
+
+                    Icon14 As icon.Edit:
+                        Color: =RGBA(192, 5, 230, 1)
+                        Height: =28
+                        Icon: =Icon.Edit
+                        OnSelect: |-
+                            =If(editNote = true, Set(editNote, false), Set(editNote, true));
+                            Refresh(intakeNotes)
+                        Visible: =!editNote
+                        Width: =34
+                        X: =40
+                        Y: =16
+                        ZIndex: =3
+
+                    Icon14_1 As icon.Edit:
+                        Color: =RGBA(184, 0, 0, 1)
+                        Height: =28
+                        Icon: =Icon.Cancel
+                        OnSelect: |-
+                            =If(editNote = true, Set(editNote, false), Set(editNote, true));
+                            Reset(TextInput4)
+                        Visible: =editNote
+                        Width: =34
+                        X: =40
+                        Y: =16
+                        ZIndex: =5
+
+                    Icon14_2 As icon.Edit:
+                        Color: =RGBA(192, 5, 230, 1)
+                        Height: =28
+                        Icon: =Icon.Check
+                        OnSelect: |-
+                            =If(
+                                IsBlank(
+                                    LookUp(
+                                        intakeNotes,
+                                        intakeFormID = gallery_intakes.Selected.intakeFormID
+                                    )
+                                ),
+                                Patch(
+                                intakeNotes,
+                                Defaults(intakeNotes),
+                                {'intakeNotes (cr884_intakenotes)': TextInput4.Text,
+                                intakeFormID: gallery_intakes.Selected.intakeFormID}
+                            ),
+                                Patch(
+                                intakeNotes,
+                                LookUp(
+                                    intakeNotes,
+                                    intakeFormID = gallery_intakes.Selected.intakeFormID
+                                ),
+                                {'intakeNotes (cr884_intakenotes)': TextInput4.Text}
+                            )
+                            );
+                            
+                            If(
+                                editNote = true,
+                                Set(
+                                    editNote,
+                                    false
+                                ),
+                                Set(
+                                    editNote,
+                                    true
+                                )
+                            );
+                            Reset(TextInput4)
+                        Visible: =editNote
+                        Width: =34
+                        X: =74
+                        Y: =16
+                        ZIndex: =6
 
     container_16 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
