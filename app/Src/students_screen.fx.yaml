@@ -929,7 +929,7 @@ students_screen As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =94
                 HoverFill: =
-                OnSelect: =Set(openPopupPDF, true);
+                OnSelect: =Navigate(PDFTEMPLATE_SCORES)
                 PressedFill: =
                 Text: =""
                 Visible: =openPopupPDF
