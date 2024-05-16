@@ -599,7 +599,7 @@ intakes_screen As screen:
                             Defaults(intakeNotes),
                             {'intakeNotes (cr884_intakenotes)': TextInput4.Text,
                             intakeFormID: gallery_intakes.Selected.intakeFormID}
-                        );
+                        ),
                             Patch(
                             intakeNotes,
                             LookUp(
@@ -607,7 +607,7 @@ intakes_screen As screen:
                                 intakeFormID = gallery_intakes.Selected.intakeFormID
                             ),
                             {'intakeNotes (cr884_intakenotes)': TextInput4.Text}
-                        );
+                        )
                         );
                         
                         If(
@@ -682,7 +682,7 @@ intakes_screen As screen:
                 HoverBorderColor: =
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =
-                OnSelect: =Set(intakeContainerVisible, 3)
+                OnSelect: =Set(intakeContainerVisible, 3); Set(editNote, false)
                 PaddingLeft: =15
                 PressedBorderColor: =
                 PressedFill: =
