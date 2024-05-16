@@ -4,6 +4,7 @@ intakes_screen As screen:
         =Refresh(intakes);
         Refresh(intakeForms);
         Set(intakeContainerVisible, 1);
+        
         //NAVIGATION SET COLOR
         Set(CurrentScreen, "intakes_screen")
         
@@ -465,7 +466,7 @@ intakes_screen As screen:
                 RadiusTopRight: =0
                 Width: =225
                 X: =36
-                Y: =90
+                Y: =100
                 ZIndex: =3
 
             AddScoreIntake_button As button:
@@ -474,14 +475,23 @@ intakes_screen As screen:
                 FontWeight: =FontWeight.Normal
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
-                OnSelect: |-
-                    =If(input_naam_intake = "" || too longxxx,
-                    Set(intakeAddScoresError, true),
-                    
-                    Patch(intakeTestScores, Defaults(intakeTestScores),{ intakeFormID: gallery_intakes.Selected.intakeFormID, scoreName: input_naam_intake.Text, scoreValue: input_score_intake.Text});
-                    
-                    Reset(input_score_intake);
-                    Reset(input_naam_intake))
+                OnSelect: |
+                    =If(
+                        IsBlank(input_naam_intake.Text) || Len(input_naam_intake.Text) > 24,
+                        Set(intakeAddScoresError, true),
+                        Set(intakeAddScoresError, false),
+                        Patch(
+                            intakeTestScores,
+                            Defaults(intakeTestScores),
+                            {
+                                intakeFormID: gallery_intakes.Selected.intakeFormID,
+                                scoreName: input_naam_intake.Text,
+                                scoreValue: input_score_intake.Text
+                            }
+                        ),
+                        Reset(input_score_intake),
+                        Reset(input_naam_intake)
+                    )
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -490,8 +500,24 @@ intakes_screen As screen:
                 Text: ="Toevoegen"
                 Width: =225
                 X: =36
-                Y: =140
+                Y: =160
                 ZIndex: =4
+
+            intakeAddScoresErrorText As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =28
+                PaddingBottom: =0
+                Text: ="Naam te lang /"
+                Visible: |-
+                    =If(
+                        !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
+                        true,
+                        false
+                    )
+                Width: =225
+                X: =36
+                Y: =73
+                ZIndex: =5
 
         intakeFormNotesContainer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
