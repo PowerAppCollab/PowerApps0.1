@@ -60,8 +60,8 @@
         ZIndex: =9
 
     Timer1 As timer:
-        Duration: =10
-        OnTimerEnd: =Navigate(studentenHighlight_screen)
+        Duration: =5
+        OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
         Y: =84
