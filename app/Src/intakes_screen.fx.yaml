@@ -11,7 +11,8 @@ intakes_screen As screen:
         
         //RESET ALL FORMS
         Reset(input_score_intake);
-        Reset(input_naam_intake)
+        Reset(input_naam_intake);
+        Set(editNote, false)
         
         
         
@@ -29,16 +30,6 @@ intakes_screen As screen:
         X: =180
         Y: =400
         ZIndex: =12
-
-        Label2_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =56
-            Size: =16
-            Text: ="Resultaten"
-            Width: =1150
-            ZIndex: =1
 
         label_intakeResultaten_error As label:
             Align: =Align.Center
@@ -272,69 +263,12 @@ intakes_screen As screen:
                         Y: =DataCardKey24.Y + DataCardKey24.Height + 5
                         ZIndex: =2
 
-        Button4 As button:
-            Align: =Align.Left
-            Color: =If(intakeContainerVisible = 1, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =26
-            HoverBorderColor: =
-            HoverColor: =RGBA(192, 5, 230, 1)
-            HoverFill: =
-            OnSelect: =Set(intakeContainerVisible, 1)
-            PaddingLeft: =15
-            PressedBorderColor: =
-            PressedFill: =
-            Size: =13
-            Text: ="Intake Antwoorden"
-            Width: =178
-            Y: =105
-            ZIndex: =7
-
-        Button4_3 As button:
-            Align: =Align.Left
-            Color: =If(intakeContainerVisible = 2, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =26
-            HoverBorderColor: =
-            HoverColor: =RGBA(192, 5, 230, 1)
-            HoverFill: =
-            OnSelect: =Set(intakeContainerVisible, 2)
-            PaddingLeft: =15
-            PressedBorderColor: =
-            PressedFill: =
-            Size: =13
-            Text: ="Test Scores"
-            Width: =178
-            Y: =150
-            ZIndex: =8
-
-        Button4_4 As button:
-            Align: =Align.Left
-            Color: =If(intakeContainerVisible = 3, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
-            Fill: =RGBA(0, 0, 0, 0)
-            FontWeight: =FontWeight.Normal
-            Height: =26
-            HoverBorderColor: =
-            HoverColor: =RGBA(192, 5, 230, 1)
-            HoverFill: =
-            OnSelect: =Set(intakeContainerVisible, 3)
-            PaddingLeft: =15
-            PressedBorderColor: =
-            PressedFill: =
-            Size: =13
-            Text: ="Notities"
-            Width: =178
-            Y: =195
-            ZIndex: =9
-
         Rectangle1 As rectangle:
             Fill: =RGBA(192, 5, 230, 1)
             Height: =269
             Width: =2
             X: =190
-            Y: =56
+            Y: =28
             ZIndex: =10
 
         intakeFormScoresContainer As groupContainer.manualLayoutContainer:
@@ -562,22 +496,120 @@ intakes_screen As screen:
 
         intakeFormNotesContainer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
-            Height: =269
+            Height: =325
             Visible: =If(intakeContainerVisible = 3, true,false)
             Width: =958
             X: =192
-            Y: =56
             ZIndex: =12
 
             Label21 As label:
                 Color: =RGBA(255, 255, 255, 1)
-                Height: =206
+                Height: =205
                 Text: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
                 VerticalAlign: =VerticalAlign.Top
-                Width: =901
+                Visible: =!editNote
+                Width: =865
                 X: =27
-                Y: =36
+                Y: =60
                 ZIndex: =1
+
+            Icon14 As icon.Edit:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =28
+                Icon: =Icon.Edit
+                OnSelect: =If(editNote = true, Set(editNote, false), Set(editNote, true))
+                Visible: =!editNote
+                Width: =34
+                X: =27
+                Y: =11
+                ZIndex: =2
+
+            TextInput4 As text:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =205
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                PressedBorderColor: =
+                PressedColor: =
+                PressedFill: =
+                Visible: =editNote
+                Width: =865
+                X: =27
+                Y: =60
+                ZIndex: =3
+
+        Group16 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =13
+
+            Button4 As button:
+                Align: =Align.Left
+                Color: =If(intakeContainerVisible = 1, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Normal
+                Height: =26
+                HoverBorderColor: =
+                HoverColor: =RGBA(192, 5, 230, 1)
+                HoverFill: =
+                OnSelect: =Set(intakeContainerVisible, 1)
+                PaddingLeft: =15
+                PressedBorderColor: =
+                PressedFill: =
+                Size: =13
+                Text: ="Intake Antwoorden"
+                Width: =178
+                Y: =105
+                ZIndex: =7
+
+            Button4_3 As button:
+                Align: =Align.Left
+                Color: =If(intakeContainerVisible = 2, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Normal
+                Height: =26
+                HoverBorderColor: =
+                HoverColor: =RGBA(192, 5, 230, 1)
+                HoverFill: =
+                OnSelect: =Set(intakeContainerVisible, 2)
+                PaddingLeft: =15
+                PressedBorderColor: =
+                PressedFill: =
+                Size: =13
+                Text: ="Test Scores"
+                Width: =178
+                Y: =150
+                ZIndex: =8
+
+            Button4_4 As button:
+                Align: =Align.Left
+                Color: =If(intakeContainerVisible = 3, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Normal
+                Height: =26
+                HoverBorderColor: =
+                HoverColor: =RGBA(192, 5, 230, 1)
+                HoverFill: =
+                OnSelect: =Set(intakeContainerVisible, 3)
+                PaddingLeft: =15
+                PressedBorderColor: =
+                PressedFill: =
+                Size: =13
+                Text: ="Notities"
+                Width: =178
+                Y: =195
+                ZIndex: =9
 
     container_16 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
