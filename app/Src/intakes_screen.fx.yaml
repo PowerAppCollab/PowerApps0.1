@@ -1062,6 +1062,7 @@ intakes_screen As screen:
             ZIndex: =18
 
             Label6_12 As label:
+                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
                 Text: ="Telefoonnummer"
@@ -1073,10 +1074,11 @@ intakes_screen As screen:
                     )
                 Width: =170
                 X: =65
-                Y: =132
+                Y: =129
                 ZIndex: =4
 
             Label6_13 As label:
+                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
                 Text: ="Email"
@@ -1088,10 +1090,11 @@ intakes_screen As screen:
                     )
                 Width: =170
                 X: =65
-                Y: =172
+                Y: =169
                 ZIndex: =5
 
             Label6_16 As label:
+                Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
                 Text: ="Naam"
@@ -1103,7 +1106,7 @@ intakes_screen As screen:
                     )
                 Width: =170
                 X: =65
-                Y: =92
+                Y: =89
                 ZIndex: =6
 
             Label7_10 As label:
@@ -1118,7 +1121,7 @@ intakes_screen As screen:
                     )
                 Width: =315
                 X: =246
-                Y: =92
+                Y: =89
                 ZIndex: =7
 
             Label7_11 As label:
@@ -1133,7 +1136,7 @@ intakes_screen As screen:
                     )
                 Width: =315
                 X: =246
-                Y: =132
+                Y: =129
                 ZIndex: =8
 
             Label7_12 As label:
@@ -1148,7 +1151,7 @@ intakes_screen As screen:
                     )
                 Width: =315
                 X: =246
-                Y: =172
+                Y: =169
                 ZIndex: =9
 
     groep_popup_2 As group:
