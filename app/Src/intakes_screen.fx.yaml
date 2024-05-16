@@ -881,10 +881,10 @@ intakes_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             Size: =16
-            Text: ="Intake Opties"
+            Text: ="Kandidaat Gegevens"
             Width: =600
             Y: =10
-            ZIndex: =2
+            ZIndex: =1
 
         label_intakeOpties_error As label:
             Align: =Align.Center
@@ -900,261 +900,86 @@ intakes_screen As screen:
                 )
             Width: =625
             Y: =130
-            ZIndex: =3
+            ZIndex: =2
 
-        form_intakeOpties As formViewer:
+        Form1 As form:
             DataSource: =intakes
-            Height: =207
+            Height: =113
             Item: =gallery_intakes.Selected
-            Visible: |
+            Visible: |-
                 =If(
-                    IsBlank(gallery_intakes.Selected.Email),
+                    IsBlank(gallery_intakes.Selected.Voornaam),
                     false,
                     true
                 )
-            Width: =625
-            Y: =40
-            ZIndex: =4
+            Width: =258
+            X: =65
+            Y: =209
+            ZIndex: =3
 
-            "'Werkzaam bij_DataCard1' As typedDataCard.textualViewCard":
+            "'Status (cr884_status)_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_werkzaambij"
-                Default: =ThisItem.'Werkzaam bij'
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_werkzaambij)
+                DataField: ="cr884_status"
+                Default: =ThisItem.'Status (cr884_status)'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_status)
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
+                Height: =99
                 Required: =false
-                Width: =208
+                Update: =intake_dropdownStatus.Selected.Value
+                Visible: =true
+                Width: =258
                 X: =0
                 Y: =0
-                ZIndex: =1
+                ZIndex: =8
 
-                DataCardKey6 As label:
-                    AutoHeight: =true
+                intake_dropdownStatus As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(192, 5, 230, 0.8)
+                    ChevronHoverBackground: =
                     Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue6 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
                     DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
+                    Fill: =RGBA(192, 5, 230, 1)
+                    HoverBorderColor: =
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(192, 5, 230, 0.8)
+                    IsSearchable: =false
+                    Items: =Choices(Status)
+                    OnChange: |
+                        =Patch(
+                            intakes,
+                            LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID),
+                            {'Status (cr884_status)': intake_dropdownStatus.Selected.Value}
+                        )
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedColor: =RGBA(0, 0, 0, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(192, 5, 230, 0.8)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Y: =50
+                    ZIndex: =2
+
+                ErrorMessage14 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
                     PaddingTop: =0
-                    Text: =Parent.Default
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
-                    ZIndex: =2
-
-            Geboortedatum_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_geboortedatum"
-                Default: =ThisItem.Geboortedatum
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_geboortedatum)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =1
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey1 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue1 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
-                    ZIndex: =2
-
-            Telefoonnummer_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_phonenumber"
-                Default: =ThisItem.Telefoonnummer
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_phonenumber)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =2
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey5 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue5 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
-                    ZIndex: =2
-
-            Voornaam_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_firstname"
-                Default: =ThisItem.Voornaam
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_firstname)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue2 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
-                    ZIndex: =2
-
-            Email_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_email"
-                Default: =ThisItem.Email
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_email)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =1
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey4 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue4 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey4.Y + DataCardKey4.Height + 5
-                    ZIndex: =2
-
-            Achternaam_DataCard1 As typedDataCard.textualViewCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_surname"
-                Default: =ThisItem.Achternaam
-                DisplayMode: =DisplayMode.View
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_surname)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =40
-                Required: =false
-                Width: =208
-                X: =2
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey11 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue11 As label:
-                    AutoHeight: =true
-                    Color: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FontWeight: =FontWeight.Lighter
-                    Height: =27
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Default
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey11.Y + DataCardKey11.Height + 5
-                    ZIndex: =2
+                    Y: =intake_dropdownStatus.Y + intake_dropdownStatus.Height
+                    ZIndex: =3
 
         Button1_1 As button:
             BorderStyle: =BorderStyle.None
@@ -1225,88 +1050,106 @@ intakes_screen As screen:
                     false
                 )
             Width: =171
-            X: =227
-            Y: =262
-            ZIndex: =6
+            X: =268
+            Y: =259
+            ZIndex: =10
 
-        Form1 As form:
-            DataSource: =intakes
-            Height: =113
-            Item: =gallery_intakes.Selected
-            Visible: |-
-                =If(
-                    IsBlank(gallery_intakes.Selected.Voornaam),
-                    false,
-                    true
-                )
-            Width: =258
-            Y: =212
-            ZIndex: =7
+        Group1_1 As group:
+            Height: =5
+            Width: =5
+            X: =-12
+            Y: =-21
+            ZIndex: =18
 
-            "'Status (cr884_status)_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr884_status"
-                Default: =ThisItem.'Status (cr884_status)'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@intakes],DataSourceInfo.DisplayName,cr884_status)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =99
-                Required: =false
-                Update: =intake_dropdownStatus.Selected.Value
-                Visible: =true
-                Width: =258
-                X: =0
-                Y: =0
+            Label6_12 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                Text: ="Telefoonnummer"
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =170
+                X: =65
+                Y: =132
+                ZIndex: =4
+
+            Label6_13 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                Text: ="Email"
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =170
+                X: =65
+                Y: =172
+                ZIndex: =5
+
+            Label6_16 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                Text: ="Naam"
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =170
+                X: =65
+                Y: =92
+                ZIndex: =6
+
+            Label7_10 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Text: =gallery_intakes.Selected.Voornaam & " " & gallery_intakes.Selected.Achternaam
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =315
+                X: =246
+                Y: =92
+                ZIndex: =7
+
+            Label7_11 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Text: =gallery_intakes.Selected.Telefoonnummer
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =315
+                X: =246
+                Y: =132
                 ZIndex: =8
 
-                intake_dropdownStatus As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    BorderStyle: =BorderStyle.None
-                    ChevronBackground: =RGBA(192, 5, 230, 0.8)
-                    ChevronHoverBackground: =
-                    Color: =RGBA(255, 255, 255, 1)
-                    DefaultSelectedItems: =[Parent.Default]
-                    DisplayFields: =["Value"]
-                    DisplayMode: =Parent.DisplayMode
-                    Fill: =RGBA(192, 5, 230, 1)
-                    HoverBorderColor: =
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =RGBA(192, 5, 230, 0.8)
-                    IsSearchable: =false
-                    Items: =Choices(Status)
-                    OnChange: |
-                        =Patch(
-                            intakes,
-                            LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID),
-                            {'Status (cr884_status)': intake_dropdownStatus.Selected.Value}
-                        )
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    PressedColor: =RGBA(0, 0, 0, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(192, 5, 230, 0.8)
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =25
-                    Y: =50
-                    ZIndex: =2
-
-                ErrorMessage14 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =intake_dropdownStatus.Y + intake_dropdownStatus.Height
-                    ZIndex: =3
+            Label7_12 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Text: =gallery_intakes.Selected.Email
+                Visible: |
+                    =If(
+                        IsBlank(gallery_students.Selected.Email),
+                        false,
+                        true
+                    )
+                Width: =315
+                X: =246
+                Y: =172
+                ZIndex: =9
 
     groep_popup_2 As group:
         Height: =5
