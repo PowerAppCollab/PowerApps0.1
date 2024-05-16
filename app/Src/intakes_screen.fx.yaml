@@ -475,11 +475,25 @@ intakes_screen As screen:
                 FontWeight: =FontWeight.Normal
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
-                OnSelect: |
+                OnSelect: |-
                     =If(
                         IsBlank(input_naam_intake.Text) || Len(input_naam_intake.Text) > 24,
-                        Set(intakeAddScoresError, true),
-                        Set(intakeAddScoresError, false),
+                        Set(
+                            errorNameTooShort,
+                            true
+                        );
+                        Set(
+                            errorInputTestScores,
+                            true
+                        ),
+                        Set(
+                            errorNameTooShort,
+                            false
+                        );
+                        Set(
+                            errorInputTestScores,
+                            false
+                        ),
                         Patch(
                             intakeTestScores,
                             Defaults(intakeTestScores),
@@ -510,9 +524,13 @@ intakes_screen As screen:
                 Text: ="Voer een getal in 0-100"
                 Visible: |-
                     =If(
-                        !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
-                        true,
-                        false
+                        input_score_intake.Text = "",
+                        false,
+                        If(
+                            !IsNumeric(input_score_intake.Text) || Value(input_score_intake.Text) < 0 || Value(input_score_intake.Text) > 100,
+                            true,
+                            false
+                        )
                     )
                 Width: =225
                 X: =36
@@ -524,12 +542,7 @@ intakes_screen As screen:
                 Height: =28
                 PaddingBottom: =0
                 Text: ="Naam is te kort"
-                Visible: |
-                    =If(
-                        Len(input_naam_intake.Text) = 0,
-                        true,
-                        false
-                    )
+                Visible: =errorNameTooShort
                 Width: =225
                 X: =36
                 Y: =12
@@ -550,6 +563,17 @@ intakes_screen As screen:
                 X: =36
                 Y: =12
                 ZIndex: =7
+
+            intakeAddScoresErrorTextName_2 As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =28
+                PaddingBottom: =0
+                Text: ="Controleer de invoer"
+                Visible: =errorInputTestScores
+                Width: =225
+                X: =36
+                Y: =193
+                ZIndex: =8
 
         intakeFormNotesContainer As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
