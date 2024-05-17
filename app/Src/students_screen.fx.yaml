@@ -1107,7 +1107,7 @@ students_screen As screen:
             Fill: =RGBA(50, 86, 160, 1)
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(39, 67, 125, 1)
-            OnSelect: |
+            OnSelect: |+
                 =Set(intakeFormIDTemp, "");
                 Set(intakeIDTemp, "");
                 
@@ -1120,7 +1120,13 @@ students_screen As screen:
                 
                 RemoveIf(intakes, intakeID = intakeIDTemp);
                 
+                RemoveIf(intakeNotes, intakeFormID = intakeFormIDTemp);
+                
+                RemoveIf(intakeTestScores, intakeFormID = intakeFormIDTemp);
+                
                 Set(varShowPopup, false);
+                
+                
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
