@@ -1059,11 +1059,12 @@ students_screen As screen:
                 
                 RemoveIf(studenten_tabel, studentID = gallery_students.Selected.studentID);
                 
+                Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
+                RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
+                
                 Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = gallery_students.Selected.intakeID).intakeID);
                 RemoveIf(intakes, intakeID = deleteIntakeID);
                 
-                Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
-                RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
                 
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
@@ -1106,11 +1107,11 @@ students_screen As screen:
             
             Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", Archived: "true"});
             
-            Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = gallery_students.Selected.intakeID).intakeID);
-            RemoveIf(intakes, intakeID = deleteIntakeID);
-            
             Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
             RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
+            
+            Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = gallery_students.Selected.intakeID).intakeID);
+            RemoveIf(intakes, intakeID = deleteIntakeID);
             
             Set(varShowPopup, false)
         RadiusBottomLeft: =6

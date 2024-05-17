@@ -959,7 +959,12 @@ intakes_screen As screen:
                 Height: =99
                 Required: =false
                 Update: =intake_dropdownStatus.Selected.Value
-                Visible: =true
+                Visible: |
+                    =If(
+                        !IsBlank(gallery_students.Selected.Email),
+                        true,
+                        false
+                    )
                 Width: =258
                 X: =0
                 Y: =0
