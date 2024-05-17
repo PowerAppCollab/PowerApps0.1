@@ -2,10 +2,10 @@
     Fill: =RGBA(255, 255, 255, 1)
     Height: =1123
     OnVisible: |+
-        =Set(tempTimer, false);
+        =Set(PDF_Scores, PDF(PDFTEMPLATE_ENDSCORE));
+        Set(tempTimer, false);
         Set(tempTimer, true);
-        Set(PDF_Scores, PDF(PDFTEMPLATE_ENDSCORE));
-        
+        Set(PDFisMade, true);
         
     Width: =794
 
