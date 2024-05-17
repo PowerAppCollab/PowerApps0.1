@@ -18,6 +18,13 @@ intakes_screen As screen:
         
         
 
+    navigatie_component_1 As navigatie_component:
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+
     container_20 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -29,7 +36,7 @@ intakes_screen As screen:
         Width: =1150
         X: =180
         Y: =400
-        ZIndex: =12
+        ZIndex: =2
 
         label_intakeResultaten_error As label:
             Align: =Align.Center
@@ -573,7 +580,7 @@ intakes_screen As screen:
                         )
                     Width: =600
                     X: =358
-                    Y: =97
+                    Y: =76
                     ZIndex: =10
 
             intakeFormNotesContainer As groupContainer.manualLayoutContainer:
@@ -720,7 +727,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =13
+        ZIndex: =3
 
         input_searchIntakes As text:
             BorderStyle: =BorderStyle.None
@@ -770,7 +777,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =14
+        ZIndex: =4
 
         "gallery_intakes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -893,7 +900,7 @@ intakes_screen As screen:
         Width: =625
         X: =700
         Y: =40
-        ZIndex: =15
+        ZIndex: =5
 
         label_intakeOpties As label:
             Align: =Align.Center
@@ -1048,12 +1055,12 @@ intakes_screen As screen:
                     )
                 );
                 Refresh(studenten_tabel);
-                If(succes_student = true, 
-                    Remove(
-                        intakes, 
-                        gallery_intakes.Selected
-                    )
-                )
+                //If(succes_student = true; 
+                //    Remove(
+                //        intakes; 
+                //        gallery_intakes.Selected
+                //    )
+                //)
                 
             PressedFill: =
             RadiusBottomLeft: =0
@@ -1185,7 +1192,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =error_newStudent
             Width: =1366
-            ZIndex: =16
+            ZIndex: =6
 
         popup_box_5 As button:
             AutoDisableOnSelect: =false
@@ -1198,7 +1205,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =17
+            ZIndex: =7
 
         popup_text_5 As label:
             Align: =Align.Center
@@ -1211,7 +1218,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =18
+            ZIndex: =8
 
         knop_annuleer_5 As button:
             BorderStyle: =BorderStyle.None
@@ -1230,15 +1237,7 @@ intakes_screen As screen:
             Visible: =error_newStudent
             X: =603
             Y: =420
-            ZIndex: =21
-
-    navigatie_component_1 As navigatie_component:
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-        ZIndex: =34
+            ZIndex: =9
 
     groep_succes_createStudent As group:
         Height: =5
@@ -1252,7 +1251,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =succes_student
             Width: =1366
-            ZIndex: =30
+            ZIndex: =10
 
         popup_box_6 As button:
             AutoDisableOnSelect: =false
@@ -1265,7 +1264,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =31
+            ZIndex: =11
 
         popup_text_6 As label:
             Align: =Align.Center
@@ -1277,7 +1276,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =32
+            ZIndex: =12
 
         knop_OK As button:
             BorderStyle: =BorderStyle.None
@@ -1296,5 +1295,5 @@ intakes_screen As screen:
             Visible: =succes_student
             X: =603
             Y: =420
-            ZIndex: =33
+            ZIndex: =13
 
