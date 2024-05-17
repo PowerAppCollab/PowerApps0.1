@@ -961,7 +961,7 @@ intakes_screen As screen:
                 Update: =intake_dropdownStatus.Selected.Value
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1105,7 +1105,7 @@ intakes_screen As screen:
                 Text: ="Email"
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1121,7 +1121,7 @@ intakes_screen As screen:
                 Text: ="Telefoonnummer"
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1137,7 +1137,7 @@ intakes_screen As screen:
                 Text: ="Naam"
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1152,7 +1152,7 @@ intakes_screen As screen:
                 Text: =gallery_intakes.Selected.Voornaam & " " & gallery_intakes.Selected.Achternaam
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1167,7 +1167,7 @@ intakes_screen As screen:
                 Text: =gallery_intakes.Selected.Email
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
@@ -1182,7 +1182,7 @@ intakes_screen As screen:
                 Text: =gallery_intakes.Selected.Telefoonnummer
                 Visible: |
                     =If(
-                        !IsBlank(gallery_students.Selected.Email),
+                        !IsBlank(gallery_intakes.Selected.Email),
                         true,
                         false
                     )
