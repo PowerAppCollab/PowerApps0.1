@@ -1317,6 +1317,90 @@ students_screen As screen:
             Y: =455
             ZIndex: =24
 
+    groep_popup_sendscore_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =34
+
+        popup_background_3 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Width: =1366
+            ZIndex: =28
+
+        popup_box_3 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =260
+            Text: =""
+            Width: =505
+            X: =430
+            Y: =254
+            ZIndex: =29
+
+        popup_text_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =87
+            Text: ="U staat op het punt om het gegenereerde PDF bestand te versturen naar " & gallery_students.Selected.Voornaam & " . Wilt u hiermee doorgaan?"
+            Width: =454
+            X: =456
+            Y: =332
+            ZIndex: =30
+
+        popup_header_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Size: =18
+            Text: ="PDF versturen"
+            Width: =505
+            X: =430
+            Y: =266
+            ZIndex: =31
+
+        knop_verwijder_3 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |+
+                =Office365Outlook.SendEmailV2(LookUp(studenten_tabel, studentID = TempStudentIDPDF).Email, "Onderwerp", "Body", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, studentID = TempStudentIDPDF).Voornaam & ".pdf", ContentBytes:PDF_Scores })})
+                
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Verstuur"
+            X: =726
+            Y: =455
+            ZIndex: =32
+
+        knop_annuleer_3 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =//Set(SendMailBoxOpen; false);;
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            X: =486
+            Y: =455
+            ZIndex: =33
+
     Group6 As group:
         Height: =5
         Width: =5
