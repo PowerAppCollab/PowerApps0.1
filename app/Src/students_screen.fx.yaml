@@ -994,12 +994,12 @@ students_screen As screen:
                 Y: =20
                 ZIndex: =21
 
-    groep_popup As group:
+    Group16 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
-        ZIndex: =24
+        ZIndex: =28
 
         popup_background As rectangle:
             Fill: =RGBA(45, 45, 45, 0.8)
@@ -1056,16 +1056,16 @@ students_screen As screen:
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |-
                 =Set(intakeFormIDTemp, "");
+                Set(intakeIDTemp, "");
                 
-                Set(studentIDTemp, gallery_students.Selected.studentID);
+                Set(intakeIDTemp, gallery_students.Selected.intakeID);
+                Set(intakeFormIDTemp, LookUp(intakes, intakeID = intakeIDTemp).intakeFormID);
                 
-                RemoveIf(studenten_tabel, studentID = studentIDTemp);
+                RemoveIf(studenten_tabel, studentID = gallery_students.Selected.studentID);
                 
-                Set(intakeFormIDTemp, LookUp(intakes, intakeID = studentIDTemp).intakeFormID);
                 RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
                 
-                Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = studentIDTemp).intakeID);
-                RemoveIf(intakes, intakeID = deleteIntakeID);
+                RemoveIf(intakes, intakeID = intakeIDTemp);
                 
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
@@ -1098,33 +1098,35 @@ students_screen As screen:
             Y: =455
             ZIndex: =18
 
-    knop_verwijder_1 As button:
-        BorderStyle: =BorderStyle.None
-        Fill: =RGBA(50, 86, 160, 1)
-        FontWeight: =FontWeight.Normal
-        HoverFill: =RGBA(39, 67, 125, 1)
-        OnSelect: |-
-            =Set(intakeFormIDTemp, "");
-            
-            Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", Archived: "true"});
-            
-            Set(intakeFormIDTemp, LookUp(intakes, intakeID = gallery_students.Selected.intakeID).intakeFormID);
-            RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
-            
-            Set(deleteIntakeID, LookUp(studenten_tabel, intakeID = gallery_students.Selected.intakeID).intakeID);
-            RemoveIf(intakes, intakeID = deleteIntakeID);
-            
-            Set(varShowPopup, false)
-        RadiusBottomLeft: =6
-        RadiusBottomRight: =6
-        RadiusTopLeft: =6
-        RadiusTopRight: =6
-        Size: =13
-        Text: ="Archiveer"
-        Visible: =varShowPopup
-        X: =603
-        Y: =455
-        ZIndex: =27
+        knop_archiveer As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(39, 67, 125, 1)
+            OnSelect: |
+                =Set(intakeFormIDTemp, "");
+                Set(intakeIDTemp, "");
+                
+                Set(intakeIDTemp, gallery_students.Selected.intakeID);
+                Set(intakeFormIDTemp, LookUp(intakes, intakeID = intakeIDTemp).intakeFormID);
+                
+                Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", Archived: "true"});
+                
+                RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
+                
+                RemoveIf(intakes, intakeID = intakeIDTemp);
+                
+                Set(varShowPopup, false);
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Archiveer"
+            Visible: =varShowPopup
+            X: =603
+            Y: =455
+            ZIndex: =27
 
     Group8 As group:
         Height: =5
