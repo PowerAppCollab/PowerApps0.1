@@ -90,7 +90,7 @@
         '#CopilotOverlayLabel': ="Filtered"
         DelayItemLoading: =true
         Height: =501
-        Items: =Filter(scores, studentID = gallery_students.Selected.studentID)
+        Items: =Filter(scores, studentID = TempStudentIDPDF)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
