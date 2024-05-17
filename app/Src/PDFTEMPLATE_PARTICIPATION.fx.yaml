@@ -51,8 +51,8 @@
         ZIndex: =9
 
     Timer1_1 As timer:
-        Duration: =10
-        OnTimerEnd: =Navigate(studentenHighlight_screen)
+        Duration: =5
+        OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
         Y: =84
@@ -61,7 +61,7 @@
     Label13_3 As label:
         FontWeight: =FontWeight.Semibold
         Size: =22
-        Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & " " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+        Text: =LookUp(studenten_tabel, studentID = TempStudentIDPDF).Voornaam & " " & LookUp(studenten_tabel, studentID = TempStudentIDPDF).Achternaam
         Width: =304
         X: =72
         Y: =451
@@ -78,7 +78,7 @@
     Label13_7 As label:
         FontWeight: =FontWeight.Semibold
         Size: =22
-        Text: ="COURSE"
+        Text: ="cursus hier...."
         Width: =304
         X: =72
         Y: =583

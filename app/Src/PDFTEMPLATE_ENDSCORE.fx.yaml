@@ -12,7 +12,7 @@
         Align: =Align.Center
         Height: =43
         Size: =22
-        Text: =LookUp(studenten_tabel, studentID = currSelectedStudent).Voornaam & "  " & LookUp(studenten_tabel, studentID = currSelectedStudent).Achternaam
+        Text: =LookUp(studenten_tabel, studentID = TempStudentIDPDF).Voornaam & "  " & LookUp(studenten_tabel, studentID = TempStudentIDPDF).Achternaam
         Width: =794
         Y: =273
         ZIndex: =1
@@ -61,7 +61,7 @@
 
     Timer1_2 As timer:
         Duration: =10
-        OnTimerEnd: =Navigate(studentenHighlight_screen)
+        OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
         Y: =84
@@ -90,7 +90,7 @@
         '#CopilotOverlayLabel': ="Filtered"
         DelayItemLoading: =true
         Height: =501
-        Items: =Filter(scores, studentID = currSelectedStudent)
+        Items: =Filter(scores, studentID = gallery_students.Selected.Email)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
