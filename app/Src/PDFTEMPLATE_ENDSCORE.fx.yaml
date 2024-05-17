@@ -13,7 +13,7 @@
         Align: =Align.Center
         Height: =43
         Size: =22
-        Text: =LookUp(studenten_tabel, studentID = TempStudentIDPDF).Voornaam & "  " & LookUp(studenten_tabel, studentID = TempStudentIDPDF).Achternaam
+        Text: =LookUp(studenten_tabel, Email = TempStudentIDPDF).Voornaam & "  " & LookUp(studenten_tabel, Email = TempStudentIDPDF).Achternaam
         Width: =794
         Y: =273
         ZIndex: =1
