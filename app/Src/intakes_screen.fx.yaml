@@ -74,6 +74,12 @@ intakes_screen As screen:
                     DataSource: =intakeForms
                     Height: =269
                     Item: =LookUp(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID)
+                    Visible: |-
+                        =If(
+                            !IsBlank(gallery_intakes.Selected.Voornaam),
+                            true,
+                            false
+                        )
                     Width: =972
                     ZIndex: =1
 
@@ -1091,7 +1097,7 @@ intakes_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
-                Text: ="Telefoonnummer"
+                Text: ="Email"
                 Visible: |
                     =If(
                         !IsBlank(gallery_students.Selected.Email),
@@ -1107,7 +1113,7 @@ intakes_screen As screen:
                 Align: =Align.Right
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
-                Text: ="Email"
+                Text: ="Telefoonnummer"
                 Visible: |
                     =If(
                         !IsBlank(gallery_students.Selected.Email),
@@ -1153,7 +1159,7 @@ intakes_screen As screen:
             Label7_11 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_intakes.Selected.Telefoonnummer
+                Text: =gallery_intakes.Selected.Email
                 Visible: |
                     =If(
                         !IsBlank(gallery_students.Selected.Email),
@@ -1168,7 +1174,7 @@ intakes_screen As screen:
             Label7_12 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_intakes.Selected.Email
+                Text: =gallery_intakes.Selected.Telefoonnummer
                 Visible: |
                     =If(
                         !IsBlank(gallery_students.Selected.Email),
