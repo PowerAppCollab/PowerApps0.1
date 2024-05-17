@@ -1378,7 +1378,9 @@ students_screen As screen:
                 =Office365Outlook.SendEmailV2(TempStudentIDPDF, "Onderwerp", "Body of the mail", {Attachments:Table({Name: "Rapport" & LookUp(studenten_tabel, Email = TempStudentIDPDF).Voornaam & ".pdf", ContentBytes:PDF_Scores })});
                 
                 Set(PDFisMade, false);
-                Set(PDF_Scores, "")
+                Set(PDF_Scores, "");
+                Set(openPopupPDF, false);
+                
                 
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -1398,9 +1400,11 @@ students_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: |
+            OnSelect: |+
                 =Set(PDFisMade, false);
-                Set(PDF_Scores, "")
+                Set(PDF_Scores, "");
+                Set(openPopupPDF, false);
+                
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
