@@ -27,7 +27,7 @@ PDF_TEMPLATE_TEST As screen:
         );
 
     Timer1_3 As timer:
-        Duration: =1000
+        Duration: =5
         OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
@@ -37,7 +37,7 @@ PDF_TEMPLATE_TEST As screen:
 
     Container4 As groupContainer.manualLayoutContainer:
         Height: =768
-        Width: =543
+        Width: =1366
         ZIndex: =11
 
         Label12_3 As label:
@@ -46,7 +46,8 @@ PDF_TEMPLATE_TEST As screen:
             Size: =22
             Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
             Width: =543
-            Y: =254
+            X: =402
+            Y: =301
             ZIndex: =1
 
         Label12_6 As label:
@@ -56,30 +57,32 @@ PDF_TEMPLATE_TEST As screen:
             Size: =26
             Text: ="Rapport"
             Width: =543
-            Y: =205
+            X: =402
+            Y: =252
             ZIndex: =2
 
         Rectangle4_6 As rectangle:
             Fill: =RGBA(192, 5, 230, 1)
             Height: =1
             Width: =300
-            X: =122
-            Y: =253
+            X: =524
+            Y: =300
             ZIndex: =3
 
         Label13_10 As label:
-            Size: =18
+            Align: =Align.Center
+            Height: =28
             Text: ="Uw behaalde scores"
             Width: =304
-            X: =48
-            Y: =356
+            X: =531
+            Y: =368
             ZIndex: =4
 
         Rectangle4_7 As rectangle:
             Fill: =RGBA(192, 5, 230, 1)
             Height: =1
             Width: =300
-            X: =52
+            X: =533
             Y: =395
             ZIndex: =5
 
@@ -87,17 +90,9 @@ PDF_TEMPLATE_TEST As screen:
             Height: =262
             Image: ='Logo-Wit RGB (1) kopie'
             Width: =336
-            X: =104
-            Y: =19
+            X: =515
+            Y: =66
             ZIndex: =6
-
-        Label6_14 As label:
-            Height: =123
-            Text: =
-            Width: =320
-            X: =119
-            Y: =390
-            ZIndex: =7
 
         "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -108,8 +103,8 @@ PDF_TEMPLATE_TEST As screen:
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =35
-            Width: =479
-            X: =64
+            Width: =366
+            X: =500
             Y: =396
             ZIndex: =8
 
