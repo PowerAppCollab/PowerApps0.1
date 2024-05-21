@@ -64,6 +64,20 @@ presentatie_screen As screen:
             )
         );
         Set(
+            firstScoreRaw,
+            First(
+                    allScores
+            )
+        );
+        Set(firstScore, Text(firstScoreRaw.score));
+        Set(
+            lastScoreRaw,
+            Last(
+                    allScores
+            )
+        );
+        Set(lastScore, Text(firstScoreRaw.score));
+        Set(
             diffHighestScore,
             100 - Value(First(highestScore).score)
         );
@@ -207,7 +221,7 @@ presentatie_screen As screen:
 
                 Label19_2 As label:
                     Color: =RGBA(255, 255, 255, 1)
-                    Text: ="xxx"
+                    Text: =firstScore
                     Width: =226
                     X: =322
                     Y: =408
@@ -215,7 +229,7 @@ presentatie_screen As screen:
 
                 Label19_3 As label:
                     Color: =RGBA(255, 255, 255, 1)
-                    Text: ="XXX"
+                    Text: =lastScore
                     Width: =226
                     X: =322
                     Y: =448
