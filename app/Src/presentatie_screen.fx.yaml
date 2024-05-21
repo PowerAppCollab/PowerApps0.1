@@ -18,7 +18,8 @@ presentatie_screen As screen:
                         score
                     ),
                     0
-                ),0
+                ),
+                0
             )
         );
         ClearCollect(
@@ -52,6 +53,7 @@ presentatie_screen As screen:
                 }
             )
         );
+        
         ClearCollect(
             highestScore,
             FirstN(
@@ -65,18 +67,20 @@ presentatie_screen As screen:
         );
         Set(
             firstScoreRaw,
-            First(
-                    allScores
-            )
+            First(allScores)
         );
-        Set(firstScore, Text(firstScoreRaw.score));
+        Set(
+            firstScore,
+            Text(firstScoreRaw.score)
+        );
         Set(
             lastScoreRaw,
-            Last(
-                    allScores
-            )
+            Last(allScores)
         );
-        Set(lastScore, Text(lastScoreRaw.score));
+        Set(
+            lastScore,
+            Text(lastScoreRaw.score)
+        );
         Set(
             diffHighestScore,
             100 - Value(First(highestScore).score)
@@ -109,6 +113,12 @@ presentatie_screen As screen:
                 score: Text(diffLowestScore),
                 Examen: "fullCircle"
             }
+        );
+        //DROPDOWN MENU
+        ClearCollect(
+            dropdownMenuOptions,
+            {value: "Gemiddelde groep"},
+            {value: "Test"}
         );
         //PAGE DEFAULTS
         Set(
@@ -181,7 +191,6 @@ presentatie_screen As screen:
                 BorderStyle: =
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                GridStyle: =GridStyle.YOnly
                 Height: =517
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: =allScores
@@ -191,13 +200,13 @@ presentatie_screen As screen:
                 XLabelAngle: =40
                 YAxisMax: =100
                 YAxisMin: =-5
-                ZIndex: =4
+                ZIndex: =2
 
             Container1 As groupContainer.manualLayoutContainer:
                 Height: =531
                 Visible: =If(presDefault = 2, true,false)
                 Width: =855
-                ZIndex: =10
+                ZIndex: =3
 
                 Label19 As label:
                     Align: =Align.Right
@@ -245,6 +254,60 @@ presentatie_screen As screen:
                     Width: =855
                     Y: =12
                     ZIndex: =7
+
+            LineChart2_2 As lineChart:
+                BorderStyle: =
+                Color: =
+                DisabledBorderColor: =
+                DisplayMode: =DisplayMode.Disabled
+                Height: =518
+                HoverBorderColor: =
+                ItemColorSet: =[RGBA(243, 243, 243, 0.6),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =averageGroupScoresLinegraph
+                PressedBorderColor: =
+                Visible: =If(presDefault = 3, true,false)
+                Width: =841
+                X: =14
+                XLabelAngle: =40
+                YAxisMax: =100
+                YAxisMin: =-5
+                ZIndex: =4
+
+            LineChart2_1 As lineChart:
+                BorderStyle: =
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =518
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =currStudentScoresLinegraph
+                Visible: =If(presDefault = 3, true,false)
+                Width: =841
+                X: =14
+                XLabelAngle: =40
+                YAxisMax: =100
+                YAxisMin: =-5
+                ZIndex: =5
+
+            dropdown_courses_1 As dropdown:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronFill: =RGBA(0, 0, 0, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="All"
+                Fill: =RGBA(63, 63, 63, 1)
+                Height: =30
+                HoverFill: =RGBA(192, 5, 230, 1)
+                Items: =dropdownMenuOptions
+                PressedColor: =RGBA(0, 0, 0, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                SelectionFill: =RGBA(192, 5, 230, 1)
+                Visible: =If(presDefault = 3, true,false)
+                Width: =180
+                X: =655
+                Y: =10
+                ZIndex: =6
 
         Group5 As group:
             Height: =5
@@ -436,7 +499,73 @@ presentatie_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =30
             HoverFill: =If(presDefault =3,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
-            OnSelect: =Set(presDefault, 3)
+            OnSelect: |+
+                =Set(presDefault, 3);
+                //LINEGRAPH CALCULATING
+                ClearCollect(
+                    groupScores,
+                    Filter(
+                        scores,
+                        groupID = gallery_students.Selected.groupID
+                    )
+                );
+                ClearCollect(
+                    uniqueExams,
+                    Distinct(
+                        groupScores,
+                        Examen
+                    )
+                );
+                ClearCollect(
+                    averageGroupScoresLinegraph,
+                    ForAll(
+                        uniqueExams,
+                        {
+                            Examen: Value,
+                            score: Text(Round(
+                                Average(
+                                    Filter(
+                                        groupScores,
+                                        Examen = Value
+                                    ),
+                                    score
+                                ),
+                                1
+                            )),
+                            Line: "Previous"
+                        }
+                    )
+                );
+                
+                
+                
+                //LINEGRAPH DATA MAKING
+                ClearCollect(
+                    currStudentScoresLinegraph,
+                    ForAll(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        ),
+                        {
+                            score: score,
+                            Examen: Examen,
+                            Line: "Current"
+                        }
+                    )
+                );
+                
+                
+                ClearCollect(combinedScoresLinegraph, averageGroupScoresLinegraph);
+                Collect(combinedScoresLinegraph, currStudentScoresLinegraph);
+                
+                
+                
+                
+                
+                
+                
+                
             RadiusBottomLeft: =0
             RadiusTopLeft: =0
             Size: =11

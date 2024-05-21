@@ -378,6 +378,7 @@ students_screen As screen:
                         }
                     )
             NumberOfSeries: =0
+            PaddingRight: =0
             ShowValues: =
             Visible: |-
                 =If(
@@ -559,7 +560,7 @@ students_screen As screen:
             Label7_5 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Voornaam
+                Text: =gallery_students.Selected.Voornaam & " " & gallery_students.Selected.Achternaam
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -574,7 +575,7 @@ students_screen As screen:
             Label7_6 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Achternaam
+                Text: =gallery_students.Selected.Telefoonnummer
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -1042,7 +1043,7 @@ students_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =111
             Text: |-
-                ="U staat op het punt om Jacks te verwijderen. Dit is niet omkeerbaar. Echter zullen zijn/haar gegevens gearchiveerd worden.
+                ="U staat op het punt om Jacks te verwijderen of te archiveren. Dit is niet omkeerbaar. 
                 
                 Weet u het zeker?"
             Visible: =varShowPopup
