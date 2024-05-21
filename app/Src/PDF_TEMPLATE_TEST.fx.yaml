@@ -1,13 +1,33 @@
 PDF_TEMPLATE_TEST As screen:
-    OnVisible: |+
-        =Set(tempTimer, false);
-        Set(PDF_Scores, PDF(container_4));
-        Set(tempTimer, true);
-        Set(PDFisMade, true);
-        
+    OnVisible: |
+        =Set(
+            tempTimer,
+            false
+        );
+        Set(
+            PDF_Scores,
+            PDF(
+                Container4,
+                {
+                    Orientation: PaperOrientation.Portrait,
+                    Size: PaperSize.A4,
+                    DPI: 96,
+                    Margin: "0px",
+                    ExpandContainers: false
+                }
+            )
+        );
+        Set(
+            tempTimer,
+            true
+        );
+        Set(
+            PDFisMade,
+            true
+        );
 
     Timer1_3 As timer:
-        Duration: =5
+        Duration: =1000
         OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
