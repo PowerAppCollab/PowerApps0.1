@@ -117,8 +117,8 @@ presentatie_screen As screen:
         //DROPDOWN MENU
         ClearCollect(
             dropdownMenuOptions,
-            {value: "Cursus"},
-            {value: "Groep"}
+            {value: "Gemiddelde groep"},
+            {value: "Test"}
         );
         //PAGE DEFAULTS
         Set(
