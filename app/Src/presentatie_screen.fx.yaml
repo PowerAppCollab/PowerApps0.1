@@ -506,7 +506,7 @@ presentatie_screen As screen:
                         uniqueExams,
                         {
                             Examen: Value,
-                            score: Round(
+                            score: Text(Round(
                                 Average(
                                     Filter(
                                         groupScores,
@@ -515,7 +515,7 @@ presentatie_screen As screen:
                                     score
                                 ),
                                 1
-                            ),
+                            )),
                             Line: "Previous"
                         }
                     )
@@ -538,6 +538,10 @@ presentatie_screen As screen:
                         }
                     )
                 );
+                
+                
+                ClearCollect(combinedScoresLinegraph, averageGroupScoresLinegraph);
+                Collect(combinedScoresLinegraph, currStudentScoresLinegraph);
                 
                 
                 
