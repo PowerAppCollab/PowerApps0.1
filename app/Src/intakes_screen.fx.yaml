@@ -24,6 +24,7 @@ intakes_screen As screen:
         nav_intakesScreen: =intakes_screen
         nav_presenterenScreen: =presentatie_screen
         nav_studentenScreen: =students_screen
+        ZIndex: =2
 
     container_20 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -36,7 +37,7 @@ intakes_screen As screen:
         Width: =1150
         X: =180
         Y: =400
-        ZIndex: =2
+        ZIndex: =3
 
         label_intakeResultaten_error As label:
             Align: =Align.Center
@@ -733,7 +734,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =3
+        ZIndex: =4
 
         input_searchIntakes As text:
             BorderStyle: =BorderStyle.None
@@ -783,7 +784,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =4
+        ZIndex: =5
 
         "gallery_intakes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -871,6 +872,17 @@ intakes_screen As screen:
                 Width: =500
                 ZIndex: =4
 
+            Icon6_3 As icon.Cancel:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =26
+                HoverBorderColor: =ColorFade(Self.Color, 20%)
+                Icon: =Icon.Cancel
+                OnSelect: =Set(varShowDeleteIntakePopup, true)
+                Width: =68
+                X: =430
+                Y: =32
+                ZIndex: =5
+
         label_gallery_students_error_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -906,7 +918,7 @@ intakes_screen As screen:
         Width: =625
         X: =700
         Y: =40
-        ZIndex: =5
+        ZIndex: =6
 
         label_intakeOpties As label:
             Align: =Align.Center
@@ -1191,6 +1203,99 @@ intakes_screen As screen:
                 Y: =169
                 ZIndex: =9
 
+    Group21 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =21
+
+        popup_background_16 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =varShowDeleteIntakePopup
+            Width: =1366
+            ZIndex: =15
+
+        popup_box_16 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =235
+            Text: =""
+            Visible: =varShowDeleteIntakePopup
+            Width: =505
+            X: =431
+            Y: =255
+            ZIndex: =16
+
+        popup_header_14 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Size: =18
+            Text: ="weet je het zeker?"
+            Visible: =varShowDeleteIntakePopup
+            Width: =505
+            X: =430
+            Y: =261
+            ZIndex: =17
+
+        knop_toevoegen_10 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =RGBA(255, 0, 0, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(184, 0, 0, 1)
+            OnSelect: |
+                =Remove(
+                    intakes, // The name of the entity
+                    gallery_intakes.Selected // The record you want to delete
+                );
+                
+                Set(varShowDeleteIntakePopup, false); // Hides the popup after the operations
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="verwijderen"
+            Visible: =varShowDeleteIntakePopup
+            X: =487
+            Y: =415
+            ZIndex: =18
+
+        knop_annuleer_15 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(varShowDeleteIntakePopup, false)
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            Visible: =varShowDeleteIntakePopup
+            X: =727
+            Y: =415
+            ZIndex: =19
+
+        Label9_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =57
+            Text: ="weet je het zeker om deze intake te verwijderen?"
+            Visible: =varShowDeleteIntakePopup
+            Width: =285
+            X: =559
+            Y: =324
+            ZIndex: =20
+
     groep_popup_2 As group:
         Height: =5
         Width: =5
@@ -1203,7 +1308,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =error_newStudent
             Width: =1366
-            ZIndex: =6
+            ZIndex: =7
 
         popup_box_5 As button:
             AutoDisableOnSelect: =false
@@ -1216,7 +1321,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =7
+            ZIndex: =8
 
         popup_text_5 As label:
             Align: =Align.Center
@@ -1229,7 +1334,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =8
+            ZIndex: =9
 
         knop_annuleer_5 As button:
             BorderStyle: =BorderStyle.None
@@ -1248,7 +1353,7 @@ intakes_screen As screen:
             Visible: =error_newStudent
             X: =603
             Y: =420
-            ZIndex: =9
+            ZIndex: =10
 
     groep_succes_createStudent As group:
         Height: =5
@@ -1262,7 +1367,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =succes_student
             Width: =1366
-            ZIndex: =10
+            ZIndex: =11
 
         popup_box_6 As button:
             AutoDisableOnSelect: =false
@@ -1275,7 +1380,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =11
+            ZIndex: =12
 
         popup_text_6 As label:
             Align: =Align.Center
@@ -1287,7 +1392,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =12
+            ZIndex: =13
 
         knop_OK As button:
             BorderStyle: =BorderStyle.None
@@ -1306,5 +1411,5 @@ intakes_screen As screen:
             Visible: =succes_student
             X: =603
             Y: =420
-            ZIndex: =13
+            ZIndex: =14
 
