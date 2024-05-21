@@ -76,7 +76,7 @@ presentatie_screen As screen:
                     allScores
             )
         );
-        Set(lastScore, Text(firstScoreRaw.score));
+        Set(lastScore, Text(lastScoreRaw.score));
         Set(
             diffHighestScore,
             100 - Value(First(highestScore).score)
@@ -205,8 +205,8 @@ presentatie_screen As screen:
                     Text: |-
                         ="Eerst behaalde score:"
                     Width: =226
-                    X: =96
-                    Y: =408
+                    X: =20
+                    Y: =432
                     ZIndex: =1
 
                 Label19_1 As label:
@@ -215,24 +215,24 @@ presentatie_screen As screen:
                     Text: |-
                         ="Laatst behaalde score:"
                     Width: =226
-                    X: =96
-                    Y: =448
+                    X: =20
+                    Y: =459
                     ZIndex: =2
 
                 Label19_2 As label:
                     Color: =RGBA(255, 255, 255, 1)
                     Text: =firstScore
                     Width: =226
-                    X: =322
-                    Y: =408
+                    X: =246
+                    Y: =432
                     ZIndex: =3
 
                 Label19_3 As label:
                     Color: =RGBA(255, 255, 255, 1)
                     Text: =lastScore
                     Width: =226
-                    X: =322
-                    Y: =448
+                    X: =246
+                    Y: =459
                     ZIndex: =4
 
                 ColumnChart1 As barChart:
