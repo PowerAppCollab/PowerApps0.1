@@ -191,7 +191,6 @@ presentatie_screen As screen:
                 BorderStyle: =
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                GridStyle: =GridStyle.YOnly
                 Height: =517
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: =allScores
@@ -256,14 +255,16 @@ presentatie_screen As screen:
                     Y: =12
                     ZIndex: =7
 
-            LineChart2_1 As lineChart:
+            LineChart2_2 As lineChart:
                 BorderStyle: =
-                Color: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                GridStyle: =GridStyle.YOnly
-                Height: =517
-                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: =combinedScoresLinegraph
+                Color: =
+                DisabledBorderColor: =
+                DisplayMode: =DisplayMode.Disabled
+                Height: =518
+                HoverBorderColor: =
+                ItemColorSet: =[RGBA(243, 243, 243, 0.6),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =averageGroupScoresLinegraph
+                PressedBorderColor: =
                 Visible: =If(presDefault = 3, true,false)
                 Width: =841
                 X: =14
@@ -271,6 +272,21 @@ presentatie_screen As screen:
                 YAxisMax: =100
                 YAxisMin: =-5
                 ZIndex: =4
+
+            LineChart2_1 As lineChart:
+                BorderStyle: =
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =518
+                ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =currStudentScoresLinegraph
+                Visible: =If(presDefault = 3, true,false)
+                Width: =841
+                X: =14
+                XLabelAngle: =40
+                YAxisMax: =100
+                YAxisMin: =-5
+                ZIndex: =5
 
             dropdown_courses_1 As dropdown:
                 BorderColor: =RGBA(255, 255, 255, 1)
@@ -291,7 +307,7 @@ presentatie_screen As screen:
                 Width: =180
                 X: =655
                 Y: =10
-                ZIndex: =5
+                ZIndex: =6
 
         Group5 As group:
             Height: =5
