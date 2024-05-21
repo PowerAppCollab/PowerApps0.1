@@ -559,7 +559,7 @@ students_screen As screen:
             Label7_5 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Voornaam
+                Text: =gallery_students.Selected.Voornaam & " " & gallery_students.Selected.Achternaam
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -574,7 +574,7 @@ students_screen As screen:
             Label7_6 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Achternaam
+                Text: =gallery_students.Selected.Telefoonnummer
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
