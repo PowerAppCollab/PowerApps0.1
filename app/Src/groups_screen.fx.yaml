@@ -825,7 +825,7 @@ groups_screen As screen:
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnCheck: |-
-                    =Patch(studenten_tabel, addStudentToGroup_gallery.Selected, {groupID: gallery_courses_3.Selected.groupID});
+                    =    Patch(studenten_tabel, addStudentToGroup_gallery.Selected, {groupID: gallery_courses_3.Selected.groupID});
                 OnSelect: =Select(Parent)
                 OnUncheck: |-
                     =Patch(studenten_tabel, addStudentToGroup_gallery.Selected, {groupID: ""});
@@ -1113,7 +1113,7 @@ groups_screen As screen:
             Height: =46
             HoverFill: =RGBA(161, 0, 194, 1)
             OnSelect: |-
-                =Patch(groepens, {groupID: TextInput2.Text,course:addStudentDropDown_2.Selected.name, name:TextInput2.Text});
+                =Patch(groepens, {groupID: TextInput2.Text,course:addCourseDropDown_2.Selected.name, name:TextInput2.Text});
                 Set(varShowCreateGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -1148,7 +1148,7 @@ groups_screen As screen:
             Y: =467
             ZIndex: =25
 
-        addStudentDropDown_2 As dropdown:
+        addCourseDropDown_2 As dropdown:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderStyle: =BorderStyle.None
             ChevronBackground: =RGBA(192, 5, 230, 1)
