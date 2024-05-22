@@ -1,4 +1,4 @@
-PDF_TEMPLATE_TEST As screen:
+PDFTEMPLATE_SCORES_1 As screen:
     OnVisible: |
         =Set(
             tempTimer,
@@ -7,7 +7,7 @@ PDF_TEMPLATE_TEST As screen:
         Set(
             PDF_Scores,
             PDF(
-                Container4,
+                Container4_1,
                 {
                     Orientation: PaperOrientation.Portrait,
                     Size: PaperSize.A4,
@@ -26,7 +26,7 @@ PDF_TEMPLATE_TEST As screen:
             true
         );
 
-    Timer1_3 As timer:
+    Timer1_4 As timer:
         Duration: =5
         OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
@@ -35,20 +35,21 @@ PDF_TEMPLATE_TEST As screen:
         Y: =64
         ZIndex: =7
 
-    Container4 As groupContainer.manualLayoutContainer:
+    Container4_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
         Height: =768
         Width: =800
         X: =283
         ZIndex: =11
 
-        Group19 As group:
+        Group19_1 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
             ZIndex: =9
 
-            Label12_3 As label:
+            Label12_8 As label:
                 Align: =Align.Center
                 Height: =43
                 Size: =22
@@ -58,18 +59,18 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =301
                 ZIndex: =1
 
-            Label12_6 As label:
+            Label12_7 As label:
                 Align: =Align.Center
                 FontWeight: =FontWeight.Semibold
                 Height: =43
                 Size: =26
-                Text: ="Rapport"
+                Text: ="Cursus Behaald"
                 Width: =543
                 X: =129
                 Y: =252
                 ZIndex: =2
 
-            Rectangle4_6 As rectangle:
+            Rectangle4_8 As rectangle:
                 Fill: =RGBA(192, 5, 230, 1)
                 Height: =1
                 Width: =300
@@ -77,7 +78,7 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =300
                 ZIndex: =3
 
-            Label13_10 As label:
+            Label13_11 As label:
                 Align: =Align.Center
                 Height: =28
                 Text: ="Uw behaalde scores"
@@ -86,7 +87,7 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =368
                 ZIndex: =4
 
-            Rectangle4_7 As rectangle:
+            Rectangle4_9 As rectangle:
                 Fill: =RGBA(192, 5, 230, 1)
                 Height: =1
                 Width: =300
@@ -94,7 +95,7 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =395
                 ZIndex: =5
 
-            Image5_3 As image:
+            Image5_4 As image:
                 Height: =262
                 Image: ='Logo-Wit RGB (1) kopie'
                 Width: =336
@@ -102,7 +103,7 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =39
                 ZIndex: =6
 
-            "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "Gallery2_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 '#CopilotOverlayLabel': ="Filtered"
                 DelayItemLoading: =true
                 Height: =372
@@ -116,7 +117,7 @@ PDF_TEMPLATE_TEST As screen:
                 Y: =396
                 ZIndex: =8
 
-                Title3_1 As label:
+                Title3_3 As label:
                     Height: =Self.Size * 1.8
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
@@ -126,10 +127,9 @@ PDF_TEMPLATE_TEST As screen:
                     Text: =ThisItem.score
                     VerticalAlign: =VerticalAlign.Top
                     Width: =85
-                    Y: =1
                     ZIndex: =2
 
-                Subtitle3_1 As label:
+                Subtitle3_3 As label:
                     FontWeight: =FontWeight.Lighter
                     Height: =23
                     OnSelect: =Select(Parent)

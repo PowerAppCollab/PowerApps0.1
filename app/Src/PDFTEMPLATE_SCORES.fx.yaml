@@ -1,130 +1,147 @@
-"PDFTEMPLATE_SCORES As screen.'printableLayout_A4Portrait_ver1.0'":
-    Fill: =RGBA(255, 255, 255, 1)
-    Height: =1123
-    OnVisible: |+
-        =Set(PDF_Scores, PDF(PDFTEMPLATE_SCORES, { Size: PaperSize.A4, Orientation: PaperOrientation.Portrait }));
-        Set(tempTimer, false);
-        Set(tempTimer, true);
-        Set(PDFisMade, true);
-        
-    Width: =794
+PDFTEMPLATE_SCORES As screen:
+    OnVisible: |
+        =Set(
+            tempTimer,
+            false
+        );
+        Set(
+            PDF_Scores,
+            PDF(
+                Container4,
+                {
+                    Orientation: PaperOrientation.Portrait,
+                    Size: PaperSize.A4,
+                    DPI: 96,
+                    Margin: "0px",
+                    ExpandContainers: false
+                }
+            )
+        );
+        Set(
+            tempTimer,
+            true
+        );
+        Set(
+            PDFisMade,
+            true
+        );
 
-    Label12 As label:
-        Align: =Align.Center
-        Height: =43
-        Size: =22
-        Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
-        Width: =794
-        Y: =273
-        ZIndex: =1
-
-    Label12_1 As label:
-        Align: =Align.Center
-        FontWeight: =FontWeight.Semibold
-        Height: =43
-        Size: =26
-        Text: ="Rapport"
-        Width: =794
-        Y: =224
-        ZIndex: =2
-
-    Rectangle4 As rectangle:
-        Fill: =RGBA(192, 5, 230, 1)
-        Height: =1
-        Width: =300
-        X: =247
-        Y: =272
-        ZIndex: =3
-
-    Label13 As label:
-        Size: =18
-        Text: ="Uw behaalde scores"
-        Width: =304
-        X: =48
-        Y: =375
-        ZIndex: =4
-
-    Rectangle4_1 As rectangle:
-        Fill: =RGBA(192, 5, 230, 1)
-        Height: =1
-        Width: =300
-        X: =52
-        Y: =414
-        ZIndex: =8
-
-    Image5 As image:
-        Height: =262
-        Image: ='Logo-Wit RGB (1) kopie'
-        Width: =336
-        X: =229
-        Y: =19
-        ZIndex: =9
-
-    Timer1 As timer:
+    Timer1_3 As timer:
         Duration: =5
         OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
-        Y: =84
-        ZIndex: =10
+        X: =572
+        Y: =64
+        ZIndex: =7
 
-    Label13_4 As label:
-        FontWeight: =FontWeight.Lighter
-        Height: =215
-        Size: =16
-        Text: =persoonlijk_bericht_input
-        Visible: =!IsBlank(persoonlijk_bericht_input)
-        Width: =699
-        X: =47
-        Y: =781
+    Container4 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =768
+        Width: =800
+        X: =283
         ZIndex: =11
 
-    Label6 As label:
-        Height: =123
-        Text: =
-        Width: =320
-        X: =119
-        Y: =409
-        ZIndex: =12
+        Group19 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =9
 
-    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-        '#CopilotOverlayLabel': ="Filtered"
-        DelayItemLoading: =true
-        Height: =501
-        Items: =Filter(scores, studentID = TempStudentIDPDF)
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =47
-        X: =48
-        Y: =430
-        ZIndex: =13
+            Label12_3 As label:
+                Align: =Align.Center
+                Height: =43
+                Size: =22
+                Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
+                Width: =543
+                X: =129
+                Y: =301
+                ZIndex: =1
 
-        Title3 As label:
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.score
-            VerticalAlign: =VerticalAlign.Top
-            Width: =85
-            Y: =15
-            ZIndex: =2
+            Label12_6 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =43
+                Size: =26
+                Text: ="Rapport"
+                Width: =543
+                X: =129
+                Y: =252
+                ZIndex: =2
 
-        Subtitle3 As label:
-            FontWeight: =FontWeight.Lighter
-            Height: =23
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.Examen
-            VerticalAlign: =VerticalAlign.Top
-            Width: =331
-            X: =85
-            Y: =17
-            ZIndex: =3
+            Rectangle4_6 As rectangle:
+                Fill: =RGBA(192, 5, 230, 1)
+                Height: =1
+                Width: =300
+                X: =250
+                Y: =300
+                ZIndex: =3
+
+            Label13_10 As label:
+                Align: =Align.Center
+                Height: =28
+                Text: ="Uw behaalde scores"
+                Width: =304
+                X: =248
+                Y: =368
+                ZIndex: =4
+
+            Rectangle4_7 As rectangle:
+                Fill: =RGBA(192, 5, 230, 1)
+                Height: =1
+                Width: =300
+                X: =250
+                Y: =395
+                ZIndex: =5
+
+            Image5_3 As image:
+                Height: =262
+                Image: ='Logo-Wit RGB (1) kopie'
+                Width: =336
+                X: =232
+                Y: =39
+                ZIndex: =6
+
+            "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtered"
+                DelayItemLoading: =true
+                Height: =372
+                Items: =Filter(scores, studentID = TempStudentIDPDF)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =26
+                Width: =366
+                X: =217
+                Y: =396
+                ZIndex: =8
+
+                Title3_1 As label:
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.score
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =85
+                    Y: =1
+                    ZIndex: =2
+
+                Subtitle3_1 As label:
+                    FontWeight: =FontWeight.Lighter
+                    Height: =23
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Examen
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =331
+                    X: =35
+                    Y: =3
+                    ZIndex: =3
 

@@ -941,7 +941,7 @@ students_screen As screen:
                         TempStudentIDPDF,
                         gallery_students.Selected.Email
                     );
-                    Navigate(PDF_TEMPLATE_TEST)
+                    Navigate(PDFTEMPLATE_SCORES)
                 PressedFill: =
                 Text: =""
                 Visible: =openPopupPDF
