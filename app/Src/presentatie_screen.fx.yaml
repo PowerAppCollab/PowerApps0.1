@@ -127,7 +127,7 @@ presentatie_screen As screen:
             ),
             Collect(
                 dropdownMenuOptions,
-                { value: Voornaam & " " & Achternaam  }
+                { value: Voornaam & " " & Achternaam, studentID: studentID  }
             )
         );
         //PAGE DEFAULTS
@@ -292,7 +292,7 @@ presentatie_screen As screen:
                 Height: =476
                 HoverBorderColor: =
                 ItemColorSet: =[RGBA(243, 243, 243, 0.6),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: =averageGroupScoresLinegraph
+                Items: =currComparingStudentLinegraph
                 PressedBorderColor: =
                 Visible: =If(presDefault = 3 && dropdown_courses_1.Selected.value <> "Groepsgemiddelde", true,false)
                 Width: =841
@@ -331,7 +331,39 @@ presentatie_screen As screen:
                 Height: =32
                 HoverFill: =RGBA(219, 219, 219, 0.4)
                 Items: =dropdownMenuOptions
-                OnChange: =If(dropdown_courses_1.Selected.value <> "Groepsgemiddelde", Notify("yes"))
+                OnChange: |+
+                    =If(dropdown_courses_1.Selected.value <> "Groepsgemiddelde", Set(isComparing, true), Set(isComparing, false));
+                    
+                    If(isComparing = true, Set(currComparingStudentEmail, LookUp(studenten_tabel, studentID = dropdown_courses_1.Selected.studentID).Email);
+                    ClearCollect(
+                        groupScores,
+                        Filter(
+                            scores,
+                            groupID = gallery_students.Selected.groupID
+                        )
+                    );
+                    ClearCollect(
+                        uniqueExams,
+                        Distinct(
+                            groupScores,
+                            Examen
+                        )
+                    );
+                    ClearCollect(
+                        currComparingStudentLinegraph,
+                        ForAll(
+                            Filter(
+                                scores,
+                                studentID = currComparingStudentEmail
+                            ),
+                            {
+                                score: score,
+                                Examen: Examen,
+                                Line: "Current"
+                            }
+                        )
+                    ););
+                    
                 PressedColor: =RGBA(0, 0, 0, 1)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 1)
