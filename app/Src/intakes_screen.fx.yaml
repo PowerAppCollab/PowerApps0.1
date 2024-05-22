@@ -289,7 +289,7 @@ intakes_screen As screen:
                 Color: =If(intakeContainerVisible = 1, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
                 Fill: =RGBA(0, 0, 0, 0)
                 FontWeight: =FontWeight.Normal
-                Height: =26
+                Height: =25
                 HoverBorderColor: =
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =
@@ -297,7 +297,7 @@ intakes_screen As screen:
                 PaddingLeft: =15
                 PressedBorderColor: =
                 PressedFill: =
-                Size: =13
+                Size: =11
                 Text: ="Intake Antwoorden"
                 Visible: |-
                     =If(
@@ -305,7 +305,7 @@ intakes_screen As screen:
                         true,
                         false
                     )
-                Width: =178
+                Width: =190
                 Y: =105
                 ZIndex: =7
 
@@ -314,7 +314,7 @@ intakes_screen As screen:
                 Color: =If(intakeContainerVisible = 2, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
                 Fill: =RGBA(0, 0, 0, 0)
                 FontWeight: =FontWeight.Normal
-                Height: =26
+                Height: =25
                 HoverBorderColor: =
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =
@@ -322,7 +322,7 @@ intakes_screen As screen:
                 PaddingLeft: =15
                 PressedBorderColor: =
                 PressedFill: =
-                Size: =13
+                Size: =11
                 Text: ="Test Scores"
                 Visible: |-
                     =If(
@@ -330,7 +330,7 @@ intakes_screen As screen:
                         true,
                         false
                     )
-                Width: =178
+                Width: =190
                 Y: =150
                 ZIndex: =8
 
@@ -339,7 +339,7 @@ intakes_screen As screen:
                 Color: =If(intakeContainerVisible = 3, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
                 Fill: =RGBA(0, 0, 0, 0)
                 FontWeight: =FontWeight.Normal
-                Height: =26
+                Height: =25
                 HoverBorderColor: =
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =
@@ -347,7 +347,7 @@ intakes_screen As screen:
                 PaddingLeft: =15
                 PressedBorderColor: =
                 PressedFill: =
-                Size: =13
+                Size: =11
                 Text: ="Notities"
                 Visible: |-
                     =If(
@@ -355,7 +355,7 @@ intakes_screen As screen:
                         true,
                         false
                     )
-                Width: =178
+                Width: =190
                 Y: =195
                 ZIndex: =9
 
@@ -1034,6 +1034,7 @@ intakes_screen As screen:
             BorderStyle: =BorderStyle.None
             DisabledColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(192, 5, 230, 0.8)
             OnSelect: |+
                 =Set(
@@ -1090,7 +1091,7 @@ intakes_screen As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Size: =13
+            Size: =12
             Text: ="Student Aanmaken"
             Visible: |-
                 =If(
@@ -1098,7 +1099,7 @@ intakes_screen As screen:
                     true,
                     false
                 )
-            Width: =171
+            Width: =233
             X: =268
             Y: =259
             ZIndex: =10
