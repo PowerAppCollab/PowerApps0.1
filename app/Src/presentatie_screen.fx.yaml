@@ -331,7 +331,7 @@ presentatie_screen As screen:
                 Height: =32
                 HoverFill: =RGBA(219, 219, 219, 0.4)
                 Items: =dropdownMenuOptions
-                OnChange: =
+                OnChange: =If(dropdown_courses_1.Selected.value <> "Gemiddeldegroep", Notify("yes"))
                 PressedColor: =RGBA(0, 0, 0, 1)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 1)
