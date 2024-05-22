@@ -1,103 +1,136 @@
-"PDFTEMPLATE_PARTICIPATION As screen.'printableLayout_A4Portrait_ver1.0'":
-    Fill: =RGBA(255, 255, 255, 1)
-    Height: =1123
-    OnVisible: |+
-        =Set(PDF_Scores, PDF(PDFTEMPLATE_PARTICIPATION));
-        Set(tempTimer, false);
-        Set(tempTimer, true);
-        Set(PDFisMade, true);
-        
-    Width: =794
+PDFTEMPLATE_PARTICIPATION As screen:
+    OnVisible: |
+        =Set(
+            tempTimer,
+            false
+        );
+        Set(
+            PDF_Scores,
+            PDF(
+                Container4_2,
+                {
+                    Orientation: PaperOrientation.Portrait,
+                    Size: PaperSize.A4,
+                    DPI: 96,
+                    Margin: "0px",
+                    ExpandContainers: false
+                }
+            )
+        );
+        Set(
+            tempTimer,
+            true
+        );
+        Set(
+            PDFisMade,
+            true
+        );
 
-    Label12_2 As label:
-        Align: =Align.Center
-        FontWeight: =FontWeight.Semibold
-        Height: =43
-        Size: =26
-        Text: ="Bewijs van Deelname"
-        Width: =794
-        Y: =224
-        ZIndex: =2
-
-    Rectangle4_2 As rectangle:
-        Fill: =RGBA(192, 5, 230, 1)
-        Height: =1
-        Width: =300
-        X: =247
-        Y: =272
-        ZIndex: =3
-
-    Label13_1 As label:
-        Size: =16
-        Text: ="GradeMatch verklaart dat " 
-        Width: =304
-        X: =72
-        Y: =411
-        ZIndex: =4
-
-    Rectangle4_3 As rectangle:
-        Fill: =RGBA(192, 5, 230, 1)
-        Height: =1
-        Width: =300
-        X: =414
-        Y: =927
-        ZIndex: =8
-
-    Image5_1 As image:
-        Height: =262
-        Image: ='Logo-Wit RGB (1) kopie'
-        Width: =336
-        X: =229
-        Y: =19
-        ZIndex: =9
-
-    Timer1_1 As timer:
+    Timer1_5 As timer:
         Duration: =5
         OnTimerEnd: =Navigate(students_screen)
         Start: =tempTimer
         Visible: =false
-        Y: =84
-        ZIndex: =10
+        X: =572
+        Y: =64
+        ZIndex: =7
 
-    Label13_3 As label:
-        FontWeight: =FontWeight.Semibold
-        Size: =22
-        Text: =LookUp(studenten_tabel, studentID = TempStudentIDPDF).Voornaam & " " & LookUp(studenten_tabel, studentID = TempStudentIDPDF).Achternaam
-        Width: =304
-        X: =72
-        Y: =451
+    Container4_2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =768
+        Width: =800
+        X: =283
         ZIndex: =11
 
-    Label13_5 As label:
-        Size: =16
-        Text: ="heeft deelgenomen aan" 
-        Width: =304
-        X: =72
-        Y: =543
-        ZIndex: =12
+        Label13_2 As label:
+            Size: =16
+            Text: ="GradeMatch verklaart dat " 
+            Width: =304
+            X: =20
+            Y: =420
+            ZIndex: =7
 
-    Label13_7 As label:
-        FontWeight: =FontWeight.Semibold
-        Size: =22
-        Text: ="cursus hier...."
-        Width: =304
-        X: =72
-        Y: =583
-        ZIndex: =13
+        Rectangle4_4 As rectangle:
+            Fill: =RGBA(192, 5, 230, 1)
+            Height: =1
+            Width: =300
+            X: =456
+            Y: =712
+            ZIndex: =8
 
-    Label13_8 As label:
-        Size: =16
-        Text: ="Bedankt voor uw deelname." 
-        Width: =304
-        X: =414
-        Y: =887
-        ZIndex: =14
+        Label13_6 As label:
+            Size: =16
+            Text: ="heeft deelgenomen aan" 
+            Width: =304
+            X: =25
+            Y: =516
+            ZIndex: =9
 
-    Label13_9 As label:
-        Size: =16
-        Text: ="HANDTEKENING / NAAM GRADEMATCH"
-        Width: =304
-        X: =410
-        Y: =943
-        ZIndex: =15
+        Group19_2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =9
+
+            Label12_4 As label:
+                Height: =43
+                Size: =22
+                Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
+                Width: =543
+                X: =25
+                Y: =460
+                ZIndex: =1
+
+            Label12_9 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =43
+                Size: =26
+                Text: ="Bewijs van Deelname"
+                Width: =543
+                X: =129
+                Y: =252
+                ZIndex: =2
+
+            Rectangle4_10 As rectangle:
+                Fill: =RGBA(192, 5, 230, 1)
+                Height: =1
+                Width: =300
+                X: =250
+                Y: =300
+                ZIndex: =3
+
+            Image5_5 As image:
+                Height: =262
+                Image: ='Logo-Wit RGB (1) kopie'
+                Width: =336
+                X: =232
+                Y: =39
+                ZIndex: =6
+
+        Label13_12 As label:
+            Size: =16
+            Text: ="Bedankt voor uw deelname." 
+            Width: =304
+            X: =456
+            Y: =672
+            ZIndex: =10
+
+        Label13_13 As label:
+            Size: =16
+            Text: ="HANDTEKENING / NAAM GRADEMATCH"
+            Width: =304
+            X: =452
+            Y: =728
+            ZIndex: =11
+
+        Label12_5 As label:
+            Height: =43
+            Size: =22
+            Text: ="de " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).course & " cursus."
+            Width: =543
+            X: =25
+            Y: =557
+            ZIndex: =12
 
