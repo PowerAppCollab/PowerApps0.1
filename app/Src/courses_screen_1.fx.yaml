@@ -176,8 +176,17 @@ courses_screen_1 As screen:
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
-            Visible: |
-                =true
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                        groepens,
+                        course = gallery_courses_2.Selected.name
+                        )
+                    ),
+                    false,
+                    true
+                )
             Width: =600
             ZIndex: =5
 
@@ -219,6 +228,28 @@ courses_screen_1 As screen:
                 Text: =""
                 Width: =600
                 ZIndex: =4
+
+        label_chart_error_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="geen groepen gevonden"
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                        groepens,
+                        course = gallery_courses_2.Selected.name
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =500
+            X: =40
+            Y: =40
+            ZIndex: =6
 
     container_32 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
