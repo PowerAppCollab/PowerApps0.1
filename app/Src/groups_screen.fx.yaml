@@ -553,7 +553,7 @@ groups_screen As screen:
                 Text: ="Student toevoegen"
                 Width: =169
                 X: =38
-                Y: =84
+                Y: =76
                 ZIndex: =7
 
             groep_verwijder_knop_2 As button:
@@ -569,7 +569,7 @@ groups_screen As screen:
                 Text: =""
                 Width: =86
                 X: =38
-                Y: =22
+                Y: =14
                 ZIndex: =8
 
             Icon7 As icon.Add:
@@ -579,7 +579,7 @@ groups_screen As screen:
                 OnSelect: =Set(varShowAddPopup, true);
                 Width: =60
                 X: =92
-                Y: =33
+                Y: =25
                 ZIndex: =9
 
         Group3_1 As group:

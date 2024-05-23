@@ -56,6 +56,18 @@ courses_screen_1 As screen:
                 Width: =Parent.TemplateWidth - 86
                 X: =16
                 Y: =26
+                ZIndex: =1
+
+            gallery_students_backgroundButton_5 As button:
+                BorderStyle: =BorderStyle.None
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
+                Height: =90
+                HoverFill: =
+                OnSelect: =Select(Parent)
+                PressedFill: =
+                Text: =""
+                Width: =500
                 ZIndex: =2
 
             Icon6 As icon.Cancel:
