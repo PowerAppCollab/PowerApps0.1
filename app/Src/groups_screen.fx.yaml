@@ -408,7 +408,7 @@ groups_screen As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.Email
+                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.TemplateWidth - 86
                 X: =16
@@ -419,7 +419,8 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.Voornaam & " " & ThisItem.Achternaam
+                PaddingLeft: =0
+                Text: =ThisItem.Email
                 Width: =270
                 X: =16
                 Y: =37
