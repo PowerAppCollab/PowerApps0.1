@@ -6490,6 +6490,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "groups_screen.container_17.SearchInput1_1.DelayOutput"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.container_17.SearchInput1_1.DelayOutput",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DelayOutput",
+                "module": "groups_screen",
+                "type": "groups_screen.container_17.SearchInput1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-TextInputIsNotDelayOutput",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "intakes_screen.container_11.gallery_intakes.Items"
                 }
               ],
