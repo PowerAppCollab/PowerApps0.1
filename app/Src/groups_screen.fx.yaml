@@ -425,18 +425,6 @@ groups_screen As screen:
                 Y: =37
                 ZIndex: =3
 
-            gallery_students_clickableButton_2 As button:
-                BorderStyle: =BorderStyle.None
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0,0,0,0)
-                Height: =90
-                HoverFill: =
-                OnSelect: =Select(Parent)
-                PressedFill: =
-                Text: =""
-                Width: =600
-                ZIndex: =4
-
         label_chart_error_4 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -916,7 +904,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="Studenten toevoegen"
+            Text: ="Studenten verwijderen"
             Visible: =varShowDeletePopup
             Width: =505
             X: =429
@@ -998,14 +986,13 @@ groups_screen As screen:
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnCheck: =Collect(allDelStudentIDsForGroup, addStudentToGroup_gallery_1.Selected.studentID)
                 OnSelect: =Select(Parent)
-                OnUncheck: |-
-                    =Patch(studenten_tabel, addStudentToGroup_gallery_1.Selected, {groupID: ""});
+                OnUncheck: =RemoveIf(allDelStudentIDsForGroup, Value = addStudentToGroup_gallery_1.Selected.studentID)
                 PressedColor: =RGBA(192, 5, 230, 1)
                 PressedFill: =RGBA(0, 0, 0, 0)
+                Reset: =resetCheckboxVar
                 Text: =""
                 Width: =38
-                X: =7
-                Y: =5
+                X: =1
                 ZIndex: =4
 
         container_40 As groupContainer.manualLayoutContainer:
@@ -1157,15 +1144,18 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |
+            OnSelect: |+
                 =ForAll(
-                    allNewStudentIDsForGroup,
+                    allDelStudentIDsForGroup,
                     Patch(
                         studenten_tabel,
                         LookUp(studenten_tabel, studentID = Value),
-                        { groupID: gallery_courses_3.Selected.groupID }
+                        { groupID: "" }
                     )
-                )
+                );
+                
+                
+                
             Visible: =varShowDeletePopup
             Width: =34
             X: =995
