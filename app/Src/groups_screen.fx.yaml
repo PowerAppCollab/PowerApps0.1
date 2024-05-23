@@ -1329,9 +1329,19 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
-                =Remove(
-                    groepens, // The name of the entity
-                    gallery_courses_3.Selected // The record you want to delete
+                =ForAll(
+                    Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID),
+                    Patch(
+                        studenten_tabel, 
+                        LookUp(studenten_tabel, groupID = gallery_courses_3.Selected.groupID),
+                        { groupID: "", course: "" }
+                    )
+                );
+                
+                
+                Remove(
+                    groepens, 
+                    gallery_courses_3.Selected
                 );
                 
                     Patch(
@@ -1340,7 +1350,7 @@ groups_screen As screen:
                         { groupID: "" }
                     );
                 
-                Set(varShowDeleteGroupPopup, false); // Hides the popup after the operations
+                Set(varShowDeleteGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
