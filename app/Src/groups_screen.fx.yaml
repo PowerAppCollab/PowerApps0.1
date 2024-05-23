@@ -254,7 +254,7 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =61
-            Text: ="Geen studenten gevonden."
+            Text: ="Geen groepen gevonden."
             Visible: |-
                 =If(
                     IsEmpty(
