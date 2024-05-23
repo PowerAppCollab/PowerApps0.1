@@ -922,13 +922,13 @@ groups_screen As screen:
                     groupID = gallery_courses_3.Selected.groupID &&
                     !IsBlank(groupID) && (StartsWith(
                         Voornaam,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ) || StartsWith(
                         Achternaam,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ) || StartsWith(
                         Email,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ))
                 )
             Layout: =Layout.Vertical
@@ -1330,27 +1330,33 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
-                =
-                    Patch(
+                =Patch(
+                    studenten_tabel,
+                    LookUp(
                         studenten_tabel,
-                        LookUp(studenten_tabel, studentID = studentID),
-                        { groupID: "", course: "" }
-                    );
-                
-                
-                
+                        studentID = studentID
+                    ),
+                    {
+                        groupID: "",
+                        course: ""
+                    }
+                );
                 Remove(
-                    groepens, 
+                    groepens,
                     gallery_courses_3.Selected
                 );
-                
-                    Patch(
+                Patch(
+                    studenten_tabel,
+                    LookUp(
                         studenten_tabel,
-                        LookUp(studenten_tabel, course = gallery_courses_3.Selected.course),
-                        { groupID: "" }
-                    );
-                
-                Set(varShowDeleteGroupPopup, false);
+                        course = gallery_courses_3.Selected.course
+                    ),
+                    {groupID: ""}
+                );
+                Set(
+                    varShowDeleteGroupPopup,
+                    false
+                );
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
