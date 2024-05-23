@@ -22,7 +22,8 @@ groups_screen As screen:
         );
         
         
-        Clear(allNewStudentIDsForGroup)
+        Clear(allNewStudentIDsForGroup);
+        Reset(SearchInput1_1)
 
     navigatie_component_5 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
@@ -385,11 +386,13 @@ groups_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =202
-            Items: |
+            Items: |+
                 =Filter(
                     studenten_tabel,
                     groupID = gallery_courses_3.Selected.groupID
                 )
+                
+                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
