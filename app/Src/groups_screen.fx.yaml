@@ -1151,7 +1151,8 @@ groups_screen As screen:
                     Patch(
                         studenten_tabel,
                         LookUp(studenten_tabel, studentID = Value),
-                        { groupID: "" }
+                        { groupID: "",
+                        course: "" }
                     )
                 );
                 
