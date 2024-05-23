@@ -117,6 +117,17 @@ students_screen As screen:
                 Width: =500
                 ZIndex: =4
 
+            Icon6_4 As icon.Cancel:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =26
+                HoverBorderColor: =ColorFade(Self.Color, 20%)
+                Icon: =Icon.Cancel
+                OnSelect: =Set(varShowDeleteArchivedPopUp, true)
+                Width: =68
+                X: =430
+                Y: =20
+                ZIndex: =5
+
         label_gallery_students_error As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -1416,6 +1427,99 @@ students_screen As screen:
             X: =486
             Y: =455
             ZIndex: =33
+
+    removeArchivedPopUp As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =40
+
+        popup_background_17 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =varShowDeleteArchivedPopUp
+            Width: =1366
+            ZIndex: =34
+
+        popup_box_17 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =235
+            Text: =""
+            Visible: =varShowDeleteArchivedPopUp
+            Width: =505
+            X: =431
+            Y: =255
+            ZIndex: =35
+
+        popup_header_15 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Size: =18
+            Text: ="weet je het zeker?"
+            Visible: =varShowDeleteArchivedPopUp
+            Width: =505
+            X: =430
+            Y: =261
+            ZIndex: =36
+
+        knop_toevoegen_11 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Fill: =RGBA(255, 0, 0, 1)
+            FontWeight: =FontWeight.Normal
+            HoverFill: =RGBA(184, 0, 0, 1)
+            OnSelect: |
+                =Remove(
+                    studenten_tabel, // The name of the entity
+                    gallery_students.Selected // The record you want to delete
+                );
+                
+                Set(varShowDeleteArchivedPopUp, false); // Hides the popup after the operations
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="verwijderen"
+            Visible: =varShowDeleteArchivedPopUp
+            X: =487
+            Y: =415
+            ZIndex: =37
+
+        knop_annuleer_16 As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 0.8)
+            OnSelect: =Set(varShowDeleteArchivedPopUp, false)
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Size: =13
+            Text: ="Annuleer"
+            Visible: =varShowDeleteArchivedPopUp
+            X: =727
+            Y: =415
+            ZIndex: =38
+
+        Label9_5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =57
+            Text: ="weet je het zeker om deze colom te verwijderen?"
+            Visible: =varShowDeleteArchivedPopUp
+            Width: =285
+            X: =559
+            Y: =324
+            ZIndex: =39
 
     Group6 As group:
         Height: =5
