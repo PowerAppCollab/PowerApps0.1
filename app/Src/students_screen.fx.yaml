@@ -1141,7 +1141,7 @@ students_screen As screen:
                 Set(intakeIDTemp, gallery_students.Selected.intakeID);
                 Set(intakeFormIDTemp, LookUp(intakes, intakeID = intakeIDTemp).intakeFormID);
                 
-                Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", Archived: "true"});
+                Patch(studenten_tabel, gallery_students.Selected, {Voornaam: gallery_students.Selected.studentID, Achternaam: "", Email: "", Telefoonnummer: "", groupID: "", course: "", Archived: "true"});
                 
                 RemoveIf(intakeForms, intakeFormID = intakeFormIDTemp);
                 
