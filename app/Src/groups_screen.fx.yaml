@@ -314,12 +314,7 @@ groups_screen As screen:
             TemplateSize: =40
             Visible: |-
                 =If(
-                    IsBlank(
-                        Filter(
-                            scores,
-                            groupID = gallery_courses_3.Selected.groupID
-                        )
-                    ) && ! error_groupScoresEmpty,
+                    error_groupScoresEmpty,
                     false,
                     true
                 )
@@ -352,6 +347,22 @@ groups_screen As screen:
             Width: =600
             Y: =63
             ZIndex: =3
+
+        label_chart_error_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er zijn geen scores beschikbaar."
+            Visible: |-
+                =If(
+                    error_groupScoresEmpty,
+                    true,
+                    false
+                )
+            Width: =600
+            Y: =56
+            ZIndex: =4
 
     container_22 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
