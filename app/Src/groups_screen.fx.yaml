@@ -1070,7 +1070,8 @@ groups_screen As screen:
             RadiusTopLeft: =10
             RadiusTopRight: =10
             Visible: =varShowAddPopup
-            Width: =If(editNote = true, 80, 43)
+            Width: |
+                =80
             X: =936
             Y: =566
             ZIndex: =43
@@ -1123,7 +1124,7 @@ groups_screen As screen:
             RadiusTopLeft: =10
             RadiusTopRight: =10
             Visible: =varShowDeletePopup
-            Width: =If(editNote = true, 80, 43)
+            Width: =80
             X: =956
             Y: =571
             ZIndex: =47
@@ -1329,14 +1330,13 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
-                =ForAll(
-                    Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID),
+                =
                     Patch(
-                        studenten_tabel, 
-                        LookUp(studenten_tabel, groupID = gallery_courses_3.Selected.groupID),
+                        studenten_tabel,
+                        LookUp(studenten_tabel, studentID = studentID),
                         { groupID: "", course: "" }
-                    )
-                );
+                    );
+                
                 
                 
                 Remove(
