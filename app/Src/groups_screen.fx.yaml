@@ -668,16 +668,16 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             Size: =16
-            Text: =gallery_courses_3.Selected.name
-            Width: =59
-            X: =270
+            Text: |-
+                ="Groep:" & gallery_courses_3.Selected.name
+            Width: =600
             ZIndex: =1
 
         Label2 As label:
             Color: =RGBA(255, 255, 255, 1)
             Text: |
                 =gallery_courses_3.Selected.course
-            Width: =78
+            Width: =180
             X: =39
             Y: =80
             ZIndex: =4
@@ -691,16 +691,15 @@ groups_screen As screen:
                         groupID = gallery_courses_3.Selected.groupID
                     )
                 )
-            Width: =78
-            X: =401
+            Width: =154
+            X: =321
             Y: =80
             ZIndex: =5
 
         Label2_3 As label:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
-            Text: |-
-                ="cursus:"
+            Text: ="Cursus"
             Width: =78
             X: =40
             Y: =40
@@ -710,10 +709,9 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             Height: =30
-            Text: |-
-                ="Aantal kanididaten:"
-            Width: =187
-            X: =401
+            Text: ="Aantal studenten"
+            Width: =267
+            X: =321
             Y: =50
             ZIndex: =7
 
