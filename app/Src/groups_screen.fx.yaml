@@ -377,40 +377,6 @@ groups_screen As screen:
         Y: =380
         ZIndex: =5
 
-        label_studentInformation_error_notSelected_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =66
-            Text: ="Geen student geselecteerd."
-            Visible: |-
-                =If(
-                    IsBlank(gallery_courses_3.Selected.groupID) && IsBlank(gallery_courses_3.Selected.name),
-                    true,
-                    false
-                )
-            Width: =558
-            X: =21
-            Y: =117
-            ZIndex: =3
-
-        label_studentInformation_error_deleted_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =66
-            Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
-            Visible: |-
-                =If(
-                    IsBlank(gallery_courses_3.Selected.groupID) && !IsBlank(gallery_courses_3.Selected.name),
-                    true,
-                    false
-                )
-            Width: =558
-            X: =21
-            Y: =117
-            ZIndex: =4
-
         "gallery_groups_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
@@ -466,6 +432,22 @@ groups_screen As screen:
                 Text: =""
                 Width: =600
                 ZIndex: =4
+
+        label_chart_error_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er zijn (nog) geen studenten in deze groep."
+            Visible: |-
+                =If(
+                    IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)),
+                    true,
+                    false
+                )
+            Width: =600
+            Y: =63
+            ZIndex: =6
 
     container_17 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -541,9 +523,9 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 OnSelect: =Set(varShowDeletePopup, true);
                 Size: =11
-                Text: ="Verwijder"
-                Width: =138
-                X: =405
+                Text: ="Student verwijderen"
+                Width: =168
+                X: =390
                 Y: =79
                 ZIndex: =5
 
@@ -575,10 +557,10 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 OnSelect: =Set(varShowAddPopup, true);
                 Size: =11
-                Text: ="kandidaat toevoegen"
+                Text: ="Student toevoegen"
                 Width: =169
                 X: =38
-                Y: =72
+                Y: =84
                 ZIndex: =7
 
             groep_verwijder_knop_2 As button:
@@ -594,7 +576,7 @@ groups_screen As screen:
                 Text: =""
                 Width: =86
                 X: =38
-                Y: =10
+                Y: =22
                 ZIndex: =8
 
             Icon7 As icon.Add:
@@ -604,7 +586,7 @@ groups_screen As screen:
                 OnSelect: =Set(varShowAddPopup, true);
                 Width: =60
                 X: =92
-                Y: =21
+                Y: =33
                 ZIndex: =9
 
         Group3_1 As group:
@@ -669,7 +651,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Bold
             Size: =16
             Text: |-
-                ="Groep:" & gallery_courses_3.Selected.name
+                ="Groep: " & gallery_courses_3.Selected.name
             Width: =600
             ZIndex: =1
 
@@ -762,7 +744,9 @@ groups_screen As screen:
             Items: |-
                 =Filter(
                     studenten_tabel,
-                    course = gallery_courses_3.Selected.course && IsBlank(groupID) && !IsBlank(Email)
+                    course = gallery_courses_3.Selected.course &&
+                    IsBlank(groupID) 
+                    
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
