@@ -39,32 +39,6 @@ groups_screen As screen:
         Y: =415
         ZIndex: =2
 
-        LineChart1_2 As lineChart:
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
-            DisplayMode: =DisplayMode.View
-            Height: =300
-            Items: =averageGroupScores
-            NumberOfSeries: =0
-            OnSelect: =
-            ShowValues: =
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_students.Selected.studentID
-                        )
-                    ),
-                    false,
-                    true
-                )
-            Width: =500
-            XLabelAngle: =55
-            YAxisMax: =100
-            YAxisMin: =0
-            ZIndex: =5
-
         label_chart_error_2 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -99,8 +73,9 @@ groups_screen As screen:
             DisplayMode: =DisplayMode.View
             Height: =300
             ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-            Items: =averageGroupScores
+            Items: =averageGroupScoresLinegraph_GroupPage
             NumberOfSeries: =0
+            PaddingRight: =0
             ShowValues: =
             Visible: |-
                 =If(
@@ -139,31 +114,41 @@ groups_screen As screen:
                 =Filter(groepens, StartsWith(name, SearchInput1_1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            OnSelect: |-
+            OnSelect: |
                 =ClearCollect(
-                    raw,
+                    groupScores_GroupPage,
                     Filter(
                         scores,
-                        groupID = gallery_courses_3.Selected.groupID && score <> ""
+                        groupID = gallery_courses_3.Selected.groupID
                     )
                 );
-                 
                 ClearCollect(
-                    AveragePrices,
-                    GroupBy(
-                        raw,
-                        Examen,
-                        ExamGroup
+                    uniqueExams_GroupPage,
+                    Distinct(
+                        groupScores,
+                        Examen
                     )
                 );
-                ClearCollect(averageGroupScores,
-                ForAll(
-                    AveragePrices,
-                    {
-                        Examen: ThisRecord.cr884_examen,
-                        averageScore: Average(ExamGroup, score)
-                    }
-                ))
+                ClearCollect(
+                    averageGroupScoresLinegraph_GroupPage,
+                    ForAll(
+                        uniqueExams_GroupPage,
+                        {
+                            Examen: Value,
+                            score: Text(Round(
+                                Average(
+                                    Filter(
+                                        groupScores_GroupPage,
+                                        Examen = Value
+                                    ),
+                                    score
+                                ),
+                                1
+                            )),
+                            Line: "Previous"
+                        }
+                    )
+                );
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
@@ -334,17 +319,6 @@ groups_screen As screen:
                 X: =15
                 ZIndex: =4
 
-            Icon2_1 As icon.Send:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =18
-                Icon: =Icon.Send
-                OnSelect: =Set(SendMailBoxOpen, true);
-                Width: =29
-                X: =554
-                Y: =11
-                ZIndex: =5
-
         label_scoreTitle_error_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
@@ -421,18 +395,6 @@ groups_screen As screen:
                 =true
             Width: =600
             ZIndex: =5
-
-            gallery_students_backgroundButton_2 As button:
-                BorderStyle: =BorderStyle.None
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
-                Height: =90
-                HoverFill: =
-                OnSelect: =Select(Parent)
-                PressedFill: =
-                Text: =""
-                Width: =600
-                ZIndex: =1
 
             gallery_students_titleText_2 As label:
                 Color: =RGBA(255, 255, 255, 1)
