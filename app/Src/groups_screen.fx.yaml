@@ -1195,7 +1195,7 @@ groups_screen As screen:
             Icon: =Icon.Cancel
             OnSelect: |
                 =Set(resetCheckboxVar, true); Set(resetCheckboxVar, false);
-                Clear(allNewStudentIDsForGroup)
+                Clear(allDelStudentIDsForGroup)
             Visible: =varShowDeletePopup
             Width: =34
             X: =961
