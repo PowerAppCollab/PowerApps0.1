@@ -740,7 +740,7 @@ groups_screen As screen:
         "addStudentToGroup_gallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
-            Height: =250
+            Height: =274
             Items: |-
                 =Filter(
                     studenten_tabel,
@@ -810,11 +810,10 @@ groups_screen As screen:
                 Height: =70
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
-                OnCheck: |-
-                    =    Patch(studenten_tabel, addStudentToGroup_gallery.Selected, {groupID: gallery_courses_3.Selected.groupID});
+                OnCheck: =Collect(allNewStudentIDsForGroup, addStudentToGroup_gallery.Selected.studentID)
                 OnSelect: =Select(Parent)
                 OnUncheck: |-
-                    =Patch(studenten_tabel, addStudentToGroup_gallery.Selected, {groupID: ""});
+                    =//Patch(studenten_tabel; addStudentToGroup_gallery.Selected; {groupID: ""});;
                 PressedColor: =RGBA(192, 5, 230, 1)
                 PressedFill: =RGBA(0, 0, 0, 0)
                 Text: =""
@@ -1050,6 +1049,56 @@ groups_screen As screen:
             X: =337
             Y: =171
             ZIndex: =42
+
+    Group17_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =47
+
+        Container5_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =40
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =If(editNote = true, 80, 43)
+            X: =936
+            Y: =566
+            ZIndex: =43
+
+        Icon14_3 As icon.Edit:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =28
+            Icon: =Icon.Edit
+            OnSelect: =
+            Width: =34
+            X: =941
+            Y: =571
+            ZIndex: =44
+
+        Icon14_4 As icon.Edit:
+            Color: =RGBA(184, 0, 0, 1)
+            Height: =28
+            Icon: =Icon.Cancel
+            OnSelect: =
+            Width: =34
+            X: =941
+            Y: =571
+            ZIndex: =45
+
+        Icon14_5 As icon.Edit:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =28
+            Icon: =Icon.Check
+            OnSelect: =
+            Width: =34
+            X: =975
+            Y: =571
+            ZIndex: =46
 
     CreateGroupPopup As group:
         Height: =5
