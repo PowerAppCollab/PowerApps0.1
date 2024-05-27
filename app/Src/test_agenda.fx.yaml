@@ -1,6 +1,6 @@
 test_agenda As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =
+    OnVisible: =Set(myCalendarID, LookUp(Office365Outlook.CalendarGetTables().value, DisplayName = "Calendar").name)
 
     container_41 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
