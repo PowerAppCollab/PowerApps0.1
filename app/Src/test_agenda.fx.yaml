@@ -1,6 +1,6 @@
 test_agenda As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =Set(myCalendarID, LookUp(Office365Outlook.CalendarGetTables().value, DisplayName = "Calendar").name)
+    OnVisible: =
 
     container_41 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -14,6 +14,35 @@ test_agenda As screen:
         X: =180
         Y: =40
         ZIndex: =11
+
+        Button1 As button:
+            OnSelect: |-
+                =Office365Outlook.V4CalendarPostItem(
+                LookUp(
+                        Office365Outlook.CalendarGetTables().value, 
+                        DisplayName = "Agenda"
+                    ).Name, 
+                        "TEST",
+                        Text(DatePicker1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
+                        Text(DateAdd(DatePicker1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
+                
+                        "UTC",
+                        {
+                            //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
+                            requiredAttendees: "jools.l.reniartz@gmail.com",
+                            responseRequested: false,
+                            isAllDay: true
+                        }
+                    )
+            Text: ="Knop"
+            X: =36
+            Y: =27
+            ZIndex: =1
+
+        DatePicker1 As datepicker:
+            X: =126
+            Y: =198
+            ZIndex: =2
 
     container_42 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
