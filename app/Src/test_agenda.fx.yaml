@@ -35,14 +35,25 @@ test_agenda As screen:
                         }
                     )
             Text: ="Knop"
-            X: =36
-            Y: =27
+            X: =330
+            Y: =297
             ZIndex: =1
 
         DatePicker1 As datepicker:
             X: =126
             Y: =198
             ZIndex: =2
+
+        Label6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =48
+            Size: =16
+            Text: ="Meeting Inplannen"
+            Width: =625
+            Y: =9
+            ZIndex: =3
 
     container_42 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
