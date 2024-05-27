@@ -199,6 +199,7 @@ agenda_screen As screen:
                     ZIndex: =1
 
                 Subcircle1_1 As circle:
+                    Fill: =RGBA(192, 5, 230, 1)
                     Height: =3 * Title3_2.Size
                     OnSelect: =Select(Parent)
                     Visible: =And(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, Title3_2.Visible)
@@ -212,14 +213,13 @@ agenda_screen As screen:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(255, 255, 255, 1), LblMonthSelected1_1.Color)
                     Fill: |-
-                        =/*Fill value changes if the gallery item day = today, or if it lies outside of the current month*/             
-                        If(
+                        =        If(
                             /*Date selected is today*/
                             DateAdd(_firstDayInView, ThisItem.Value) = Today() && DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(0,0,0,0),
                             /*Today when it is not selected*/
                             DateAdd(_firstDayInView, ThisItem.Value) = Today(), ColorFade(Subcircle1_1.Fill, 0.67), 
                             /*The day is outside the range of the currently selected month*/
-                            Abs(Self.Text - ThisItem.Value) > 10,RGBA(200, 200, 200, 0.3), RGBA(0, 0, 0, 0))
+                            Abs(Self.Text - ThisItem.Value) > 10,RGBA(200, 200, 200, 0.1), RGBA(0, 0, 0, 0))
                     FocusedBorderColor: =Self.Color
                     FocusedBorderThickness: =2
                     Height: =MonthDayGallery1_1.TemplateHeight
