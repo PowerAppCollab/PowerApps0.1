@@ -1,6 +1,7 @@
 navigatie_component As CanvasComponent:
-    Fill: =RGBA(167, 182, 203, 1)
+    Fill: =RGBA(0, 0, 0, 0)
     Height: =768
+    nav_agendaScreen: =App.ActiveScreen
     nav_cursussenScreen: =App.ActiveScreen
     nav_groepenScreen: =App.ActiveScreen
     nav_intakesScreen: =App.ActiveScreen
@@ -267,7 +268,7 @@ navigatie_component As CanvasComponent:
             FontWeight: =FontWeight.Normal
             Height: =35
             HoverFill: =
-            OnSelect: =Navigate(navigatie_component.nav_groepenScreen)
+            OnSelect: =Navigate(navigatie_component.nav_agendaScreen)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             RadiusBottomLeft: =0
@@ -292,7 +293,7 @@ navigatie_component As CanvasComponent:
             HoverBorderColor: =
             HoverColor: =RGBA(0, 0, 0, 0)
             HoverFill: =
-            OnSelect: =Navigate(navigatie_component.nav_groepenScreen)
+            OnSelect: =Navigate(navigatie_component.nav_agendaScreen)
             PressedBorderColor: =
             PressedColor: =
             PressedFill: =

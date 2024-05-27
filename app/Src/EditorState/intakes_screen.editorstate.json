@@ -18868,6 +18868,14 @@
           "InvariantPropertyName": "nav_presenterenScreen",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "App.ActiveScreen",
+          "InvariantPropertyName": "nav_agendaScreen",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -18912,6 +18920,11 @@
         {
           "Category": "Data",
           "PropertyName": "nav_presenterenScreen",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "nav_agendaScreen",
           "RuleProviderType": "User"
         },
         {
