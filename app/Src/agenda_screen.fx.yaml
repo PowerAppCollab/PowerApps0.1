@@ -121,19 +121,27 @@ agenda_screen As screen:
         Y: =203
         ZIndex: =13
 
-        Group13_1 As group:
+        Icon18 As icon.Add:
+            Icon: =Icon.Add
+            OnSelect: =Set(isAgendaVisible, !isAgendaVisible)
+            X: =1040
+            Y: =10
+            ZIndex: =12
+
+        Group20 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =7
+            ZIndex: =13
 
             LblMonthSelected1_1 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =48
                 Size: =32
                 Text: =Text(_firstDayOfMonth, "mmmm yyyy")
-                Visible: =isAgendaVisible
+                Visible: |
+                    =isAgendaVisible
                 Width: =387
                 Wrap: =false
                 X: =15
@@ -158,7 +166,8 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Vorige maand weergeven"
-                Visible: =isAgendaVisible
+                Visible: |
+                    =isAgendaVisible
                 Width: =36
                 X: =439
                 Y: =28
@@ -182,7 +191,8 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Volgende maand weergeven"
-                Visible: =isAgendaVisible
+                Visible: |
+                    =isAgendaVisible
                 Width: =36
                 X: =487
                 Y: =27
@@ -195,7 +205,8 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =78
-                Visible: =isAgendaVisible
+                Visible: |
+                    =isAgendaVisible
                 Width: =548
                 Y: =93
                 ZIndex: =5
@@ -221,7 +232,8 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =60
-                Visible: =isAgendaVisible
+                Visible: |
+                    =isAgendaVisible
                 Width: =548
                 WrapCount: =7
                 Y: =136
@@ -276,193 +288,192 @@ agenda_screen As screen:
                     Wrap: =false
                     ZIndex: =3
 
-        CalendarEventsGallery1_1 As gallery.CalendarEventsGallery:
-            AccessibleLabel: ="Agenda-items voor geselecteerde dag"
-            Height: =Parent.Height - Self.Y
-            Items: |-
-                =/*Shows events only on selected date*/
-                SortByColumns(Filter(MyCalendarEvents, Text(Start, DateTimeFormat.ShortDate) = Text(_dateSelected, DateTimeFormat.ShortDate)), "Start")
-            Layout: =Layout.Vertical
-            ShowScrollbar: =false
-            TemplatePadding: =0
-            TemplateSize: =109
-            Visible: =isAgendaVisible
-            Width: =543
-            X: =576
-            Y: =LblDateSelected1.Y + LblDateSelected1.Height
-            ZIndex: =8
-
-            Title4_1 As label:
-                BorderColor: =Self.Color
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(255, 255, 255, 1)
-                FocusedBorderThickness: =2
-                FontWeight: =FontWeight.Semibold
-                Height: =27
-                OnSelect: =Set(_selectedCalendarEvent, ThisItem)
-                PaddingLeft: =0
-                Size: =16
-                TabIndex: =0
-                Text: =ThisItem.Subject
-                Tooltip: =ThisItem.Subject
-                Width: =408
-                Wrap: =false
-                X: =18
-                Y: =12
-                ZIndex: =1
-
-            Subtitle2_1 As label:
-                Color: =RGBA(219, 219, 219, 1)
-                FocusedBorderThickness: =2
-                FontWeight: =FontWeight.Lighter
-                Height: =Self.Size * 2
-                OnSelect: =Select(Title4_1)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                Text: =ThisItem.Location
-                Tooltip: =ThisItem.Location
-                Width: =CalendarEventsGallery1_1.TemplateWidth - Self.X - 10
-                Wrap: =false
-                X: =18
-                Y: =39
-                ZIndex: =2
-
-            Body1_1 As label:
-                Align: =Align.Right
-                Color: =RGBA(202, 202, 202, 1)
-                FocusedBorderThickness: =2
-                FontWeight: =FontWeight.Lighter
-                Height: =27
-                OnSelect: =Select(Title4_1)
-                PaddingLeft: =0
-                Size: =13
-                Text: =Text(ThisItem.Start, DateTimeFormat.ShortTime) & " - " & Text(ThisItem.End, DateTimeFormat.ShortTime)
-                Width: =160
-                Wrap: =false
-                X: =373
-                Y: =12
-                ZIndex: =3
-
-            Separator1_1 As rectangle:
-                Fill: =RGBA(202, 202, 202, 1)
-                Height: =1
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - 1
-                ZIndex: =4
-
-            gallery_students_backgroundButton_2 As button:
-                BorderStyle: =BorderStyle.None
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
-                Height: =109
-                HoverFill: =
-                OnSelect: =Select(Parent)
-                PressedFill: =
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Text: =""
+            CalendarEventsGallery1_1 As gallery.CalendarEventsGallery:
+                AccessibleLabel: ="Agenda-items voor geselecteerde dag"
+                Height: =Parent.Height - Self.Y
+                Items: |-
+                    =/*Shows events only on selected date*/
+                    SortByColumns(Filter(MyCalendarEvents, Text(Start, DateTimeFormat.ShortDate) = Text(_dateSelected, DateTimeFormat.ShortDate)), "Start")
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =109
+                Visible: |
+                    =isAgendaVisible
                 Width: =543
-                ZIndex: =5
+                X: =576
+                Y: =LblDateSelected1.Y + LblDateSelected1.Height
+                ZIndex: =8
 
-            Icon16 As icon.Edit:
-                Color: =RGBA(128, 128, 128, 1)
-                Height: =27
-                Icon: =Icon.Edit
-                OnSelect: =Select(Parent)
-                Width: =27
-                X: =466
-                Y: =60
-                ZIndex: =6
+                Title4_1 As label:
+                    BorderColor: =Self.Color
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =2
+                    FontWeight: =FontWeight.Semibold
+                    Height: =27
+                    OnSelect: =Set(_selectedCalendarEvent, ThisItem)
+                    PaddingLeft: =0
+                    Size: =16
+                    TabIndex: =0
+                    Text: =ThisItem.Subject
+                    Tooltip: =ThisItem.Subject
+                    Width: =408
+                    Wrap: =false
+                    X: =18
+                    Y: =12
+                    ZIndex: =1
 
-            Icon17 As icon.Trash:
-                Color: =RGBA(168, 0, 0, 1)
-                Height: =27
-                Icon: =Icon.Trash
-                OnSelect: |-
+                Subtitle2_1 As label:
+                    Color: =RGBA(219, 219, 219, 1)
+                    FocusedBorderThickness: =2
+                    FontWeight: =FontWeight.Lighter
+                    Height: =Self.Size * 2
+                    OnSelect: =Select(Title4_1)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    Text: =ThisItem.Location
+                    Tooltip: =ThisItem.Location
+                    Width: =CalendarEventsGallery1_1.TemplateWidth - Self.X - 10
+                    Wrap: =false
+                    X: =18
+                    Y: =39
+                    ZIndex: =2
+
+                Body1_1 As label:
+                    Align: =Align.Right
+                    Color: =RGBA(202, 202, 202, 1)
+                    FocusedBorderThickness: =2
+                    FontWeight: =FontWeight.Lighter
+                    Height: =27
+                    OnSelect: =Select(Title4_1)
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: =Text(ThisItem.Start, DateTimeFormat.ShortTime) & " - " & Text(ThisItem.End, DateTimeFormat.ShortTime)
+                    Width: =160
+                    Wrap: =false
+                    X: =373
+                    Y: =12
+                    ZIndex: =3
+
+                Separator1_1 As rectangle:
+                    Fill: =RGBA(202, 202, 202, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =4
+
+                gallery_students_backgroundButton_2 As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =If(ThisItem.IsSelected, RGBA(192, 5, 230, 0.1), RGBA(0,0,0,0))
+                    Height: =109
+                    HoverFill: =
+                    OnSelect: =Select(Parent)
+                    PressedFill: =
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Text: =""
+                    Width: =543
+                    ZIndex: =5
+
+                Icon16 As icon.Edit:
+                    Color: =RGBA(128, 128, 128, 1)
+                    Height: =27
+                    Icon: =Icon.Edit
+                    OnSelect: |-
+                        =Set(isAgendaVisible, !isAgendaVisible);
+                        Set(isAgendaEdit, !isAgendaEdit);
+                    Width: =27
+                    X: =466
+                    Y: =60
+                    ZIndex: =6
+
+                Icon17 As icon.Trash:
+                    Color: =RGBA(168, 0, 0, 1)
+                    Height: =27
+                    Icon: =Icon.Trash
+                    OnSelect: |-
+                        =
+                            Office365Outlook.CalendarDeleteItemV2(_myCalendar.Name, ThisItem.Id);
+                            RemoveIf(MyCalendarEvents, Id = ThisItem.Id);
+                        
+                        
+                        
+                        // Ensure the _userDomain is set; if not already set
+                        If(IsBlank(_userDomain), 
+                            UpdateContext({_showLoading: true}),
+                            Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email))),
+                            Set(_dateSelected, Today()),
+                            Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days)),
+                            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days)),
+                            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))
+                        );
+                        
+                        // Set the calendar visibility and show loading context
+                        Set(_calendarVisible, false);
+                        UpdateContext({_showLoading: true});
+                        
+                        // Set the calendar variable based on the chosen Agenda
+                        
+                        
+                        // Calculate min and max dates for the calendar view
+                        Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+                        Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));
+                        
+                        // Retrieve calendar events and store them in a collection
+                        ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
+                        
+                        // Hide loading context and make the calendar visible
+                        UpdateContext({_showLoading: false});
+                        Set(_calendarVisible, true);
+                    Width: =27
+                    X: =506
+                    Y: =60
+                    ZIndex: =7
+
+            LblDateSelected1_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =RectMeetingBkg1.Height
+                Size: =26
+                Text: |
+                    =Upper(Left(Text(_dateSelected, "dddd"), 1)) & Lower(Mid(Text(_dateSelected, "dddd"), 2))
+                Visible: |
+                    =isAgendaVisible
+                Width: =Parent.Width / 3 - 60
+                Wrap: =false
+                X: =576
+                Y: =21
+                ZIndex: =9
+
+            LblDateSelected1_2 As label:
+                Color: =RGBA(207, 207, 207, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =RectMeetingBkg1.Height
+                Size: =13
+                Text: |-
                     =
-                        Office365Outlook.CalendarDeleteItemV2(_myCalendar.Name, ThisItem.Id);
-                        RemoveIf(MyCalendarEvents, Id = ThisItem.Id);
-                    
-                    
-                    
-                    // Ensure the _userDomain is set; if not already set
-                    If(IsBlank(_userDomain), 
-                        UpdateContext({_showLoading: true}),
-                        Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email))),
-                        Set(_dateSelected, Today()),
-                        Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days)),
-                        Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days)),
-                        Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))
-                    );
-                    
-                    // Set the calendar visibility and show loading context
-                    Set(_calendarVisible, false);
-                    UpdateContext({_showLoading: true});
-                    
-                    // Set the calendar variable based on the chosen Agenda
-                    
-                    
-                    // Calculate min and max dates for the calendar view
-                    Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
-                    Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));
-                    
-                    // Retrieve calendar events and store them in a collection
-                    ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
-                    
-                    // Hide loading context and make the calendar visible
-                    UpdateContext({_showLoading: false});
-                    Set(_calendarVisible, true);
-                Width: =27
-                X: =506
-                Y: =60
-                ZIndex: =7
+                    Text(_dateSelected, DateTimeFormat.ShortDate)
+                Visible: |
+                    =isAgendaVisible
+                Width: =Parent.Width / 3 - 60
+                Wrap: =false
+                X: =576
+                Y: =49
+                ZIndex: =10
 
-        LblDateSelected1_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =RectMeetingBkg1.Height
-            Size: =26
-            Text: |
-                =Upper(Left(Text(_dateSelected, "dddd"), 1)) & Lower(Mid(Text(_dateSelected, "dddd"), 2))
-            Visible: =isAgendaVisible
-            Width: =Parent.Width / 3 - 60
-            Wrap: =false
-            X: =576
-            Y: =21
-            ZIndex: =9
-
-        LblDateSelected1_2 As label:
-            Color: =RGBA(207, 207, 207, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =RectMeetingBkg1.Height
-            Size: =13
-            Text: |-
-                =
-                Text(_dateSelected, DateTimeFormat.ShortDate)
-            Visible: =isAgendaVisible
-            Width: =Parent.Width / 3 - 60
-            Wrap: =false
-            X: =576
-            Y: =49
-            ZIndex: =10
-
-        Rectangle4 As rectangle:
-            Fill: =RGBA(192, 5, 230, 1)
-            Height: =400
-            Visible: =isAgendaVisible
-            Width: =1
-            X: =560
-            Y: =61
-            ZIndex: =11
-
-        Icon18 As icon.Add:
-            Icon: =Icon.Add
-            OnSelect: =Set(isAgendaVisible, !isAgendaVisible)
-            X: =1040
-            Y: =10
-            ZIndex: =12
+            Rectangle4 As rectangle:
+                Fill: =RGBA(192, 5, 230, 1)
+                Height: =400
+                Visible: |
+                    =isAgendaVisible
+                Width: =1
+                X: =560
+                Y: =61
+                ZIndex: =11
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
