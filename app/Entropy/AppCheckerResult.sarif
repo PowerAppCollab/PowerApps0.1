@@ -6519,6 +6519,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "agenda_screen.container_43.CloseCalendarCancelEditButton.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.CloseCalendarCancelEditButton.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.CloseCalendarCancelEditButton"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "agenda_screen.container_43.CloseCalendarCancelEditButton.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.CloseCalendarCancelEditButton.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.CloseCalendarCancelEditButton"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.persoonlijk_bericht_input"
                 }
               ],

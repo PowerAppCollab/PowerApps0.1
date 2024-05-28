@@ -125,7 +125,7 @@ agenda_screen As screen:
             Icon: =Icon.Add
             OnSelect: =Set(isAgendaVisible, false)
             Rotation: =
-            Visible: =isAgendaVisible
+            Visible: =isAgendaVisible && !isAgendaEdit
             X: =1040
             Y: =10
             ZIndex: =12
@@ -152,7 +152,7 @@ agenda_screen As screen:
                 Size: =32
                 Text: =Text(_firstDayOfMonth, "mmmm yyyy")
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =387
                 Wrap: =false
                 X: =15
@@ -178,7 +178,7 @@ agenda_screen As screen:
                 TabIndex: =0
                 Tooltip: ="Vorige maand weergeven"
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =36
                 X: =439
                 Y: =28
@@ -203,7 +203,7 @@ agenda_screen As screen:
                 TabIndex: =0
                 Tooltip: ="Volgende maand weergeven"
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =36
                 X: =487
                 Y: =27
@@ -217,7 +217,7 @@ agenda_screen As screen:
                 TemplatePadding: =0
                 TemplateSize: =78
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =548
                 Y: =93
                 ZIndex: =5
@@ -244,7 +244,7 @@ agenda_screen As screen:
                 TemplatePadding: =0
                 TemplateSize: =60
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =548
                 WrapCount: =7
                 Y: =136
@@ -310,7 +310,7 @@ agenda_screen As screen:
                 TemplatePadding: =0
                 TemplateSize: =109
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =543
                 X: =576
                 Y: =LblDateSelected1.Y + LblDateSelected1.Height
@@ -395,9 +395,7 @@ agenda_screen As screen:
                     Color: =RGBA(128, 128, 128, 1)
                     Height: =27
                     Icon: =Icon.Edit
-                    OnSelect: |-
-                        =Set(isAgendaVisible, !isAgendaVisible);
-                        Set(isAgendaEdit, !isAgendaEdit);
+                    OnSelect: =Set(isAgendaEdit, true);
                     Width: =27
                     X: =466
                     Y: =60
@@ -453,7 +451,7 @@ agenda_screen As screen:
                 Text: |
                     =Upper(Left(Text(_dateSelected, "dddd"), 1)) & Lower(Mid(Text(_dateSelected, "dddd"), 2))
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =Parent.Width / 3 - 60
                 Wrap: =false
                 X: =576
@@ -469,7 +467,7 @@ agenda_screen As screen:
                     =
                     Text(_dateSelected, DateTimeFormat.ShortDate)
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =Parent.Width / 3 - 60
                 Wrap: =false
                 X: =576
@@ -480,11 +478,56 @@ agenda_screen As screen:
                 Fill: =RGBA(192, 5, 230, 1)
                 Height: =400
                 Visible: |
-                    =isAgendaVisible
+                    =isAgendaVisible && !isAgendaEdit
                 Width: =1
                 X: =560
                 Y: =61
                 ZIndex: =11
+
+        CloseCalendarCancelEditButton As icon.Add:
+            Icon: =Icon.Add
+            OnSelect: =Set(isAgendaEdit, false)
+            Rotation: =45
+            Visible: =isAgendaEdit
+            X: =1040
+            Y: =10
+            ZIndex: =14
+
+        Label8 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            PaddingLeft: =0
+            Size: =26
+            Text: =CalendarEventsGallery1_1.Selected.Subject
+            Width: =884
+            X: =15
+            Y: =29
+            ZIndex: =15
+
+        Label8_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =43
+            PaddingLeft: =0
+            Size: =16
+            Text: =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
+            Width: =486
+            X: =15
+            Y: =64
+            ZIndex: =16
+
+        Label8_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =43
+            PaddingLeft: =0
+            Size: =16
+            Text: =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
+            Width: =486
+            X: =15
+            Y: =136
+            ZIndex: =17
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
