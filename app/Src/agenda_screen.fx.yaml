@@ -7,33 +7,38 @@ agenda_screen As screen:
         Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));
         Set(_calendarVisible, true);
         
-        // Ensure the _userDomain is set, if not already set
+        Set(_myCalendar, LookUp(
+                Office365Outlook.CalendarGetTables().value, 
+                DisplayName = "Agenda"
+            ));
+        
+        // Ensure the _userDomain is set; if not already set
         If(IsBlank(_userDomain), 
             UpdateContext({_showLoading: true}),
             Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email))),
             Set(_dateSelected, Today()),
             Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days)),
             Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days)),
-            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1. TimeUnit.Months), -1. TimeUnit.Days))
-        ),
+            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))
+        );
         
         // Set the calendar visibility and show loading context
-        Set(_calendarVisible, false),
-        UpdateContext({_showLoading: true}),
+        Set(_calendarVisible, false);
+        UpdateContext({_showLoading: true});
         
         // Set the calendar variable based on the chosen Agenda
-        Set(_myCalendar, Agenda),
+        
         
         // Calculate min and max dates for the calendar view
-        Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days)),
-        Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40. TimeUnit.Days)),
+        Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+        Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));
         
         // Retrieve calendar events and store them in a collection
-        ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value),
+        ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
         
         // Hide loading context and make the calendar visible
-        UpdateContext({_showLoading: false}),
-        Set(_calendarVisible, true),
+        UpdateContext({_showLoading: false});
+        Set(_calendarVisible, true);
 
     container_41 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
