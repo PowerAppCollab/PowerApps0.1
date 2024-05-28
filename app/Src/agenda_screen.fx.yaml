@@ -395,7 +395,9 @@ agenda_screen As screen:
                     Color: =RGBA(128, 128, 128, 1)
                     Height: =27
                     Icon: =Icon.Edit
-                    OnSelect: =Set(isAgendaEdit, true);
+                    OnSelect: |
+                        =Set(isAgendaEdit, true);
+                        Set(currentCalendarEventEmails, CalendarEventsGallery1_1.Selected.RequiredAttendees)
                     Width: =27
                     X: =466
                     Y: =60
@@ -511,7 +513,7 @@ agenda_screen As screen:
             Height: =43
             PaddingLeft: =0
             Size: =16
-            Text: =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
+            Text: =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.LongDate, & " " &CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
             Width: =486
             X: =15
             Y: =64
@@ -519,15 +521,32 @@ agenda_screen As screen:
 
         Label8_2 As label:
             Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
             Height: =43
             PaddingLeft: =0
             Size: =16
-            Text: =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
+            Text: |-
+                ="Uitgenodigd:"
             Width: =486
             X: =15
-            Y: =136
+            Y: =184
             ZIndex: =17
+
+        Label8_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =277
+            PaddingLeft: =0
+            Size: =16
+            Text: |
+                =Concat(
+                    Split(currentCalendarEventEmails, ";"),
+                    Value & Char(10)
+                )
+            VerticalAlign: =VerticalAlign.Top
+            Width: =508
+            X: =15
+            Y: =215
+            ZIndex: =18
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
