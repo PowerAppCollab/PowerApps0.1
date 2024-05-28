@@ -1,7 +1,13 @@
 agenda_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnVisible: |
-        =Set(_dateSelected, Today());
+        =//PAGE DEFAULTS
+        Set(isAgendaEdit, false);
+        Set(isAgendaVisible, true);
+        
+        //END
+        
+        Set(_dateSelected, Today());
         Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));
         Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
         Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));
@@ -122,21 +128,27 @@ agenda_screen As screen:
         ZIndex: =13
 
         CloseCalendarButton As icon.Add:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =36
             Icon: =Icon.Add
             OnSelect: =Set(isAgendaVisible, false)
             Rotation: =
             Visible: =isAgendaVisible && !isAgendaEdit
-            X: =1040
-            Y: =10
+            Width: =36
+            X: =1056
+            Y: =21
             ZIndex: =12
 
         CloseCalendarEditButton As icon.Add:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =36
             Icon: =Icon.Add
             OnSelect: =Set(isAgendaVisible, true)
             Rotation: =If(isAgendaEdit || !isAgendaVisible = true, "45", "0")
             Visible: =!isAgendaVisible
-            X: =1040
-            Y: =10
+            Width: =36
+            X: =1056
+            Y: =21
             ZIndex: =13
 
         Group20 As group:
@@ -162,7 +174,7 @@ agenda_screen As screen:
             iconPrevMonth1_1 As icon.ChevronLeft:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(192, 5, 230, 1)
-                Height: =35
+                Height: =36
                 Icon: =Icon.ChevronLeft
                 OnSelect: |-
                     =/*changes month view to previous month*/
@@ -187,7 +199,7 @@ agenda_screen As screen:
             iconNextMonth1_1 As icon.ChevronRight:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(192, 5, 230, 1)
-                Height: =35
+                Height: =36
                 Icon: =Icon.ChevronRight
                 OnSelect: |-
                     =/*changes month view to next month*/
@@ -302,9 +314,7 @@ agenda_screen As screen:
             CalendarEventsGallery1_1 As gallery.CalendarEventsGallery:
                 AccessibleLabel: ="Agenda-items voor geselecteerde dag"
                 Height: =Parent.Height - Self.Y
-                Items: |-
-                    =/*Shows events only on selected date*/
-                    SortByColumns(Filter(MyCalendarEvents, Text(Start, DateTimeFormat.ShortDate) = Text(_dateSelected, DateTimeFormat.ShortDate)), "Start")
+                Items: =SortByColumns(Filter(MyCalendarEvents, Text(Start, DateTimeFormat.ShortDate) = Text(_dateSelected, DateTimeFormat.ShortDate)), "Start")
                 Layout: =Layout.Vertical
                 ShowScrollbar: =false
                 TemplatePadding: =0
@@ -473,7 +483,7 @@ agenda_screen As screen:
                 Width: =Parent.Width / 3 - 60
                 Wrap: =false
                 X: =576
-                Y: =49
+                Y: =53
                 ZIndex: =10
 
             Rectangle4 As rectangle:
@@ -487,81 +497,114 @@ agenda_screen As screen:
                 ZIndex: =11
 
         CloseCalendarCancelEditButton As icon.Add:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =36
             Icon: =Icon.Add
             OnSelect: =Set(isAgendaEdit, false)
             Rotation: =45
             Visible: =isAgendaEdit
-            X: =1040
-            Y: =10
+            Width: =36
+            X: =1056
+            Y: =21
             ZIndex: =14
 
-        Label8 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =45
-            PaddingLeft: =0
-            Size: =26
-            Text: =CalendarEventsGallery1_1.Selected.Subject
-            Width: =884
-            X: =15
-            Y: =29
-            ZIndex: =15
-
-        Label8_1 As label:
+        Label9 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
-            Height: =43
-            PaddingLeft: =0
-            Size: =16
-            Text: |
-                =Upper(Left(Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.LongDate), 1)) &
-                Mid(Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.LongDate), 2)
-            Width: =486
-            X: =15
-            Y: =64
-            ZIndex: =16
+            Height: =76
+            Text: ="Er zijn geen meetings gepland op deze dag."
+            Visible: |-
+                =If(IsEmpty(
+                
+                
+                SortByColumns(Filter(MyCalendarEvents, Text(Start, DateTimeFormat.ShortDate) = Text(_dateSelected, DateTimeFormat.ShortDate)), "Start")
+                
+                ), true,false)
+            Width: =544
+            X: =576
+            Y: =251
+            ZIndex: =20
 
-        Label8_2 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =43
-            PaddingLeft: =0
-            Size: =16
-            Text: |-
-                ="Uitgenodigd:"
-            Width: =486
-            X: =15
-            Y: =184
-            ZIndex: =17
+        Group22 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =20
 
-        Label8_3 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =246
-            PaddingLeft: =0
-            Size: =16
-            Text: |
-                =Concat(
-                    Split(currentCalendarEventEmails, ";"),
-                    Value & Char(10)
-                )
-            VerticalAlign: =VerticalAlign.Top
-            Width: =508
-            X: =15
-            Y: =215
-            ZIndex: =18
+            Label8 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =45
+                PaddingLeft: =0
+                Size: =26
+                Text: =CalendarEventsGallery1_1.Selected.Subject
+                Visible: =isAgendaEdit
+                Width: =884
+                X: =15
+                Y: =29
+                ZIndex: =15
 
-        Label8_4 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =43
-            PaddingLeft: =0
-            Size: =16
-            Text: |
-                =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
-            Width: =486
-            X: =15
-            Y: =93
-            ZIndex: =19
+            Label8_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =43
+                PaddingLeft: =0
+                Size: =16
+                Text: |
+                    =Upper(Left(Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.LongDate), 1)) &
+                    Mid(Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.LongDate), 2)
+                Visible: =isAgendaEdit
+                Width: =486
+                X: =15
+                Y: =64
+                ZIndex: =16
+
+            Label8_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =43
+                PaddingLeft: =0
+                Size: =16
+                Text: |-
+                    ="Uitgenodigd:"
+                Visible: =isAgendaEdit
+                Width: =486
+                X: =15
+                Y: =184
+                ZIndex: =17
+
+            Label8_3 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =246
+                PaddingLeft: =0
+                Size: =16
+                Text: |
+                    =Concat(
+                        Split(currentCalendarEventEmails, ";"),
+                        Value & Char(10)
+                    )
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =isAgendaEdit
+                Width: =508
+                X: =15
+                Y: =215
+                ZIndex: =18
+
+            Label8_4 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =43
+                PaddingLeft: =0
+                Size: =16
+                Text: |
+                    =Text(CalendarEventsGallery1_1.Selected.Start, DateTimeFormat.ShortTime) & " - " & Text(CalendarEventsGallery1_1.Selected.End, DateTimeFormat.ShortTime)
+                Visible: =isAgendaEdit
+                Width: =486
+                X: =15
+                Y: =93
+                ZIndex: =19
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
