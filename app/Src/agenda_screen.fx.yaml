@@ -121,12 +121,23 @@ agenda_screen As screen:
         Y: =203
         ZIndex: =13
 
-        Icon18 As icon.Add:
+        CloseCalendarButton As icon.Add:
             Icon: =Icon.Add
-            OnSelect: =Set(isAgendaVisible, !isAgendaVisible)
+            OnSelect: =Set(isAgendaVisible, false)
+            Rotation: =
+            Visible: =isAgendaVisible
             X: =1040
             Y: =10
             ZIndex: =12
+
+        CloseCalendarEditButton As icon.Add:
+            Icon: =Icon.Add
+            OnSelect: =Set(isAgendaVisible, true)
+            Rotation: =If(isAgendaEdit || !isAgendaVisible = true, "45", "0")
+            Visible: =!isAgendaVisible
+            X: =1040
+            Y: =10
+            ZIndex: =13
 
         Group20 As group:
             Height: =5
