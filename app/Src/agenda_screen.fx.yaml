@@ -55,7 +55,7 @@ agenda_screen As screen:
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Width: =625
-        X: =180
+        X: =675
         Y: =40
         ZIndex: =11
 
@@ -110,9 +110,36 @@ agenda_screen As screen:
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Width: =450
-        X: =850
+        X: =180
         Y: =40
         ZIndex: =12
+
+        LblMonthSelected1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =48
+            Size: =16
+            Text: ="Het is vandaag"
+            Visible: |
+                =isAgendaVisible && !isAgendaEdit
+            Width: =387
+            Wrap: =false
+            X: =21
+            Y: =21
+            ZIndex: =1
+
+        LblMonthSelected1_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Size: =32
+            Text: ="XX-XX-XXXX"
+            Visible: |
+                =isAgendaVisible && !isAgendaEdit
+            Width: =387
+            Wrap: =false
+            X: =21
+            Y: =57
+            ZIndex: =2
 
     container_43 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -255,6 +282,7 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =60
+                Transition: =Transition.Push
                 Visible: |
                     =isAgendaVisible && !isAgendaEdit
                 Width: =548
@@ -310,6 +338,13 @@ agenda_screen As screen:
                     Width: =MonthDayGallery1_1.TemplateWidth
                     Wrap: =false
                     ZIndex: =3
+
+                Rectangle6 As rectangle:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =60
+                    OnSelect: =Set(_dateSelected, DateAdd(_firstDayInView, ThisItem.Value, TimeUnit.Days))
+                    Width: =78.28571428571429
+                    ZIndex: =4
 
             CalendarEventsGallery1_1 As gallery.CalendarEventsGallery:
                 AccessibleLabel: ="Agenda-items voor geselecteerde dag"
@@ -605,6 +640,17 @@ agenda_screen As screen:
                 X: =15
                 Y: =93
                 ZIndex: =19
+
+        CloseCalendarCancelEditButton_1 As icon.Add:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =36
+            Icon: =Icon.Edit
+            OnSelect: =Set(isEventEditing, true)
+            Visible: =isAgendaEdit
+            Width: =36
+            X: =1020
+            Y: =21
+            ZIndex: =21
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
