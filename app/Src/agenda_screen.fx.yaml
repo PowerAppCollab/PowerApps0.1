@@ -749,8 +749,7 @@ agenda_screen As screen:
                         DisplayName = "Agenda"
                     ).Name, 
                         input_meeting_subject.Text,
-                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Starttime_hours.SelectedText.Value & ":" & Startime_minutes.SelectedText.Value), TimeZoneOffset()),
-                        //Text(DatePicker1_1.SelectedDate; "yyyy-mm-dd") & "T00:00:00.000Z";
+                        Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
                         Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
                         "UTC",
                         {
