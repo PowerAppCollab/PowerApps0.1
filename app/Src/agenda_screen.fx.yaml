@@ -584,7 +584,17 @@ agenda_screen As screen:
                 Title3_2 As label:
                     Align: =Align.Center
                     BorderColor: =RGBA(0, 0, 0, 0)
-                    Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(47, 41, 43, 1), LblMonthSelected1_1.Color)
+                    BorderStyle: =BorderStyle.None
+                    Color: |-
+                        =If(
+                            DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected,
+                            RGBA(255, 255, 255, 1),
+                            Weekday(DateAdd(_firstDayInView, ThisItem.Value)) = 1 Or Weekday(DateAdd(_firstDayInView, ThisItem.Value)) = 7,
+                        RGBA(128, 128, 128, 1),
+                            DateAdd(_firstDayInView, ThisItem.Value) = Today(),
+                            RGBA(41, 41, 43, 1),
+                            LblMonthSelected1_1.Color
+                        )
                     Fill: |-
                         =/*Fill value changes if the gallery item day = today, or if it lies outside of the current month*/             
                         If(
