@@ -744,41 +744,22 @@ agenda_screen As screen:
         Button1_2 As button:
             OnSelect: |-
                 =Office365Outlook.V4CalendarPostItem(
-                    LookUp(
-                        Office365Outlook.CalendarGetTables().value,
+                LookUp(
+                        Office365Outlook.CalendarGetTables().value, 
                         DisplayName = "Agenda"
-                    ).Name,
-                    input_meeting_subject.Text,
-                    DateAdd(
-                        DateTimeValue(
-                            Text(
-                                DatePicker1_1.SelectedDate,
-                                "yyyy-mm-dd"
-                            ) & " " & Starttime_hours.SelectedText.Value & ":" & Starttime_minutes.SelectedText.Value
-                        ),
-                        TimeZoneOffset(),
-                        "Minutes"
-                    ),
-                    DateAdd(
-                        DateAdd(
-                            DateTimeValue(
-                                Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & " " & Starttime_hours.SelectedText.Value & ":" & Starttime_minutes.SelectedText.Value
-                            ), 
-                            Value(Starttime_duration.Selected.Value) + TimeZoneOffset(), 
-                            "Minutes"
-                        ), 
-                        TimeZoneOffset(), 
-                        "Minutes"
-                    ),
-                    "UTC",
-                    {
-                        //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
-                        //requiredAttendees: "jools.l.reinartz@gmail.com";
-                responseRequested: true,
-                        isAllDay: false,
-                        body: input_meeting_info.Text
-                    }
-                )
+                    ).Name, 
+                        input_meeting_subject.Text,
+                        Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
+                        Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
+                        "UTC",
+                        {
+                            //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
+                            //requiredAttendees: "jools.l.reinartz@gmail.com";
+                            responseRequested: true,
+                            isAllDay: false,
+                            body: input_meeting_info.Text
+                        }
+                    )
             Text: ="Knop"
             X: =26
             Y: =399
