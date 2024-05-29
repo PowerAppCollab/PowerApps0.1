@@ -120,8 +120,9 @@ agenda_screen As screen:
             Height: =48
             Size: =16
             Text: ="Het is vandaag"
-            Visible: |
-                =isAgendaVisible && !isAgendaEdit
+            Visible: |-
+                =
+                true
             Width: =387
             Wrap: =false
             X: =21
@@ -133,8 +134,9 @@ agenda_screen As screen:
             Height: =48
             Size: =32
             Text: ="XX-XX-XXXX"
-            Visible: |
-                =isAgendaVisible && !isAgendaEdit
+            Visible: |-
+                =
+                true
             Width: =387
             Wrap: =false
             X: =21
@@ -206,6 +208,7 @@ agenda_screen As screen:
                     Icon: =Icon.OpenInNewWindow
                     OnSelect: |
                         =Set(isAgendaEdit, true);
+                        Set(currentCalendarEventEmails, "");
                         Set(currentCalendarEventEmails, CalendarEventsGallery1_1.Selected.RequiredAttendees)
                     Width: =27
                     X: =466
@@ -463,7 +466,7 @@ agenda_screen As screen:
                 Height: =47
                 Size: =26
                 Text: =Text(_firstDayOfMonth, "mmmm yyyy")
-                Visible: =_calendarVisible
+                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
                 Width: =361
                 Wrap: =false
                 X: =15
@@ -488,7 +491,7 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Vorige maand weergeven"
-                Visible: =_calendarVisible
+                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
                 Width: =36
                 X: =439
                 Y: =22
@@ -512,7 +515,7 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Volgende maand weergeven"
-                Visible: =_calendarVisible
+                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
                 Width: =36
                 X: =487
                 Y: =22
@@ -526,7 +529,7 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =76
-                Visible: =_calendarVisible
+                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
                 Width: =531
                 X: =15
                 Y: =88
@@ -553,7 +556,7 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =60
-                Visible: =_calendarVisible
+                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
                 Width: =531
                 WrapCount: =7
                 X: =15
