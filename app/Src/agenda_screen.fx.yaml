@@ -773,9 +773,11 @@ agenda_screen As screen:
                             {
                                 //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
                                 requiredAttendees: Concat(attendeesEmails, Value & "; "),
+                    
                                 responseRequested: true,
                                 isAllDay: false,
-                                body: input_meeting_info.Text
+                                body: input_meeting_info.Text,
+                                showAs:"busy"
                             }
                         )
                 Text: ="Knop"
