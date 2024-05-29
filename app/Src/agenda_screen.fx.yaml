@@ -742,41 +742,39 @@ agenda_screen As screen:
                 ZIndex: =31
 
         Button1_2 As button:
-            OnSelect: |
-                =// Calculate start time
-                Set(
-                    startTime,
-                    DateTimeValue(
-                        Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & 
-                        " " & 
-                        Text(Value(Starttime_hours.Selected.Value), "00") & 
-                        ":" & 
-                        Text(Value(Starttime_minutes.Selected.Value), "00")
-                    )
-                );
-                
-                // Calculate end time
-                Set(
-                    endTime,
-                    DateAdd(
-                        startTime,
-                        Value(Starttime_duration.Selected.Value),
-                        "Minutes"
-                    )
-                );
-                
-                // Create calendar event
-                Office365Outlook.V4CalendarPostItem(
+            OnSelect: |-
+                =Office365Outlook.V4CalendarPostItem(
                     LookUp(
                         Office365Outlook.CalendarGetTables().value,
                         DisplayName = "Agenda"
                     ).Name,
                     input_meeting_subject.Text,
-                    Text(startTime, "yyyy-mm-ddTHH:mm:ss.000Z"),
-                    Text(endTime, "yyyy-mm-ddTHH:mm:ss.000Z"),
+                    DateAdd(
+                        DateTimeValue(
+                            Text(
+                                DatePicker1_1.SelectedDate,
+                                "yyyy-mm-dd"
+                            ) & " " & Starttime_hours.SelectedText.Value & ":" & Starttime_minutes.SelectedText.Value
+                        ),
+                        TimeZoneOffset(),
+                        "Minutes"
+                    ),
+                    DateAdd(
+                        DateAdd(
+                            DateTimeValue(
+                                Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & " " & Starttime_hours.SelectedText.Value & ":" & Starttime_minutes.SelectedText.Value
+                            ), 
+                            Value(Starttime_duration.Selected.Value) + TimeZoneOffset(), 
+                            "Minutes"
+                        ), 
+                        TimeZoneOffset(), 
+                        "Minutes"
+                    ),
                     "UTC",
                     {
-                        responseRequested: true,
+                        //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
+                        //requiredAttendees: "jools.l.reinartz@gmail.com";
+                responseRequested: true,
                         isAllDay: false,
                         body: input_meeting_info.Text
                     }
