@@ -6669,19 +6669,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "agenda_screen.container_43.Dropdown1.AccessibleLabel"
+                  "fullyQualifiedName": "agenda_screen.container_43.Starttime_hours.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "agenda_screen.container_43.Dropdown1.AccessibleLabel",
+                  "fullyQualifiedName": "agenda_screen.container_43.Starttime_hours.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "agenda_screen",
-                "type": "agenda_screen.container_43.Dropdown1"
+                "type": "agenda_screen.container_43.Starttime_hours"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "agenda_screen.container_43.Startime_minutes.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.Startime_minutes.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.Startime_minutes"
               }
             }
           ],
