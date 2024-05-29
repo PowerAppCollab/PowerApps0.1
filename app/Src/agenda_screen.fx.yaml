@@ -475,18 +475,6 @@ agenda_screen As screen:
             Y: =21
             ZIndex: =21
 
-        Label13 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =49
-            PaddingLeft: =0
-            Size: =26
-            Text: ="Meeting toevoegen"
-            Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =497
-            X: =26
-            Y: =25
-            ZIndex: =27
-
         Group13_1 As group:
             Height: =5
             Width: =5
@@ -662,7 +650,19 @@ agenda_screen As screen:
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =30
+            ZIndex: =37
+
+            Label13 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =49
+                PaddingLeft: =0
+                Size: =26
+                Text: ="Meeting toevoegen"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =497
+                X: =26
+                Y: =25
+                ZIndex: =27
 
             input_meeting_subject As text:
                 BorderColor: =RGBA(255, 255, 255, 1)
@@ -693,25 +693,6 @@ agenda_screen As screen:
                 Y: =115
                 ZIndex: =29
 
-        DatePicker1_1 As datepicker:
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =0
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =37
-            Size: =13
-            Width: =143
-            X: =26
-            Y: =190
-            ZIndex: =32
-
-        Group23_1 As group:
-            Height: =5
-            Width: =5
-            X: =14
-            Y: =-40
-            ZIndex: =32
-
             input_meeting_info As text:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderStyle: =BorderStyle.None
@@ -741,95 +722,112 @@ agenda_screen As screen:
                 Y: =165
                 ZIndex: =31
 
-        Button1_2 As button:
-            OnSelect: |-
-                =Office365Outlook.V4CalendarPostItem(
-                LookUp(
-                        Office365Outlook.CalendarGetTables().value, 
-                        DisplayName = "Agenda"
-                    ).Name, 
-                        input_meeting_subject.Text,
-                        Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
-                        Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
-                        "UTC",
-                        {
-                            //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
-                            //requiredAttendees: "jools.l.reinartz@gmail.com";
-                            responseRequested: true,
-                            isAllDay: false,
-                            body: input_meeting_info.Text
-                        }
-                    )
-            Text: ="Knop"
-            X: =26
-            Y: =399
-            ZIndex: =33
+            DatePicker1_1 As datepicker:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =37
+                Size: =13
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =143
+                X: =26
+                Y: =190
+                ZIndex: =32
 
-        Starttime_hours As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="9"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Sequence(24, 0, 1)
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Width: =80
-            X: =26
-            Y: =251
-            ZIndex: =34
+            Button1_2 As button:
+                OnSelect: |-
+                    =Office365Outlook.V4CalendarPostItem(
+                    LookUp(
+                            Office365Outlook.CalendarGetTables().value, 
+                            DisplayName = "Agenda"
+                        ).Name, 
+                            input_meeting_subject.Text,
+                            Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
+                            Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
+                            "UTC",
+                            {
+                                //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
+                                //requiredAttendees: "jools.l.reinartz@gmail.com";
+                                responseRequested: true,
+                                isAllDay: false,
+                                body: input_meeting_info.Text
+                            }
+                        )
+                Text: ="Knop"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                X: =26
+                Y: =399
+                ZIndex: =33
 
-        Starttime_minutes As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="30"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Sequence(12, 00, 5)
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Width: =80
-            X: =126
-            Y: =251
-            ZIndex: =35
+            Starttime_hours As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="9"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Sequence(24, 0, 1)
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =80
+                X: =26
+                Y: =251
+                ZIndex: =34
 
-        Starttime_duration As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="30"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Sequence(4, 00, 15)
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Width: =80
-            X: =26
-            Y: =309
-            ZIndex: =36
+            Starttime_minutes As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="30"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Sequence(12, 00, 5)
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =80
+                X: =126
+                Y: =251
+                ZIndex: =35
+
+            Starttime_duration As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="30"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Sequence(4, 00, 15)
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =80
+                X: =26
+                Y: =309
+                ZIndex: =36
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
