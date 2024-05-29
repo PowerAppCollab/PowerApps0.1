@@ -749,13 +749,14 @@ agenda_screen As screen:
                         DisplayName = "Agenda"
                     ).Name, 
                         input_meeting_subject.Text,
-                        Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
+                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Starttime_hours.SelectedText.Value & ":" & Startime_minutes.SelectedText.Value), TimeZoneOffset()),
+                        //Text(DatePicker1_1.SelectedDate; "yyyy-mm-dd") & "T00:00:00.000Z";
                         Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
                         "UTC",
                         {
                             //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
-                            requiredAttendees: "jools.l.reinartz@gmail.com",
-                            responseRequested: false,
+                            //requiredAttendees: "jools.l.reinartz@gmail.com";
+                            responseRequested: true,
                             isAllDay: false,
                             body: input_meeting_info.Text
                         }
@@ -808,6 +809,28 @@ agenda_screen As screen:
             X: =126
             Y: =251
             ZIndex: =35
+
+        Startime_duration As dropdown:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="30"
+            DisabledBorderColor: =RGBA(192, 5, 230, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverBorderColor: =RGBA(192, 5, 230, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(63, 63, 63, 0.8)
+            Items: |
+                =Sequence(4, 00, 15)
+            PressedFill: =RGBA(63, 63, 63, 0.5)
+            SelectionFill: =RGBA(63, 63, 63, 0.8)
+            Width: =80
+            X: =26
+            Y: =309
+            ZIndex: =36
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1

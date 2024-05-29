@@ -6729,6 +6729,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "agenda_screen.container_43.Startime_duration.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.Startime_duration.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.Startime_duration"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.persoonlijk_bericht_input"
                 }
               ],
