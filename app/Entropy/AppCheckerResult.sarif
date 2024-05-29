@@ -6579,19 +6579,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "agenda_screen.container_43.TextInput3.AccessibleLabel"
+                  "fullyQualifiedName": "agenda_screen.container_43.input_meeting_subject.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "agenda_screen.container_43.TextInput3.AccessibleLabel",
+                  "fullyQualifiedName": "agenda_screen.container_43.input_meeting_subject.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "agenda_screen",
-                "type": "agenda_screen.container_43.TextInput3"
+                "type": "agenda_screen.container_43.input_meeting_subject"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "agenda_screen.container_43.input_meeting_info.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.input_meeting_info.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.input_meeting_info"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "agenda_screen.container_43.DatePicker1_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "agenda_screen.container_43.DatePicker1_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "agenda_screen",
+                "type": "agenda_screen.container_43.DatePicker1_1"
               }
             }
           ],
