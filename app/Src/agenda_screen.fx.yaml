@@ -255,6 +255,41 @@ agenda_screen As screen:
                     Y: =60
                     ZIndex: =7
 
+                Label12 As label:
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =47
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: =ThisItem.Subject
+                    Width: =354
+                    X: =6
+                    Y: =16
+                    ZIndex: =8
+
+                Label12_1 As label:
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Lighter
+                    Height: =31
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =0
+                    Text: =ThisItem.Location
+                    Width: =354
+                    X: =6
+                    Y: =56
+                    ZIndex: =9
+
+                Rectangle6 As rectangle:
+                    Fill: =RGBA(219, 219, 219, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =537
+                    X: =6
+                    Y: =108
+                    ZIndex: =10
+
             LblDateSelected1_1 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =RectMeetingBkg1.Height
@@ -436,6 +471,8 @@ agenda_screen As screen:
                 ZIndex: =22
 
             iconPrevMonth1_1 As icon.ChevronLeft:
+                Color: =RGBA(192, 5, 230, 1)
+                Fill: =RGBA(0,0,0,0)
                 Height: =36
                 Icon: =Icon.ChevronLeft
                 OnSelect: |-
@@ -458,6 +495,8 @@ agenda_screen As screen:
                 ZIndex: =23
 
             iconNextMonth1_1 As icon.ChevronRight:
+                Color: =RGBA(192, 5, 230, 1)
+                Fill: =RGBA(0,0,0,0)
                 Height: =36
                 Icon: =Icon.ChevronRight
                 OnSelect: |-
@@ -522,6 +561,7 @@ agenda_screen As screen:
                 ZIndex: =26
 
                 Circle2_1 As circle:
+                    Fill: =RGBA(192, 5, 230, 1)
                     Height: =Self.Width
                     OnSelect: =Select(Parent)
                     Visible: |-
