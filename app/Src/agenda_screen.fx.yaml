@@ -667,7 +667,7 @@ agenda_screen As screen:
                 Height: =49
                 PaddingLeft: =0
                 Size: =26
-                Text: ="Meeting toevoegen"
+                Text: ="Meeting inplannen"
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =497
                 X: =26
@@ -895,6 +895,7 @@ agenda_screen As screen:
                 ZIndex: =40
 
                 Subtitle3 As label:
+                    Color: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Lighter
                     Height: =28
                     OnSelect: =Select(Parent)
