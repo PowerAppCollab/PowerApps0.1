@@ -645,36 +645,22 @@ agenda_screen As screen:
                     Wrap: =false
                     ZIndex: =3
 
-        Attendees_option As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+        Label20 As label:
             Color: =RGBA(255, 255, 255, 1)
-            Default: ="9"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            Height: =44
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Filter(studenten_tabel, !IsBlank(Email))
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =318
-            X: =26
-            Y: =372
-            ZIndex: =37
+            Height: =36
+            Text: |-
+                =":"
+            Width: =44
+            X: =106
+            Y: =252
+            ZIndex: =41
 
         Group23 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =37
+            ZIndex: =41
 
             Label13 As label:
                 Color: =RGBA(255, 255, 255, 1)
@@ -823,7 +809,7 @@ agenda_screen As screen:
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(63, 63, 63, 0.8)
                 Items: |
-                    =Sequence(12, 00, 5)
+                    =Sequence(4, 00, 15)
                 PressedFill: =RGBA(63, 63, 63, 0.5)
                 SelectionFill: =RGBA(63, 63, 63, 0.8)
                 Visible: =!isAgendaVisible && !isAgendaEdit
@@ -846,7 +832,7 @@ agenda_screen As screen:
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(63, 63, 63, 0.8)
                 Items: |
-                    =Sequence(4, 00, 15)
+                    =Sequence(12, 00, 15)
                 PressedFill: =RGBA(63, 63, 63, 0.5)
                 SelectionFill: =RGBA(63, 63, 63, 0.8)
                 Visible: =!isAgendaVisible && !isAgendaEdit
@@ -855,60 +841,95 @@ agenda_screen As screen:
                 Y: =309
                 ZIndex: =36
 
-        CloseCalendarButton_1 As icon.Add:
-            Color: =RGBA(192, 5, 230, 1)
-            Height: =36
-            Icon: =Icon.Add
-            OnSelect: |+
-                =If(IsEmpty(Filter(attendeesEmails, Value = Attendees_option.SelectedText.Email)),
-                Collect(attendeesEmails, Attendees_option.SelectedText.Email),
-                Notify("Already an Email, error maken..."));
-                
-            Rotation: =
-            Width: =36
-            X: =363
-            Y: =376
-            ZIndex: =39
+            Attendees_option As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="9"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =44
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Filter(studenten_tabel, !IsBlank(Email))
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =318
+                X: =26
+                Y: =372
+                ZIndex: =37
 
-        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-            DelayItemLoading: =true
-            Height: =338
-            Items: =attendeesEmails
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =0
-            TemplateSize: =46
-            Width: =365
-            X: =439
-            Y: =184
-            ZIndex: =40
+            CloseCalendarButton_1 As icon.Add:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =36
+                Icon: =Icon.Add
+                OnSelect: |+
+                    =If(IsEmpty(Filter(attendeesEmails, Value = Attendees_option.SelectedText.Email)),
+                    Collect(attendeesEmails, Attendees_option.SelectedText.Email),
+                    Notify("Already an Email, error maken..."));
+                    
+                Rotation: =
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =36
+                X: =363
+                Y: =376
+                ZIndex: =39
 
-            Subtitle3 As label:
-                FontWeight: =FontWeight.Lighter
-                Height: =28
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Value
-                Width: =330
-                X: =5
-                Y: =10
-                ZIndex: =3
+            "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =338
+                Items: =attendeesEmails
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =46
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =365
+                X: =439
+                Y: =184
+                ZIndex: =40
 
-            NextArrow1 As icon.ChevronRight:
-                AccessibleLabel: =Self.Tooltip
-                Color: =RGBA(168, 0, 0, 1)
-                Height: =22
-                Icon: =Icon.Cancel
-                OnSelect: |
-                    =Remove(attendeesEmails, LookUp(attendeesEmails, Value = ThisItem.Value))
-                Tooltip: ="Details van item weergeven"
-                Width: =22
-                X: =335
-                Y: =13
-                ZIndex: =4
+                Subtitle3 As label:
+                    FontWeight: =FontWeight.Lighter
+                    Height: =28
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Value
+                    Width: =330
+                    X: =5
+                    Y: =10
+                    ZIndex: =3
+
+                NextArrow1 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Color: =RGBA(168, 0, 0, 1)
+                    Height: =22
+                    Icon: =Icon.Cancel
+                    OnSelect: |
+                        =Remove(attendeesEmails, LookUp(attendeesEmails, Value = ThisItem.Value))
+                    Tooltip: ="Details van item weergeven"
+                    Width: =22
+                    X: =335
+                    Y: =13
+                    ZIndex: =4
+
+        Label20_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =38
+            Text: ="minuten"
+            Width: =116
+            X: =106
+            Y: =310
+            ZIndex: =42
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
