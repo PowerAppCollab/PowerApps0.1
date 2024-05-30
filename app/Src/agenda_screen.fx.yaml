@@ -645,22 +645,12 @@ agenda_screen As screen:
                     Wrap: =false
                     ZIndex: =3
 
-        Label20 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            Text: |-
-                =":"
-            Width: =44
-            X: =106
-            Y: =252
-            ZIndex: =41
-
         Group23 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =41
+            ZIndex: =43
 
             Label13 As label:
                 Color: =RGBA(255, 255, 255, 1)
@@ -746,26 +736,55 @@ agenda_screen As screen:
                 ZIndex: =32
 
             Button1_2 As button:
-                OnSelect: |-
+                OnSelect: |
                     =Office365Outlook.V4CalendarPostItem(
-                    LookUp(
+                        LookUp(
                             Office365Outlook.CalendarGetTables().value, 
                             DisplayName = "Agenda"
                         ).Name, 
-                            input_meeting_subject.Text,
-                            Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
-                            Text(DateAdd(DatePicker1_1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
-                            "UTC",
-                            {
-                                //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
-                                requiredAttendees: Concat(attendeesEmails, Value & "; "),
-                    
-                                responseRequested: true,
-                                isAllDay: false,
-                                body: input_meeting_info.Text,
-                                showAs:"busy"
-                            }
-                        )
+                        input_meeting_subject.Text,
+                        Text(
+                            DatePicker1_1.SelectedDate, 
+                            "yyyy-mm-dd"
+                        ) & "T" & 
+                        Text(
+                            Value(Starttime_hours.SelectedText.Value), 
+                            "00"
+                        ) & ":" & 
+                        Text(
+                            Value(Starttime_minutes.SelectedText.Value), 
+                            "00"
+                        ) & ":00.000Z",
+                        Text(
+                        Text(
+                            DateAdd(
+                                DateAdd(
+                                    DatePicker1_1.SelectedDate, 
+                                    Value(Starttime_hours.SelectedText.Value), 
+                                    TimeUnit.Hours
+                                ),
+                                Value(Starttime_minutes.SelectedText.Value),
+                                TimeUnit.Minutes
+                            ),
+                            "yyyy-mm-dd"
+                        ) & "T" &
+                        Text(
+                            Value(Starttime_hours.SelectedText.Value) + Value(Starttime_duration.SelectedText.Value), 
+                            "00"
+                        ) & ":" &
+                        Text(
+                            Value(Starttime_minutes.SelectedText.Value) + Value(Starttime_duration.SelectedText.Value), 
+                            "00"
+                        ) & ":00.000Z"),
+                        "UTC",
+                        {
+                            requiredAttendees: Concat(attendeesEmails, Value & "; "),
+                            responseRequested: true,
+                            isAllDay: false,
+                            body: input_meeting_info.Text,
+                            showAs: "busy"
+                        }
+                    )
                 Text: ="Knop"
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 X: =26
@@ -922,14 +941,26 @@ agenda_screen As screen:
                     Y: =13
                     ZIndex: =4
 
-        Label20_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =38
-            Text: ="minuten"
-            Width: =116
-            X: =106
-            Y: =310
-            ZIndex: =42
+            Label20 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                Text: |-
+                    =":"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =44
+                X: =106
+                Y: =252
+                ZIndex: =41
+
+            Label20_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =38
+                Text: ="minuten"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =116
+                X: =106
+                Y: =310
+                ZIndex: =42
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
