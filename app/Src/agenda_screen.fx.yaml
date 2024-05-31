@@ -743,39 +743,17 @@ agenda_screen As screen:
                             DisplayName = "Agenda"
                         ).Name, 
                         input_meeting_subject.Text,
-                        Text(
-                            DatePicker1_1.SelectedDate, 
-                            "yyyy-mm-dd"
-                        ) & "T" & 
-                        Text(
+                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Text(
                             Value(Starttime_hours.SelectedText.Value), 
                             "00"
-                        ) & ":" & 
-                        Text(
-                            Value(Starttime_minutes.SelectedText.Value), 
+                        )& ":" & Starttime_minutes.SelectedText.Value), TimeZoneOffset(), TimeUnit.Minutes),
+                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Text(
+                            Value(Starttime_hours.SelectedText.Value), 
                             "00"
-                        ) & ":00.000Z",
-                        Text(
-                        Text(
-                            DateAdd(
-                                DateAdd(
-                                    DatePicker1_1.SelectedDate, 
-                                    Value(Starttime_hours.SelectedText.Value), 
-                                    TimeUnit.Hours
-                                ),
-                                Value(Starttime_minutes.SelectedText.Value),
-                                TimeUnit.Minutes
-                            ),
-                            "yyyy-mm-dd"
-                        ) & "T" &
-                        Text(
-                            Value(Starttime_hours.SelectedText.Value) + Value(Starttime_duration.SelectedText.Value), 
-                            "00"
-                        ) & ":" &
-                        Text(
-                            Value(Starttime_minutes.SelectedText.Value) + Value(Starttime_duration.SelectedText.Value), 
-                            "00"
-                        ) & ":00.000Z"),
+                        )& ":" & Starttime_minutes.SelectedText.Value), Value(Starttime_duration.SelectedText.Value) + TimeZoneOffset(), TimeUnit.Minutes),
+                        //Text(Text(DatePicker1_1.SelectedDate; "yyyy-mm-dd") & "T" & Text(Value(Starttime_hours.SelectedText.Value);
+                        //"00") & ":" & Text(Value(Starttime_minutes.SelectedText.Value); "00") & ":00.000Z");
+                    
                         "UTC",
                         {
                             requiredAttendees: Concat(attendeesEmails, Value & "; "),
