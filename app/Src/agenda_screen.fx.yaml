@@ -306,7 +306,7 @@ agenda_screen As screen:
                 Fill: =RGBA(192, 5, 230, 1)
                 Height: =400
                 Visible: |
-                    =isAgendaVisible && !isAgendaEdit
+                    =!isAgendaEdit
                 Width: =1
                 X: =560
                 Y: =61
@@ -445,7 +445,7 @@ agenda_screen As screen:
                 Height: =47
                 Size: =26
                 Text: =Text(_firstDayOfMonth, "mmmm yyyy")
-                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
+                Visible: =_calendarVisible && !isAgendaEdit
                 Width: =361
                 Wrap: =false
                 X: =15
@@ -471,7 +471,7 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Vorige maand weergeven"
-                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
+                Visible: =_calendarVisible && !isAgendaEdit
                 Width: =36
                 X: =439
                 Y: =22
@@ -496,7 +496,7 @@ agenda_screen As screen:
                 PaddingTop: =7
                 TabIndex: =0
                 Tooltip: ="Volgende maand weergeven"
-                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
+                Visible: =_calendarVisible && !isAgendaEdit
                 Width: =36
                 X: =487
                 Y: =22
@@ -510,7 +510,7 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =76
-                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
+                Visible: =_calendarVisible && !isAgendaEdit
                 Width: =531
                 X: =15
                 Y: =88
@@ -537,7 +537,7 @@ agenda_screen As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =60
-                Visible: =_calendarVisible && isAgendaVisible && !isAgendaEdit
+                Visible: =_calendarVisible && !isAgendaEdit
                 Width: =531
                 WrapCount: =7
                 X: =15
@@ -621,9 +621,9 @@ agenda_screen As screen:
             PressedFill: =RGBA(63, 63, 63, 0.5)
             SelectionFill: =RGBA(63, 63, 63, 0.8)
             Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =80
-            X: =26
-            Y: =310
+            Width: =75
+            X: =845
+            Y: =245
             ZIndex: =42
 
         Endtime_minutes As dropdown:
@@ -644,9 +644,9 @@ agenda_screen As screen:
             PressedFill: =RGBA(63, 63, 63, 0.5)
             SelectionFill: =RGBA(63, 63, 63, 0.8)
             Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =80
-            X: =126
-            Y: =310
+            Width: =75
+            X: =942
+            Y: =245
             ZIndex: =43
 
         Group23 As group:
@@ -663,9 +663,9 @@ agenda_screen As screen:
                 Size: =26
                 Text: ="Nieuwe meeting"
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =497
-                X: =26
-                Y: =25
+                Width: =339
+                X: =590
+                Y: =18
                 ZIndex: =27
 
             input_meeting_subject As text:
@@ -674,28 +674,23 @@ agenda_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Default: =
                 DisabledColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
                 HintText: ="Onderwerp v/d meeting"
                 HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PaddingLeft: =0
+                HoverFill: =RGBA(45, 45, 45, 1)
+                PaddingLeft: =5
                 PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =
+                PressedFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =350
-                X: =26
-                Y: =80
+                X: =590
+                Y: =73
                 ZIndex: =28
-
-            Rectangle7 As rectangle:
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =1
-                Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =318
-                X: =26
-                Y: =115
-                ZIndex: =29
 
             input_meeting_info As text:
                 BorderColor: =RGBA(255, 255, 255, 1)
@@ -703,40 +698,35 @@ agenda_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Default: =
                 DisabledColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
                 HintText: ="Informatie over de meeting"
                 HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PaddingLeft: =0
+                HoverFill: =RGBA(45, 45, 45, 1)
+                PaddingLeft: =5
                 PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =
+                PressedFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =350
-                X: =26
-                Y: =130
+                X: =590
+                Y: =123
                 ZIndex: =30
-
-            Rectangle7_1 As rectangle:
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =1
-                Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =318
-                X: =26
-                Y: =165
-                ZIndex: =31
 
             DatePicker1_1 As datepicker:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =0
                 Color: =RGBA(255, 255, 255, 1)
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =37
+                Height: =32
                 Size: =13
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =143
-                X: =26
-                Y: =190
+                Width: =154
+                X: =590
+                Y: =183
                 ZIndex: =32
 
             Button1_2 As button:
@@ -814,9 +804,9 @@ agenda_screen As screen:
                 RadiusTopRight: =0
                 Text: ="Opslaan"
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =373
-                X: =26
-                Y: =461
+                Width: =254
+                X: =590
+                Y: =454
                 ZIndex: =33
 
             Starttime_hours As dropdown:
@@ -837,9 +827,9 @@ agenda_screen As screen:
                 PressedFill: =RGBA(63, 63, 63, 0.5)
                 SelectionFill: =RGBA(63, 63, 63, 0.8)
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =80
-                X: =26
-                Y: =251
+                Width: =75
+                X: =590
+                Y: =244
                 ZIndex: =34
 
             Starttime_minutes As dropdown:
@@ -860,9 +850,9 @@ agenda_screen As screen:
                 PressedFill: =RGBA(63, 63, 63, 0.5)
                 SelectionFill: =RGBA(63, 63, 63, 0.8)
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =80
-                X: =126
-                Y: =251
+                Width: =75
+                X: =687
+                Y: =245
                 ZIndex: =35
 
             Attendees_option As dropdown:
@@ -883,9 +873,9 @@ agenda_screen As screen:
                 PressedFill: =RGBA(63, 63, 63, 0.5)
                 SelectionFill: =RGBA(63, 63, 63, 0.8)
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =318
-                X: =26
-                Y: =372
+                Width: =217
+                X: =590
+                Y: =393
                 ZIndex: =37
 
             CloseCalendarButton_1 As icon.Add:
@@ -899,9 +889,9 @@ agenda_screen As screen:
                     
                 Rotation: =
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =36
-                X: =363
-                Y: =376
+                Width: =25
+                X: =820
+                Y: =397
                 ZIndex: =39
 
             "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -913,9 +903,9 @@ agenda_screen As screen:
                 TemplatePadding: =0
                 TemplateSize: =46
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =365
-                X: =439
-                Y: =184
+                Width: =249
+                X: =871
+                Y: =177
                 ZIndex: =40
 
                 Subtitle3 As label:
@@ -955,9 +945,9 @@ agenda_screen As screen:
                 Text: |-
                     =":"
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =44
-                X: =106
-                Y: =252
+                Width: =30
+                X: =668
+                Y: =248
                 ZIndex: =41
 
         Label20_1 As label:
@@ -966,10 +956,19 @@ agenda_screen As screen:
             Text: |-
                 =":"
             Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =44
-            X: =106
-            Y: =311
+            Width: =29
+            X: =923
+            Y: =247
             ZIndex: =44
+
+        Icon18 As icon.ArrowRight:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =25
+            Icon: =Icon.ArrowRight
+            Width: =25
+            X: =795
+            Y: =254
+            ZIndex: =45
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
