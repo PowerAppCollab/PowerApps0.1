@@ -645,6 +645,52 @@ agenda_screen As screen:
                     Wrap: =false
                     ZIndex: =3
 
+        Endtime_hours As dropdown:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="9"
+            DisabledBorderColor: =RGBA(192, 5, 230, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverBorderColor: =RGBA(192, 5, 230, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(63, 63, 63, 0.8)
+            Items: |
+                =Sequence(24, 0, 1)
+            PressedFill: =RGBA(63, 63, 63, 0.5)
+            SelectionFill: =RGBA(63, 63, 63, 0.8)
+            Visible: =!isAgendaVisible && !isAgendaEdit
+            Width: =80
+            X: =26
+            Y: =310
+            ZIndex: =42
+
+        Endtime_minutes As dropdown:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="30"
+            DisabledBorderColor: =RGBA(192, 5, 230, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverBorderColor: =RGBA(192, 5, 230, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(63, 63, 63, 0.8)
+            Items: |
+                =Sequence(4, 00, 15)
+            PressedFill: =RGBA(63, 63, 63, 0.5)
+            SelectionFill: =RGBA(63, 63, 63, 0.8)
+            Visible: =!isAgendaVisible && !isAgendaEdit
+            Width: =80
+            X: =126
+            Y: =310
+            ZIndex: =43
+
         Group23 As group:
             Height: =5
             Width: =5
@@ -736,22 +782,29 @@ agenda_screen As screen:
                 ZIndex: =32
 
             Button1_2 As button:
-                OnSelect: |-
+                OnSelect: |
                     =Office365Outlook.V4CalendarPostItem(
                         LookUp(
                             Office365Outlook.CalendarGetTables().value,
                             DisplayName = "Agenda"
                         ).Name,
                         input_meeting_subject.Text,
-                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Text(
-                            Value(Starttime_hours.SelectedText.Value),
-                            "00"
-                        )& ":" & Starttime_minutes.SelectedText.Value), TimeZoneOffset(), TimeUnit.Minutes),
-                        DateAdd(DateTimeValue(DatePicker1_1.SelectedDate & " " & Text(
-                            Value(Starttime_hours.SelectedText.Value),
-                            "00"
-                        )& ":" & Starttime_minutes.SelectedText.Value), Value(Starttime_duration.SelectedText.Value) + TimeZoneOffset(), TimeUnit.Minutes),
-                     
+                        Text(
+                            DateAdd(
+                                DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                                TimeZoneOffset(),
+                                "Minutes"
+                            ),
+                            "yyyy-mm-ddTHH:mm:ssZ"
+                        ),
+                        Text(
+                            DateAdd(
+                                DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
+                                TimeZoneOffset(),
+                                "Minutes"
+                            ),
+                            "yyyy-mm-ddTHH:mm:ssZ"
+                        ),
                         "UTC",
                         {
                             requiredAttendees: Concat(attendeesEmails, Value & "; "),
@@ -812,29 +865,6 @@ agenda_screen As screen:
                 X: =126
                 Y: =251
                 ZIndex: =35
-
-            Starttime_duration As dropdown:
-                BorderStyle: =BorderStyle.None
-                ChevronBackground: =RGBA(192, 5, 230, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-                Color: =RGBA(255, 255, 255, 1)
-                Default: ="30"
-                DisabledBorderColor: =RGBA(192, 5, 230, 1)
-                DisabledColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: =RGBA(45, 45, 45, 1)
-                Fill: =RGBA(45, 45, 45, 1)
-                HoverBorderColor: =RGBA(192, 5, 230, 1)
-                HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(63, 63, 63, 0.8)
-                Items: |
-                    =Sequence(12, 00, 15)
-                PressedFill: =RGBA(63, 63, 63, 0.5)
-                SelectionFill: =RGBA(63, 63, 63, 0.8)
-                Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =80
-                X: =26
-                Y: =309
-                ZIndex: =36
 
             Attendees_option As dropdown:
                 BorderStyle: =BorderStyle.None
@@ -906,7 +936,10 @@ agenda_screen As screen:
 
                 NextArrow1 As icon.ChevronRight:
                     AccessibleLabel: =Self.Tooltip
+                    BorderColor: =RGBA(0, 0, 0, 1)
                     Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                    DisabledColor: =RGBA(119, 119, 119, 1)
                     Height: =22
                     Icon: =Icon.Cancel
                     OnSelect: |
@@ -928,15 +961,16 @@ agenda_screen As screen:
                 Y: =252
                 ZIndex: =41
 
-            Label20_1 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =38
-                Text: ="minuten"
-                Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =116
-                X: =106
-                Y: =310
-                ZIndex: =42
+        Label20_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Text: |-
+                =":"
+            Visible: =!isAgendaVisible && !isAgendaEdit
+            Width: =44
+            X: =106
+            Y: =311
+            ZIndex: =44
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
