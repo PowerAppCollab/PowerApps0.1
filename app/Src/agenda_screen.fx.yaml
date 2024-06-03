@@ -782,12 +782,36 @@ agenda_screen As screen:
                 ZIndex: =32
 
             Button1_2 As button:
-                OnSelect: |-
+                OnSelect: |
                     =If(
-                        DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0) <
-                        DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                        DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0) < DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
                         Notify("End time cannot be before start time."),
-                            
+                        If(
+                            CountRows(
+                                Filter(
+                                    Office365Outlook.GetEventsCalendarViewV2(
+                                        _myCalendar.Name,
+                                        Text(
+                                            DateAdd(
+                                                DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                                                TimeZoneOffset(),
+                                                "Minutes"
+                                            ),
+                                            "yyyy-mm-ddTHH:mm:ssZ"
+                                        ),
+                                        Text(
+                                            DateAdd(
+                                                DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
+                                                TimeZoneOffset(),
+                                                "Minutes"
+                                            ),
+                                            "yyyy-mm-ddTHH:mm:ssZ"
+                                        )
+                                    ).value,
+                                    DateValue(Text(Start, "yyyy-mm-dd")) = DateValue(Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd"))
+                                )
+                            ) > 0,
+                            Notify("nein bruder"),
                             Office365Outlook.V4CalendarPostItem(
                                 LookUp(
                                     Office365Outlook.CalendarGetTables().value,
@@ -819,8 +843,8 @@ agenda_screen As screen:
                                     showAs: "busy"
                                 }
                             )
-                      
                         )
+                    )
                 Text: ="Knop"
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 X: =26
@@ -980,16 +1004,44 @@ agenda_screen As screen:
             ZIndex: =44
 
         Button7 As button:
-            OnSelect: |-
-                =Set(_myCalendar, LookUp(
-                        Office365Outlook.CalendarGetTables().value, 
-                        DisplayName = "Agenda"
-                    ));
+            OnSelect: |
+                =//Set(_myCalendar; LookUp(
+                //        Office365Outlook.CalendarGetTables().value; 
+                //        DisplayName = "Agenda"
+                //    ));;
                 
-                Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
-                Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));
+                //Set(_minDate; DateAdd(_firstDayOfMonth; -(Weekday(_firstDayOfMonth) - 2 + 1); TimeUnit.Days));;
+                //Set(_maxDate; DateAdd(DateAdd(_firstDayOfMonth; -(Weekday(_firstDayOfMonth) - 2 + 1); TimeUnit.Days); 40; TimeUnit.//Days));;
                 
-                ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
+                //ClearCollect(MyCalendarEvents; Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name; Text(_minDate;
+                //DateTimeFormat.UTC); Text(_maxDate; DateTimeFormat.UTC)).value);;
+                
+                
+                ClearCollect(
+                    SelectedDayEvents,
+                    Filter(
+                        Office365Outlook.GetEventsCalendarViewV2(
+                            _myCalendar.Name,
+                            Text(
+                                DateAdd(
+                                    DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                                    TimeZoneOffset(),
+                                    "Minutes"
+                                ),
+                                "yyyy-mm-ddTHH:mm:ssZ"
+                            ),
+                            Text(
+                                DateAdd(
+                                    DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
+                                    TimeZoneOffset(),
+                                    "Minutes"
+                                ),
+                                "yyyy-mm-ddTHH:mm:ssZ"
+                            )
+                        ).value,
+                        DateValue(Text(Start, "yyyy-mm-dd")) = DateValue(Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd"))
+                    )
+                )
             Text: ="Knop"
             X: =341
             Y: =448
