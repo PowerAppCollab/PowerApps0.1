@@ -703,7 +703,7 @@ agenda_screen As screen:
                 Height: =49
                 PaddingLeft: =0
                 Size: =26
-                Text: ="Meeting inplannen"
+                Text: ="Nieuwe meeting"
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =497
                 X: =26
@@ -782,6 +782,11 @@ agenda_screen As screen:
                 ZIndex: =32
 
             Button1_2 As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                Fill: =RGBA(192, 5, 230, 1)
+                FontWeight: =FontWeight.Normal
+                HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
                 OnSelect: |
                     =If(
                         DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0) < DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
@@ -845,8 +850,13 @@ agenda_screen As screen:
                             )
                         )
                     )
-                Text: ="Knop"
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: ="Opslaan"
                 Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =373
                 X: =26
                 Y: =461
                 ZIndex: =33
@@ -1002,50 +1012,6 @@ agenda_screen As screen:
             X: =106
             Y: =311
             ZIndex: =44
-
-        Button7 As button:
-            OnSelect: |
-                =//Set(_myCalendar; LookUp(
-                //        Office365Outlook.CalendarGetTables().value; 
-                //        DisplayName = "Agenda"
-                //    ));;
-                
-                //Set(_minDate; DateAdd(_firstDayOfMonth; -(Weekday(_firstDayOfMonth) - 2 + 1); TimeUnit.Days));;
-                //Set(_maxDate; DateAdd(DateAdd(_firstDayOfMonth; -(Weekday(_firstDayOfMonth) - 2 + 1); TimeUnit.Days); 40; TimeUnit.//Days));;
-                
-                //ClearCollect(MyCalendarEvents; Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name; Text(_minDate;
-                //DateTimeFormat.UTC); Text(_maxDate; DateTimeFormat.UTC)).value);;
-                
-                
-                ClearCollect(
-                    SelectedDayEvents,
-                    Filter(
-                        Office365Outlook.GetEventsCalendarViewV2(
-                            _myCalendar.Name,
-                            Text(
-                                DateAdd(
-                                    DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
-                                    TimeZoneOffset(),
-                                    "Minutes"
-                                ),
-                                "yyyy-mm-ddTHH:mm:ssZ"
-                            ),
-                            Text(
-                                DateAdd(
-                                    DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
-                                    TimeZoneOffset(),
-                                    "Minutes"
-                                ),
-                                "yyyy-mm-ddTHH:mm:ssZ"
-                            )
-                        ).value,
-                        DateValue(Text(Start, "yyyy-mm-dd")) = DateValue(Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd"))
-                    )
-                )
-            Text: ="Knop"
-            X: =341
-            Y: =448
-            ZIndex: =45
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
