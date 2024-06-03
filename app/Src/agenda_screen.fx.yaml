@@ -176,7 +176,7 @@ agenda_screen As screen:
                 TemplateSize: =109
                 Visible: |
                     =isAgendaVisible && !isAgendaEdit
-                Width: =543
+                Width: =530
                 X: =576
                 Y: =LblDateSelected1.Y + LblDateSelected1.Height
                 ZIndex: =8
@@ -190,7 +190,7 @@ agenda_screen As screen:
                         Set(currentCalendarEventEmails, "");
                         Set(currentCalendarEventEmails, CalendarEventsGallery1_1.Selected.RequiredAttendees)
                     Width: =27
-                    X: =466
+                    X: =458
                     Y: =60
                     ZIndex: =6
 
@@ -233,19 +233,19 @@ agenda_screen As screen:
                         UpdateContext({_showLoading: false});
                         Set(_calendarVisible, true);
                     Width: =27
-                    X: =506
+                    X: =498
                     Y: =60
                     ZIndex: =7
 
                 Label12 As label:
                     BorderStyle: =BorderStyle.None
                     Color: =RGBA(255, 255, 255, 1)
-                    Height: =47
+                    Height: =55
                     OnSelect: =Select(Parent)
                     PaddingLeft: =0
                     Size: =16
                     Text: =ThisItem.Subject
-                    Width: =354
+                    Width: =426
                     X: =6
                     Y: =16
                     ZIndex: =8
@@ -258,7 +258,7 @@ agenda_screen As screen:
                     OnSelect: =Select(Parent)
                     PaddingLeft: =0
                     Text: =ThisItem.Location
-                    Width: =354
+                    Width: =426
                     X: =6
                     Y: =56
                     ZIndex: =9
@@ -603,58 +603,12 @@ agenda_screen As screen:
                     Wrap: =false
                     ZIndex: =3
 
-        Endtime_hours As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="9"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Sequence(24, 0, 1)
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =75
-            X: =845
-            Y: =245
-            ZIndex: =42
-
-        Endtime_minutes As dropdown:
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="30"
-            DisabledBorderColor: =RGBA(192, 5, 230, 1)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(45, 45, 45, 1)
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverBorderColor: =RGBA(192, 5, 230, 1)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(63, 63, 63, 0.8)
-            Items: |
-                =Sequence(4, 00, 15)
-            PressedFill: =RGBA(63, 63, 63, 0.5)
-            SelectionFill: =RGBA(63, 63, 63, 0.8)
-            Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =75
-            X: =942
-            Y: =245
-            ZIndex: =43
-
         Group23 As group:
             Height: =5
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =43
+            ZIndex: =47
 
             Label13 As label:
                 Color: =RGBA(255, 255, 255, 1)
@@ -717,16 +671,18 @@ agenda_screen As screen:
                 ZIndex: =30
 
             DatePicker1_1 As datepicker:
+                BorderColor: =RGBA(255, 255, 255, 1)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =0
                 Color: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =32
+                DisabledBorderColor: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =43
                 Size: =13
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =154
                 X: =590
-                Y: =183
+                Y: =177
                 ZIndex: =32
 
             Button1_2 As button:
@@ -734,6 +690,7 @@ agenda_screen As screen:
                 BorderThickness: =0
                 Fill: =RGBA(192, 5, 230, 1)
                 FontWeight: =FontWeight.Normal
+                Height: =42
                 HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
                 OnSelect: |
                     =If(
@@ -804,7 +761,7 @@ agenda_screen As screen:
                 RadiusTopRight: =0
                 Text: ="Opslaan"
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =254
+                Width: =502
                 X: =590
                 Y: =454
                 ZIndex: =33
@@ -875,7 +832,7 @@ agenda_screen As screen:
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =217
                 X: =590
-                Y: =393
+                Y: =351
                 ZIndex: =37
 
             CloseCalendarButton_1 As icon.Add:
@@ -891,34 +848,34 @@ agenda_screen As screen:
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 Width: =25
                 X: =820
-                Y: =397
+                Y: =355
                 ZIndex: =39
 
             "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Height: =338
+                Height: =109
                 Items: =attendeesEmails
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
                 TemplateSize: =46
                 Visible: =!isAgendaVisible && !isAgendaEdit
-                Width: =249
-                X: =871
-                Y: =177
+                Width: =260
+                X: =859
+                Y: =327
                 ZIndex: =40
 
                 Subtitle3 As label:
                     Color: =RGBA(255, 255, 255, 1)
                     FontWeight: =FontWeight.Lighter
-                    Height: =28
+                    Height: =25
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
                     PaddingTop: =0
                     Text: =ThisItem.Value
-                    Width: =330
+                    Width: =217
                     X: =5
                     Y: =10
                     ZIndex: =3
@@ -935,8 +892,8 @@ agenda_screen As screen:
                         =Remove(attendeesEmails, LookUp(attendeesEmails, Value = ThisItem.Value))
                     Tooltip: ="Details van item weergeven"
                     Width: =22
-                    X: =335
-                    Y: =13
+                    X: =222
+                    Y: =10
                     ZIndex: =4
 
             Label20 As label:
@@ -950,25 +907,85 @@ agenda_screen As screen:
                 Y: =248
                 ZIndex: =41
 
-        Label20_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            Text: |-
-                =":"
-            Visible: =!isAgendaVisible && !isAgendaEdit
-            Width: =29
-            X: =923
-            Y: =247
-            ZIndex: =44
+            Endtime_hours As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="9"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Sequence(24, 0, 1)
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =75
+                X: =845
+                Y: =245
+                ZIndex: =42
 
-        Icon18 As icon.ArrowRight:
-            Color: =RGBA(192, 5, 230, 1)
-            Height: =25
-            Icon: =Icon.ArrowRight
-            Width: =25
-            X: =795
-            Y: =254
-            ZIndex: =45
+            Endtime_minutes As dropdown:
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="30"
+                DisabledBorderColor: =RGBA(192, 5, 230, 1)
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                HoverBorderColor: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(63, 63, 63, 0.8)
+                Items: |
+                    =Sequence(4, 00, 15)
+                PressedFill: =RGBA(63, 63, 63, 0.5)
+                SelectionFill: =RGBA(63, 63, 63, 0.8)
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =75
+                X: =942
+                Y: =245
+                ZIndex: =43
+
+            Label20_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =36
+                Text: |-
+                    =":"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =29
+                X: =923
+                Y: =247
+                ZIndex: =44
+
+            Icon18 As icon.ArrowRight:
+                Color: =RGBA(192, 5, 230, 1)
+                DisplayMode: =DisplayMode.View
+                Height: =25
+                Icon: =Icon.ArrowRight
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =25
+                X: =795
+                Y: =254
+                ZIndex: =45
+
+            Label24 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =33
+                PaddingLeft: =0
+                Text: ="Deelnemers toevoegen"
+                Visible: =!isAgendaVisible && !isAgendaEdit
+                Width: =255
+                X: =590
+                Y: =318
+                ZIndex: =46
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
