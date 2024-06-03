@@ -782,38 +782,72 @@ agenda_screen As screen:
                 ZIndex: =32
 
             Button1_2 As button:
-                OnSelect: |
-                    =Office365Outlook.V4CalendarPostItem(
-                        LookUp(
-                            Office365Outlook.CalendarGetTables().value,
-                            DisplayName = "Agenda"
-                        ).Name,
-                        input_meeting_subject.Text,
-                        Text(
-                            DateAdd(
-                                DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
-                                TimeZoneOffset(),
-                                "Minutes"
-                            ),
-                            "yyyy-mm-ddTHH:mm:ssZ"
-                        ),
-                        Text(
-                            DateAdd(
-                                DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
-                                TimeZoneOffset(),
-                                "Minutes"
-                            ),
-                            "yyyy-mm-ddTHH:mm:ssZ"
-                        ),
-                        "UTC",
-                        {
-                            requiredAttendees: Concat(attendeesEmails, Value & "; "),
-                            responseRequested: true,
-                            isAllDay: false,
-                            body: input_meeting_info.Text,
-                            showAs: "busy"
-                        }
-                    )
+                OnSelect: |-
+                    =If(
+                        DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0) <
+                        DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                        Notify("End time cannot be before start time."),
+                        
+                        If(
+                     CountRows(
+                                Filter(
+                                    Office365Outlook.CalendarGetItems(
+                                        LookUp(Office365Outlook.CalendarGetTables().value, DisplayName = "Agenda").Name,
+                                        Text(
+                                            DateAdd(
+                                                DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                                                TimeZoneOffset(),
+                                                "Minutes"
+                                            ),
+                                            "yyyy-mm-ddTHH:mm:ssZ"
+                                        ),
+                                        Text(
+                                            DateAdd(
+                                                DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
+                                                TimeZoneOffset(),
+                                                "Minutes"
+                                            ),
+                                            "yyyy-mm-ddTHH:mm:ssZ"
+                                        )
+                                    ).value,
+                                    !(DateAdd(DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0), TimeZoneOffset(), "Minutes") >= End || DateAdd(DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0), TimeZoneOffset(), "Minutes") <= Start)
+                                )
+                            ) > 0,
+                            Notify("There is already an event scheduled in this time slot."),
+                            
+                            Office365Outlook.V4CalendarPostItem(
+                                LookUp(
+                                    Office365Outlook.CalendarGetTables().value,
+                                    DisplayName = "Agenda"
+                                ).Name,
+                                input_meeting_subject.Text,
+                                Text(
+                                    DateAdd(
+                                        DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
+                                        TimeZoneOffset(),
+                                        "Minutes"
+                                    ),
+                                    "yyyy-mm-ddTHH:mm:ssZ"
+                                ),
+                                Text(
+                                    DateAdd(
+                                        DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
+                                        TimeZoneOffset(),
+                                        "Minutes"
+                                    ),
+                                    "yyyy-mm-ddTHH:mm:ssZ"
+                                ),
+                                "UTC",
+                                {
+                                    requiredAttendees: Concat(attendeesEmails, Value & "; "),
+                                    responseRequested: true,
+                                    isAllDay: false,
+                                    body: input_meeting_info.Text,
+                                    showAs: "busy"
+                                }
+                            )
+                      
+                        )
                 Text: ="Knop"
                 Visible: =!isAgendaVisible && !isAgendaEdit
                 X: =26
