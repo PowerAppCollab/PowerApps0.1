@@ -787,33 +787,6 @@ agenda_screen As screen:
                         DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0) <
                         DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
                         Notify("End time cannot be before start time."),
-                        
-                        If(
-                     CountRows(
-                                Filter(
-                                    Office365Outlook.CalendarGetItems(
-                                        LookUp(Office365Outlook.CalendarGetTables().value, DisplayName = "Agenda").Name,
-                                        Text(
-                                            DateAdd(
-                                                DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0),
-                                                TimeZoneOffset(),
-                                                "Minutes"
-                                            ),
-                                            "yyyy-mm-ddTHH:mm:ssZ"
-                                        ),
-                                        Text(
-                                            DateAdd(
-                                                DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0),
-                                                TimeZoneOffset(),
-                                                "Minutes"
-                                            ),
-                                            "yyyy-mm-ddTHH:mm:ssZ"
-                                        )
-                                    ).value,
-                                    !(DateAdd(DatePicker1_1.SelectedDate + Time(Value(Starttime_hours.Selected.Value), Value(Starttime_minutes.Selected.Value), 0), TimeZoneOffset(), "Minutes") >= End || DateAdd(DatePicker1_1.SelectedDate + Time(Value(Endtime_hours.Selected.Value), Value(Endtime_minutes.Selected.Value), 0), TimeZoneOffset(), "Minutes") <= Start)
-                                )
-                            ) > 0,
-                            Notify("There is already an event scheduled in this time slot."),
                             
                             Office365Outlook.V4CalendarPostItem(
                                 LookUp(
@@ -1005,6 +978,27 @@ agenda_screen As screen:
             X: =106
             Y: =311
             ZIndex: =44
+
+        Button7 As button:
+            OnSelect: |-
+                =ClearCollect(
+                    DayEvents,
+                    Filter(
+                        Office365Outlook.CalendarGetItems(
+                            LookUp(
+                                Office365Outlook.CalendarGetTables().value,
+                                DisplayName = "Agenda"
+                            ).Name,
+                            DatePicker1_1.SelectedDate,
+                            DateAdd(DatePicker1_1.SelectedDate, 1, Days)
+                        ).value,
+                        DateValue(Text(Start, "yyyy-mm-dd")) = DateValue(Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd"))
+                    )
+                );
+            Text: ="Knop"
+            X: =341
+            Y: =448
+            ZIndex: =45
 
     navigatie_component_9 As navigatie_component:
         nav_cursussenScreen: =courses_screen_1
