@@ -981,20 +981,15 @@ agenda_screen As screen:
 
         Button7 As button:
             OnSelect: |-
-                =ClearCollect(
-                    DayEvents,
-                    Filter(
-                        Office365Outlook.CalendarGetItems(
-                            LookUp(
-                                Office365Outlook.CalendarGetTables().value,
-                                DisplayName = "Agenda"
-                            ).Name,
-                            DatePicker1_1.SelectedDate,
-                            DateAdd(DatePicker1_1.SelectedDate, 1, Days)
-                        ).value,
-                        DateValue(Text(Start, "yyyy-mm-dd")) = DateValue(Text(DatePicker1_1.SelectedDate, "yyyy-mm-dd"))
-                    )
-                );
+                =Set(_myCalendar, LookUp(
+                        Office365Outlook.CalendarGetTables().value, 
+                        DisplayName = "Agenda"
+                    ));
+                
+                Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+                Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));
+                
+                ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
             Text: ="Knop"
             X: =341
             Y: =448
