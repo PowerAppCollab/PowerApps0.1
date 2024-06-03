@@ -61,48 +61,6 @@ agenda_screen As screen:
         Y: =40
         ZIndex: =11
 
-        Button1 As button:
-            OnSelect: |-
-                =Office365Outlook.V4CalendarPostItem(
-                LookUp(
-                        Office365Outlook.CalendarGetTables().value, 
-                        DisplayName = "Agenda"
-                    ).Name, 
-                        "TEST",
-                        Text(DatePicker1.SelectedDate, "yyyy-mm-dd") & "T00:00:00.000Z",
-                        Text(DateAdd(DatePicker1.SelectedDate, 1, TimeUnit.Days), "yyyy-mm-dd") & "T00:00:00.000Z",
-                
-                        "UTC",
-                        {
-                            //requiredAttendees: Concat(InviteesNew.SelectedItems.Email; Email; ";");
-                            requiredAttendees: "jools.l.reinartz@gmail.com",
-                            responseRequested: false,
-                            isAllDay: false
-                        }
-                    )
-            Text: ="Knop"
-            X: =330
-            Y: =67
-            ZIndex: =1
-
-        DatePicker1 As datepicker:
-            Height: =36
-            Width: =161
-            X: =39
-            Y: =69
-            ZIndex: =2
-
-        Label6 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Height: =48
-            Size: =16
-            Text: ="Meeting Inplannen"
-            Width: =625
-            Y: =9
-            ZIndex: =3
-
     container_42 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
