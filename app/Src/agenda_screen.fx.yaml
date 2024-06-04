@@ -49,6 +49,14 @@ agenda_screen As screen:
         UpdateContext({_showLoading: false});
         Set(_calendarVisible, true);
 
+    navigatie_component_9 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+
     container_41 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -60,7 +68,7 @@ agenda_screen As screen:
         Width: =625
         X: =675
         Y: =40
-        ZIndex: =1
+        ZIndex: =2
 
     container_42 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -73,7 +81,7 @@ agenda_screen As screen:
         Width: =450
         X: =180
         Y: =40
-        ZIndex: =2
+        ZIndex: =3
 
         LblMonthSelected1_2 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -134,7 +142,7 @@ agenda_screen As screen:
         Width: =1120
         X: =180
         Y: =203
-        ZIndex: =3
+        ZIndex: =4
 
         CloseCalendarButton As icon.Add:
             Color: =RGBA(192, 5, 230, 1)
@@ -1002,15 +1010,6 @@ agenda_screen As screen:
                 X: =590
                 Y: =318
                 ZIndex: =46
-
-    navigatie_component_9 As navigatie_component:
-        nav_agendaScreen: =agenda_screen
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-        ZIndex: =8
 
     Group25 As group:
         Height: =5
