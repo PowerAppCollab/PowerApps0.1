@@ -92,7 +92,7 @@ intakes_screen As screen:
                         DisplayMode: =DisplayMode.View
                         DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_huidigefunctie)
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =40
+                        Height: =116
                         Required: =false
                         Width: =324
                         X: =0
@@ -103,26 +103,27 @@ intakes_screen As screen:
                             AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             Height: =34
+                            PaddingLeft: =0
                             Text: =Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
-                            X: =30
-                            Y: =10
+                            X: =16
+                            Y: =15
                             ZIndex: =1
 
                         DataCardValue20 As label:
-                            AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             DisplayMode: =Parent.DisplayMode
                             FontWeight: =FontWeight.Lighter
-                            Height: =27
+                            Height: =63
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
                             Text: =Parent.Default
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =308
+                            X: =16
+                            Y: =49
                             ZIndex: =2
 
                     "'Jaren Ervaring_DataCard2' As typedDataCard.textualViewCard":
@@ -143,26 +144,25 @@ intakes_screen As screen:
                             AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             Height: =34
+                            PaddingLeft: =0
                             Text: =Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
-                            X: =30
-                            Y: =10
+                            Y: =15
                             ZIndex: =1
 
                         DataCardValue21 As label:
-                            AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             DisplayMode: =Parent.DisplayMode
                             FontWeight: =FontWeight.Lighter
-                            Height: =27
+                            Height: =67
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
                             Text: =Parent.Default
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =324
+                            Y: =49
                             ZIndex: =2
 
                     Opleiding_DataCard2 As typedDataCard.textualViewCard:
@@ -183,26 +183,25 @@ intakes_screen As screen:
                             AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             Height: =34
+                            PaddingLeft: =0
                             Text: =Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
-                            X: =30
-                            Y: =10
+                            Y: =15
                             ZIndex: =1
 
                         DataCardValue22 As label:
-                            AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             DisplayMode: =Parent.DisplayMode
                             FontWeight: =FontWeight.Lighter
-                            Height: =27
+                            Height: =67
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
                             Text: =Parent.Default
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =306
+                            Y: =49
                             ZIndex: =2
 
                     Programmeertalen_DataCard2 As typedDataCard.textualViewCard:
@@ -212,7 +211,7 @@ intakes_screen As screen:
                         DisplayMode: =DisplayMode.View
                         DisplayName: =DataSourceInfo([@intakeForms],DataSourceInfo.DisplayName,cr884_programmeertalen)
                         Fill: =RGBA(0, 0, 0, 0)
-                        Height: =40
+                        Height: =114
                         Required: =false
                         Width: =324
                         X: =0
@@ -223,26 +222,26 @@ intakes_screen As screen:
                             AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             Height: =34
+                            PaddingLeft: =0
                             Text: =Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
-                            X: =30
-                            Y: =10
+                            X: =18
                             ZIndex: =1
 
                         DataCardValue23 As label:
-                            AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             DisplayMode: =Parent.DisplayMode
                             FontWeight: =FontWeight.Lighter
-                            Height: =27
+                            Height: =74
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
                             Text: =Parent.Default
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =306
+                            X: =18
+                            Y: =34
                             ZIndex: =2
 
                     "'Werkzaam Bij_DataCard2' As typedDataCard.textualViewCard":
@@ -263,26 +262,24 @@ intakes_screen As screen:
                             AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             Height: =34
+                            PaddingLeft: =0
                             Text: =Parent.DisplayName
                             Width: =Parent.Width - 60
                             Wrap: =false
-                            X: =30
-                            Y: =10
                             ZIndex: =1
 
                         DataCardValue24 As label:
-                            AutoHeight: =true
                             Color: =RGBA(255, 255, 255, 1)
                             DisplayMode: =Parent.DisplayMode
                             FontWeight: =FontWeight.Lighter
-                            Height: =27
+                            Height: =80
                             PaddingLeft: =0
                             PaddingRight: =0
                             PaddingTop: =0
                             Text: =Parent.Default
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =324
+                            Y: =34
                             ZIndex: =2
 
             Button4 As button:
