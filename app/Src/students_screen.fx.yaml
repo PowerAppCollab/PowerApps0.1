@@ -5,6 +5,14 @@ students_screen As screen:
         Set(scoresToevoegen, false);
         
 
+    navigatie_component_3 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+
     container_5 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -1162,7 +1170,7 @@ students_screen As screen:
             Width: =25
             X: =180
             Y: =127
-            ZIndex: =1
+            ZIndex: =2
 
         AttachControl_2 As attachments:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -1207,7 +1215,7 @@ students_screen As screen:
             Width: =86
             X: =175
             Y: =30
-            ZIndex: =2
+            ZIndex: =3
 
         Label17_1 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1215,7 +1223,7 @@ students_screen As screen:
             Text: ="Scores uploaden"
             X: =202
             Y: =125
-            ZIndex: =3
+            ZIndex: =4
 
     groep_popup_sendscore As group:
         Height: =5
@@ -1408,15 +1416,6 @@ students_screen As screen:
             X: =486
             Y: =455
             ZIndex: =33
-
-    navigatie_component_3 As navigatie_component:
-        nav_agendaScreen: =agenda_screen
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-        ZIndex: =40
 
     removeArchivedPopUp As group:
         Height: =5

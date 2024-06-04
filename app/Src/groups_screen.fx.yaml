@@ -1160,7 +1160,8 @@ groups_screen As screen:
                     Patch(
                         studenten_tabel,
                         LookUp(studenten_tabel, studentID = Value),
-                        { groupID: gallery_courses_3.Selected.groupID }
+                        { groupID: gallery_courses_3.Selected.groupID,
+                        course: gallery_courses_3.Selected.course }
                     )
                 )
             Visible: =varShowAddPopup
