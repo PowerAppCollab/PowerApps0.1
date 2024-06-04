@@ -1004,12 +1004,13 @@ agenda_screen As screen:
                 ZIndex: =46
 
     navigatie_component_9 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
         nav_cursussenScreen: =courses_screen_1
         nav_groepenScreen: =groups_screen
         nav_intakesScreen: =intakes_screen
         nav_presenterenScreen: =presentatie_screen
         nav_studentenScreen: =students_screen
-        ZIndex: =4
+        ZIndex: =8
 
     Group25 As group:
         Height: =5

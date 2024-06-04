@@ -25,13 +25,6 @@ groups_screen As screen:
         Clear(allNewStudentIDsForGroup);
         Reset(SearchInput1_1)
 
-    navigatie_component_5 As navigatie_component:
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-
     container_19 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -1167,6 +1160,15 @@ groups_screen As screen:
             X: =975
             Y: =571
             ZIndex: =46
+
+    navigatie_component_5 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+        ZIndex: =50
 
     Group17_2 As group:
         Height: =5

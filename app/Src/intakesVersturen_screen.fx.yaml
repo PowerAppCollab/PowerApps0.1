@@ -8,13 +8,6 @@ intakesVersturen_screen As screen:
         RemoveIf(tempEmails, true);
         Refresh(tempEmails)
 
-    navigatie_component_2 As navigatie_component:
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-
     container_21 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -372,6 +365,15 @@ intakesVersturen_screen As screen:
             Width: =500
             Y: =18
             ZIndex: =1
+
+    navigatie_component_2 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+        ZIndex: =8
 
     loadingOn As group:
         Height: =5

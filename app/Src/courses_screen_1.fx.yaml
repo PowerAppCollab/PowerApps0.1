@@ -458,14 +458,6 @@ courses_screen_1 As screen:
             Y: =332
             ZIndex: =41
 
-    navigatie_component_6 As navigatie_component:
-        nav_cursussenScreen: =courses_screen_1
-        nav_groepenScreen: =groups_screen
-        nav_intakesScreen: =intakes_screen
-        nav_presenterenScreen: =presentatie_screen
-        nav_studentenScreen: =students_screen
-        ZIndex: =42
-
     RemoveGroupPopup As group:
         Height: =5
         Width: =5
@@ -579,6 +571,15 @@ courses_screen_1 As screen:
             X: =559
             Y: =324
             ZIndex: =19
+
+    navigatie_component_6 As navigatie_component:
+        nav_agendaScreen: =agenda_screen
+        nav_cursussenScreen: =courses_screen_1
+        nav_groepenScreen: =groups_screen
+        nav_intakesScreen: =intakes_screen
+        nav_presenterenScreen: =presentatie_screen
+        nav_studentenScreen: =students_screen
+        ZIndex: =49
 
     RemoveGroupPopup_2 As group:
         Height: =5
