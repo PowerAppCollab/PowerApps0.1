@@ -1,0 +1,137 @@
+[
+  {
+    "DisplayName": "groepsInhoud (Views)",
+    "Name": "_cr884_groepsinhoud_views",
+    "RelatedEntityName": "groepsInhoud",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "224fbb36-c654-49e6-9357-b2e8f2ea6c3f": "groepsInhoud Opzoekweergave",
+      "38927639-a0c6-42ea-a34c-ef167c87e6c9": "Actieve groepsInhoud",
+      "55372f94-0a8b-4a69-a6e2-ac93727d46f1": "Inactieve groepsInhoud",
+      "59434014-11ed-45af-890f-33cded28980e": "Gekoppelde weergave van groepsInhoud",
+      "8a7614cd-6f0f-42dd-82f4-d2a4d4698837": "Weergave Geavanceerd zoeken van groepsInhoud"
+    }
+  },
+  {
+    "DisplayName": "Status (groepsInhoud)_1",
+    "Name": "cr884_groepsinhoud_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "groepsInhoud"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "groepsInhoud",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (groepsInhoud)_1",
+    "Name": "cr884_groepsinhoud_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "groepsInhoud"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "groepsInhoud",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_groepsinhouds",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_groepsinhoud",
+    "MaxGetRowsCount": 500,
+    "Name": "groepsInhoud",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
+      "cr884_cursus": "cursus",
+      "cr884_groep_id": "groep_id",
+      "cr884_groepsinhoud_AsyncOperations": "Systeemtaken",
+      "cr884_groepsinhoud_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_groepsinhoud_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_groepsinhoud_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_groepsinhoud_ProcessSession": "Processessies",
+      "cr884_groepsinhoud_SyncErrors": "Synchronisatiefouten",
+      "cr884_groepsinhoudid": "groepsInhoud",
+      "cr884_student_id": "student_id",
+      "createdby": "Gemaakt door",
+      "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
+      "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
+      "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
+      "statecode": "Status",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "groepsInhoud",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (groepsInhoud)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_26fea9ef92_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "groepsInhoud"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "groepsInhoud",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (groepsInhoud)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_26fea9ef92_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "groepsInhoud"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "groepsInhoud",
+    "Type": "OptionSetInfo"
+  }
+]

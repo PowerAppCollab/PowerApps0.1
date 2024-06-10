@@ -1274,8 +1274,52 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =46
             HoverFill: =RGBA(161, 0, 194, 1)
-            OnSelect: |-
-                =Patch(groepens, {groupID: TextInput2.Text,course:addCourseDropDown_2.Selected.name, name:TextInput2.Text});
+            OnSelect: |
+                =// Define a string of characters to use for generating the unique ID
+                Set(
+                    Characters,
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                );
+                
+                // Generate the unique ID
+                Set(
+                    UniqueID,
+                    Concat(
+                        ForAll(
+                            Sequence(20),
+                            Mid(
+                                Characters,
+                                Rand() * Len(Characters) + 1,
+                                1
+                            )
+                        ),
+                        Text(Value)
+                    )
+                );
+                
+                // Patch data into 'groepens' table
+                Patch(
+                    groepens,
+                    Defaults(groepens),
+                    {
+                        groupID: UniqueID,
+                        course: addCourseDropDown_2.Selected.name,
+                        name: TextInput2.Text
+                    }
+                );
+                
+                // Patch data into 'groepsInhoud' table
+                Patch(
+                    groepsInhoud,
+                    Defaults(groepsInhoud),
+                    {
+                        groep_id: UniqueID,
+                        student_id: "",  // Leave student_id empty
+                        cursus: addCourseDropDown_2.Selected.name
+                    }
+                );
+                
+                // Close the popup
                 Set(varShowCreateGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
@@ -1393,39 +1437,50 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
-                =Patch(
+                =// Patch: Clear groupID and course fields in studenten_tabel for a specific student
+                Patch(
                     studenten_tabel,
-                    LookUp(
-                        studenten_tabel,
-                        studentID = studentID
-                    ),
+                    LookUp(studenten_tabel, studentID = ThisRecord.studentID),
                     {
                         groupID: "",
                         course: ""
                     }
                 );
-                Remove(
-                    groepens,
-                    gallery_courses_3.Selected
+                
+                // Remove the selected item from groepens
+                Remove(groepens, gallery_courses_3.Selected);
+                
+                // Load data into collections for local processing
+                ClearCollect(localGroepens, groepens);
+                ClearCollect(localGroepsInhoud, groepsInhoud);
+                
+                // Filter locally: Collect items that match the condition into 'items' collection
+                ClearCollect(
+                    items,
+                    Filter(
+                        localGroepens,
+                        groep_id in Filter(localGroepsInhoud, groep_id = groupID).groep_id
+                    )
                 );
-                Patch(
-                    studenten_tabel,
-                    LookUp(
-                        studenten_tabel,
-                        course = gallery_courses_3.Selected.course
-                    ),
-                    {groupID: ""}
+                
+                // Remove each record from localGroepsInhoud based on the items collection
+                ForAll(
+                    items,
+                    Remove(
+                        groepsInhoud,
+                        LookUp(groepsInhoud, groep_id = groep_id)
+                    )
                 );
-                Set(
-                    varShowDeleteGroupPopup,
-                    false
-                );
+                
+                // Set the variable to hide the delete group popup
+                Set(varShowDeleteGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
             Text: ="verwijderen"
+            Tooltip: =
             Visible: =varShowDeleteGroupPopup
             X: =487
             Y: =415
