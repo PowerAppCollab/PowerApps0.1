@@ -61,7 +61,7 @@ intakes_screen As screen:
             Width: =5
             X: =40
             Y: =40
-            ZIndex: =13
+            ZIndex: =14
 
             intakeFormAnswersContainer As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -304,7 +304,7 @@ intakes_screen As screen:
                         false
                     )
                 Width: =190
-                Y: =105
+                Y: =82
                 ZIndex: =7
 
             Button4_3 As button:
@@ -329,7 +329,7 @@ intakes_screen As screen:
                         false
                     )
                 Width: =190
-                Y: =150
+                Y: =127
                 ZIndex: =8
 
             Button4_4 As button:
@@ -354,7 +354,7 @@ intakes_screen As screen:
                         false
                     )
                 Width: =190
-                Y: =195
+                Y: =172
                 ZIndex: =9
 
             Rectangle1 As rectangle:
@@ -598,11 +598,16 @@ intakes_screen As screen:
 
                 Label21 As label:
                     Color: =RGBA(255, 255, 255, 1)
-                    Height: =205
+                    Fill: =RGBA(45, 45, 45, 1)
+                    Height: =227
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
                     Text: =Text(LookUp(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID).'intakeNotes (cr884_intakenotes)')
                     VerticalAlign: =VerticalAlign.Top
                     Visible: =!editNote
-                    Width: =865
+                    Width: =895
                     X: =27
                     Y: =60
                     ZIndex: =2
@@ -721,6 +726,163 @@ intakes_screen As screen:
                         X: =74
                         Y: =16
                         ZIndex: =6
+
+            Button4_5 As button:
+                Align: =Align.Left
+                Color: =If(intakeContainerVisible = 4, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Normal
+                Height: =25
+                HoverBorderColor: =
+                HoverColor: =RGBA(192, 5, 230, 1)
+                HoverFill: =
+                OnSelect: =Set(intakeContainerVisible, 4);
+                PaddingLeft: =15
+                PressedBorderColor: =
+                PressedFill: =
+                Size: =11
+                Text: ="Vraag / Antwoord"
+                Visible: |-
+                    =If(
+                        !IsBlank(gallery_intakes.Selected.Voornaam),
+                        true,
+                        false
+                    )
+                Width: =190
+                Y: =217
+                ZIndex: =13
+
+        Group24 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            input_antwoord_intake_1 As text:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =""
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =33
+                HintText: ="Vraag"
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(45, 45, 45, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =If(intakeContainerVisible = 4, true, false)
+                Width: =300
+                X: =228
+                Y: =65
+                ZIndex: =14
+
+            input_vraag_intake_1 As text:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =""
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =105
+                HintText: ="Antwoord"
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(45, 45, 45, 1)
+                Mode: =TextMode.MultiLine
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =If(intakeContainerVisible = 4, true, false)
+                Width: =300
+                X: =228
+                Y: =125
+                ZIndex: =15
+
+            AddScoreIntake_button_1 As button:
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(192, 5, 230, 1)
+                FontWeight: =FontWeight.Normal
+                Height: =33
+                HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
+                OnSelect: |-
+                    =Patch(
+                            intakeVraagAntwoord,
+                            Defaults(intakeVraagAntwoord),
+                            {
+                                intakeFormID: gallery_intakes.Selected.intakeFormID,
+                                intakeVraagValue: input_vraag_intake_1.Text,
+                                intakeAntwoordValue: input_antwoord_intake_1.Text,
+                                UID: GUID()
+                            }
+                        );
+                        Reset(input_vraag_intake_1);
+                        Reset(input_antwoord_intake_1);
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =13
+                Text: ="Toevoegen"
+                Visible: =If(intakeContainerVisible = 4, true, false)
+                Width: =300
+                X: =228
+                Y: =250
+                ZIndex: =16
+
+            "gallery_score_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtered"
+                DelayItemLoading: =true
+                Height: =269
+                Items: =Filter(intakeVraagAntwoord, intakeFormID = gallery_intakes.Selected.intakeFormID)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =122
+                Visible: =If(intakeContainerVisible = 4, true, false)
+                Width: =600
+                X: =550
+                Y: =28
+                ZIndex: =20
+
+                gallery_score_scores_7 As label:
+                    Color: =RGBA(192, 5, 230, 1)
+                    Height: =56
+                    OnSelect: =Select(Parent)
+                    Overflow: =Overflow.Scroll
+                    Text: =ThisItem.intakeAntwoordValue
+                    Width: =526
+                    X: =15
+                    ZIndex: =4
+
+                Icon8_3 As icon.Trash:
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    Height: =20
+                    Icon: =Icon.Trash
+                    OnSelect: =RemoveIf(intakeVraagAntwoord, UID = gallery_score_4.Selected.UID);
+                    Width: =20
+                    X: =555
+                    Y: =11
+                    ZIndex: =6
+
+                gallery_score_scores_8 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =66
+                    OnSelect: =Select(Parent)
+                    Overflow: =Overflow.Scroll
+                    Text: =ThisItem.intakeVraagValue
+                    Width: =526
+                    X: =15
+                    Y: =56
+                    ZIndex: =7
 
     container_16 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
