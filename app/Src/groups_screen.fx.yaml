@@ -795,19 +795,20 @@ groups_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =274
-            Items: |-
-                =Filter(
+            Items: |
+                =// Filter studenten_tabel based on the absence of student_id in groepsInhoud
+                Filter(
                     studenten_tabel,
-                    //course = gallery_courses_3.Selected.course &&
-                    IsBlank(groupID) && !IsBlank(Email) && (StartsWith(
+                    !(studentID in groepsInhoud.student_id) &&
+                    (StartsWith(
                         Voornaam,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ) || StartsWith(
                         Achternaam,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ) || StartsWith(
                         Email,
-                        SearchInput1_3.Text
+                        SearchInput1_4.Text
                     ))
                 )
             Layout: =Layout.Vertical
@@ -978,10 +979,10 @@ groups_screen As screen:
             DelayItemLoading: =true
             Height: =274
             Items: |-
-                =Filter(
+                =// Filter studenten_tabel based on the presence of student_id in groepsInhoud
+                Filter(
                     studenten_tabel,
-                    groupID = gallery_courses_3.Selected.groupID &&
-                    !IsBlank(groupID) && (StartsWith(
+                    studentID in groepsInhoud.student_id && (StartsWith(
                         Voornaam,
                         SearchInput1_4.Text
                     ) || StartsWith(
@@ -1223,15 +1224,23 @@ groups_screen As screen:
             Height: =28
             Icon: =Icon.Check
             OnSelect: |+
-                =ForAll(
+                =// Iterate over each record in allDelStudentIDsForGroup and remove corresponding records from groepsInhoud
+                ForAll(
                     allDelStudentIDsForGroup,
-                    Patch(
-                        studenten_tabel,
-                        LookUp(studenten_tabel, studentID = Value),
-                        { groupID: "",
-                        course: "" }
+                    Remove(
+                        groepsInhoud,
+                        LookUp(studenten_tabel, studentID = allDelStudentIDsForGroup[@Value])
                     )
-                );
+                )
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
