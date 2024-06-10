@@ -22,6 +22,8 @@ groups_screen As screen:
         );
         
         
+        
+        
         Clear(allNewStudentIDsForGroup);
         Reset(SearchInput1_1)
 
@@ -387,13 +389,14 @@ groups_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =202
-            Items: |+
+            Items: |
                 =Filter(
                     studenten_tabel,
-                    groupID = gallery_courses_3.Selected.groupID
+                    studentID in Filter(
+                        groepsInhoud,
+                        gallery_courses_3.Selected.groupID in groep_id
+                    ).student_id
                 )
-                
-                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -441,10 +444,15 @@ groups_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =75
             Text: ="Er zijn (nog) geen studenten in deze groep."
-            Visible: |-
+            Visible: |
                 =If(
-                    IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
-                
+                    IsEmpty(Filter(
+                    studenten_tabel,
+                    studentID in Filter(
+                        groepsInhoud,
+                        gallery_courses_3.Selected.groupID in groep_id
+                    ).student_id
+                )),
                     true,
                     false
                 )
@@ -663,10 +671,9 @@ groups_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =75
             Text: ="Er zijn (nog) geen studenten in deze groep."
-            Visible: |-
+            Visible: |
                 =If(
-                    IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
-                
+                    IsEmpty(Filter(groepsInhoud, groep_id = gallery_courses_3.Selected.groupID)),
                     true,
                     false
                 )
@@ -687,7 +694,7 @@ groups_screen As screen:
                     =gallery_courses_3.Selected.course
                 Visible: |-
                     =If(
-                        IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
+                        IsEmpty(Filter(groepsInhoud, groep_id = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
                     
                         false,
                         true
@@ -702,13 +709,13 @@ groups_screen As screen:
                 Text: |
                     =CountRows(
                         Filter(
-                            studenten_tabel,
-                            groupID = gallery_courses_3.Selected.groupID
+                            groepsInhoud,
+                            groep_id = gallery_courses_3.Selected.groupID && student_id in studenten_tabel.studentID
                         )
                     )
                 Visible: |-
                     =If(
-                        IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
+                        IsEmpty(Filter(groepsInhoud, groep_id = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
                     
                         false,
                         true
@@ -724,7 +731,7 @@ groups_screen As screen:
                 Text: ="Cursus"
                 Visible: |-
                     =If(
-                        IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
+                        IsEmpty(Filter(groepsInhoud, groep_id = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
                     
                         false,
                         true
@@ -741,7 +748,7 @@ groups_screen As screen:
                 Text: ="Aantal studenten"
                 Visible: |-
                     =If(
-                        IsEmpty(Filter(studenten_tabel, groupID = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
+                        IsEmpty(Filter(groepsInhoud, groep_id = gallery_courses_3.Selected.groupID)) ||     IsBlank(gallery_courses_3.Selected),
                     
                         false,
                         true
@@ -795,22 +802,20 @@ groups_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =274
-            Items: |
-                =// Filter studenten_tabel based on the absence of student_id in groepsInhoud
-                Filter(
+            Items: |+
+                =Filter(
                     studenten_tabel,
-                    !(studentID in groepsInhoud.student_id) &&
-                    (StartsWith(
-                        Voornaam,
-                        SearchInput1_4.Text
-                    ) || StartsWith(
-                        Achternaam,
-                        SearchInput1_4.Text
-                    ) || StartsWith(
-                        Email,
-                        SearchInput1_4.Text
-                    ))
+                    !(studentID in Filter(
+                        groepsInhoud,
+                        groep_id = gallery_courses_3.Selected.groupID
+                    ).student_id) &&
+                    (
+                        StartsWith(Voornaam, SearchInput1_4.Text) ||
+                        StartsWith(Achternaam, SearchInput1_4.Text) ||
+                        StartsWith(Email, SearchInput1_4.Text)
+                    )
                 )
+                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -1173,7 +1178,7 @@ groups_screen As screen:
                         groepsInhoud,
                         { 
                             groep_id: gallery_courses_3.Selected.groupID,
-                            student_id: addStudentToGroup_gallery.Selected.studentID,
+                            student_id: allNewStudentIDsForGroup[@Value],
                             cursus: gallery_courses_3.Selected.course
                         }
                     )
@@ -1223,27 +1228,14 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |+
-                =// Iterate over each record in allDelStudentIDsForGroup and remove corresponding records from groepsInhoud
-                ForAll(
+            OnSelect: |
+                =ForAll(
                     allDelStudentIDsForGroup,
-                    Remove(
+                    RemoveIf(
                         groepsInhoud,
-                        LookUp(studenten_tabel, studentID = allDelStudentIDsForGroup[@Value])
+                        student_id = Value
                     )
                 )
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
             Visible: =varShowDeletePopup
             Width: =34
             X: =995
@@ -1328,17 +1320,6 @@ groups_screen As screen:
                         groupID: UniqueID,
                         course: addCourseDropDown_2.Selected.name,
                         name: TextInput2.Text
-                    }
-                );
-                
-                // Patch data into 'groepsInhoud' table
-                Patch(
-                    groepsInhoud,
-                    Defaults(groepsInhoud),
-                    {
-                        groep_id: UniqueID,
-                        student_id: "",  // Leave student_id empty
-                        cursus: addCourseDropDown_2.Selected.name
                     }
                 );
                 
