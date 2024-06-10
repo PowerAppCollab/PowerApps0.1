@@ -1154,16 +1154,30 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |
-                =ForAll(
+            OnSelect: |+
+                =ClearCollect(kandidaten, studenten_tabel);
+                
+                // Filter locally: Collect items that match the condition into 'items' collection
+                ClearCollect(
+                    items,
+                    Filter(
+                        localGroepens,
+                        groupID in Filter(kandidaten, studentID = studentID).studentID
+                    )
+                );
+                
+                ForAll(
                     allNewStudentIDsForGroup,
                     Patch(
-                        studenten_tabel,
-                        LookUp(studenten_tabel, studentID = Value),
-                        { groupID: gallery_courses_3.Selected.groupID,
-                        course: gallery_courses_3.Selected.course }
+                        groepsInhoud,
+                        { 
+                            groep_id: gallery_courses_3.Selected.groupID,
+                            student_id: addStudentToGroup_gallery.Selected.studentID,
+                            cursus: gallery_courses_3.Selected.course
+                        }
                     )
                 )
+                
             Visible: =varShowAddPopup
             Width: =34
             X: =975
@@ -1459,7 +1473,7 @@ groups_screen As screen:
                     items,
                     Filter(
                         localGroepens,
-                        groep_id in Filter(localGroepsInhoud, groep_id = groupID).groep_id
+                        groupID in Filter(localGroepsInhoud, groep_id = groupID).groep_id
                     )
                 );
                 

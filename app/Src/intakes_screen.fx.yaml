@@ -56,6 +56,31 @@ intakes_screen As screen:
             Y: =130
             ZIndex: =3
 
+        Button4_5 As button:
+            Align: =Align.Left
+            Color: =If(intakeContainerVisible = 4, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            HoverBorderColor: =
+            HoverColor: =RGBA(192, 5, 230, 1)
+            HoverFill: =
+            OnSelect: =Set(intakeContainerVisible, 4);
+            PaddingLeft: =15
+            PressedBorderColor: =
+            PressedFill: =
+            Size: =11
+            Text: ="Vraag / Antwoord"
+            Visible: |-
+                =If(
+                    !IsBlank(gallery_intakes.Selected.Voornaam),
+                    true,
+                    false
+                )
+            Width: =190
+            Y: =217
+            ZIndex: =13
+
         Group18 As group:
             Height: =5
             Width: =5
@@ -726,31 +751,6 @@ intakes_screen As screen:
                         X: =74
                         Y: =16
                         ZIndex: =6
-
-            Button4_5 As button:
-                Align: =Align.Left
-                Color: =If(intakeContainerVisible = 4, RGBA(192,5,230,1),RGBA(255, 255, 255, 1))
-                Fill: =RGBA(0, 0, 0, 0)
-                FontWeight: =FontWeight.Normal
-                Height: =25
-                HoverBorderColor: =
-                HoverColor: =RGBA(192, 5, 230, 1)
-                HoverFill: =
-                OnSelect: =Set(intakeContainerVisible, 4);
-                PaddingLeft: =15
-                PressedBorderColor: =
-                PressedFill: =
-                Size: =11
-                Text: ="Vraag / Antwoord"
-                Visible: |-
-                    =If(
-                        !IsBlank(gallery_intakes.Selected.Voornaam),
-                        true,
-                        false
-                    )
-                Width: =190
-                Y: =217
-                ZIndex: =13
 
         Group24 As group:
             Height: =5
