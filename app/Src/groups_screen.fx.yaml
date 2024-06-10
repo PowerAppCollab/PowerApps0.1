@@ -1052,9 +1052,16 @@ groups_screen As screen:
                 Height: =70
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
-                OnCheck: =Collect(allDelStudentIDsForGroup, addStudentToGroup_gallery_1.Selected.studentID)
+                OnCheck: |
+                    =Collect(
+                        allDelStudentIDsForGroup,
+                        {
+                            student_id: addStudentToGroup_gallery_1.Selected.studentID,
+                            groep_id: gallery_courses_3.Selected.groupID
+                        }
+                    );
                 OnSelect: =Select(Parent)
-                OnUncheck: =RemoveIf(allDelStudentIDsForGroup, Value = addStudentToGroup_gallery_1.Selected.studentID)
+                OnUncheck: =RemoveIf(allDelStudentIDsForGroup, student_id = addStudentToGroup_gallery_1.Selected.studentID)
                 PressedColor: =RGBA(192, 5, 230, 1)
                 PressedFill: =RGBA(0, 0, 0, 0)
                 Reset: =resetCheckboxVar
@@ -1229,13 +1236,17 @@ groups_screen As screen:
             Height: =28
             Icon: =Icon.Check
             OnSelect: |
-                =ForAll(
+                =// Iterate over allDelStudentIDsForGroup and remove matching records from groepsInhoud
+                ForAll(
                     allDelStudentIDsForGroup,
-                    RemoveIf(
+                    Remove(
                         groepsInhoud,
-                        student_id = Value
+                        LookUp(groepsInhoud, student_id = ThisRecord.student_id && groep_id = ThisRecord.groep_id)
                     )
-                )
+                );
+                
+                // Debug: Verify the content of groepsInhoud after removal
+                ClearCollect(debugGroepsInhoudAfterRemoval, groepsInhoud);
             Visible: =varShowDeletePopup
             Width: =34
             X: =995
