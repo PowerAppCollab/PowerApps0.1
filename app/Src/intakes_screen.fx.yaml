@@ -814,8 +814,8 @@ intakes_screen As screen:
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
                     =Patch(
-                            intakeVraagAntwoord,
-                            Defaults(intakeVraagAntwoord),
+                            intakeExtraVragen,
+                            Defaults(intakeExtraVragen),
                             {
                                 intakeFormID: gallery_intakes.Selected.intakeFormID,
                                 intakeVraagValue: input_vraag_intake_1.Text,
@@ -841,7 +841,7 @@ intakes_screen As screen:
                 '#CopilotOverlayLabel': ="Filtered"
                 DelayItemLoading: =true
                 Height: =269
-                Items: =Filter(intakeVraagAntwoord, intakeFormID = gallery_intakes.Selected.intakeFormID)
+                Items: =Filter(intakeExtraVragen, intakeFormID = gallery_intakes.Selected.intakeFormID)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
@@ -863,11 +863,11 @@ intakes_screen As screen:
                     ZIndex: =4
 
                 Icon8_3 As icon.Trash:
-                    Color: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(184, 0, 0, 1)
                     DisabledColor: =RGBA(255, 255, 255, 1)
                     Height: =20
                     Icon: =Icon.Trash
-                    OnSelect: =RemoveIf(intakeVraagAntwoord, UID = gallery_score_4.Selected.UID);
+                    OnSelect: =RemoveIf(intakeExtraVragen, UID = gallery_score_4.Selected.UID);
                     Width: =20
                     X: =555
                     Y: =11
@@ -1394,7 +1394,7 @@ intakes_screen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="weet je het zeker?"
+            Text: ="Intake verwijderen"
             Visible: =varShowDeleteIntakePopup
             Width: =505
             X: =430
@@ -1419,10 +1419,10 @@ intakes_screen As screen:
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
-            Text: ="verwijderen"
+            Text: ="Verwijderen"
             Visible: =varShowDeleteIntakePopup
-            X: =487
-            Y: =415
+            X: =727
+            Y: =420
             ZIndex: =18
 
         knop_annuleer_15 As button:
@@ -1440,17 +1440,18 @@ intakes_screen As screen:
             Size: =13
             Text: ="Annuleer"
             Visible: =varShowDeleteIntakePopup
-            X: =727
-            Y: =415
+            X: =485
+            Y: =420
             ZIndex: =19
 
         Label9_4 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Height: =57
-            Text: ="weet je het zeker om deze intake te verwijderen?"
+            Height: =65
+            Text: ="Deze actie kan niet teruggedraaid worden."
             Visible: =varShowDeleteIntakePopup
-            Width: =285
-            X: =559
+            Width: =388
+            X: =489
             Y: =324
             ZIndex: =20
 
