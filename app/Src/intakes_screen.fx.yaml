@@ -65,7 +65,7 @@ intakes_screen As screen:
             HoverBorderColor: =
             HoverColor: =RGBA(192, 5, 230, 1)
             HoverFill: =
-            OnSelect: =Set(intakeContainerVisible, 4);
+            OnSelect: =Set(intakeContainerVisible, 4); Reset(input_antwoord_intake_1); Reset(input_vraag_intake_1)
             PaddingLeft: =15
             PressedBorderColor: =
             PressedFill: =
@@ -623,7 +623,6 @@ intakes_screen As screen:
 
                 Label21 As label:
                     Color: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(45, 45, 45, 1)
                     Height: =227
                     PaddingBottom: =10
                     PaddingLeft: =10
@@ -650,7 +649,10 @@ intakes_screen As screen:
                     HoverColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     Mode: =TextMode.MultiLine
-                    PaddingLeft: =5
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
                     PressedBorderColor: =
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =
