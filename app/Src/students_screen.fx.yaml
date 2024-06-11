@@ -1193,18 +1193,22 @@ students_screen As screen:
             Items: =
             OnAddFile: |
                 =Set(isLoading, true);
-                Set(scoreUploadFlowDone, uploadScoreFiles.Run(
-                    {
-                        contentBytes: Last(Self.Attachments).Value,
-                        name: Last(Self.Attachments).Name
-                    }
-                ));
-                Reset(Self);
-                Set(isLoading, false);
-                Refresh(scores);
                 
-                //Set(flowdone; uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value; name: Last(Self.Attachments).Name}));;
-                //Set(isLoading; !scoreUploadFlowDone);;
+                If(
+                    EndsWith(Last(Self.Attachments).Name, ".xlsx"),
+                        Set(isNotExcelFileError, false);
+                
+                    Set(scoreUploadFlowDone, uploadScoreFiles.Run(
+                        {
+                            contentBytes: Last(Self.Attachments).Value,
+                            name: Last(Self.Attachments).Name
+                        }
+                    ));
+                    Reset(Self);
+                    Set(isLoading, false);
+                    Refresh(scores),
+                    Set(isNotExcelFileError, true)
+                )
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -1222,7 +1226,7 @@ students_screen As screen:
         Label17_1 As label:
             Color: =RGBA(255, 255, 255, 1)
             Height: =29
-            Text: ="Scores uploaden"
+            Text: ="Klik hier"
             Visible: =isPopupExcelFileScoresOpen
             X: =611
             Y: =520
@@ -1654,6 +1658,13 @@ students_screen As screen:
         X: =456
         Y: =292
         ZIndex: =47
+
+    Label25 As label:
+        Text: ="Error"
+        Visible: =isNotExcelFileError
+        X: =374
+        Y: =347
+        ZIndex: =48
 
     loadingOn_1 As group:
         Height: =5
