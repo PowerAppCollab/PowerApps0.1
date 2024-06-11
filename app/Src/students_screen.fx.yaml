@@ -23,7 +23,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =160
-        ZIndex: =7
+        ZIndex: =4
 
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -151,7 +151,7 @@ students_screen As screen:
         Width: =600
         X: =726
         Y: =40
-        ZIndex: =8
+        ZIndex: =5
 
         label_scoreTitle As label:
             Align: =Align.Center
@@ -357,7 +357,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =425
-        ZIndex: =9
+        ZIndex: =6
 
         LineChart1 As lineChart:
             BorderStyle: =BorderStyle.None
@@ -429,7 +429,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =270
-        ZIndex: =10
+        ZIndex: =7
 
         label_studentInformation As label:
             Align: =Align.Center
@@ -642,7 +642,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =11
+        ZIndex: =8
 
         SearchInput1 As text:
             BorderStyle: =BorderStyle.None
@@ -702,7 +702,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =12
+        ZIndex: =9
 
         groep_verwijder As group:
             Height: =5
@@ -1022,7 +1022,7 @@ students_screen As screen:
             Height: =768
             Visible: =varShowPopup
             Width: =1366
-            ZIndex: =13
+            ZIndex: =10
 
         popup_box As button:
             AutoDisableOnSelect: =false
@@ -1035,7 +1035,7 @@ students_screen As screen:
             Width: =663
             X: =352
             Y: =254
-            ZIndex: =14
+            ZIndex: =11
 
         popup_text As label:
             Align: =Align.Center
@@ -1050,7 +1050,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =318
-            ZIndex: =15
+            ZIndex: =12
 
         popup_header As label:
             Align: =Align.Center
@@ -1063,7 +1063,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =16
+            ZIndex: =13
 
         knop_verwijder As button:
             BorderStyle: =BorderStyle.None
@@ -1097,7 +1097,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =397
             Y: =455
-            ZIndex: =17
+            ZIndex: =14
 
         knop_annuleer As button:
             BorderStyle: =BorderStyle.None
@@ -1116,7 +1116,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =810
             Y: =455
-            ZIndex: =18
+            ZIndex: =15
 
         knop_archiveer As button:
             BorderStyle: =BorderStyle.None
@@ -1152,7 +1152,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =603
             Y: =455
-            ZIndex: =27
+            ZIndex: =24
 
     Group8 As group:
         Height: =5
@@ -1167,10 +1167,11 @@ students_screen As screen:
             Icon: =Icon.Import
             Rotation: |
                 =90
+            Visible: =isPopupExcelFileScoresOpen
             Width: =25
-            X: =180
-            Y: =127
-            ZIndex: =2
+            X: =589
+            Y: =522
+            ZIndex: =41
 
         AttachControl_2 As attachments:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -1212,18 +1213,20 @@ students_screen As screen:
             PressedFill: =RGBA(0, 0, 0, 0)
             Size: =20
             Tooltip: =
+            Visible: =isPopupExcelFileScoresOpen
             Width: =86
-            X: =175
-            Y: =30
-            ZIndex: =3
+            X: =584
+            Y: =425
+            ZIndex: =42
 
         Label17_1 As label:
             Color: =RGBA(255, 255, 255, 1)
             Height: =29
             Text: ="Scores uploaden"
-            X: =202
-            Y: =125
-            ZIndex: =4
+            Visible: =isPopupExcelFileScoresOpen
+            X: =611
+            Y: =520
+            ZIndex: =43
 
     groep_popup_sendscore As group:
         Height: =5
@@ -1237,7 +1240,7 @@ students_screen As screen:
             Height: =768
             Visible: =SendMailBoxOpen
             Width: =1366
-            ZIndex: =19
+            ZIndex: =16
 
         popup_box_2 As button:
             AutoDisableOnSelect: =false
@@ -1250,7 +1253,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =20
+            ZIndex: =17
 
         popup_text_2 As label:
             Align: =Align.Center
@@ -1265,7 +1268,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =332
-            ZIndex: =21
+            ZIndex: =18
 
         popup_header_2 As label:
             Align: =Align.Center
@@ -1278,7 +1281,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =22
+            ZIndex: =19
 
         knop_verwijder_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1297,7 +1300,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =726
             Y: =455
-            ZIndex: =23
+            ZIndex: =20
 
         knop_annuleer_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1316,7 +1319,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =486
             Y: =455
-            ZIndex: =24
+            ZIndex: =21
 
     groep_popup_sendpdf As group:
         Height: =5
@@ -1330,7 +1333,7 @@ students_screen As screen:
             Height: =768
             Visible: =PDFisMade
             Width: =1366
-            ZIndex: =28
+            ZIndex: =25
 
         popup_box_3 As button:
             AutoDisableOnSelect: =false
@@ -1343,7 +1346,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =29
+            ZIndex: =26
 
         popup_text_3 As label:
             Align: =Align.Center
@@ -1355,7 +1358,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =332
-            ZIndex: =30
+            ZIndex: =27
 
         popup_header_3 As label:
             Align: =Align.Center
@@ -1368,7 +1371,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =31
+            ZIndex: =28
 
         knop_sendPDF As button:
             BorderStyle: =BorderStyle.None
@@ -1392,7 +1395,7 @@ students_screen As screen:
             Visible: =PDFisMade
             X: =726
             Y: =455
-            ZIndex: =32
+            ZIndex: =29
 
         knop_annuleer_3 As button:
             BorderStyle: =BorderStyle.None
@@ -1415,7 +1418,65 @@ students_screen As screen:
             Visible: =PDFisMade
             X: =486
             Y: =455
-            ZIndex: =33
+            ZIndex: =30
+
+    Button1 As button:
+        Align: =Align.Left
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        HoverFill: =
+        OnSelect: =Set(isPopupExcelFileScoresOpen, true);
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedColor: =RGBA(128, 128, 128, 1)
+        PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Excel uploaden"
+        X: =180
+        Y: =119
+        ZIndex: =37
+
+    Rectangle9 As rectangle:
+        Fill: =RGBA(45, 45, 45, 0.8)
+        Height: =768
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =1366
+        ZIndex: =38
+
+    Rectangle10 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =
+        Fill: =RGBA(60, 60, 60, 1)
+        Height: =455
+        HoverFill: =
+        PressedFill: =
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =806
+        X: =280
+        Y: =157
+        ZIndex: =39
+
+    Icon19 As icon.Cancel:
+        Color: =RGBA(192, 5, 230, 1)
+        Height: =35
+        Icon: =Icon.Cancel
+        OnSelect: =Set(isPopupExcelFileScoresOpen, false);
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =35
+        X: =1030
+        Y: =175
+        ZIndex: =40
 
     removeArchivedPopUp As group:
         Height: =5
@@ -1429,7 +1490,7 @@ students_screen As screen:
             Height: =768
             Visible: =varShowDeleteArchivedPopUp
             Width: =1366
-            ZIndex: =34
+            ZIndex: =31
 
         popup_box_17 As button:
             AutoDisableOnSelect: =false
@@ -1442,7 +1503,7 @@ students_screen As screen:
             Width: =505
             X: =431
             Y: =255
-            ZIndex: =35
+            ZIndex: =32
 
         popup_header_15 As label:
             Align: =Align.Center
@@ -1455,7 +1516,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =261
-            ZIndex: =36
+            ZIndex: =33
 
         knop_toevoegen_11 As button:
             BorderStyle: =BorderStyle.None
@@ -1479,7 +1540,7 @@ students_screen As screen:
             Visible: =varShowDeleteArchivedPopUp
             X: =487
             Y: =415
-            ZIndex: =37
+            ZIndex: =34
 
         knop_annuleer_16 As button:
             BorderStyle: =BorderStyle.None
@@ -1498,7 +1559,7 @@ students_screen As screen:
             Visible: =varShowDeleteArchivedPopUp
             X: =727
             Y: =415
-            ZIndex: =38
+            ZIndex: =35
 
         Label9_5 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1508,7 +1569,7 @@ students_screen As screen:
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =39
+            ZIndex: =36
 
     Group6 As group:
         Height: =5
@@ -1531,7 +1592,7 @@ students_screen As screen:
             Width: =75
             X: =635
             Y: =127
-            ZIndex: =5
+            ZIndex: =2
 
         Label17 As label:
             Align: =Align.Right
@@ -1541,7 +1602,56 @@ students_screen As screen:
             Width: =433
             X: =202
             Y: =123
-            ZIndex: =6
+            ZIndex: =3
+
+    Label6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =56
+        Size: =18
+        Text: ="Scores uploaden"
+        Width: =384
+        X: =491
+        Y: =165
+        ZIndex: =44
+
+    Label22 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =88
+        Text: ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden."
+        Width: =721
+        X: =322
+        Y: =210
+        ZIndex: =45
+
+    Label23 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Text: |-
+            ="Naam Examen:"
+        X: =322
+        Y: =292
+        ZIndex: =46
+
+    TextInput3 As text:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 1)
+        Default: =
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Lighter
+        HintText: ="'Examen 1'"
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PaddingLeft: =5
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
+        X: =456
+        Y: =292
+        ZIndex: =47
 
     loadingOn_1 As group:
         Height: =5
@@ -1556,7 +1666,7 @@ students_screen As screen:
             Height: =768
             Visible: =isLoading
             Width: =1366
-            ZIndex: =25
+            ZIndex: =22
 
         spinner_loading_1 As image:
             Height: =175
@@ -1565,5 +1675,5 @@ students_screen As screen:
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =26
+            ZIndex: =23
 
