@@ -1637,6 +1637,7 @@ students_screen As screen:
     TextInput3 As text:
         BorderStyle: =BorderStyle.None
         BorderThickness: =0
+        Clear: =true
         Color: =RGBA(255, 255, 255, 1)
         Default: =
         DisabledColor: =RGBA(255, 255, 255, 1)
@@ -1646,6 +1647,7 @@ students_screen As screen:
         HintText: ="'Examen 1'"
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(0, 0, 0, 0)
+        Italic: =true
         PaddingLeft: =5
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
