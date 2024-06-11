@@ -1670,6 +1670,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "students_screen.Label25.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "students_screen.Label25.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 19,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "isNotExcelFileError"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "students_screen",
+                "type": "students_screen.Label25"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "isNotExcelFileError"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "navigatie_component.Image3.AccessibleLabel"
                 }
               ],
@@ -7789,17 +7829,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.scoreUploadFlowDone"
+                  "fullyQualifiedName": "App.isExcelFileError"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.scoreUploadFlowDone",
+                  "fullyQualifiedName": "App.isExcelFileError",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "scoreUploadFlowDone",
+                "member": "isExcelFileError",
                 "module": "App",
                 "type": "App"
               }
@@ -7890,6 +7930,36 @@
               },
               "properties": {
                 "member": "CurrentScreen",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 12
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.scoreUploadFlowDone"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.scoreUploadFlowDone",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "scoreUploadFlowDone",
                 "module": "App",
                 "type": "App"
               }
