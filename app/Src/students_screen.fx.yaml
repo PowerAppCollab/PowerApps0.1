@@ -1441,6 +1441,7 @@ students_screen As screen:
         BorderColor: =
         BorderStyle: =BorderStyle.None
         BorderThickness: =0
+        Color: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
@@ -1457,7 +1458,7 @@ students_screen As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Text: ="Excel uploaden"
+        Text: ="Score uploaden"
         X: =180
         Y: =119
         ZIndex: =35
@@ -1635,8 +1636,16 @@ students_screen As screen:
     Label22 As label:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Lighter
-        Height: =88
-        Text: ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden."
+        Height: =171
+        Overflow: =Overflow.Scroll
+        Text: |-
+            ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden.
+            
+            Het bestand moet aan de volgende criteria voldoen:
+            - Het bestand moet een '.xlsx'-bestand zijn.
+            - De gegevens staan in een tabel genaamd 'Tabel1'.
+            - Er moet een 'Average score' kolom bestaan waar de behaalde scores in staan.
+            - Er moet een 'Email' kolom bestaan waar de juiste email in staat van de student."
         Visible: =isPopupExcelFileScoresOpen
         Width: =721
         X: =322
@@ -1650,7 +1659,7 @@ students_screen As screen:
             ="Naam Examen:"
         Visible: =isPopupExcelFileScoresOpen
         X: =322
-        Y: =312
+        Y: =389
         ZIndex: =44
 
     TextInput3 As text:
@@ -1672,7 +1681,7 @@ students_screen As screen:
         PressedFill: =
         Visible: =isPopupExcelFileScoresOpen
         X: =456
-        Y: =312
+        Y: =389
         ZIndex: =45
 
     Label25 As label:
@@ -1718,6 +1727,6 @@ students_screen As screen:
         Visible: =noExamNameError && isPopupExcelFileScoresOpen
         Width: =265
         X: =445
-        Y: =292
+        Y: =369
         ZIndex: =49
 
