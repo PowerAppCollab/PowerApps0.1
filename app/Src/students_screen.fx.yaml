@@ -563,7 +563,12 @@ students_screen As screen:
             Label7_5 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Voornaam & " " & gallery_students.Selected.Achternaam
+                Text: |
+                    =If(
+                        !editStudentData, 
+                    gallery_students.Selected.Voornaam & " " & gallery_students.Selected.Achternaam,
+                    " "
+                    )
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -578,7 +583,12 @@ students_screen As screen:
             Label7_6 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Telefoonnummer
+                Text: |
+                    =If(
+                        !editStudentData, 
+                    gallery_students.Selected.Telefoonnummer,
+                    " "
+                    )
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -593,7 +603,12 @@ students_screen As screen:
             Label7_7 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.Email
+                Text: |
+                    =If(
+                        !editStudentData, 
+                    gallery_students.Selected.Email,
+                    " "
+                    )
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -608,7 +623,12 @@ students_screen As screen:
             Label7_8 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.'Werkzaam Bij'
+                Text: |
+                    =If(
+                        !editStudentData, 
+                    gallery_students.Selected.'Werkzaam Bij',
+                    " "
+                    )
                 Visible: |
                     =If(
                         IsBlank(gallery_students.Selected.Email),
@@ -620,20 +640,230 @@ students_screen As screen:
                 Y: =181
                 ZIndex: =13
 
-            Label7_9 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =FontWeight.Lighter
-                Text: =gallery_students.Selected.course
-                Visible: |
-                    =If(
-                        IsBlank(gallery_students.Selected.Email),
-                        false,
-                        true
-                    )
-                Width: =315
-                X: =233
-                Y: =221
-                ZIndex: =14
+        TextInputName_1 As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: |
+                =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam) & " " & Text(gallery_students.Selected.Achternaam)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =42
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =10
+            PaddingLeft: =4
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =editStudentData
+            Width: =255
+            X: =233
+            Y: =60
+            ZIndex: =19
+
+        Group17_4 As group:
+            Height: =5
+            Width: =5
+            X: =-512
+            Y: =37
+            ZIndex: =19
+
+            Container5_4 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =40
+                RadiusBottomLeft: =10
+                RadiusBottomRight: =10
+                RadiusTopLeft: =10
+                RadiusTopRight: =10
+                Width: =If(editNote = true, 80, 43)
+                X: =527
+                ZIndex: =15
+
+            Icon14_10 As icon.Edit:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =28
+                Icon: =Icon.Edit
+                OnSelect: |-
+                    =If(editStudentData = true, Set(editStudentData, false), Set(editStudentData, true));
+                    
+                    Refresh(studenten_tabel)
+                Visible: =!editStudentData
+                Width: =34
+                X: =532
+                Y: =5
+                ZIndex: =16
+
+            Icon14_11 As icon.Edit:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =28
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =If(editStudentData = true, Set(editStudentData, false), Set(editStudentData, true));
+                    
+                    Reset(TextInputName_1);
+                    Reset(TextInputEmail_1);
+                    Reset(TextInputPhoneNumber_1);
+                    Reset(TextInputWerkZaamBij);
+                Visible: =editStudentData
+                Width: =34
+                X: =532
+                Y: =5
+                ZIndex: =17
+
+            Icon14_12 As icon.Edit:
+                Color: =RGBA(192, 5, 230, 1)
+                Height: =28
+                Icon: =Icon.Check
+                OnSelect: |
+                    =// Split the text input into first name and surname
+                    Set(varSplitText, Split(TextInputName_1.Text, " "));
+                    
+                    // Assign the first part to FirstName
+                    Set(FirstName, First(varSplitText).Value);
+                    
+                    // Assign the last part to SurName
+                    Set(SurName, Last(varSplitText).Value);
+                    
+                    // Check if the selected studentID exists in the studenten_tabel collection
+                    If(
+                        IsBlank(
+                            LookUp(
+                                studenten_tabel,
+                                studentID = gallery_students.Selected.studentID
+                            )
+                        ),
+                        // If studentID doesn't exist, create a new record
+                        Patch(
+                            studenten_tabel,
+                            Defaults(studenten_tabel),
+                            {
+                                Voornaam: FirstName,
+                                Achternaam: SurName,
+                                Email: TextInputEmail_1.Text,
+                                Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                'Werkzaam Bij': TextInputWerkZaamBij.Text
+                            }
+                        ),
+                        // If studentID exists, update the existing record
+                        Patch(
+                            studenten_tabel,
+                            LookUp(
+                                studenten_tabel,
+                                studentID = gallery_students.Selected.studentID
+                            ),
+                            {
+                                Voornaam: FirstName,
+                                Achternaam: SurName,
+                                Email: TextInputEmail_1.Text,
+                                Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                'Werkzaam Bij': TextInputWerkZaamBij.Text
+                            }
+                        )
+                    );
+                    
+                    // Toggle the editStudentData variable
+                    If(
+                        editStudentData,
+                        Set(editStudentData, false),
+                        Set(editStudentData, true)
+                    );
+                    
+                    // Reset the input fields
+                    Reset(TextInputName_1);
+                    Reset(TextInputEmail_1);
+                    Reset(TextInputPhoneNumber_1);
+                    Reset(TextInputWerkZaamBij);
+                Visible: =editStudentData
+                Width: =34
+                X: =566
+                Y: =5
+                ZIndex: =18
+
+        TextInputEmail_1 As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Email)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =51
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =10
+            PaddingLeft: =4
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =editStudentData
+            Width: =349
+            X: =233
+            Y: =136
+            ZIndex: =20
+
+        TextInputPhoneNumber_1 As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Telefoonnummer)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =41
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =10
+            PaddingLeft: =4
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =editStudentData
+            Width: =163
+            X: =233
+            Y: =102
+            ZIndex: =21
+
+        TextInputWerkZaamBij As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: |
+                =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).'Werkzaam Bij')
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =42
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =10
+            PaddingLeft: =4
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =editStudentData
+            Width: =255
+            X: =233
+            Y: =183
+            ZIndex: =22
 
     container_9 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
