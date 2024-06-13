@@ -638,11 +638,17 @@ courses_screen_1 As screen:
                     gallery_courses_2.Selected // The record you want to delete
                 );
                 
-                    Patch(
+                Patch(
+                    studenten_tabel,
+                    LookUp(
                         studenten_tabel,
-                        LookUp(studenten_tabel, course = gallery_courses_3.Selected.course),
-                        { groupID: "" }
-                    );
+                        course = gallery_students.Selected.course
+                    ),
+                    {
+                        course: ""
+                    }
+                );
+                
                 
                 Set(varShowDeleteCoursePopup, false); // Hides the popup after the operations
             RadiusBottomLeft: =6
