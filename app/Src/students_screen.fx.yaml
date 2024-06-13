@@ -1436,15 +1436,14 @@ students_screen As screen:
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
                     //true
                     Set(isPopupExcelFileScoresOpen, false);
-                    //Set(errorArray; 
-                    uploadScoreFiles.Run(
+                    Set(failedEmails, uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
                             name: Last(Self.Attachments).Name
                         },
-                        TextInput3.Text
-                    //)
+                        TextInput3.Text)
                     );
+                    ClearCollect(failedEmailsCollection, failedEmails);
                     Reset(Self);
                     Set(isLoading, false);
                     Set(isExcelFileError, false),
@@ -1964,4 +1963,16 @@ students_screen As screen:
         X: =445
         Y: =369
         ZIndex: =49
+
+    Label22_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =110
+        Overflow: =Overflow.Scroll
+        Text: =Concat(failedEmailsCollection, ";")
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =283
+        X: =340
+        Y: =467
+        ZIndex: =50
 
