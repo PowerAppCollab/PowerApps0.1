@@ -1202,12 +1202,13 @@ students_screen As screen:
                             name: Last(Self.Attachments).Name
                         }
                     ));
-                    Set(isExcelFileError, false);
                     Reset(Self);
                     Set(isLoading, false);
-                    Refresh(scores),
-                    Set(isExcelFileError, true);
-                    Reset(Self)
+                    Set(isExcelFileError, false),
+                    Reset(Self);
+                    Set(isLoading, false);
+                    Refresh(scores);
+                    Set(isExcelFileError, true)
                 )
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1614,6 +1615,7 @@ students_screen As screen:
         Height: =56
         Size: =18
         Text: ="Scores uploaden"
+        Visible: =isPopupExcelFileScoresOpen
         Width: =384
         X: =491
         Y: =165
@@ -1624,6 +1626,7 @@ students_screen As screen:
         FontWeight: =FontWeight.Lighter
         Height: =88
         Text: ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden."
+        Visible: =isPopupExcelFileScoresOpen
         Width: =721
         X: =322
         Y: =210
@@ -1634,6 +1637,7 @@ students_screen As screen:
         FontWeight: =FontWeight.Lighter
         Text: |-
             ="Naam Examen:"
+        Visible: =isPopupExcelFileScoresOpen
         X: =322
         Y: =292
         ZIndex: =46
@@ -1655,13 +1659,14 @@ students_screen As screen:
         PaddingLeft: =5
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =
+        Visible: =isPopupExcelFileScoresOpen
         X: =456
         Y: =292
         ZIndex: =47
 
     Label25 As label:
         Text: ="Error"
-        Visible: =isNotExcelFileError
+        Visible: =isPopupExcelFileScoresOpen
         X: =374
         Y: =347
         ZIndex: =48
