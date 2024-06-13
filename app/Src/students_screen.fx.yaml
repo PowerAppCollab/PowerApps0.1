@@ -1434,17 +1434,22 @@ students_screen As screen:
                 
                     Set(noExamNameError, false);
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
+                    //true
                     Set(isPopupExcelFileScoresOpen, false);
-                    Set(scoreUploadFlowDone, uploadScoreFiles.Run(
+                    //Set(errorArray; 
+                    uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
                             name: Last(Self.Attachments).Name
                         },
                         TextInput3.Text
-                    ));
+                    //)
+                    );
                     Reset(Self);
                     Set(isLoading, false);
                     Set(isExcelFileError, false),
+                
+                    //false
                     Reset(Self);
                     Set(isLoading, false);
                     Refresh(scores);
