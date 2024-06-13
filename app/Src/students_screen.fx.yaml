@@ -1426,6 +1426,7 @@ students_screen As screen:
             Items: =
             OnAddFile: |
                 =Set(isLoading, true);
+                Set(ErrorWhileUploading, false);
                 
                 If(TextInput3.Text = "",
                     Set(noExamNameError, true);
@@ -1434,8 +1435,11 @@ students_screen As screen:
                 
                     Set(noExamNameError, false);
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
+                
                     //true
                     Set(isPopupExcelFileScoresOpen, false);
+                
+                    //automate
                     Set(failedEmails, uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
@@ -1443,7 +1447,19 @@ students_screen As screen:
                         },
                         TextInput3.Text)
                     );
+                
+                    //check if errors in email uploading:
+                    If(IsBlank(failedEmails),
+                    Set(ErrorWhileUploading, false),
+                    Set(ErrorWhileUploading, true);
+                
+                    //create collection
                     ClearCollect(failedEmailsCollection, failedEmails);
+                    Set(testArray, failedEmails.failedemails);
+                    ClearCollect(splitEmails,Split(testArray, ";"))
+                    );
+                
+                    //reset vars
                     Reset(Self);
                     Set(isLoading, false);
                     Set(isExcelFileError, false),
@@ -1963,16 +1979,4 @@ students_screen As screen:
         X: =445
         Y: =369
         ZIndex: =49
-
-    Label22_1 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Lighter
-        Height: =110
-        Overflow: =Overflow.Scroll
-        Text: =Concat(failedEmailsCollection, ";")
-        Visible: =isPopupExcelFileScoresOpen
-        Width: =283
-        X: =340
-        Y: =467
-        ZIndex: =50
 
