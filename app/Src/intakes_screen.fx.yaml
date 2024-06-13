@@ -1435,6 +1435,32 @@ intakes_screen As screen:
             Y: =130
             ZIndex: =16
 
+        TextInputPhoneNumber As text:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =Text(LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).Telefoonnummer)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =41
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Mode: =TextMode.MultiLine
+            PaddingBottom: =10
+            PaddingLeft: =4
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =editIntakeData
+            Width: =163
+            X: =246
+            Y: =168
+            ZIndex: =18
+
         Group1_1 As group:
             Height: =5
             Width: =5
@@ -1546,32 +1572,6 @@ intakes_screen As screen:
                 X: =246
                 Y: =169
                 ZIndex: =9
-
-        TextInputPhoneNumber As text:
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
-            Default: =Text(LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).Telefoonnummer)
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =41
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Mode: =TextMode.MultiLine
-            PaddingBottom: =10
-            PaddingLeft: =4
-            PaddingRight: =10
-            PaddingTop: =10
-            PressedBorderColor: =
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =
-            Visible: =editIntakeData
-            Width: =163
-            X: =246
-            Y: =168
-            ZIndex: =18
 
     Group21 As group:
         Height: =5
