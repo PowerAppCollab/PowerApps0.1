@@ -1387,113 +1387,6 @@ students_screen As screen:
             Y: =455
             ZIndex: =22
 
-    Group8 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =28
-
-        Icon10 As icon.Import:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =25
-            Icon: =Icon.Import
-            Rotation: |
-                =90
-            Visible: =isPopupExcelFileScoresOpen
-            Width: =25
-            X: =628
-            Y: =522
-            ZIndex: =39
-
-        AttachControl_2 As attachments:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 0, 0, 0)
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
-            DropTargetBorderColor: =RGBA(0, 0, 0, 0)
-            DropTargetBorderStyle: =BorderStyle.None
-            DropTargetTextColor: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =152
-            HoverBorderColor: =
-            HoverColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            IsInDataCard: =true
-            Items: =
-            OnAddFile: |
-                =Set(isLoading, true);
-                Set(ErrorWhileUploading, false);
-                
-                If(TextInput3.Text = "",
-                    Set(noExamNameError, true);
-                    Set(isLoading, false);
-                    Set(isExcelFileError, false),
-                
-                    Set(noExamNameError, false);
-                    If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
-                
-                    //true
-                    Set(isPopupExcelFileScoresOpen, false);
-                
-                    //automate
-                    Set(failedEmails, uploadScoreFiles.Run(
-                        {
-                            contentBytes: Last(Self.Attachments).Value,
-                            name: Last(Self.Attachments).Name
-                        },
-                        TextInput3.Text)
-                    );
-                
-                    //check if errors in email uploading:
-                    If(IsBlank(failedEmails),
-                    Set(ErrorWhileUploading, false),
-                    Set(ErrorWhileUploading, true);
-                
-                    //create collection
-                    ClearCollect(failedEmailsCollection, failedEmails);
-                    Set(testArray, failedEmails.failedemails);
-                    ClearCollect(splitEmails,Split(testArray, ";"))
-                    );
-                
-                    //reset vars
-                    Reset(Self);
-                    Set(isLoading, false);
-                    Set(isExcelFileError, false),
-                
-                    //false
-                    Reset(Self);
-                    Set(isLoading, false);
-                    Refresh(scores);
-                    Set(isExcelFileError, true)
-                    )
-                )
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Size: =20
-            Tooltip: =
-            Visible: =isPopupExcelFileScoresOpen
-            Width: =86
-            X: =623
-            Y: =425
-            ZIndex: =40
-
-        Label17_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =29
-            Text: ="Klik hier"
-            Visible: =isPopupExcelFileScoresOpen
-            X: =650
-            Y: =520
-            ZIndex: =41
-
     groep_popup_sendscore As group:
         Height: =5
         Width: =5
@@ -1883,68 +1776,15 @@ students_screen As screen:
             Y: =123
             ZIndex: =3
 
-    Label22 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Lighter
-        Height: =171
-        Overflow: =Overflow.Scroll
-        Text: |-
-            ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden.
-            
-            Het bestand moet aan de volgende criteria voldoen:
-            - Het bestand moet een '.xlsx'-bestand zijn.
-            - De gegevens staan in een tabel genaamd 'Tabel1'.
-            - Er moet een 'Average score' kolom bestaan waar de behaalde scores in staan.
-            - Er moet een 'Email' kolom bestaan waar de juiste email in staat van de student."
-        Visible: =isPopupExcelFileScoresOpen
-        Width: =721
-        X: =322
-        Y: =210
-        ZIndex: =43
-
-    Label23 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Lighter
-        Text: |-
-            ="Naam Examen:"
-        Visible: =isPopupExcelFileScoresOpen
-        X: =322
-        Y: =389
-        ZIndex: =44
-
-    TextInput3 As text:
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =0
-        Clear: =true
-        Color: =RGBA(255, 255, 255, 1)
-        Default: =
-        DisabledColor: =RGBA(255, 255, 255, 1)
-        DisabledFill: =RGBA(0, 0, 0, 0)
-        Fill: =RGBA(0, 0, 0, 0)
-        FontWeight: =FontWeight.Lighter
-        HintText: ="'Examen 1'"
-        HoverColor: =RGBA(255, 255, 255, 1)
-        HoverFill: =RGBA(0, 0, 0, 0)
-        Italic: =true
-        PaddingLeft: =5
-        PressedColor: =RGBA(255, 255, 255, 1)
-        PressedFill: =
-        Visible: =isPopupExcelFileScoresOpen
-        X: =456
-        Y: =389
-        ZIndex: =45
-
-    Label25 As label:
-        Align: =Align.Center
+    Label26 As label:
         Color: =RGBA(184, 0, 0, 1)
         FontWeight: =FontWeight.Lighter
-        Height: =74
-        Text: ="Het bestand moet een '.xlsx' bestand zijn"
-        Visible: =isExcelFileError
-        Width: =406
-        X: =480
-        Y: =453
-        ZIndex: =46
+        Text: ="Voer een naam in"
+        Visible: =noExamNameError && isPopupExcelFileScoresOpen
+        Width: =265
+        X: =445
+        Y: =369
+        ZIndex: =48
 
     loadingOn_1 As group:
         Height: =5
@@ -1968,15 +1808,175 @@ students_screen As screen:
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =48
+            ZIndex: =49
 
-    Label26 As label:
-        Color: =RGBA(184, 0, 0, 1)
-        FontWeight: =FontWeight.Lighter
-        Text: ="Voer een naam in"
-        Visible: =noExamNameError && isPopupExcelFileScoresOpen
-        Width: =265
-        X: =445
-        Y: =369
-        ZIndex: =49
+    Group8 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =50
+
+        Icon10 As icon.Import:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.Import
+            Rotation: |
+                =90
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            Width: =25
+            X: =628
+            Y: =522
+            ZIndex: =39
+
+        AttachControl_2 As attachments:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DropTargetBackgroundColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderColor: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            DropTargetTextColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =152
+            HoverBorderColor: =
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            IsInDataCard: =true
+            Items: =
+            OnAddFile: |
+                =Set(isLoading, true);
+                Set(ErrorWhileUploading, false);
+                
+                If(TextInput3.Text = "",
+                    Set(noExamNameError, true);
+                    Set(isLoading, false);
+                    Set(isExcelFileError, false),
+                
+                    Set(noExamNameError, false);
+                    If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
+                
+                    //true
+                    Set(isPopupExcelFileScoresOpen, false);
+                
+                    //automate
+                    Set(failedEmails, uploadScoreFiles.Run(
+                        {
+                            contentBytes: Last(Self.Attachments).Value,
+                            name: Last(Self.Attachments).Name
+                        },
+                        TextInput3.Text)
+                    );
+                
+                    //check if errors in email uploading:
+                    If(IsBlank(failedEmails),
+                    Set(ErrorWhileUploading, false),
+                    Set(ErrorWhileUploading, true);
+                
+                    //create collection
+                    ClearCollect(failedEmailsCollection, failedEmails);
+                    Set(testArray, failedEmails.failedemails);
+                    ClearCollect(splitEmails,Split(testArray, ";"))
+                    );
+                
+                    //reset vars
+                    Reset(Self);
+                    Set(isLoading, false);
+                    Set(isExcelFileError, false),
+                
+                    //false
+                    Reset(Self);
+                    Set(isLoading, false);
+                    Refresh(scores);
+                    Set(isExcelFileError, true)
+                    )
+                )
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Size: =20
+            Tooltip: =
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            Width: =86
+            X: =623
+            Y: =425
+            ZIndex: =40
+
+        Label17_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =29
+            Text: ="Klik hier"
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            X: =650
+            Y: =520
+            ZIndex: =41
+
+        Label22 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =171
+            Overflow: =Overflow.Scroll
+            Text: |-
+                ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden.
+                
+                Het bestand moet aan de volgende criteria voldoen:
+                - Het bestand moet een '.xlsx'-bestand zijn.
+                - De gegevens staan in een tabel genaamd 'Tabel1'.
+                - Er moet een 'Average score' kolom bestaan waar de behaalde scores in staan.
+                - Er moet een 'Email' kolom bestaan waar de juiste email in staat van de student."
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            Width: =721
+            X: =322
+            Y: =210
+            ZIndex: =43
+
+        Label23 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: |-
+                ="Naam Examen:"
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            X: =322
+            Y: =389
+            ZIndex: =44
+
+        TextInput3 As text:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Clear: =true
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
+            HintText: ="'Examen 1'"
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Italic: =true
+            PaddingLeft: =5
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            X: =456
+            Y: =389
+            ZIndex: =45
+
+        Label25 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =74
+            Text: ="Het bestand moet een '.xlsx' bestand zijn"
+            Visible: =isExcelFileError && !ErrorWhileUploading
+            Width: =406
+            X: =480
+            Y: =453
+            ZIndex: =46
 
