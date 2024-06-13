@@ -3,6 +3,8 @@ students_screen As screen:
     OnVisible: |+
         =Refresh(studenten_tabel);
         Set(scoresToevoegen, false);
+        Set(isPopupExcelFileScoresOpen, false);
+        Set(isExcelFileError, false)
         
 
     navigatie_component_3 As navigatie_component:
@@ -1434,7 +1436,7 @@ students_screen As screen:
         Fill: =RGBA(0, 0, 0, 0)
         FontWeight: =FontWeight.Normal
         HoverFill: =
-        OnSelect: =Set(isPopupExcelFileScoresOpen, true);
+        OnSelect: =Set(isPopupExcelFileScoresOpen, true); Set(isExcelFileError, false); Reset(AttachControl_2)
         PaddingBottom: =0
         PaddingLeft: =0
         PaddingRight: =0
@@ -1476,7 +1478,7 @@ students_screen As screen:
         Color: =RGBA(192, 5, 230, 1)
         Height: =35
         Icon: =Icon.Cancel
-        OnSelect: =Set(isPopupExcelFileScoresOpen, false);
+        OnSelect: =Set(isPopupExcelFileScoresOpen, false); Set(isExcelFileError, false)
         Visible: =isPopupExcelFileScoresOpen
         Width: =35
         X: =1030
@@ -1666,7 +1668,7 @@ students_screen As screen:
 
     Label25 As label:
         Text: ="Error"
-        Visible: =isPopupExcelFileScoresOpen
+        Visible: =isExcelFileError
         X: =374
         Y: =347
         ZIndex: =48
