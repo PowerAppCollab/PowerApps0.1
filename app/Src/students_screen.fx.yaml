@@ -644,7 +644,7 @@ students_screen As screen:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
             Default: |
-                =Text(LookUp(intakes, intakeID = gallery_intakes.Selected.intakeID).Voornaam) & " " & Text(gallery_intakes.Selected.Achternaam)
+                =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam) & " " & Text(gallery_students.Selected.Achternaam)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
@@ -707,9 +707,9 @@ students_screen As screen:
                 OnSelect: |-
                     =If(editStudentData = true, Set(editStudentData, false), Set(editStudentData, true));
                     
-                    Reset(TextInputName);
-                    Reset(TextInputEmail);
-                    Reset(TextInputPhoneNumber);
+                    Reset(TextInputName_1);
+                    Reset(TextInputEmail_1);
+                    Reset(TextInputPhoneNumber_1);
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
@@ -723,7 +723,7 @@ students_screen As screen:
                 Icon: =Icon.Check
                 OnSelect: |
                     =// Split the text input into first name and surname
-                    Set(varSplitText, Split(TextInputName.Text, " "));
+                    Set(varSplitText, Split(TextInputName_1.Text, " "));
                     
                     // Assign the first part to FirstName
                     Set(FirstName, First(varSplitText).Value);
@@ -731,7 +731,7 @@ students_screen As screen:
                     // Assign the last part to SurName
                     Set(SurName, Last(varSplitText).Value);
                     
-                    // Check if the selected intakeID exists in the intakes collection
+                    // Check if the selected studentID exists in the studenten_tabel collection
                     If(
                         IsBlank(
                             LookUp(
@@ -739,18 +739,19 @@ students_screen As screen:
                                 studentID = gallery_students.Selected.studentID
                             )
                         ),
-                        // If intakeID doesn't exist, create a new record
+                        // If studentID doesn't exist, create a new record
                         Patch(
                             studenten_tabel,
                             Defaults(studenten_tabel),
                             {
                                 Voornaam: FirstName,
                                 Achternaam: SurName,
-                                Email: TextInputEmail.Text,
-                                Telefoonnummer: TextInputPhoneNumber.Text
+                                Email: TextInputEmail_1.Text,
+                                Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                'Werkzaam Bij': TextInputWerkZaamBij.Text
                             }
                         ),
-                        // If intakeID exists, update the existing record
+                        // If studentID exists, update the existing record
                         Patch(
                             studenten_tabel,
                             LookUp(
@@ -760,13 +761,14 @@ students_screen As screen:
                             {
                                 Voornaam: FirstName,
                                 Achternaam: SurName,
-                                Email: TextInputEmail.Text,
-                                Telefoonnummer: TextInputPhoneNumber.Text
+                                Email: TextInputEmail_1.Text,
+                                Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                'Werkzaam Bij': TextInputWerkZaamBij.Text
                             }
                         )
                     );
                     
-                    // Toggle the editIntakeData variable
+                    // Toggle the editStudentData variable
                     If(
                         editStudentData,
                         Set(editStudentData, false),
@@ -774,9 +776,9 @@ students_screen As screen:
                     );
                     
                     // Reset the input fields
-                    Reset(TextInputName);
-                    Reset(TextInputEmail);
-                    Reset(TextInputPhoneNumber);
+                    Reset(TextInputName_1);
+                    Reset(TextInputEmail_1);
+                    Reset(TextInputPhoneNumber_1);
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
@@ -1816,6 +1818,18 @@ students_screen As screen:
             Y: =324
             ZIndex: =34
 
+    Label6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =56
+        Size: =18
+        Text: ="Scores uploaden"
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =384
+        X: =491
+        Y: =165
+        ZIndex: =42
+
     Group6 As group:
         Height: =5
         Width: =5
@@ -1848,18 +1862,6 @@ students_screen As screen:
             X: =202
             Y: =123
             ZIndex: =3
-
-    Label6 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =56
-        Size: =18
-        Text: ="Scores uploaden"
-        Visible: =isPopupExcelFileScoresOpen
-        Width: =384
-        X: =491
-        Y: =165
-        ZIndex: =42
 
     Label22 As label:
         Color: =RGBA(255, 255, 255, 1)
