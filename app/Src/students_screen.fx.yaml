@@ -1923,7 +1923,8 @@ students_screen As screen:
                             contentBytes: Last(Self.Attachments).Value,
                             name: Last(Self.Attachments).Name
                         },
-                        TextInput3.Text)
+                        TextInput3.Text,
+                        Dropdown1.SelectedText.Value)
                     );
                 
                     //check if errors in email uploading:
