@@ -865,6 +865,36 @@ students_screen As screen:
             Y: =183
             ZIndex: =22
 
+        Label7_9 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: |
+                =Text(
+                    Concat(
+                        Filter(
+                            groepsInhoud,
+                student_id = gallery_students.Selected.studentID),
+                        cursus,
+                        "  |  "
+                    )
+                )
+                
+                
+                //If(
+                //    !editStudentData; 
+                //" "
+                //)
+            Visible: |
+                =If(
+                    IsBlank(gallery_students.Selected.Email),
+                    false,
+                    true
+                )
+            Width: =315
+            X: =233
+            Y: =221
+            ZIndex: =23
+
     container_9 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
