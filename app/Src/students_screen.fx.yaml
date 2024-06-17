@@ -1919,7 +1919,8 @@ students_screen As screen:
                     Set(failedEmails, uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
-                            name: Last(Self.Attachments).Name
+                            name: Last(Self.Attachments).Name,
+                            cursus: Dropdown1.SelectedText
                         },
                         TextInput3.Text)
                     );
@@ -2040,7 +2041,7 @@ students_screen As screen:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Lighter
         Text: |-
-            ="Naam Examen:"
+            ="Cursus:"
         Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
         X: =322
         Y: =429
@@ -2063,6 +2064,7 @@ students_screen As screen:
         PressedColor: =RGBA(243, 243, 243, 1)
         PressedFill: =RGBA(45, 45, 45, 0.8)
         SelectionFill: =RGBA(45, 45, 45, 1)
+        Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
         X: =456
         Y: =431
         ZIndex: =54
