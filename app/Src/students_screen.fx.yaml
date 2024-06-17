@@ -2057,3 +2057,34 @@ students_screen As screen:
         Y: =227
         ZIndex: =51
 
+    Label23_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Text: |-
+            ="Naam Examen:"
+        Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+        X: =322
+        Y: =429
+        ZIndex: =52
+
+    Dropdown1 As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        ChevronBackground: =RGBA(192, 5, 230, 0.8)
+        ChevronHoverBackground: =
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(45, 45, 45, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =35
+        HoverColor: =RGBA(243, 243, 243, 1)
+        HoverFill: =RGBA(60, 60, 60, 0.8)
+        Items: =Filter(courses, name <> "All")
+        PressedColor: =RGBA(243, 243, 243, 1)
+        PressedFill: =RGBA(45, 45, 45, 0.8)
+        SelectionFill: =RGBA(45, 45, 45, 1)
+        X: =456
+        Y: =431
+        ZIndex: =54
+
