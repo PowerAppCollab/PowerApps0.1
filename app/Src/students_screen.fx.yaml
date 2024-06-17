@@ -1971,6 +1971,8 @@ students_screen As screen:
                 
                     If(IsEmpty(validEmails),
                     Set(ErrorWhileUploading, false),
+                    //TODO SUCCESF~UL
+                    
                     Set(ErrorWhileUploading, true));
                 
                     //reset vars
