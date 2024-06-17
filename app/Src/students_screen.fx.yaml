@@ -1811,12 +1811,13 @@ students_screen As screen:
 
     Label26 As label:
         Color: =RGBA(184, 0, 0, 1)
-        Height: =41
-        Text: ="Geef een benaming voor het examen."
+        Height: =29
+        Size: =11
+        Text: ="Geef de score een naam."
         Visible: =noExamNameError && isPopupExcelFileScoresOpen
-        Width: =365
-        X: =445
-        Y: =369
+        Width: =235
+        X: =457
+        Y: =368
         ZIndex: =48
 
     loadingOn_1 As group:
@@ -1904,10 +1905,11 @@ students_screen As screen:
                 =Set(isLoading, true);
                 Set(ErrorWhileUploading, false);
                 
-                If(TextInput3.Text = "",
+                If(IsBlank(TextInput3.Text),
                     Set(noExamNameError, true);
                     Set(isLoading, false);
-                    Set(isExcelFileError, false),
+                    Set(isExcelFileError, false);
+                    Reset(Self),
                 
                     Set(noExamNameError, false);
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
@@ -1963,12 +1965,10 @@ students_screen As screen:
         Label22 As label:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
-            Height: =171
+            Height: =123
             Overflow: =Overflow.Scroll
             Text: |-
-                ="Hier kunnen enkel en alleen excel bestanden van TestGorilla geupload worden.
-                
-                Het bestand moet aan de volgende criteria voldoen:
+                ="Het bestand moet aan de volgende criteria voldoen:
                 - Het bestand moet een '.xlsx'-bestand zijn.
                 - De gegevens staan in een tabel genaamd 'Tabel1'.
                 - Er moet een 'Average score' kolom bestaan waar de behaalde scores in staan.
