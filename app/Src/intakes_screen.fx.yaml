@@ -1169,7 +1169,7 @@ intakes_screen As screen:
                     PressedColor: =RGBA(0, 0, 0, 1)
                     PressedFill: =RGBA(255, 255, 255, 1)
                     SearchFields: =["Value"]
-                    SearchItems: =Choices(Status,intake_dropdownStatus.SearchText)
+                    SearchItems: =[]
                     SelectionFill: =RGBA(192, 5, 230, 0.8)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
