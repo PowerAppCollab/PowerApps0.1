@@ -1881,22 +1881,10 @@ students_screen As screen:
         Y: =60
         ZIndex: =50
 
-        Icon10 As icon.Import:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =25
-            Icon: =Icon.Import
-            Rotation: |
-                =90
-            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
-            Width: =25
-            X: =628
-            Y: =522
-            ZIndex: =39
-
         AttachControl_2 As attachments:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
-            Color: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(0, 0, 0, 0)
             DisabledFill: =RGBA(0, 0, 0, 0)
@@ -1905,9 +1893,10 @@ students_screen As screen:
             DropTargetBorderStyle: =BorderStyle.None
             DropTargetTextColor: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =152
-            HoverBorderColor: =
-            HoverColor: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
+            Height: =110
+            HoverBorderColor: =RGBA(128, 128, 128, 1)
+            HoverColor: =RGBA(128, 128, 128, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
             IsInDataCard: =true
             Items: =
@@ -1962,24 +1951,14 @@ students_screen As screen:
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
             PaddingTop: =5
-            PressedColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(237, 237, 237, 1)
             PressedFill: =RGBA(0, 0, 0, 0)
-            Size: =20
             Tooltip: =
             Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
-            Width: =86
-            X: =623
-            Y: =425
+            Width: =287
+            X: =546
+            Y: =502
             ZIndex: =40
-
-        Label17_1 As label:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =29
-            Text: ="Klik hier"
-            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
-            X: =650
-            Y: =520
-            ZIndex: =41
 
         Label22 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1996,8 +1975,8 @@ students_screen As screen:
                 - Er moet een 'Email' kolom bestaan waar de juiste email in staat van de student."
             Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
             Width: =721
-            X: =322
-            Y: =210
+            X: =323
+            Y: =227
             ZIndex: =43
 
         Label23 As label:
