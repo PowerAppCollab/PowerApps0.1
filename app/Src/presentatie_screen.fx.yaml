@@ -49,7 +49,8 @@ presentatie_screen As screen:
                 ),
                 {
                     score: score,
-                    Examen: Examen
+                    Examen: Examen,
+                    courseID: courseID
                 }
             )
         );
@@ -201,13 +202,14 @@ presentatie_screen As screen:
                 BorderStyle: =
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                Height: =517
+                Height: =475
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: =allScores
+                Items: =Filter(allScores, groupID = dropdown_courses_3.SelectedText.Value)
                 Visible: =If(presDefault = 1, true,false)
                 Width: =841
                 X: =14
                 XLabelAngle: =40
+                Y: =42
                 YAxisMax: =100
                 YAxisMin: =-5
                 ZIndex: =2
@@ -372,6 +374,37 @@ presentatie_screen As screen:
                 X: =558
                 Y: =10
                 ZIndex: =7
+
+            dropdown_courses_3 As dropdown:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderStyle: =BorderStyle.None
+                ChevronBackground: =RGBA(192, 5, 230, 1)
+                ChevronFill: =RGBA(0, 0, 0, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="All"
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =30
+                HoverFill: =RGBA(192, 5, 230, 1)
+                Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
+                PressedColor: =RGBA(0, 0, 0, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                SelectionFill: =RGBA(192, 5, 230, 1)
+                Visible: |-
+                    =If(
+                        IsEmpty(
+                            Filter(
+                                scores,
+                                studentID = gallery_students.Selected.Email
+                            )
+                        ),
+                        false,
+                        true
+                    )
+                Width: =214
+                X: =40
+                Y: =12
+                ZIndex: =8
 
         Group5 As group:
             Height: =5
