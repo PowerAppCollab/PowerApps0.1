@@ -1898,7 +1898,7 @@ intakes_screen As screen:
                     ),
                     Office365Outlook.SendEmailV2(
                         intakeInput_email_1.Text,
-                        "Intake Formulier GradeMatch",
+                        "Intake | GradeMatch",
                         "https://forms.office.com/e/eWQtPEKwSM"
                     ),
                     Reset(intakeInput_email_1);
@@ -2155,7 +2155,7 @@ intakes_screen As screen:
                 tempEmails_gallery_1.AllItems,
                 Office365Outlook.SendEmailV2(
                     Email,
-                    "Onderwerp",
+                    "Intake | GradeMatch",
                     "https://forms.office.com/e/eWQtPEKwSM"
                 )
             );
