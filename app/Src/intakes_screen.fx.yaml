@@ -1780,6 +1780,7 @@ intakes_screen As screen:
         RadiusTopRight: =0
         Size: =11
         Text: ="Individueel"
+        Visible: =sendIntakePopUpContainer
         Width: =285
         X: =395
         Y: =187
@@ -1840,6 +1841,7 @@ intakes_screen As screen:
         RadiusTopLeft: =0
         Size: =11
         Text: ="Meerdere"
+        Visible: =sendIntakePopUpContainer
         Width: =285
         X: =680
         Y: =187
@@ -1872,6 +1874,7 @@ intakes_screen As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Visible: =sendIntakePopUpContainer
             Width: =400
             X: =207
             Y: =40
@@ -1915,6 +1918,7 @@ intakes_screen As screen:
             RadiusTopRight: =0
             Size: =13
             Text: ="Intake versturen"
+            Visible: =sendIntakePopUpContainer
             Width: =200
             X: =307
             Y: =98
@@ -2087,8 +2091,8 @@ intakes_screen As screen:
             Tooltip: =
             Visible: =!uploadedEmails
             Width: =254
-            X: =388
-            Y: =145
+            X: =434
+            Y: =144
             ZIndex: =5
 
         "tempEmails_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
