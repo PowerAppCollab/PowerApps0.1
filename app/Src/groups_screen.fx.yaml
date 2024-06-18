@@ -131,7 +131,7 @@ groups_screen As screen:
                     IsEmpty(
                         Filter(
                             scores,
-                            groupID = gallery_courses_3.Selected.groupID
+                            courseID = gallery_courses_3.Selected.course 
                         )
                     ),
                     Set(
