@@ -1736,6 +1736,7 @@ intakes_screen As screen:
         OnSelect: |-
             =Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
             Set(sendIntakeEmailSucces, false);
+            Set(intakeMailsSend, false);
             Set(uploadedEmails, false);
             Reset(intakeInput_email_1);
             RemoveIf(tempEmails, true);
@@ -1835,6 +1836,7 @@ intakes_screen As screen:
         OnSelect: |-
             =Set(currPagePopupSendIntake, 2);
             Set(uploadedEmails, false);
+            Set(intakeMailsSend, false);
             RemoveIf(tempEmails, true);
             Reset(AttachControl_3)
         RadiusBottomLeft: =0
@@ -1938,7 +1940,7 @@ intakes_screen As screen:
         BorderStyle: =BorderStyle.None
         DropShadow: =DropShadow.None
         Height: =440
-        Visible: =currPagePopupSendIntake = 2
+        Visible: =currPagePopupSendIntake = 2 && sendIntakePopUpContainer
         Width: =1030
         X: =168
         Y: =232
