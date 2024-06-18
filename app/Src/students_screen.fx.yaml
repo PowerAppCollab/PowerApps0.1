@@ -245,7 +245,7 @@ students_screen As screen:
                 Color: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Lighter
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.courseID
+                Text: =ThisItem.groupID
                 Width: =220
                 X: =301
                 ZIndex: =8
@@ -312,7 +312,7 @@ students_screen As screen:
                 Visible: =scoresToevoegen
                 Width: =225
                 X: =42
-                Y: =105
+                Y: =50
                 ZIndex: =5
 
             input_score_examen As text:
@@ -335,7 +335,7 @@ students_screen As screen:
                 Visible: =scoresToevoegen
                 Width: =225
                 X: =323
-                Y: =105
+                Y: =50
                 ZIndex: =6
 
             Button2 As button:
@@ -345,7 +345,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, groupID:gallery_students.Selected.groupID, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.SelectedText.Value, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -358,6 +358,35 @@ students_screen As screen:
                 X: =42
                 Y: =150
                 ZIndex: =7
+
+        Dropdown1_1 As dropdown:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            ChevronBackground: =RGBA(192, 5, 230, 0.8)
+            ChevronHoverBackground: =
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =35
+            HoverColor: =RGBA(243, 243, 243, 1)
+            HoverFill: =RGBA(60, 60, 60, 0.8)
+            Items: |
+                =Filter(
+                    groepens,
+                    groupID in Filter(
+                        groepsInhoud,
+                        student_id = gallery_students.Selected.studentID
+                    ).groep_id
+                ).name
+            PressedColor: =RGBA(243, 243, 243, 1)
+            PressedFill: =RGBA(45, 45, 45, 0.8)
+            SelectionFill: =RGBA(45, 45, 45, 1)
+            Visible: =scoresToevoegen
+            X: =42
+            Y: =99
+            ZIndex: =8
 
     container_7 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -381,7 +410,7 @@ students_screen As screen:
                 =ForAll(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email && courseID = dropdown_courses_2.SelectedText.Value
+                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
                         ),
                         {
                             score: score,
@@ -441,7 +470,14 @@ students_screen As screen:
             Fill: =RGBA(45, 45, 45, 1)
             Height: =30
             HoverFill: =RGBA(192, 5, 230, 1)
-            Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
+            Items: |
+                =Filter(
+                    groepens,
+                    groupID in Filter(
+                        groepsInhoud,
+                        student_id = gallery_students.Selected.studentID
+                    ).groep_id
+                ).name
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
@@ -1706,6 +1742,8 @@ students_screen As screen:
             Set(noExamNameError, false);
             Set(ErrorWhileUploading, false);
             
+            Refresh(scores);
+            
             Clear(failedEmailsCollection);
             Set(testArray, "");
             Clear(splitEmails);
@@ -1868,7 +1906,7 @@ students_screen As screen:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Lighter
         Text: |-
-            ="Cursus:"
+            ="Groep:"
         Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
         X: =322
         Y: =429
@@ -1887,7 +1925,7 @@ students_screen As screen:
         Height: =35
         HoverColor: =RGBA(243, 243, 243, 1)
         HoverFill: =RGBA(60, 60, 60, 0.8)
-        Items: =Filter(courses, name <> "All")
+        Items: =groepens.name
         PressedColor: =RGBA(243, 243, 243, 1)
         PressedFill: =RGBA(45, 45, 45, 0.8)
         SelectionFill: =RGBA(45, 45, 45, 1)
