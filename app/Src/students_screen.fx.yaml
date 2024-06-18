@@ -5,7 +5,12 @@ students_screen As screen:
         Set(isLoading, false);
         Set(scoresToevoegen, false);
         Set(isPopupExcelFileScoresOpen, false);
-        Set(isExcelFileError, false)
+        Set(isExcelFileError, false);
+        
+        
+        
+        
+        
         
 
     navigatie_component_3 As navigatie_component:
@@ -299,13 +304,14 @@ students_screen As screen:
             HoverColor: =RGBA(243, 243, 243, 1)
             HoverFill: =RGBA(60, 60, 60, 0.8)
             Items: |
-                =Filter(
-                    groepens,
-                    groupID in Filter(
-                        groepsInhoud,
-                        student_id = gallery_students.Selected.studentID
-                    ).groep_id
-                ).name
+                =
+                    Filter(
+                        groepens,
+                        groupID in Filter(
+                            groepsInhoud,
+                            student_id = gallery_students.Selected.studentID
+                        ).groep_id
+                    )
             PressedColor: =RGBA(243, 243, 243, 1)
             PressedFill: =RGBA(45, 45, 45, 0.8)
             SelectionFill: =RGBA(45, 45, 45, 1)
@@ -374,7 +380,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.SelectedText.Value, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.Selected.groupID, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
                     Refresh(scores);
                 RadiusBottomLeft: =0
