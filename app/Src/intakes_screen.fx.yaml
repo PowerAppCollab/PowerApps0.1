@@ -1792,22 +1792,12 @@ intakes_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =87
             Overflow: =Overflow.Scroll
-            Text: ="Op deze pagina kunt u intakes verzenden. Het is mogelijk om zowel individuele emails als een naar een mail lijst te versturen."
-            Visible: =sendIntakePopUpContainer
+            Text: ="De email is met succes verzonden."
+            Visible: =sendIntakeEmailSucces
             Width: =586
-            X: =180
-            Y: =475
+            X: =462
+            Y: =403
             ZIndex: =22
-
-    label_email_error_1 As label:
-        Color: =RGBA(184, 0, 0, 1)
-        Height: =26
-        Text: ="Controleer het email adres."
-        Visible: =varError
-        Width: =337
-        X: =24
-        Y: =141
-        ZIndex: =27
 
     Button6_3 As button:
         BorderStyle: =BorderStyle.None
@@ -1815,7 +1805,10 @@ intakes_screen As screen:
         FontWeight: =FontWeight.Normal
         Height: =30
         HoverFill: =If(currPagePopupSendIntake = 1,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
-        OnSelect: =Set(currPagePopupSendIntake, 1)
+        OnSelect: |-
+            =Set(currPagePopupSendIntake, 1);
+            Reset(intakeInput_email_1);
+            Set(varError, false)
         RadiusBottomRight: =0
         RadiusTopRight: =0
         Size: =11
@@ -1841,12 +1834,15 @@ intakes_screen As screen:
         Y: =187
         ZIndex: =29
 
-    groep_email_input_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =29
+    Container7 As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        DropShadow: =DropShadow.None
+        Height: =337
+        Visible: =currPagePopupSendIntake = 1
+        Width: =814
+        X: =276
+        Y: =261
+        ZIndex: =30
 
         intakeInput_email_1 As text:
             BorderStyle: =BorderStyle.None
@@ -1865,10 +1861,10 @@ intakes_screen As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Width: =313
-            X: =118
-            Y: =306
-            ZIndex: =24
+            Width: =400
+            X: =207
+            Y: =40
+            ZIndex: =1
 
         knop_intakeVerzenden_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1898,17 +1894,30 @@ intakes_screen As screen:
                     Set(
                         varError,
                         false
-                    )
+                    );
+                    Set(sendIntakeEmailSucces, true)
                 );
             PressedFill: =
             RadiusBottomLeft: =0
+            RadiusBottomRight: =0
             RadiusTopLeft: =0
+            RadiusTopRight: =0
             Size: =13
             Text: ="Intake versturen"
-            Width: =165
-            X: =250
-            Y: =339
-            ZIndex: =26
+            Width: =200
+            X: =307
+            Y: =98
+            ZIndex: =2
+
+        label_email_error_1 As label:
+            Color: =RGBA(184, 0, 0, 1)
+            Height: =26
+            Text: ="Controleer het email adres."
+            Visible: =varError
+            Width: =337
+            X: =207
+            Y: =14
+            ZIndex: =3
 
     groep_succes_createStudent As group:
         Height: =5
