@@ -1936,6 +1936,7 @@ intakes_screen As screen:
         ZIndex: =31
 
     downloadTemplate_text_1 As label:
+        Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Lighter
         Height: =34
@@ -1963,7 +1964,7 @@ intakes_screen As screen:
             =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
         PressedColor: =
         PressedFill: =
-        Text: ="Knop"
+        Text: =
         X: =604
         Y: =285
         ZIndex: =33
