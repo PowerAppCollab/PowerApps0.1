@@ -810,9 +810,9 @@ groups_screen As screen:
                         groep_id = gallery_courses_3.Selected.groupID
                     ).student_id) &&
                     (
-                        StartsWith(Voornaam, SearchInput1_4.Text) ||
-                        StartsWith(Achternaam, SearchInput1_4.Text) ||
-                        StartsWith(Email, SearchInput1_4.Text)
+                        StartsWith(Voornaam, SearchInput1_3.Text) ||
+                        StartsWith(Achternaam, SearchInput1_3.Text) ||
+                        StartsWith(Email, SearchInput1_3.Text)
                     )
                 )
                 
