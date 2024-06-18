@@ -1822,7 +1822,7 @@ students_screen As screen:
         Width: =235
         X: =457
         Y: =368
-        ZIndex: =46
+        ZIndex: =45
 
     Label23_1 As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -1832,7 +1832,7 @@ students_screen As screen:
         Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
         X: =322
         Y: =429
-        ZIndex: =47
+        ZIndex: =46
 
     Dropdown1 As dropdown:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -1854,31 +1854,7 @@ students_screen As screen:
         Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
         X: =456
         Y: =431
-        ZIndex: =48
-
-    loadingOn_1 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =48
-
-        background_loading_1 As rectangle:
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Visible: =isLoading
-            Width: =1366
-            ZIndex: =45
-
-        spinner_loading_1 As image:
-            Height: =175
-            Image: ='Double Ring@2x-1.5s-200px-200px'
-            Visible: =isLoading
-            Width: =175
-            X: =595
-            Y: =292
-            ZIndex: =49
+        ZIndex: =47
 
     "Gallery2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
         DelayItemLoading: =true
@@ -1892,7 +1868,7 @@ students_screen As screen:
         Width: =708
         X: =322
         Y: =350
-        ZIndex: =50
+        ZIndex: =48
 
         Title5 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1910,6 +1886,45 @@ students_screen As screen:
             X: =20
             Y: =9
             ZIndex: =1
+
+    loadingOn_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =48
+
+        background_loading_1 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =isLoading
+            Width: =1366
+            ZIndex: =50
+
+        spinner_loading_1 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =isLoading
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =51
+
+    Label27 As label:
+        Align: =Align.Center
+        Color: =RGBA(202, 202, 202, 1)
+        Height: =123
+        Overflow: =Overflow.Scroll
+        Text: |-
+            ="Er is iets mis gegaan tijdens het uploaden, deze emails kunnen niet gekoppeld worden aan studenten in deze app. Je zal deze nu handmatig moeten toevoegen.
+            
+            Let op: Als je het bestand nog een keer upload zullen alle scores dubbel geupload zijn."
+        Visible: =ErrorWhileUploading
+        Width: =706
+        X: =337
+        Y: =227
+        ZIndex: =49
 
     Group8 As group:
         Height: =5
@@ -2058,19 +2073,4 @@ students_screen As screen:
             X: =480
             Y: =453
             ZIndex: =44
-
-    Label27 As label:
-        Align: =Align.Center
-        Color: =RGBA(202, 202, 202, 1)
-        Height: =123
-        Overflow: =Overflow.Scroll
-        Text: |-
-            ="Er is iets mis gegaan tijdens het uploaden, deze emails kunnen niet gekoppeld worden aan studenten in deze app. Je zal deze nu handmatig moeten toevoegen.
-            
-            Let op: Als je het bestand nog een keer upload zullen alle scores dubbel geupload zijn."
-        Visible: =ErrorWhileUploading
-        Width: =706
-        X: =337
-        Y: =227
-        ZIndex: =51
 
