@@ -987,7 +987,10 @@ groups_screen As screen:
                 =// Filter studenten_tabel based on the presence of student_id in groepsInhoud
                 Filter(
                     studenten_tabel,
-                    studentID in groepsInhoud.student_id && (StartsWith(
+                    (studentID in Filter(
+                        groepsInhoud,
+                        groep_id = gallery_courses_3.Selected.groupID
+                    ).student_id) && (StartsWith(
                         Voornaam,
                         SearchInput1_4.Text
                     ) || StartsWith(
@@ -1235,14 +1238,15 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |
-                =// Iterate over allDelStudentIDsForGroup and remove matching records from groepsInhoud
+            OnSelect: |-
+                =
+                // Debug: Verify content of allDelStudentIDsForGroup before removal
+                ClearCollect(debugAllDelStudentIDsForGroupBeforeRemoval, allDelStudentIDsForGroup);
+                
+                // Remove records in groepsInhoud where the ID matches any ID in allDelStudentIDsForGroup
                 ForAll(
                     allDelStudentIDsForGroup,
-                    Remove(
-                        groepsInhoud,
-                        LookUp(groepsInhoud, student_id = ThisRecord.student_id && groep_id = ThisRecord.groep_id)
-                    )
+                    RemoveIf(groepsInhoud, student_id = ThisRecord.student_id && groep_id = ThisRecord.groep_id)
                 );
                 
                 // Debug: Verify the content of groepsInhoud after removal
