@@ -1624,9 +1624,12 @@ intakes_screen As screen:
             HoverFill: =RGBA(184, 0, 0, 1)
             OnSelect: |
                 =Remove(
-                    intakes, // The name of the entity
-                    gallery_intakes.Selected // The record you want to delete
+                    intakes, gallery_intakes.Selected
                 );
+                RemoveIf(intakeNotes, intakeFormID = gallery_intakes.Selected.intakeFormID);
+                RemoveIf(intakeTestScores, intakeFormID = gallery_intakes.Selected.intakeFormID);
+                RemoveIf(intakeExtraVragen, intakeFormID = gallery_intakes.Selected.intakeFormID);
+                RemoveIf(intakeForms, intakeFormID = gallery_intakes.Selected.intakeFormID);
                 
                 Set(varShowDeleteIntakePopup, false); // Hides the popup after the operations
             RadiusBottomLeft: =6
