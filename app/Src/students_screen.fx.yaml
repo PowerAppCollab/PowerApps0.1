@@ -726,7 +726,7 @@ students_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =42
+            Height: =41
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
@@ -739,7 +739,7 @@ students_screen As screen:
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             Visible: =editStudentData
-            Width: =255
+            Width: =163
             X: =233
             Y: =60
             ZIndex: =19
@@ -759,8 +759,9 @@ students_screen As screen:
                 RadiusBottomRight: =10
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
-                Width: =If(editNote = true, 80, 43)
-                X: =527
+                Width: =If(editStudentData = true, 80, 43)
+                X: =517
+                Y: =10
                 ZIndex: =15
 
             Icon14_10 As icon.Edit:
@@ -773,8 +774,8 @@ students_screen As screen:
                     Refresh(studenten_tabel)
                 Visible: =!editStudentData
                 Width: =34
-                X: =532
-                Y: =5
+                X: =522
+                Y: =15
                 ZIndex: =16
 
             Icon14_11 As icon.Edit:
@@ -790,8 +791,8 @@ students_screen As screen:
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
-                X: =532
-                Y: =5
+                X: =522
+                Y: =15
                 ZIndex: =17
 
             Icon14_12 As icon.Edit:
@@ -859,8 +860,8 @@ students_screen As screen:
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
-                X: =566
-                Y: =5
+                X: =556
+                Y: =15
                 ZIndex: =18
 
         TextInputEmail_1 As text:
