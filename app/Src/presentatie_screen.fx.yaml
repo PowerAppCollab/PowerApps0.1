@@ -208,7 +208,7 @@ presentatie_screen As screen:
                     =ForAll(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
                             ),
                             {
                                 score: score,
@@ -220,7 +220,7 @@ presentatie_screen As screen:
                         IsEmpty(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
                             )
                         ),
                         false,
@@ -427,7 +427,14 @@ presentatie_screen As screen:
                 Height: =30
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(192, 5, 230, 0.6)
-                Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
+                Items: |
+                    =Filter(
+                        groepens,
+                        groupID in Filter(
+                            groepsInhoud,
+                            student_id = gallery_students.Selected.studentID
+                        ).groep_id
+                    ).name
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 0.6)
                 Visible: =If(presDefault = 1 || 2, true, false)
@@ -447,7 +454,7 @@ presentatie_screen As screen:
                         !IsEmpty(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
                             )
                         ),
                         false,
@@ -461,7 +468,7 @@ presentatie_screen As screen:
             Label29 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Text: |-
-                    ="Geselecteerde cursus:"
+                    ="Geselecteerde groep:"
                 Width: =208
                 X: =14
                 Y: =6
