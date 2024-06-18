@@ -376,6 +376,7 @@ students_screen As screen:
                 OnSelect: |-
                     =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.SelectedText.Value, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
+                    Refresh(scores);
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -422,12 +423,12 @@ students_screen As screen:
             ShowValues: =
             Visible: |-
                 =If(
-                    IsEmpty(
+                   IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
                         )
-                    ) || IsEmpty(Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)),
+                    ),
                     false,
                     true
                 )
@@ -446,14 +447,14 @@ students_screen As screen:
             Text: ="Er is geen grafiek beschikbaar."
             Visible: |-
                 =If(
-                    IsEmpty(
+                   !IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
                         )
-                    ) || IsEmpty(Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)),
-                    true,
-                    false
+                    ),
+                    false,
+                    true
                 )
             Width: =500
             Y: =113
