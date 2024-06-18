@@ -284,7 +284,7 @@ presentatie_screen As screen:
                         =ForAll(
                                 Filter(
                                     scores,
-                                    studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                                    studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
                                 ),
                                 {
                                     score: score,
