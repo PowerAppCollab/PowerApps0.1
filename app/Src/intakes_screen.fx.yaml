@@ -2055,7 +2055,7 @@ intakes_screen As screen:
         OnAddFile: |-
             =Set(isLoading, true);
             RemoveIf(tempEmails, true);
-            Set(flowdone, uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}));
+            uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
             Set(isLoading, false);
             Refresh(tempEmails);
             Reset(Self)
@@ -2189,4 +2189,28 @@ intakes_screen As screen:
         X: =365
         Y: =459
         ZIndex: =40
+
+    loadingOn_2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =43
+
+        background_loading_2 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =isLoading
+            Width: =1366
+            ZIndex: =41
+
+        spinner_loading_2 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =isLoading
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =42
 
