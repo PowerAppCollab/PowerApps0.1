@@ -1742,6 +1742,8 @@ students_screen As screen:
             Set(noExamNameError, false);
             Set(ErrorWhileUploading, false);
             
+            Refresh(scores);
+            
             Clear(failedEmailsCollection);
             Set(testArray, "");
             Clear(splitEmails);
