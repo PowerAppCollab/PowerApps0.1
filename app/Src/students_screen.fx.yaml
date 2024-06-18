@@ -285,6 +285,28 @@ students_screen As screen:
             Y: =10
             ZIndex: =4
 
+        Dropdown1_1 As dropdown:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            ChevronBackground: =RGBA(192, 5, 230, 0.8)
+            ChevronHoverBackground: =
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =35
+            HoverColor: =RGBA(243, 243, 243, 1)
+            HoverFill: =RGBA(60, 60, 60, 0.8)
+            Items: =groepens.name
+            PressedColor: =RGBA(243, 243, 243, 1)
+            PressedFill: =RGBA(45, 45, 45, 0.8)
+            SelectionFill: =RGBA(45, 45, 45, 1)
+            Visible: =scoresToevoegen
+            X: =42
+            Y: =99
+            ZIndex: =8
+
         groep_score_toevoegen As group:
             Height: =5
             Width: =5
@@ -312,7 +334,7 @@ students_screen As screen:
                 Visible: =scoresToevoegen
                 Width: =225
                 X: =42
-                Y: =105
+                Y: =50
                 ZIndex: =5
 
             input_score_examen As text:
@@ -335,7 +357,7 @@ students_screen As screen:
                 Visible: =scoresToevoegen
                 Width: =225
                 X: =323
-                Y: =105
+                Y: =50
                 ZIndex: =6
 
             Button2 As button:
@@ -345,7 +367,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{ studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, groupID:gallery_students.Selected.groupID, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.SelectedText.Value, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
