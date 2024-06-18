@@ -1735,6 +1735,9 @@ intakes_screen As screen:
         Icon: =Icon.Add
         OnSelect: |-
             =Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
+            Set(sendIntakeEmailSucces, false);
+            Reset(intakeInput_email_1);
+            
             //Reset(input_naam_examen);;
             //Reset(input_score_examen);;
         Rotation: =45
@@ -1795,8 +1798,8 @@ intakes_screen As screen:
             Text: ="De email is met succes verzonden."
             Visible: =sendIntakeEmailSucces
             Width: =586
-            X: =462
-            Y: =403
+            X: =389
+            Y: =407
             ZIndex: =22
 
     Button6_3 As button:
@@ -1805,10 +1808,11 @@ intakes_screen As screen:
         FontWeight: =FontWeight.Normal
         Height: =30
         HoverFill: =If(currPagePopupSendIntake = 1,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
-        OnSelect: |-
+        OnSelect: |
             =Set(currPagePopupSendIntake, 1);
             Reset(intakeInput_email_1);
-            Set(varError, false)
+            Set(varError, false);
+            Set(sendIntakeEmailSucces, false)
         RadiusBottomRight: =0
         RadiusTopRight: =0
         Size: =11
