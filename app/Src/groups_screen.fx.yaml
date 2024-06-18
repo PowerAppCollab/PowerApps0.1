@@ -802,7 +802,7 @@ groups_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =274
-            Items: |+
+            Items: |
                 =Filter(
                     studenten_tabel,
                     !(studentID in Filter(
@@ -813,9 +813,9 @@ groups_screen As screen:
                         StartsWith(Voornaam, SearchInput1_3.Text) ||
                         StartsWith(Achternaam, SearchInput1_3.Text) ||
                         StartsWith(Email, SearchInput1_3.Text)
-                    )
+                    ) &&
+                    !IsBlank(Email)  // This condition filters out records where Email is empty
                 )
-                
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
