@@ -1973,12 +1973,12 @@ intakes_screen As screen:
         BorderStyle: =BorderStyle.None
         DisabledFill: =RGBA(255, 255, 255, 1)
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =2
+        Height: =1
         HoverFill: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(255, 255, 255, 1)
-        Width: =750
-        X: =308
-        Y: =334
+        Width: =850
+        X: =258
+        Y: =324
         ZIndex: =34
 
     groep_succes_createStudent As group:
@@ -2038,4 +2038,155 @@ intakes_screen As screen:
             X: =603
             Y: =420
             ZIndex: =13
+
+    AttachControl_3 As attachments:
+        BorderColor: =Color.Black
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        DropTargetBorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =101
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        IsInDataCard: =true
+        Items: =
+        OnAddFile: |-
+            =Set(isLoading, true);
+            RemoveIf(tempEmails, true);
+            Set(flowdone, uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name}));
+            Set(isLoading, false);
+            Refresh(tempEmails);
+            Reset(Self)
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Tooltip: =
+        Width: =254
+        X: =578
+        Y: =359
+        ZIndex: =35
+
+    "tempEmails_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Height: =316
+        Items: =tempEmails
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =57
+        Visible: =!IsBlank(tempEmails)
+        Width: =495
+        X: =101
+        Y: =344
+        ZIndex: =36
+
+        Title6_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Titel
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =7
+            ZIndex: =1
+
+        Subtitle6_1 As label:
+            Color: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Email
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_1.Width
+            X: =Title6_1.X
+            Y: =Title6_1.Y + Title6_1.Height
+            ZIndex: =2
+
+    Label10_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Text: |-
+            =If(IsBlank(tempEmails), "Geen data beschikbaar", If(CountRows(tempEmails) = 1, "U heeft 1 email geupload.
+            Wilt u deze een intake sturen?", "U heeft " & CountRows(tempEmails) & " emails geupload.
+            Wilt u allen een intake sturen?"))
+        Visible: =!IsEmpty(tempEmails)
+        Width: =277
+        X: =633
+        Y: =368
+        ZIndex: =37
+
+    knop_intakeVerzenden_3 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(192, 5, 230, 1)
+        Fill: =RGBA(192, 5, 230, 1)
+        FontWeight: =FontWeight.Normal
+        Height: =35
+        HoverFill: =RGBA(192, 5, 230, 0.8)
+        OnSelect: |
+            =ForAll(
+                tempEmails_gallery_1.AllItems,
+                Office365Outlook.SendEmailV2(
+                    Email,
+                    "Onderwerp",
+                    "https://forms.office.com/e/eWQtPEKwSM"
+                )
+            );
+            RemoveIf(tempEmails, true);
+            Refresh(tempEmails);
+            Set(intakeMailsSend, true)
+        PressedFill: =
+        Size: =13
+        Text: ="Stuur"
+        Visible: =!IsEmpty(tempEmails)
+        Width: =165
+        X: =633
+        Y: =424
+        ZIndex: =38
+
+    Label11_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =34
+        Text: ="Succesvol verzonden!"
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =intakeMailsSend
+        Width: =316
+        X: =518
+        Y: =482
+        ZIndex: =39
+
+    label_chart_error_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =75
+        Text: ="Er zijn geen mailadressen beschikbaar."
+        Visible: |-
+            =If(
+                IsBlank(tempEmails),
+                false,
+                true
+            )
+        Width: =500
+        X: =365
+        Y: =459
+        ZIndex: =40
 
