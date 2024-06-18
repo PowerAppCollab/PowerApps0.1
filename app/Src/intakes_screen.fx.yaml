@@ -1736,7 +1736,10 @@ intakes_screen As screen:
         OnSelect: |-
             =Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
             Set(sendIntakeEmailSucces, false);
+            Set(uploadedEmails, false);
             Reset(intakeInput_email_1);
+            RemoveIf(tempEmails, true);
+            Reset(AttachControl_3)
             
             //Reset(input_naam_examen);;
             //Reset(input_score_examen);;
@@ -1828,7 +1831,11 @@ intakes_screen As screen:
         FontWeight: =FontWeight.Normal
         Height: =30
         HoverFill: =If(currPagePopupSendIntake =2,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
-        OnSelect: =Set(currPagePopupSendIntake, 2);
+        OnSelect: |-
+            =Set(currPagePopupSendIntake, 2);
+            Set(uploadedEmails, false);
+            RemoveIf(tempEmails, true);
+            Reset(AttachControl_3)
         RadiusBottomLeft: =0
         RadiusTopLeft: =0
         Size: =11
@@ -2054,9 +2061,11 @@ intakes_screen As screen:
         Items: =
         OnAddFile: |-
             =Set(isLoading, true);
+            Set(uploadedEmails, false);
             RemoveIf(tempEmails, true);
             uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
             Set(isLoading, false);
+            Set(uploadedEmails, true);
             Refresh(tempEmails);
             Reset(Self)
         PaddingBottom: =5
@@ -2066,6 +2075,7 @@ intakes_screen As screen:
         PressedColor: =RGBA(0, 0, 0, 0)
         PressedFill: =RGBA(0, 0, 0, 0)
         Tooltip: =
+        Visible: =!uploadedEmails
         Width: =254
         X: =578
         Y: =359
@@ -2074,7 +2084,7 @@ intakes_screen As screen:
     "tempEmails_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
         '#CopilotOverlayLabel': ="Filtered"
         DelayItemLoading: =true
-        Height: =316
+        Height: =197
         Items: =tempEmails
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -2082,8 +2092,8 @@ intakes_screen As screen:
         TemplateSize: =57
         Visible: =!IsBlank(tempEmails)
         Width: =495
-        X: =101
-        Y: =344
+        X: =436
+        Y: =337
         ZIndex: =36
 
         Title6_1 As label:
@@ -2118,6 +2128,7 @@ intakes_screen As screen:
             ZIndex: =2
 
     Label10_1 As label:
+        Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Lighter
         Text: |-
@@ -2126,8 +2137,8 @@ intakes_screen As screen:
             Wilt u allen een intake sturen?"))
         Visible: =!IsEmpty(tempEmails)
         Width: =277
-        X: =633
-        Y: =368
+        X: =545
+        Y: =558
         ZIndex: =37
 
     knop_intakeVerzenden_3 As button:
@@ -2152,12 +2163,16 @@ intakes_screen As screen:
             Refresh(tempEmails);
             Set(intakeMailsSend, true)
         PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Size: =13
-        Text: ="Stuur"
+        Text: ="Verzend"
         Visible: =!IsEmpty(tempEmails)
-        Width: =165
-        X: =633
-        Y: =424
+        Width: =350
+        X: =508
+        Y: =618
         ZIndex: =38
 
     Label11_3 As label:
@@ -2181,7 +2196,7 @@ intakes_screen As screen:
         Text: ="Er zijn geen mailadressen beschikbaar."
         Visible: |-
             =If(
-                IsBlank(tempEmails),
+                !IsBlank(tempEmails),
                 false,
                 true
             )
