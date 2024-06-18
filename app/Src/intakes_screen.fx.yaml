@@ -25,7 +25,6 @@ intakes_screen As screen:
         nav_intakesScreen: =intakes_screen
         nav_presenterenScreen: =presentatie_screen
         nav_studentenScreen: =students_screen
-        ZIndex: =2
 
     container_20 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -38,7 +37,7 @@ intakes_screen As screen:
         Width: =1150
         X: =180
         Y: =400
-        ZIndex: =3
+        ZIndex: =2
 
         label_intakeResultaten_error As label:
             Align: =Align.Center
@@ -896,7 +895,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =4
+        ZIndex: =3
 
         input_searchIntakes As text:
             BorderStyle: =BorderStyle.None
@@ -933,7 +932,8 @@ intakes_screen As screen:
             OnSelect: |-
                 =//Navigate(intakesVersturen_screen)
                 
-                Set(sendIntakePopUpContainer, true)
+                Set(sendIntakePopUpContainer, true);
+                Set(currPagePopupSendIntake, 1)
             Width: =35
             X: =448
             Y: =21
@@ -949,7 +949,7 @@ intakes_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =140
-        ZIndex: =5
+        ZIndex: =4
 
         "gallery_intakes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -1083,7 +1083,7 @@ intakes_screen As screen:
         Width: =625
         X: =700
         Y: =40
-        ZIndex: =6
+        ZIndex: =5
 
         label_intakeOpties As label:
             Align: =Align.Center
@@ -1588,7 +1588,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =varShowDeleteIntakePopup
             Width: =1366
-            ZIndex: =15
+            ZIndex: =14
 
         popup_box_16 As button:
             AutoDisableOnSelect: =false
@@ -1601,7 +1601,7 @@ intakes_screen As screen:
             Width: =505
             X: =431
             Y: =255
-            ZIndex: =16
+            ZIndex: =15
 
         popup_header_14 As label:
             Align: =Align.Center
@@ -1614,7 +1614,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =261
-            ZIndex: =17
+            ZIndex: =16
 
         knop_toevoegen_10 As button:
             BorderStyle: =BorderStyle.None
@@ -1638,7 +1638,7 @@ intakes_screen As screen:
             Visible: =varShowDeleteIntakePopup
             X: =727
             Y: =420
-            ZIndex: =18
+            ZIndex: =17
 
         knop_annuleer_15 As button:
             BorderStyle: =BorderStyle.None
@@ -1657,7 +1657,7 @@ intakes_screen As screen:
             Visible: =varShowDeleteIntakePopup
             X: =485
             Y: =420
-            ZIndex: =19
+            ZIndex: =18
 
         Label9_4 As label:
             Align: =Align.Center
@@ -1668,7 +1668,7 @@ intakes_screen As screen:
             Width: =388
             X: =489
             Y: =324
-            ZIndex: =20
+            ZIndex: =19
 
     groep_popup_2 As group:
         Height: =5
@@ -1682,7 +1682,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =error_newStudent
             Width: =1366
-            ZIndex: =7
+            ZIndex: =6
 
         popup_box_5 As button:
             AutoDisableOnSelect: =false
@@ -1695,7 +1695,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =8
+            ZIndex: =7
 
         popup_text_5 As label:
             Align: =Align.Center
@@ -1708,7 +1708,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =9
+            ZIndex: =8
 
         knop_annuleer_5 As button:
             BorderStyle: =BorderStyle.None
@@ -1727,7 +1727,7 @@ intakes_screen As screen:
             Visible: =error_newStudent
             X: =603
             Y: =420
-            ZIndex: =10
+            ZIndex: =9
 
     Icon3_1 As icon.Add:
         Color: =RGBA(192, 5, 230, 1)
@@ -1742,15 +1742,18 @@ intakes_screen As screen:
         Width: =35
         X: =1230
         Y: =93
-        ZIndex: =24
+        ZIndex: =23
 
     Label6_7 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
         Height: =56
         Size: =18
-        Text: =If(ErrorWhileUploading_sendIntakes = true, "Intakes Versturen | Error","Intakes Versturen")
-        Visible: =isPopupExcelFileScoresOpen
+        Text: |-
+            =//If(ErrorWhileUploading_sendIntakes = true; "Intakes Verzenden | Error";"Intakes Verzenden")
+            
+            "Intakes Verzenden"
+        Visible: =sendIntakePopUpContainer
         Width: =384
         X: =491
         Y: =93
@@ -1768,7 +1771,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =sendIntakePopUpContainer
             Width: =1366
-            ZIndex: =21
+            ZIndex: =20
 
         popup_box_7 As button:
             AutoDisableOnSelect: =false
@@ -1781,7 +1784,7 @@ intakes_screen As screen:
             Width: =1200
             X: =83
             Y: =72
-            ZIndex: =22
+            ZIndex: =21
 
         popup_text_7 As label:
             Align: =Align.Center
@@ -1792,9 +1795,120 @@ intakes_screen As screen:
             Text: ="Op deze pagina kunt u intakes verzenden. Het is mogelijk om zowel individuele emails als een naar een mail lijst te versturen."
             Visible: =sendIntakePopUpContainer
             Width: =586
-            X: =390
-            Y: =161
-            ZIndex: =23
+            X: =180
+            Y: =475
+            ZIndex: =22
+
+    label_email_error_1 As label:
+        Color: =RGBA(184, 0, 0, 1)
+        Height: =26
+        Text: ="Controleer het email adres."
+        Visible: =varError
+        Width: =337
+        X: =24
+        Y: =141
+        ZIndex: =27
+
+    Button6_3 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =If(currPagePopupSendIntake = 1,RGBA(192,5,230,1),RGBA(45, 45, 45, 1))
+        FontWeight: =FontWeight.Normal
+        Height: =30
+        HoverFill: =If(currPagePopupSendIntake = 1,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
+        OnSelect: =Set(currPagePopupSendIntake, 1)
+        RadiusBottomRight: =0
+        RadiusTopRight: =0
+        Size: =11
+        Text: ="Individueel"
+        Width: =285
+        X: =395
+        Y: =187
+        ZIndex: =28
+
+    Button6_4 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =If(currPagePopupSendIntake = 2,RGBA(192,5,230,1),RGBA(45, 45, 45, 1))
+        FontWeight: =FontWeight.Normal
+        Height: =30
+        HoverFill: =If(currPagePopupSendIntake =2,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
+        OnSelect: =Set(currPagePopupSendIntake, 2);
+        RadiusBottomLeft: =0
+        RadiusTopLeft: =0
+        Size: =11
+        Text: ="Meerdere"
+        Width: =285
+        X: =680
+        Y: =187
+        ZIndex: =29
+
+    groep_email_input_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =29
+
+        intakeInput_email_1 As text:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(45, 45, 45, 1)
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =35
+            HintText: ="Voer email in..."
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
+            PaddingRight: =35
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =313
+            X: =118
+            Y: =306
+            ZIndex: =24
+
+        knop_intakeVerzenden_2 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(192, 5, 230, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |
+                =If(
+                    !IsMatch(
+                        intakeInput_email_1.Text,
+                        "^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"
+                    ),
+                    Set(
+                        varError,
+                        true
+                    ),
+                    Office365Outlook.SendEmailV2(
+                        intakeInput_email_1.Text,
+                        "Intake Formulier GradeMatch",
+                        "https://forms.office.com/e/eWQtPEKwSM"
+                    ),
+                    Reset(intakeInput_email_1);
+                    Set(
+                        varError,
+                        false
+                    )
+                );
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusTopLeft: =0
+            Size: =13
+            Text: ="Intake versturen"
+            Width: =165
+            X: =250
+            Y: =339
+            ZIndex: =26
 
     groep_succes_createStudent As group:
         Height: =5
@@ -1808,7 +1922,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =succes_student
             Width: =1366
-            ZIndex: =11
+            ZIndex: =10
 
         popup_box_6 As button:
             AutoDisableOnSelect: =false
@@ -1821,7 +1935,7 @@ intakes_screen As screen:
             Width: =505
             X: =430
             Y: =293
-            ZIndex: =12
+            ZIndex: =11
 
         popup_text_6 As label:
             Align: =Align.Center
@@ -1833,7 +1947,7 @@ intakes_screen As screen:
             Width: =454
             X: =456
             Y: =313
-            ZIndex: =13
+            ZIndex: =12
 
         knop_OK As button:
             BorderStyle: =BorderStyle.None
@@ -1852,5 +1966,5 @@ intakes_screen As screen:
             Visible: =succes_student
             X: =603
             Y: =420
-            ZIndex: =14
+            ZIndex: =13
 
