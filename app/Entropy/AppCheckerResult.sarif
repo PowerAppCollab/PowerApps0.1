@@ -1590,6 +1590,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "groups_screen.addStudentToGroup_gallery.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.addStudentToGroup_gallery.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 320,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "groups_screen",
+                "type": "groups_screen.addStudentToGroup_gallery"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "intakesVersturen_screen.container_21.Label10.Text"
                 }
               ],
@@ -2060,36 +2100,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "presentatie_screen",
-                "type": "presentatie_screen.container_23.Container3.dropdown_courses_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "presentatie_screen.container_23.Container3.Container1.ColumnChart1.AccessibleLabel"
                 }
               ],
@@ -2133,6 +2143,66 @@
                 "member": "AccessibleLabel",
                 "module": "presentatie_screen",
                 "type": "presentatie_screen.container_23.Container3.dropdown_courses_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "presentatie_screen",
+                "type": "presentatie_screen.container_23.Container3.dropdown_courses_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "presentatie_screen",
+                "type": "presentatie_screen.container_23.Container3.dropdown_courses_4"
               }
             }
           ],
