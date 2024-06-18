@@ -590,7 +590,7 @@
                   "charLength": 234,
                   "charOffset": 131,
                   "snippet": {
-                    "text": "{ \n            Voornaam: currSelectedStudent;\n            Achternaam: currSelectedStudent;\n            Email:currSelectedStudent;\n            Telefoonnummer:currSelectedStudent;\n            'Werkzaam Bij':currSelectedStudent\n        }"
+                    "text": "{ \n            Voornaam: currSelectedStudent,\n            Achternaam: currSelectedStudent,\n            Email:currSelectedStudent,\n            Telefoonnummer:currSelectedStudent,\n            'Werkzaam Bij':currSelectedStudent\n        }"
                   }
                 }
               },
@@ -1442,7 +1442,7 @@
                   "charLength": 80,
                   "charOffset": 33,
                   "snippet": {
-                    "text": "If(\n        varShowArchived;\n        Archived = \"true\";\nArchived <> \"true\"\n    )"
+                    "text": "If(\n        varShowArchived,\n        Archived = \"true\",\nArchived <> \"true\"\n    )"
                   }
                 }
               },
@@ -1561,6 +1561,46 @@
                 "region": {
                   "charLength": 2,
                   "charOffset": 150,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "groups_screen",
+                "type": "groups_screen.addStudentToGroup_gallery"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "groups_screen.addStudentToGroup_gallery.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "groups_screen.addStudentToGroup_gallery.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 320,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2060,36 +2100,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "presentatie_screen",
-                "type": "presentatie_screen.container_23.Container3.dropdown_courses_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "presentatie_screen.container_23.Container3.Container1.ColumnChart1.AccessibleLabel"
                 }
               ],
@@ -2133,6 +2143,36 @@
                 "member": "AccessibleLabel",
                 "module": "presentatie_screen",
                 "type": "presentatie_screen.container_23.Container3.dropdown_courses_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "presentatie_screen.container_23.Container3.dropdown_courses_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "presentatie_screen",
+                "type": "presentatie_screen.container_23.Container3.dropdown_courses_3"
               }
             }
           ],
@@ -9917,85 +9957,85 @@
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Ongebruikte variabele"
+                  "text": "Unused variable"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Verwijder de ongebruikte variabele."
+                  "Remove the unused variable."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Deze variabele is gedeclareerd, maar er wordt niet naar verwezen door een besturingselement. De variabele is daarom niet nodig."
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
               }
             },
             {
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Ongebruikte mediabestanden"
+                  "text": "Unused media files"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Verwijder het ongebruikte mediabestand in het deelvenster Media."
+                  "Remove the unused media file in the Media pane."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Er wordt niet naar dit mediabestand verwezen door besturingselementformules, dus het is niet nodig. Als u dit verwijdert, worden de prestaties verbeterd."
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
               "id": "app-CollectDelegatableDataSource",
               "messageStrings": {
                 "issue": {
-                  "text": "De rijen die zijn opgehaald uit de gegevensbron, zijn mogelijk niet volledig."
+                  "text": "The rows retrieved from the data source may not be complete."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Beperk de gegevens die worden verzameld van de gegevensbron door de formule ClearCollect(localGroepens; groepens) bij te werken zodat deze een filterfunctie bevat, zoals Filter of Search."
+                  "Limit the data collected from the data source by updating the formula \"ClearCollect(localGroepens, groepens)\" to include a filtering function, such as 'Filter' or 'Search'."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Als u de functie Collect gebruikt om rechtstreeks een verzameling te maken op basis van een verbonden gegevensbron, worden mogelijk niet alle rijen geladen als de gegevensbron te groot is."
+                "whyFix": "Using the 'Collect' function to create a collection directly from a connected data source may not load every row if the data source is too large."
               }
             },
             {
               "id": "app-InefficientDelayLoading",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficiënte vertraging bij het laden"
+                  "text": "Inefficient delay loading"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Gebruik in plaats hiervan variabelen, verzamelingen en navigatiecontext om de status met andere schermen te delen."
+                  "Use variables, collections, and navigation context to share state across screens instead."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Besturingselementen die verwijzen naar besturingselementen op andere schermen, kunnen het laden en navigeren door apps vertragen. Hierdoor wordt de app mogelijk gedwongen de andere schermen onmiddellijk te laden in plaats van te wachten totdat de gebruiker naar dat scherm navigeert."
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
               }
             },
             {
               "id": "app-TextInputIsNotDelayOutput",
               "messageStrings": {
                 "issue": {
-                  "text": "Inefficiënte tekstinvoer"
+                  "text": "Inefficient text input"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "De eigenschap DelayOutput van het besturingselement voor tekstinvoer inschakelen."
+                  "Enable the DelayOutput property of the text input control."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Wanneer een besturingselement voor tekstinvoer veel besturingselementen heeft die afhankelijk zijn van de waarde, kan het typen van de invoer de app vertragen. Als DelayOutput wordt ingesteld op True, wordt dit probleem voorkomen door alleen afhankelijke besturingselementen bij te werken als het typen klaar is."
+                "whyFix": "When a text input control has many controls that depend on its value, typing into that input can slow down the app. Setting DelayOutput to true prevents this problem by only updating dependent controls when typing stops."
               }
             }
           ],
