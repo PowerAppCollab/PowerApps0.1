@@ -1923,6 +1923,51 @@ intakes_screen As screen:
             Y: =14
             ZIndex: =3
 
+    Label11_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =64
+        Text: ="Als u meerdere intakes wilt versturen moet u deze tabel downloaden, invullen en uploaden"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =590
+        X: =388
+        Y: =232
+        ZIndex: =31
+
+    downloadTemplate_text_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Lighter
+        Height: =34
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =
+        OnSelect: |
+            =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+        Text: ="Download template"
+        Underline: =true
+        VerticalAlign: =VerticalAlign.Top
+        Width: =177
+        X: =595
+        Y: =281
+        ZIndex: =32
+
+    downloadTemplate_button_1 As button:
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =25
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: |
+            =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+        PressedColor: =
+        PressedFill: =
+        Text: ="Knop"
+        X: =604
+        Y: =285
+        ZIndex: =33
+
     groep_succes_createStudent As group:
         Height: =5
         Width: =5
