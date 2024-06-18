@@ -298,7 +298,14 @@ students_screen As screen:
             Height: =35
             HoverColor: =RGBA(243, 243, 243, 1)
             HoverFill: =RGBA(60, 60, 60, 0.8)
-            Items: =groepens.name
+            Items: |
+                =Filter(
+                    groepens,
+                    groupID in Filter(
+                        groepsInhoud,
+                        student_id = gallery_students.Selected.studentID
+                    ).groep_id
+                ).name
             PressedColor: =RGBA(243, 243, 243, 1)
             PressedFill: =RGBA(45, 45, 45, 0.8)
             SelectionFill: =RGBA(45, 45, 45, 1)
