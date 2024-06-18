@@ -1934,6 +1934,237 @@ intakes_screen As screen:
             Y: =14
             ZIndex: =3
 
+    Container8 As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        DropShadow: =DropShadow.None
+        Height: =440
+        Visible: =currPagePopupSendIntake = 2
+        Width: =1030
+        X: =168
+        Y: =232
+        ZIndex: =28
+
+        Label11_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =64
+            Text: ="Als u meerdere intakes wilt versturen moet u deze tabel downloaden, invullen en uploaden"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =sendIntakePopUpContainer
+            Width: =590
+            X: =220
+            Y: =18
+            ZIndex: =1
+
+        downloadTemplate_text_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =34
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =
+            OnSelect: |
+                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+            Text: ="Download template"
+            Underline: =true
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =sendIntakePopUpContainer
+            Width: =177
+            X: =426
+            Y: =66
+            ZIndex: =2
+
+        downloadTemplate_button_1 As button:
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =25
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: |
+                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
+            PressedColor: =
+            PressedFill: =
+            Text: =
+            Visible: =sendIntakePopUpContainer
+            X: =434
+            Y: =70
+            ZIndex: =3
+
+        Rectangle12 As rectangle:
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =1
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Visible: =sendIntakePopUpContainer
+            Width: =850
+            X: =90
+            Y: =110
+            ZIndex: =4
+
+        "tempEmails_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
+            DelayItemLoading: =true
+            Height: =197
+            Items: =tempEmails
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =57
+            Visible: =!IsBlank(tempEmails) && sendIntakePopUpContainer
+            Width: =495
+            X: =268
+            Y: =123
+            ZIndex: =5
+
+            Title6_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Titel
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =7
+                ZIndex: =1
+
+            Subtitle6_1 As label:
+                Color: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Email
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title6_1.Width
+                X: =Title6_1.X
+                Y: =Title6_1.Y + Title6_1.Height
+                ZIndex: =2
+
+        AttachControl_3 As attachments:
+            BorderColor: =Color.Black
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DropTargetBorderStyle: =BorderStyle.None
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =101
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            IsInDataCard: =true
+            Items: =
+            OnAddFile: |-
+                =Set(isLoading, true);
+                Set(uploadedEmails, false);
+                RemoveIf(tempEmails, true);
+                uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
+                Set(isLoading, false);
+                Set(uploadedEmails, true);
+                Refresh(tempEmails);
+                Reset(Self)
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: =
+            Visible: =!uploadedEmails && sendIntakePopUpContainer
+            Width: =254
+            X: =414
+            Y: =144
+            ZIndex: =6
+
+        Label10_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Text: |-
+                =If(IsBlank(tempEmails), "Geen data beschikbaar", If(CountRows(tempEmails) = 1, "U heeft 1 email geupload.
+                Wilt u deze een intake sturen?", "U heeft " & CountRows(tempEmails) & " emails geupload.
+                Wilt u allen een intake sturen?"))
+            Visible: =!IsEmpty(tempEmails) && sendIntakePopUpContainer
+            Width: =277
+            X: =377
+            Y: =344
+            ZIndex: =7
+
+        knop_intakeVerzenden_3 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(192, 5, 230, 1)
+            Fill: =RGBA(192, 5, 230, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =35
+            HoverFill: =RGBA(192, 5, 230, 0.8)
+            OnSelect: |
+                =ForAll(
+                    tempEmails_gallery_1.AllItems,
+                    Office365Outlook.SendEmailV2(
+                        Email,
+                        "Intake | GradeMatch",
+                        "https://forms.office.com/e/eWQtPEKwSM"
+                    )
+                );
+                RemoveIf(tempEmails, true);
+                Refresh(tempEmails);
+                Set(intakeMailsSend, true)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="Verzend"
+            Visible: =!IsEmpty(tempEmails) && sendIntakePopUpContainer
+            Width: =350
+            X: =340
+            Y: =394
+            ZIndex: =8
+
+        Label11_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =34
+            Text: ="Succesvol verzonden!"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =intakeMailsSend && sendIntakePopUpContainer
+            Width: =316
+            X: =357
+            Y: =268
+            ZIndex: =9
+
+        label_chart_error_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =75
+            Text: ="Er zijn geen mailadressen beschikbaar."
+            Visible: |-
+                =If(
+                    !IsBlank(tempEmails) && sendIntakePopUpContainer,
+                    false,
+                    true
+                )
+            Width: =500
+            X: =265
+            Y: =245
+            ZIndex: =10
+
     groep_succes_createStudent As group:
         Height: =5
         Width: =5
@@ -1992,233 +2223,6 @@ intakes_screen As screen:
             Y: =420
             ZIndex: =13
 
-    Container8 As groupContainer.manualLayoutContainer:
-        BorderStyle: =BorderStyle.None
-        DropShadow: =DropShadow.None
-        Height: =440
-        Visible: =currPagePopupSendIntake = 2
-        Width: =1030
-        X: =168
-        Y: =232
-        ZIndex: =39
-
-        Label11_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =64
-            Text: ="Als u meerdere intakes wilt versturen moet u deze tabel downloaden, invullen en uploaden"
-            VerticalAlign: =VerticalAlign.Top
-            Width: =590
-            X: =220
-            Y: =18
-            ZIndex: =1
-
-        downloadTemplate_text_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =34
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =
-            OnSelect: |
-                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
-            Text: ="Download template"
-            Underline: =true
-            VerticalAlign: =VerticalAlign.Top
-            Width: =177
-            X: =426
-            Y: =66
-            ZIndex: =2
-
-        downloadTemplate_button_1 As button:
-            Color: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =25
-            HoverColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =
-            OnSelect: |
-                =Download($"https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/_layouts/download.aspx?SourceUrl=https://veynex.sharepoint.com/sites/TESTGradematchPowerApps/Gedeelde%20documenten/IntakeEmails.xlsx")
-            PressedColor: =
-            PressedFill: =
-            Text: =
-            X: =434
-            Y: =70
-            ZIndex: =3
-
-        Rectangle12 As rectangle:
-            BorderStyle: =BorderStyle.None
-            DisabledFill: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =1
-            HoverFill: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            Width: =850
-            X: =90
-            Y: =110
-            ZIndex: =4
-
-        AttachControl_3 As attachments:
-            BorderColor: =Color.Black
-            BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
-            DisabledColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            DropTargetBorderStyle: =BorderStyle.None
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =101
-            HoverColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            IsInDataCard: =true
-            Items: =
-            OnAddFile: |-
-                =Set(isLoading, true);
-                Set(uploadedEmails, false);
-                RemoveIf(tempEmails, true);
-                uploadExcelFile.Run({contentBytes: Last(Self.Attachments).Value, name: Last(Self.Attachments).Name});
-                Set(isLoading, false);
-                Set(uploadedEmails, true);
-                Refresh(tempEmails);
-                Reset(Self)
-            PaddingBottom: =5
-            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Tooltip: =
-            Visible: =!uploadedEmails
-            Width: =254
-            X: =414
-            Y: =144
-            ZIndex: =5
-
-        "tempEmails_gallery_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-            '#CopilotOverlayLabel': ="Filtered"
-            DelayItemLoading: =true
-            Height: =197
-            Items: =tempEmails
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =0
-            TemplateSize: =57
-            Visible: =!IsBlank(tempEmails)
-            Width: =495
-            X: =268
-            Y: =123
-            ZIndex: =6
-
-            Title6_1 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Titel
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 86
-                X: =16
-                Y: =7
-                ZIndex: =1
-
-            Subtitle6_1 As label:
-                Color: =RGBA(166, 166, 166, 1)
-                FontWeight: =FontWeight.Lighter
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Email
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title6_1.Width
-                X: =Title6_1.X
-                Y: =Title6_1.Y + Title6_1.Height
-                ZIndex: =2
-
-        Label10_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Text: |-
-                =If(IsBlank(tempEmails), "Geen data beschikbaar", If(CountRows(tempEmails) = 1, "U heeft 1 email geupload.
-                Wilt u deze een intake sturen?", "U heeft " & CountRows(tempEmails) & " emails geupload.
-                Wilt u allen een intake sturen?"))
-            Visible: =!IsEmpty(tempEmails)
-            Width: =277
-            X: =377
-            Y: =344
-            ZIndex: =7
-
-        knop_intakeVerzenden_3 As button:
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =0
-            DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(192, 5, 230, 1)
-            Fill: =RGBA(192, 5, 230, 1)
-            FontWeight: =FontWeight.Normal
-            Height: =35
-            HoverFill: =RGBA(192, 5, 230, 0.8)
-            OnSelect: |
-                =ForAll(
-                    tempEmails_gallery_1.AllItems,
-                    Office365Outlook.SendEmailV2(
-                        Email,
-                        "Intake | GradeMatch",
-                        "https://forms.office.com/e/eWQtPEKwSM"
-                    )
-                );
-                RemoveIf(tempEmails, true);
-                Refresh(tempEmails);
-                Set(intakeMailsSend, true)
-            PressedFill: =
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =13
-            Text: ="Verzend"
-            Visible: =!IsEmpty(tempEmails)
-            Width: =350
-            X: =340
-            Y: =404
-            ZIndex: =8
-
-        Label11_3 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =34
-            Text: ="Succesvol verzonden!"
-            VerticalAlign: =VerticalAlign.Top
-            Visible: =intakeMailsSend
-            Width: =316
-            X: =357
-            Y: =268
-            ZIndex: =9
-
-        label_chart_error_8 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =75
-            Text: ="Er zijn geen mailadressen beschikbaar."
-            Visible: |-
-                =If(
-                    !IsBlank(tempEmails),
-                    false,
-                    true
-                )
-            Width: =500
-            X: =265
-            Y: =245
-            ZIndex: =10
-
     loadingOn_2 As group:
         Height: =5
         Width: =5
@@ -2232,7 +2236,7 @@ intakes_screen As screen:
             Height: =768
             Visible: =isLoading
             Width: =1366
-            ZIndex: =38
+            ZIndex: =29
 
         spinner_loading_2 As image:
             Height: =175
@@ -2241,5 +2245,5 @@ intakes_screen As screen:
             Width: =175
             X: =595
             Y: =292
-            ZIndex: =40
+            ZIndex: =30
 
