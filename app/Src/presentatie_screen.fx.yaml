@@ -204,9 +204,28 @@ presentatie_screen As screen:
                 DisplayMode: =DisplayMode.View
                 Height: =475
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: =Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value)
-                Visible: |
-                    =If(presDefault = 1, true,false) && IsBlank(Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value))
+                Items: |-
+                    =ForAll(
+                            Filter(
+                                scores,
+                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                            ),
+                            {
+                                score: score,
+                                Examen: Examen
+                            }
+                        )
+                Visible: |-
+                    =If(
+                        IsEmpty(
+                            Filter(
+                                scores,
+                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                            )
+                        ),
+                        false,
+                        true
+                    )
                 Width: =841
                 X: =14
                 XLabelAngle: =40
@@ -384,13 +403,13 @@ presentatie_screen As screen:
                 ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
                 Color: =RGBA(255, 255, 255, 1)
                 Default: ="All"
-                Fill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(60, 60, 60, 1)
                 Height: =30
-                HoverFill: =RGBA(192, 5, 230, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(192, 5, 230, 0.6)
                 Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
-                PressedColor: =RGBA(0, 0, 0, 1)
                 PressedFill: =RGBA(255, 255, 255, 1)
-                SelectionFill: =RGBA(192, 5, 230, 1)
+                SelectionFill: =RGBA(192, 5, 230, 0.6)
                 Visible: |-
                     =If(
                         IsEmpty(
@@ -403,8 +422,8 @@ presentatie_screen As screen:
                         true
                     )
                 Width: =214
-                X: =40
-                Y: =12
+                X: =136
+                Y: =10
                 ZIndex: =8
 
             Label28 As label:
@@ -413,8 +432,17 @@ presentatie_screen As screen:
                 FontWeight: =FontWeight.Lighter
                 Height: =70
                 Text: ="Geen scores gevonden."
-                Visible: |
-                    =If(presDefault = 1, true,false) && !IsBlank(Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value))
+                Visible: |-
+                    =If(
+                        !IsEmpty(
+                            Filter(
+                                scores,
+                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                            )
+                        ),
+                        false,
+                        true
+                    )
                 Width: =438
                 X: =209
                 Y: =231
