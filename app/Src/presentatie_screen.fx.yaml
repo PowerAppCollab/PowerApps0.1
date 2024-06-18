@@ -204,8 +204,9 @@ presentatie_screen As screen:
                 DisplayMode: =DisplayMode.View
                 Height: =475
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-                Items: =Filter(allScores, groupID = dropdown_courses_3.SelectedText.Value)
-                Visible: =If(presDefault = 1, true,false)
+                Items: =Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value)
+                Visible: |
+                    =If(presDefault = 1, true,false) && IsBlank(Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value))
                 Width: =841
                 X: =14
                 XLabelAngle: =40
@@ -405,6 +406,19 @@ presentatie_screen As screen:
                 X: =40
                 Y: =12
                 ZIndex: =8
+
+            Label28 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =70
+                Text: ="Geen scores gevonden."
+                Visible: |
+                    =If(presDefault = 1, true,false) && !IsBlank(Filter(allScores, courseID = dropdown_courses_3.SelectedText.Value))
+                Width: =438
+                X: =209
+                Y: =231
+                ZIndex: =9
 
         Group5 As group:
             Height: =5
