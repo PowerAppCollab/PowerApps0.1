@@ -1059,12 +1059,12 @@ groups_screen As screen:
                     =Collect(
                         allDelStudentIDsForGroup,
                         {
-                            student_id: addStudentToGroup_gallery_1.Selected.studentID,
-                            groep_id: gallery_courses_3.Selected.groupID
+                            Student_id: addStudentToGroup_gallery_1.Selected.studentID,
+                            Groep_id: gallery_courses_3.Selected.groupID
                         }
                     );
                 OnSelect: =Select(Parent)
-                OnUncheck: =RemoveIf(allDelStudentIDsForGroup, student_id = addStudentToGroup_gallery_1.Selected.studentID)
+                OnUncheck: =RemoveIf(allDelStudentIDsForGroup, Student_id = addStudentToGroup_gallery_1.Selected.studentID)
                 PressedColor: =RGBA(192, 5, 230, 1)
                 PressedFill: =RGBA(0, 0, 0, 0)
                 Reset: =resetCheckboxVar
@@ -1238,19 +1238,11 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |-
-                =
-                // Debug: Verify content of allDelStudentIDsForGroup before removal
-                ClearCollect(debugAllDelStudentIDsForGroupBeforeRemoval, allDelStudentIDsForGroup);
-                
-                // Remove records in groepsInhoud where the ID matches any ID in allDelStudentIDsForGroup
-                ForAll(
+            OnSelect: |
+                =ForAll(
                     allDelStudentIDsForGroup,
-                    RemoveIf(groepsInhoud, student_id = ThisRecord.student_id && groep_id = ThisRecord.groep_id)
+                    Remove(groepsInhoud, Filter(groepsInhoud, student_id = Student_id && groep_id = Groep_id))
                 );
-                
-                // Debug: Verify the content of groepsInhoud after removal
-                ClearCollect(debugGroepsInhoudAfterRemoval, groepsInhoud);
             Visible: =varShowDeletePopup
             Width: =34
             X: =995
