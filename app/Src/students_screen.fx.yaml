@@ -536,7 +536,7 @@ students_screen As screen:
                 Text: ="Cursus"
                 Visible: |
                     =If(
-                        IsBlank(gallery_students.Selected.Email),
+                        IsBlank(gallery_students.Selected.Email) || editStudentData,
                         false,
                         true
                     )
@@ -886,7 +886,7 @@ students_screen As screen:
                 //)
             Visible: |
                 =If(
-                    IsBlank(gallery_students.Selected.Email),
+                    IsBlank(gallery_students.Selected.Email) || editStudentData,
                     false,
                     true
                 )
