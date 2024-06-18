@@ -930,7 +930,10 @@ intakes_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Add
-            OnSelect: =Navigate(intakesVersturen_screen)
+            OnSelect: |-
+                =//Navigate(intakesVersturen_screen)
+                
+                Set(sendIntakePopUpContainer, true)
             Width: =35
             X: =448
             Y: =21
@@ -1725,6 +1728,73 @@ intakes_screen As screen:
             X: =603
             Y: =420
             ZIndex: =10
+
+    Icon3_1 As icon.Add:
+        Color: =RGBA(192, 5, 230, 1)
+        Height: =35
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
+            //Reset(input_naam_examen);;
+            //Reset(input_score_examen);;
+        Rotation: =45
+        Visible: =sendIntakePopUpContainer
+        Width: =35
+        X: =1230
+        Y: =93
+        ZIndex: =24
+
+    Label6_7 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =56
+        Size: =18
+        Text: =If(ErrorWhileUploading_sendIntakes = true, "Intakes Versturen | Error","Intakes Versturen")
+        Visible: =isPopupExcelFileScoresOpen
+        Width: =384
+        X: =491
+        Y: =93
+        ZIndex: =25
+
+    groep_popupSendIntakeContainer As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =25
+
+        popup_background_7 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =sendIntakePopUpContainer
+            Width: =1366
+            ZIndex: =21
+
+        popup_box_7 As button:
+            AutoDisableOnSelect: =false
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(60, 60, 60, 1)
+            Height: =600
+            Text: =""
+            Visible: =sendIntakePopUpContainer
+            Width: =1200
+            X: =83
+            Y: =72
+            ZIndex: =22
+
+        popup_text_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =87
+            Overflow: =Overflow.Scroll
+            Text: ="Op deze pagina kunt u intakes verzenden. Het is mogelijk om zowel individuele emails als een naar een mail lijst te versturen."
+            Visible: =sendIntakePopUpContainer
+            Width: =586
+            X: =390
+            Y: =161
+            ZIndex: =23
 
     groep_succes_createStudent As group:
         Height: =5
