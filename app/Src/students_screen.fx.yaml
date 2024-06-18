@@ -237,9 +237,18 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Examen
-                Width: =368
+                Width: =240
                 X: =61
                 ZIndex: =7
+
+            gallery_score_scores_9 As label:
+                Color: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Lighter
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.courseID
+                Width: =220
+                X: =301
+                ZIndex: =8
 
         label_scoreTitle_error As label:
             Align: =Align.Center
@@ -366,13 +375,13 @@ students_screen As screen:
             BorderStyle: =BorderStyle.None
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
-            Height: =300
+            Height: =261
             ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
             Items: |-
                 =ForAll(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            studentID = gallery_students.Selected.Email && courseID = dropdown_courses_2.SelectedText.Value
                         ),
                 
                         {
@@ -396,6 +405,7 @@ students_screen As screen:
                 )
             Width: =500
             XLabelAngle: =55
+            Y: =38
             YAxisMax: =100
             YAxisMin: =0
             ZIndex: =5
@@ -420,6 +430,37 @@ students_screen As screen:
             Width: =500
             Y: =113
             ZIndex: =6
+
+        dropdown_courses_2 As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="All"
+            Fill: =RGBA(45, 45, 45, 1)
+            Height: =30
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    false,
+                    true
+                )
+            Width: =214
+            X: =143
+            Y: =8
+            ZIndex: =7
 
     container_8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
