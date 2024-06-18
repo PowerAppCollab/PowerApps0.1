@@ -216,7 +216,7 @@ presentatie_screen As screen:
                             }
                         )
                 Visible: |-
-                    =If(
+                    =If(presDefault = 1, If(
                         IsEmpty(
                             Filter(
                                 scores,
@@ -225,7 +225,7 @@ presentatie_screen As screen:
                         ),
                         false,
                         true
-                    )
+                    ),false)
                 Width: =841
                 X: =14
                 XLabelAngle: =40
@@ -410,20 +410,10 @@ presentatie_screen As screen:
                 Items: =Filter(groepsInhoud, student_id = gallery_students.Selected.studentID)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 0.6)
-                Visible: |-
-                    =If(
-                        IsEmpty(
-                            Filter(
-                                scores,
-                                studentID = gallery_students.Selected.Email
-                            )
-                        ),
-                        false,
-                        true
-                    )
+                Visible: =If(presDefault = 1, true,false)
                 Width: =214
-                X: =136
-                Y: =10
+                X: =209
+                Y: =12
                 ZIndex: =8
 
             Label28 As label:
@@ -433,7 +423,7 @@ presentatie_screen As screen:
                 Height: =70
                 Text: ="Geen scores gevonden."
                 Visible: |-
-                    =If(
+                    =If(presDefault = 1, If(
                         !IsEmpty(
                             Filter(
                                 scores,
@@ -442,11 +432,21 @@ presentatie_screen As screen:
                         ),
                         false,
                         true
-                    )
+                    ),false)
                 Width: =438
                 X: =209
                 Y: =231
                 ZIndex: =9
+
+            Label29 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Text: |-
+                    ="Geselecteerde cursus:"
+                Visible: =If(presDefault = 1, true,false)
+                Width: =208
+                X: =14
+                Y: =6
+                ZIndex: =10
 
         Group5 As group:
             Height: =5
