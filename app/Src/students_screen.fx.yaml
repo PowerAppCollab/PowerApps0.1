@@ -417,7 +417,7 @@ students_screen As screen:
                 =ForAll(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
+                            studentID = gallery_students.Selected.Email && groupName = dropdown_courses_2.SelectedText.Value
                         ),
                         {
                             score: score,
@@ -432,7 +432,7 @@ students_screen As screen:
                    IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
+                            studentID = gallery_students.Selected.Email && groupName = dropdown_courses_2.SelectedText.Value
                         )
                     ),
                     false,
@@ -456,7 +456,7 @@ students_screen As screen:
                    !IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email && groupID = dropdown_courses_2.SelectedText.Value
+                            studentID = gallery_students.Selected.Email && groupName = dropdown_courses_2.SelectedText.Value
                         )
                     ),
                     false,
