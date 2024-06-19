@@ -182,12 +182,12 @@ students_screen As screen:
             TemplateSize: =40
             Visible: |
                 =If(
-                    IsBlank(
+                    IsEmpty(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.studentID
+                            studentID = gallery_students.Selected.Email
                         )
-                    ),
+                    ) ||     IsBlank(gallery_students.Selected.Email) && IsBlank(gallery_students.Selected.Voornaam),
                     false,
                     If(
                         scoresToevoegen,
@@ -261,16 +261,20 @@ students_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =75
             Text: ="Er zijn geen scores beschikbaar."
-            Visible: |-
+            Visible: |
                 =If(
                     IsEmpty(
                         Filter(
                             scores,
                             studentID = gallery_students.Selected.Email
                         )
-                    ) && !scoresToevoegen,
+                    ) ||     !IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
                     true,
-                    false
+                    If(
+                        scoresToevoegen,
+                        false,
+                        true
+                    )
                 )
             Width: =600
             Y: =63

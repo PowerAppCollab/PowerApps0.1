@@ -4645,7 +4645,14 @@
         "Width",
         "Height",
         "ZIndex",
-        "Visible",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(\n    IsBlank(\n        Filter(\n            scores,\n            studentID = gallery_students.Selected.studentID\n        )\n    ),\n    false,\n    If(\n        scoresToevoegen,\n        false,\n        true\n    )\n)\n",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "#CopilotOverlayLabel",
         "#CopilotOverlayVisible"
       ],
