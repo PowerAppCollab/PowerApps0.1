@@ -380,7 +380,7 @@ students_screen As screen:
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
                 OnSelect: |-
-                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.Selected.groupID, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
+                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.Selected.groupID, groupName:Dropdown1_1.Selected.name, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
                     Set(scoresToevoegen, false);
                     Refresh(scores);
                 RadiusBottomLeft: =0
