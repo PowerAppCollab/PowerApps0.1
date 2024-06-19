@@ -284,7 +284,7 @@ presentatie_screen As screen:
                         =ForAll(
                                 Filter(
                                     scores,
-                                    studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
+                                    studentID = currPresStudent.Email && groupID = dropdown_courses_3.Selected.groupID
                                 ),
                                 {
                                     score: score,
@@ -345,7 +345,7 @@ presentatie_screen As screen:
                     =ForAll(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.Selected.groupID
                             ),
                             {
                                 score: score,
@@ -428,13 +428,13 @@ presentatie_screen As screen:
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(192, 5, 230, 0.6)
                 Items: |
-                    =Filter(
-                        groepens,
-                        groupID in Filter(
-                            groepsInhoud,
-                            student_id = gallery_students.Selected.studentID
-                        ).groep_id
-                    ).name
+                    =    Filter(
+                            groepens,
+                            groupID in Filter(
+                                groepsInhoud,
+                                student_id = gallery_students.Selected.studentID
+                            ).groep_id
+                        )
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 0.6)
                 Visible: =If(presDefault = 1 || 2, true, false)
