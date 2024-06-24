@@ -689,6 +689,7 @@ students_screen As screen:
 
             Label7_7 As label:
                 Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
                 FontWeight: =FontWeight.Lighter
                 Text: |
                     =If(
@@ -736,15 +737,11 @@ students_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =41
+            FontWeight: =FontWeight.Lighter
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            Mode: =TextMode.MultiLine
-            PaddingBottom: =10
-            PaddingLeft: =4
-            PaddingRight: =10
-            PaddingTop: =10
+            PaddingLeft: =5
             PressedBorderColor: =
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
@@ -882,22 +879,18 @@ students_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =51
+            FontWeight: =FontWeight.Lighter
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            Mode: =TextMode.MultiLine
-            PaddingBottom: =10
-            PaddingLeft: =4
-            PaddingRight: =10
-            PaddingTop: =10
+            PaddingLeft: =5
             PressedBorderColor: =
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             Visible: =editStudentData
             Width: =349
             X: =233
-            Y: =136
+            Y: =141
             ZIndex: =20
 
         TextInputPhoneNumber_1 As text:
@@ -908,22 +901,19 @@ students_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Lighter
             Height: =41
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            Mode: =TextMode.MultiLine
-            PaddingBottom: =10
             PaddingLeft: =4
-            PaddingRight: =10
-            PaddingTop: =10
             PressedBorderColor: =
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             Visible: =editStudentData
             Width: =163
             X: =233
-            Y: =102
+            Y: =101
             ZIndex: =21
 
         TextInputWerkZaamBij As text:
@@ -935,22 +925,18 @@ students_screen As screen:
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =42
+            FontWeight: =FontWeight.Lighter
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            Mode: =TextMode.MultiLine
-            PaddingBottom: =10
-            PaddingLeft: =4
-            PaddingRight: =10
-            PaddingTop: =10
+            PaddingLeft: =5
             PressedBorderColor: =
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             Visible: =editStudentData
-            Width: =255
+            Width: =295
             X: =233
-            Y: =183
+            Y: =181
             ZIndex: =22
 
         Label7_9 As label:
