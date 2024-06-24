@@ -220,7 +220,7 @@ presentatie_screen As screen:
                         IsEmpty(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
                             )
                         ),
                         false,
@@ -451,14 +451,14 @@ presentatie_screen As screen:
                 Text: ="Geen scores gevonden."
                 Visible: |-
                     =If(presDefault = 1, If(
-                        !IsEmpty(
+                        IsEmpty(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && groupID = dropdown_courses_3.SelectedText.Value
+                                studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
                             )
                         ),
-                        false,
-                        true
+                        true,
+                        false
                     ),false)
                 Width: =438
                 X: =209
