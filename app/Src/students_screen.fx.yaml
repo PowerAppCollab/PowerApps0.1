@@ -1049,7 +1049,7 @@ students_screen As screen:
                     Filter(
                         groepsInhoud,
                         cursus = Self.SelectedText.Value
-                    )
+                    ).student_id
                 )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
