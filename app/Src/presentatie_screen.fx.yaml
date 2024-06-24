@@ -240,42 +240,6 @@ presentatie_screen As screen:
                 Width: =855
                 ZIndex: =3
 
-                Label19 As label:
-                    Align: =Align.Right
-                    Color: =RGBA(255, 255, 255, 1)
-                    Text: |-
-                        ="Eerst behaalde score:"
-                    Width: =226
-                    X: =20
-                    Y: =432
-                    ZIndex: =1
-
-                Label19_1 As label:
-                    Align: =Align.Right
-                    Color: =RGBA(255, 255, 255, 1)
-                    Text: |-
-                        ="Laatst behaalde score:"
-                    Width: =226
-                    X: =20
-                    Y: =459
-                    ZIndex: =2
-
-                Label19_2 As label:
-                    Color: =RGBA(255, 255, 255, 1)
-                    Text: =firstScore
-                    Width: =226
-                    X: =246
-                    Y: =432
-                    ZIndex: =3
-
-                Label19_3 As label:
-                    Color: =RGBA(255, 255, 255, 1)
-                    Text: =lastScore
-                    Width: =226
-                    X: =246
-                    Y: =459
-                    ZIndex: =4
-
                 ColumnChart1 As barChart:
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =381
@@ -284,7 +248,7 @@ presentatie_screen As screen:
                         =ForAll(
                                 Filter(
                                     scores,
-                                    studentID = currPresStudent.Email && groupID = dropdown_courses_3.Selected.groupID
+                                    studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
                                 ),
                                 {
                                     score: score,
@@ -293,6 +257,17 @@ presentatie_screen As screen:
                             )
                     SeriesAxisMax: =100
                     SeriesAxisMin: =0
+                    Visible: |-
+                        =If(presDefault = 2, If(
+                            IsEmpty(
+                                Filter(
+                                    scores,
+                                    studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
+                                )
+                            ),
+                            false,
+                            true
+                        ),false)
                     Width: =855
                     Y: =51
                     ZIndex: =7
@@ -527,6 +502,28 @@ presentatie_screen As screen:
                 X: =556
                 Y: =14
                 ZIndex: =11
+
+            Label28_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =70
+                Text: ="Geen scores gevonden."
+                Visible: |-
+                    =If(presDefault = 2, If(
+                        IsEmpty(
+                            Filter(
+                                scores,
+                                studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
+                            )
+                        ),
+                        true,
+                        false
+                    ),false)
+                Width: =438
+                X: =209
+                Y: =231
+                ZIndex: =12
 
         Group5 As group:
             Height: =5
