@@ -770,7 +770,7 @@ students_screen As screen:
                 RadiusTopLeft: =10
                 RadiusTopRight: =10
                 Width: =If(editStudentData = true, 80, 43)
-                X: =517
+                X: =507
                 Y: =10
                 ZIndex: =15
 
@@ -784,7 +784,7 @@ students_screen As screen:
                     Refresh(studenten_tabel)
                 Visible: =!editStudentData
                 Width: =34
-                X: =522
+                X: =512
                 Y: =15
                 ZIndex: =16
 
@@ -801,7 +801,7 @@ students_screen As screen:
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
-                X: =522
+                X: =512
                 Y: =15
                 ZIndex: =17
 
@@ -870,7 +870,7 @@ students_screen As screen:
                     Reset(TextInputWerkZaamBij);
                 Visible: =editStudentData
                 Width: =34
-                X: =556
+                X: =546
                 Y: =15
                 ZIndex: =18
 
