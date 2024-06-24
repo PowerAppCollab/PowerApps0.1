@@ -438,7 +438,8 @@ students_screen As screen:
                             scores,
                             studentID = gallery_students.Selected.Email && groupName = dropdown_courses_2.SelectedText.Value
                         )
-                    ),
+                    ) && 
+                    IsBlank(gallery_students.Selected.Voornaam),
                     false,
                     true
                 )
@@ -2058,6 +2059,8 @@ students_screen As screen:
                     //true
                     //Set(isPopupExcelFileScoresOpen; false);;
                 
+                
+                
                     //automate
                     Set(failedEmails, uploadScoreFiles.Run(
                         {
@@ -2065,7 +2068,8 @@ students_screen As screen:
                             name: Last(Self.Attachments).Name
                         },
                         TextInput3.Text,
-                        Dropdown1.SelectedText.Value)
+                        Dropdown1.SelectedText.Value,
+                        LookUp(groepens, name = Dropdown1.SelectedText.Value).groupID)
                     );
                 
                     ClearCollect(failedEmailsCollection, failedEmails);
