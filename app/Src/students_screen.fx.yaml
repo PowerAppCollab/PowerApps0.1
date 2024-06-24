@@ -50,8 +50,7 @@ students_screen As screen:
                     ) &&
                     (
                         IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
-                    ) && Filter(studenten_tabel, studentID = LookUp(groepsInhoud, cursus = dropdown_courses.SelectedText.Value).student_id)
-                )
+                    ))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
