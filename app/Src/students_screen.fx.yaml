@@ -730,6 +730,7 @@ students_screen As screen:
 
         TextInputName_1 As text:
             BorderStyle: =BorderStyle.None
+            BorderThickness: =0
             Color: =RGBA(255, 255, 255, 1)
             Default: |
                 =Text(LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam) & " " & Text(gallery_students.Selected.Achternaam)
@@ -748,7 +749,7 @@ students_screen As screen:
             Visible: =editStudentData
             Width: =163
             X: =233
-            Y: =60
+            Y: =61
             ZIndex: =19
 
         Group17_4 As group:
@@ -902,16 +903,15 @@ students_screen As screen:
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
             FontWeight: =FontWeight.Lighter
-            Height: =41
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =4
+            PaddingLeft: =5
             PressedBorderColor: =
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
             Visible: =editStudentData
-            Width: =163
+            Width: =315
             X: =233
             Y: =101
             ZIndex: =21
