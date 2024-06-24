@@ -50,27 +50,13 @@ students_screen As screen:
                     ) &&
                     (
                         IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
-                    )
+                    ) && Filter(studenten_tabel, studentID = LookUp(groepsInhoud, cursus = dropdown_courses.SelectedText.Value).student_id)
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
-            Visible: |-
-                =If(
-                    IsEmpty(
-                        Filter(
-                            studenten_tabel,
-                            StartsWith(
-                                Voornaam,
-                                SearchInput1.Text
-                            )
-                        )
-                    ),
-                    false,
-                    true
-                )
             Width: =500
             ZIndex: =1
 
@@ -1057,6 +1043,14 @@ students_screen As screen:
             Fill: =RGBA(45, 45, 45, 1)
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: =courses
+            OnChange: |
+                =ClearCollect(
+                    selectedStudentIDs,
+                    Filter(
+                        groepsInhoud,
+                        cursus = Self.SelectedText.Value
+                    )
+                )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)

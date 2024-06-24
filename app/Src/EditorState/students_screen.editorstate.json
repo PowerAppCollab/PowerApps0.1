@@ -3163,6 +3163,14 @@
           "InvariantPropertyName": "Default",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "OnChange",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -3389,6 +3397,11 @@
           "Category": "Design",
           "PropertyName": "SelectionColor",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnChange",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultDropdownStyle",
@@ -5969,7 +5982,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Visible",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(\n    IsEmpty(\n        Filter(\n            studenten_tabel,\n            StartsWith(\n                Voornaam,\n                SearchInput1.Text\n            )\n        )\n    ),\n    false,\n    true\n)",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "#CopilotOverlayLabel",
         "#CopilotOverlayVisible"
       ],
