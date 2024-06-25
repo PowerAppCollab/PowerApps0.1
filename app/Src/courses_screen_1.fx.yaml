@@ -224,7 +224,7 @@ courses_screen_1 As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =75
-            Text: ="geen groepen gevonden"
+            Text: ="Geen groepen gevonden"
             Visible: |-
                 =If(
                     IsEmpty(
@@ -233,12 +233,14 @@ courses_screen_1 As screen:
                         course = gallery_courses_2.Selected.name
                         )
                     ),
-                    true,
+                    If(IsBlank(gallery_courses_2.Selected.courseID),
+                    false, 
+                    true),
                     false
                 )
             Width: =500
-            X: =40
-            Y: =40
+            X: =50
+            Y: =112
             ZIndex: =6
 
     container_32 As groupContainer.manualLayoutContainer:
