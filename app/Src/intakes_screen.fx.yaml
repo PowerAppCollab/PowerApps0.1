@@ -12,7 +12,15 @@ intakes_screen As screen:
         //RESET ALL FORMS
         Reset(input_score_intake);
         Reset(input_naam_intake);
-        Set(editNote, false)
+        Set(editNote, false);
+        
+        Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
+        Set(sendIntakeEmailSucces, false);
+        Set(intakeMailsSend, false);
+        Set(uploadedEmails, false);
+        Reset(intakeInput_email_1);
+        RemoveIf(tempEmails, true);
+        Reset(AttachControl_3)
         
         
         
