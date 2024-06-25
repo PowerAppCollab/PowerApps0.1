@@ -137,8 +137,8 @@ agenda_screen As screen:
             Icon: =Icon.Add
             OnSelect: |-
                 =//Set(isAgendaVisible; false)
-                
-                Set(popupNewMeeting, true)
+                Set(popupNewMeeting, true);
+                Set(dropdownEmailsCollection, "intakes");
             Rotation: =
             Visible: =isAgendaVisible && !isAgendaEdit
             Width: =36
@@ -1278,13 +1278,18 @@ agenda_screen As screen:
                     HoverBorderColor: =RGBA(192, 5, 230, 1)
                     HoverColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =RGBA(63, 63, 63, 0.8)
-                    Items: =Filter(studenten_tabel, !IsBlank(Email))
+                    Items: |+
+                        =If(dropdownEmailsCollection = "students",
+                        Filter(studenten_tabel, !IsBlank(Email)),
+                        Filter(intakes, !IsBlank(Email))
+                        )
+                        
                     PressedFill: =RGBA(63, 63, 63, 0.5)
                     SelectionFill: =RGBA(63, 63, 63, 0.8)
                     Visible: =popupNewMeeting
                     Width: =280
                     X: =40
-                    Y: =315
+                    Y: =345
                     ZIndex: =9
 
                 CloseCalendarButton_2 As icon.Add:
@@ -1292,15 +1297,15 @@ agenda_screen As screen:
                     Height: =36
                     Icon: =Icon.Add
                     OnSelect: |+
-                        =If(IsEmpty(Filter(attendeesEmails, Value = Attendees_option_1.SelectedText.Email)),
-                        Collect(attendeesEmails, Attendees_option_1.SelectedText.Email),
+                        =If(IsEmpty(Filter(attendeesEmails, Value = Attendees_option_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bcr884_email')),
+                        Collect(attendeesEmails, Attendees_option_1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bcr884_email'),
                         Notify("Already an Email, error maken..."));
                         
                     Rotation: =
                     Visible: =popupNewMeeting
                     Width: =32
                     X: =336
-                    Y: =319
+                    Y: =349
                     ZIndex: =10
 
                 "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -1428,15 +1433,59 @@ agenda_screen As screen:
 
                 Label24_1 As label:
                     Color: =RGBA(255, 255, 255, 1)
-                    FontWeight: =FontWeight.Lighter
+                    FontWeight: =FontWeight.Semibold
                     Height: =33
                     PaddingLeft: =0
                     Text: ="Deelnemers toevoegen"
                     Visible: =popupNewMeeting
                     Width: =328
                     X: =40
-                    Y: =282
+                    Y: =272
                     ZIndex: =17
+
+            Button7 As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(192, 5, 230, 1)
+                Fill: =If(dropdownEmailsCollection = "intakes", RGBA(192, 5, 230, 1), RGBA(45,45,45,1))
+                FontWeight: =FontWeight.Lighter
+                Height: =22
+                HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                OnSelect: =Set(dropdownEmailsCollection, "intakes")
+                PressedColor: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =13
+                Text: ="Intake e-mails"
+                Width: =200
+                X: =40
+                Y: =310
+                ZIndex: =22
+
+            Button7_1 As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(192, 5, 230, 1)
+                Fill: =If(dropdownEmailsCollection = "students", RGBA(192, 5, 230, 1), RGBA(45,45,45,1))
+                FontWeight: =FontWeight.Lighter
+                Height: =22
+                HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+                OnSelect: =Set(dropdownEmailsCollection, "students")
+                PressedColor: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =13
+                Text: ="Studenten e-mails"
+                Width: =200
+                X: =240
+                Y: =310
+                ZIndex: =23
 
         closePopupNewMeeting As icon.Add:
             Color: =RGBA(192, 5, 230, 1)
@@ -1446,7 +1495,8 @@ agenda_screen As screen:
                 =Set(popupNewMeeting, false);
                 Reset(input_meeting_info_1);
                 Reset(input_meeting_subject_1);
-                Clear(attendeesEmails)
+                Clear(attendeesEmails);
+                Set(dropdownEmailsCollection, "intakes");
             Rotation: =If(isAgendaEdit || !isAgendaVisible = true, "45", "0")
             Visible: =popupNewMeeting
             Width: =36
