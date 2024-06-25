@@ -1138,9 +1138,13 @@ agenda_screen As screen:
                     Height: =42
                     HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
                     OnSelect: |-
-                        =If(
+                        =Set(meeting_subject_error, false);
+                        
+                        If(
                             DatePicker1_2.SelectedDate + Time(Value(Endtime_hours_1.Selected.Value), Value(Endtime_minutes_1.Selected.Value), 0) < DatePicker1_2.SelectedDate + Time(Value(Starttime_hours_1.Selected.Value), Value(Starttime_minutes_1.Selected.Value), 0),
                             Notify("Controleer de tijden."),
+                            If(IsBlank(input_meeting_info_1.Text) || IsBlank(input_meeting_subject_1.Text),
+                            Set(meeting_subject_error, true),
                             If(
                                 CountRows(
                                     Filter(
@@ -1205,6 +1209,7 @@ agenda_screen As screen:
                                 
                                 //Nieuwe Collectie
                                 ClearCollect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_maxDate, DateTimeFormat.UTC)).value);
+                            )
                             )
                         )
                     RadiusBottomLeft: =0
@@ -1486,6 +1491,28 @@ agenda_screen As screen:
                 X: =240
                 Y: =310
                 ZIndex: =23
+
+            Label19 As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =30
+                PaddingLeft: =0
+                Text: ="Voer een onderwerp in."
+                Visible: =meeting_subject_error
+                Width: =250
+                X: =40
+                Y: =61
+                ZIndex: =24
+
+            Label19_1 As label:
+                Color: =RGBA(184, 0, 0, 1)
+                Height: =30
+                PaddingLeft: =0
+                Text: ="Voer informatie in."
+                Visible: =meeting_subject_error
+                Width: =250
+                X: =40
+                Y: =125
+                ZIndex: =25
 
         closePopupNewMeeting As icon.Add:
             Color: =RGBA(192, 5, 230, 1)
