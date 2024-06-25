@@ -17,7 +17,6 @@ courses_screen_1 As screen:
         "gallery_courses_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
-            Height: =512
             Items: |
                 =
                 Filter(courses, StartsWith(name, SearchInput1_2.Text) && name <> "All")
@@ -81,29 +80,21 @@ courses_screen_1 As screen:
                 Y: =26
                 ZIndex: =3
 
-        label_gallery_students_error_3 As label:
+        label_studentInformation_error_notSelected_3 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
-            Height: =61
-            Text: ="Geen cursussen gevonden."
+            Height: =66
+            Text: ="Geen cursus gevonden."
             Visible: |-
                 =If(
-                    IsEmpty(
-                        Filter(
-                            courses,
-                            StartsWith(
-                                name,
-                                SearchInput1_1.Text
-                            )
-                        )
-                    ),
+                    IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name),
                     true,
                     false
                 )
             Width: =500
-            Y: =95
-            ZIndex: =2
+            Y: =156
+            ZIndex: =3
 
     container_36 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -117,40 +108,6 @@ courses_screen_1 As screen:
         X: =725
         Y: =195
         ZIndex: =2
-
-        label_studentInformation_error_notSelected_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =66
-            Text: ="Geen cursus geselecteerd."
-            Visible: |-
-                =If(
-                    IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name),
-                    true,
-                    false
-                )
-            Width: =558
-            X: =21
-            Y: =117
-            ZIndex: =3
-
-        label_studentInformation_error_deleted_2 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Lighter
-            Height: =66
-            Text: ="Deze student is reeds worden verwijderd. Enkel de scores en de cursussen zijn nog zichtbaar."
-            Visible: |-
-                =If(
-                    IsBlank(gallery_courses_2.Selected.courseID) && !IsBlank(gallery_courses_2.Selected.name),
-                    true,
-                    false
-                )
-            Width: =558
-            X: =21
-            Y: =117
-            ZIndex: =4
 
         "gallery_groups_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -229,14 +186,16 @@ courses_screen_1 As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                        groepens,
-                        course = gallery_courses_2.Selected.name
+                            groepens,
+                            course = gallery_courses_2.Selected.name
                         )
                     ),
-                    If(IsBlank(gallery_courses_2.Selected.courseID),
-                    false, 
-                    true),
-                    false
+                    true,
+                    If(
+                        IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name),
+                        true,
+                        false
+                    )
                 )
             Width: =500
             X: =50
