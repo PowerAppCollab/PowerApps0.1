@@ -259,7 +259,7 @@ agenda_screen As screen:
                     Text: =ThisItem.Location
                     Width: =426
                     X: =6
-                    Y: =56
+                    Y: =54
                     ZIndex: =9
 
                 Rectangle6 As rectangle:
@@ -404,7 +404,7 @@ agenda_screen As screen:
             Label8_3 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Lighter
-                Height: =246
+                Height: =134
                 PaddingLeft: =0
                 Size: =16
                 Text: |
@@ -416,7 +416,7 @@ agenda_screen As screen:
                 Visible: =isAgendaEdit
                 Width: =508
                 X: =15
-                Y: =215
+                Y: =327
                 ZIndex: =18
 
             Label8_4 As label:
@@ -1040,12 +1040,12 @@ agenda_screen As screen:
         Label8_8 As label:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
-            Height: =43
+            Height: =148
             PaddingLeft: =0
             Size: =16
             Text: =CalendarEventsGallery1_1.Selected.Body
             Visible: =isAgendaEdit
-            Width: =486
+            Width: =667
             X: =128
             Y: =170
             ZIndex: =51
@@ -1250,7 +1250,7 @@ agenda_screen As screen:
                                         requiredAttendees: Concat(attendeesEmails, Value & "; "),
                                         responseRequested: true,
                                         isAllDay: false,
-                                        body: input_meeting_info.Text,
+                                        body: input_meeting_info_1.Text,
                                         showAs: "busy"
                                     }
                                 );
