@@ -277,16 +277,6 @@ groups_screen As screen:
             Y: =95
             ZIndex: =2
 
-        Button4_2 As button:
-            Fill: =RGBA(192, 5, 230, 1)
-            Height: =30
-            HoverFill: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            OnSelect: =Set(varShowCreateGroupPopup, true);
-            Text: ="Groep aanmaken"
-            Width: =500
-            Y: =227
-            ZIndex: =3
-
     container_18 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Fill: =RGBA(60, 60, 60, 1)
@@ -486,7 +476,7 @@ groups_screen As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Width: =406
+            Width: =365
             X: =15
             Y: =17
             ZIndex: =1
@@ -496,9 +486,19 @@ groups_screen As screen:
             Height: =35
             Icon: =Icon.Search
             Width: =35
-            X: =438
+            X: =400
             Y: =19
             ZIndex: =2
+
+        Icon1_8 As icon.Search:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =35
+            Icon: =Icon.Add
+            OnSelect: =Set(varShowCreateGroupPopup, true);
+            Width: =35
+            X: =452
+            Y: =19
+            ZIndex: =3
 
     container_24 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
