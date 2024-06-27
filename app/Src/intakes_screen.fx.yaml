@@ -14,7 +14,7 @@ intakes_screen As screen:
         Reset(input_naam_intake);
         Set(editNote, false);
         
-        Set(sendIntakePopUpContainer, !sendIntakePopUpContainer);
+        Set(sendIntakePopUpContainer, false);
         Set(sendIntakeEmailSucces, false);
         Set(intakeMailsSend, false);
         Set(uploadedEmails, false);
@@ -1848,6 +1848,7 @@ intakes_screen As screen:
             =Set(currPagePopupSendIntake, 2);
             Set(uploadedEmails, false);
             Set(intakeMailsSend, false);
+            Set(sendIntakeEmailSucces, false);
             RemoveIf(tempEmails, true);
             Reset(AttachControl_3)
         RadiusBottomLeft: =0
@@ -1864,7 +1865,7 @@ intakes_screen As screen:
         BorderStyle: =BorderStyle.None
         DropShadow: =DropShadow.None
         Height: =337
-        Visible: =currPagePopupSendIntake = 1 && sendIntakePopUpContainer =true
+        Visible: =currPagePopupSendIntake = 1 && sendIntakePopUpContainer
         Width: =814
         X: =276
         Y: =261
