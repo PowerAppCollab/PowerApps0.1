@@ -276,14 +276,13 @@ presentatie_screen As screen:
                 Color: =
                 DisabledBorderColor: =
                 DisplayMode: =DisplayMode.Disabled
-                Height: =476
+                Height: =489
                 HoverBorderColor: =
                 ItemColorSet: =[RGBA(243, 243, 243, 0.6),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: =averageGroupScoresLinegraph
                 PressedBorderColor: =
-                Visible: =//If(presDefault = 3 && dropdown_courses_1.Selected.value = "Groepsgemiddelde"; true;false)
-                Width: =841
-                X: =14
+                Visible: =If(presDefault = 3 && averageComparing = true && dropdown_courses_1.Selected.value = "Groepsgemiddelde", true,false)
+                Width: =855
                 XLabelAngle: =40
                 Y: =42
                 YAxisMax: =100
@@ -482,7 +481,7 @@ presentatie_screen As screen:
                 HoverFill: =RGBA(219, 219, 219, 0.4)
                 Items: =dropdownMenuOptions
                 OnChange: |+
-                    =If(dropdown_courses_4.SelectedText.Value <> "Groepsgemiddelde", Set(isComparing, true), Set(isComparing, false));
+                    =If(dropdown_courses_4.SelectedText.Value <> "Groepsgemiddelde", Set(isComparing, true); Set(averageComparing, false), Set(isComparing, false); Set(averageComparing, true));
                     
                     If(isComparing = true,
                     
@@ -766,7 +765,7 @@ presentatie_screen As screen:
                     groupScores,
                     Filter(
                         scores,
-                        groupID = gallery_students.Selected.groupID
+                        groupID = dropdown_courses_3.Selected.groupID
                     )
                 );
                 ClearCollect(
@@ -805,7 +804,7 @@ presentatie_screen As screen:
                     ForAll(
                         Filter(
                             scores,
-                            studentID = gallery_students.Selected.Email
+                            studentID = currPresStudent.Email && groupID = dropdown_courses_3.Selected.groupID
                         ),
                         {
                             score: score,
