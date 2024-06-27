@@ -396,10 +396,36 @@ students_screen As screen:
                 FontWeight: =FontWeight.Normal
                 Height: =33
                 HoverFill: =ColorFade(RGBA(192,5,230,100), -20%)
-                OnSelect: |-
-                    =Patch(scores, Defaults(scores),{groupID:Dropdown1_1.Selected.groupID, groupName:Dropdown1_1.Selected.name, courseID:Dropdown1_1.Selected.course, studentID: gallery_students.Selected.Email, score: input_score_examen.Text, Examen: input_naam_examen.Text, ID: GUID()} );
-                    Set(scoresToevoegen, false);
-                    Refresh(scores);
+                OnSelect: |
+                    =If(
+                        !IsBlank(Dropdown1_1.Selected.groupID) && 
+                        !IsBlank(Dropdown1_1.Selected.name) &&
+                        !IsBlank(Dropdown1_1.Selected.course) &&
+                        !IsBlank(gallery_students.Selected.Email) &&
+                        !IsBlank(input_score_examen.Text) &&
+                        !IsBlank(input_naam_examen.Text),
+                        Patch(
+                            scores,
+                            Defaults(scores),
+                            {
+                                groupID: Dropdown1_1.Selected.groupID,
+                                groupName: Dropdown1_1.Selected.name,
+                                courseID: Dropdown1_1.Selected.course,
+                                studentID: gallery_students.Selected.Email,
+                                score: Value(input_score_examen.Text),
+                                Examen: input_naam_examen.Text,
+                                ID: GUID()
+                            }
+                        ),
+                        Set(
+                            scoresToevoegen,
+                            false
+                        ),
+                        Refresh(scores),
+                        Notify("Score added successfully", NotificationType.Success)
+                    ,
+                        Notify("Please fill in all the required fields.", NotificationType.Error)
+                    )
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
