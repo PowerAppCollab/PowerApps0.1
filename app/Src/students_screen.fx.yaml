@@ -13,6 +13,33 @@ students_screen As screen:
         
         
 
+    Button1 As button:
+        Align: =Align.Left
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Normal
+        HoverFill: =
+        OnSelect: =Set(isPopupExcelFileScoresOpen, true); Set(isExcelFileError, false); Reset(AttachControl_2); Set(noExamNameError, false); Set(ErrorWhileUploading, false); Reset(TextInput3)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedColor: =RGBA(128, 128, 128, 1)
+        PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Score uploaden"
+        X: =180
+        Y: =119
+        ZIndex: =1
+
     navigatie_component_3 As navigatie_component:
         nav_agendaScreen: =agenda_screen
         nav_cursussenScreen: =courses_screen_1
@@ -20,6 +47,7 @@ students_screen As screen:
         nav_intakesScreen: =intakes_screen
         nav_presenterenScreen: =presentatie_screen
         nav_studentenScreen: =students_screen
+        ZIndex: =2
 
     container_5 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -31,7 +59,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =160
-        ZIndex: =4
+        ZIndex: =5
 
         "gallery_students As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
@@ -144,7 +172,7 @@ students_screen As screen:
         Width: =600
         X: =726
         Y: =40
-        ZIndex: =5
+        ZIndex: =6
 
         label_scoreTitle As label:
             Align: =Align.Center
@@ -394,7 +422,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =425
-        ZIndex: =6
+        ZIndex: =7
 
         LineChart1 As lineChart:
             BorderStyle: =BorderStyle.None
@@ -504,7 +532,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =270
-        ZIndex: =7
+        ZIndex: =8
 
         label_studentInformation As label:
             Align: =Align.Center
@@ -1001,7 +1029,7 @@ students_screen As screen:
         RadiusTopRight: =15
         X: =180
         Y: =40
-        ZIndex: =8
+        ZIndex: =9
 
         SearchInput1 As text:
             BorderStyle: =BorderStyle.None
@@ -1069,7 +1097,7 @@ students_screen As screen:
         Width: =600
         X: =725
         Y: =600
-        ZIndex: =9
+        ZIndex: =10
 
         groep_verwijder As group:
             Height: =5
@@ -1389,7 +1417,7 @@ students_screen As screen:
             Height: =768
             Visible: =varShowPopup
             Width: =1366
-            ZIndex: =10
+            ZIndex: =11
 
         popup_box As button:
             AutoDisableOnSelect: =false
@@ -1402,7 +1430,7 @@ students_screen As screen:
             Width: =663
             X: =352
             Y: =254
-            ZIndex: =11
+            ZIndex: =12
 
         popup_text As label:
             Align: =Align.Center
@@ -1417,7 +1445,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =318
-            ZIndex: =12
+            ZIndex: =13
 
         popup_header As label:
             Align: =Align.Center
@@ -1430,7 +1458,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =13
+            ZIndex: =14
 
         knop_verwijder As button:
             BorderStyle: =BorderStyle.None
@@ -1464,7 +1492,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =397
             Y: =455
-            ZIndex: =14
+            ZIndex: =15
 
         knop_annuleer As button:
             BorderStyle: =BorderStyle.None
@@ -1483,7 +1511,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =810
             Y: =455
-            ZIndex: =15
+            ZIndex: =16
 
         knop_archiveer As button:
             BorderStyle: =BorderStyle.None
@@ -1519,7 +1547,7 @@ students_screen As screen:
             Visible: =varShowPopup
             X: =603
             Y: =455
-            ZIndex: =22
+            ZIndex: =23
 
     groep_popup_sendscore As group:
         Height: =5
@@ -1533,7 +1561,7 @@ students_screen As screen:
             Height: =768
             Visible: =SendMailBoxOpen
             Width: =1366
-            ZIndex: =16
+            ZIndex: =17
 
         popup_box_2 As button:
             AutoDisableOnSelect: =false
@@ -1546,7 +1574,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =17
+            ZIndex: =18
 
         popup_text_2 As label:
             Align: =Align.Center
@@ -1561,7 +1589,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =332
-            ZIndex: =18
+            ZIndex: =19
 
         popup_header_2 As label:
             Align: =Align.Center
@@ -1574,7 +1602,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =19
+            ZIndex: =20
 
         knop_verwijder_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1593,7 +1621,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =726
             Y: =455
-            ZIndex: =20
+            ZIndex: =21
 
         knop_annuleer_2 As button:
             BorderStyle: =BorderStyle.None
@@ -1612,7 +1640,7 @@ students_screen As screen:
             Visible: =SendMailBoxOpen
             X: =486
             Y: =455
-            ZIndex: =21
+            ZIndex: =22
 
     groep_popup_sendpdf As group:
         Height: =5
@@ -1626,7 +1654,7 @@ students_screen As screen:
             Height: =768
             Visible: =PDFisMade
             Width: =1366
-            ZIndex: =23
+            ZIndex: =24
 
         popup_box_3 As button:
             AutoDisableOnSelect: =false
@@ -1639,7 +1667,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =254
-            ZIndex: =24
+            ZIndex: =25
 
         popup_text_3 As label:
             Align: =Align.Center
@@ -1651,7 +1679,7 @@ students_screen As screen:
             Width: =454
             X: =456
             Y: =332
-            ZIndex: =25
+            ZIndex: =26
 
         popup_header_3 As label:
             Align: =Align.Center
@@ -1664,7 +1692,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =266
-            ZIndex: =26
+            ZIndex: =27
 
         knop_sendPDF As button:
             BorderStyle: =BorderStyle.None
@@ -1688,7 +1716,7 @@ students_screen As screen:
             Visible: =PDFisMade
             X: =726
             Y: =455
-            ZIndex: =27
+            ZIndex: =28
 
         knop_annuleer_3 As button:
             BorderStyle: =BorderStyle.None
@@ -1711,34 +1739,7 @@ students_screen As screen:
             Visible: =PDFisMade
             X: =486
             Y: =455
-            ZIndex: =28
-
-    Button1 As button:
-        Align: =Align.Left
-        BorderColor: =
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =0
-        Color: =RGBA(166, 166, 166, 1)
-        DisabledColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(0, 0, 0, 0)
-        FontWeight: =FontWeight.Normal
-        HoverFill: =
-        OnSelect: =Set(isPopupExcelFileScoresOpen, true); Set(isExcelFileError, false); Reset(AttachControl_2); Set(noExamNameError, false); Set(ErrorWhileUploading, false); Reset(TextInput3)
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        PressedColor: =RGBA(128, 128, 128, 1)
-        PressedFill: =
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Size: =13
-        Text: ="Score uploaden"
-        X: =180
-        Y: =119
-        ZIndex: =35
+            ZIndex: =29
 
     Rectangle9 As rectangle:
         Fill: =RGBA(45, 45, 45, 0.8)
@@ -1805,7 +1806,7 @@ students_screen As screen:
             Height: =768
             Visible: =varShowDeleteArchivedPopUp
             Width: =1366
-            ZIndex: =29
+            ZIndex: =30
 
         popup_box_17 As button:
             AutoDisableOnSelect: =false
@@ -1818,7 +1819,7 @@ students_screen As screen:
             Width: =505
             X: =431
             Y: =255
-            ZIndex: =30
+            ZIndex: =31
 
         popup_header_15 As label:
             Align: =Align.Center
@@ -1831,7 +1832,7 @@ students_screen As screen:
             Width: =505
             X: =430
             Y: =261
-            ZIndex: =31
+            ZIndex: =32
 
         knop_toevoegen_11 As button:
             BorderStyle: =BorderStyle.None
@@ -1855,7 +1856,7 @@ students_screen As screen:
             Visible: =varShowDeleteArchivedPopUp
             X: =487
             Y: =415
-            ZIndex: =32
+            ZIndex: =33
 
         knop_annuleer_16 As button:
             BorderStyle: =BorderStyle.None
@@ -1874,7 +1875,7 @@ students_screen As screen:
             Visible: =varShowDeleteArchivedPopUp
             X: =727
             Y: =415
-            ZIndex: =33
+            ZIndex: =34
 
         Label9_5 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -1884,7 +1885,7 @@ students_screen As screen:
             Width: =285
             X: =559
             Y: =324
-            ZIndex: =34
+            ZIndex: =35
 
     Group6 As group:
         Height: =5
@@ -1907,17 +1908,17 @@ students_screen As screen:
             Width: =75
             X: =635
             Y: =127
-            ZIndex: =2
+            ZIndex: =3
 
         Label17 As label:
             Align: =Align.Right
             Color: =RGBA(255, 255, 255, 1)
             Height: =29
             Text: ="Toon gearchiveerde studenten"
-            Width: =433
-            X: =202
+            Width: =283
+            X: =352
             Y: =123
-            ZIndex: =3
+            ZIndex: =4
 
     Label26 As label:
         Color: =RGBA(184, 0, 0, 1)
