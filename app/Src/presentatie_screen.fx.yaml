@@ -417,7 +417,7 @@ presentatie_screen As screen:
                     ForAll(
                         Filter(
                             studenten_tabel,
-                            !IsBlank(Email) && !IsBlank(Achternaam)
+                            !IsBlank(Email) && !IsBlank(Achternaam) && studentID = LookUp(groepsInhoud, groep_id =  LookUp(groepens, name = dropdown_courses_3.SelectedText.Value).groupID).student_id
                         ),
                         Collect(
                             dropdownMenuOptions,
@@ -458,7 +458,7 @@ presentatie_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Text: |-
                     ="Groep:"
-                Width: =208
+                Width: =75
                 X: =14
                 Y: =6
                 ZIndex: =10
@@ -708,7 +708,7 @@ presentatie_screen As screen:
                 ForAll(
                     Filter(
                         studenten_tabel,
-                        !IsBlank(Email) && !IsBlank(Achternaam)
+                        !IsBlank(Email) && !IsBlank(Achternaam) && studentID = LookUp(groepsInhoud, groep_id =  LookUp(groepens, name = dropdown_courses_3.SelectedText.Value).groupID).student_id
                     ),
                     Collect(
                         dropdownMenuOptions,
