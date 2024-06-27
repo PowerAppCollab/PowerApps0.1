@@ -408,6 +408,22 @@ presentatie_screen As screen:
                                 student_id = gallery_students.Selected.studentID
                             ).groep_id
                         )
+                OnChange: |-
+                    =Clear(dropdownMenuOptions);
+                    Collect(
+                        dropdownMenuOptions,
+                        { value: "Groepsgemiddelde" }
+                    );
+                    ForAll(
+                        Filter(
+                            studenten_tabel,
+                            !IsBlank(Email) && !IsBlank(Achternaam)
+                        ),
+                        Collect(
+                            dropdownMenuOptions,
+                            { value: Voornaam & " " & Achternaam, studentID: studentID  }
+                        )
+                    );
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 0.6)
                 Visible: =If(presDefault = 1 || 2, true, false)
