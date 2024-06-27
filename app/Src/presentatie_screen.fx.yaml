@@ -202,7 +202,7 @@ presentatie_screen As screen:
                 BorderStyle: =
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.View
-                Height: =475
+                Height: =489
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: |-
                     =ForAll(
@@ -226,8 +226,7 @@ presentatie_screen As screen:
                         false,
                         true
                     ),false)
-                Width: =841
-                X: =14
+                Width: =855
                 XLabelAngle: =40
                 Y: =42
                 YAxisMax: =100
@@ -314,13 +313,13 @@ presentatie_screen As screen:
                 BorderStyle: =
                 Color: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.Disabled
-                Height: =476
+                Height: =489
                 ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
                 Items: |-
                     =ForAll(
                             Filter(
                                 scores,
-                                studentID = currPresStudent.Email && courseID = dropdown_courses_3.Selected.groupID
+                                studentID = currPresStudent.Email && groupName = dropdown_courses_3.SelectedText.Value
                             ),
                             {
                                 score: score,
@@ -328,8 +327,7 @@ presentatie_screen As screen:
                             }
                         )
                 Visible: =If(presDefault = 3, true,false)
-                Width: =841
-                X: =14
+                Width: =855
                 XLabelAngle: =40
                 Y: =42
                 YAxisMax: =100
@@ -414,8 +412,8 @@ presentatie_screen As screen:
                 SelectionFill: =RGBA(192, 5, 230, 0.6)
                 Visible: =If(presDefault = 1 || 2, true, false)
                 Width: =214
-                X: =209
-                Y: =12
+                X: =83
+                Y: =11
                 ZIndex: =8
 
             Label28 As label:
@@ -443,7 +441,7 @@ presentatie_screen As screen:
             Label29 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 Text: |-
-                    ="Geselecteerde groep:"
+                    ="Groep:"
                 Width: =208
                 X: =14
                 Y: =6
@@ -461,39 +459,7 @@ presentatie_screen As screen:
                 Height: =32
                 HoverFill: =RGBA(219, 219, 219, 0.4)
                 Items: =dropdownMenuOptions
-                OnChange: |+
-                    =If(dropdown_courses_4.Selected.value <> "Groepsgemiddelde", Set(isComparing, true), Set(isComparing, false));
-                    
-                    If(isComparing = true, Set(currComparingStudentEmail, LookUp(studenten_tabel, studentID = dropdown_courses_4.Selected.studentID).Email);
-                    ClearCollect(
-                        groupScores,
-                        Filter(
-                            scores,
-                            groupID = gallery_students.Selected.groupID
-                        )
-                    );
-                    ClearCollect(
-                        uniqueExams,
-                        Distinct(
-                            groupScores,
-                            Examen
-                        )
-                    );
-                    ClearCollect(
-                        currComparingStudentLinegraph,
-                        ForAll(
-                            Filter(
-                                scores,
-                                studentID = currComparingStudentEmail
-                            ),
-                            {
-                                score: score,
-                                Examen: Examen,
-                                Line: "Current"
-                            }
-                        )
-                    ););
-                    
+                OnChange: =
                 PressedColor: =RGBA(0, 0, 0, 1)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SelectionFill: =RGBA(192, 5, 230, 1)
@@ -717,6 +683,23 @@ presentatie_screen As screen:
             HoverFill: =If(presDefault =3,RGBA(192,5,230,0.8),RGBA(45, 45, 45, 0.8))
             OnSelect: |+
                 =Set(presDefault, 3);
+                //ANDEREN IN GROEP VOOR DROPDOWN MENU
+                Clear(dropdownMenuOptions);
+                Collect(
+                    dropdownMenuOptions,
+                    { value: "Groepsgemiddelde" }
+                );
+                ForAll(
+                    Filter(
+                        studenten_tabel,
+                        !IsBlank(Email) && !IsBlank(Achternaam)
+                    ),
+                    Collect(
+                        dropdownMenuOptions,
+                        { value: Voornaam & " " & Achternaam, studentID: studentID  }
+                    )
+                );
+                
                 //LINEGRAPH CALCULATING
                 ClearCollect(
                     groupScores,
