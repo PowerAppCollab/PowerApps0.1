@@ -417,11 +417,18 @@ presentatie_screen As screen:
                     ForAll(
                         Filter(
                             studenten_tabel,
-                            !IsBlank(Email) && !IsBlank(Achternaam) && studentID = LookUp(groepsInhoud, groep_id =  LookUp(groepens, name = dropdown_courses_3.SelectedText.Value).groupID).student_id
+                            studentID <> currPresStudent.studentID && !IsBlank(Email) && !IsBlank(Achternaam) &&
+                            studentID in Filter(
+                                groepsInhoud,
+                                groep_id in Filter(
+                                    groepens,
+                                    name = dropdown_courses_3.SelectedText.Value
+                                ).groupID
+                            ).student_id
                         ),
                         Collect(
                             dropdownMenuOptions,
-                            { value: Voornaam & " " & Achternaam, studentID: studentID  }
+                            { value: Voornaam & " " & Achternaam, studentID: studentID }
                         )
                     );
                 PressedFill: =RGBA(255, 255, 255, 1)
@@ -708,11 +715,18 @@ presentatie_screen As screen:
                 ForAll(
                     Filter(
                         studenten_tabel,
-                        !IsBlank(Email) && !IsBlank(Achternaam) && studentID = LookUp(groepsInhoud, groep_id =  LookUp(groepens, name = dropdown_courses_3.SelectedText.Value).groupID).student_id
+                        studentID <> currPresStudent.studentID && !IsBlank(Email) && !IsBlank(Achternaam) &&
+                        studentID in Filter(
+                            groepsInhoud,
+                            groep_id in Filter(
+                                groepens,
+                                name = dropdown_courses_3.SelectedText.Value
+                            ).groupID
+                        ).student_id
                     ),
                     Collect(
                         dropdownMenuOptions,
-                        { value: Voornaam & " " & Achternaam, studentID: studentID  }
+                        { value: Voornaam & " " & Achternaam, studentID: studentID }
                     )
                 );
                 
