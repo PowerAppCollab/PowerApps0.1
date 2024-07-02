@@ -855,7 +855,7 @@ groups_screen As screen:
                 CheckboxSize: =35
                 CheckmarkFill: =RGBA(192, 5, 230, 1)
                 Color: =RGBA(192, 5, 230, 1)
-                Default: =
+                Default: =isChecked
                 DisabledColor: =RGBA(192, 5, 230, 1)
                 Fill: =RGBA(45, 45, 45, 0)
                 Height: =70
@@ -923,7 +923,8 @@ groups_screen As screen:
                 =Refresh(groepens);
                 Refresh(studenten_tabel);
                 Set(varShowAddPopup, false);
-                Clear(allNewStudentIDsForGroup)
+                Clear(allNewStudentIDsForGroup);
+                Set(isChecked, false)
             Visible: =varShowAddPopup
             Width: =35
             X: =337
@@ -1040,7 +1041,7 @@ groups_screen As screen:
                 CheckboxSize: =35
                 CheckmarkFill: =RGBA(192, 5, 230, 1)
                 Color: =RGBA(192, 5, 230, 1)
-                Default: =
+                Default: =isCheckedDel
                 DisabledColor: =RGBA(192, 5, 230, 1)
                 Fill: =RGBA(45, 45, 45, 0)
                 Height: =70
@@ -1116,6 +1117,7 @@ groups_screen As screen:
                 Set(varShowDeletePopup, false);
                 Set(resetCheckboxVar, false);
                 Clear(allDelStudentIDsForGroup);
+                Set(isCheckedDel, false)
             Visible: =varShowDeletePopup
             Width: =35
             X: =337
@@ -1137,7 +1139,7 @@ groups_screen As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Visible: =varShowAddPopup
+            Visible: =varShowAddPopup && !IsEmpty(allNewStudentIDsForGroup)
             Width: |
                 =80
             X: =936
@@ -1151,7 +1153,7 @@ groups_screen As screen:
             OnSelect: |
                 =Set(resetCheckboxVar, true); Set(resetCheckboxVar, false);
                 Clear(allNewStudentIDsForGroup)
-            Visible: =varShowAddPopup
+            Visible: =varShowAddPopup && !IsEmpty(allNewStudentIDsForGroup)
             Width: =34
             X: =941
             Y: =571
@@ -1183,9 +1185,16 @@ groups_screen As screen:
                             cursus: gallery_courses_3.Selected.course
                         }
                     )
-                )
+                );
                 
-            Visible: =varShowAddPopup
+                Refresh(groepens);
+                Refresh(studenten_tabel);
+                Set(varShowAddPopup, false);
+                Clear(allNewStudentIDsForGroup);
+                Set(isChecked, false)
+                
+                
+            Visible: =varShowAddPopup && !IsEmpty(allNewStudentIDsForGroup)
             Width: =34
             X: =975
             Y: =571
@@ -1206,7 +1215,7 @@ groups_screen As screen:
             RadiusBottomRight: =10
             RadiusTopLeft: =10
             RadiusTopRight: =10
-            Visible: =varShowDeletePopup
+            Visible: =varShowDeletePopup && !IsEmpty(allDelStudentIDsForGroup)
             Width: =80
             X: =956
             Y: =571
@@ -1219,7 +1228,7 @@ groups_screen As screen:
             OnSelect: |
                 =Set(resetCheckboxVar, true); Set(resetCheckboxVar, false);
                 Clear(allDelStudentIDsForGroup)
-            Visible: =varShowDeletePopup
+            Visible: =varShowDeletePopup && !IsEmpty(allDelStudentIDsForGroup)
             Width: =34
             X: =961
             Y: =576
@@ -1229,12 +1238,20 @@ groups_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =28
             Icon: =Icon.Check
-            OnSelect: |
+            OnSelect: |+
                 =ForAll(
                     allDelStudentIDsForGroup,
                     Remove(groepsInhoud, Filter(groepsInhoud, student_id = Student_id && groep_id = Groep_id))
                 );
-            Visible: =varShowDeletePopup
+                
+                Refresh(groepens);
+                Refresh(studenten_tabel);
+                Set(varShowDeletePopup, false);
+                Set(resetCheckboxVar, false);
+                Clear(allDelStudentIDsForGroup);
+                Set(isCheckedDel, false)
+                
+            Visible: =varShowDeletePopup && !IsEmpty(allDelStudentIDsForGroup)
             Width: =34
             X: =995
             Y: =576
