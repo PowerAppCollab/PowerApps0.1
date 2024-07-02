@@ -982,6 +982,8 @@ students_screen As screen:
         Label7_9 As label:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
+            Height: =63
+            Overflow: =Overflow.Scroll
             Text: |
                 =Text(
                     Concat(
@@ -1004,7 +1006,7 @@ students_screen As screen:
                     false,
                     true
                 )
-            Width: =315
+            Width: =346
             X: =233
             Y: =221
             ZIndex: =23
