@@ -1263,7 +1263,7 @@ groups_screen As screen:
             Text: =""
             Visible: =varShowCreateGroupPopup
             Width: =576
-            X: =461
+            X: =395
             Y: =220
             ZIndex: =13
 
@@ -1276,8 +1276,8 @@ groups_screen As screen:
             Text: ="Groep aanmaken"
             Visible: =varShowCreateGroupPopup
             Width: =577
-            X: =460
-            Y: =220
+            X: =395
+            Y: =230
             ZIndex: =14
 
         knop_toevoegen_5 As button:
@@ -1331,8 +1331,8 @@ groups_screen As screen:
             Text: ="Aanmaken"
             Visible: =varShowCreateGroupPopup
             Width: =183
-            X: =537
-            Y: =467
+            X: =700
+            Y: =466
             ZIndex: =15
 
         knop_annuleer_10 As button:
@@ -1343,7 +1343,9 @@ groups_screen As screen:
             Height: =47
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowCreateGroupPopup, false);
+            OnSelect: |-
+                =Set(varShowCreateGroupPopup, false);
+                Reset(TextInput2)
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
@@ -1352,8 +1354,8 @@ groups_screen As screen:
             Text: ="Annuleer"
             Visible: =varShowCreateGroupPopup
             Width: =183
-            X: =777
-            Y: =467
+            X: =483
+            Y: =466
             ZIndex: =16
 
         addCourseDropDown_2 As dropdown:
@@ -1365,7 +1367,7 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Default: ="Actief"
             Fill: =RGBA(45, 45, 45, 1)
-            Height: =58
+            Height: =35
             HoverFill: =RGBA(192, 5, 230, 1)
             Items: |
                 =Filter(courses, name <> "All")
@@ -1373,9 +1375,9 @@ groups_screen As screen:
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
             Visible: =varShowCreateGroupPopup
-            Width: =423
-            X: =537
-            Y: =374
+            Width: =400
+            X: =483
+            Y: =373
             ZIndex: =17
 
         TextInput2 As text:
@@ -1383,13 +1385,17 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Default: =""
             Fill: =RGBA(45, 45, 45, 1)
-            Height: =52
-            HintText: ="group name"
+            Height: =35
+            HintText: ="Groepnaam"
             HoverBorderColor: =RGBA(45, 45, 45, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Visible: =varShowCreateGroupPopup
-            Width: =419
-            X: =541
-            Y: =291
+            Width: =400
+            X: =483
+            Y: =312
             ZIndex: =18
 
     RemoveGroupPopup_1 As group:

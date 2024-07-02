@@ -375,8 +375,12 @@ courses_screen_1 As screen:
             Height: =46
             HoverFill: =RGBA(161, 0, 194, 1)
             OnSelect: |-
-                =Patch(courses, {courseID: TextInput2_1.Text, name:TextInput2_1.Text});
-                Set(varShowCreateCoursePopup, false);
+                =If(
+                    !IsBlank(LookUp(courses, name = TextInput2_1.Text)),
+                    Notify("Deze naam is al in gebruik, kies een andere naam.", NotificationType.Error),
+                    Patch(courses, {courseID: TextInput2_1.Text, name: TextInput2_1.Text});
+                    Set(varShowCreateCoursePopup, false)
+                )
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
@@ -397,7 +401,9 @@ courses_screen_1 As screen:
             Height: =47
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =RGBA(255, 255, 255, 0.8)
-            OnSelect: =Set(varShowCreateCoursePopup, false);
+            OnSelect: |-
+                =Set(varShowCreateCoursePopup, false);
+                Reset(TextInput2_1)
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
