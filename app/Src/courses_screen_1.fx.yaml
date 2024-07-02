@@ -585,11 +585,11 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="weet je het zeker?"
+            Text: ="Cursus verwijderen"
             Visible: =varShowDeleteCoursePopup
             Width: =505
             X: =430
-            Y: =261
+            Y: =270
             ZIndex: =7
 
         knop_toevoegen_9 As button:
@@ -653,12 +653,14 @@ courses_screen_1 As screen:
             ZIndex: =10
 
         Label9_3 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Height: =57
-            Text: ="weet je het zeker om deze cursus te verwijderen?"
+            Height: =77
+            Overflow: =Overflow.Scroll
+            Text: ="U staat op het punt om deze cursus te verwijderen, weet u het zeker?"
             Visible: =varShowDeleteCoursePopup
-            Width: =285
-            X: =559
+            Width: =444
+            X: =461
             Y: =324
             ZIndex: =11
 
