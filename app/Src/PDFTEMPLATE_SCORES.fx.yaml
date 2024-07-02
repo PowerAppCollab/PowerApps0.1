@@ -56,7 +56,7 @@ PDFTEMPLATE_SCORES As screen:
                 Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
                 Width: =543
                 X: =129
-                Y: =301
+                Y: =246
                 ZIndex: =1
 
             Label12_6 As label:
@@ -67,7 +67,7 @@ PDFTEMPLATE_SCORES As screen:
                 Text: ="Rapport"
                 Width: =543
                 X: =129
-                Y: =252
+                Y: =197
                 ZIndex: =2
 
             Rectangle4_6 As rectangle:
@@ -75,25 +75,8 @@ PDFTEMPLATE_SCORES As screen:
                 Height: =1
                 Width: =300
                 X: =250
-                Y: =300
+                Y: =245
                 ZIndex: =3
-
-            Label13_10 As label:
-                Align: =Align.Center
-                Height: =28
-                Text: ="Uw behaalde scores"
-                Width: =304
-                X: =248
-                Y: =368
-                ZIndex: =4
-
-            Rectangle4_7 As rectangle:
-                Fill: =RGBA(192, 5, 230, 1)
-                Height: =1
-                Width: =300
-                X: =250
-                Y: =395
-                ZIndex: =5
 
             Image5_3 As image:
                 Height: =262
@@ -111,10 +94,10 @@ PDFTEMPLATE_SCORES As screen:
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
-                TemplateSize: =26
-                Width: =366
-                X: =217
-                Y: =396
+                TemplateSize: =29
+                Width: =473
+                X: =164
+                Y: =329
                 ZIndex: =8
 
                 Title3_1 As label:
@@ -140,8 +123,24 @@ PDFTEMPLATE_SCORES As screen:
                     PaddingTop: =0
                     Text: =ThisItem.Examen
                     VerticalAlign: =VerticalAlign.Top
-                    Width: =331
+                    Width: =200
                     X: =35
                     Y: =3
                     ZIndex: =3
+
+                Subtitle3_4 As label:
+                    Color: =RGBA(149, 149, 149, 1)
+                    FontWeight: =FontWeight.Lighter
+                    Height: =23
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.groupName
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =200
+                    X: =235
+                    Y: =3
+                    ZIndex: =4
 
