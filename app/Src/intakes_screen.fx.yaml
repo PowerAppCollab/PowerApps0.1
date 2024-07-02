@@ -61,7 +61,7 @@ intakes_screen As screen:
                 )
             Width: =1150
             Y: =130
-            ZIndex: =3
+            ZIndex: =1
 
         Button4_5 As button:
             Align: =Align.Left
@@ -86,7 +86,7 @@ intakes_screen As screen:
                 )
             Width: =190
             Y: =217
-            ZIndex: =13
+            ZIndex: =9
 
         Group18 As group:
             Height: =5
@@ -102,7 +102,7 @@ intakes_screen As screen:
                 Width: =958
                 X: =192
                 Y: =56
-                ZIndex: =6
+                ZIndex: =2
 
                 FormViewer2 As formViewer:
                     DataSource: =intakeForms
@@ -337,7 +337,7 @@ intakes_screen As screen:
                     )
                 Width: =190
                 Y: =82
-                ZIndex: =7
+                ZIndex: =3
 
             Button4_3 As button:
                 Align: =Align.Left
@@ -362,7 +362,7 @@ intakes_screen As screen:
                     )
                 Width: =190
                 Y: =127
-                ZIndex: =8
+                ZIndex: =4
 
             Button4_4 As button:
                 Align: =Align.Left
@@ -387,7 +387,7 @@ intakes_screen As screen:
                     )
                 Width: =190
                 Y: =172
-                ZIndex: =9
+                ZIndex: =5
 
             Rectangle1 As rectangle:
                 Fill: =RGBA(192, 5, 230, 1)
@@ -395,7 +395,7 @@ intakes_screen As screen:
                 Width: =2
                 X: =190
                 Y: =28
-                ZIndex: =10
+                ZIndex: =6
 
             intakeFormScoresContainer As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -404,7 +404,7 @@ intakes_screen As screen:
                 Width: =958
                 X: =192
                 Y: =56
-                ZIndex: =11
+                ZIndex: =7
 
                 "gallery_score_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     '#CopilotOverlayLabel': ="Filtered"
@@ -626,7 +626,7 @@ intakes_screen As screen:
                 Visible: =If(intakeContainerVisible = 3, true, false)
                 Width: =958
                 X: =192
-                ZIndex: =12
+                ZIndex: =8
 
                 Label21 As label:
                     Color: =RGBA(255, 255, 255, 1)
@@ -768,29 +768,6 @@ intakes_screen As screen:
             Y: =40
             ZIndex: =21
 
-            input_antwoord_intake_1 As text:
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(255, 255, 255, 1)
-                Default: =""
-                DisabledColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: =RGBA(45, 45, 45, 1)
-                Fill: =RGBA(45, 45, 45, 1)
-                Height: =33
-                HintText: ="Vraag"
-                HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(45, 45, 45, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(45, 45, 45, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Visible: =If(intakeContainerVisible = 4, true, false)
-                Width: =300
-                X: =228
-                Y: =65
-                ZIndex: =14
-
             input_vraag_intake_1 As text:
                 BorderStyle: =BorderStyle.None
                 Color: =RGBA(255, 255, 255, 1)
@@ -809,11 +786,36 @@ intakes_screen As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                TabIndex: =2
                 Visible: =If(intakeContainerVisible = 4, true, false)
                 Width: =300
                 X: =228
                 Y: =125
-                ZIndex: =15
+                ZIndex: =10
+
+            input_antwoord_intake_1 As text:
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =""
+                DisabledColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: =RGBA(45, 45, 45, 1)
+                Fill: =RGBA(45, 45, 45, 1)
+                Height: =33
+                HintText: ="Vraag"
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(45, 45, 45, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(45, 45, 45, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                TabIndex: =1
+                Visible: =If(intakeContainerVisible = 4, true, false)
+                Width: =300
+                X: =228
+                Y: =65
+                ZIndex: =11
 
             AddScoreIntake_button_1 As button:
                 BorderStyle: =BorderStyle.None
@@ -839,12 +841,13 @@ intakes_screen As screen:
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Size: =13
+                TabIndex: =3
                 Text: ="Toevoegen"
                 Visible: =If(intakeContainerVisible = 4, true, false)
                 Width: =300
                 X: =228
                 Y: =250
-                ZIndex: =16
+                ZIndex: =12
 
             "gallery_score_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 '#CopilotOverlayLabel': ="Filtered"
@@ -859,7 +862,7 @@ intakes_screen As screen:
                 Width: =600
                 X: =550
                 Y: =28
-                ZIndex: =20
+                ZIndex: =13
 
                 gallery_score_scores_7 As label:
                     Color: =RGBA(192, 5, 230, 1)
