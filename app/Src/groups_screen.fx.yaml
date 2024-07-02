@@ -1,7 +1,7 @@
 groups_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnHidden: =
-    OnVisible: |-
+    OnVisible: |
         =ClearCollect(
             groupScores,
             Filter(
@@ -20,12 +20,45 @@ groups_screen As screen:
                 0
             )
         );
-        
-        
-        
-        
         Clear(allNewStudentIDsForGroup);
-        Reset(SearchInput1_1)
+        Reset(SearchInput1_1);
+        
+        Set(
+            currComparingStudentEmail,
+            LookUp(
+                studenten_tabel,
+                studentID = dropdown_courses_4.Selected.studentID
+            ).Email
+        );
+        
+        ClearCollect(
+            groupScores,
+            Filter(
+                scores,
+                groupID = dropdown_courses_3.Selected.groupID
+            )
+        );
+        ClearCollect(
+            uniqueExams,
+            Distinct(
+                groupScores,
+                Examen
+            )
+        );
+        ClearCollect(
+            currComparingStudentLinegraph,
+            ForAll(
+                Filter(
+                    scores,
+                    studentID = currComparingStudentEmail
+                ),
+                {
+                    score: score,
+                    Examen: Examen,
+                    Line: "Current"
+                }
+            )
+        );
 
     navigatie_component_5 As navigatie_component:
         nav_agendaScreen: =agenda_screen
