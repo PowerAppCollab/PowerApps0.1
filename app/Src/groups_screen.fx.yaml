@@ -1385,11 +1385,11 @@ groups_screen As screen:
             Default: ="Actief"
             Fill: =RGBA(45, 45, 45, 1)
             Height: =35
-            HoverFill: =RGBA(192, 5, 230, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(45, 45, 45, 1)
             Items: |
                 =Filter(courses, name <> "All")
-            PressedColor: =RGBA(0, 0, 0, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(45, 45, 45, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
             Visible: =varShowCreateGroupPopup
             Width: =400
@@ -1399,12 +1399,14 @@ groups_screen As screen:
 
         TextInput2 As text:
             BorderColor: =RGBA(45, 45, 45, 1)
+            BorderThickness: =0
             Color: =RGBA(255, 255, 255, 1)
             Default: =""
             Fill: =RGBA(45, 45, 45, 1)
             Height: =35
             HintText: ="Groepnaam"
             HoverBorderColor: =RGBA(45, 45, 45, 1)
+            HoverFill: =Self.Fill
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
