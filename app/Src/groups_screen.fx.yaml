@@ -1,7 +1,7 @@
 groups_screen As screen:
     Fill: =RGBA(45, 45, 45, 1)
     OnHidden: =
-    OnVisible: |
+    OnVisible: |-
         =ClearCollect(
             groupScores,
             Filter(
@@ -23,21 +23,14 @@ groups_screen As screen:
         Clear(allNewStudentIDsForGroup);
         Reset(SearchInput1_1);
         
-        Set(
-            currComparingStudentEmail,
-            LookUp(
-                studenten_tabel,
-                studentID = dropdown_courses_4.Selected.studentID
-            ).Email
-        );
-        
         ClearCollect(
             groupScores,
             Filter(
                 scores,
-                groupID = dropdown_courses_3.Selected.groupID
+                groupID = gallery_courses_3.Selected.groupID
             )
         );
+        
         ClearCollect(
             uniqueExams,
             Distinct(
@@ -45,17 +38,24 @@ groups_screen As screen:
                 Examen
             )
         );
+        
         ClearCollect(
-            currComparingStudentLinegraph,
+            averageGroupScoresLinegraph,
             ForAll(
-                Filter(
-                    scores,
-                    studentID = currComparingStudentEmail
-                ),
+                uniqueExams,
                 {
-                    score: score,
-                    Examen: Examen,
-                    Line: "Current"
+                    Examen: Value,
+                    score: Text(Round(
+                        Average(
+                            Filter(
+                                groupScores,
+                                Examen = Value
+                            ),
+                            score
+                        ),
+                        1
+                    )),
+                    Line: "Previous"
                 }
             )
         );
@@ -114,7 +114,7 @@ groups_screen As screen:
             DisplayMode: =DisplayMode.View
             Height: =300
             ItemColorSet: =[RGBA(192, 5, 230, 1),RGBA(48,166,103, 1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
-            Items: =averageGroupScoresLinegraph_GroupPage
+            Items: =averageGroupScoresLinegraph
             NumberOfSeries: =0
             PaddingRight: =0
             ShowValues: =
