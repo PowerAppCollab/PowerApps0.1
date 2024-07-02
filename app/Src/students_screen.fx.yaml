@@ -302,6 +302,17 @@ students_screen As screen:
                 Reset(input_naam_examen);
                 Reset(input_score_examen);
             Rotation: =If(scoresToevoegen, 45, 0)
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ),
+                    false,
+                    true
+                )
             Width: =35
             X: =548
             Y: =10
