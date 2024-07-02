@@ -1444,6 +1444,23 @@ students_screen As screen:
                 Y: =20
                 ZIndex: =21
 
+        Rectangle15 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.6)
+            Height: =125
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            scores,
+                            studentID = gallery_students.Selected.Email
+                        )
+                    ) && !openPopupPDF,
+                    true,
+                    false
+                )
+            Width: =209
+            ZIndex: =23
+
     Group16 As group:
         Height: =5
         Width: =5
