@@ -1508,6 +1508,9 @@ students_screen As screen:
                 
                 RemoveIf(intakeTestScores, intakeFormID = intakeFormIDTemp);
                 
+                RemoveIf(intakeExtraVragen, intakeFormID = intakeFormIDTemp);
+                
+                
                 Set(varShowPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
