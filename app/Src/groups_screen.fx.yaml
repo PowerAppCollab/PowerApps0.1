@@ -155,62 +155,42 @@ groups_screen As screen:
                 =Filter(groepens, StartsWith(name, SearchInput1_1.Text))
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            OnSelect: |
-                =Clear(groupScores_GroupPage);
-                Clear(uniqueExams_GroupPage);
-                Clear(averageGroupScoresLinegraph_GroupPage);
+            OnSelect: |-
+                =ClearCollect(
+                    groupScores,
+                    Filter(
+                        scores,
+                        groupID = gallery_courses_3.Selected.groupID
+                    )
+                );
                 
-                If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            courseID = gallery_courses_3.Selected.course 
-                        )
-                    ),
-                    Set(
-                        error_groupScoresEmpty,
-                        true
-                    ),
-                    ClearCollect(
-                        groupScores_GroupPage,
-                        Filter(
-                            scores,
-                            groupID = gallery_courses_3.Selected.groupID
-                        )
-                    );
-                    ClearCollect(
-                        uniqueExams_GroupPage,
-                        Distinct(
-                            groupScores_GroupPage,
-                            Examen
-                        )
-                    );
-                    ClearCollect(
-                        averageGroupScoresLinegraph_GroupPage,
-                        ForAll(
-                            uniqueExams_GroupPage,
-                            {
-                                Examen: Value,
-                                score: Text(
-                                    Round(
-                                        Average(
-                                            Filter(
-                                                groupScores_GroupPage,
-                                                Examen = Value
-                                            ),
-                                            score
-                                        ),
-                                        1
-                                    )
+                ClearCollect(
+                    uniqueExams,
+                    Distinct(
+                        groupScores,
+                        Examen
+                    )
+                );
+                
+                ClearCollect(
+                    averageGroupScoresLinegraph,
+                    ForAll(
+                        uniqueExams,
+                        {
+                            Examen: Value,
+                            score: Text(Round(
+                                Average(
+                                    Filter(
+                                        groupScores,
+                                        Examen = Value
+                                    ),
+                                    score
                                 ),
-                                Line: "Previous"
-                            }
-                        )
-                    );
-                    Set(
-                        error_groupScoresEmpty,
-                        false
-                    );
+                                1
+                            )),
+                            Line: "Previous"
+                        }
+                    )
                 );
             ShowScrollbar: =false
             TemplatePadding: =0
