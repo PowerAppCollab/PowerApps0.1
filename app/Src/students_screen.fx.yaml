@@ -2154,10 +2154,12 @@ students_screen As screen:
                 
                     If(!IsBlank(LookUp(scores, Examen = TextInput3.Text &&  groupID =Dropdown1.Selected.groupID)),
                     
-                    Notify("Examen naam bestaat reeds al.",NotificationType.Error),
+                    Notify("Examen naam bestaat reeds al.",NotificationType.Error);
+                    Set(isLoading, false);
+                    Set(isExcelFileError, false);
+                    Reset(Self),
                 
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
-                    
                     Set(failedEmails, uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
