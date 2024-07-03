@@ -301,6 +301,7 @@ students_screen As screen:
                 =Set(scoresToevoegen, !scoresToevoegen);
                 Reset(input_naam_examen);
                 Reset(input_score_examen);
+                UpdateContext({restrict: 0})
             Rotation: =If(scoresToevoegen, 45, 0)
             Visible: |-
                 =If(
