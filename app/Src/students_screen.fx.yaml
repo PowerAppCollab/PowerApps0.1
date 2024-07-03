@@ -2152,7 +2152,7 @@ students_screen As screen:
                     Set(isExcelFileError, false);
                     Reset(Self),
                 
-                    If(!IsBlank(LookUp(scores, Examen = TextInput3.Text && Dropdown1.Selected.groupID = groupID)),
+                    If(!IsBlank(LookUp(scores, Examen = TextInput3.Text &&  groupID =Dropdown1.Selected.groupID)),
                     
                     Notify("Examen naam bestaat reeds al.",NotificationType.Error),
                 
