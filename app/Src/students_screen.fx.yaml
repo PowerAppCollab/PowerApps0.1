@@ -2157,13 +2157,7 @@ students_screen As screen:
                     Notify("Examen naam bestaat reeds al.",NotificationType.Error),
                 
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
-                
-                    //true
-                    //Set(isPopupExcelFileScoresOpen; false);;
-                
-                
-                
-                    //automate
+                    
                     Set(failedEmails, uploadScoreFiles.Run(
                         {
                             contentBytes: Last(Self.Attachments).Value,
