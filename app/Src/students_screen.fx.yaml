@@ -420,10 +420,15 @@ students_screen As screen:
                         !IsBlank(gallery_students.Selected.Email) &&
                         !IsBlank(input_score_examen.Text) &&
                         !IsBlank(input_naam_examen.Text) && Error_scoreNameTooLong.Visible = false,
-                        Patch(
-                            scores,
-                            Defaults(scores),
-                            {
+                    
+                        If(!IsBlank(LookUp(scores, Examen = input_naam_examen.Text && groupID = Dropdown1_1.Selected.groupID)),
+                        
+                            Notify("Examen naam bestaat reeds al in deze groep.", NotificationType.Error),
+                    
+                            Patch(
+                                scores,
+                                Defaults(scores),
+                                {
                                 groupID: Dropdown1_1.Selected.groupID,
                                 groupName: Dropdown1_1.Selected.name,
                                 courseID: Dropdown1_1.Selected.course,
@@ -431,17 +436,18 @@ students_screen As screen:
                                 score: Value(input_score_examen.Text),
                                 Examen: input_naam_examen.Text,
                                 ID: GUID()
-                            }
-                        );
-                        Set(
-                            scoresToevoegen,
-                            false
-                        );
-                        Refresh(scores);
-                        Reset(input_naam_examen);
-                        Reset(input_score_examen);
-                        Notify("Score added successfully", NotificationType.Success),
-                        Notify("Please fill in all the required fields.", NotificationType.Error)
+                                }
+                            );
+                            Set(
+                                scoresToevoegen,
+                                false
+                            );
+                            Refresh(scores);
+                            Reset(input_naam_examen);
+                            Reset(input_score_examen);
+                            Notify("Examen is succesvol toegevoegd.", NotificationType.Success)
+                        ),
+                        Notify("Examen kan niet toegevoegd worden.", NotificationType.Error)
                     )
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -2029,12 +2035,13 @@ students_screen As screen:
         FontWeight: =FontWeight.Lighter
         Height: =35
         HoverColor: =RGBA(243, 243, 243, 1)
-        HoverFill: =RGBA(60, 60, 60, 0.8)
-        Items: =groepens.name
+        HoverFill: =RGBA(45, 45, 45, 0.8)
+        Items: =groepens
         PressedColor: =RGBA(243, 243, 243, 1)
         PressedFill: =RGBA(45, 45, 45, 0.8)
         SelectionFill: =RGBA(45, 45, 45, 1)
         Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+        Width: =325
         X: =456
         Y: =431
         ZIndex: =47
@@ -2139,13 +2146,16 @@ students_screen As screen:
                 =Set(isLoading, true);
                 Set(ErrorWhileUploading, false);
                 
-                If(IsBlank(TextInput3.Text),
-                    Set(noExamNameError, true);
+                If(Error_scoreNameTooLong_1.Visible = true,
+                    Notify("Examen naam is te lang.",NotificationType.Error);
                     Set(isLoading, false);
                     Set(isExcelFileError, false);
                     Reset(Self),
                 
-                    Set(noExamNameError, false);
+                    If(!IsBlank(LookUp(scores, Examen = TextInput3.Text && Dropdown1.Selected.groupID = groupID)),
+                    
+                    Notify("Examen naam bestaat reeds al.",NotificationType.Error),
+                
                     If(EndsWith(Last(Self.Attachments).Name, ".xlsx"),
                 
                     //true
@@ -2188,6 +2198,7 @@ students_screen As screen:
                     Set(isExcelFileError, true)
                     )
                 )
+                )
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5
@@ -2195,7 +2206,7 @@ students_screen As screen:
             PressedColor: =RGBA(237, 237, 237, 1)
             PressedFill: =RGBA(0, 0, 0, 0)
             Tooltip: =
-            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading && Len(TextInput3.Text) > 0
             Width: =287
             X: =546
             Y: =502
@@ -2231,20 +2242,25 @@ students_screen As screen:
         TextInput3 As text:
             BorderStyle: =BorderStyle.None
             BorderThickness: =0
-            Clear: =true
             Color: =RGBA(255, 255, 255, 1)
             Default: =
             DisabledColor: =RGBA(255, 255, 255, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(45, 45, 45, 1)
             FontWeight: =FontWeight.Lighter
+            Height: =35
             HintText: ="'Examen 1'"
             HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(45, 45, 45, 0.8)
             PaddingLeft: =5
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
             Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading
+            Width: =325
             X: =456
             Y: =389
             ZIndex: =43
@@ -2259,4 +2275,15 @@ students_screen As screen:
             X: =480
             Y: =453
             ZIndex: =44
+
+    Error_scoreNameTooLong_1 As label:
+        Color: =RGBA(184, 0, 0, 1)
+        Height: =22
+        Text: ="Naam is te lang."
+        Visible: |
+            =Len(TextInput3.Text) > 10
+        Width: =225
+        X: =457
+        Y: =365
+        ZIndex: =52
 
