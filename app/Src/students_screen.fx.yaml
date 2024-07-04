@@ -74,7 +74,7 @@ students_screen As screen:
                 Archived <> "true"
                     ) &&
                     (
-                        dropdown_courses.Selected.name = "All" || course = dropdown_courses.Selected.name
+                        dropdown_courses.Selected.name = "All" || studentID = Filter(groepsInhoud, cursus = dropdown_courses.Selected.name ).student_id
                     ) &&
                     (
                         IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
@@ -501,9 +501,9 @@ students_screen As screen:
                             Examen: Examen
                         }
                     )
-            NumberOfSeries: =0
             PaddingRight: =0
             ShowValues: =
+            Size: =8
             Visible: |-
                 =If(
                    IsEmpty(
@@ -2203,7 +2203,7 @@ students_screen As screen:
             PressedColor: =RGBA(237, 237, 237, 1)
             PressedFill: =RGBA(0, 0, 0, 0)
             Tooltip: =
-            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading && Len(TextInput3.Text) > 0
+            Visible: =isPopupExcelFileScoresOpen && !ErrorWhileUploading && Len(TextInput3.Text) > 0 && Len(TextInput3.Text) < 11
             Width: =287
             X: =546
             Y: =502
