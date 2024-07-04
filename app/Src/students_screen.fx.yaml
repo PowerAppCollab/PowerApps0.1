@@ -147,12 +147,17 @@ students_screen As screen:
                 =If(
                     IsEmpty(
                         Filter(
-                            studenten_tabel,
-                            StartsWith(
-                                Voornaam,
-                                SearchInput1.Text
-                            )
-                        )
+                    studenten_tabel,
+                    If(
+                        varShowArchived,
+                        Archived = "true",
+                        Archived <> "true"
+                    ) && (dropdown_courses.Selected.name = "All" || studentID in Filter(
+                        groepsInhoud,
+                        cursus = dropdown_courses.Selected.name
+                    ).student_id) &&
+                    (IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam)
+                )
                     ),
                     true,
                     false
