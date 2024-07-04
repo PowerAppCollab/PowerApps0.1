@@ -65,7 +65,7 @@ students_screen As screen:
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
             Height: =250
-            Items: |
+            Items: |-
                 =Filter(
                     studenten_tabel,
                     If(
