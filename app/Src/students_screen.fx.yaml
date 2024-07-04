@@ -1135,7 +1135,7 @@ students_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Default: ="All"
             Fill: =RGBA(45, 45, 45, 1)
-            HoverFill: =RGBA(192, 5, 230, 1)
+            HoverFill: =RGBA(192, 5, 230, 0.6)
             Items: =courses
             OnChange: |
                 =ClearCollect(
