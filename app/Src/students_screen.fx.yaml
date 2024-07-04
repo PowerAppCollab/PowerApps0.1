@@ -74,7 +74,7 @@ students_screen As screen:
                 Archived <> "true"
                     ) &&
                     (
-                    dropdown_courses.Selected.name = "All" || LookUp(groepsInhoud, cursus = dropdown_courses.Selected.name).student_id
+                    dropdown_courses.Selected.name = "All" || studentID = LookUp(groepsInhoud, cursus = dropdown_courses.Selected.name).student_id
                 
                     ) &&
                     (
