@@ -71,15 +71,13 @@ students_screen As screen:
                     If(
                         varShowArchived,
                         Archived = "true",
-                Archived <> "true"
-                    ) &&
-                    (
-                    dropdown_courses.Selected.name = "All" || studentID = LookUp(groepsInhoud, cursus = dropdown_courses.Selected.name).student_id
-                
-                    ) &&
-                    (
-                        IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
-                    ))
+                        Archived <> "true"
+                    ) && (dropdown_courses.Selected.name = "All" || studentID in Filter(
+                        groepsInhoud,
+                        cursus = dropdown_courses.Selected.name
+                    ).student_id) &&
+                    (IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam)
+                )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
