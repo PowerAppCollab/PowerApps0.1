@@ -896,27 +896,23 @@ students_screen As screen:
                     Set(SurName, Last(varSplitText).Value);
                     
                     // Check if the selected studentID exists in the studenten_tabel collection
-                    If(
-                        IsBlank(
-                            LookUp(
-                                studenten_tabel,
-                                studentID = gallery_students.Selected.studentID
-                            )
-                        ),
-                        // If studentID doesn't exist, create a new record
-                        Patch(
-                            studenten_tabel,
-                            Defaults(studenten_tabel),
-                            {
-                                Voornaam: FirstName,
-                                Achternaam: SurName,
-                                Email: TextInputEmail_1.Text,
-                                Telefoonnummer: TextInputPhoneNumber_1.Text,
-                                'Werkzaam Bij': TextInputWerkZaamBij.Text
-                            }
-                        ),
-                        // If studentID exists, update the existing record
-                        Patch(
+                    
+                    ClearCollect(allScoresOfStudentBeforeUpdate, Filter(scores, studentID = gallery_students.Selected.Email));
+                    
+                    ForAll( allScoresOfStudentBeforeUpdate,
+                        Patch( scores,
+                            LookUp( scores, studentID = allScoresOfStudentBeforeUpdate.score ),
+                    { studentID: TextInputEmail_1.Text }
+                        )
+                    );
+                    
+                    Patch(
+                      scores,
+                      ForAll(Filter(scores, studentID = gallery_students.Selected.Email),{ studentID: TextInputEmail_1.Text })
+                    );
+                    
+                    
+                    Patch(
                             studenten_tabel,
                             LookUp(
                                 studenten_tabel,
@@ -931,7 +927,6 @@ students_screen As screen:
                             }
                         );
                     
-                    );
                     
                     // Toggle the editStudentData variable
                     If(
