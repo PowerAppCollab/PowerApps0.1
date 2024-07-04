@@ -74,7 +74,8 @@ students_screen As screen:
                 Archived <> "true"
                     ) &&
                     (
-                        dropdown_courses.Selected.name = "All" || studentID = Filter(groepsInhoud, cursus = dropdown_courses.Selected.name ).student_id
+                    dropdown_courses.Selected.name = "All" || LookUp(groepsInhoud, cursus = dropdown_courses.Selected.name).student_id
+                
                     ) &&
                     (
                         IsBlank(SearchInput1.Text) || SearchInput1.Text in Voornaam
