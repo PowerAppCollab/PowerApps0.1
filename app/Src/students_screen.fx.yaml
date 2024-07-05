@@ -897,19 +897,29 @@ students_screen As screen:
                     
                     // Check if the selected studentID exists in the studenten_tabel collection
                     
-                    ClearCollect(allScoresOfStudentBeforeUpdate, Filter(scores, studentID = gallery_students.Selected.Email));
+                    ClearCollect(allScoresThatNeedNewEmail, Filter(scores,studentID = gallery_students.Selected.Email));
                     
-                    ForAll( allScoresOfStudentBeforeUpdate,
-                        Patch( scores,
-                            LookUp( scores, studentID = allScoresOfStudentBeforeUpdate.score ),
-                    { studentID: TextInputEmail_1.Text }
+                    ForAll(
+                        Filter(allScoresThatNeedNewEmail, studentID = gallery_students.Selected.Email),
+                        Patch(
+                            scores, 
+                            LookUp(scores, ID = ID), 
+                            { studentID: TextInputEmail_1.Text }
                         )
                     );
                     
-                    Patch(
-                      scores,
-                      ForAll(Filter(scores, studentID = gallery_students.Selected.Email),{ studentID: TextInputEmail_1.Text })
-                    );
+                    //Patch(
+                    //  scores;
+                    //  ForAll(
+                    //    Filter(scores; studentID = gallery_students.Selected.Email);
+                    //    { studentID: TextInputEmail_1.Text }
+                    //  )
+                    //);;
+                    
+                    //Patch(
+                    //  scores;
+                    //  ForAll(Filter(scores; studentID = gallery_students.Selected.Email);{ studentID: TextInputEmail_1.Text })
+                    //);;
                     
                     
                     Patch(
