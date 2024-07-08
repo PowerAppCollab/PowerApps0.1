@@ -917,71 +917,99 @@ students_screen As screen:
                         );
                         If(
                             gallery_students.Selected.Email <> TextInputEmail_1.Text,
-                            ClearCollect(
-                                allScoresThatNeedNewEmail,
-                                ForAll(
-                                    Filter(
-                                        scores,
-                                        studentID = gallery_students.Selected.Email
-                                    ),
-                                    {scoresid: 'scores (cr884_scoresid)'}
-                                )
-                            );
-                            ForAll(
-                                allScoresThatNeedNewEmail,
-                                Patch(
-                                    scores,
+                            If(
+                                !IsBlank(
                                     LookUp(
+                                        studenten_tabel,
+                                        Email = TextInputEmail_1.Text && studentID <> gallery_students.Selected.studentID
+                                    )
+                                ),
+                                Notify(
+                                    "Email is al in gebruik.",
+                                    NotificationType.Error
+                                ),
+                                ClearCollect(
+                                    allScoresThatNeedNewEmail,
+                                    ForAll(
+                                        Filter(
+                                            scores,
+                                            studentID = gallery_students.Selected.Email
+                                        ),
+                                        {scoresid: 'scores (cr884_scoresid)'}
+                                    )
+                                );
+                                ForAll(
+                                    allScoresThatNeedNewEmail,
+                                    Patch(
                                         scores,
-                                        'scores (cr884_scoresid)' = scoresid
+                                        LookUp(
+                                            scores,
+                                            'scores (cr884_scoresid)' = scoresid
+                                        ),
+                                        {studentID: TextInputEmail_1.Text}
+                                    )
+                                );
+                                Patch(
+                                    studenten_tabel,
+                                    LookUp(
+                                        studenten_tabel,
+                                        studentID = gallery_students.Selected.studentID
                                     ),
-                                    {studentID: TextInputEmail_1.Text}
-                                )
+                                    {
+                                        Voornaam: FirstName,
+                                        Achternaam: SurName,
+                                        Email: TextInputEmail_1.Text,
+                                        Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                        'Werkzaam Bij': TextInputWerkZaamBij.Text
+                                    }
+                                );
+                                If(
+                                    editStudentData,
+                                    Set(
+                                        editStudentData,
+                                        false
+                                    ),
+                                    Set(
+                                        editStudentData,
+                                        true
+                                    )
+                                );
+                                Reset(TextInputName_1);
+                                Reset(TextInputEmail_1);
+                                Reset(TextInputPhoneNumber_1);
+                                Reset(TextInputWerkZaamBij),
                             );
-                            Patch(
-                                studenten_tabel,
-                                LookUp(
+                                Patch(
                                     studenten_tabel,
-                                    studentID = gallery_students.Selected.studentID
-                                ),
-                                {
-                                    Voornaam: FirstName,
-                                    Achternaam: SurName,
-                                    Email: TextInputEmail_1.Text,
-                                    Telefoonnummer: TextInputPhoneNumber_1.Text,
-                                    'Werkzaam Bij': TextInputWerkZaamBij.Text
-                                }
-                            ),
-                            Patch(
-                                studenten_tabel,
-                                LookUp(
-                                    studenten_tabel,
-                                    studentID = gallery_students.Selected.studentID
-                                ),
-                                {
-                                    Voornaam: FirstName,
-                                    Achternaam: SurName,
-                                    Telefoonnummer: TextInputPhoneNumber_1.Text,
-                                    'Werkzaam Bij': TextInputWerkZaamBij.Text
-                                }
-                            );
+                                    LookUp(
+                                        studenten_tabel,
+                                        studentID = gallery_students.Selected.studentID
+                                    ),
+                                    {
+                                        Voornaam: FirstName,
+                                        Achternaam: SurName,
+                                        Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                        'Werkzaam Bij': TextInputWerkZaamBij.Text
+                                    }
+                                );
+                                If(
+                                    editStudentData,
+                                    Set(
+                                        editStudentData,
+                                        false
+                                    ),
+                                    Set(
+                                        editStudentData,
+                                        true
+                                    )
+                                );
+                                Reset(TextInputName_1);
+                                Reset(TextInputEmail_1);
+                                Reset(TextInputPhoneNumber_1);
+                                Reset(TextInputWerkZaamBij);
                         );
+                        
                     );
-                    If(
-                        editStudentData,
-                        Set(
-                            editStudentData,
-                            false
-                        ),
-                        Set(
-                            editStudentData,
-                            true
-                        )
-                    );
-                    Reset(TextInputName_1);
-                    Reset(TextInputEmail_1);
-                    Reset(TextInputPhoneNumber_1);
-                    Reset(TextInputWerkZaamBij);
                     Set(
                         isLoading,
                         false
