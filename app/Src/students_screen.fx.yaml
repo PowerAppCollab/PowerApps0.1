@@ -977,36 +977,36 @@ students_screen As screen:
                                 Reset(TextInputName_1);
                                 Reset(TextInputEmail_1);
                                 Reset(TextInputPhoneNumber_1);
-                                Reset(TextInputWerkZaamBij),
-                            );
-                                Patch(
+                                Reset(TextInputWerkZaamBij)
+                            ),
+                            Patch(
+                                studenten_tabel,
+                                LookUp(
                                     studenten_tabel,
-                                    LookUp(
-                                        studenten_tabel,
-                                        studentID = gallery_students.Selected.studentID
-                                    ),
-                                    {
-                                        Voornaam: FirstName,
-                                        Achternaam: SurName,
-                                        Telefoonnummer: TextInputPhoneNumber_1.Text,
-                                        'Werkzaam Bij': TextInputWerkZaamBij.Text
-                                    }
-                                );
-                                If(
+                                    studentID = gallery_students.Selected.studentID
+                                ),
+                                {
+                                    Voornaam: FirstName,
+                                    Achternaam: SurName,
+                                    Telefoonnummer: TextInputPhoneNumber_1.Text,
+                                    'Werkzaam Bij': TextInputWerkZaamBij.Text
+                                }
+                            );
+                            If(
+                                editStudentData,
+                                Set(
                                     editStudentData,
-                                    Set(
-                                        editStudentData,
-                                        false
-                                    ),
-                                    Set(
-                                        editStudentData,
-                                        true
-                                    )
-                                );
-                                Reset(TextInputName_1);
-                                Reset(TextInputEmail_1);
-                                Reset(TextInputPhoneNumber_1);
-                                Reset(TextInputWerkZaamBij);
+                                    false
+                                ),
+                                Set(
+                                    editStudentData,
+                                    true
+                                )
+                            );
+                            Reset(TextInputName_1);
+                            Reset(TextInputEmail_1);
+                            Reset(TextInputPhoneNumber_1);
+                            Reset(TextInputWerkZaamBij);
                         );
                         
                     );
