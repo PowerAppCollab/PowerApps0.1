@@ -1167,7 +1167,11 @@ students_screen As screen:
             FontWeight: =FontWeight.Bold
             Text: ="!"
             Visible: |
-                =!IsMatch(TextInputEmail_1.Text, "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+                =If(
+                    IsBlank(gallery_students.Selected.Email),
+                    false,
+                    true
+                ) && !IsMatch(TextInputEmail_1.Text, "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
             Width: =20
             X: =212
             Y: =141
@@ -1178,7 +1182,12 @@ students_screen As screen:
             Color: =RGBA(184, 0, 0, 1)
             FontWeight: =FontWeight.Bold
             Text: ="!"
-            Visible: =Len(TextInputPhoneNumber_1.Text) <9 || Len(TextInputPhoneNumber_1.Text) > 10
+            Visible: |-
+                =If(
+                    IsBlank(gallery_students.Selected.Email),
+                    false,
+                    true
+                ) && Len(TextInputPhoneNumber_1.Text) <9 || Len(TextInputPhoneNumber_1.Text) > 10
             Width: =20
             X: =212
             Y: =101

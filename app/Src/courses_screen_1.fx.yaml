@@ -600,10 +600,13 @@ courses_screen_1 As screen:
             OnSelect: |
                 =Set(deletingThisGroupID, LookUp(groepsInhoud, cursus = gallery_courses_2.Selected.courseID).cursus);
                 
-                RemoveIf(scores, groupID = deletingThisGroupID);
-                RemoveIf(groepens, groupID = deletingThisGroupID);
-                RemoveIf(groepsInhoud, groep_id = deletingThisGroupID);
-                RemoveIf(courses, courseID = gallery_courses_2.Selected.courseID);
+                ForAll(Filter(groepsInhoud, cursus = gallery_courses_2.Selected.courseID),
+                RemoveIf(scores, groupID = groep_id);
+                RemoveIf(groepens, cursus = course);
+                );
+                
+                RemoveIf(groepsInhoud, cursus = gallery_courses_2.Selected.courseID);
+                
                 
                 //Patch(
                 //    studenten_tabel;
