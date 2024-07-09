@@ -314,6 +314,11 @@ students_screen As screen:
                             scores,
                             studentID = gallery_students.Selected.Email
                         )
+                    ) && IsEmpty(
+                        Filter(
+                            groepsInhoud,
+                            student_id = gallery_students.Selected.studentID
+                        )
                     ),
                     false,
                     true
@@ -698,9 +703,14 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =0
                 Text: ="Cursus"
-                Visible: |
+                Visible: |-
                     =If(
-                        IsBlank(gallery_students.Selected.Email) || editStudentData,
+                        IsBlank(gallery_students.Selected.Email) || editStudentData || IsEmpty(
+                            Filter(
+                                groepsInhoud,
+                                student_id = gallery_students.Selected.studentID
+                            )
+                        ),
                         false,
                         true
                     )
