@@ -598,29 +598,25 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |
-                =Remove(
-                    groepens, // The name of the entity
-                    gallery_courses_3.Selected // The record you want to delete
-                );
+                =Set(deletingThisGroupID, LookUp(groepsInhoud, cursus = gallery_courses_2.Selected.courseID).cursus);
                 
-                Remove(
-                    courses, // The name of the entity
-                    gallery_courses_2.Selected // The record you want to delete
-                );
+                RemoveIf(scores, groupID = deletingThisGroupID);
+                RemoveIf(groepens, groupID = deletingThisGroupID);
+                RemoveIf(groepsInhoud, groep_id = deletingThisGroupID);
+                RemoveIf(courses, courseID = gallery_courses_2.Selected.courseID);
                 
-                Patch(
-                    studenten_tabel,
-                    LookUp(
-                        studenten_tabel,
-                        course = gallery_students.Selected.course
-                    ),
-                    {
-                        course: ""
-                    }
-                );
+                //Patch(
+                //    studenten_tabel;
+                //    LookUp(
+                //        studenten_tabel;
+                //        course = gallery_students.Selected.course
+                //    );
+                //    {
+                //        course: ""
+                //    }
+                //);;
                 
-                
-                Set(varShowDeleteCoursePopup, false); // Hides the popup after the operations
+                Set(varShowDeleteCoursePopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
