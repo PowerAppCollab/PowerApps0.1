@@ -1,6 +1,10 @@
 courses_screen_1 As screen:
     Fill: =RGBA(45, 45, 45, 1)
-    OnVisible: =
+    OnVisible: |-
+        =Refresh(groepens);
+        Refresh(groepsInhoud);
+        Refresh(courses);
+        Refresh(scores);
 
     navigatie_component_6 As navigatie_component:
         nav_agendaScreen: =agenda_screen
