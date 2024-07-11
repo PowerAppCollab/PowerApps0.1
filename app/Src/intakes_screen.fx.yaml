@@ -1853,7 +1853,9 @@ intakes_screen As screen:
             Set(intakeMailsSend, false);
             Set(sendIntakeEmailSucces, false);
             RemoveIf(tempEmails, true);
-            Reset(AttachControl_3)
+            Reset(AttachControl_3);
+            
+            Set(randID, RandBetween(1,8))
         RadiusBottomLeft: =0
         RadiusTopLeft: =0
         Size: =11
@@ -2182,6 +2184,47 @@ intakes_screen As screen:
             Y: =245
             ZIndex: =10
 
+    Group28 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =32
+
+        background_loading_2 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =isLoading
+            Width: =1366
+            ZIndex: =29
+
+        spinner_loading_2 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =isLoading
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =30
+
+        Label31_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =163
+            Italic: =true
+            Overflow: =Overflow.Scroll
+            Text: |+
+                =
+                    "'" & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Value &"'" & Char(10) & Char(10) & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Author
+                
+            Tooltip: =
+            Visible: =isLoading
+            Width: =530
+            X: =418
+            Y: =436
+            ZIndex: =31
+
     groep_succes_createStudent As group:
         Height: =5
         Width: =5
@@ -2239,28 +2282,4 @@ intakes_screen As screen:
             X: =603
             Y: =420
             ZIndex: =13
-
-    loadingOn_2 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =43
-
-        background_loading_2 As rectangle:
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Visible: =isLoading
-            Width: =1366
-            ZIndex: =29
-
-        spinner_loading_2 As image:
-            Height: =175
-            Image: ='Double Ring@2x-1.5s-200px-200px'
-            Visible: =isLoading
-            Width: =175
-            X: =595
-            Y: =292
-            ZIndex: =30
 
