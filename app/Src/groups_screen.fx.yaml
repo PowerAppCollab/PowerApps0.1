@@ -958,11 +958,15 @@ groups_screen As screen:
             ZIndex: =41
 
         Label31 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Height: =146
+            Height: =163
             Italic: =true
             Overflow: =Overflow.Scroll
-            Text: =LookUp(LoadingQuotes, ID = Text(RandBetween( 1,8 ))).Quote_Value
+            Text: |
+                =With({randID: RandBetween(1, 8)},
+                    "'" & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Value &"'" & Char(10) & Char(10) & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Author
+                )
             Width: =530
             X: =418
             Y: =436
