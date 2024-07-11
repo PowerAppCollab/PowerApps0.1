@@ -323,20 +323,10 @@ groups_screen As screen:
         Y: =210
         ZIndex: =4
 
-        label_scoreTitle_1 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =16
-            Text: ="Scores"
-            Width: =600
-            Y: =10
-            ZIndex: =1
-
         "gallery_score_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             '#CopilotOverlayLabel': ="Filtered"
             DelayItemLoading: =true
-            Height: =88
+            Height: =138
             Items: =averageGroupScores
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -349,7 +339,6 @@ groups_screen As screen:
                     true
                 )
             Width: =600
-            Y: =50
             ZIndex: =2
 
             gallery_score_examen_1 As label:
