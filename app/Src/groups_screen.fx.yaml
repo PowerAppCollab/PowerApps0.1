@@ -962,7 +962,7 @@ groups_screen As screen:
             Height: =146
             Italic: =true
             Overflow: =Overflow.Scroll
-            Text: =LookUp(Quotes, ID = RandBetween( 1,8 )).Quote_Value
+            Text: =LookUp(quotes, ID = RandBetween( 1,8 )).Quote_Value
             Width: =530
             X: =418
             Y: =436
