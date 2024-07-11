@@ -1529,7 +1529,7 @@
       "MetaDataIDKey": "",
       "Name": "Button1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4969,6 +4969,14 @@
           "InvariantPropertyName": "RadiusBottomRight",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -5094,6 +5102,11 @@
           "Category": "Design",
           "PropertyName": "RadiusBottomRight",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultGroupContainerStyle",
@@ -9402,7 +9415,7 @@
       "MetaDataIDKey": "",
       "Name": "Form1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10497,7 +10510,7 @@
       "MetaDataIDKey": "",
       "Name": "gallery_intakes_emailText_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12809,7 +12822,7 @@
       "MetaDataIDKey": "",
       "Name": "Group1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12913,7 +12926,7 @@
       "MetaDataIDKey": "",
       "Name": "Group17_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15252,6 +15265,14 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -15265,7 +15286,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon6_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15382,6 +15403,11 @@
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         },
         {
           "Category": "Behavior",
@@ -22050,8 +22076,22 @@
         "FocusedBorderColor",
         "Color",
         "DisabledColor",
-        "PressedColor",
-        "HoverColor",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "PressedColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "HoverColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisplayMode",
         {
           "AFDDataSourceName": "",
@@ -22198,7 +22238,7 @@
         {
           "Category": "Design",
           "PropertyName": "HoverFill",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -22308,7 +22348,7 @@
         {
           "Category": "Design",
           "PropertyName": "PressedColor",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -23645,7 +23685,7 @@
       "MetaDataIDKey": "",
       "Name": "label_intakeOpties_error",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26083,7 +26123,7 @@
       "MetaDataIDKey": "",
       "Name": "Label6_12",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26380,7 +26420,7 @@
       "MetaDataIDKey": "",
       "Name": "Label6_13",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26677,7 +26717,7 @@
       "MetaDataIDKey": "",
       "Name": "Label6_16",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27264,7 +27304,7 @@
       "MetaDataIDKey": "",
       "Name": "Label7_10",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27554,7 +27594,7 @@
       "MetaDataIDKey": "",
       "Name": "Label7_11",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27844,7 +27884,7 @@
       "MetaDataIDKey": "",
       "Name": "Label7_12",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31741,7 +31781,15 @@
         "Height",
         "ZIndex",
         "BorderThickness",
-        "FocusedBorderThickness"
+        "FocusedBorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        }
       ],
       "HasDynamicProperties": false,
       "IsAutoGenerated": false,
@@ -31831,6 +31879,11 @@
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultRectangleStyle",
@@ -33498,7 +33551,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInputEmail",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33932,7 +33985,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInputName",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -34366,7 +34419,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInputPhoneNumber",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
