@@ -933,6 +933,41 @@ groups_screen As screen:
             Y: =171
             ZIndex: =27
 
+    Group22 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =43
+
+        background_loading_3 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Visible: =true//isLoading_addingGroups
+            Width: =1366
+            ZIndex: =40
+
+        spinner_loading_3 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Visible: =true//isLoading_addingGroups
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =41
+
+        Label31 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =146
+            Italic: =true
+            Overflow: =Overflow.Scroll
+            Text: =LookUp()
+            Width: =530
+            X: =418
+            Y: =436
+            ZIndex: =42
+
     Group11_1 As group:
         Height: =5
         Width: =5
@@ -1153,7 +1188,7 @@ groups_screen As screen:
             Height: =28
             Icon: =Icon.Cancel
             OnSelect: |
-                =Set(resetCheckboxVar, true); Set(resetCheckboxVar, false);
+                =Set(resetCheckboxVar, true);Set(resetCheckboxVar, false);
                 Clear(allNewStudentIDsForGroup)
             Visible: =varShowAddPopup && !IsEmpty(allNewStudentIDsForGroup)
             Width: =34
@@ -1166,7 +1201,9 @@ groups_screen As screen:
             Height: =28
             Icon: =Icon.Check
             OnSelect: |+
-                =ClearCollect(kandidaten, studenten_tabel);
+                =Set(isLoading_addingGroups, true);
+                
+                ClearCollect(kandidaten, studenten_tabel);
                 
                 // Filter locally: Collect items that match the condition into 'items' collection
                 ClearCollect(
@@ -1193,7 +1230,8 @@ groups_screen As screen:
                 Refresh(studenten_tabel);
                 Set(varShowAddPopup, false);
                 Clear(allNewStudentIDsForGroup);
-                Set(isChecked, false)
+                Set(isChecked, false);
+                Set(isLoading_addingGroups, false);
                 
                 
             Visible: =varShowAddPopup && !IsEmpty(allNewStudentIDsForGroup)
@@ -1241,7 +1279,9 @@ groups_screen As screen:
             Height: =28
             Icon: =Icon.Check
             OnSelect: |+
-                =ForAll(
+                =Set(isLoading_addingGroups, true);
+                
+                ForAll(
                     allDelStudentIDsForGroup,
                     Remove(groepsInhoud, Filter(groepsInhoud, student_id = Student_id && groep_id = Groep_id))
                 );
@@ -1251,7 +1291,9 @@ groups_screen As screen:
                 Set(varShowDeletePopup, false);
                 Set(resetCheckboxVar, false);
                 Clear(allDelStudentIDsForGroup);
-                Set(isCheckedDel, false)
+                Set(isCheckedDel, false);
+                Set(isLoading_addingGroups, false);
+                
                 
             Visible: =varShowDeletePopup && !IsEmpty(allDelStudentIDsForGroup)
             Width: =34

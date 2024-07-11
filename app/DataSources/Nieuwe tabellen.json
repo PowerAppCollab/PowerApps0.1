@@ -1,0 +1,137 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr884_nieuwetabel5s",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr884_nieuwetabel5",
+    "MaxGetRowsCount": 500,
+    "Name": "Nieuwe tabellen",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Eigenaar",
+      "cr884_id": "ID",
+      "cr884_nieuwetabel5_AsyncOperations": "Systeemtaken",
+      "cr884_nieuwetabel5_BulkDeleteFailures": "Fouten bij bulkverwijdering",
+      "cr884_nieuwetabel5_MailboxTrackingFolders": "Automatisch bijgehouden postvakmappen",
+      "cr884_nieuwetabel5_PrincipalObjectAttributeAccesses": "Velden delen",
+      "cr884_nieuwetabel5_ProcessSession": "Processessies",
+      "cr884_nieuwetabel5_SyncErrors": "Synchronisatiefouten",
+      "cr884_nieuwetabel5id": "Nieuwe tabel",
+      "cr884_quote_author": "Quote_Author",
+      "cr884_quote_value": "Quote_Value",
+      "createdby": "Gemaakt door",
+      "createdon": "Gemaakt op",
+      "createdonbehalfby": "Gemaakt door (gemachtigde)",
+      "importsequencenumber": "Volgnummer van de importbewerking",
+      "modifiedby": "Gewijzigd door",
+      "modifiedon": "Gewijzigd op",
+      "modifiedonbehalfby": "Gewijzigd door (gemachtigde)",
+      "overriddencreatedon": "Record is gemaakt op",
+      "owningbusinessunit": "Business unit die eigenaar is",
+      "owningteam": "Team dat eigenaar is",
+      "owninguser": "Gebruiker die eigenaar is",
+      "statecode": "Status",
+      "statuscode": "Reden van status",
+      "timezoneruleversionnumber": "Versienummer van tijdzoneregel",
+      "utcconversiontimezonecode": "Tijdzonecode voor UTC-conversie",
+      "versionnumber": "Versienummer"
+    },
+    "PreferredName": "Nieuwe tabellen",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Nieuwe tabellen (Weergaven)",
+    "Name": "_cr884_nieuwetabel5_views",
+    "RelatedEntityName": "Nieuwe tabellen",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5161a0ae-64fa-4449-aa05-887d756cff67": "Gekoppelde weergave van Nieuwe tabel",
+      "556c3b32-7c54-4e4d-9024-516ceae361f9": "Actieve Nieuwe tabellen",
+      "5c718abe-e8b5-4768-b4c8-a581c77b219d": "Weergave Geavanceerd zoeken van Nieuwe tabel",
+      "6a0a4248-3a81-4278-b59d-fab16138d600": "Nieuwe tabel Opzoekweergave",
+      "e357475b-c58e-4a70-a413-920827f53bcf": "Inactieve Nieuwe tabellen"
+    }
+  },
+  {
+    "DisplayName": "Status (Nieuwe tabellen)_1",
+    "Name": "cr884_nieuwetabel5_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Nieuwe tabellen"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Nieuwe tabellen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (Nieuwe tabellen)_1",
+    "Name": "cr884_nieuwetabel5_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Nieuwe tabellen"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Nieuwe tabellen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Nieuwe tabellen)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1e7c1fd756_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Actief",
+      "1": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Nieuwe tabellen"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Nieuwe tabellen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reden van status (Nieuwe tabellen)",
+    "Name": "new_reserveentity_rp53fd1p1ekxpa_t7_1e7c1fd756_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Actief",
+      "2": "Inactief"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Nieuwe tabellen"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Nieuwe tabellen",
+    "Type": "OptionSetInfo"
+  }
+]
