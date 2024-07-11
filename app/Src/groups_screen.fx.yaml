@@ -559,7 +559,9 @@ groups_screen As screen:
             groep_verwijder_icon_1 As image:
                 Height: =60
                 Image: =user_x_line
-                OnSelect: =Set(varShowDeletePopup, true);
+                OnSelect: |-
+                    =Set(varShowDeletePopup, true);
+                    Set(randID, RandBetween(1,8))
                 Width: =60
                 X: =444
                 Y: =25
@@ -568,7 +570,9 @@ groups_screen As screen:
             groep_verwijder_text_1 As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =Set(varShowDeletePopup, true);
+                OnSelect: |-
+                    =Set(varShowDeletePopup, true);
+                    Set(randID, RandBetween(1,8))
                 Size: =11
                 Text: ="Student verwijderen"
                 Width: =168
@@ -584,7 +588,9 @@ groups_screen As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =94
                 HoverFill: =
-                OnSelect: =Set(varShowDeletePopup, true);
+                OnSelect: |-
+                    =Set(varShowDeletePopup, true);
+                    Set(randID, RandBetween(1,8))
                 PressedFill: =
                 Text: =""
                 Width: =86
@@ -602,7 +608,9 @@ groups_screen As screen:
             groep_verwijder_text_2 As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
-                OnSelect: =Set(varShowAddPopup, true);
+                OnSelect: |-
+                    =Set(varShowAddPopup, true);
+                    Set(randID, RandBetween(1,8))
                 Size: =11
                 Text: ="Student toevoegen"
                 Width: =169
@@ -618,7 +626,9 @@ groups_screen As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =94
                 HoverFill: =
-                OnSelect: =Set(varShowAddPopup, true);
+                OnSelect: |-
+                    =Set(varShowAddPopup, true);
+                    Set(randID, RandBetween(1,8))
                 PressedFill: =
                 Text: =""
                 Width: =86
@@ -630,7 +640,9 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =60
                 Icon: =Icon.Add
-                OnSelect: =Set(varShowAddPopup, true);
+                OnSelect: |-
+                    =Set(varShowAddPopup, true);
+                    Set(randID, RandBetween(1,8))
                 Width: =60
                 X: =92
                 Y: =25
@@ -944,14 +956,16 @@ groups_screen As screen:
             BorderStyle: =BorderStyle.None
             Fill: =RGBA(45, 45, 45, 0.8)
             Height: =768
-            Visible: =true//isLoading_addingGroups
+            Tooltip: =
+            Visible: =isLoading_addingGroups
             Width: =1366
             ZIndex: =40
 
         spinner_loading_3 As image:
             Height: =175
             Image: ='Double Ring@2x-1.5s-200px-200px'
-            Visible: =true//isLoading_addingGroups
+            Tooltip: =
+            Visible: =isLoading_addingGroups
             Width: =175
             X: =595
             Y: =292
@@ -963,10 +977,12 @@ groups_screen As screen:
             Height: =163
             Italic: =true
             Overflow: =Overflow.Scroll
-            Text: |
-                =With({randID: RandBetween(1, 8)},
+            Text: |+
+                =
                     "'" & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Value &"'" & Char(10) & Char(10) & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Author
-                )
+                
+            Tooltip: =
+            Visible: =isLoading_addingGroups
             Width: =530
             X: =418
             Y: =436
