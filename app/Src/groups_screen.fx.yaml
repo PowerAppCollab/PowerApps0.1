@@ -280,7 +280,10 @@ groups_screen As screen:
                 Height: =26
                 HoverBorderColor: =ColorFade(Self.Color, 20%)
                 Icon: =Icon.Cancel
-                OnSelect: =Set(varShowDeleteGroupPopup, true)
+                OnSelect: |-
+                    =Set(varShowDeleteGroupPopup, true);
+                    
+                    Set(currentGroupToDelete, ThisItem.groupID)
                 Width: =68
                 X: =430
                 Y: =26
@@ -619,7 +622,8 @@ groups_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 OnSelect: |-
                     =Set(varShowAddPopup, true);
-                    Set(randID, RandBetween(1,8))
+                    Set(randID, RandBetween(1,8));
+                    Set(isChecked, false)
                 Size: =11
                 Text: ="Student toevoegen"
                 Width: =169
@@ -637,7 +641,8 @@ groups_screen As screen:
                 HoverFill: =
                 OnSelect: |-
                     =Set(varShowAddPopup, true);
-                    Set(randID, RandBetween(1,8))
+                    Set(randID, RandBetween(1,8));
+                    Set(isChecked, false)
                 PressedFill: =
                 Text: =""
                 Width: =86
@@ -651,7 +656,8 @@ groups_screen As screen:
                 Icon: =Icon.Add
                 OnSelect: |-
                     =Set(varShowAddPopup, true);
-                    Set(randID, RandBetween(1,8))
+                    Set(randID, RandBetween(1,8));
+                    Set(isChecked, false)
                 Width: =60
                 X: =120
                 Y: =22
@@ -1557,30 +1563,16 @@ groups_screen As screen:
                     }
                 );
                 
-                // Remove the selected item from groepens
-                Remove(groepens, gallery_courses_3.Selected);
                 
-                // Load data into collections for local processing
-                ClearCollect(localGroepens, groepens);
-                ClearCollect(localGroepsInhoud, groepsInhoud);
                 
-                // Filter locally: Collect items that match the condition into 'items' collection
-                ClearCollect(
-                    items,
-                    Filter(
-                        localGroepens,
-                        groupID in Filter(localGroepsInhoud, groep_id = groupID).groep_id
-                    )
-                );
-                
-                // Remove each record from localGroepsInhoud based on the items collection
                 ForAll(
-                    items,
-                    Remove(
-                        groepsInhoud,
-                        LookUp(groepsInhoud, groep_id = groep_id)
-                    )
+                    allDelStudentIDsForGroup,
+                    Remove(groepsInhoud, Filter(groepsInhoud, groep_id = currentGroupToDelete))
                 );
+                
+                
+                
+                //Remove(groepens; gallery_courses_3.Selected);;
                 
                 // Set the variable to hide the delete group popup
                 Set(varShowDeleteGroupPopup, false);
