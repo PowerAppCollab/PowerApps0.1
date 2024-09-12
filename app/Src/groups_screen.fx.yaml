@@ -677,7 +677,7 @@ groups_screen As screen:
             Size: =16
             Text: ="Groep " & gallery_courses_3.Selected.name
             Visible: |-
-                =If(
+                =!If(
                     IsEmpty(
                         Filter(
                             groepens,
@@ -1548,9 +1548,9 @@ groups_screen As screen:
         knop_toevoegen_8 As button:
             BorderStyle: =BorderStyle.None
             BorderThickness: =0
-            Fill: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(184, 0, 0, 1)
             FontWeight: =FontWeight.Normal
-            HoverFill: =RGBA(184, 0, 0, 1)
+            HoverFill: =ColorFade(Self.BorderColor, 5%)
             OnSelect: |
                 =// Patch: Clear groupID and course fields in studenten_tabel for a specific student
                 Patch(
@@ -1594,7 +1594,7 @@ groups_screen As screen:
             RadiusTopLeft: =6
             RadiusTopRight: =6
             Size: =13
-            Text: ="verwijderen"
+            Text: ="Verwijder"
             Tooltip: =
             Visible: =varShowDeleteGroupPopup
             X: =487
