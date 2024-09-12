@@ -1565,6 +1565,8 @@ groups_screen As screen:
                 
                 Remove(groepsInhoud, Filter(groepsInhoud, groep_id = currentGroupToDelete));
                 
+                Remove(scores, Filter(scores,groupID = gallery_courses_3.Selected.groupID));
+                
                 Remove(groepens, gallery_courses_3.Selected);
                 
                 Set(varShowDeleteGroupPopup, false);

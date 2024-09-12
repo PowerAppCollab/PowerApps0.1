@@ -343,7 +343,7 @@ students_screen As screen:
             FontWeight: =FontWeight.Lighter
             Height: =35
             HoverColor: =RGBA(243, 243, 243, 1)
-            HoverFill: =RGBA(60, 60, 60, 0.8)
+            HoverFill: =RGBA(45, 45, 45, 0.8)
             Items: |
                 =
                     Filter(
@@ -357,6 +357,7 @@ students_screen As screen:
             PressedFill: =RGBA(45, 45, 45, 0.8)
             SelectionFill: =RGBA(45, 45, 45, 1)
             Visible: =scoresToevoegen
+            Width: =506
             X: =42
             Y: =99
             ZIndex: =8
