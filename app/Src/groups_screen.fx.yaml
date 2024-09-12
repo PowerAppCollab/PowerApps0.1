@@ -988,7 +988,8 @@ groups_screen As screen:
                 Refresh(studenten_tabel);
                 Set(varShowAddPopup, false);
                 Clear(allNewStudentIDsForGroup);
-                Set(isChecked, false)
+                Set(isChecked, false);
+                Set(isLoading_addingGroups, false);
             Visible: =varShowAddPopup
             Width: =35
             X: =337
@@ -1274,15 +1275,6 @@ groups_screen As screen:
                 =Set(isLoading_addingGroups, true);
                 
                 ClearCollect(kandidaten, studenten_tabel);
-                
-                // Filter locally: Collect items that match the condition into 'items' collection
-                ClearCollect(
-                    items,
-                    Filter(
-                        localGroepens,
-                        groupID in Filter(kandidaten, studentID = studentID).studentID
-                    )
-                );
                 
                 ForAll(
                     allNewStudentIDsForGroup,
