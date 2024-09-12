@@ -382,7 +382,7 @@ groups_screen As screen:
                     false
                 )
             Width: =600
-            Y: =56
+            Y: =36
             ZIndex: =4
 
     container_22 As groupContainer.manualLayoutContainer:
@@ -587,6 +587,26 @@ groups_screen As screen:
                 Y: =25
                 ZIndex: =6
 
+        Rectangle14 As rectangle:
+            Fill: =RGBA(45, 45, 45, 0.6)
+            Height: =125
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            groepens,
+                            StartsWith(
+                                name,
+                                SearchInput1_1.Text
+                            )
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =600
+            ZIndex: =10
+
         "'kandidaat toevoegen' As group":
             Height: =5
             Width: =5
@@ -656,6 +676,20 @@ groups_screen As screen:
             FontWeight: =FontWeight.Bold
             Size: =16
             Text: ="Groep " & gallery_courses_3.Selected.name
+            Visible: |-
+                =If(
+                    IsEmpty(
+                        Filter(
+                            groepens,
+                            StartsWith(
+                                name,
+                                SearchInput1_1.Text
+                            )
+                        )
+                    ),
+                    true,
+                    false
+                )
             Width: =600
             ZIndex: =1
 
