@@ -1563,18 +1563,10 @@ groups_screen As screen:
                     }
                 );
                 
+                Remove(groepsInhoud, Filter(groepsInhoud, groep_id = currentGroupToDelete));
                 
+                Remove(groepens, gallery_courses_3.Selected);
                 
-                ForAll(
-                    allDelStudentIDsForGroup,
-                    Remove(groepsInhoud, Filter(groepsInhoud, groep_id = currentGroupToDelete))
-                );
-                
-                
-                
-                //Remove(groepens; gallery_courses_3.Selected);;
-                
-                // Set the variable to hide the delete group popup
                 Set(varShowDeleteGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
