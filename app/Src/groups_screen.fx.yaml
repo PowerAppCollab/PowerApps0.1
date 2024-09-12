@@ -552,8 +552,8 @@ groups_screen As screen:
                     =Set(varShowDeletePopup, true);
                     Set(randID, RandBetween(1,8))
                 Width: =60
-                X: =444
-                Y: =25
+                X: =430
+                Y: =22
                 ZIndex: =4
 
             groep_verwijder_text_1 As label:
@@ -565,8 +565,8 @@ groups_screen As screen:
                 Size: =11
                 Text: ="Student verwijderen"
                 Width: =168
-                X: =390
-                Y: =79
+                X: =376
+                Y: =76
                 ZIndex: =5
 
             groep_verwijder_knop_1 As button:
@@ -583,8 +583,8 @@ groups_screen As screen:
                 PressedFill: =
                 Text: =""
                 Width: =86
-                X: =431
-                Y: =25
+                X: =417
+                Y: =22
                 ZIndex: =6
 
         Rectangle14 As rectangle:
@@ -623,8 +623,8 @@ groups_screen As screen:
                 Size: =11
                 Text: ="Student toevoegen"
                 Width: =169
-                X: =38
-                Y: =76
+                X: =66
+                Y: =73
                 ZIndex: =7
 
             groep_verwijder_knop_2 As button:
@@ -641,8 +641,8 @@ groups_screen As screen:
                 PressedFill: =
                 Text: =""
                 Width: =86
-                X: =38
-                Y: =14
+                X: =66
+                Y: =11
                 ZIndex: =8
 
             Icon7 As icon.Add:
@@ -653,9 +653,36 @@ groups_screen As screen:
                     =Set(varShowAddPopup, true);
                     Set(randID, RandBetween(1,8))
                 Width: =60
-                X: =92
-                Y: =25
+                X: =120
+                Y: =22
                 ZIndex: =9
+
+        Rectangle16 As rectangle:
+            Fill: =RGBA(45, 45, 45,0.6)
+            Height: =125
+            Visible: |
+                =If(
+                    IsEmpty(Filter(
+                    studenten_tabel,
+                    studentID in Filter(
+                        groepsInhoud,
+                        gallery_courses_3.Selected.groupID in groep_id
+                    ).student_id
+                )) && !IsEmpty(
+                        Filter(
+                            groepens,
+                            StartsWith(
+                                name,
+                                SearchInput1_1.Text
+                            )
+                        )
+                    ),
+                    true,
+                    false
+                ) 
+            Width: =300
+            X: =300
+            ZIndex: =11
 
     container_25 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -675,7 +702,7 @@ groups_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             Size: =16
-            Text: ="Groep " & gallery_courses_3.Selected.name
+            Text: =gallery_courses_3.Selected.name
             Visible: |-
                 =!If(
                     IsEmpty(
