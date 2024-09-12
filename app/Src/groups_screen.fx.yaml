@@ -1418,41 +1418,17 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =46
             HoverFill: =RGBA(161, 0, 194, 1)
-            OnSelect: |
-                =// Define a string of characters to use for generating the unique ID
-                Set(
-                    Characters,
-                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-                );
-                
-                // Generate the unique ID
-                Set(
-                    UniqueID,
-                    Concat(
-                        ForAll(
-                            Sequence(20),
-                            Mid(
-                                Characters,
-                                Rand() * Len(Characters) + 1,
-                                1
-                            )
-                        ),
-                        Text(Value)
-                    )
-                );
-                
-                // Patch data into 'groepens' table
-                Patch(
+            OnSelect: |-
+                =Patch(
                     groepens,
                     Defaults(groepens),
                     {
-                        groupID: UniqueID,
+                        groupID: GUID(),
                         course: addCourseDropDown_2.Selected.name,
                         name: TextInput2.Text
                     }
                 );
                 
-                // Close the popup
                 Set(varShowCreateGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
