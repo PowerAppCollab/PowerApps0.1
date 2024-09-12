@@ -1524,7 +1524,7 @@ groups_screen As screen:
             BorderStyle: =BorderStyle.None
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(60, 60, 60, 1)
-            Height: =235
+            Height: =250
             Text: =""
             Visible: =varShowDeleteGroupPopup
             Width: =505
@@ -1538,7 +1538,7 @@ groups_screen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =54
             Size: =18
-            Text: ="weet je het zeker?"
+            Text: ="Groep verwijderen"
             Visible: =varShowDeleteGroupPopup
             Width: =505
             X: =430
@@ -1598,7 +1598,7 @@ groups_screen As screen:
             Tooltip: =
             Visible: =varShowDeleteGroupPopup
             X: =487
-            Y: =415
+            Y: =435
             ZIndex: =22
 
         knop_annuleer_13 As button:
@@ -1617,16 +1617,20 @@ groups_screen As screen:
             Text: ="Annuleer"
             Visible: =varShowDeleteGroupPopup
             X: =727
-            Y: =415
+            Y: =435
             ZIndex: =23
 
         Label9_2 As label:
+            Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
-            Height: =57
-            Text: ="weet je het zeker om deze groep te verwijderen?"
+            Height: =103
+            Text: |-
+                ="U staat op het punt om deze groep te verwijderen en daarmee al haar gegevens.
+                
+                Dit is niet omkeerbaar."
             Visible: =varShowDeleteGroupPopup
-            Width: =285
-            X: =559
-            Y: =324
+            Width: =483
+            X: =442
+            Y: =312
             ZIndex: =24
 
