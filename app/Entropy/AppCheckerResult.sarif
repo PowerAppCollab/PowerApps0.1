@@ -9319,6 +9319,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.DeleteThisCourse"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.DeleteThisCourse",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "DeleteThisCourse",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 13
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.2021-logo-tech_power-apps-nobg"
                 }
               ],

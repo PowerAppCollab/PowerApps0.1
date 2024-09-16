@@ -86,7 +86,7 @@ courses_screen_1 As screen:
                 Height: =26
                 HoverBorderColor: =ColorFade(Self.Color, 20%)
                 Icon: =Icon.Cancel
-                OnSelect: =Set(varShowDeleteCoursePopup, true)
+                OnSelect: =Set(varShowDeleteCoursePopup, true); Set(DeleteThisCourse, ThisItem.courseID)
                 Width: =68
                 X: =430
                 Y: =26
@@ -258,7 +258,7 @@ courses_screen_1 As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =35
             Icon: =Icon.Add
-            OnSelect: =Set(varShowCreateCoursePopup, true);
+            OnSelect: =Reset(TextInput2_1); Set(varShowCreateCoursePopup, true);
             Width: =35
             X: =450
             Y: =19
@@ -602,7 +602,9 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |
-                =Set(deletingThisGroupID, LookUp(groepsInhoud, cursus = gallery_courses_2.Selected.courseID).cursus);
+                =
+                
+                Set(deletingThisGroupID, LookUp(groepsInhoud, cursus = gallery_courses_2.Selected.courseID).cursus);
                 
                 ForAll(Filter(groepsInhoud, cursus = deletingThisGroupID),
                 RemoveIf(scores, groupID = groep_id);
