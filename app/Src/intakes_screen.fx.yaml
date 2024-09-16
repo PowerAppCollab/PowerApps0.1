@@ -348,7 +348,11 @@ intakes_screen As screen:
                 HoverBorderColor: =
                 HoverColor: =RGBA(192, 5, 230, 1)
                 HoverFill: =
-                OnSelect: =Set(intakeContainerVisible, 2)
+                OnSelect: |-
+                    =Set(intakeContainerVisible, 2);
+                    Set(errorInputTestScores, false);
+                    Reset(input_score_intake);
+                    Reset(input_naam_intake)
                 PaddingLeft: =15
                 PressedBorderColor: =
                 PressedFill: =

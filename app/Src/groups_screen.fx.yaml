@@ -1002,49 +1002,6 @@ groups_screen As screen:
             Y: =171
             ZIndex: =27
 
-    Group22 As group:
-        Height: =5
-        Width: =5
-        X: =80
-        Y: =80
-        ZIndex: =43
-
-        background_loading_3 As rectangle:
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(45, 45, 45, 0.8)
-            Height: =768
-            Tooltip: =
-            Visible: =isLoading_addingGroups
-            Width: =1366
-            ZIndex: =40
-
-        spinner_loading_3 As image:
-            Height: =175
-            Image: ='Double Ring@2x-1.5s-200px-200px'
-            Tooltip: =
-            Visible: =isLoading_addingGroups
-            Width: =175
-            X: =595
-            Y: =292
-            ZIndex: =41
-
-        Label31 As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =163
-            Italic: =true
-            Overflow: =Overflow.Scroll
-            Text: |+
-                =
-                    "'" & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Value &"'" & Char(10) & Char(10) & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Author
-                
-            Tooltip: =
-            Visible: =isLoading_addingGroups
-            Width: =530
-            X: =418
-            Y: =436
-            ZIndex: =42
-
     Group11_1 As group:
         Height: =5
         Width: =5
@@ -1237,6 +1194,49 @@ groups_screen As screen:
             X: =337
             Y: =171
             ZIndex: =33
+
+    Group22 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =43
+
+        background_loading_3 As rectangle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(45, 45, 45, 0.8)
+            Height: =768
+            Tooltip: =
+            Visible: =isLoading_addingGroups
+            Width: =1366
+            ZIndex: =40
+
+        spinner_loading_3 As image:
+            Height: =175
+            Image: ='Double Ring@2x-1.5s-200px-200px'
+            Tooltip: =
+            Visible: =isLoading_addingGroups
+            Width: =175
+            X: =595
+            Y: =292
+            ZIndex: =41
+
+        Label31 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =163
+            Italic: =true
+            Overflow: =Overflow.Scroll
+            Text: |+
+                =
+                    "'" & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Value &"'" & Char(10) & Char(10) & LookUp(LoadingQuotes, ID = Text(randID)).Quote_Author
+                
+            Tooltip: =
+            Visible: =isLoading_addingGroups
+            Width: =530
+            X: =418
+            Y: =436
+            ZIndex: =42
 
     Group17_1 As group:
         Height: =5
