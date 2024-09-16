@@ -98,7 +98,7 @@ intakes_screen As screen:
             intakeFormAnswersContainer As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
                 Height: =269
-                Visible: =If(intakeContainerVisible = 1, true, false)
+                Visible: =If(intakeContainerVisible = 1 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =958
                 X: =192
                 Y: =56
@@ -410,7 +410,7 @@ intakes_screen As screen:
             intakeFormScoresContainer As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
                 Height: =269
-                Visible: =If(intakeContainerVisible = 2, true, false)
+                Visible: =If(intakeContainerVisible = 2 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =958
                 X: =192
                 Y: =56
@@ -633,7 +633,7 @@ intakes_screen As screen:
             intakeFormNotesContainer As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.None
                 Height: =325
-                Visible: =If(intakeContainerVisible = 3, true, false)
+                Visible: =If(intakeContainerVisible = 3 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =958
                 X: =192
                 ZIndex: =8
@@ -797,7 +797,7 @@ intakes_screen As screen:
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 TabIndex: =2
-                Visible: =If(intakeContainerVisible = 4, true, false)
+                Visible: =If(intakeContainerVisible = 4 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =300
                 X: =228
                 Y: =125
@@ -821,7 +821,7 @@ intakes_screen As screen:
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 TabIndex: =1
-                Visible: =If(intakeContainerVisible = 4, true, false)
+                Visible: =If(intakeContainerVisible = 4 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =300
                 X: =228
                 Y: =65
@@ -853,7 +853,7 @@ intakes_screen As screen:
                 Size: =13
                 TabIndex: =3
                 Text: ="Toevoegen"
-                Visible: =If(intakeContainerVisible = 4, true, false)
+                Visible: =If(intakeContainerVisible = 4 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =300
                 X: =228
                 Y: =250
@@ -868,7 +868,7 @@ intakes_screen As screen:
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =0
                 TemplateSize: =122
-                Visible: =If(intakeContainerVisible = 4, true, false)
+                Visible: =If(intakeContainerVisible = 4 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =600
                 X: =550
                 Y: =28
