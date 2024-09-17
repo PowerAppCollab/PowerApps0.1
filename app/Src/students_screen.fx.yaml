@@ -1338,7 +1338,7 @@ students_screen As screen:
             Height: =125
             Visible: |
                 =If(
-                    !IsBlank(gallery_students.Selected.Email),
+                    !IsBlank(gallery_students.Selected.studentID),
                     false,
                     true
                 )
@@ -1615,12 +1615,13 @@ students_screen As screen:
             Height: =125
             Visible: |-
                 =If(
-                    IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_students.Selected.Email
-                        )
-                    ) && IsBlank(LookUp(groepsInhoud, student_id = gallery_students.Selected.studentID)) && !openPopupPDF && !varShowArchived ,
+                    //IsEmpty(
+                    //    Filter(
+                    //        scores;
+                    //        studentID = gallery_students.Selected.studentID
+                    //    )
+                    //) &&
+                    IsBlank(LookUp(groepsInhoud, student_id = gallery_students.Selected.studentID)) && !openPopupPDF && !varShowArchived ,
                     true,
                     false
                 )
