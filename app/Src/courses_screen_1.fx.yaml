@@ -603,9 +603,10 @@ courses_screen_1 As screen:
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |
                 =//Zoek alle groepen die in deze cursus zitten:
-                Filter(groepens, course = DeleteThisCourse);
+                Set(AllGroupsInThisCourse,Filter(groepens, course = DeleteThisCourse));
                 
                 //Verwijder eerst alle studenten uit de 'groepsinhoud' tabel
+                Set(AllStudentsInThisCourse, Filter(groepsInhoud, cursus = DeleteThisCourse));
                 //Remove(groepsInhoud; Filter(groepsInhoud; groep_id = currentGroupToDelete));;
                 
                 //Verwijder alle behaalde scores uit 'scores' tabel
