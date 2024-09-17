@@ -602,18 +602,45 @@ courses_screen_1 As screen:
             FontWeight: =FontWeight.Normal
             HoverFill: =RGBA(184, 0, 0, 0.8)
             OnSelect: |
-                =
+                =//Zoek alle groepen die in deze cursus zitten:
+                Filter(groepens, course = DeleteThisCourse);
                 
-                Set(deletingThisGroupID, LookUp(groepsInhoud, cursus = gallery_courses_2.Selected.courseID).cursus);
+                //Verwijder eerst alle studenten uit de 'groepsinhoud' tabel
+                //Remove(groepsInhoud; Filter(groepsInhoud; groep_id = currentGroupToDelete));;
                 
-                ForAll(Filter(groepsInhoud, cursus = deletingThisGroupID),
-                RemoveIf(scores, groupID = groep_id);
-                RemoveIf(groepens, cursus = course);
-                );
+                //Verwijder alle behaalde scores uit 'scores' tabel
+                //Remove(scores; Filter(scores;groupID = gallery_courses_3.Selected.groupID));;
                 
-                RemoveIf(groepsInhoud, cursus = gallery_courses_2.Selected.courseID);
+                //Verwijder de groepen uit de 'groepens' tabel
+                //Remove(groepens; gallery_courses_3.Selected);;
                 
-                Set(varShowDeleteCoursePopup, false);
+                
+                
+                
+                //Na de groepen, studenten en scores -> Verwijder de cursus!
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                //Set(deletingThisGroupID; LookUp(groepsInhoud; cursus = gallery_courses_2.Selected.courseID).cursus);;
+                //
+                //ForAll(Filter(groepsInhoud; cursus = deletingThisGroupID);
+                //RemoveIf(scores; groupID = groep_id);;
+                //RemoveIf(groepens; cursus = course);;
+                //);;
+                
+                //RemoveIf(groepsInhoud; cursus = gallery_courses_2.Selected.courseID);;
+                
+                //Set(varShowDeleteCoursePopup; false);;
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
