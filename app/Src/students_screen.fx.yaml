@@ -1596,15 +1596,33 @@ students_screen As screen:
         Rectangle15 As rectangle:
             Fill: =RGBA(45, 45, 45, 0.6)
             Height: =125
-            Visible: |-
+            Visible: |
                 =If(
+                    // Condition 1: No scores + openPopupPDF is false + varShowArchived is false
                     IsEmpty(
-                        Filter(
-                            scores,
-                            studentID = gallery_students.Selected.Email
-                        )
-                    ) && !openPopupPDF && !varShowArchived ,
+                        Filter(scores, studentID = gallery_students.Selected.Email)
+                    ) && !openPopupPDF && !varShowArchived,
                     true,
+                
+                    // Condition 2: Has scores + openPopupPDF is false + varShowArchived is false
+                    !IsEmpty(
+                        Filter(scores, studentID = gallery_students.Selected.Email)
+                    ) && !openPopupPDF && !varShowArchived,
+                    false,
+                
+                    // Condition 3: Has scores + openPopupPDF is false + varShowArchived is true
+                    !IsEmpty(
+                        Filter(scores, studentID = gallery_students.Selected.Email)
+                    ) && !openPopupPDF && varShowArchived,
+                    false,
+                
+                    // Condition 4: No scores + openPopupPDF is false + varShowArchived is true
+                    IsEmpty(
+                        Filter(scores, studentID = gallery_students.Selected.Email)
+                    ) && !openPopupPDF && varShowArchived,
+                    true,
+                
+                    // Default case
                     false
                 )
             Width: =200
