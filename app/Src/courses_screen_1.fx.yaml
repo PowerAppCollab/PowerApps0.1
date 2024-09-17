@@ -99,8 +99,21 @@ courses_screen_1 As screen:
             Height: =66
             Text: ="Geen cursus gevonden."
             Visible: |-
-                =If(
-                    IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name),
+                =//If(
+                //    IsBlank(gallery_courses_2.Selected.courseID) && IsBlank(gallery_courses_2.Selected.name);
+                //    true;
+                //    false
+                //)
+                If(
+                    IsBlank(
+                        Filter(
+                            courses,
+                            StartsWith(
+                                name,
+                                SearchInput1_2.Text
+                            ) && name <> "All"
+                        )
+                    ),
                     true,
                     false
                 )
