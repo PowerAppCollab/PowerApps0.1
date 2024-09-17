@@ -853,6 +853,7 @@ intakes_screen As screen:
                 Size: =13
                 TabIndex: =3
                 Text: ="Toevoegen"
+                Tooltip: ="Vraag / Antwoord toevoegen aan intake"
                 Visible: =If(intakeContainerVisible = 4 && !IsBlank(gallery_intakes.Selected.Voornaam), true, false)
                 Width: =300
                 X: =228
