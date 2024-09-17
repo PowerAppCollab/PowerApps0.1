@@ -1621,7 +1621,7 @@ students_screen As screen:
                     //        studentID = gallery_students.Selected.studentID
                     //    )
                     //) &&
-                    IsBlank(LookUp(groepsInhoud, student_id = gallery_students.Selected.studentID)) && !openPopupPDF && !varShowArchived ,
+                    IsBlank(LookUp(groepsInhoud, student_id = gallery_students.Selected.studentID)) && !openPopupPDF && !varShowArchived || IsBlank(gallery_students.Selected.Email) && !IsBlank(gallery_students.Selected.Voornaam),
                     true,
                     false
                 )
