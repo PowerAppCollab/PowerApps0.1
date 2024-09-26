@@ -325,8 +325,51 @@ agenda_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =RectMeetingBkg1.Height
                 Size: =26
-                Text: |
-                    =Upper(Left(Text(_dateSelected, "dddd"), 1)) & Lower(Mid(Text(_dateSelected, "dddd"), 2))
+                Text: |-
+                    =//Upper(Left(Text(_dateSelected; "dddd"); 1)) & Lower(Mid(Text(_dateSelected; "dddd"); 2))
+                    
+                    
+                    
+                    
+                    If(
+                        Or(
+                            Text(_dateSelected, "dddd") = "monday",
+                            Text(_dateSelected, "dddd") = "tuesday",
+                            Text(_dateSelected, "dddd") = "wednesday",
+                            Text(_dateSelected, "dddd") = "thursday",
+                            Text(_dateSelected, "dddd") = "friday",
+                            Text(_dateSelected, "dddd") = "saturday",
+                            Text(_dateSelected, "dddd") = "sunday"
+                        ),
+                        
+                        Switch(
+                            Text(_dateSelected, "dddd"),
+                            "monday", "Maandag",
+                            "tuesday", "Dinsdag",
+                            "wednesday", "Woensdag",
+                            "thursday", "Donderdag",
+                            "friday", "Vrijdag",
+                            "saturday", "Zaterdag",
+                            "sunday", "Zondag"
+                        ),
+                        
+                        Switch(
+                            Text(_dateSelected, "dddd"),
+                            "maandag", "Maandag",
+                            "dinsdag", "Dinsdag",
+                            "woensdag", "Woensdag",
+                            "donderdag", "Donderdag",
+                            "vrijdag", "Vrijdag",
+                            "zaterdag", "Zaterdag",
+                            "zondag", "Zondag"
+                        )
+                    )
+                    
+                    
+                    //Concatenate(
+                    //    Upper(Mid(dayName; 1; 1));
+                    //    Lower(Mid(dayName; 2; Len(dayName) - 1))
+                    //)
                 Visible: |
                     =isAgendaVisible && !isAgendaEdit
                 Width: =Parent.Width / 3 - 60
