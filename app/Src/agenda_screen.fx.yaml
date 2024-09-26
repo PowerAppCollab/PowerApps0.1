@@ -90,45 +90,23 @@ agenda_screen As screen:
             Height: =70
             Size: =32
             Text: |-
-                =If(
-                    Or(
-                        dayName = "monday",
-                        dayName = "tuesday",
-                        dayName = "wednesday",
-                        dayName = "thursday",
-                        dayName = "friday",
-                        dayName = "saturday",
-                        dayName = "sunday"
-                    ),
-                    
-                    Switch(
-                        dayName,
-                        "monday", "Maandag",
-                        "tuesday", "Dinsdag",
-                        "wednesday", "Woensdag",
-                        "thursday", "Donderdag",
-                        "friday", "Vrijdag",
-                        "saturday", "Zaterdag",
-                        "sunday", "Zondag"
-                    ),
-                    
-                    Switch(
-                        dayName,
-                        "maandag", "Maandag",
-                        "dinsdag", "Dinsdag",
-                        "woensdag", "Woensdag",
-                        "donderdag", "Donderdag",
-                        "vrijdag", "Vrijdag",
-                        "zaterdag", "Zaterdag",
-                        "zondag", "Zondag"
-                    )
+                =Switch(
+                    Lower(Text(dayName)),
+                    "monday", "Maandag",
+                    "tuesday", "Dinsdag",
+                    "wednesday", "Woensdag",
+                    "thursday", "Donderdag",
+                    "friday", "Vrijdag",
+                    "saturday", "Zaterdag",
+                    "sunday", "Zondag",
+                    "maandag", "Maandag",
+                    "dinsdag", "Dinsdag",
+                    "woensdag", "Woensdag",
+                    "donderdag", "Donderdag",
+                    "vrijdag", "Vrijdag",
+                    "zaterdag", "Zaterdag",
+                    "zondag", "Zondag"
                 )
-                
-                
-                //Concatenate(
-                //    Upper(Mid(dayName; 1; 1));
-                //    Lower(Mid(dayName; 2; Len(dayName) - 1))
-                //)
             Visible: |-
                 =
                 true
