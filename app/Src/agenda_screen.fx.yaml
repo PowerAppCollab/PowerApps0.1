@@ -90,38 +90,40 @@ agenda_screen As screen:
             Height: =70
             Size: =32
             Text: |-
-                =If(dayName =
-                    "monday" ||
-                    "tuesday" ||
-                    "wednesday" ||
-                    "thursday" ||
-                    "friday" ||
-                    "saturday" ||
-                    "sunday",
-                
-                Switch(
-                    dayName,
-                    "monday", "Maandag",
-                    "tuesday", "Dinsdag",
-                    "wednesday", "Woensdag",
-                    "thursday", "Donderdag",
-                    "friday", "Vrijdag",
-                    "saturday", "Zaterdag",
-                    "sunday", "Zondag"
-                ),
-                
-                Switch(
-                    dayName,
-                    "maandag", "Maandag",
-                    "dinsdag", "Dinsdag",
-                    "woensdag", "Woensdag",
-                    "donderdag", "Donderdag",
-                    "vrijdag", "Vrijdag",
-                    "zaterdag", "Zaterdag",
-                    "zondag", "Zondag"
+                =If(
+                    Or(
+                        dayName = "monday",
+                        dayName = "tuesday",
+                        dayName = "wednesday",
+                        dayName = "thursday",
+                        dayName = "friday",
+                        dayName = "saturday",
+                        dayName = "sunday"
+                    ),
+                    
+                    Switch(
+                        dayName,
+                        "monday", "Maandag",
+                        "tuesday", "Dinsdag",
+                        "wednesday", "Woensdag",
+                        "thursday", "Donderdag",
+                        "friday", "Vrijdag",
+                        "saturday", "Zaterdag",
+                        "sunday", "Zondag"
+                    ),
+                    
+                    Switch(
+                        dayName,
+                        "maandag", "Maandag",
+                        "dinsdag", "Dinsdag",
+                        "woensdag", "Woensdag",
+                        "donderdag", "Donderdag",
+                        "vrijdag", "Vrijdag",
+                        "zaterdag", "Zaterdag",
+                        "zondag", "Zondag"
+                    )
                 )
                 
-                )
                 
                 //Concatenate(
                 //    Upper(Mid(dayName; 1; 1));
