@@ -330,40 +330,24 @@ agenda_screen As screen:
                     
                     
                     
-                    
-                    If(
-                        Or(
-                            Text(_dateSelected, "dddd") = "monday",
-                            Text(_dateSelected, "dddd") = "tuesday",
-                            Text(_dateSelected, "dddd") = "wednesday",
-                            Text(_dateSelected, "dddd") = "thursday",
-                            Text(_dateSelected, "dddd") = "friday",
-                            Text(_dateSelected, "dddd") = "saturday",
-                            Text(_dateSelected, "dddd") = "sunday"
-                        ),
-                        
-                        Switch(
-                            Text(_dateSelected, "dddd"),
-                            "monday", "Maandag",
-                            "tuesday", "Dinsdag",
-                            "wednesday", "Woensdag",
-                            "thursday", "Donderdag",
-                            "friday", "Vrijdag",
-                            "saturday", "Zaterdag",
-                            "sunday", "Zondag"
-                        ),
-                        
-                        Switch(
-                            Text(_dateSelected, "dddd"),
-                            "maandag", "Maandag",
-                            "dinsdag", "Dinsdag",
-                            "woensdag", "Woensdag",
-                            "donderdag", "Donderdag",
-                            "vrijdag", "Vrijdag",
-                            "zaterdag", "Zaterdag",
-                            "zondag", "Zondag"
-                        )
+                    Switch(
+                        Lower(Text(_dateSelected, "dddd")),
+                        "monday", "Maandag",
+                        "tuesday", "Dinsdag",
+                        "wednesday", "Woensdag",
+                        "thursday", "Donderdag",
+                        "friday", "Vrijdag",
+                        "saturday", "Zaterdag",
+                        "sunday", "Zondag",
+                        "maandag", "Maandag",
+                        "dinsdag", "Dinsdag",
+                        "woensdag", "Woensdag",
+                        "donderdag", "Donderdag",
+                        "vrijdag", "Vrijdag",
+                        "zaterdag", "Zaterdag",
+                        "zondag", "Zondag"
                     )
+                    
                     
                     
                     //Concatenate(
