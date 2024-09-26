@@ -89,11 +89,44 @@ agenda_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
             Size: =32
-            Text: |
-                =Concatenate(
-                    Upper(Mid(dayName, 1, 1)),
-                    Lower(Mid(dayName, 2, Len(dayName) - 1))
+            Text: |-
+                =If(dayName =
+                    "monday" ||
+                    "tuesday" ||
+                    "wednesday" ||
+                    "thursday" ||
+                    "friday" ||
+                    "saturday" ||
+                    "sunday",
+                
+                Switch(
+                    dayName,
+                    "monday", "Maandag",
+                    "tuesday", "Dinsdag",
+                    "wednesday", "Woensdag",
+                    "thursday", "Donderdag",
+                    "friday", "Vrijdag",
+                    "saturday", "Zaterdag",
+                    "sunday", "Zondag"
+                ),
+                
+                Switch(
+                    dayName,
+                    "maandag", "Maandag",
+                    "dinsdag", "Dinsdag",
+                    "woensdag", "Woensdag",
+                    "donderdag", "Donderdag",
+                    "vrijdag", "Vrijdag",
+                    "zaterdag", "Zaterdag",
+                    "zondag", "Zondag"
                 )
+                
+                )
+                
+                //Concatenate(
+                //    Upper(Mid(dayName; 1; 1));
+                //    Lower(Mid(dayName; 2; Len(dayName) - 1))
+                //)
             Visible: |-
                 =
                 true
