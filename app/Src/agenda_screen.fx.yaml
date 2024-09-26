@@ -74,6 +74,7 @@ agenda_screen As screen:
             Color: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Lighter
             Height: =48
+            PaddingLeft: =0
             Size: =16
             Text: ="Het is vandaag"
             Visible: |-
@@ -88,6 +89,7 @@ agenda_screen As screen:
         LblMonthSelected1_3 As label:
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
+            PaddingLeft: =0
             Size: =32
             Text: |-
                 =Switch(
@@ -112,7 +114,7 @@ agenda_screen As screen:
                 true
             Width: =418
             Wrap: =false
-            X: =21
+            X: =19
             Y: =34
             ZIndex: =2
 
@@ -120,6 +122,7 @@ agenda_screen As screen:
             Color: =RGBA(202, 202, 202, 1)
             FontWeight: =FontWeight.Lighter
             Height: =29
+            PaddingLeft: =0
             Size: =13
             Text: =Text(Today(),"dd-mm")
             Visible: |-
