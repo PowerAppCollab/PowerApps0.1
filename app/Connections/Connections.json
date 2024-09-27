@@ -1,4 +1,18 @@
 {
+  "1368e521-67ff-49ae-898c-57b58f56a363": {
+    "connectionRef": {
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1715/1.0.1715.3906/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "31b24611-4bbc-4c56-86b4-06d33ecf85bd"
+    ],
+    "id": "1368e521-67ff-49ae-898c-57b58f56a363"
+  },
   "272b46fd-83a7-4470-8c91-70a39baf6230": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -75,26 +89,12 @@
       "uploadScoreFiles"
     ],
     "dependencies": {
-      "shared_commondataserviceforapps": "46dadd01-0f03-4d20-a2f7-5d9e67268582",
+      "shared_commondataserviceforapps": "1368e521-67ff-49ae-898c-57b58f56a363",
       "shared_excelonlinebusiness": "590fece5-6674-4088-b75f-dcf38b6e9042",
       "shared_sharepointonline": "6ac54a13-0694-4bb3-9bce-dd6bc0da915e"
     },
     "dependents": [],
     "id": "31b24611-4bbc-4c56-86b4-06d33ecf85bd"
-  },
-  "46dadd01-0f03-4d20-a2f7-5d9e67268582": {
-    "connectionRef": {
-      "displayName": "Microsoft Dataverse",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1715/1.0.1715.3906/commondataserviceforapps/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "31b24611-4bbc-4c56-86b4-06d33ecf85bd"
-    ],
-    "id": "46dadd01-0f03-4d20-a2f7-5d9e67268582"
   },
   "590fece5-6674-4088-b75f-dcf38b6e9042": {
     "connectionRef": {
