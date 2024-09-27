@@ -670,7 +670,7 @@ courses_screen_1 As screen:
                 
                 //Verwijder alle behaalde scores uit 'scores' tabel
                 //Set(AllScoresInThisCourse; Filter(scores; courseID = DeleteThisCourse));;
-                Remove(scores, Filter(scores,groupID = gallery_courses_3.Selected.groupID));
+                Remove(scores, Filter(scores,courseID = DeleteThisCourse));
                 
                 //Na de groepen, studenten en scores -> Verwijder de cursus!
                 Remove(courses, LookUp(courses, courseID = DeleteThisCourse));
