@@ -11,11 +11,13 @@
       <string name="ManualTriggerInput_text_def" />
       <string name="ManualTriggerInput_text_1_def" />
       <string name="ManualTriggerInput_text_2_def" />
+      <string name="ManualTriggerInput_text_3_def" />
       <object name="ManualTriggerInput">
         <property name="file" typeRef="ManualTriggerInput_file_def" />
         <property name="text" type="string" />
         <property name="text_1" type="string" />
         <property name="text_2" type="string" />
+        <property name="text_3" type="string" />
       </object>
       <string name="ResponseActionOutput_failedemails_def" />
       <object name="ResponseActionOutput">
@@ -45,6 +47,9 @@
             </param>
             <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
               <doc title="groupID" />
+            </param>
+            <param style="plain" name="text_3" path="/text_3" type="xs:string" required="true">
+              <doc title="course" />
             </param>
           </representation>
         </request>

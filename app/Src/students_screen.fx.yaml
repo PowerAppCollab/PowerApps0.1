@@ -2317,7 +2317,8 @@ students_screen As screen:
                         },
                         TextInput3.Text,
                         Dropdown1.SelectedText.Value,
-                        LookUp(groepens, name = Dropdown1.SelectedText.Value).groupID)
+                        LookUp(groepens, name = Dropdown1.SelectedText.Value).groupID),
+                        LookUp(groepens, name = Dropdown1.SelectedText.Value).course)
                     );
                 
                     ClearCollect(failedEmailsCollection, failedEmails);
