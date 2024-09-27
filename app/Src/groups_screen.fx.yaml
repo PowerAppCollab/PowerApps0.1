@@ -1416,8 +1416,11 @@ groups_screen As screen:
             FontWeight: =FontWeight.Normal
             Height: =46
             HoverFill: =RGBA(161, 0, 194, 1)
-            OnSelect: |-
-                =Patch(
+            OnSelect: |+
+                =If(
+                    !IsBlank(LookUp(groepens, name = TextInput2.Text)),
+                    Notify("Deze naam is al in gebruik, kies een andere naam.", NotificationType.Error),
+                    Patch(
                     groepens,
                     Defaults(groepens),
                     {
@@ -1425,9 +1428,9 @@ groups_screen As screen:
                         course: addCourseDropDown_2.Selected.name,
                         name: TextInput2.Text
                     }
-                );
+                    );
+                Set(varShowCreateGroupPopup, false))
                 
-                Set(varShowCreateGroupPopup, false);
             RadiusBottomLeft: =6
             RadiusBottomRight: =6
             RadiusTopLeft: =6
