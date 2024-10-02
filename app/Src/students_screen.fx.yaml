@@ -1666,14 +1666,19 @@ students_screen As screen:
             Default: ="All"
             Fill: =RGBA(45, 45, 45, 1)
             HoverFill: =RGBA(192, 5, 230, 1)
-            Items: |
-                =Filter(
-                    groepens,
-                    groupID in Filter(
-                        groepsInhoud,
-                        student_id = gallery_students.Selected.studentID
-                    ).groep_id
-                ).name
+            Items: |-
+                =//Filter(
+                //    groepens;
+                //    groupID in Filter(
+                //        groepsInhoud;
+                //        student_id = gallery_students.Selected.studentID
+                //    ).groep_id
+                //).name
+                
+                Filter(
+                    groepsInhoud,
+                    student_id = gallery_students.Selected.studentID),
+                    cursus,)
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
