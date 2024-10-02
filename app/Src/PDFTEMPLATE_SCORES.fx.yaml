@@ -42,6 +42,63 @@ PDFTEMPLATE_SCORES As screen:
         X: =283
         ZIndex: =11
 
+        "Gallery2_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtered"
+            DelayItemLoading: =true
+            Height: =425
+            Items: =Filter(scores, studentID = TempStudentIDPDF && courseID = selectedGroupForPDF_value.Value)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =26
+            Width: =366
+            X: =217
+            Y: =343
+            ZIndex: =7
+
+            Title3_4 As label:
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.score
+                VerticalAlign: =VerticalAlign.Top
+                Width: =85
+                ZIndex: =2
+
+            Subtitle3_4 As label:
+                FontWeight: =FontWeight.Lighter
+                Height: =23
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Examen
+                VerticalAlign: =VerticalAlign.Top
+                Width: =320
+                X: =46
+                Y: =3
+                ZIndex: =3
+
+        Subtitle3_6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Lighter
+            Height: =23
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =selectedGroupForPDF_value.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =331
+            X: =235
+            Y: =301
+            ZIndex: =8
+
         Group19 As group:
             Height: =5
             Width: =5
@@ -85,62 +142,4 @@ PDFTEMPLATE_SCORES As screen:
                 X: =232
                 Y: =39
                 ZIndex: =6
-
-            "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-                '#CopilotOverlayLabel': ="Filtered"
-                DelayItemLoading: =true
-                Height: =372
-                Items: =Filter(scores, studentID = TempStudentIDPDF)
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                TemplatePadding: =0
-                TemplateSize: =29
-                Width: =473
-                X: =164
-                Y: =329
-                ZIndex: =8
-
-                Title3_1 As label:
-                    Height: =Self.Size * 1.8
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.score
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =85
-                    Y: =1
-                    ZIndex: =2
-
-                Subtitle3_1 As label:
-                    FontWeight: =FontWeight.Lighter
-                    Height: =23
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.Examen
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =200
-                    X: =35
-                    Y: =3
-                    ZIndex: =3
-
-                Subtitle3_4 As label:
-                    Color: =RGBA(149, 149, 149, 1)
-                    FontWeight: =FontWeight.Lighter
-                    Height: =23
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.groupName
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =200
-                    X: =235
-                    Y: =3
-                    ZIndex: =4
 
