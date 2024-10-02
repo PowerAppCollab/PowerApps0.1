@@ -43,7 +43,7 @@ PDFTEMPLATE_PARTICIPATION As screen:
         ZIndex: =11
 
         Label13_2 As label:
-            Size: =16
+            Size: =14
             Text: ="GradeMatch verklaart dat " 
             Width: =304
             X: =20
@@ -59,9 +59,10 @@ PDFTEMPLATE_PARTICIPATION As screen:
             ZIndex: =8
 
         Label13_6 As label:
-            Size: =16
-            Text: ="heeft deelgenomen aan" 
-            Width: =304
+            Size: =14
+            Text: |-
+                ="heeft deelgenomen aan de cursus:" 
+            Width: =400
             X: =25
             Y: =516
             ZIndex: =9
@@ -75,11 +76,11 @@ PDFTEMPLATE_PARTICIPATION As screen:
 
             Label12_4 As label:
                 Height: =43
-                Size: =22
+                Size: =18
                 Text: =LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Voornaam & "  " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).Achternaam
                 Width: =543
                 X: =25
-                Y: =460
+                Y: =450
                 ZIndex: =1
 
             Label12_9 As label:
@@ -110,7 +111,7 @@ PDFTEMPLATE_PARTICIPATION As screen:
                 ZIndex: =6
 
         Label13_12 As label:
-            Size: =16
+            Size: =14
             Text: ="Bedankt voor uw deelname." 
             Width: =304
             X: =456
@@ -118,8 +119,9 @@ PDFTEMPLATE_PARTICIPATION As screen:
             ZIndex: =10
 
         Label13_13 As label:
-            Size: =16
-            Text: ="HANDTEKENING / NAAM GRADEMATCH"
+            Height: =50
+            Size: =18
+            Text: ="HANDTEKENING ROGER"
             Width: =304
             X: =452
             Y: =718
@@ -127,10 +129,10 @@ PDFTEMPLATE_PARTICIPATION As screen:
 
         Label12_5 As label:
             Height: =43
-            Size: =22
-            Text: ="de " & LookUp(studenten_tabel, studentID = gallery_students.Selected.studentID).course & " cursus."
+            Size: =18
+            Text: =selectedGroupForPDF_value.Value
             Width: =543
             X: =25
-            Y: =557
+            Y: =547
             ZIndex: =12
 
