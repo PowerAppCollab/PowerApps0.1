@@ -1669,45 +1669,6 @@ students_screen As screen:
             X: =400
             ZIndex: =24
 
-        selectedGroupForPDf_dropdown As dropdown:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderStyle: =BorderStyle.None
-            ChevronBackground: =RGBA(192, 5, 230, 1)
-            ChevronFill: =RGBA(0, 0, 0, 1)
-            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
-            Color: =RGBA(255, 255, 255, 1)
-            Default: ="All"
-            Fill: =RGBA(45, 45, 45, 1)
-            HoverFill: =RGBA(192, 5, 230, 1)
-            Items: |-
-                =//Filter(
-                //    groepens;
-                //    groupID in Filter(
-                //        groepsInhoud;
-                //        student_id = gallery_students.Selected.studentID
-                //    ).groep_id
-                //).name
-                
-                //Filter(
-                //    groepsInhoud;
-                //    student_id = gallery_students.Selected.studentID);;
-                
-                ForAll(
-                    Distinct(
-                        Filter(groepsInhoud, student_id = gallery_students.Selected.studentID),
-                        cursus
-                    ),
-                    Value
-                )
-            PressedColor: =RGBA(0, 0, 0, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            SelectionFill: =RGBA(192, 5, 230, 1)
-            Visible: =selectGroupForPDF
-            Width: =450
-            X: =46
-            Y: =49
-            ZIndex: =25
-
         Icon10 As icon.BackArrow:
             Color: =RGBA(192, 5, 230, 1)
             Height: =40
@@ -1723,6 +1684,45 @@ students_screen As screen:
             X: =514
             Y: =49
             ZIndex: =26
+
+        selectedGroupForPDf_dropdown As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="All"
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverFill: =RGBA(192, 5, 230, 0.6)
+            Items: |-
+                =//Filter(
+                //    groepens; 
+                //    groupID in Filter( 
+                //        groepsInhoud; 
+                //        student_id = gallery_students.Selected.studentID 
+                //    ).groep_id 
+                //).name 
+                //Filter( 
+                //    groepsInhoud; 
+                //    student_id = gallery_students.Selected.studentID);;
+                ForAll( Distinct( Filter(groepsInhoud, student_id = gallery_students.Selected.studentID), cursus ), Value )
+            OnChange: |
+                =ClearCollect(
+                    selectedStudentIDs,
+                    Filter(
+                        groepsInhoud,
+                        cursus = Self.SelectedText.Value
+                    ).student_id
+                )
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: =selectGroupForPDF
+            Width: =450
+            X: =40
+            Y: =49
+            ZIndex: =27
 
     Group16 As group:
         Height: =5
