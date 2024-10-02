@@ -1462,7 +1462,7 @@ students_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
-                Text: ="PDF Certificaat"
+                Text: ="Diploma"
                 Visible: =openPopupPDF
                 Width: =138
                 X: =40
@@ -1511,7 +1511,7 @@ students_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
-                Text: ="PDF scores"
+                Text: ="Rapport"
                 Visible: =openPopupPDF
                 Width: =138
                 X: =231
@@ -1573,7 +1573,7 @@ students_screen As screen:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
-                Text: ="PDF deelname"
+                Text: ="Bewijs Deelname"
                 Visible: =openPopupPDF
                 Width: =138
                 X: =410
@@ -1693,6 +1693,7 @@ students_screen As screen:
                 Set(selectedGroupForPDF_value, selectedGroupForPDf_dropdown.SelectedText )
             Rotation: |
                 =180
+            Visible: =selectGroupForPDF
             Width: =40
             X: =514
             Y: =49
