@@ -87,7 +87,7 @@ students_screen As screen:
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: |-
                 =Set(openPopupPDF, false);
-                Set(selectGroupForPDF, false)
+                Set(selectGroupForPDF, false);
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
