@@ -6,6 +6,8 @@ students_screen As screen:
         Set(scoresToevoegen, false);
         Set(isPopupExcelFileScoresOpen, false);
         Set(isExcelFileError, false);
+        Set(selectGroupForPDF, false);
+        Set(openPopupPDF, false);
         
         
         
@@ -83,6 +85,9 @@ students_screen As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: |-
+                =Set(openPopupPDF, false);
+                Set(selectGroupForPDF, false)
             ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =90
@@ -1298,7 +1303,7 @@ students_screen As screen:
                 Height: =60
                 Image: =user_x_line
                 OnSelect: =Set(varShowPopup, true);
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =60
                 X: =270
                 Y: =20
@@ -1310,7 +1315,7 @@ students_screen As screen:
                 OnSelect: =Set(varShowPopup, true);
                 Size: =11
                 Text: ="Verwijder"
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =138
                 X: =231
                 Y: =74
@@ -1327,7 +1332,7 @@ students_screen As screen:
                 OnSelect: =Set(varShowPopup, true);
                 PressedFill: =
                 Text: =""
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =86
                 X: =251
                 Y: =20
@@ -1355,7 +1360,7 @@ students_screen As screen:
             intake_icon_4 As image:
                 Height: =60
                 Image: =presentation_2_line
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =60
                 X: =79
                 Y: =25
@@ -1366,7 +1371,7 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
                 Text: ="Presenteer"
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =138
                 X: =40
                 Y: =79
@@ -1385,7 +1390,7 @@ students_screen As screen:
                     Navigate(presentatie_screen);
                 PressedFill: =
                 Text: =""
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =86
                 X: =66
                 Y: =20
@@ -1401,7 +1406,7 @@ students_screen As screen:
             intake_icon_5 As image:
                 Height: =60
                 Image: =file_line
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =60
                 X: =449
                 Y: =20
@@ -1412,7 +1417,7 @@ students_screen As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Size: =11
                 Text: ="PDF"
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =138
                 X: =410
                 Y: =74
@@ -1426,10 +1431,12 @@ students_screen As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =94
                 HoverFill: =
-                OnSelect: =Set(openPopupPDF, true);
+                OnSelect: |-
+                    =//Set(openPopupPDF; true);;
+                    Set(selectGroupForPDF, true)
                 PressedFill: =
                 Text: =""
-                Visible: =!openPopupPDF
+                Visible: =!openPopupPDF && !selectGroupForPDF
                 Width: =86
                 X: =436
                 Y: =20
@@ -1537,8 +1544,10 @@ students_screen As screen:
             Color: =RGBA(192, 5, 230, 1)
             Height: =25
             Icon: =Icon.Cancel
-            OnSelect: =Set(openPopupPDF, false)
-            Visible: =openPopupPDF
+            OnSelect: |-
+                =Set(openPopupPDF, false);
+                Set(selectGroupForPDF, false);
+            Visible: =openPopupPDF || selectGroupForPDF
             Width: =25
             X: =562
             Y: =15
@@ -1646,6 +1655,48 @@ students_screen As screen:
             Width: =200
             X: =400
             ZIndex: =24
+
+        selectedGroupForPDf_dropdown As dropdown:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(192, 5, 230, 1)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(192, 5, 230, 1), -20%)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: ="All"
+            Fill: =RGBA(45, 45, 45, 1)
+            HoverFill: =RGBA(192, 5, 230, 1)
+            Items: |
+                =Filter(
+                    groepens,
+                    groupID in Filter(
+                        groepsInhoud,
+                        student_id = gallery_students.Selected.studentID
+                    ).groep_id
+                ).name
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(192, 5, 230, 1)
+            Visible: =selectGroupForPDF
+            Width: =450
+            X: =46
+            Y: =49
+            ZIndex: =25
+
+        Icon10 As icon.BackArrow:
+            Color: =RGBA(192, 5, 230, 1)
+            Height: =40
+            Icon: =Icon.BackArrow
+            OnSelect: |-
+                =Set(selectGroupForPDF, false);
+                Set(openPopupPDF, true);
+                Set(selectedGroupForPDF_value, selectedGroupForPDf_dropdown.SelectedText )
+            Rotation: |
+                =180
+            Width: =40
+            X: =514
+            Y: =49
+            ZIndex: =26
 
     Group16 As group:
         Height: =5
