@@ -1118,15 +1118,28 @@ students_screen As screen:
             Height: =79
             Overflow: =Overflow.Scroll
             Text: |
-                =Text(
+                =//Text(
+                //    Concat(
+                //        Filter(
+                //            groepsInhoud;
+                //student_id = gallery_students.Selected.studentID);
+                //        cursus;
+                //        "  |  "
+                //    )
+                //);;
+                
+                
+                Text(
                     Concat(
-                        Filter(
-                            groepsInhoud,
-                student_id = gallery_students.Selected.studentID),
-                        cursus,
+                        Distinct(
+                            Filter(groepsInhoud, student_id = gallery_students.Selected.studentID),
+                            cursus
+                        ),
+                        Value,
                         "  |  "
                     )
                 )
+                
                 
                 
                 //If(
@@ -1675,10 +1688,17 @@ students_screen As screen:
                 //    ).groep_id
                 //).name
                 
-                Filter(
-                    groepsInhoud,
-                    student_id = gallery_students.Selected.studentID),
-                    cursus,)
+                //Filter(
+                //    groepsInhoud;
+                //    student_id = gallery_students.Selected.studentID);;
+                
+                ForAll(
+                    Distinct(
+                        Filter(groepsInhoud, student_id = gallery_students.Selected.studentID),
+                        cursus
+                    ),
+                    Value
+                )
             PressedColor: =RGBA(0, 0, 0, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
             SelectionFill: =RGBA(192, 5, 230, 1)
