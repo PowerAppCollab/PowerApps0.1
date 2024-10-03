@@ -1623,25 +1623,25 @@ students_screen As screen:
                     // Condition 1: No scores + openPopupPDF is false + varShowArchived is false
                     IsEmpty(
                         Filter(scores, studentID = gallery_students.Selected.Email)
-                    ) && !openPopupPDF && !varShowArchived,
+                    ) && !openPopupPDF && !varShowArchived && !selectGroupForPDF,
                     true,
                 
                     // Condition 2: Has scores + openPopupPDF is false + varShowArchived is false
                     !IsEmpty(
                         Filter(scores, studentID = gallery_students.Selected.Email)
-                    ) && !openPopupPDF && !varShowArchived,
+                    ) && !openPopupPDF && !varShowArchived && !selectGroupForPDF,
                     false,
                 
                     // Condition 3: Has scores + openPopupPDF is false + varShowArchived is true
                     !IsEmpty(
                         Filter(scores, studentID = gallery_students.Selected.Email)
-                    ) && !openPopupPDF && varShowArchived,
+                    ) && !openPopupPDF && varShowArchived && !selectGroupForPDF,
                     false,
                 
                     // Condition 4: No scores + openPopupPDF is false + varShowArchived is true
                     IsEmpty(
                         Filter(scores, studentID = gallery_students.Selected.Email)
-                    ) && !openPopupPDF && varShowArchived,
+                    ) && !openPopupPDF && varShowArchived && selectGroupForPDF,
                     true,
                 
                     // Default case
